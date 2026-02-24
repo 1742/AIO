@@ -476,8 +476,8 @@ situation_AIO_erase_galaxy = {
 
     on_progress_complete = {
         if = {
-            limit = { has_global_flag = AIO_ctrl_AIT_erase_galaxy }
-            remove_global_flag = AIO_ctrl_AIT_erase_galaxy
+            limit = { has_global_flag = AIO_RE_erase_galaxy }
+            remove_global_flag = AIO_RE_erase_galaxy
         }
         # 局势到达最右端时触发，也要写摧毁局势
         destroy_situation = this
@@ -492,7 +492,7 @@ situation_AIO_erase_galaxy = {
 
         modifier = {
             desc = AIO_situation_AIO_erase_galaxy_galaxy_size_modifier
-            has_situation_flag = AIO_ctrl_situation_erase_galaxy_pause
+            has_situation_flag = AIO_RE_situation_erase_galaxy_pause
             factor = 0
         }
     }
@@ -531,8 +531,8 @@ situation_AIO_erase_galaxy = {
         # 选择事件，也可以在这里写限制条件
         on_select = {
             if = {
-                limit = { has_global_flag = AIO_ctrl_AIT_erase_galaxy }
-                remove_global_flag = AIO_ctrl_AIT_erase_galaxy
+                limit = { has_global_flag = AIO_RE_erase_galaxy }
+                remove_global_flag = AIO_RE_erase_galaxy
             }
             destroy_situation = this
         }

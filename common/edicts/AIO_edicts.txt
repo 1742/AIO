@@ -112,3 +112,22 @@ edict_AIO_nanite_farming = {
         planet_farmers_nanites_upkeep_add = 1
     }
 }
+
+# 打开 Reality Editor
+edict_AIO_invoke_DAIT_menu = {
+    icon = "GFX_edict_type_policy"
+
+    resources = {
+        category = edicts
+
+        cost = { AIO_advanced_logic = 5000 }
+    }
+
+    potential = {
+        is_ai = no
+    }
+
+    effect = {
+
+    }
+}

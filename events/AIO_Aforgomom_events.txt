@@ -69,7 +69,7 @@ country_event = { # this - owner of combatant from - owner of destroyed
                 change_variable = { which = AIO_Aforgomom_Wrath value = 1 }
             }
         }
-        fromfrom.solar_system = { AIO_AIT_effects_manager = { CREATE_AFORGOMOM_WRATH = 1 } }
+        fromfrom.solar_system = { AIO_RAIT_effects_manager = { CREATE_AFORGOMOM_WRATH = 1 } }
     }
 }
 

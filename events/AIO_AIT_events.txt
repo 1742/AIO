@@ -42,7 +42,7 @@ situation_event = {
 
 			# 随机应用无限
 			if = {
-				limit = { owner = { NOT = { has_country_flag = AIO_AIT_all_random } } }
+				limit = { owner = { NOT = { has_country_flag = AIO_RAIT_all_random } } }
 				random_list = {
 					2 = {  }
 					1 = {
@@ -57,7 +57,7 @@ situation_event = {
 							}
 						}
 						owner = {
-							AIO_AIT_effects_manager = { AIT_RANDOM = 1 }
+							AIO_RAIT_effects_manager = { RANDOM_EVENTS = 1 }
 							change_variable = { which = AIO_situation_AIT_time value = 1 }
 						}
 						set_timed_situation_flag = { flag = AIO_merge_cosmos_has_AIT months = 6 }
@@ -84,8 +84,8 @@ situation_event = {
 		if = {
 			limit = { AIO_AIT_all_random = yes }
 			owner = {
-				AIO_AIT_effects_manager = { CLEAR_RANDOM_AIT_FLAG = 1 }
-				set_country_flag = AIO_AIT_all_random
+				AIO_RAIT_effects_manager = { CLEAR_RANDOM_AIT_FLAG = 1 }
+				set_country_flag = AIO_RAIT_all_random
 			}
 		}
     }
@@ -137,7 +137,7 @@ country_event = {
 					random_list = {
 						1 = { # 随机丰富星系矿藏
 							save_event_target_as = AIO_AIT_situation_enrich_system
-							AIO_AIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 2 }
+							AIO_RAIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 2 }
 							if = {
 								limit = { exists = owner }
 								owner = { country_event = { id = AIO_AIT_events.203 } }
@@ -173,7 +173,7 @@ country_event = {
 										is_capital = yes
 									}
 								}
-								AIO_AIT_effects_manager = { DEGENERATE = 1 }
+								AIO_RAIT_effects_manager = { DEGENERATE = 1 }
 								save_event_target_as = AIO_AIT_situation_degenerate_planet
 								if = {
 									limit = { exists = owner }
@@ -195,7 +195,7 @@ country_event = {
 										is_capital = yes
 									}
 								}
-								AIO_AIT_effects_manager = { TURN_BACK_TIME = 1 }
+								AIO_RAIT_effects_manager = { TURN_BACK_TIME = 1 }
 								save_event_target_as = AIO_AIT_situation_turn_back_time_planet
 								if = {
 									limit = { exists = owner }
@@ -210,7 +210,7 @@ country_event = {
                                     NOT = { is_planet_class = pc_AIO_empty_space }
                                 }
 								save_event_target_as = AIO_AIT_situation_destroy_planet
-								AIO_AIT_effects_manager = { ERASE_PLANET = 1 }
+								AIO_RAIT_effects_manager = { ERASE_PLANET = 1 }
 								if = {
 									limit = { exists = controller }
 									controller = { country_event = { id = AIO_AIT_events.207 } }
@@ -223,7 +223,7 @@ country_event = {
                                 AIO_safe_remove_system_exclude_API = yes
                             }
 							save_event_target_as = AIO_AIT_situation_destroy_system
-							AIO_AIT_effects_manager = { ERASE_SYSTEM = 1 }
+							AIO_RAIT_effects_manager = { ERASE_SYSTEM = 1 }
 							if = {
 								limit = { exists = owner }
 								owner = { country_event = { id = AIO_AIT_events.208 } }
@@ -376,11 +376,11 @@ country_event = { # this - maker
 	hide_window = yes
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_global_flag = AIO_AIT_existed_blackout } }
+	trigger = { NOT = { has_global_flag = AIO_RAIT_existed_blackout } }
 
 	immediate = {
-		set_country_flag = AIO_AIT_blackout_maker
-		set_global_flag = AIO_AIT_existed_blackout
+		set_country_flag = AIO_RAIT_blackout_maker
+		set_global_flag = AIO_RAIT_existed_blackout
 
 		no_scope = {
 			every_country = {
@@ -410,27 +410,27 @@ country_event = { # from - maker
 
     desc = {
         trigger = {
-            NOT = { has_country_flag = AIO_AIT_blackout_maker }
+            NOT = { has_country_flag = AIO_RAIT_blackout_maker }
             from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
         }
         text = crisis.7205.desc.unknown
     }
     desc = {
         trigger = {
-            NOT = { has_country_flag = AIO_AIT_blackout_maker }
+            NOT = { has_country_flag = AIO_RAIT_blackout_maker }
             from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
         }
         text = crisis.7205.desc.known
     }
     desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_blackout_maker }
+			NOT = { has_country_flag = AIO_RAIT_blackout_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
 		}
 		text = crisis.7205.desc.again
 	}
 	desc = {
-		trigger = { has_country_flag = AIO_AIT_blackout_maker }
+		trigger = { has_country_flag = AIO_RAIT_blackout_maker }
 		text = crisis.7205.desc.crisis
 	}
 
@@ -442,16 +442,16 @@ country_event = { # from - maker
     option = { # 非AIO帝国选项
 		name = crisis.7205.a
 		trigger = { AIO_can_AIT = no }
-        AIO_AIT_effects_manager = { BLACKOUT = 1 }
+        AIO_RAIT_effects_manager = { BLACKOUT = 1 }
 	}
 
 	option = { # 其他能AIT帝国
 		name = crisis.7205.b
 		trigger = {
 			AIO_can_AIT = yes
-			NOT = { has_country_flag = AIO_AIT_blackout_maker }
+			NOT = { has_country_flag = AIO_RAIT_blackout_maker }
 		}
-        AIO_AIT_effects_manager = { BLACKOUT = 1 }
+        AIO_RAIT_effects_manager = { BLACKOUT = 1 }
 		add_monthly_resource_mult = {
 			resource = physics_research
 			value = @tier4researchreward
@@ -462,9 +462,9 @@ country_event = { # from - maker
 
 	option = { # 肇事者
         name = crisis.7205.c
-        trigger = { has_country_flag = AIO_AIT_blackout_maker }
-        AIO_AIT_effects_manager = { BLACKOUT = 1 }
-        AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+        trigger = { has_country_flag = AIO_RAIT_blackout_maker }
+        AIO_RAIT_effects_manager = { BLACKOUT = 1 }
+        AIO_RAIT_effects_manager = { MAKER_CUSTOM_TOOLTIPS = 1 }
     }
 }
 
@@ -474,11 +474,11 @@ country_event = {  # this - maker
 	hide_window = yes
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_global_flag = AIO_AIT_existed_constant_round } }
+	trigger = { NOT = { has_global_flag = AIO_RAIT_existed_constant_round } }
 
 	immediate = {
-		set_country_flag = AIO_AIT_constant_round_maker
-		set_global_flag = AIO_AIT_existed_constant_round
+		set_country_flag = AIO_RAIT_constant_round_maker
+		set_global_flag = AIO_RAIT_existed_constant_round
 
 		no_scope = {
 			every_country = {
@@ -508,27 +508,27 @@ country_event = { # Thesis: Constant FROM = crisis country
 
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_constant_round_maker }
+			NOT = { has_country_flag = AIO_RAIT_constant_round_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
 		}
 		text = crisis.7210.desc.unknown
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_constant_round_maker }
+			NOT = { has_country_flag = AIO_RAIT_constant_round_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
 		}
 		text = crisis.7210.desc.known
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_constant_round_maker }
+			NOT = { has_country_flag = AIO_RAIT_constant_round_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value > 3 } }
 		}
 		text = crisis.7210.desc.again
 	}
 	desc = {
-		trigger = { has_country_flag = AIO_AIT_constant_round_maker }
+		trigger = { has_country_flag = AIO_RAIT_constant_round_maker }
 		text = crisis.7210.desc.crisis
 	}
 
@@ -540,16 +540,16 @@ country_event = { # Thesis: Constant FROM = crisis country
 	option = { # 非AIO帝国
 		name = crisis.7210.a
 		trigger = { AIO_can_AIT = no }
-		AIO_AIT_effects_manager = { CONSTANT_ROUND = 1 }
+		AIO_RAIT_effects_manager = { CONSTANT_ROUND = 1 }
 	}
 
 	option = { # 其他AIO帝国
 		name = crisis.7210.b
 		trigger = {
 			AIO_can_AIT = yes
-			NOT = { has_country_flag = AIO_AIT_constant_round_maker }
+			NOT = { has_country_flag = AIO_RAIT_constant_round_maker }
 		}
-		AIO_AIT_effects_manager = { CONSTANT_ROUND = 1 }
+		AIO_RAIT_effects_manager = { CONSTANT_ROUND = 1 }
 		add_monthly_resource_mult = {
 			resource = physics_research
 			value = @tier4researchreward
@@ -560,9 +560,9 @@ country_event = { # Thesis: Constant FROM = crisis country
 
 	option = { # AIO帝国
 		name = crisis.7210.c
-		trigger = { has_country_flag = AIO_AIT_constant_round_maker }
-		AIO_AIT_effects_manager = { CONSTANT_ROUND = 1 }
-		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+		trigger = { has_country_flag = AIO_RAIT_constant_round_maker }
+		AIO_RAIT_effects_manager = { CONSTANT_ROUND = 1 }
+		AIO_RAIT_effects_manager = { MAKER_CUSTOM_TOOLTIPS = 1 }
 	}
 }
 
@@ -572,11 +572,11 @@ country_event = {
 	hide_window = yes
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_global_flag = AIO_AIT_existed_superlight } }
+	trigger = { NOT = { has_global_flag = AIO_RAIT_existed_superlight } }
 
 	immediate = {
-		set_country_flag = AIO_AIT_superlight_maker
-		set_global_flag = AIO_AIT_existed_superlight
+		set_country_flag = AIO_RAIT_superlight_maker
+		set_global_flag = AIO_RAIT_existed_superlight
 
 		no_scope = {
 			every_country = {
@@ -598,27 +598,27 @@ country_event = { # Thesis: Superlight FROM = crisis country
 
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_superlight_maker }
+			NOT = { has_country_flag = AIO_RAIT_superlight_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
 		}
 		text = crisis.7215.desc.unknown
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_superlight_maker }
+			NOT = { has_country_flag = AIO_RAIT_superlight_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
 		}
 		text = crisis.7215.desc.known
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_superlight_maker }
+			NOT = { has_country_flag = AIO_RAIT_superlight_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
 		}
 		text = crisis.7215.desc.again
 	}
 	desc = {
-		trigger = { has_country_flag = AIO_AIT_superlight_maker }
+		trigger = { has_country_flag = AIO_RAIT_superlight_maker }
 		text = crisis.7215.desc.crisis
 	}
 
@@ -630,16 +630,16 @@ country_event = { # Thesis: Superlight FROM = crisis country
 	option = { # 非AIO帝国
 		name = crisis.7215.a
 		trigger = { AIO_can_AIT = no }
-        AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_1 = 1 }
+        AIO_RAIT_effects_manager = { SUPERLIGHT_STAGE_1 = 1 }
 	}
 
 	option = { # 其他AIO帝国
 		name = crisis.7215.b
 		trigger = {
 			AIO_can_AIT = yes
-			NOT = { has_country_flag = AIO_AIT_superlight_maker }
+			NOT = { has_country_flag = AIO_RAIT_superlight_maker }
 		}
-        AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_1 = 1 }
+        AIO_RAIT_effects_manager = { SUPERLIGHT_STAGE_1 = 1 }
 		add_monthly_resource_mult = {
 			resource = physics_research
 			value = @tier4researchreward
@@ -650,9 +650,9 @@ country_event = { # Thesis: Superlight FROM = crisis country
 
 	option = { # AIO帝国
 		name = crisis.7215.c
-		trigger = { has_country_flag = AIO_AIT_superlight_maker }
-		AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_1 = 1 }
-		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+		trigger = { has_country_flag = AIO_RAIT_superlight_maker }
+		AIO_RAIT_effects_manager = { SUPERLIGHT_STAGE_1 = 1 }
+		AIO_RAIT_effects_manager = { MAKER_CUSTOM_TOOLTIPS = 1 }
 	}
 
 	after = { hidden_effect = { country_event = { id = AIO_AIT_events.30312 days = 60 random = 10 } } }
@@ -664,7 +664,7 @@ country_event = { # Thesis: Superlight FROM = crisis country
 
 	is_triggered_only = yes
 
-    immediate = { AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_1 = 1 } }
+    immediate = { AIO_RAIT_effects_manager = { SUPERLIGHT_STAGE_1 = 1 } }
 
 	after = { hidden_effect = { country_event = { id = AIO_AIT_events.30322 days = 60 random = 10 } } }
 }
@@ -682,7 +682,7 @@ country_event = { # Thesis: Superlight FROMFROM = crisis country
 
 	option = {
 		name = crisis.7220.a
-		AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_2 = 1 }
+		AIO_RAIT_effects_manager = { SUPERLIGHT_STAGE_2 = 1 }
 	}
 
 	after = { hidden_effect = { country_event = { id = AIO_AIT_events.30313 days = 351 random = 20 } } }
@@ -694,7 +694,7 @@ country_event = { # Thesis: Superlight FROMFROM = crisis country
 
 	is_triggered_only = yes
 
-    immediate = { AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_2 = 1 } }
+    immediate = { AIO_RAIT_effects_manager = { SUPERLIGHT_STAGE_2 = 1 } }
 
 	after = { hidden_effect = { country_event = { id = AIO_AIT_events.30323 days = 351 random = 20 } } }
 }
@@ -711,7 +711,7 @@ country_event = { # Thesis: Superlight FROOMFROMFROM = crisis country
 
 	option = {
 		name = crisis.7225.a
-		AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_3 = 1 }
+		AIO_RAIT_effects_manager = { SUPERLIGHT_STAGE_3 = 1 }
 	}
 
 	after = { hidden_effect = { country_event = { id = AIO_AIT_events.30314 days = 331 random = 20 } } }
@@ -723,7 +723,7 @@ country_event = { # Thesis: Superlight FROOMFROMFROM = crisis country
 
 	is_triggered_only = yes
 
-    immediate = { AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_3 = 1 } }
+    immediate = { AIO_RAIT_effects_manager = { SUPERLIGHT_STAGE_3 = 1 } }
 
 	after = { hidden_effect = { country_event = { id = AIO_AIT_events.30324 days = 331 random = 20 } } }
 }
@@ -740,7 +740,7 @@ country_event = { # Thesis: Superlight FROOMFROMFROMFROM = crisis country
 
 	option = {
 		name = crisis.7230.a
-		AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_4 = 1 }
+		AIO_RAIT_effects_manager = { SUPERLIGHT_STAGE_4 = 1 }
 	}
 }
 # 超光-ai-四阶段
@@ -750,7 +750,7 @@ country_event = { # Thesis: Superlight FROOMFROMFROMFROM = crisis country
 
 	is_triggered_only = yes
 
-    immediate = { AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_4 = 1 } }
+    immediate = { AIO_RAIT_effects_manager = { SUPERLIGHT_STAGE_4 = 1 } }
 }
 
 # 合金延展性良性-触发
@@ -759,11 +759,11 @@ country_event = {
 	hide_window = yes
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_global_flag = AIO_AIT_existed_alloy_ductility } }
+	trigger = { NOT = { has_global_flag = AIO_RAIT_existed_alloy_ductility } }
 
 	immediate = {
-		set_country_flag = AIO_AIT_alloy_ductility_maker
-		set_global_flag = AIO_AIT_existed_alloy_ductility
+		set_country_flag = AIO_RAIT_alloy_ductility_maker
+		set_global_flag = AIO_RAIT_existed_alloy_ductility
 
 		no_scope = {
 			every_country = {
@@ -792,27 +792,27 @@ country_event = { # Thesis: Alloy Ductility - Good FROM = crisis country
 	title = "crisis.7235.name"
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
 		}
 		text = crisis.7235.desc.unknown
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
 		}
 		text = crisis.7235.desc.known
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
 		}
 		text = crisis.7235.desc.again
 	}
 	desc = {
-		trigger = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+		trigger = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
 		text = crisis.7235.desc.crisis
 	}
 
@@ -824,16 +824,16 @@ country_event = { # Thesis: Alloy Ductility - Good FROM = crisis country
 	option = { # 非AIO帝国
 		name = crisis.7235.a
 		trigger = { AIO_can_AIT = no }
-		AIO_AIT_effects_manager = { ALLOY_DUCTILITY_GOOD = 1 }
+		AIO_RAIT_effects_manager = { ALLOY_DUCTILITY_GOOD = 1 }
 	}
 
 	option = { # 其他AIO帝国
 		name = crisis.7235.b
 		trigger = {
 			AIO_can_AIT = yes
-			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
 		}
-		AIO_AIT_effects_manager = { ALLOY_DUCTILITY_GOOD = 1 }
+		AIO_RAIT_effects_manager = { ALLOY_DUCTILITY_GOOD = 1 }
 		add_monthly_resource_mult = {
 			resource = engineering_research
 			value = @tier4researchreward
@@ -844,9 +844,9 @@ country_event = { # Thesis: Alloy Ductility - Good FROM = crisis country
 
 	option = { # AIO帝国
 		name = crisis.7235.c
-		trigger = { has_country_flag = AIO_AIT_alloy_ductility_maker }
-		AIO_AIT_effects_manager = { ALLOY_DUCTILITY_GOOD = 1 }
-		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+		trigger = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
+		AIO_RAIT_effects_manager = { ALLOY_DUCTILITY_GOOD = 1 }
+		AIO_RAIT_effects_manager = { MAKER_CUSTOM_TOOLTIPS = 1 }
 	}
 }
 
@@ -856,11 +856,11 @@ country_event = {
 	hide_window = yes
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_global_flag = AIO_AIT_existed_alloy_ductility } }
+	trigger = { NOT = { has_global_flag = AIO_RAIT_existed_alloy_ductility } }
 
 	immediate = {
-		set_country_flag = AIO_AIT_alloy_ductility_maker
-		set_global_flag = AIO_AIT_existed_alloy_ductility
+		set_country_flag = AIO_RAIT_alloy_ductility_maker
+		set_global_flag = AIO_RAIT_existed_alloy_ductility
 
 		every_country = {
 			limit = { is_country_type = default }
@@ -887,27 +887,27 @@ country_event = { # Thesis: Alloy Ductility - Bad FROM = crisis country
 	title = "crisis.7240.name"
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
 		}
 		text = crisis.7240.desc.unknown
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
 		}
 		text = crisis.7240.desc.known
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
 		}
 		text = crisis.7240.desc.again
 	}
 	desc = {
-		trigger = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+		trigger = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
 		text = crisis.7240.desc.crisis
 	}
 
@@ -919,16 +919,16 @@ country_event = { # Thesis: Alloy Ductility - Bad FROM = crisis country
 	option = { # 非AIO帝国
 		name = crisis.7240.a
 		trigger = { AIO_can_AIT = no }
-		AIO_AIT_effects_manager = { ALLOY_DUCTILITY_BAD = 1 }
+		AIO_RAIT_effects_manager = { ALLOY_DUCTILITY_BAD = 1 }
 	}
 
 	option = { # 其他AIO帝国
 		name = crisis.7240.b
 		trigger = {
 			AIO_can_AIT = yes
-			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
 		}
-		AIO_AIT_effects_manager = { ALLOY_DUCTILITY_BAD = 1 }
+		AIO_RAIT_effects_manager = { ALLOY_DUCTILITY_BAD = 1 }
 		add_monthly_resource_mult = {
 			resource = engineering_research
 			value = @tier4researchreward
@@ -939,9 +939,9 @@ country_event = { # Thesis: Alloy Ductility - Bad FROM = crisis country
 
 	option = { # AIO帝国
 		name = crisis.7240.c
-		trigger = { has_country_flag = AIO_AIT_alloy_ductility_maker }
-		AIO_AIT_effects_manager = { ALLOY_DUCTILITY_BAD = 1 }
-		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+		trigger = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
+		AIO_RAIT_effects_manager = { ALLOY_DUCTILITY_BAD = 1 }
+		AIO_RAIT_effects_manager = { MAKER_CUSTOM_TOOLTIPS = 1 }
 	}
 }
 
@@ -951,11 +951,11 @@ country_event = {
 	hide_window = yes
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_global_flag = AIO_AIT_existed_altered_nutrition } }
+	trigger = { NOT = { has_global_flag = AIO_RAIT_existed_altered_nutrition } }
 
 	immediate = {
-		set_country_flag = AIO_AIT_altered_nutrition_maker
-		set_global_flag = AIO_AIT_existed_altered_nutrition
+		set_country_flag = AIO_RAIT_altered_nutrition_maker
+		set_global_flag = AIO_RAIT_existed_altered_nutrition
 
 		no_scope = {
 			every_country = {
@@ -987,27 +987,27 @@ country_event = { # Thesis: Altered Nutrition - Good FROM = crisis country
 	title = "crisis.7245.name"
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
 		}
 		text = crisis.7245.desc.unknown
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
 		}
 		text = crisis.7245.desc.known
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
 		}
 		text = crisis.7245.desc.again
 	}
 	desc = {
-		trigger = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+		trigger = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
 		text = crisis.7245.desc.crisis
 	}
 
@@ -1019,16 +1019,16 @@ country_event = { # Thesis: Altered Nutrition - Good FROM = crisis country
 	option = { #Non-Crisis option
 		name = crisis.7245.a
 		trigger = { NOT = { has_ascension_perk = ap_AIO_allinone } }
-		AIO_AIT_effects_manager = { ALTERED_NUTRITION_GOOD = 1 }
+		AIO_RAIT_effects_manager = { ALTERED_NUTRITION_GOOD = 1 }
 	}
 
 	option = { #Fellow-Crisis option
 		name = crisis.7245.b
 		trigger = {
 			has_ascension_perk = ap_AIO_allinone
-			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
 		}
-		AIO_AIT_effects_manager = { ALTERED_NUTRITION_GOOD = 1 }
+		AIO_RAIT_effects_manager = { ALTERED_NUTRITION_GOOD = 1 }
 		add_monthly_resource_mult = {
 			resource = society_research
 			value = @tier4researchreward
@@ -1039,9 +1039,9 @@ country_event = { # Thesis: Altered Nutrition - Good FROM = crisis country
 
 	option = { #Crisis option
 		name = crisis.7245.c
-		trigger = { has_country_flag = AIO_AIT_altered_nutrition_maker }
-		AIO_AIT_effects_manager = { ALTERED_NUTRITION_GOOD = 1 }
-		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+		trigger = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
+		AIO_RAIT_effects_manager = { ALTERED_NUTRITION_GOOD = 1 }
+		AIO_RAIT_effects_manager = { MAKER_CUSTOM_TOOLTIPS = 1 }
 	}
 }
 
@@ -1051,11 +1051,11 @@ country_event = {
 	hide_window = yes
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_global_flag = AIO_AIT_existed_altered_nutrition } }
+	trigger = { NOT = { has_global_flag = AIO_RAIT_existed_altered_nutrition } }
 
 	immediate = {
-		set_country_flag = AIO_AIT_altered_nutrition_maker
-		set_global_flag = AIO_AIT_existed_altered_nutrition
+		set_country_flag = AIO_RAIT_altered_nutrition_maker
+		set_global_flag = AIO_RAIT_existed_altered_nutrition
 
 		no_scope = {
 			every_country = {
@@ -1087,27 +1087,27 @@ country_event = { # Thesis: Altered Nutrition - Bad FROM = crisis country
 	title = "crisis.7250.name"
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
 		}
 		text = crisis.7250.desc.unknown
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
 		}
 		text = crisis.7250.desc.known
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
 		}
 		text = crisis.7250.desc.again
 	}
 	desc = {
-		trigger = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+		trigger = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
 		text = crisis.7250.desc.crisis
 	}
 
@@ -1119,16 +1119,16 @@ country_event = { # Thesis: Altered Nutrition - Bad FROM = crisis country
 	option = { #Non-Crisis option
 		name = crisis.7250.a
 		trigger = { AIO_can_AIT = no }
-		AIO_AIT_effects_manager = { ALTERED_NUTRITION_BAD = 1 }
+		AIO_RAIT_effects_manager = { ALTERED_NUTRITION_BAD = 1 }
 	}
 
 	option = { #Fellow-Crisis option
 		name = crisis.7250.b
 		trigger = {
 			AIO_can_AIT = yes
-			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
 		}
-		AIO_AIT_effects_manager = { ALTERED_NUTRITION_BAD = 1 }
+		AIO_RAIT_effects_manager = { ALTERED_NUTRITION_BAD = 1 }
 		add_monthly_resource_mult = {
 			resource = society_research
 			value = @tier4researchreward
@@ -1139,9 +1139,9 @@ country_event = { # Thesis: Altered Nutrition - Bad FROM = crisis country
 
 	option = { #Crisis option
 		name = crisis.7250.c
-		trigger = { has_country_flag = AIO_AIT_altered_nutrition_maker }
-		AIO_AIT_effects_manager = { ALTERED_NUTRITION_BAD = 1 }
-		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+		trigger = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
+		AIO_RAIT_effects_manager = { ALTERED_NUTRITION_BAD = 1 }
+		AIO_RAIT_effects_manager = { MAKER_CUSTOM_TOOLTIPS = 1 }
 	}
 }
 
@@ -1151,11 +1151,11 @@ country_event = { # this - maker
 	hide_window = yes
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_global_flag = AIO_AIT_existed_mass_shift } }
+	trigger = { NOT = { has_global_flag = AIO_RAIT_existed_mass_shift } }
 
 	immediate = {
-		set_country_flag = AIO_AIT_mass_shift_maker
-		set_global_flag = AIO_AIT_existed_mass_shift
+		set_country_flag = AIO_RAIT_mass_shift_maker
+		set_global_flag = AIO_RAIT_existed_mass_shift
 
 		no_scope = {
 			every_country = {
@@ -1165,7 +1165,7 @@ country_event = { # this - maker
 					country_event = { id = AIO_AIT_events.3081 }
 				}
 				else = {
-					AIO_AIT_effects_manager = { MASS_SHIFT = 1 }
+					AIO_RAIT_effects_manager = { MASS_SHIFT = 1 }
 					if = {
 						limit = {
 							NOT = { is_same_value = root }
@@ -1184,27 +1184,27 @@ country_event = { # Thesis: Mass Shift FROM = crisis country
 	title = "crisis.7255.name"
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_mass_shift_maker }
+			NOT = { has_country_flag = AIO_RAIT_mass_shift_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
 		}
 		text = crisis.7255.desc.unknown
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_mass_shift_maker }
+			NOT = { has_country_flag = AIO_RAIT_mass_shift_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
 		}
 		text = crisis.7255.desc.known
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_mass_shift_maker }
+			NOT = { has_country_flag = AIO_RAIT_mass_shift_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
 		}
 		text = crisis.7255.desc.again
 	}
 	desc = {
-		trigger = { has_country_flag = AIO_AIT_mass_shift_maker }
+		trigger = { has_country_flag = AIO_RAIT_mass_shift_maker }
 		text = crisis.7255.desc.crisis
 	}
 
@@ -1213,21 +1213,21 @@ country_event = { # Thesis: Mass Shift FROM = crisis country
 
 	is_triggered_only = yes
 
-	immediate = { AIO_AIT_effects_manager = { MASS_SHIFT = 1 } }
+	immediate = { AIO_RAIT_effects_manager = { MASS_SHIFT = 1 } }
 
 	option = { #Non-Crisis option
 		name = crisis.7255.a
 		trigger = { NOT = { has_ascension_perk = ap_AIO_allinone } }
-		AIO_AIT_effects_manager = { MASS_SHIFT_OPTION_SCRIPT = 1 }
+		AIO_RAIT_effects_manager = { MASS_SHIFT_OPTION_SCRIPT = 1 }
 	}
 
 	option = { #Fellow-Crisis option
 		name = crisis.7255.b
 		trigger = {
 			has_ascension_perk = ap_AIO_allinone
-			NOT = { has_country_flag = AIO_AIT_mass_shift_maker }
+			NOT = { has_country_flag = AIO_RAIT_mass_shift_maker }
 		}
-		AIO_AIT_effects_manager = { MASS_SHIFT_OPTION_SCRIPT = 1 }
+		AIO_RAIT_effects_manager = { MASS_SHIFT_OPTION_SCRIPT = 1 }
 		add_monthly_resource_mult = {
 			resource = physics_research
 			value = @tier4researchreward
@@ -1238,9 +1238,9 @@ country_event = { # Thesis: Mass Shift FROM = crisis country
 
 	option = { #Crisis option
 		name = crisis.7255.c
-		trigger = { has_country_flag = AIO_AIT_mass_shift_maker }
-		AIO_AIT_effects_manager = { MASS_SHIFT_OPTION_SCRIPT = 1 }
-		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+		trigger = { has_country_flag = AIO_RAIT_mass_shift_maker }
+		AIO_RAIT_effects_manager = { MASS_SHIFT_OPTION_SCRIPT = 1 }
+		AIO_RAIT_effects_manager = { MAKER_CUSTOM_TOOLTIPS = 1 }
 	}
 }
 
@@ -1250,13 +1250,13 @@ country_event = { # this - maker
 	hide_window = yes
 
 	is_triggered_only = yes
-	trigger = { NOT = { has_global_flag = AIO_AIT_existed_shroud_tear } }
+	trigger = { NOT = { has_global_flag = AIO_RAIT_existed_shroud_tear } }
 
 	immediate = {
-		AIO_AIT_effects_manager = { SHROUD_TEAR = 1 }
+		AIO_RAIT_effects_manager = { SHROUD_TEAR = 1 }
 
-		set_country_flag = AIO_AIT_shroud_tear_maker
-		set_global_flag = AIO_AIT_existed_shroud_tear
+		set_country_flag = AIO_RAIT_shroud_tear_maker
+		set_global_flag = AIO_RAIT_existed_shroud_tear
 
 		no_scope = {
 			every_country = {
@@ -1285,27 +1285,27 @@ country_event = { # FROM = maker
     title = "crisis.7260.name"
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_shroud_tear_maker }
+			NOT = { has_country_flag = AIO_RAIT_shroud_tear_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
 		}
 		text = crisis.7260.desc.unknown
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_shroud_tear_maker }
+			NOT = { has_country_flag = AIO_RAIT_shroud_tear_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
 		}
 		text = crisis.7260.desc.known
 	}
 	desc = {
 		trigger = {
-			NOT = { has_country_flag = AIO_AIT_shroud_tear_maker }
+			NOT = { has_country_flag = AIO_RAIT_shroud_tear_maker }
 			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
 		}
 		text = crisis.7260.desc.again
 	}
     desc = {
-        trigger = { has_country_flag = AIO_AIT_shroud_tear_maker }
+        trigger = { has_country_flag = AIO_RAIT_shroud_tear_maker }
         text = crisis.7260.desc.crisis
     }
 
@@ -1317,16 +1317,16 @@ country_event = { # FROM = maker
 	option = { #Non-Crisis option
 		name = crisis.7260.a
 		trigger = { AIO_can_AIT = no }
-		AIO_AIT_effects_manager = { SHROUD_TEAR_OPTION_SCRIPT = 1 }
+		AIO_RAIT_effects_manager = { SHROUD_TEAR_OPTION_SCRIPT = 1 }
 	}
 
 	option = { #Fellow-Crisis option
 		name = crisis.7260.b
 		trigger = {
 			AIO_can_AIT = yes
-			NOT = { has_country_flag = AIO_AIT_shroud_tear_maker }
+			NOT = { has_country_flag = AIO_RAIT_shroud_tear_maker }
 		}
-		AIO_AIT_effects_manager = { SHROUD_TEAR_OPTION_SCRIPT = 1 }
+		AIO_RAIT_effects_manager = { SHROUD_TEAR_OPTION_SCRIPT = 1 }
 		add_monthly_resource_mult = {
 			resource = physics_research
 			value = @tier4researchreward
@@ -1337,9 +1337,9 @@ country_event = { # FROM = maker
 
     option = { #Crisis option
 		name = crisis.7260.c
-        trigger = { has_country_flag = AIO_AIT_shroud_tear_maker }
-		AIO_AIT_effects_manager = { SHROUD_TEAR_OPTION_SCRIPT = 1 }
-		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+        trigger = { has_country_flag = AIO_RAIT_shroud_tear_maker }
+		AIO_RAIT_effects_manager = { SHROUD_TEAR_OPTION_SCRIPT = 1 }
+		AIO_RAIT_effects_manager = { MAKER_CUSTOM_TOOLTIPS = 1 }
 	}
 }
 
@@ -1349,11 +1349,11 @@ country_event = { # this - maker
     hide_window = yes
 
     is_triggered_only = yes
-	trigger = { NOT = { has_global_flag = AIO_AIT_existed_time_ruin } }
+	trigger = { NOT = { has_global_flag = AIO_RAIT_existed_time_ruin } }
 
     immediate = {
-		set_country_flag = AIO_AIT_time_ruin_maker
-		set_global_flag = AIO_AIT_existed_time_ruin
+		set_country_flag = AIO_RAIT_time_ruin_maker
+		set_global_flag = AIO_RAIT_existed_time_ruin
 
         no_scope = {
             every_country = {
@@ -1388,7 +1388,7 @@ planet_event = {
 	desc = {
 		trigger = {
 			owner = {
-				NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+				NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
 				is_gestalt = no
 			}
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
@@ -1398,7 +1398,7 @@ planet_event = {
 	desc = {
 		trigger = {
 			owner = {
-				NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+				NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
 				is_gestalt = no
 			}
 			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
@@ -1408,7 +1408,7 @@ planet_event = {
 	desc = {
 		trigger = {
 			owner = {
-				NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+				NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
 				is_gestalt = no
 			}
 			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
@@ -1419,7 +1419,7 @@ planet_event = {
     desc = {
 		trigger = {
 			owner = {
-				NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+				NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
 				is_gestalt = yes
 			}
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
@@ -1429,7 +1429,7 @@ planet_event = {
 	desc = {
 		trigger = {
 			owner = {
-				NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+				NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
 				is_gestalt = yes
 			}
 			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
@@ -1439,7 +1439,7 @@ planet_event = {
 	desc = {
 		trigger = {
 			owner = {
-				NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+				NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
 				is_gestalt = yes
 			}
 			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
@@ -1448,7 +1448,7 @@ planet_event = {
 	}
     # 肇事者
 	desc = {
-		trigger = { owner = { has_country_flag = AIO_AIT_time_ruin_maker } }
+		trigger = { owner = { has_country_flag = AIO_RAIT_time_ruin_maker } }
 		text = AIO_AIT_events.31011.desc.crisis
 	}
 
@@ -1467,7 +1467,7 @@ planet_event = {
 			}
         }
 		name = AIO_AIT_events.31011.not_crisis.normal.option_1
-        AIO_AIT_effects_manager = { TIME_RUIN_STAGE_1 = 1 }
+        AIO_RAIT_effects_manager = { TIME_RUIN_STAGE_1 = 1 }
 	}
 
     option = { #Non-Crisis option
@@ -1478,7 +1478,7 @@ planet_event = {
 			}
         }
 		name = AIO_AIT_events.31011.not_crisis.gestalt.option_1
-        AIO_AIT_effects_manager = { TIME_RUIN_STAGE_1 = 1 }
+        AIO_RAIT_effects_manager = { TIME_RUIN_STAGE_1 = 1 }
 	}
 
 	option = { #Fellow-Crisis option
@@ -1486,10 +1486,10 @@ planet_event = {
 		trigger = {
             owner = {
                 AIO_can_AIT = yes
-                NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+                NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
             }
 		}
-		AIO_AIT_effects_manager = { TIME_RUIN_STAGE_1 = 1 }
+		AIO_RAIT_effects_manager = { TIME_RUIN_STAGE_1 = 1 }
         owner = {
             add_monthly_resource_mult = {
                 resource = physics_research
@@ -1502,9 +1502,9 @@ planet_event = {
 
 	option = { #Crisis option
 		name = AIO_AIT_events.31011.crisis.option_1
-		trigger = { owner = { has_country_flag = AIO_AIT_time_ruin_maker } }
-        AIO_AIT_effects_manager = { TIME_RUIN_STAGE_1 = 1 }
-		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+		trigger = { owner = { has_country_flag = AIO_RAIT_time_ruin_maker } }
+        AIO_RAIT_effects_manager = { TIME_RUIN_STAGE_1 = 1 }
+		AIO_RAIT_effects_manager = { MAKER_CUSTOM_TOOLTIPS = 1 }
 	}
 
     after = {
@@ -1583,11 +1583,11 @@ planet_event = {
                 resource_stockpile_compare = { resource = energy value >= 2000 }
             }
         }
-        AIO_AIT_effects_manager = { TIME_RUIN_STAGE_2_OPT1 = 1 }
+        AIO_RAIT_effects_manager = { TIME_RUIN_STAGE_2_OPT1 = 1 }
 	}
     option = {
 		name = AIO_AIT_events.31012.normal.option_2
-        AIO_AIT_effects_manager = { TIME_RUIN_STAGE_2_OPT2 = 1 }
+        AIO_RAIT_effects_manager = { TIME_RUIN_STAGE_2_OPT2 = 1 }
 	}
 
     after = {
@@ -1624,9 +1624,9 @@ planet_event = {
 					resource_stockpile_compare = { resource = energy value >= 2000 }
 				}
 			}
-            AIO_AIT_effects_manager = { TIME_RUIN_STAGE_2_OPT1 = 1 }
+            AIO_RAIT_effects_manager = { TIME_RUIN_STAGE_2_OPT1 = 1 }
         }
-        else = { AIO_AIT_effects_manager = { TIME_RUIN_STAGE_2_OPT2 = 1 } }
+        else = { AIO_RAIT_effects_manager = { TIME_RUIN_STAGE_2_OPT2 = 1 } }
 
         planet_event = { id = AIO_AIT_events.31023 days = 180 }
     }
@@ -1654,7 +1654,7 @@ planet_event = {
 
     option = {
 		name = AIO_AIT_events.31013.option_1
-        AIO_AIT_effects_manager = { TIME_RUIN_STAGE_3_OPT1 = 1 }
+        AIO_RAIT_effects_manager = { TIME_RUIN_STAGE_3_OPT1 = 1 }
 	}
 
 	option = {
@@ -1682,7 +1682,7 @@ planet_event = {
 	is_triggered_only = yes
     trigger = { has_planet_flag = AIO_AIT_time_ruin_planet }
 
-	immediate = { AIO_AIT_effects_manager = { TIME_RUIN_STAGE_3_OPT1 = 1 } }
+	immediate = { AIO_RAIT_effects_manager = { TIME_RUIN_STAGE_3_OPT1 = 1 } }
 }
 
 # 时间之墟-玩家-四阶段
@@ -1695,8 +1695,8 @@ planet_event = {
         trigger = {
 			owner = { AIO_can_AIT = no }
 			OR= {
-				has_modifier = AIO_AIT_TR_stage_2_opt_1_modifier  # 镇压和清算
-				has_modifier = AIO_AIT_TR_stage_3_liquidation_modifier  # 镇压、清算和研究
+				has_modifier = AIO_RAIT_TR_stage_2_opt_1_modifier  # 镇压和清算
+				has_modifier = AIO_RAIT_TR_stage_3_liquidation_modifier  # 镇压、清算和研究
 			}
 		}
         text = AIO_AIT_events.31014.desc.not_crisis.liquidation
@@ -1709,9 +1709,9 @@ planet_event = {
 				AIO_can_AIT = no
 			}
 			OR = {
-				has_modifier = AIO_AIT_TR_stage_1_modifier  # 啥也没干
-				has_modifier = AIO_AIT_TR_stage_2_opt_2_modifier  # 镇压、不清算
-				has_modifier = AIO_AIT_TR_stage_3_unliquidation_modifier  # 镇压、不清算和研究
+				has_modifier = AIO_RAIT_TR_stage_1_modifier  # 啥也没干
+				has_modifier = AIO_RAIT_TR_stage_2_opt_2_modifier  # 镇压、不清算
+				has_modifier = AIO_RAIT_TR_stage_3_unliquidation_modifier  # 镇压、不清算和研究
 			}
         }
         text = AIO_AIT_events.31014.desc.not_crisis.unliquidation
@@ -1723,7 +1723,7 @@ planet_event = {
 				is_gestalt = yes
 				AIO_can_AIT = no
 			}
-            has_modifier = AIO_AIT_TR_stage_1_modifier
+            has_modifier = AIO_RAIT_TR_stage_1_modifier
         }
         text = AIO_AIT_events.31014.desc.not_crisis.gestalt
     }
@@ -1751,14 +1751,14 @@ planet_event = {
         trigger = {
 			owner = { AIO_can_AIT = no }
 			OR= {
-				has_modifier = AIO_AIT_TR_stage_2_opt_1_modifier  # 镇压和清算
-				has_modifier = AIO_AIT_TR_stage_3_liquidation_modifier  # 镇压、清算和研究
+				has_modifier = AIO_RAIT_TR_stage_2_opt_1_modifier  # 镇压和清算
+				has_modifier = AIO_RAIT_TR_stage_3_liquidation_modifier  # 镇压、清算和研究
 			}
 		}
-        remove_modifier = AIO_AIT_TR_stage_3_liquidation_modifier
+        remove_modifier = AIO_RAIT_TR_stage_3_liquidation_modifier
         remove_deposit = d_AIO_TR_stage_1
         remove_deposit = d_AIO_TR_stage_3
-        add_modifier = { modifier = AIO_AIT_TR_stage_4_liquidation_modifier years = 3 }
+        add_modifier = { modifier = AIO_RAIT_TR_stage_4_liquidation_modifier years = 3 }
         add_deposit = d_AIO_TR_monument
 		owner = {
 			add_monthly_resource_mult = {
@@ -1777,16 +1777,16 @@ planet_event = {
 				AIO_can_AIT = no
 			}
 			OR = {
-				has_modifier = AIO_AIT_TR_stage_1_modifier  # 啥也没干
-				has_modifier = AIO_AIT_TR_stage_2_opt_2_modifier  # 镇压、不清算
-				has_modifier = AIO_AIT_TR_stage_3_unliquidation_modifier  # 镇压、不清算和研究
+				has_modifier = AIO_RAIT_TR_stage_1_modifier  # 啥也没干
+				has_modifier = AIO_RAIT_TR_stage_2_opt_2_modifier  # 镇压、不清算
+				has_modifier = AIO_RAIT_TR_stage_3_unliquidation_modifier  # 镇压、不清算和研究
 			}
         }
 		switch = {
 			trigger = has_modifier
-			AIO_AIT_TR_stage_1_modifier = { remove_modifier = AIO_AIT_TR_stage_1_modifier }
-			AIO_AIT_TR_stage_2_opt_2_modifier = { remove_modifier = AIO_AIT_TR_stage_2_opt_2_modifier }
-			AIO_AIT_TR_stage_3_unliquidation_modifier = { remove_modifier = AIO_AIT_TR_stage_3_unliquidation_modifier }
+			AIO_RAIT_TR_stage_1_modifier = { remove_modifier = AIO_RAIT_TR_stage_1_modifier }
+			AIO_RAIT_TR_stage_2_opt_2_modifier = { remove_modifier = AIO_RAIT_TR_stage_2_opt_2_modifier }
+			AIO_RAIT_TR_stage_3_unliquidation_modifier = { remove_modifier = AIO_RAIT_TR_stage_3_unliquidation_modifier }
 		}
 		if = {
 			limit = { has_deposit = d_AIO_TR_stage_1 }
@@ -1797,7 +1797,7 @@ planet_event = {
 			remove_deposit = d_AIO_TR_stage_3
 		}
 		add_planet_devastation = 20
-        owner = { add_modifier = { modifier = AIO_AIT_TR_stage_4_unliquidation_modifier years = 3 } }
+        owner = { add_modifier = { modifier = AIO_RAIT_TR_stage_4_unliquidation_modifier years = 3 } }
 	}
     option = {
 		name = AIO_AIT_events.31014.option_1.normal
@@ -1806,9 +1806,9 @@ planet_event = {
 				is_gestalt = yes
 				AIO_can_AIT = no
 			}
-            has_modifier = AIO_AIT_TR_stage_1_modifier
+            has_modifier = AIO_RAIT_TR_stage_1_modifier
         }
-        remove_modifier = AIO_AIT_TR_stage_1_modifier
+        remove_modifier = AIO_RAIT_TR_stage_1_modifier
 		if = {
 			limit = { has_deposit = d_AIO_TR_stage_1 }
 			remove_deposit = d_AIO_TR_stage_1
@@ -1824,14 +1824,14 @@ planet_event = {
             owner = { AIO_can_AIT = yes }
 			NOT = { has_planet_flag = AIO_finish_TR_special_project_release }
         }
-        remove_modifier = AIO_AIT_TR_stage_1_modifier
+        remove_modifier = AIO_RAIT_TR_stage_1_modifier
         remove_deposit = d_AIO_TR_stage_1
 	}
     option = {
 		name = AIO_AIT_events.31041.option_1.crisis.success
         custom_tooltip = add_crisis_currency_tt
         trigger = { has_planet_flag = AIO_finish_TR_special_project_release }
-        remove_modifier = AIO_AIT_TR_stage_1_modifier
+        remove_modifier = AIO_RAIT_TR_stage_1_modifier
         remove_deposit = d_AIO_TR_stage_1
         owner = {
             hidden_effect = {
@@ -1875,10 +1875,10 @@ planet_event = {
 
         switch = {
             trigger = has_modifier
-            AIO_AIT_TR_stage_1_modifier = { remove_modifier = AIO_AIT_TR_stage_1_modifier }
-            AIO_AIT_TR_stage_3_liquidation_modifier = {
-                remove_modifier = AIO_AIT_TR_stage_3_liquidation_modifier
-                add_modifier = { modifier = AIO_AIT_TR_stage_4_liquidation_modifier years = 3 }
+            AIO_RAIT_TR_stage_1_modifier = { remove_modifier = AIO_RAIT_TR_stage_1_modifier }
+            AIO_RAIT_TR_stage_3_liquidation_modifier = {
+                remove_modifier = AIO_RAIT_TR_stage_3_liquidation_modifier
+                add_modifier = { modifier = AIO_RAIT_TR_stage_4_liquidation_modifier years = 3 }
                 add_deposit = d_AIO_TR_monument
 				owner = {
 					add_monthly_resource_mult = {
@@ -1889,10 +1889,10 @@ planet_event = {
 					}
 				}
             }
-            AIO_AIT_TR_stage_3_unliquidation_modifier = {
-                remove_modifier = AIO_AIT_TR_stage_3_unliquidation_modifier
+            AIO_RAIT_TR_stage_3_unliquidation_modifier = {
+                remove_modifier = AIO_RAIT_TR_stage_3_unliquidation_modifier
 				add_planet_devastation = 20
-                owner = { add_modifier = { modifier = AIO_AIT_TR_stage_4_unliquidation_modifier years = 3 } }
+                owner = { add_modifier = { modifier = AIO_RAIT_TR_stage_4_unliquidation_modifier years = 3 } }
             }
         }
 
@@ -1926,11 +1926,11 @@ planet_event = {
 		}
         switch = {
             trigger = has_modifier
-            AIO_AIT_TR_stage_1_modifier = { remove_modifier = AIO_AIT_TR_stage_1_modifier }
-			AIO_AIT_TR_stage_2_opt_1_modifier = { remove_modifier = AIO_AIT_TR_stage_2_opt_1_modifier }
-			AIO_AIT_TR_stage_2_opt_2_modifier = { remove_modifier = AIO_AIT_TR_stage_2_opt_2_modifier }
-            AIO_AIT_TR_stage_3_liquidation_modifier = { remove_modifier = AIO_AIT_TR_stage_3_liquidation_modifier }
-            AIO_AIT_TR_stage_3_unliquidation_modifier = { remove_modifier = AIO_AIT_TR_stage_3_unliquidation_modifier }
+            AIO_RAIT_TR_stage_1_modifier = { remove_modifier = AIO_RAIT_TR_stage_1_modifier }
+			AIO_RAIT_TR_stage_2_opt_1_modifier = { remove_modifier = AIO_RAIT_TR_stage_2_opt_1_modifier }
+			AIO_RAIT_TR_stage_2_opt_2_modifier = { remove_modifier = AIO_RAIT_TR_stage_2_opt_2_modifier }
+            AIO_RAIT_TR_stage_3_liquidation_modifier = { remove_modifier = AIO_RAIT_TR_stage_3_liquidation_modifier }
+            AIO_RAIT_TR_stage_3_unliquidation_modifier = { remove_modifier = AIO_RAIT_TR_stage_3_unliquidation_modifier }
         }
         remove_planet_flag = AIO_AIT_time_ruin_planet
 	}
@@ -1942,11 +1942,11 @@ country_event = { # this - maker
     hide_window = yes
 
     is_triggered_only = yes
-	trigger = { NOT = { has_global_flag = AIO_AIT_existed_gravity_swell } }
+	trigger = { NOT = { has_global_flag = AIO_RAIT_existed_gravity_swell } }
 
     immediate = {
-		set_country_flag = AIO_AIT_gravity_swell_maker
-		set_global_flag = AIO_AIT_existed_gravity_swell
+		set_country_flag = AIO_RAIT_gravity_swell_maker
+		set_global_flag = AIO_RAIT_existed_gravity_swell
 
         no_scope = {
             every_country = {
@@ -2002,28 +2002,28 @@ system_event = { # from - maker
 	# 受害者
 	desc = {
 		trigger = {
-			owner = { NOT = { has_country_flag = AIO_AIT_gravity_swell_maker } }
+			owner = { NOT = { has_country_flag = AIO_RAIT_gravity_swell_maker } }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
 		}
 		text = AIO_AIT_events.31111.desc.unknown
 	}
 	desc = {
 		trigger = {
-			owner = { NOT = { has_country_flag = AIO_AIT_gravity_swell_maker } }
+			owner = { NOT = { has_country_flag = AIO_RAIT_gravity_swell_maker } }
 			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
 		}
 		text = AIO_AIT_events.31111.desc.known
 	}
 	desc = {
 		trigger = {
-			owner = { NOT = { has_country_flag = AIO_AIT_gravity_swell_maker } }
+			owner = { NOT = { has_country_flag = AIO_RAIT_gravity_swell_maker } }
 			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
 		}
 		text = AIO_AIT_events.31111.desc.again
 	}
 	# 肇事者
 	desc = {
-		trigger = { owner = { has_country_flag = AIO_AIT_gravity_swell_maker } }
+		trigger = { owner = { has_country_flag = AIO_RAIT_gravity_swell_maker } }
 		text = AIO_AIT_events.31111.desc.maker
 	}
 
@@ -2041,16 +2041,16 @@ system_event = { # from - maker
 
 	option = {
 		trigger = {
-			owner = { NOT = { has_country_flag = AIO_AIT_gravity_swell_maker } }
+			owner = { NOT = { has_country_flag = AIO_RAIT_gravity_swell_maker } }
 			AIO_can_AIT = yes
 		}
 		name = AIO_AIT_events.31111.crisis.not_maker.option_1
 	}
 
 	option = {
-		trigger = { owner = { has_country_flag = AIO_AIT_gravity_swell_maker } }
+		trigger = { owner = { has_country_flag = AIO_RAIT_gravity_swell_maker } }
 		name = AIO_AIT_events.31111.crisis.marker.option_1
-		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+		AIO_RAIT_effects_manager = { MAKER_CUSTOM_TOOLTIPS = 1 }
 	}
 
 	after = {
@@ -2119,19 +2119,19 @@ system_event = {
 	option = {
 		name = AIO_AIT_events.31112.not_crisis.has_colony.option_1
 		trigger = { AIO_system_existed_natural_colony = yes }
-		star = { AIO_AIT_effects_manager = { GRAVITY_SWELL_STAGE_2 = 1 } }
+		star = { AIO_RAIT_effects_manager = { GRAVITY_SWELL_STAGE_2 = 1 } }
 	}
 
 	option = {
 		name = AIO_AIT_events.31112.no_colony.option_1
 		trigger = { AIO_system_existed_natural_colony = no }
-		star = { AIO_AIT_effects_manager = { GRAVITY_SWELL_STAGE_2 = 1 } }
+		star = { AIO_RAIT_effects_manager = { GRAVITY_SWELL_STAGE_2 = 1 } }
 	}
 
 	option = {
 		name = AIO_AIT_events.31112.crisis.option_1
 		trigger = { owner = { AIO_can_AIT = yes } }
-		star = { AIO_AIT_effects_manager = { GRAVITY_SWELL_STAGE_2 = 1 } }
+		star = { AIO_RAIT_effects_manager = { GRAVITY_SWELL_STAGE_2 = 1 } }
 	}
 
 	after = {
@@ -2492,9 +2492,9 @@ country_event = {
             every_system_within_border = {
                 limit = { NOT = { is_star_class = sc_AIO_void } }
                 random_list = {
-                    1 = { AIO_AIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 3 } }
-                    3 = { AIO_AIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 2 } }
-                    4 = { AIO_AIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 1 } }
+                    1 = { AIO_RAIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 3 } }
+                    3 = { AIO_RAIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 2 } }
+                    4 = { AIO_RAIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 1 } }
                     2 = {  }
                 }
             }
