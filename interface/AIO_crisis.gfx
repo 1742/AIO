@@ -1,0 +1,183 @@
+spriteTypes = {
+    # 等级图标
+    spriteType = {
+		name = "GFX_crisis_AIO_level_1_btn"
+ 		texturefile = gfx/interface/icons/crisis/AIO_Lvl1_btn.dds
+  		noOfFrames = 2
+  	}
+  	spriteType = {
+		name = "GFX_crisis_AIO_level_2_btn"
+  		texturefile = gfx/interface/icons/crisis/AIO_Lvl2_btn.dds
+  		noOfFrames = 2
+	}
+   	spriteType = {
+  		name = "GFX_crisis_AIO_level_3_btn"
+   		texturefile = gfx/interface/icons/crisis/AIO_Lvl3_btn.dds
+  		noOfFrames = 2
+  	}
+	spriteType = {
+   		name = "GFX_crisis_AIO_level_4_btn"
+   		texturefile = gfx/interface/icons/crisis/AIO_Lvl4_btn.dds
+  		noOfFrames = 2
+   	}
+  	spriteType = {
+  		name = "GFX_crisis_AIO_level_5_btn"
+  		texturefile = gfx/interface/icons/crisis/AIO_Lvl5_btn.dds
+  		noOfFrames = 2
+  	}
+
+    # 进度条颜色和底色
+    progressbarType = {
+		name = "GFX_AIO_path_progressbar"
+		color = { 1.0 1.0 1.0 }
+		colorTwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/crisis/AIO_crisis_progress_bar.dds"
+		textureFile2 = "gfx/interface/crisis/Crisis_progressBar_BG.dds"
+		size = { x = 10 y = 432 }
+		effectFile = "gfx/FX/progress.shader"
+		horizontal = no
+		flipdirection = yes
+	}
+
+	# 等级框
+	spriteType = {
+		name = "GFX_AIO_path_level_boxes"
+		# texturefile = gfx/interface/crisis/AIO_LevelBoxes.dds
+		texturefile = gfx/interface/crisis/AIO_menp_box.dds
+		noOfFrames = 2
+	}
+
+    # 等级条背景68x504
+    spriteType = {
+		name = "GFX_AIO_path_levels_frame"
+		texturefile = gfx/interface/crisis/AIO_crisis_levels_frame.dds
+	}
+
+    # 天灾界面背景 738x536，UIOD下1038x536
+    corneredTileSpriteType = {
+		name = "GFX_AIO_path_bg"
+		texturefile = gfx/interface/crisis/AIO_BG.dds
+		borderSize = { x = 0 y = 0 }
+		effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+	}
+
+	# 天灾界面右上角横条
+	spriteType = {
+		name = "GFX_AIO_path_title_box"
+		texturefile = gfx/interface/crisis/AIO_Title.dds
+	}
+
+	# 奖励图标
+	# 超然逻辑
+	spriteType = {
+		name = "GFX_menp_AIO_al_research_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_al_research.dds
+		noOfFrames = 2
+	}
+	# 一阶老登建筑
+	spriteType = {
+		name = "GFX_menp_AIO_buildings_1_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_1.dds
+		noOfFrames = 2
+	}
+	# 矛与盾
+	spriteType = {
+		name = "GFX_menp_AIO_fleet_component_1_1_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_fleet_component_1_1.dds
+		noOfFrames = 2
+	}
+	# 纳米虫群
+	spriteType = {
+		name = "GFX_menp_AIO_fleet_component_1_2_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_fleet_component_1_2.dds
+		noOfFrames = 2
+	}
+
+	# 铸门之人
+	spriteType = {
+		name = "GFX_menp_AIO_mega_02_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_mega_02.dds
+		noOfFrames = 2
+	}
+	# 二阶老登建筑
+	spriteType = {
+		name = "GFX_menp_AIO_buildings_2_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_2.dds
+		noOfFrames = 2
+	}
+	# 密语护航
+	spriteType = {
+		name = "GFX_menp_AIO_ship_2_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_ship_2.dds
+		noOfFrames = 2
+	}
+	# 反重子进展
+	spriteType = {
+		name = "GFX_menp_AIO_fleet_component_2_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_fleet_component_2.dds
+		noOfFrames = 2
+	}
+
+	# 时空工程
+	spriteType = {
+		name = "GFX_menp_AIO_mega_03_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_mega_03.dds
+		noOfFrames = 2
+	}
+	# 三阶老登建筑
+	spriteType = {
+		name = "GFX_menp_AIO_buildings_3_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_3.dds
+		noOfFrames = 2
+	}
+	# 奇异反重子
+	spriteType = {
+		name = "GFX_menp_AIO_fleet_component_3_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_fleet_component_3.dds
+		noOfFrames = 2
+	}
+	# 神秘战巡
+	spriteType = {
+		name = "GFX_menp_AIO_ship_3_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_ship_3.dds
+		noOfFrames = 2
+	}
+
+	# 恒视之主
+	spriteType = {
+		name = "GFX_menp_AIO_mega_04_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_mega_04.dds
+		noOfFrames = 2
+	}
+	# 四阶老登建筑
+	spriteType = {
+		name = "GFX_menp_AIO_buildings_4_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_4.dds
+		noOfFrames = 2
+	}
+	# 悖论泰坦
+	spriteType = {
+		name = "GFX_menp_AIO_ship_4_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_ship_4.dds
+		noOfFrames = 2
+	}
+
+	# 维度嵌入
+	spriteType = {
+		name = "GFX_menp_AIO_mega_05_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_mega_05.dds
+		noOfFrames = 2
+	}
+	# 五阶老登建筑
+	spriteType = {
+		name = "GFX_menp_AIO_buildings_5_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_5.dds
+		noOfFrames = 2
+	}
+	# 雪崩效应
+	spriteType = {
+		name = "GFX_menp_AIO_ascension_accelerate_5_icon"
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_ascension_accelerate_5.dds
+		noOfFrames = 2
+	}
+}

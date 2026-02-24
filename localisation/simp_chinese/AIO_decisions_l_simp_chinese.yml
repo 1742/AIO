@@ -1,0 +1,3 @@
+﻿l_simp_chinese:
+ decision_AIO_change_pc: "$AIO_DAIT_weave_substrate_modifier$"
+ decision_AIO_change_pc_desc: "£time£ 1000天后将星球改造成指定类型。"

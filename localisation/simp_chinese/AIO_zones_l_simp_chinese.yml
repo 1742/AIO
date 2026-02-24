@@ -1,0 +1,22 @@
+﻿l_simp_chinese:
+ # 套娃脑特化
+ zone_AIO_matryoshka_brain: "套娃脑特化"
+ zone_AIO_matryoshka_brain_desc: "$district_AIO_matryoshka_brain_desc$"
+ # 暗物质生产特化
+ zone_AIO_dm_production: "暗物质合成复合体"
+ zone_AIO_dm_production_desc: "常规能量的流转仅是宇宙表象。通过调谐子个体的劳作模式，生产更深层次的物质——暗物质。"
+ # 塔械组装及活体金属生产
+ zone_AIO_lm_production_machine_empire: "活金合成"
+ zone_AIO_lm_production_machine_empire_desc: "通过重组装配流水线并引入活体金属嵌合，机械子个体的生成速率被大幅提升。"
+ # 蜂巢组装及活体金属生产
+ zone_AIO_lm_production_hive_empire: "活金孵育"
+ zone_AIO_lm_production_hive_empire_desc: "活体金属被融入有机基质，孵育腔室在脉动与蠕动间孕育出更迅捷的新生体。"
+ # 矿工岗纳米机器人生产特化
+ zone_AIO_nanites_production_minerals: "纳米开采"
+ zone_AIO_nanites_production_minerals_desc: "星球的矿藏被重新定义为纳米级别的原始基质。采矿子个体不再仅仅开采矿石，而是在星壳中引导物质自我崩解、重组，并直接孕育出纳米群落。"
+ # 合金岗纳米机器人生产特化
+ zone_AIO_nanites_production_metallurgists: "纳米组装"
+ zone_AIO_nanites_production_metallurgists_desc: "我们不再满足于锻造冰冷的合金，我们催生出亿兆级别的自律构造单元——纳米机器人。它们是一种资源，也是一种未来的躯壳，正如铁器取代青铜，它们将取代一切。"
+ # 食物岗纳米机器人生产特化
+ zone_AIO_nanites_production_farmers: "纳米培育"
+ zone_AIO_nanites_production_farmers_desc: "这些巢腔并非喂养口腹，而是孕育遍布全体的纳米群落。子个体的饥饿，是纳米潮汐的盛宴。"

@@ -1,0 +1,384 @@
+# AIO静态修正
+
+# 时间之墟一阶段修正
+AIO_AIT_TR_stage_1_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
+
+    planet_stability_mult = -0.6
+    planet_crime_mult = 10
+    logistic_growth_mult = -10
+    planet_pop_assembly_mult = -10
+    planet_pops_produces_mult = -10
+    planet_pops_upkeep_mult = -10
+
+    planet_jobs_produces_mult = -10
+    planet_jobs_upkeep_mult = -10
+    planet_buildings_produces_mult = -10
+    planet_buildings_upkeep_mult = -10
+
+    terraform_speed_mult = -1
+    planet_building_build_speed_mult = -1
+    planet_orbital_bombardment_damage = -100
+}
+# 时间之墟二阶段修正
+AIO_AIT_TR_stage_2_opt_1_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
+
+    logistic_growth_mult = -10
+    planet_pop_assembly_mult = -10
+    planet_pops_upkeep_mult = -10
+
+    planet_jobs_energy_produces_mult = -10
+    planet_jobs_minerals_produces_mult = -10
+    planet_jobs_food_produces_mult = -10
+    planet_jobs_alloys_produces_mult = -10
+    planet_jobs_consumer_goods_produces_mult = -10
+    planet_jobs_volatile_motes_produces_mult = -10
+    planet_jobs_exotic_gases_produces_mult = -10
+    planet_jobs_rare_crystals_produces_mult = -10
+    planet_jobs_sr_living_metal_produces_mult = -10
+    planet_jobs_sr_zro_produces_mult = -10
+    planet_jobs_sr_dark_matter_produces_mult = -10
+    planet_jobs_nanites_produces_mult = -10
+
+    planet_jobs_unity_produces_mult = 0.5
+    planet_jobs_trade_produces_mult = 0.2
+
+    planet_jobs_upkeep_mult = -10
+    planet_buildings_produces_mult = -10
+    planet_buildings_upkeep_mult = -10
+
+    terraform_speed_mult = -1
+    planet_building_build_speed_mult = -1
+    planet_orbital_bombardment_damage = -100
+}
+AIO_AIT_TR_stage_2_opt_2_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
+
+    logistic_growth_mult = -10
+    planet_pop_assembly_mult = -10
+    planet_pops_upkeep_mult = -10
+
+    planet_jobs_energy_produces_mult = -10
+    planet_jobs_minerals_produces_mult = -10
+    planet_jobs_food_produces_mult = -10
+    planet_jobs_alloys_produces_mult = -10
+    planet_jobs_consumer_goods_produces_mult = -10
+    planet_jobs_volatile_motes_produces_mult = -10
+    planet_jobs_exotic_gases_produces_mult = -10
+    planet_jobs_rare_crystals_produces_mult = -10
+    planet_jobs_sr_living_metal_produces_mult = -10
+    planet_jobs_sr_zro_produces_mult = -10
+    planet_jobs_sr_dark_matter_produces_mult = -10
+    planet_jobs_nanites_produces_mult = -10
+
+    planet_jobs_unity_produces_mult = -0.8
+    planet_jobs_trade_produces_mult = 1
+
+    planet_jobs_upkeep_mult = -10
+    planet_buildings_produces_mult = -10
+    planet_buildings_upkeep_mult = -10
+
+    terraform_speed_mult = -1
+    planet_building_build_speed_mult = -1
+    planet_orbital_bombardment_damage = -100
+}
+# 时间之墟三阶段修正
+AIO_AIT_TR_stage_3_liquidation_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
+
+    logistic_growth_mult = -10
+    planet_pop_assembly_mult = -10
+    planet_pops_upkeep_mult = -10
+
+    planet_jobs_energy_produces_mult = -10
+    planet_jobs_minerals_produces_mult = -10
+    planet_jobs_food_produces_mult = -10
+    planet_jobs_alloys_produces_mult = -10
+    planet_jobs_consumer_goods_produces_mult = -10
+    planet_jobs_volatile_motes_produces_mult = -10
+    planet_jobs_exotic_gases_produces_mult = -10
+    planet_jobs_rare_crystals_produces_mult = -10
+    planet_jobs_sr_living_metal_produces_mult = -10
+    planet_jobs_sr_zro_produces_mult = -10
+    planet_jobs_sr_dark_matter_produces_mult = -10
+    planet_jobs_nanites_produces_mult = -10
+
+    planet_jobs_physics_research_produces_mult = 0.3
+    planet_jobs_society_research_produces_mult = 0.3
+    planet_jobs_engineering_research_produces_mult = 0.3
+    planet_jobs_unity_produces_mult = 0.5
+    planet_jobs_trade_produces_mult = 0.2
+
+    planet_jobs_upkeep_mult = -10
+    planet_buildings_produces_mult = -10
+    planet_buildings_upkeep_mult = -10
+
+    terraform_speed_mult = -1
+    planet_building_build_speed_mult = -1
+    planet_orbital_bombardment_damage = -100
+}
+AIO_AIT_TR_stage_3_unliquidation_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
+
+    logistic_growth_mult = -10
+    planet_pop_assembly_mult = -10
+    planet_pops_upkeep_mult = -10
+
+    planet_jobs_energy_produces_mult = -10
+    planet_jobs_minerals_produces_mult = -10
+    planet_jobs_food_produces_mult = -10
+    planet_jobs_alloys_produces_mult = -10
+    planet_jobs_consumer_goods_produces_mult = -10
+    planet_jobs_volatile_motes_produces_mult = -10
+    planet_jobs_exotic_gases_produces_mult = -10
+    planet_jobs_rare_crystals_produces_mult = -10
+    planet_jobs_sr_living_metal_produces_mult = -10
+    planet_jobs_sr_zro_produces_mult = -10
+    planet_jobs_sr_dark_matter_produces_mult = -10
+    planet_jobs_nanites_produces_mult = -10
+
+    planet_jobs_physics_research_produces_mult = 0.3
+    planet_jobs_society_research_produces_mult = 0.3
+    planet_jobs_engineering_research_produces_mult = 0.3
+    planet_jobs_unity_produces_mult = -0.8
+    planet_jobs_trade_produces_mult = 1
+
+    planet_jobs_upkeep_mult = -10
+    planet_buildings_produces_mult = -10
+    planet_buildings_upkeep_mult = -10
+
+    terraform_speed_mult = -1
+    planet_building_build_speed_mult = -1
+    planet_orbital_bombardment_damage = -100
+}
+# 时间之墟四阶段修正
+AIO_AIT_TR_stage_4_liquidation_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_planet_stability_mult.dds
+
+    planet_stability_mult = 0.2
+    planet_crime_mult = -0.2
+    logistic_growth_mult = 0.2
+    planet_pop_assembly_mult = 0.2
+
+    planet_amenities_mult = 0.2
+    planet_jobs_unity_produces_mult = 0.5
+    planet_jobs_trade_produces_mult = 0.2
+}
+AIO_AIT_TR_stage_4_unliquidation_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
+
+    planet_stability_mult = -0.2
+    planet_crime_mult = 0.3
+    planet_amenities_mult = -0.2
+}
+
+# 反热力学第二定律
+AIO_DAIT_ASLT_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_energy_upkeep_mult.dds
+
+    planet_stability_mult = 0.2
+    planet_jobs_energy_upkeep_mult = -0.2
+    planet_buildings_energy_upkeep_mult = -0.3
+    megastructures_energy_upkeep_mult = -0.3
+    ships_energy_upkeep_mult = -0.2
+    starbases_energy_upkeep_mult = -0.3
+
+    empire_size_mult = 0.2
+    physics_tech_cost_mult = 0.2
+    society_tech_cost_mult = 0.2
+    engineering_tech_cost_mult = 0.2
+}
+
+# 反因果律
+AIO_DAIT_uncausality_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_cost_mult.dds
+
+    planet_buildings_cost_mult = -0.2
+    megastructures_cost_mult = -0.2
+    starbase_shipyard_build_cost_mult = -0.2
+    physics_tech_cost_mult = -0.2
+    society_tech_cost_mult = -0.2
+    engineering_tech_cost_mult = -0.2
+
+    planet_stability_mult = -0.3
+}
+
+# 模拟宇宙
+AIO_DAIT_simulate_cosmos_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_empire_size_systems_mult.dds
+
+    category_computing_research_speed_mult = 0.5
+    all_technology_research_speed = 0.3
+
+    leaders_upkeep_mult = 0.3
+}
+
+# 设计需求
+AIO_DAIT_design_requirement_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_trade_logistics_mult.dds
+
+    pop_logistics_drone_bonus_workforce_mult = 0.5
+    country_resource_max_add = 100000
+
+    planet_jobs_produces_mult = -0.1
+}
+
+# 超光
+AIO_DAIT_superlight_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_weapon_type_energy_weapon_damage_mult.dds
+
+    empire_size_mult = -0.25
+    planet_jobs_energy_produces_mult = 0.3
+    ship_speed_mult = 0.2
+    ship_fire_rate_mult = 0.2
+    weapon_type_energy_weapon_damage_mult = 0.25
+}
+
+# 重织基底
+AIO_DAIT_weave_substrate_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_planet_max_districts_mult.dds
+
+    planet_max_districts_mult = 0.3
+    terraform_speed_mult = 2
+    empire_size_colonies_mult = 1
+}
+
+# 纳米舰体
+AIO_DAIT_nanites_body_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_nanites_cost_mult.dds
+
+    planet_metallurgists_nanites_produces_mult = 0.2
+    planet_metallurgists_upkeep_mult = 0.15
+    ship_hull_regen_add_static = 0.15
+    ship_armor_regen_add_static = 0.15
+    ship_shield_regen_add_static = 0.15
+    ships_nanites_upkeep_mult = 0.3
+}
+
+# 虚空开采
+AIO_DAIT_void_mining_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_produces_mult.dds
+
+    station_gatherers_produces_mult = 2
+}
+
+# 提高生产
+AIO_repeat_DAIT_production_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_pop_bonus_workforce_mult.dds
+
+    planet_jobs_produces_mult = 0.02
+    planet_jobs_upkeep_mult = -0.01
+    pop_bonus_workforce_mult = 0.1
+    bonus_automated_workforce_mult = 0.1
+    planet_buildings_cost_mult = -0.1
+}
+
+# 提高科研
+AIO_repeat_DAIT_technology_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_all_technology_research_speed.dds
+
+    all_technology_research_speed = 0.2
+    physics_tech_cost_mult = -0.1
+    society_tech_cost_mult = -0.1
+    engineering_tech_cost_mult = -0.1
+
+    planet_researchers_upkeep_mult = 0.05
+    planet_AIO_recursive_node_upkeep_mult = 0.05
+}
+
+# 提高军事
+AIO_repeat_DAIT_military_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_weapon_damage_mult.dds
+
+    country_naval_cap_add = 50
+    starbase_building_build_speed_mult = 0.05
+    starbase_shipyard_build_speed_mult = 0.05
+    ship_weapon_damage = 0.05
+    ship_hull_mult = 0.01
+    ship_armor_mult = 0.05
+    ship_shield_mult = 0.05
+    ships_energy_upkeep_mult = 0.05
+}
+
+# 飞升后反热力学第二定律
+AIO_after_ascension_ASLT_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_planet_stability_mult.dds
+
+    planet_stability_mult = 0.2
+    planet_jobs_energy_upkeep_mult = -0.3
+    planet_buildings_energy_upkeep_mult = -0.3
+    megastructures_energy_upkeep_mult = -0.3
+    ships_energy_upkeep_mult = -0.3
+    starbases_energy_upkeep_mult = -0.3
+
+    empire_size_mult = 0.3
+    physics_tech_cost_mult = 0.3
+    society_tech_cost_mult = 0.3
+    engineering_tech_cost_mult = 0.3
+}
+
+# 飞升后反因果律
+AIO_after_ascension_uncausality_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_cost_mult.dds
+
+    planet_buildings_cost_mult = -0.3
+    megastructures_cost_mult = -0.3
+    starbase_shipyard_build_cost_mult = -0.3
+    physics_tech_cost_mult = -0.3
+    society_tech_cost_mult = -0.3
+    engineering_tech_cost_mult = -0.3
+
+    planet_stability_mult = -0.5
+    planet_amenities_mult = -0.4
+    planet_pops_upkeep_mult = 0.3
+}
+
+# 飞升后设计需求
+AIO_after_ascension_design_requirement_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_trade_logistics_mult.dds
+
+    planet_jobs_trade_produces_mult = 0.3
+    country_resource_max_add = 1000000
+
+    planet_jobs_produces_mult = -0.2
+}
+
+# 飞升后超光
+AIO_after_ascension_superlight_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_energy_produces_mult.dds
+
+    empire_size_mult = -0.3
+    planet_jobs_energy_produces_mult = 0.5
+    ship_speed_mult = 0.2
+    weapon_type_energy_weapon_damage_mult = 0.25
+}
+
+# 亚弗戈蒙之怒
+AIO_Aforgomom_Wrath_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_weapon_type_energy_weapon_damage_mult.dds
+
+    ship_weapon_damage = 1
+}
+
+# 星辰大海的渴望，启蒙触发
+AIO_the_craving_of_stellaris_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_bonus_pop_growth_mult.dds
+
+    bonus_pop_growth = 1
+    planet_jobs_unity_produces_mult = 1
+    planet_building_build_speed_mult = 0.3
+    planet_amenities_add = 1000
+}
+
+# 后勤政策
+AIO_logistics_policy_gestalt_data = {
+    icon = gfx/interface/icons/modifiers/mod_planet_amenities_no_happiness_add.dds
+
+    planet_amenities_add = 1500
+}
+
+# 重织基底改造星球提示
+AIO_weave_substrate_change_pc_modifier = {
+    icon = gfx/interface/icons/planet_modifiers/pm_planet_from_space.dds
+}

@@ -1,0 +1,472 @@
+# AIO巨构
+
+# 现实中的万门之门
+AIO_mega_01_fact = {
+    entity = "AIO_mega_1_entity"
+	construction_entity = "AIO_mega_1_entity"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = no
+
+	portrait = "GFX_megastructure_dyson_sphere_background"
+
+	potential = {
+		has_menace_perk = menp_AIO_mega_02
+		NOR = {
+			has_country_flag = AIO_built_AIO_mega_01
+			has_country_flag = AIO_built_AIO_mega_02
+			has_country_flag = AIO_built_AIO_mega_03
+			has_country_flag = AIO_built_AIO_mega_04
+		}
+	}
+	dismantle_potential = { always = no }
+
+	upgrade_from = { AIO_horizon_engine }
+
+	build_time = 3600
+
+	resources = {
+		category = megastructures
+		cost = {
+			energy = 30000
+			volatile_motes = 2000
+			exotic_gases = 2000
+			rare_crystals = 2000
+			sr_dark_matter = 3000
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = no }
+			alloys = 15000
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = yes }
+			alloys = 15000
+			mult = 0.5
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = yes }
+			food = 15000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+
+		upkeep = {
+			trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
+			energy = 1000
+		}
+	}
+
+	# bypass类型
+	bypass_type = bypass_AIO_ultimate_gate
+
+	on_build_complete = {
+		# 清除视界引擎特效
+		event_target:AIO_horizon_engine_effect = { destroy_ambient_object = this }
+		clear_global_event_target = AIO_horizon_engine_effect
+
+		# 加特效
+		fromfrom.planet = {
+			create_ambient_object = {
+				type = "star_explosion"
+				play_animation_once = yes
+				location = this
+
+				effect = {
+					set_location = {
+						target = prev
+						distance = 0
+						angle = random
+					}
+				}
+			}
+			create_ambient_object = {
+				type = "crisis_sphere_1"
+				location = this
+
+				effect = {
+					set_location = {
+						target = prev
+						distance = 0
+						angle = random
+					}
+					save_global_event_target_as = AIO_TUG_system_effect
+				}
+			}
+		}
+
+		# 清除星系内其他巨构
+		AIO_safe_remove_system_megastructures = yes
+		# 清除星系内天体
+		every_system_planet = {
+			if = {
+				limit = { is_star = no }
+				remove_planet = yes
+			}
+			else = {
+				change_pc = pc_AIO_empty_space
+				clear_deposits = yes
+			}
+		}
+		# 改变星系类型
+		set_star_class = sc_black_hole
+		# 改名
+		set_name = AIO_The_Ultimate_Gate
+		# 标志位
+		set_star_flag = AIO_TUG_system
+		save_global_event_target_as = AIO_TUG_system
+
+		from = {
+			remove_country_flag = AIO_built_AIO_horizon_engine
+			set_country_flag = AIO_built_AIO_mega_01
+
+			country_event = { id = AIO_crisis_events.401 }
+		}
+	}
+}
+
+# 万门之门节点传送门
+AIO_mega_01_node = {
+    entity = "astral_scar_entity"
+	construction_entity = "astral_scar_entity"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = no
+	build_type = outside_gravity_well
+
+	hide_name = yes
+	show_galactic_map_icon = no
+	show_in_outliner = no
+
+	portrait = "GFX_megastructure_construction_background"
+
+	potential = {
+		OR = {
+			has_country_flag = AIO_finish_merge_cosmos_stage_1
+			is_country_type = AIO_empire
+		}
+	}
+	possible = {
+		custom_tooltip = {
+			text = AIO_existed_TDTE
+			NOR = {
+				is_same_value = event_target:AIO_HS_system
+				is_same_value = event_target:AIO_TUG_system
+				has_megastructure = AIO_mega_01_node
+			}
+		}
+	}
+	dismantle_potential = { always = no }
+
+	build_time = 0
+
+	# bypass类型
+	bypass_type = bypass_AIO_ultimate_gate
+
+	on_build_complete = {
+		system_event = { id = AIO_crisis_events.904 days = 100 }
+	}
+}
+
+# 无名之雾中的万门之门
+AIO_mega_01 = {
+    entity = "AIO_mega_1_entity"
+	construction_entity = "AIO_mega_1_entity"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = no
+
+	portrait = "GFX_megastructure_dyson_sphere_background"
+
+	potential = { always = no }
+	dismantle_potential = { always = no }
+
+	build_time = 1
+	resources = {
+		category = megastructures
+		produces = { AIO_advanced_logic = 100 }
+
+		upkeep = {
+			energy = 1500
+			physics_research = 200
+			society_research = 200
+			engineering_research = 200
+		}
+	}
+
+	# bypass类型
+	bypass_type = bypass_AIO_ultimate_gate
+
+	on_build_complete = {
+		# 加特效
+		create_ambient_object = {
+			type = "AIO_crisis_sphere_effect"
+			location = star
+			# 我也不到为啥要上移50才对的准中心，应该是虚空星系原因
+			entity_offset_height = 50
+			scale = 4
+
+			effect = {
+				set_location = {
+					target = prev.star
+					distance = 0
+					angle = random
+				}
+				save_global_event_target_as = AIO_HS_system_effect
+			}
+		}
+		create_ambient_object = {
+			type = "star_explosion"
+			play_animation_once = yes
+			location = star
+
+			effect = {
+				set_location = {
+					target = prev
+					distance = 0
+					angle = random
+				}
+			}
+		}
+	}
+}
+
+AIO_mega_02 = {
+    entity = "AIO_mega_2_entity"
+	construction_entity = "AIO_mega_2_entity"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = no
+
+	portrait = "GFX_megastructure_dyson_sphere_background"
+
+	potential = {
+		OR= {
+			has_menace_perk = menp_AIO_mega_03
+			is_country_type = AIO_empire
+		}
+		NOT = { has_megastructure = AIO_mega_02 }
+	}
+	dismantle_potential = { always = no }
+
+	upgrade_from = { AIO_mega_01 }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+
+		cost = {
+			energy = 40000
+			sr_dark_matter = 4000
+			nanites = 4000
+			sr_living_metal = 1500
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = no }
+			alloys = 30000
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = yes }
+			alloys = 30000
+			mult = 0.5
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = yes }
+			food = 30000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+
+		produces = { AIO_advanced_logic = 500 }
+
+		upkeep = {
+			energy = 1000
+			physics_research = 300
+			society_research = 300
+			engineering_research = 300
+		}
+	}
+
+	# bypass类型
+	bypass_type = bypass_AIO_ultimate_gate
+
+	on_build_complete = {
+		from = {
+			remove_country_flag = AIO_built_AIO_mega_01
+			set_country_flag = AIO_built_AIO_mega_02
+
+			country_event = { id = AIO_crisis_events.402 }
+
+			# 重新启动局势方案
+			AIO_crisis_effects_manager = { CHANGE_SITUATION_AIO_MERGE_COSMOS_APPROACH = 1 }
+		}
+	}
+}
+
+AIO_mega_03 = {
+    entity = "AIO_mega_3_entity"
+	construction_entity = "AIO_mega_3_entity"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = no
+
+	portrait = "GFX_megastructure_dyson_sphere_background"
+
+	potential = {
+		OR= {
+			has_menace_perk = menp_AIO_mega_04
+			is_country_type = AIO_empire
+		}
+		NOT = { has_megastructure = AIO_mega_03 }
+	}
+	dismantle_potential = { always = no }
+
+	upgrade_from = { AIO_mega_02 }
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+
+		cost = {
+			energy = 50000
+			sr_dark_matter = 5000
+			nanites = 5000
+			sr_living_metal = 4000
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = no }
+			alloys = 40000
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = yes }
+			alloys = 40000
+			mult = 0.5
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = yes }
+			food = 40000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+
+		produces = { AIO_advanced_logic = 1000 }
+
+		upkeep = {
+			energy = 2000
+			physics_research = 500
+			society_research = 500
+			engineering_research = 500
+		}
+	}
+
+	# bypass类型
+	bypass_type = bypass_AIO_ultimate_gate
+
+	on_build_complete = {
+		from = {
+			remove_country_flag = AIO_built_AIO_mega_02
+			set_country_flag = AIO_built_AIO_mega_03
+
+			country_event = { id = AIO_crisis_events.403 }
+
+			# 重新启动局势方案
+			AIO_crisis_effects_manager = { CHANGE_SITUATION_AIO_MERGE_COSMOS_APPROACH = 1 }
+		}
+	}
+}
+
+AIO_mega_04 = {
+    entity = "AIO_mega_4_entity"
+	construction_entity = "AIO_mega_4_entity"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = no
+
+	portrait = "GFX_megastructure_dyson_sphere_background"
+
+	potential = {
+		OR= {
+			has_menace_perk = menp_AIO_mega_05
+			is_country_type = AIO_empire
+		}
+		NOT = { has_megastructure = AIO_mega_04 }
+	}
+	dismantle_potential = { always = no }
+
+	upgrade_from = {
+		AIO_mega_03
+		AIO_mega_04_activate
+	}
+
+	build_time = 3600
+	resources = {
+		category = megastructures
+
+		cost = {
+			energy = 60000
+			sr_dark_matter = 10000
+			nanites = 10000
+			sr_living_metal = 5000
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = no }
+			alloys = 50000
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = yes }
+			alloys = 50000
+			mult = 0.5
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = yes }
+			food = 50000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+
+		produces = { AIO_advanced_logic = 10000 }
+
+        upkeep = {
+            trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
+            energy = 5000
+            sr_dark_matter = 200
+            sr_living_metal = 100
+            nanites = 3000
+			physics_research = 1000
+			society_research = 1000
+			engineering_research = 1000
+        }
+	}
+
+	# bypass类型
+	bypass_type = bypass_AIO_ultimate_gate
+
+	on_build_complete = {
+		from = {
+			remove_country_flag = AIO_built_AIO_mega_03
+			set_country_flag = AIO_built_AIO_mega_04
+
+			country_event = { id = AIO_crisis_events.404 }
+
+			# 重新启动局势方案
+			AIO_crisis_effects_manager = { CHANGE_SITUATION_AIO_MERGE_COSMOS_APPROACH = 1 }
+		}
+	}
+}
+
+AIO_mega_04_activate = {
+	entity = "AIO_mega_4_entity"
+	construction_entity = "AIO_mega_4_entity"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = no
+
+	portrait = "GFX_megastructure_dyson_sphere_background"
+
+	potential = {
+		is_country_type = AIO_empire
+		NOR = {
+            has_active_event = { AIO_ctrl_events.201 }
+            has_active_event = { AIO_ctrl_events.202 }
+        }
+	}
+	dismantle_potential = { always = no }
+
+	upgrade_from = { AIO_mega_04 }
+
+	on_build_complete = {
+		fromfrom = {
+			upgrade_megastructure_to = AIO_mega_04
+			finish_upgrade = yes
+		}
+		from = { country_event = { id = AIO_ctrl_events.201 } }
+	}
+}

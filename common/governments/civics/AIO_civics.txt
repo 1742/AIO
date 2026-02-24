@@ -1,0 +1,18 @@
+# AIO国民理念
+civic_AIO_dream = {
+    playable = { always = yes }
+	potential = { country_type = { value = AIO_empire } }
+	possible = { always = yes }
+	description = "civic_tooltip_AIO_dream_effect"
+
+    cost = 3
+
+	modifier = {
+		physics_tech_cost_mult = -1
+		society_tech_cost_mult = -1
+		engineering_tech_cost_mult = -1
+	}
+
+	random_weight = { base = 0 }
+	ai_weight = { base = 0 }
+}

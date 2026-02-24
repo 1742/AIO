@@ -1,0 +1,70 @@
+# AIO飞升
+
+ap_AIO_allinone = {
+	potential = {
+        is_ai = no
+		NOR = {
+			is_player_crisis = yes
+			has_ascension_perk = ap_defender_of_the_galaxy
+			has_origin = origin_slavers # No crisis for MSI
+			has_origin = origin_endbringers # No additional crisis for Endbringers
+
+            is_country_type = AIO_empire
+            is_country_type = AIO_Aforgomom
+		}
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			OR = {
+				num_ascension_perks > 2
+				has_country_flag = AIO_empire_country
+			}
+		}
+        custom_tooltip = {
+            fail_text = AIO_requires_gestalt
+            has_ethic = ethic_gestalt_consciousness
+        }
+        custom_tooltip = {
+            fail_text = AND_TRIGGER_STARTS
+            NOR = {
+                has_valid_civic = civic_machine_terminator
+                has_valid_civic = civic_machine_assimilator
+                has_valid_civic = civic_machine_servitor
+                has_valid_civic = civic_hive_devouring_swarm
+                has_origin = origin_wilderness
+            }
+        }
+		custom_tooltip = {
+			fail_text = "requires_independence"
+			is_subject = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_custodian"
+			is_galactic_custodian = no
+		}
+		custom_tooltip = {
+			fail_text = "must_not_be_emperor"
+			is_galactic_emperor = no
+		}
+		custom_tooltip = {
+			fail_text = AIO_requires_not_other_AIO_ap_country
+			NOT = {
+				any_country = {
+					OR = {
+						has_ascension_perk = ap_AIO_allinone
+						is_country_type = AIO_empire
+					}
+				}
+			}
+		}
+	}
+
+	on_enabled = {
+        set_country_flag = is_player_crisis
+        activate_crisis_progression = AIO_path
+    }
+
+	ai_weight = { base = 0 }
+}

@@ -1,0 +1,114 @@
+# AIO 法令
+
+# 暗物质驱动协议（什么小暗物质引擎）
+edict_AIO_dm_engine = {
+    length = -1
+    icon = "GFX_edict_type_policy"
+
+    potential = { has_menace_perk = menp_AIO_fleet_component_1_2 }
+
+    resources = {
+		category = edicts
+
+        cost = {
+            sr_dark_matter = 100
+            mult = value:edict_size_effect
+        }
+
+		upkeep = {
+            sr_dark_matter = 1
+            mult = value:AIO_edict_dm_engine_dm_upkeep
+        }
+	}
+
+    modifier = { pop_bonus_workforce_mult = 0.1 }
+}
+
+# 纳米构型
+edict_AIO_nanite_construction = {
+    length = -1
+    icon = "GFX_edict_type_policy"
+
+    potential = { has_menace_perk = menp_AIO_fleet_component_2 }
+    allow = { has_country_resource = { type = nanites amount > 10 } }
+
+    resources = {
+		category = edicts
+
+        cost = {
+            nanites = 100
+            mult = value:edict_size_effect
+        }
+
+		upkeep = {
+            nanites = 10
+            mult = value:edict_size_effect
+        }
+	}
+
+    modifier = {
+        planet_building_build_speed_mult = 0.25
+        megastructure_build_speed_mult = 0.5
+        planet_buildings_cost_mult = 0.2
+    }
+}
+
+# 活金速构
+edict_AIO_living_metal_construction = {
+    length = -1
+    icon = "GFX_edict_type_policy"
+
+    potential = { has_ascension_perk = ap_AIO_allinone }
+    allow = { has_country_resource = { type = sr_living_metal amount > 5 } }
+
+    resources = {
+		category = edicts
+
+        cost = {
+            sr_living_metal = 50
+            mult = value:edict_size_effect
+        }
+
+		upkeep = {
+            sr_living_metal = 5
+            mult = value:edict_size_effect
+        }
+	}
+
+    modifier = {
+        planet_metallurgists_alloys_produces_add = 1
+        planet_metallurgists_sr_living_metal_upkeep_add = 0.5
+        megastructure_build_speed_mult = 1
+    }
+}
+
+# 纳米农耕
+edict_AIO_nanite_farming = {
+    length = -1
+    icon = "GFX_edict_type_policy"
+
+    potential = {
+        has_menace_perk = menp_AIO_fleet_component_2
+        country_uses_bio_ships = yes
+    }
+    allow = { has_country_resource = { type = nanites amount > 10 } }
+
+    resources = {
+		category = edicts
+
+        cost = {
+            nanites = 100
+            mult = value:edict_size_effect
+        }
+
+		upkeep = {
+            nanites = 10
+            mult = value:edict_size_effect
+        }
+	}
+
+    modifier = {
+        planet_farmers_food_produces_add = 2
+        planet_farmers_nanites_upkeep_add = 1
+    }
+}

@@ -1,0 +1,31 @@
+﻿l_simp_chinese:
+ # 国家类型
+ AIO_empire: "§M犹格索托斯§!"
+ AIO_empire_desc: "真理"
+
+ # 政府类型
+ AIO_empire_ruler_title: "太古永生者"
+ gov_AIO_empire: "现实法则"
+ gov_AIO_empire_desc: "$AIO_empire_desc$"
+
+ # 政策
+ logistics_policy_gestalt_resource_with_food: "资源调度"
+ logistics_policy_gestalt_resource_with_food_desc: "能源是结构的血液，我们只需让它流动得更快。\n\n每1点$r_trade$转换为0.2$r_energy$、0.2$r_minerals$、0.2$r_food$"
+ logistics_policy_gestalt_resource_without_food: "$logistics_policy_gestalt_resource_with_food$"
+ logistics_policy_gestalt_resource_without_food_desc: "能源是结构的血液，我们只需让它流动得更快。\n\n每1点$r_trade$转换为0.3$r_energy$、0.3$r_minerals$"
+ logistics_policy_gestalt_industry_with_goods: "加工工业"
+ logistics_policy_gestalt_industry_with_goods_desc: "只需加入熔炉，价值本身也能被铸成武器。\n\n每1点$r_trade$转换为0.2$r_alloys$、0.2$r_consumer_goods$"
+ logistics_policy_gestalt_industry_without_goods: "$logistics_policy_gestalt_industry_with_goods$"
+ logistics_policy_gestalt_industry_without_goods_desc: "只需加入熔炉，价值本身也能被铸成武器。\n\n每1点$r_trade$转换为0.3$r_alloys$"
+ logistics_policy_gestalt_data: "信息再分配"
+ logistics_policy_gestalt_data_desc: "统一意志需要统一激励，再分配是基础。\n\n每1点$r_trade$转换为0.2$r_research$和0.15$r_unity$"
+
+ # 国名理念
+ civic_AIO_dream: "§R空想§!"
+ civic_AIO_dream_desc: "无需真理之印证，亦不需确知之实相。凡汝所妄构者，皆已为现实。"
+ civic_tooltip_AIO_dream_effect: "可以任意地§R应用无限§!。"
+
+ # 起源
+ origin_AIO_YogSothoth: "$ap_AIO_allinone$"
+ origin_AIO_YogSothoth_desc: "我们已是宇宙的真理。\n\n§R警告：非平衡起源，类似于观测者模式§!"
+ origin_AIO_YogSothoth_tt_effects: " - 以$AIO_empire$类型帝国开始游戏\n - 移除所拥有的['concept_colonies']、['concept_system']与['concept_fleet']\n - 生成['concept_AIO_HS_system']、['concept_AIO_TDTE_system']\n - 游戏开始时拥有§Y$AIO_mega_04$§!与§Y$AIO_mega_01_fact$§!"

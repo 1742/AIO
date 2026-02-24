@@ -1,0 +1,17 @@
+﻿l_english:
+ district_AIO_matryoshka_brain: "Matryoshka Brain District"
+ district_AIO_matryoshka_brain_desc: "A recursive network is constructed in this area. With the increase in the number of $job_AIO_recursive_node$, the overall cognitive rate of the system will grow exponentially."
+ district_AIO_matryoshka_brain_plural: "$district_AIO_matryoshka_brain$"
+ district_AIO_MB_recursive_node_factor: "Currently exists §Y[AIO_num_AIO_recursive_node_per_1000]K§! £job_AIO_recursive_node£§Y$job_AIO_recursive_node$§!, offer modifier:\n - produce: §G+[AIO_AIO_recursive_node_produce_facor]%§!\n - upkeep: §R+[AIO_AIO_recursive_node_upkeep_facor]%§!"
+ mod_district_AIO_matryoshka_brain_max_add: "£mod_planet_max_districts_add£$district_AIO_matryoshka_brain$ upper limit"
+
+ # swap district
+ district_AIO_dm_production: "$zone_AIO_dm_production$"
+ district_AIO_dm_production_desc: "$zone_AIO_dm_production_desc$"
+ district_AIO_dm_production_plural: "$district_AIO_dm_production$"
+ district_AIO_nanites_production_metallurgists: "$zone_AIO_nanites_production_metallurgists$"
+ district_AIO_nanites_production_metallurgists_desc: "$zone_AIO_nanites_production_metallurgists_desc$"
+ district_AIO_nanites_production_metallurgists_plural: "$district_AIO_nanites_production_metallurgists$"
+ district_AIO_nanites_production_farmers: "$zone_AIO_nanites_production_farmers$"
+ district_AIO_nanites_production_farmers_desc: "$zone_AIO_nanites_production_farmers_desc$"
+ district_AIO_nanites_production_farmers_plural: "$district_AIO_nanites_production_farmers$"

@@ -1,0 +1,7 @@
+spriteTypes = {
+    corneredTileSpriteType = {
+		name = GFX_district_AIO_matryoshka_brain_bg
+		textureFile = "gfx/interface/tiles/dark_area.dds"
+		borderSize = { x=1 y=1 }
+	}
+}

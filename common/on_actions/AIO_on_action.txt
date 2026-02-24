@@ -1,0 +1,97 @@
+# AIO on_action触发事件
+
+on_game_start_country = {
+    events = {
+        AIO_mod_events.201 # 更新提醒
+        AIO_crisis_events.908  # 万物归一起源
+    }
+}
+
+on_yearly_pulse = {
+    events = {
+        AIO_crisis_events.801  # 天灾目标，征用神经芯片
+        AIO_crisis_events.803  # 天灾目标，控有科学枢纽
+    }
+}
+
+on_tech_increased = {
+    events = {
+        AIO_crisis_events.802  # 天灾目标，研究科技
+        # AIO_crisis_events.806  # 完成1级老登建筑，获得2级老登建筑选项
+        AIO_crisis_events.907 # 完成科技升维假设，提示建造视相引擎
+        AIO_crisis_events.909  # 研究应用无限后触发定向应用无限
+    }
+}
+
+on_country_destroyed = {
+    events = {
+        AIO_crisis_events.701 # AIO天灾帝国被摧毁
+    }
+}
+
+on_entering_system_fleet = {
+    events = {
+        AIO_crisis_events.905  # 驱逐无名之雾的其他舰船
+    }
+}
+
+on_ship_built = {
+    events = {
+        AIO_crisis_events.901  # 禁止AIO帝国造船
+    }
+}
+
+# This = owner of fleet 1 (combatant)
+# From = owner of fleet 2 (destroyed)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_fleet_destroyed_perp = {
+    events = {
+        AIO_Aforgomom_events.202 # 亚弗戈蒙之怒被摧毁
+        AIO_ctrl_events.1001 # 定位舰被摧毁
+        AIO_ctrl_events.1003 # 异界行者被摧毁
+    }
+}
+
+# 舰队解散
+# This = owner of fleet
+# From = disbanded fleet
+on_fleet_disbanded = {
+    events = {
+        AIO_ctrl_events.1002  # 定位舰被解散
+        AIO_ctrl_events.1004  # 异界行者被解散
+    }
+}
+
+on_building_starbase_outpost = {
+    events = {
+        AIO_crisis_events.902  # 禁止AIO帝国造恒星基地
+    }
+}
+
+on_colony_destroyed = {
+    events = {
+        AIO_AIT_events.3105  # 清除时间之墟星球相关标志位
+    }
+}
+
+on_megastructure_change_owner = {
+    events = {
+        AIO_ctrl_events.1005 # AIO帝国控有相关巨构
+    }
+}
+
+# This = target country (player)
+# From = source country
+on_custom_diplomacy = {
+    events = {
+        AIO_Tawi_communication_events.301  # 打开外交界面
+    }
+}
+
+# this: country
+on_relic_received = {
+    events = {
+        AIO_Aforgomom_events.301  # 亚弗戈蒙获得遗珍并转交给犹格索托斯
+    }
+}

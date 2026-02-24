@@ -1,0 +1,103 @@
+# AIO帝国类型
+
+AIO_empire = {
+    sub_title = AIO_empire
+    sub_title_desc = AIO_empire_desc
+
+	observable = no
+	playable = yes
+
+    # 是否计算胜利分数
+    counts_for_victory = no
+    # 是否在通讯界面显示
+	show_in_contacts_list = yes
+    # 在通讯列表是否只显示旗帜与名称
+	minimalist_contacts_list_profile = yes
+    # 是否自动与其他帝国共享通讯
+	share_communications = no
+    # ？
+	default_ships = no
+    # 是否需要政府
+	government = yes
+    # 是否需要起源
+	uses_origins = no
+	# 是否可以不用行星
+	can_own_empty_planets = yes
+	# 行星是否可以被攻击
+	can_planets_be_attacked = no
+
+	# 能否使用受限科技
+	can_use_invalid_technology = yes
+
+	# 是否拥有全图视野
+	has_complete_sensor = yes
+	# 是否使用特殊的恒星基地
+	custom_starbase = starbase_outpost
+	# 帝国是否建造被定义为特殊可建造物而不是普通可设计船只的全局舰船设计
+	uses_special_buildables = yes
+	# 击败恒星基地时是否摧毁
+	destroys_starbases = yes
+	# 是否控制边境
+	enforces_borders = yes
+	# 是否需要宣战
+	diplomatic_wars = no
+	# 是否会攻击非武装空间站（开采站、科研站）
+	attack_unarmed_orbital_stations = yes
+
+	# ai相关
+	ai = {
+		# 是否启用ai操纵
+		enabled = no
+	}
+
+	faction = {
+		neutral = yes
+		hostile_when_attacked = no
+		needs_border_access = no
+		generate_borders = no
+		show_borders_in_us = no
+		needs_colony = no
+		auto_delete = no
+	}
+
+	custom_diplomacy = yes
+
+	modules = {
+		standard_event_module = {  }
+		basic_technology_module = {  }
+		exclusive_diplomacy_module = { contact_rule = on_action_only }
+	}
+}
+
+AIO_Aforgomom = {
+	government = no
+	observable = no
+	uses_origins = no
+
+	default_ships = no
+
+	has_complete_sensor = yes
+	custom_starbase = starbase_outpost
+	uses_special_buildables = yes
+	destroys_starbases = yes
+	enforces_borders = yes
+	diplomatic_wars = no
+	attack_unarmed_orbital_stations = yes
+
+	ai = {
+		enabled = no
+	}
+
+	faction = {
+		hostile = yes
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+		auto_delete = no
+	}
+
+	modules = {
+		basic_technology_module = {}
+		standard_event_module = {}
+	}
+}

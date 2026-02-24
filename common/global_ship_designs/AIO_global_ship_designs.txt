@@ -1,0 +1,219 @@
+# AIO帝国定位船
+ship_design = {
+	name = "NAME_AIO_locator_builder"
+	ship_size = AIO_locator_builder
+	country_type = AIO_empire
+
+	section = {
+		template = "AIO_locator_builder_template"
+		slot = "mid"
+
+        component = {
+            slot = "SMALL_UTILITY_1"
+            template = SMALL_DRAGON_ARMOR
+        }
+        component = {
+            slot = "SMALL_UTILITY_2"
+            template = SMALL_DRAGON_ARMOR
+        }
+        component = {
+            slot = "SMALL_UTILITY_3"
+            template = SMALL_DRAGON_ARMOR
+        }
+        component = {
+            slot = "SMALL_UTILITY_4"
+            template = SMALL_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = "MEDIUM_UTILITY_1"
+            template = MEDIUM_DARK_MATTER_DEFLECTOR
+        }
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+        component = {
+            slot = "AUX_UTILITY_2"
+            template = "CORVETTE_CLOAKING_DARK_MATTER"
+        }
+	}
+
+    required_component = "CORVETTE_DARK_MATTER_REACTOR"
+	required_component="JUMP_DRIVE_1"
+	required_component="DESTROYER_SHIP_THRUSTER_5"
+	required_component="SENSOR_4"
+}
+
+ship_design = {
+	name = NAME_AIO_otherworld_walker
+	ship_size = AIO_otherworld_walker
+    country_type = AIO_empire
+
+	section = {
+		template = "AIO_locator_builder_template"
+		slot = "mid"
+
+        component = {
+            slot = "SMALL_UTILITY_1"
+            template = SMALL_DRAGON_ARMOR
+        }
+        component = {
+            slot = "SMALL_UTILITY_2"
+            template = SMALL_DRAGON_ARMOR
+        }
+        component = {
+            slot = "SMALL_UTILITY_3"
+            template = SMALL_DRAGON_ARMOR
+        }
+        component = {
+            slot = "SMALL_UTILITY_4"
+            template = SMALL_DARK_MATTER_DEFLECTOR
+        }
+        component = {
+            slot = "MEDIUM_UTILITY_1"
+            template = MEDIUM_DARK_MATTER_DEFLECTOR
+        }
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "AUTO_REPAIR"
+		}
+        component = {
+            slot = "AUX_UTILITY_2"
+            template = "CORVETTE_CLOAKING_DARK_MATTER"
+        }
+	}
+
+	required_component = "CORVETTE_DARK_MATTER_REACTOR"
+	required_component="JUMP_DRIVE_1"
+	required_component="DESTROYER_SHIP_THRUSTER_5"
+	required_component="SENSOR_4"
+}
+
+ship_design = {
+	name = "NAME_AIO_Aforgomom_Wrath"
+	ship_size = AIO_Aforgomom_Wrath
+	section = {
+		template = "AIO_Aforgomom_Wrath_template"
+		slot = "mid"
+
+		component = {
+            slot = "TITANIC_01"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_02"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_03"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_04"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_05"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_06"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_07"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_08"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_09"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_10"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_11"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_12"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_13"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_14"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_15"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_16"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_17"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_18"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_19"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+		component = {
+            slot = "TITANIC_20"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+        component = {
+            slot = "TITANIC_21"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+        component = {
+            slot = "TITANIC_22"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+        component = {
+            slot = "TITANIC_23"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+        component = {
+            slot = "TITANIC_24"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+        component = {
+            slot = "TITANIC_25"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+        component = {
+            slot = "TITANIC_26"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+        component = {
+            slot = "TITANIC_27"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+        component = {
+            slot = "TITANIC_28"
+            template = "QUASISTELLAR_GUN_ENTITY"
+        }
+	}
+
+    required_component = "CORVETTE_DARK_MATTER_REACTOR"
+    required_component="SENSOR_4"
+    required_component = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
+	required_component="JUMP_DRIVE_1"
+	required_component="DESTROYER_SHIP_THRUSTER_5"
+    required_component = "AIO_EXTRA_LARGE_AURA_AFORGOMOM_CHAIN"
+}

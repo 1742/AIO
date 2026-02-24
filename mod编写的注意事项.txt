@@ -1,0 +1,10 @@
+country_event可以触发弹窗
+planet_event只有在殖民地上时才能触发弹窗
+system_event在有拥有者时可以触发弹窗
+
+在不可以殖民的星球的scope要用controller跳转到其country, 不能用owner
+
+special_project的on_success里的事件的可以用from跳转到enable_special_project代码处的scope, on_fail里的事件可以用from跳转的special_project的
+owner, fromfrom可以跳转到enable_special_project代码处的scope
+
+global_event_target对应的实例即使不存在了，exist也会返回true

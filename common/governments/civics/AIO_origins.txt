@@ -1,0 +1,33 @@
+# AIO起源
+
+origin_AIO_YogSothoth = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origins_gateway.dds"
+	picture = GFX_evt_astral_rift_crystal_3
+
+    playable = { has_machine_age_dlc = yes }
+
+	potential = { always = yes }
+
+	possible = {
+        authority = {
+            OR = {
+                value = auth_machine_intelligence
+                value = auth_hive_mind
+            }
+        }
+        civics = {
+            NOR = {
+                value = civic_machine_terminator
+                value = civic_machine_assimilator
+                value = civic_machine_servitor
+                value = civic_hive_devouring_swarm
+            }
+        }
+	}
+
+	random_weight = { base = 0 }
+	description = "origin_AIO_YogSothoth_tt_effects"
+
+	advanced_start = yes
+}

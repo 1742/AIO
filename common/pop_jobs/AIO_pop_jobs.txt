@@ -1,0 +1,84 @@
+# AIO递归节点
+AIO_recursive_node = {
+	category = AIO_recursive_node
+	purge = purge_AIO_matryoshka_brain
+	is_capped_by_modifier = yes
+
+	swappable_data = {
+		default = {
+			building_icon = building_lathe_capital
+			icon = AIO_recursive_node
+		}
+	}
+
+	tags = { research }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		has_planet = yes
+		is_sapient = yes
+	}
+	possible = {
+		planet = { has_district = district_AIO_matryoshka_brain }
+		OR = {
+			is_robot_pop_group = yes
+			is_hive_species = yes
+		}
+	}
+
+	resources = {
+		category = planet_AIO_recursive_node
+		produces = {
+			trigger = {
+				owner = {
+					NOT = {
+						any_situation = {
+							is_situation_type = situation_energy_deficit
+						}
+					}
+				}
+			}
+			physics_research = 1
+			society_research = 1
+			engineering_research = 1
+			unity = 0.5
+			AIO_advanced_logic = 0.025
+			mult = value:AIO_recursive_node_produce_factor
+		}
+		upkeep = {
+			trigger = {
+				owner = {
+					NOT = {
+						any_situation = {
+							is_situation_type = situation_energy_deficit
+						}
+					}
+				}
+			}
+			energy = 4.5
+			mult = value:AIO_recursive_node_upkeep_factor
+		}
+	}
+
+	weight = {
+		weight = @complex_drone_job_weight
+		mult = value:job_weights_modifier|JOB|calculator_physicist|RESOURCE|physics_research|
+
+		modifier = {
+			factor = 0.2
+			planet = { free_jobs > 0 }
+		}
+	}
+
+	inline_script = "jobs/automodding_priority_research"
+
+	promotion = {
+		time = @standard_promotion_time
+		effect = {
+			pop_amount_change_category = {
+				CATEGORY = complex_drone
+				AMOUNT = local_pop_amount
+			}
+		}
+	}
+}

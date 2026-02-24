@@ -1,0 +1,13 @@
+﻿l_simp_chinese:
+ AIO_mod_events.201.desc: "模组：万物归一\n\n这是一个mod菜单，用于查看更新内容。\n\n§R注意：使用mod的地图类型会导致$AIO_HYPER_DIMENSIONAL_SPACE$无法生成，无法推进灾飞进度！！！§!\n\n最近一次更新时间：北京时间 2026/1/17\n\n暂时不会更新新内容……"
+ AIO_mod_events.201.option_1: "知道了"
+ AIO_mod_events.201.option_2: "推荐怎么玩？"
+ AIO_mod_events.201.option_2.response: "emmmm我也只测试过1种玩法（铁球纪念虚拟），它不太像帮助你发育的灾飞，更多的是在能量充足的情况下无限提高上限的代入玩法。\n\n在造完§Y$AIO_horizon_engine$§!建议不要直接升级为§Y$AIO_mega_01_fact$§!，最好先搞个电球产电，靠着§Y$AIO_horizon_engine$§!产的暗物质苟到雪球滚起来就好。"
+ AIO_mod_events.201.option_3: "2025/08/26更新"
+ AIO_mod_events.201.option_3.response: "2025/08/26更新：\n - 更改§H天灾奖励§!：§Y$menp_AIO_buildings_1$§!、§Y$menp_AIO_fleet_component_1_2$§!、§Y$menp_AIO_fleet_component_2$§!\n - 新增建筑§Y$building_AIO_fe_automation_city$§!，由§Y$building_automation_2$§!升级而来\n - 新增区划特化§Y$zone_AIO_dm_production$§!、§Y$zone_AIO_nanites_production_minerals$§!（$pc_nanotech$专属）、§Y$zone_AIO_nanites_production_metallurgists$§!（合金船）、§Y$zone_AIO_nanites_production_farmers$§!（生物船）、§Y$zone_AIO_lm_production_machine_empire$§!（塔械）、§Y$zone_AIO_lm_production_hive_empire$§!（蜂巢）\n - 新增法令：§Y$edict_edict_AIO_dm_engine$§!\n - 降低了§Y$building_AIO_dimensional_replicator$§!、§Y$building_AIO_dimensional_fabricator$§!的附加资源产出\n - 降低了巨构§Y$AIO_mega_01_fact$§!建造的$r_alloys$费用\n - 修改了['concept_AIO_DAIT']的触发条件，现在只要在局势§Y$situation_AIO_merge_cosmos$§!中拥有>50,000 £AIO_advanced_logic£ $AIO_advanced_logic$即可使用\n - 新增['concept_AIO_DAIT']类型：§Y$AIO_AIT_events.401.option_8$§!、§Y$AIO_AIT_events.401.option_9$§!\n - 修复了§Y$district_AIO_matryoshka_brain$§!无法返还行星区划上限的问题\n\n希望不要再这么做牢了。。。"
+ AIO_mod_events.201.option_4: "2025/09/18更新"
+ AIO_mod_events.201.option_4.response: "2025/09/18更新：\n - 新增科技§Y$tech_AIO_DAIT$§!，完成§Y$AIO_mega_02$§!后出现在科技池，研究完成会触发一次['concept_AIO_DAIT']。可以启用法令§Y停止应用无限§!禁止该科技出现在科技池。\n - 完成局势§Y$situation_AIO_merge_cosmos$§!后不再随时间触发['concept_AIO_DAIT']"
+ AIO_mod_events.201.option_5: "2025/10/02更新"
+ AIO_mod_events.201.option_5.response: "2025/10/02更新：\n - 移除法令§Y停止应用无限§!，改为使用政策§Y$policy_AIO_DAIT_policy$§!控制由科技§Y$tech_AIO_DAIT$§!触发的['concept_AIO_DAIT']的选择或禁止。\n - 调整了§Y$AIO_repeat_DAIT_production_modifier$§!的加成。\n - 修改了['concept_megastructure'] §Y$AIO_mega_04$§!的维护费。"
+ AIO_mod_events.201.option_6: "2025/10/26更新"
+ AIO_mod_events.201.option_6.response: "2025/10/26更新：\n - 现在需要拥有§Y$AIO_mega_02$§!后才能['concept_AIO_DAIT']。 \n - 提高了局势§Y$situation_AIO_merge_cosmos$§!解决方案§Y$AIO_merge_cosmos_solution$§!消耗的基础值，$r_energy$为库存的0.5%+收入（未减去损耗）的20%，最低5000；£sr_dark_matter£ §Y$sr_dark_matter$§!为库存的0.1%+收入（未减去损耗）的10%，最低1000."

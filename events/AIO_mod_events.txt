@@ -1,0 +1,60 @@
+# AIO模组通知
+namespace = AIO_mod_events
+
+
+# ---------------------------------- #
+# 更新提醒
+# ---------------------------------- #
+
+country_event = {
+    id = AIO_mod_events.201
+    title = AIO_Tawi_full_name
+
+    desc = AIO_mod_events.201.desc
+
+    diplomatic = yes
+    diplomatic_title = ap_AIO_allinone
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_2
+    }
+
+    is_triggered_only = yes
+
+    immediate = { set_global_flag = AIO_mod_active }
+
+    option = {
+        name = AIO_mod_events.201.option_1
+        default_hide_option = yes
+    }
+
+    option = {
+        name = AIO_mod_events.201.option_2
+        response_text = AIO_mod_events.201.option_2.response
+        is_dialog_only = yes
+    }
+
+    option = {
+        name = AIO_mod_events.201.option_3
+        response_text = AIO_mod_events.201.option_3.response
+        is_dialog_only = yes
+    }
+
+    option = {
+        name = AIO_mod_events.201.option_4
+        response_text = AIO_mod_events.201.option_4.response
+        is_dialog_only = yes
+    }
+
+    option = {
+        name = AIO_mod_events.201.option_5
+        response_text = AIO_mod_events.201.option_5.response
+        is_dialog_only = yes
+    }
+
+    option = {
+        name = AIO_mod_events.201.option_6
+        response_text = AIO_mod_events.201.option_6.response
+        is_dialog_only = yes
+    }
+}

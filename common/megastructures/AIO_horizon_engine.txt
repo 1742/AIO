@@ -1,0 +1,138 @@
+# AIO视界引擎
+
+AIO_horizon_engine = {
+	entity = "dyson_sphere_phase_05_entity"
+	construction_entity = "dyson_sphere_part_4_entity"
+	portrait = "GFX_megastructure_construction_background"
+	scales_with_planet = no
+
+	prerequisites = { tech_AIO_ascending_dimensionality_theory }
+	show_prereqs = yes
+
+	potential = {
+		NOR = {
+			has_country_flag = AIO_built_AIO_horizon_engine
+			has_country_flag = AIO_built_AIO_mega_01
+			has_country_flag = AIO_built_AIO_mega_02
+			has_country_flag = AIO_built_AIO_mega_03
+			has_country_flag = AIO_built_AIO_mega_04
+		}
+	}
+	possible = {
+		hidden_trigger = { exists = starbase }
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_colonies"
+			NOT = {
+				any_system_planet = {
+					is_colony = yes
+					is_artificial = no
+					exists = owner
+					owner = { is_primitive = no }
+				}
+			}
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+			custom_tooltip = {
+				fail_text = requires_no_anomaly
+				has_anomaly = no
+			}
+			custom_tooltip = {
+				fail_text = requires_no_existing_megastructure
+				NOT = {
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+				}
+			}
+		}
+	}
+
+	build_time = 1800
+	victory_score = 0
+
+	resources = {
+		category = megastructures
+		cost = { sr_dark_matter = 2000 }
+		cost = {
+			trigger = { country_uses_bio_ships = no }
+			alloys = 10000
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = yes }
+			alloys = 10000
+			mult = 0.5
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = yes }
+			food = 10000
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+
+        produces = {
+			energy = 3000
+			sr_dark_matter = 100
+		}
+
+		upkeep = {
+			alloys = 50
+			physics_research = 100
+			society_research = 100
+			engineering_research = 100
+		}
+	}
+
+	on_build_complete = {
+		# 加特效
+		fromfrom = {
+			planet = {
+				set_planet_flag = has_megastructure
+
+				create_ambient_object = {
+					type = "crisis_sphere_1"
+					location = this
+
+					effect = {
+						set_location = {
+							target = prev
+							distance = 0
+							angle = random
+						}
+						save_global_event_target_as = AIO_horizon_engine_effect
+					}
+				}
+			}
+			set_megastructure_flag = AIO_horizon_engine
+		}
+
+		# 转换星球类型
+		AIO_change_system_planet_in_frozen = yes
+
+		from = {
+			set_country_flag = AIO_built_AIO_horizon_engine
+			# 允许点星河奇迹
+			set_country_flag = has_built_or_repaired_megastructure
+			# 通知
+			country_event = { id = AIO_crisis_events.301 }
+		}
+	}
+}

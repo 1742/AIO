@@ -1,0 +1,52 @@
+# 套娃脑区划
+district_AIO_matryoshka_brain = {
+    base_buildtime = 90
+	is_capped_by_modifier = yes
+	base_cap_amount = 1
+	exempt_from_ai_planet_specialization = yes
+
+	prerequisites = { tech_AIO_exponential_learning_theory }
+
+	show_on_uncolonized = { always = no }
+
+	potential = {
+		exists = owner
+		is_capital = yes
+		owner = { has_technology = tech_AIO_exponential_learning_theory }
+	}
+
+	destroy_trigger = { owner = { NOT = { has_technology = tech_AIO_exponential_learning_theory } } }
+
+	zone_slots = { slot_AIO_matryoshka_brain }
+
+	resources = {
+		category = planet_districts
+		cost = {
+			energy = 500
+			AIO_advanced_logic = 100
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = no }
+			alloys = 250
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = yes }
+			alloys = 250
+			mult = 0.5
+		}
+		cost = {
+			trigger = { country_uses_bio_ships = yes }
+			food = 250
+			mult = @halved_alloy_to_food_cost_ratio
+		}
+		upkeep = { energy = 50 }
+	}
+
+	triggered_desc = {
+		trigger = { exists = owner }
+		text = job_AIO_recursive_node_effect_desc
+	}
+
+	# 递归节点数量修正
+	triggered_desc = { text = district_AIO_MB_recursive_node_factor }
+}

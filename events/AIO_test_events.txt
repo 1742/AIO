@@ -1,0 +1,12 @@
+namespace = AIO_test_events
+
+country_event = {
+    id = AIO_test_events.201
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+
+    }
+}

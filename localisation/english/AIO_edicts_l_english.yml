@@ -1,0 +1,9 @@
+﻿l_english:
+ edict_edict_AIO_dm_engine: "Dark Matter Drive Protocol"
+ edict_edict_AIO_dm_engine_desc: "By stably injecting dark matter into the production link, all positions operate beyond conventional limits."
+ edict_edict_AIO_nanite_construction: "Nanites Construction"
+ edict_edict_AIO_nanite_construction_desc: "By deeply reprogramming the nanites, we can accelerate the construction of existing buildings and megastructures. While some residential areas reflect the instability of the system, at least it looks like it is growing "on its own"."
+ edict_edict_AIO_living_metal_construction: "Living Metal Construction"
+ edict_edict_AIO_living_metal_construction_desc: "The ductility and activity of living metals allow us to create alloys with better performance, and the architecturally strong structure greatly reduces the number of calculations and repairs before construction."
+ edict_edict_AIO_nanite_farming: "Nanites Farming"
+ edict_edict_AIO_nanite_farming_desc: "Use nanites to edit and repair crop genes to improve crop yield and quality."

@@ -1,0 +1,9 @@
+# AIO 超然逻辑
+AIO_advanced_logic = {
+	tradable = no
+	category = other
+
+	ai_weight = {
+		weight = 1
+	}
+}

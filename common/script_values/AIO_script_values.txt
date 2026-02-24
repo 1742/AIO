@@ -1,0 +1,227 @@
+# AIO 动态数值
+
+# AIO暗物质驱动协议维护费
+AIO_edict_dm_engine_dm_upkeep = {
+    base = 0
+
+    complex_trigger_modifier = {
+        trigger = count_owned_pop_amount
+        mode = add
+        mult = 0.01
+    }
+    mult = 0.01
+
+    min = 0
+}
+
+# AIO融合宇宙局势解决方案能量消耗, scope: situation
+AIO_merge_cosmos_solution_energy_upkeep_value = {
+    base = 0
+    # 能量币库存修正，扣除能量币库存的0.5%
+    complex_trigger_modifier = {
+        trigger = has_country_resource
+        parameters = { type = energy }
+        mode = add
+        mult = 0.005
+    }
+    # 能量币收入修正，扣除能量币收入的20%
+    complex_trigger_modifier = {
+        trigger = resource_revenue_compare
+        parameters = { resource = energy }
+        mode = add
+        mult = 0.2
+    }
+    floor = yes
+
+    min = 5000
+}
+
+# AIO融合宇宙局势解决方案暗物质消耗, scope: situation
+AIO_merge_cosmos_solution_dm_upkeep_value = {
+    base = 0
+    # 暗物质库存修正，扣除暗物质库存的0.1%
+    complex_trigger_modifier = {
+        trigger = has_country_resource
+        parameters = { type = sr_dark_matter }
+        mode = add
+        mult = 0.001
+    }
+    # 暗物质收入修正，扣除暗物质收入的10%
+    complex_trigger_modifier = {
+        trigger = resource_revenue_compare
+        parameters = { resource = sr_dark_matter }
+        mode = add
+        mult = 0.1
+    }
+    floor = yes
+
+    min = 1000
+}
+
+# AIO融合宇宙局势超然逻辑库存修正, scope: situation
+AIO_merge_cosmos_advanced_logic_modifier = {
+    base = 0
+
+    complex_trigger_modifier = {
+        trigger = has_country_resource
+        parameters = { type = AIO_advanced_logic }
+        mode = add
+    }
+    mult = 0.00005
+
+    min = 1
+	max = 1.5
+}
+
+# AIO融合宇宙局势应用无限修正, scope: situation
+AIO_merge_cosmos_AIT_modifier = {
+    base = 0
+    add = owner.AIO_situation_AIT_time
+    mult = 0.1
+    add = 1
+
+    min = 1
+	max = 2
+}
+
+# AIO递归节点数量
+AIO_num_recursive_node_raw = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_assigned_jobs
+        trigger_scope = planet
+		parameters = { job = AIO_recursive_node }
+		mode = add
+	}
+}
+
+# AIO递归节点数量*2，用于显示增益
+AIO_num_recursive_node_raw_double = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_assigned_jobs
+        trigger_scope = planet
+		parameters = { job = AIO_recursive_node }
+		mode = add
+	}
+
+    mult = 2
+}
+
+# AIO递归节点数量，单位：百
+AIO_num_recursive_node_per_100 = {
+	base = 0
+
+	complex_trigger_modifier = {
+		trigger = num_assigned_jobs
+		trigger_scope = planet
+        parameters = { job = AIO_recursive_node }
+		mode = add
+		mult = 0.01
+	}
+}
+
+# AIO递归节点数量*200，用于显示增益
+AIO_num_recursive_node_per_200 = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = num_assigned_jobs
+        trigger_scope = planet
+		parameters = { job = AIO_recursive_node }
+		mode = add
+        mult = 0.01
+	}
+
+    mult = 2
+}
+
+# AIO递归节点数量，单位：千
+AIO_num_recursive_node_per_1000 = {
+	base = 0
+
+	complex_trigger_modifier = {
+		trigger = num_assigned_jobs
+		trigger_scope = planet
+        parameters = { job = AIO_recursive_node }
+		mode = add
+		mult = 0.001
+	}
+}
+
+# AIO递归节点产出修正
+AIO_recursive_node_produce_factor = {
+	base = 0
+
+	add = value:AIO_num_recursive_node_per_100
+	divide = 20
+}
+
+# AIO递归节点维护费修正
+AIO_recursive_node_upkeep_factor = {
+	base = 0
+
+	add = value:AIO_num_recursive_node_per_100
+	divide = 40
+}
+
+# AIO递归节点产出修正显示
+AIO_recursive_node_produce_factor_display = {
+	base = 0
+
+	add = value:AIO_recursive_node_produce_factor
+    mult = 100
+}
+
+# AIO递归节点维护费修正显示
+AIO_recursive_node_upkeep_factor_display = {
+	base = 0
+
+	add = value:AIO_recursive_node_upkeep_factor
+	mult = 100
+}
+
+# AIO递归节点净化速度
+AIO_recursive_node_purge_factor = {
+	base = 0
+	add = value:AIO_num_recursive_node_per_100
+	mult = 4
+
+    complex_trigger_modifier = {
+		trigger = count_owned_pop_group
+        trigger_scope = planet
+        parameters = { limit = { is_job_of_pop_category = { category = AIO_recursive_node } } }
+		mode = divide
+	}
+}
+
+# AIO节点共振器修正显示
+AIO_resonator_factor_display = {
+	base = 0
+
+	add = value:AIO_num_recursive_node_per_100
+	mult = 10
+}
+
+# 亚弗戈蒙之怒修正
+AIO_Aforgomom_Wrath_factor = {
+    base = 2.71
+
+    pow = event_target:AIO_Aforgomom_country.AIO_Aforgomom_Wrath
+
+    min = 1
+}
+
+# 银河星系数量
+AIO_galaxy_size = {
+	base = 0
+
+	complex_trigger_modifier = {
+		trigger = count_system
+		trigger_scope = no_scope
+		parameters = { limit = { NOT = { is_star_class = sc_AIO_void } } }
+		mode = add
+	}
+	subtract = 3
+
+	min = 10
+}

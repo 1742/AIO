@@ -1,0 +1,31 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_AIO_horizon_engine_build_icon
+        textureFile = gfx/interface/icons/technologies/tech_dyson_sphere.dds
+    }
+
+    spriteType = {
+        name = GFX_AIO_mega_01_node_build_icon
+        textureFile = gfx/interface/icons/technologies/tech_gateway_activation.dds
+    }
+
+    spriteType = {
+        name = GFX_AIO_mega_country_locator_build_icon
+        textureFile = gfx/interface/icons/megastructures/megastructures_build_menu/AIO_locator.dds
+    }
+
+    spriteType = {
+        name = GFX_AIO_mega_system_locator_build_icon
+        textureFile = gfx/interface/icons/megastructures/megastructures_build_menu/AIO_locator.dds
+    }
+
+    spriteType = {
+        name = GFX_AIO_mega_planet_locator_build_icon
+        textureFile = gfx/interface/icons/megastructures/megastructures_build_menu/AIO_locator.dds
+    }
+
+    spriteType = {
+        name = GFX_AIO_mega_colony_locator_build_icon
+        textureFile = gfx/interface/icons/megastructures/megastructures_build_menu/AIO_locator.dds
+    }
+}

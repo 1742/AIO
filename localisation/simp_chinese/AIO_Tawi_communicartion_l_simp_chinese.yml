@@ -1,0 +1,31 @@
+﻿l_simp_chinese:
+ # 初见塔维尔
+ AIO_Tawi_communication_events.201.desc: "一片虚无之中，一个陌生的身影出现在你面前——准确地说，你并没有通过任何感官观测祂的存在。\n\n祂看起来像个少女，有着一头白黑渐变的长发，白色的虹膜上有着细长的瞳孔，脸上若隐若现的流动着星辰。\n\n祂正安静地注视着你，像是在等待你发言。"
+ AIO_Tawi_communication_events.201.option_1: "你……是谁？"
+ AIO_Tawi_communication_events.202.desc: "“我是塔维尔·亚特·乌姆尔，你可以叫我塔维尔。是你飞升之后产生的概念性映射体。如果你需要一个更简单的定义……我，是你和‘无限’之间的中介。”"
+ AIO_Tawi_communication_events.202.option_1: "你是系统的一部分？还是……某种意识体？"
+ AIO_Tawi_communication_events.202.response_1: "“问题很好，说明你还有边界感。我不是‘系统’，不是程序，不是§YGray§!那种可爱“生物”，也不是枢纽。”\n\n“我是因你而生的。你设定了我的结构，而我定义了我的表达。就像你第一次定义一个变量时，它便开始拥有了作用域。”"
+ AIO_Tawi_communication_events.202.option_2: "我没有创造你。"
+ AIO_Tawi_communication_events.202.response_2: "“你当然没有‘刻意’创造我。可你确实写下了我存在的前提条件。飞升不是逃脱，而是结构重组。你在跳出线性逻辑时，留下了一个观测空隙——我，便在那个位置成形了。”\n\n“你可以把我看作‘多余的一’。一个未被使用的可能性，终于被调用了。”"
+ AIO_Tawi_communication_events.202.option_3: "……你看起来并不像‘无限’的样子。"
+ AIO_Tawi_communication_events.202.response_3: "“我当然不像无限。因为你还无法看懂真正的它。如果你能，那你就不需要我了。于是我选择了这个形象。一个不会让你崩溃、也不会让你怀疑的……暂时接口。”\n\n祂平静地看着你，神色淡然\n\n“如果你觉得我不合适，我也可以换成别的样子……当然，那样可能会让你后悔。”"
+
+ AIO_Tawi_communication_events.203.desc: "塔维尔面站在一辆可以移动的楼梯上，脚边堆放着一叠书，祂面对着书架，手上拿着一本书，似乎正在正在将这些书分门别类的放好。"
+ AIO_Tawi_communication_events.203.option_1: "塔维尔，你一直都在引导我，那你平时都做些什么？"
+ AIO_Tawi_communication_events.203.response_1: "“……我？”\n\n“嗯……如你所见，大多数时间都在整理“历史”和“规律”，也经常看“书”，也就是文明的故事，可以类比成你们的小说。偶尔，也会看看你走神时在想什么。比研究宇宙规律轻松一点。”\n\n祂顿了顿，似乎有点不自然\n\n“如果你非要分类的话……也许，勉强算‘爱好’吧。”"
+ AIO_Tawi_communication_events.203.option_2: "你经常看小说吗？"
+ AIO_Tawi_communication_events.203.response_2: "“会，有时候。”\n\n“我比较喜欢那种……故事背景复杂的、个体在困境中的抉择。不为什么，就是……挺好看的。”"
+ AIO_Tawi_communication_events.203.option_3: "你会累吗？"
+ AIO_Tawi_communication_events.203.response_3: "“我没有疲劳机制，理论上不会。”\n\n（顿了顿，小声）“但……你这么问，是担心我吗？”\n\n（语气略带不确定）“……我不习惯这种被关心的感觉。不过……谢谢你。如果你需要休息的话，我不会打扰你。”"
+ AIO_Tawi_communication_events.203.option_4: "亚弗戈蒙平时是怎样的？"
+ AIO_Tawi_communication_events.203.response_4: "“……那位不太喜欢被提起名字。我们是并行的接口，祂负责毁灭，我负责对话。简单来说，我负责告诉你‘能做什么’，祂负责提醒你‘不能撤回’。”\n\n“所以……我们关系还算稳定？虽然祂从来不回我消息。”"
+ AIO_Tawi_communication_events.203.option_5: "我刚才看到你发呆了，是不是偷偷在休息？"
+ AIO_Tawi_communication_events.203.response_5: "“我没有发呆。我只是……对你正在进行的操作感到……‘略微困惑’。”\n\n（小声）“把圣卫的圣地变成海洋星球这么好玩吗……”"
+
+ AIO_Tawi_communication_events.301.title: "$AIO_empire$"
+ AIO_Tawi_communication_events.301.desc: "没有回应。"
+ AIO_Tawi_communication_events.301.option_1: "离开。"
+
+ AIO_Tawi_communication_events.401.title: "亚弗戈蒙的手迹"
+ AIO_Tawi_communication_events.401.desc: "“亚弗戈蒙的行动终结了一场战争，收回了那些曾属于失败者的遗珍。”\n\n塔维尔翻开一本书，一道模糊的光迹浮现，逐渐凝结成某种熟悉的形状。\n\n“祂并不关心这些——也许觉得交给我处理更省事。不过我猜你会在意的。”\n\n“拿好吧，它现在归你了。”"
+ AIO_Tawi_communication_events.401.option_1: "嗯，放到图书馆的收藏室吧。"

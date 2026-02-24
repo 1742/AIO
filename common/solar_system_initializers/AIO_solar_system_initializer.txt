@@ -1,0 +1,38 @@
+# 超维空间
+
+AIO_hyperdimensional_space_initializer = {
+    name = AIO_HYPER_DIMENSIONAL_SPACE
+    class = sc_AIO_void
+    usage = misc_system_init
+    usage_odds = 0
+
+    planet = {
+		count = 1
+		class = pc_AIO_empty_space
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 0
+		has_ring = no
+
+        init_effect = {
+            set_name = AIO_HYPER_DIMENSIONAL_SPACE
+            save_event_target_as = AIO_HS_star
+        }
+	}
+
+    init_effect = {
+        create_starbase = {
+            size = starbase_outpost
+            owner = root
+        }
+        spawn_megastructure = {
+            type = AIO_mega_01
+            planet = event_target:AIO_HS_star
+            orbit_angle = 0
+            orbit_distance = 0
+            owner = root
+        }
+        set_star_flag = AIO_HS_system
+        save_global_event_target_as = AIO_HS_system
+    }
+}

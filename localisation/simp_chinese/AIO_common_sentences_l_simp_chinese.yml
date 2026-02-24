@@ -1,0 +1,10 @@
+﻿l_simp_chinese:
+ # 常用语
+ AIO_confirm: "确认"
+ AIO_cancel: "取消"
+ AIO_return: "返回"
+ AIO_exit: "退出"
+ AIO_close_communication: "关闭通讯"
+ AIO_continue: "继续"
+ AIO_think_more: "容我三思"
+ AIO_dawn_it: "Damn it!"

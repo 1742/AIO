@@ -1,0 +1,342 @@
+# AIO触发器
+
+# 能应用无限的国家
+AIO_can_AIT = {
+    optimize_memory
+
+    OR = {
+        has_ascension_perk = ap_cosmogenesis
+        has_ascension_perk = ap_AIO_allinone
+    }
+}
+
+AIO_AIT_all_random = {
+    optimize_memory
+
+    has_global_flag = AIO_AIT_existed_blackout
+    has_global_flag = AIO_AIT_existed_constant_round
+    has_global_flag = AIO_AIT_existed_superlight
+    has_global_flag = AIO_AIT_existed_alloy_ductility
+    has_global_flag = AIO_AIT_existed_altered_nutrition
+    has_global_flag = AIO_AIT_existed_mass_shift
+    has_global_flag = AIO_AIT_existed_shroud_tear
+    has_global_flag = AIO_AIT_existed_time_ruin
+    has_global_flag = AIO_AIT_existed_gravity_swell
+}
+
+# 在AIO帝国范围使用
+AIO_AIT_all_DAIT = {
+    optimize_memory
+
+    has_modifier = AIO_DAIT_ASLT_modifier
+    has_modifier = AIO_DAIT_uncausality_modifier
+    has_modifier = AIO_DAIT_simulate_cosmos_modifier
+    has_modifier = AIO_DAIT_design_requirement_modifier
+    has_modifier = AIO_DAIT_superlight_modifier
+    has_modifier = AIO_DAIT_weave_substrate_modifier
+    has_modifier = AIO_DAIT_nanites_body_modifier
+    has_modifier = AIO_DAIT_void_mining_modifier
+}
+
+# 星系内有殖民地
+AIO_system_existed_colony = {
+    optimize_memory
+
+    any_system_planet = {
+        OR = {
+            is_colony = yes
+            is_under_colonization = yes
+        }
+    }
+}
+
+# 星系内有自然殖民地
+AIO_system_existed_natural_colony = {
+    optimize_memory
+
+    any_system_planet = {
+        is_artificial = no
+        OR = {
+            is_colony = yes
+            is_under_colonization = yes
+        }
+    }
+}
+
+# 判断行星是否有星环基地，在planet下使用
+AIO_planet_has_oribital_ring = {
+    optimize_memory
+
+    solar_system = {
+        any_starbase_in_system = {
+            planet = { is_same_value = prevprevprev }
+            OR = {
+                has_starbase_size = orbital_ring_tier_1
+                has_starbase_size = orbital_ring_tier_2
+                has_starbase_size = orbital_ring_tier_3
+            }
+        }
+    }
+}
+
+# 判断巨构类型，scope: megastructure
+AIO_is_dyson_sphere = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = dyson_sphere_1
+        is_megastructure_type = dyson_sphere_2
+        is_megastructure_type = dyson_sphere_3
+        is_megastructure_type = dyson_sphere_4
+        is_megastructure_type = dyson_sphere_5
+        is_megastructure_type = dyson_sphere_restored
+    }
+}
+AIO_is_dyson_sphere_disco = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = dyson_sphere_disco
+        is_megastructure_type = dyson_sphere_disco_restored
+    }
+}
+AIO_is_matter_decompressor = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = matter_decompressor_0
+        is_megastructure_type = matter_decompressor_1
+        is_megastructure_type = matter_decompressor_2
+        is_megastructure_type = matter_decompressor_3
+        is_megastructure_type = matter_decompressor_4
+        is_megastructure_type = matter_decompressor_restored
+    }
+}
+AIO_is_mega_shipyard = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = mega_shipyard_0
+        is_megastructure_type = mega_shipyard_1
+        is_megastructure_type = mega_shipyard_2
+        is_megastructure_type = mega_shipyard_3
+        is_megastructure_type = mega_shipyard_restored
+    }
+}
+AIO_is_quantum_catapult = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = quantum_catapult_0
+        is_megastructure_type = quantum_catapult_1
+        is_megastructure_type = quantum_catapult_2
+        is_megastructure_type = quantum_catapult_3
+        is_megastructure_type = quantum_catapult_restored
+    }
+}
+AIO_is_spy_orb = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = spy_orb_0
+        is_megastructure_type = spy_orb_1
+        is_megastructure_type = spy_orb_2
+        is_megastructure_type = spy_orb_3
+        is_megastructure_type = spy_orb_4
+        is_megastructure_type = spy_orb_restored
+    }
+}
+AIO_is_think_tank = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = think_tank_0
+        is_megastructure_type = think_tank_1
+        is_megastructure_type = think_tank_2
+        is_megastructure_type = think_tank_3
+        is_megastructure_type = think_tank_4
+        is_megastructure_type = think_tank_restored
+    }
+}
+AIO_is_strategic_coordination_center = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = strategic_coordination_center_0
+        is_megastructure_type = strategic_coordination_center_1
+        is_megastructure_type = strategic_coordination_center_2
+        is_megastructure_type = strategic_coordination_center_3
+        is_megastructure_type = strategic_coordination_center_restored
+    }
+}
+AIO_is_mega_art_installation = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = mega_art_installation_0
+        is_megastructure_type = mega_art_installation_1
+        is_megastructure_type = mega_art_installation_2
+        is_megastructure_type = mega_art_installation_3
+        is_megastructure_type = mega_art_installation_4
+        is_megastructure_type = mega_art_installation_restored
+        is_megastructure_type = mega_art_installation_restored_2
+    }
+}
+AIO_is_interstellar_assembly = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = interstellar_assembly_0
+        is_megastructure_type = interstellar_assembly_1
+        is_megastructure_type = interstellar_assembly_2
+        is_megastructure_type = interstellar_assembly_3
+        is_megastructure_type = interstellar_assembly_4
+        is_megastructure_type = interstellar_assembly_restored
+    }
+}
+AIO_is_dyson_swarm = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = dyson_swarm_1
+        is_megastructure_type = dyson_swarm_2
+        is_megastructure_type = dyson_swarm_3
+    }
+}
+AIO_is_orbital_arc_furnace = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = orbital_arc_furnace_1
+        is_megastructure_type = orbital_arc_furnace_2
+        is_megastructure_type = orbital_arc_furnace_3
+        is_megastructure_type = orbital_arc_furnace_4
+    }
+}
+AIO_is_gateway = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = gateway_0
+        is_megastructure_type = gateway_final
+        is_megastructure_type = gateway_restored
+    }
+}
+AIO_is_hyper_relay = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = hyper_relay
+        is_megastructure_type = hyper_relay_restored
+    }
+}
+AIO_is_ruined_mega = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = ring_world_ruined
+        is_megastructure_type = dyson_sphere_ruined
+        is_megastructure_type = dyson_sphere_permanently_ruined
+        is_megastructure_type = matter_decompressor_ruined
+        is_megastructure_type = matter_decompressor_permanently_ruined
+        is_megastructure_type = mega_shipyard_ruined
+        is_megastructure_type = mega_shipyard_permanently_ruined
+        is_megastructure_type = quantum_catapult_ruined
+        is_megastructure_type = spy_orb_ruined
+        is_megastructure_type = spy_orb_permanently_ruined
+        is_megastructure_type = think_tank_ruined
+        is_megastructure_type = think_tank_permanently_ruined
+        is_megastructure_type = strategic_coordination_center_ruined
+        is_megastructure_type = strategic_coordination_center_permanently_ruined
+        is_megastructure_type = mega_art_installation_ruined
+        is_megastructure_type = mega_art_installation_permanently_ruined
+        is_megastructure_type = interstellar_assembly_ruined
+        is_megastructure_type = interstellar_assembly_permanently_ruined
+        is_megastructure_type = gateway_ruined
+        is_megastructure_type = hyper_relay_ruined
+        is_megastructure_type = orbital_ring_ruined
+    }
+}
+AIO_is_AIO_mega = {
+    optimize_memory
+
+    OR = {
+        is_megastructure_type = AIO_mega_01
+        is_megastructure_type = AIO_mega_01_fact
+        is_megastructure_type = AIO_mega_02
+        is_megastructure_type = AIO_mega_03
+        is_megastructure_type = AIO_mega_04
+        is_megastructure_type = AIO_mega_04_activate
+    }
+}
+
+# 判断是否是单中心天体星系，scope: system
+AIO_is_single_star_class = {
+    optimize_memory
+
+    NOR = {
+        is_star_class = sc_binary_1
+        is_star_class = sc_binary_2
+        is_star_class = sc_binary_3
+        is_star_class = sc_binary_4
+        is_star_class = sc_binary_5
+        is_star_class = sc_binary_6
+        is_star_class = sc_binary_7
+        is_star_class = sc_binary_8
+        is_star_class = sc_binary_9
+        is_star_class = sc_binary_10
+
+        is_star_class = sc_trinary_1
+        is_star_class = sc_binary_2
+        is_star_class = sc_binary_3
+        is_star_class = sc_binary_4
+    }
+}
+
+# 是否被选定为肃正球，scope: planet
+AIO_is_ai_planet = {
+    optimize_memory
+
+    OR = {
+        has_planet_flag = machine_world_1
+        has_planet_flag = machine_world_2
+        has_planet_flag = machine_world_3
+        has_planet_flag = machine_world_4
+        has_planet_flag = machine_lair
+    }
+}
+
+# 禁止AIO模组移除特定星球的API，scope: planet
+AIO_safe_remove_planet_exclude_API = {
+    optimize_memory
+
+    always = no
+}
+
+# 禁止AIO模组移除特定星系的API，scope: system
+AIO_safe_remove_system_exclude_API = {
+    optimize_memory
+
+    always = no
+}
+
+# 禁止AIO模组移除特定巨构的API，scope: megastructure
+AIO_safe_remove_megastructure_exclude_API = {
+    optimize_memory
+
+    always = no
+}
+
+# 禁止AIO模组移除特定舰队的API，scope: fleet
+AIO_safe_remove_fleet_exclude_API = {
+    optimize_memory
+
+    always = no
+}
+
+# 禁止AIO模组移除特定领袖的API，scope: leader
+AIO_safe_remove_leader_exclude_API = {
+    optimize_memory
+
+    always = no
+}

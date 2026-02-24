@@ -1,0 +1,179 @@
+# AIO塔维尔交互
+namespace = AIO_Tawi_communication_events
+
+# ---------------------------------- #
+# 初见塔维尔
+# ---------------------------------- #
+country_event = {
+    id = AIO_Tawi_communication_events.201
+    fire_only_once = yes
+
+    title = UNKNOWN
+    desc = AIO_Tawi_communication_events.201.desc
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = crisis_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        name = AIO_Tawi_communication_events.201.option_1
+        country_event = { id = AIO_Tawi_communication_events.202 }
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = AIO_Tawi_communication_events.202
+    title = AIO_Tawi_full_name
+    desc = AIO_Tawi_communication_events.202.desc
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = crisis_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        name = AIO_Tawi_communication_events.202.option_1
+        response_text = AIO_Tawi_communication_events.202.response_1
+        is_dialog_only = yes
+    }
+
+    option = {
+        name = AIO_Tawi_communication_events.202.option_2
+        response_text = AIO_Tawi_communication_events.202.response_2
+        is_dialog_only = yes
+    }
+
+    option = {
+        name = AIO_Tawi_communication_events.202.option_3
+        response_text = AIO_Tawi_communication_events.202.response_3
+        is_dialog_only = yes
+    }
+
+    option = {
+        name = GOOD
+        country_event = { id = AIO_ctrl_events.201 }
+        default_hide_option = yes
+    }
+}
+
+
+# ---------------------------------- #
+# 闲聊
+# ---------------------------------- #
+
+country_event = {
+    id = AIO_Tawi_communication_events.203
+    title = AIO_Tawi
+    desc = AIO_Tawi_communication_events.203.desc
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_2
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        name = AIO_Tawi_communication_events.203.option_1
+        response_text = AIO_Tawi_communication_events.203.response_1
+        is_dialog_only = yes
+    }
+
+    option = {
+        name = AIO_Tawi_communication_events.203.option_2
+        response_text = AIO_Tawi_communication_events.203.response_2
+        is_dialog_only = yes
+    }
+
+    option = {
+        name = AIO_Tawi_communication_events.203.option_3
+        response_text = AIO_Tawi_communication_events.203.response_3
+        is_dialog_only = yes
+    }
+
+    option = {
+        name = AIO_Tawi_communication_events.203.option_4
+        response_text = AIO_Tawi_communication_events.203.response_4
+        is_dialog_only = yes
+    }
+
+    option = {
+        name = AIO_Tawi_communication_events.203.option_5
+        response_text = AIO_Tawi_communication_events.203.response_5
+        is_dialog_only = yes
+    }
+
+    option = {
+        name = AIO_return
+        country_event = { id = AIO_ctrl_events.202 days = 1 }
+        default_hide_option = yes
+    }
+}
+
+
+# ---------------------------------- #
+# 外交事件
+# ---------------------------------- #
+
+# 其他帝国
+country_event = { # this - 触发通讯者 from - 被通讯者
+    id = AIO_Tawi_communication_events.301
+    title = UNKNOWN
+    desc = AIO_Tawi_communication_events.301.desc
+
+    diplomatic = yes
+    diplomatic_title = AIO_Tawi_communication_events.301.title
+    picture_event_data = { room = shroud_room }
+
+    is_triggered_only = yes
+    trigger = {
+        NOT = { has_active_event = { AIO_Tawi_communication_events.301 } }
+        from = {
+            is_country_type = AIO_empire
+            NOT = { is_same_value = root }
+        }
+    }
+
+    option = {
+        name = AIO_Tawi_communication_events.301.option_1
+        default_hide_option = yes
+    }
+}
+
+
+# ---------------------------------- #
+# 亚弗戈蒙转交遗珍
+# ---------------------------------- #
+country_event = {
+    id = AIO_Tawi_communication_events.401
+    title = AIO_Tawi_communication_events.401.title
+    desc = AIO_Tawi_communication_events.401.desc
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_2
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        name = AIO_Tawi_communication_events.401.option_1
+        steal_relic = { target = from relic = all }
+        default_hide_option = yes
+    }
+}
+

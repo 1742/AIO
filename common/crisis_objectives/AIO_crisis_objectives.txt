@@ -1,0 +1,63 @@
+# AIO天灾目标
+
+# 征用神经芯片
+crisobj_AIO_neural_chips = { # Fire per year
+	reward = {
+		base = 0
+
+        add = capital_scope.value:AIO_num_recursive_node_per_100
+        mult = 50
+
+		min = 0
+	}
+	recurring = yes
+}
+
+# 研究新科技
+crisobj_AIO_research_tech = {
+	reward = {
+		base = 200
+		complex_trigger_modifier = { #subtract 10 for each playable country that exists
+			trigger = count_playable_country
+			mode = subtract
+			mult = 10
+		}
+		round_to = 5	#we want a solid number
+		min = 25		#and we don't want less than 50
+	}
+}
+
+# 应用无限
+crisobj_AIO_research_thesis = { #Also use for the Vultaum Projects
+	reward = {
+		base = 2500
+		complex_trigger_modifier = { #subtract 200 for each playable country that exists
+			trigger = count_playable_country
+			mode = subtract
+			mult = 200
+		}
+		round_to = 500 	#we want a solid number
+		min = 100		#and we don't want less than 100
+	}
+}
+
+# 建造科学枢纽
+crisobj_AIO_have_science_nexuses = {
+	potential = {
+		has_utopia = yes
+	}
+	reward = {
+		base = 800
+		complex_trigger_modifier = { #subtract 50 for each playable country that exists
+			trigger = count_playable_country
+			mode = subtract
+			mult = 50
+		}
+		round_to = 200 	#we want a solid number
+		min = 200		#and we don't want less than 200
+	}
+	recurring = yes
+}
+
+
+

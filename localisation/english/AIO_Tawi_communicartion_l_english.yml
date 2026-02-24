@@ -1,0 +1,32 @@
+﻿l_english:
+ # firstly meet Tawi
+ AIO_Tawi_communication_events.201.desc: "Amidst the void, a strange figure appears before you - to be precise, you haven't observed her existence through any of your senses.\n\nShe looks like a young girl, with long hair that gradually changes from white to black. Her white iris has slender pupils, and stars are faintly visible and flowing on her face.\n\nShe is quietly watching you, as if waiting for you to speak."
+ AIO_Tawi_communication_events.201.option_1: "You... Who is it?"
+ AIO_Tawi_communication_events.202.desc: "I'm Tawil-at'Umr. You can call me Tawi. It is a conceptual mapping entity that emerged after your ascension. If you need a simpler definition... I am the intermediary between you and the "infinite"."
+ AIO_Tawi_communication_events.202.option_1: "Are you part of the system? Or... Some kind of consciousness?"
+ AIO_Tawi_communication_events.202.response_1: "The question is very good. It shows that you still have a sense of boundaries. I'm not a "system", not a program, not a cute "creature" like §YGray§!, nor a hub. I was born because of you. You set my structure, while I define my expression. Just like when you define a variable for the first time, it begins to have a scope."
+ AIO_Tawi_communication_events.202.option_2: "I didn't create you."
+ AIO_Tawi_communication_events.202.response_2: "Of course you didn't "deliberately" create me. But you did write down the preconditions for my existence. Ascension is not an escape but a structural reorganization. When you stepped out of linear logic, you left an observation gap - and it was at that position that I took shape. You can regard me as the "redundant one". An unused possibility has finally been invoked."
+ AIO_Tawi_communication_events.202.option_3: "... You don't look like "Infinite"."
+ AIO_Tawi_communication_events.202.response_3: ""Of course I'm not like Infinity. Because you still can't understand the real it. If you could, then you wouldn't need me. So I chose this image. One that won't break you down or make you doubt... a temporary interface."\n\nShe looks at you calmly, with a composed expression.\n\n"If you think I'm not suitable, I can also change into another form... Of course, that might make you regret.""
+
+ AIO_Tawi_communication_events.203.desc: "Tawi was standing on a movable staircase, with a stack of books at her feet. Facing the bookshelf, she held a book in her hand and seemed to be sorting them out."
+ AIO_Tawi_communication_events.203.option_1: "Tawi, you've been guiding me all along. So, what do you usually do?"
+ AIO_Tawi_communication_events.203.response_1: ""...Me?"\n\n"Mm... As you can see, I spend most of my time organizing 'history' and 'laws'. I also read a lot of 'books', stories of civilizations, comparable to your novels. Occasionally, I'll glance at what you're thinking when your mind drifts. It's a bit more relaxing than studying the structure of the universe."\n\nShe paused, seeming slightly awkward.\n\n"If you insist on classifying it... then maybe, just maybe, you could call it a 'hobby'.""
+ AIO_Tawi_communication_events.203.option_2: "Do you often read novels?"
+ AIO_Tawi_communication_events.203.response_2: ""Sometimes I do."\n\n"I prefer the kind of stories with... intricate worlds, and individuals making hard choices in difficult times. Not for any reason, really... I just think they're nice to read.""
+ AIO_Tawi_communication_events.203.option_3: "Will you be tired?"
+ AIO_Tawi_communication_events.203.response_3: ""I don't have a fatigue mechanism, so theoretically-no."\n\n(pauses, softly)\n"But... are you asking because you're worried about me?"\n\n(tone slightly uncertain)\n"...I'm not used to being cared about like this. But... thank you. If you need to rest, I won't disturb you.""
+ AIO_Tawi_communication_events.203.option_4: "So... what's Aforgomom usually like?"
+ AIO_Tawi_communication_events.203.response_4: ""...That one doesn't really like being called by name. We're parallel interfaces. I handle communication, and Aforgomom handles destruction."\n\n"To put it simply, I'm here to tell you what can be done, and he's here to remind you there's no going back."\n\n(brief pause)\n"So... I guess you could say we get along? Though... He has never replied to any of my messages.""
+ AIO_Tawi_communication_events.203.option_5: "I just saw you spacing out a bit... Were you secretly taking a break?"
+ AIO_Tawi_communication_events.203.response_5: ""I wasn't spacing out. I was simply... slightly puzzled by your current actions."\n\n(murmurs)\n"Is turning the $holy_planet$ of $personality_fallen_empire_spiritualist$ into an ocean world... really that amusing to you?""
+
+ AIO_Tawi_communication_events.301.title: "$AIO_empire$"
+ AIO_Tawi_communication_events.301.desc: "No response."
+ AIO_Tawi_communication_events.301.option_1: "Leave here."
+
+ AIO_Tawi_communication_events.401.title: "Aforgomom's Trace"
+ AIO_Tawi_communication_events.401.desc: ""Aforgomom's actions brought the end to a war, reclaiming those relics once held by the fallen."\n\nTawi opens a book. A hazy strand of light rises from its pages, gradually twisting into a shape you recognize.\n\n"He doesn't care about things like this - maybe he thinks it's easier to leave it to me. But I figured you might."\n\n"Here. It's yours now.""
+ AIO_Tawi_communication_events.401.option_1: "Alright. Send it to the library's collection vault."
+ 

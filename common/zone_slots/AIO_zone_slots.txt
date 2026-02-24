@@ -1,0 +1,7 @@
+# AIO区域槽
+
+slot_AIO_matryoshka_brain = {
+	included_zone_sets = { AIO_matryoshka_brain_zone_set }
+
+	unlock = { always = yes }
+}

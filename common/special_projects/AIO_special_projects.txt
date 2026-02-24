@@ -1,0 +1,230 @@
+# AIO特殊项目
+
+# 时间之墟一阶段
+special_project = {
+	icon = gfx/interface/icons/situation_log/situation_log_alert.dds
+
+	key = "AIO_AIT_TIME_RUIN_STAGE_1"
+	event_chain = AIO_AIT_TR_events_chain
+	location = yes
+
+	picture = GFX_evt_burning_city
+
+	timelimit = 1080
+	cost = 0
+	days_to_research = 180
+
+	event_scope = ship_event
+
+	requirements = { shipclass_transport = 1000 }
+
+	on_success = { # this - ship, from - planet(location)
+		from = { planet_event = { id = AIO_AIT_events.31012 } }
+	}
+
+	on_fail = { # this - country, from - planet(location)
+		from = { planet_event = { id = AIO_AIT_events.31014 } }
+	}
+}
+
+# 时间之墟二阶段
+special_project = {
+	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
+
+	key = "AIO_AIT_TIME_RUIN_STAGE_2"
+	event_chain = AIO_AIT_TR_events_chain
+	location = yes
+
+	picture = GFX_evt_physics_research
+
+	timelimit = 720
+	cost = @fallentechcost
+	tech_department = physics_technology
+
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = { # this - ship, from - planet(location)
+		from = { planet_event = { id = AIO_AIT_events.31013 } }
+	}
+
+	on_fail = { # this - country, from - planet(location)
+		from = { planet_event = { id = AIO_AIT_events.31014 } }
+	}
+}
+
+# 时间之墟三阶段
+special_project = {
+	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
+
+	key = "AIO_AIT_TIME_RUIN_STAGE_3"
+	event_chain = AIO_AIT_TR_events_chain
+	location = yes
+
+	picture = GFX_evt_clocks
+
+	timelimit = 720
+	cost = @fallentechcost
+	tech_department = physics_technology
+
+	event_scope = ship_event
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = { # this - ship, from - planet(location)
+		from = {
+			set_timed_planet_flag = { flag = AIO_finish_TR_special_project_release days = 5 }
+			planet_event = { id = AIO_AIT_events.31014 }
+		}
+	}
+
+	on_fail = { # this - country, from - planet(location)
+		from = { planet_event = { id = AIO_AIT_events.31014 } }
+	}
+}
+
+# 重力膨胀一阶段
+special_project = {
+	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
+
+	key = "AIO_AIT_GRAVITY_SWELL_STAGE_1"
+	event_chain = AIO_AIT_GS_events_chain
+	location = yes
+
+	picture = GFX_evt_physics_research
+
+	# cost = 0
+	days_to_research = 100
+	timelimit = 3600
+
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = { # this - ship, from - planet(location)
+		from.solar_system = { system_event = { id = AIO_AIT_events.31112 } }
+	}
+
+	on_fail = { # this - country, from - planet(location)
+		from.solar_system = { system_event = { id = AIO_AIT_events.31113 } }
+	}
+}
+
+# 重力膨胀二阶段，改造星环
+special_project = {
+	icon = gfx/interface/icons/situation_log/situation_log_alert.dds
+
+	key = "AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_1"
+	event_chain = AIO_AIT_GS_events_chain
+	location = yes
+
+	picture = GFX_evt_orbital_ring
+
+	timelimit = 1800
+
+	same_option_group_as = {
+		AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_2
+	}
+
+	event_scope = planet_event
+	requirements = { handled_by_event_tooltip = AIO_AIT_GS_STAGE_tt }
+
+	on_fail = {  }
+}
+
+# 重力膨胀二阶段，紧急撤离
+special_project = {
+	icon = gfx/interface/icons/situation_log/situation_log_alert.dds
+
+	key = "AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_2"
+	event_chain = AIO_AIT_GS_events_chain
+	location = yes
+
+	picture = GFX_evt_big_landing_ship
+
+	same_option_group_as = {
+		AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_1
+	}
+
+	timelimit = 1800
+
+	event_scope = planet_event
+	requirements = { handled_by_event_tooltip = AIO_AIT_GS_STAGE_tt }
+
+	on_fail = { # this - country, from - planet(location)
+		from.solar_system = { system_event = { id = AIO_AIT_events.31113 } }
+	}
+}
+
+# 重力膨胀二阶段，逆转坍缩
+special_project = {
+	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
+
+	key = "AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_3"
+	event_chain = AIO_AIT_GS_events_chain
+	location = yes
+
+	picture = GFX_evt_cosmogenesis_crisis
+
+	timelimit = 1800
+	cost = @fallentechcost
+	tech_department = physics_technology
+
+	event_scope = ship_event
+
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+
+	on_success = { # this - ship, from - planet(location)
+		from = { set_timed_planet_flag = { flag = AIO_AIT_GS_finish_reverse days = 5 } }
+		solar_system = { system_event = { id = AIO_AIT_events.31113 } }
+	}
+}
+
+# 重力膨胀二阶段，静观其变
+special_project = {
+	icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
+
+	key = "AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_4"
+	event_chain = AIO_AIT_GS_events_chain
+	location = yes
+
+	picture = GFX_evt_black_hole
+
+	timelimit = 1800
+
+	event_scope = planet_event
+	requirements = { handled_by_event_tooltip = AIO_AIT_GS_STAGE_tt }
+
+	on_fail = { # this - country, from - planet(location)
+		from.solar_system = { system_event = { id = AIO_AIT_events.31113 } }
+	}
+}
+
+# 晋升，触发胜利
+special_project = {
+	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
+
+	key = "AIO_ASCENSION"
+	event_chain = AIO_crisis_events_chain
+	location = yes
+
+	picture = GFX_evt_vortex
+
+	days_to_research = 30
+
+	event_scope = country_event
+
+	on_success = { country_event = { id = AIO_crisis_events.601 } }
+}

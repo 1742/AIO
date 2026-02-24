@@ -1,0 +1,29 @@
+﻿l_english:
+ # situation
+ # merge cosmos
+ situation_AIO_merge_cosmos: "Merge Cosmos"
+ situation_AIO_merge_cosmos_type: "Merge Cosmos"
+ situation_AIO_merge_cosmos_desc: "The universe was never designed to be unified, but we have mastered its basic structure. By adjusting the underlying expression of the law, we gradually converge each dimension and spatio-temporal state into a single existence model. The advancement of each stage will make the structure of "reality" more compliant, simpler and closer to our will. \n\n Effect: When the situation progresses, an §RInfinity Thesis§! is triggered every six months. It will affect systems and planets in the galaxy."
+ situation_AIO_merge_cosmos_monthly_change_tooltip: ""
+ AIO_merge_cosmos_advanced_logic_modifier: "$AIO_advanced_logic$ inventory"
+ AIO_merge_cosmos_apply_infinite_thesis_modifier: "§RApply Infinity Thesis§!"
+ AIO_merge_cosmos_requires_AIO_mega_01: "£trigger_no£needs $AIO_mega_01$"
+ AIO_merge_cosmos_requires_AIO_mega_02: "£trigger_no£needs $AIO_mega_02$"
+ AIO_merge_cosmos_requires_AIO_mega_03: "£trigger_no£needs $AIO_mega_03$"
+ AIO_merge_cosmos_requires_AIO_mega_04: "£trigger_no£needs $AIO_mega_04$"
+ AIO_merge_cosmos_solution: "merge"
+ AIO_merge_cosmos_solution_desc: "Continue to promote the integration process. Dimensions will be further unified, and the resistance of the universe will gradually weaken. As the stages progress, our consciousness structure will gradually expand to all levels of reality, and the original universe will be rewritten by ourselves into a new paradigm ontology."
+ AIO_merge_cosmos_pause_solution: "pause merge"
+ AIO_merge_cosmos_pause_solution_desc: "Suspend the integration process. It can be used to adjust the structure, wait for resources to flow back, or stabilize some unfinished construction paths. However, the reality structure itself does not wait indefinitely."
+
+
+ # erase galaxy
+ situation_AIO_erase_galaxy: "Erase Galaxy"
+ situation_AIO_erase_galaxy_type: "Erase Galaxy"
+ situation_AIO_erase_galaxy_desc: "The star map is collapsing in slow motion, reality's mesh erased like sand drawings in the tide.\nWith every hyperlane jump, another star sinks into the nameless abyss. Existence is being systematically negated. If left unchecked, this quiet dismantling will continue until all returns to silence.\n\nEffect: The situation advances once every three months, erasing several galaxies."
+ situation_AIO_erase_galaxy_monthly_change_tooltip: ""
+ AIO_erase_galaxy_solution: "Erase"
+ AIO_erase_galaxy_solution_desc: "Let the tide flow. The unraveling of the galaxy shall proceed, piece by piece."
+ AIO_erase_galaxy_stop_solution: "Stop"
+ AIO_erase_galaxy_stop_solution_desc: "Halt the process. What remains of the stars may yet be spared the void."
+ AIO_situation_AIO_erase_galaxy_galaxy_size_modifier: "galaxy size"

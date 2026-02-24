@@ -1,0 +1,40 @@
+# AIO 行星决议
+
+# 环境改造
+decision_AIO_change_pc = {
+	owned_planets_only = no
+	sound = event_administrative_work
+	icon = decision_AIO_change_pc
+
+	resources = {
+		category = decisions
+		cost = {
+            trigger = { is_star = no }
+			energy = 5000
+		}
+        cost = {
+            trigger = { is_star = yes }
+            energy = 10000
+        }
+
+        cost = { AIO_advanced_logic = 5000 }
+	}
+
+	potential = {
+        always = no
+		controller = { has_modifier = AIO_DAIT_weave_substrate_modifier }
+	}
+
+	allow = {
+		NOT = { has_modifier = AIO_weave_substrate_change_pc_modifier }
+	}
+
+	effect = {
+		add_modifier = { modifier = AIO_weave_substrate_change_pc_modifier days = 1000 }
+        planet_event = { id = AIO_AIT_events.403 days = 1000 }
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

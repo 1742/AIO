@@ -1,0 +1,789 @@
+# AIO万物归一科技
+
+
+# ---------------------------------- #
+# 天灾科技
+# ---------------------------------- #
+tech_AIO_exponential_learning_theory = {
+	icon = tech_cosmogenesis_crisis_1
+	area = physics
+    cost = 10000
+    tier = 5
+    category = { computing }
+    ai_update_type = all
+    is_rare = yes
+    weight = 0
+
+    potential = { has_ascension_perk = ap_AIO_allinone }
+
+	modifier = { all_technology_research_speed = 0.1 }
+
+    prereqfor_desc = {
+        custom = {
+            title = AIO_level_1_tech_title
+            desc = AIO_exponential_learning_theory_tech_desc
+        }
+    }
+}
+
+tech_AIO_ascending_dimensionality_theory = {
+	icon = tech_cosmogenesis_crisis_2
+	area = physics
+    cost = 10000
+    tier = 5
+    category = { particles }
+    ai_update_type = all
+    is_rare = yes
+    weight = 0
+
+    potential = { has_ascension_perk = ap_AIO_allinone }
+
+	modifier = {
+		planet_building_build_speed_mult = 0.2
+		megastructure_build_speed_mult = 0.1
+	}
+
+    prereqfor_desc = {
+        custom = {
+            title = AIO_level_1_tech_title
+            desc = AIO_ascending_dimensionality_theory_tech_desc
+        }
+    }
+}
+
+
+# ---------------------------------- #
+# 老登建筑科技
+# ---------------------------------- #
+tech_AIO_fe_automatication = {
+    icon = tech_construction_templates
+
+    area = engineering
+    cost = @tier4cost2
+    tier = 4
+    category = { industry }
+    ai_update_type = all
+    weight = 1
+    is_rare = yes
+
+    potential = { has_menace_perk = menp_AIO_buildings_1 }
+
+    prerequisites = { tech_construction_templates }
+
+    modifier = { planet_building_build_speed_mult = 0.1 }
+
+    weight_modifier = {
+        modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+    }
+}
+
+tech_AIO_fe_forge_1 = {
+    icon = tech_fe_forge_1
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { industry }
+	ai_update_type = all
+	weight = 1
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_1 }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_forge_2 = {
+    icon = tech_fe_forge_2
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { industry }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_1 }
+
+	prerequisites = { "tech_AIO_fe_forge_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_forge_2
+		}
+	}
+}
+
+tech_AIO_fe_fabricator_1 = {
+    icon = tech_fe_fabricator_1
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { materials }
+	ai_update_type = all
+	weight = 1
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_1 }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_fabricator_2 = {
+    icon = tech_fe_fabricator_2
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { materials }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_1 }
+
+	prerequisites = { "tech_AIO_fe_fabricator_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_fabricator_2
+		}
+	}
+}
+
+tech_AIO_fe_singularity_1 = {
+    icon = tech_fe_singularity_1
+
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { particles }
+	ai_update_type = all
+	weight = 1
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_2 }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_singularity_2 = {
+    icon = tech_fe_singularity_2
+
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { particles }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_2 }
+
+	prerequisites = { "tech_AIO_fe_singularity_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_singularity_2
+		}
+	}
+}
+
+tech_AIO_fe_mine_1 = {
+	icon = tech_fe_mine_1
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { materials }
+	ai_update_type = all
+	weight = 1
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_2 }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_mine_2 = {
+	icon = tech_fe_mine_2
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { materials }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_2 }
+
+	prerequisites = { "tech_AIO_fe_mine_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_mine_2
+		}
+	}
+}
+
+tech_AIO_fe_food_1 = {
+	icon = tech_fe_nourishment_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { biology }
+	ai_update_type = all
+	weight = 1
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_2 }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+
+		modifier = {
+			factor = 2
+			country_uses_bio_ships = yes
+		}
+	}
+}
+
+tech_AIO_fe_food_2 = {
+	icon = tech_fe_nourishment_2
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { materials }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_2 }
+
+	prerequisites = { "tech_AIO_fe_food_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_nourishment_2
+		}
+	}
+}
+
+tech_AIO_fe_silo_1 = {
+	icon = tech_fe_silo_1
+
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	ai_update_type = all
+	weight = 1
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_3 }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_silo_2 = {
+	icon = tech_fe_silo_2
+
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_3 }
+
+	prerequisites = { "tech_AIO_fe_silo_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_silo_2
+		}
+	}
+}
+
+tech_AIO_fe_market_1 = {
+	icon = tech_fe_market_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_3 }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_market_2 = {
+	icon = tech_fe_market_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_3 }
+
+	prerequisites = { "tech_AIO_fe_market_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_market_2
+		}
+	}
+}
+
+tech_AIO_fe_security_1 = {
+	icon = tech_fe_security_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = 1
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_3 }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_security_2 = {
+	icon = tech_fe_security_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_3 }
+
+	prerequisites = { "tech_AIO_fe_security_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_security_2
+		}
+	}
+}
+
+tech_AIO_fe_administration_1 = {
+	icon = tech_fe_administration_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = 1
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_4 }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_administration_2 = {
+	icon = tech_fe_administration_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_4 }
+
+	prerequisites = { "tech_AIO_fe_administration_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_administration_2
+		}
+	}
+}
+
+tech_AIO_fe_lab_1 = {
+	icon = tech_fe_lab_1
+
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { computing }
+	ai_update_type = all
+	weight = 1
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_4 }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_lab_2 = {
+	icon = tech_fe_lab_2
+
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { computing }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_4 }
+
+	prerequisites = { "tech_AIO_fe_lab_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_lab_2
+		}
+	}
+}
+
+tech_AIO_fe_fortress_1 = {
+	icon = tech_fe_fortress_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { military_theory }
+	ai_update_type = all
+	weight = 1
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_4 }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_fortress_2 = {
+	icon = tech_fe_fortress_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { military_theory }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_4 }
+
+	prerequisites = { "tech_AIO_fe_fortress_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_fortress_2
+		}
+	}
+}
+
+tech_AIO_fe_dome_1 = {
+	icon = tech_fe_dome_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = 1
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_5 }
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_dome_2 = {
+	icon = tech_fe_dome_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = { has_menace_perk = menp_AIO_buildings_5 }
+
+	prerequisites = { "tech_AIO_fe_dome_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_dome_2
+		}
+	}
+}
+
+tech_AIO_fe_assembly_1 = { #Not for Hives
+	icon = tech_fe_assembly_1
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { industry }
+	ai_update_type = all
+	weight = 1
+	is_rare = yes
+
+	potential = {
+		is_machine_empire = yes
+		has_menace_perk = menp_AIO_buildings_5
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_assembly_2 = { #Not for Hives
+	icon = tech_fe_assembly_2
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { industry }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = {
+		is_machine_empire = yes
+		has_menace_perk = menp_AIO_buildings_5
+	}
+
+	prerequisites = { "tech_AIO_fe_assembly_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_assembly_2
+		}
+	}
+}
+
+tech_AIO_fe_clinic_1 = { #Not for Machines
+	icon = tech_fe_clinic_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { biology }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = {
+		is_hive_empire = yes
+		has_menace_perk = menp_AIO_buildings_5
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+
+		modifier = {
+			factor = 2
+			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
+		}
+	}
+}
+
+tech_AIO_fe_clinic_2 = { #Not for Machines
+	icon = tech_fe_clinic_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { biology }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+
+	potential = {
+		is_hive_empire = yes
+		has_menace_perk = menp_AIO_buildings_5
+	}
+
+	prerequisites = { "tech_AIO_fe_clinic_1" }
+
+	weight_modifier = {
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_fe_clinic_1
+		}
+	}
+}

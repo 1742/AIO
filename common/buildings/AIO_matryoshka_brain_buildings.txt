@@ -1,0 +1,255 @@
+# AIO套娃脑建筑
+
+building_AIO_MB_resonator = {
+    icon = building_lathe_resonator
+	base_buildtime = @b2_time
+	planet_limit = 1
+	building_sets = { AIO_matryoshka_brain_buildings }
+	exempt_from_ai_planet_specialization = yes
+
+	can_be_disabled = yes
+	can_be_ruined = yes
+	can_demolish = yes
+
+	potential = { has_district = district_AIO_matryoshka_brain }
+
+	category = research
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			rare_crystals = @fe_sr_cost
+			AIO_advanced_logic = @b2_minerals
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			rare_crystals = @b2_rare_upkeep
+		}
+	}
+
+	triggered_planet_modifier = { planet_AIO_recursive_node_upkeep_mult = 1 }
+
+	triggered_planet_modifier = {
+		potential = { always = yes }
+		planet_AIO_recursive_node_produces_mult = 0.1
+		mult = value:AIO_num_recursive_node_per_100
+	}
+
+	triggered_desc = { text = building_AIO_resonator_tt }
+}
+
+building_AIO_MB_stabilisator = {
+    icon = building_lathe_stabilisator
+	base_buildtime = @b2_time
+	planet_limit = 1
+	building_sets = { AIO_matryoshka_brain_buildings }
+	exempt_from_ai_planet_specialization = yes
+
+	can_be_disabled = yes
+	can_be_ruined = yes
+	can_demolish = yes
+
+	potential = { has_district = district_AIO_matryoshka_brain }
+
+	category = government
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			exotic_gases = @fe_sr_cost
+			AIO_advanced_logic = @b2_minerals
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			exotic_gases = @b2_rare_upkeep
+		}
+	}
+
+	triggered_planet_modifier = { planet_stability_add = 15 }
+}
+
+building_AIO_MB_overclocker = {
+    icon = building_lathe_overclocker
+	base_buildtime = @b2_time
+	planet_limit = 1
+	building_sets = { AIO_matryoshka_brain_buildings }
+	exempt_from_ai_planet_specialization = yes
+
+	can_be_disabled = yes
+	can_be_ruined = yes
+	can_demolish = yes
+
+	potential = { has_district = district_AIO_matryoshka_brain }
+
+	category = research
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			volatile_motes = @fe_sr_cost
+			AIO_advanced_logic = @b2_minerals
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			volatile_motes = @b2_rare_upkeep
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = { NOT = { owner = { has_deficit = energy } } }
+		modifier = {
+			planet_AIO_recursive_node_physics_research_produces_add = 1
+			planet_AIO_recursive_node_society_research_produces_add = 1
+			planet_AIO_recursive_node_engineering_research_produces_add = 1
+			planet_AIO_recursive_node_AIO_advanced_logic_produces_add = 0.5
+			pop_purge_speed = 0.75
+		}
+	}
+}
+
+building_AIO_MB_preserver = {
+    icon = building_lathe_preserver
+	base_buildtime = @b2_time
+	planet_limit = 1
+	building_sets = { AIO_matryoshka_brain_buildings }
+	exempt_from_ai_planet_specialization = yes
+
+	can_be_disabled = yes
+	can_be_ruined = yes
+	can_demolish = yes
+
+	potential = { has_district = district_AIO_matryoshka_brain }
+
+	category = amenity
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			exotic_gases = @fe_sr_cost
+			AIO_advanced_logic = @b2_minerals
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			exotic_gases = @b2_rare_upkeep
+		}
+	}
+
+	planet_modifier = { pop_purge_speed = -0.15 }
+}
+
+building_AIO_MB_reactor = {
+    icon = building_lathe_reactor
+	base_buildtime = @b2_time
+	planet_limit = 1
+	building_sets = { AIO_matryoshka_brain_buildings }
+	exempt_from_ai_planet_specialization = yes
+
+	can_be_disabled = yes
+	can_be_ruined = yes
+	can_demolish = yes
+
+	potential = { has_district = district_AIO_matryoshka_brain }
+
+	category = resource
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			exotic_gases = @fe_sr_cost
+			AIO_advanced_logic = @b2_minerals
+		}
+		upkeep = {
+			exotic_gases = @b4_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_AIO_recursive_node_upkeep_mult = -0.15
+		planet_buildings_upkeep_mult = -0.15
+		planet_districts_energy_upkeep_mult = -0.15
+	}
+}
+
+building_AIO_MB_life_support = {
+    icon = building_lathe_life_support
+	base_buildtime = @b2_time
+	planet_limit = 1
+	building_sets = { AIO_matryoshka_brain_buildings }
+	exempt_from_ai_planet_specialization = yes
+
+	can_be_disabled = yes
+	can_be_ruined = yes
+	can_demolish = yes
+
+	potential = { has_district = district_AIO_matryoshka_brain }
+
+	category = amenity
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			rare_crystals = @fe_sr_cost
+			AIO_advanced_logic = @b2_minerals
+		}
+		upkeep = {
+			energy = @b2_upkeep
+			rare_crystals = @b2_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 5000
+		planet_amenities_add = 5000
+	}
+}
+
+building_AIO_MB_cogitator = {
+    icon = building_lathe_cogitator
+	base_buildtime = @b2_time
+	planet_limit = 1
+	building_sets = { AIO_matryoshka_brain_buildings }
+	exempt_from_ai_planet_specialization = yes
+
+	can_be_disabled = yes
+	can_be_ruined = yes
+	can_demolish = yes
+
+	potential = { has_district = district_AIO_matryoshka_brain }
+
+	category = army
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			volatile_motes = @fe_sr_cost
+			AIO_advanced_logic = @b3_minerals
+		}
+		upkeep = {
+			energy = @b3_upkeep
+			volatile_motes = @b3_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_amenities_add = -5000
+		planet_AIO_recursive_node_produces_mult = -0.35
+	}
+
+	triggered_country_modifier = {
+		potential = { always = yes }
+		country_naval_cap_add = 1
+		ship_experience_gain_mult = 0.02
+		mult = value:AIO_num_recursive_node_per_100
+	}
+
+	triggered_desc = {
+		text = building_AIO_lathe_cogitator_tt
+	}
+}

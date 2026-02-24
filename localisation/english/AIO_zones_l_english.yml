@@ -1,0 +1,22 @@
+﻿l_english:
+ # matryoshka brain specialization
+ zone_AIO_matryoshka_brain: "Matryoshka Brain Specialization"
+ zone_AIO_matryoshka_brain_desc: "$district_AIO_matryoshka_brain_desc$"
+ # dark matter production
+ zone_AIO_dm_production: "Dark Matter Synthesis Complex"
+ zone_AIO_dm_production_desc: "The flow of conventional energy is only a cosmic appearance. By tuning the labor patterns of drones, deeper matter - dark matter is produced."
+ # gestalt machine empire living metal production
+ zone_AIO_lm_production_machine_empire: "Living Metal Synthetic Nexus"
+ zone_AIO_lm_production_machine_empire_desc: "By reassembling the assembly line and introducing living metal chimerism, the generation rate of drones is greatly increased."
+ # hive empire living metal production
+ zone_AIO_lm_production_hive_empire: "Living Metal Incubation"
+ zone_AIO_lm_production_hive_empire_desc: "Living metals are incorporated into the organic matrix, and the incubation chamber gives birth to more rapid new organisms between pulsation and peristalsis."
+ # miners nanites production
+ zone_AIO_nanites_production_minerals: "Nano Mining"
+ zone_AIO_nanites_production_minerals_desc: "The planet's mineral deposits are redefined as a raw matrix at the nanoscale. Mining drones no longer just mine ore, but guide material to disintegrate and reorganize in the star shell, and directly give birth to nanocommunities."
+ # metallurgists nanites production
+ zone_AIO_nanites_production_metallurgists: "Nano Assembly"
+ zone_AIO_nanites_production_metallurgists_desc: "We are no longer satisfied with forging cold alloys, we have given birth to trillion-level self-disciplined structural units - nanorobots. They are a resource and a shell of the future, just as iron replaces bronze, they will replace everything."
+ # farmers nanites production
+ zone_AIO_nanites_production_farmers: "Nano Plant"
+ zone_AIO_nanites_production_farmers_desc: "These nest cavities do not feed the mouth and stomach, but nurture the entire nanocommunity. The hunger of drones is a feast of nano tides."

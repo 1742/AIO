@@ -1,0 +1,18 @@
+# AIO净化方式
+
+# 递归节点净化
+purge_AIO_matryoshka_brain = {
+	pop_escape_chance = 0.05
+	pop_decline_rate = value:AIO_recursive_node_purge_factor
+
+	pop_group_modifier = {
+		pop_happiness = -0.2
+		pop_amenities_usage_add = 1
+	}
+
+	potential = { always = no }
+
+	allow = { always = yes }
+
+	hidden = { always = yes }
+}

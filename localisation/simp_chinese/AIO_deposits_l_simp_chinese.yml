@@ -1,0 +1,8 @@
+﻿l_simp_chinese:
+ d_AIO_TR_stage_1: "$AIO_AIT_TR_events_chain_title$"
+ d_AIO_TR_stage_3: "临时实验室"
+ d_AIO_TR_monument: "$d_AIO_TR_stage_1$纪念碑"
+
+ d_AIO_GS_deposit: "$AIO_AIT_GS_events_chain_title$"
+
+

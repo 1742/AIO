@@ -1,0 +1,779 @@
+# AIO安全移除物体效果
+
+# 移除巨构及相关标志位，scope: megastructure
+AIO_safe_remove_megastructures = {
+    optimize_memory
+
+    [[DYSON_SPHERE]
+        if = {
+            limit = { exists = owner }
+            owner = {
+                if = {
+                    limit = { has_country_flag = built_dyson_sphere_contingency_swarm }
+                    remove_country_flag = built_dyson_sphere_contingency_swarm
+                }
+                else_if = {
+                    limit = { has_country_flag = built_dyson_sphere_swarm }
+                    remove_country_flag = built_dyson_sphere_swarm
+                }
+            }
+        }
+        if = {
+            limit = {
+                exists = planet
+                has_planet_flag = has_megastructure
+            }
+            planet = { remove_planet_flag = has_megastructure }
+        }
+        remove_megastructure = this
+    ]
+    [[DYSON_SPHERE_DISCO]
+        solar_system = {
+            if = {
+                limit = { has_star_flag = mega_art_installation_built }
+                remove_star_flag = mega_art_installation_built
+            }
+        }
+        if = {
+            limit = {
+                exists = planet
+                has_planet_flag = has_megastructure
+            }
+            planet = { remove_planet_flag = has_megastructure }
+        }
+        remove_megastructure = this
+    ]
+    [[MATTER_DECOMPRESSOR]
+        if = {
+            limit = { exists = owner }
+            owner = {
+                if = {
+                    limit = { has_country_flag = built_matter_decompressor_site_contingency }
+                    remove_country_flag = built_matter_decompressor_site_contingency
+                }
+                else_if = {
+                    limit = { has_country_flag = built_matter_decompressor_site }
+                    remove_country_flag = built_matter_decompressor_site
+                }
+            }
+        }
+        if = {
+            limit = {
+                exists = planet
+                has_planet_flag = has_megastructure
+            }
+            planet = { remove_planet_flag = has_megastructure }
+        }
+        remove_megastructure = this
+    ]
+    [[MEGA_SHIPYARD]
+        if = {
+            limit = { exists = owner }
+            owner = {
+                if = {
+                    limit = { has_country_flag = built_mega_shipyard_site_contingency }
+                    remove_country_flag = built_mega_shipyard_site_contingency
+                }
+                else_if = {
+                    limit = { has_country_flag = built_mega_shipyard_site }
+                    remove_country_flag = built_mega_shipyard_site
+                }
+            }
+        }
+        if = {
+            limit = {
+                exists = planet
+                has_planet_flag = has_megastructure
+            }
+            planet = { remove_planet_flag = has_megastructure }
+        }
+        remove_megastructure = this
+    ]
+    [[QUANTUM_CATAPULT]
+        if = {
+            limit = { exists = owner }
+            owner = {
+                if = {
+                    limit = { has_country_flag = built_quantum_catapult_site_contingency }
+                    remove_country_flag = built_quantum_catapult_site_contingency
+                }
+                else_if = {
+                    limit = { has_country_flag = built_quantum_catapult_site }
+                    remove_country_flag = built_quantum_catapult_site
+                }
+            }
+        }
+        if = {
+            limit = {
+                exists = planet
+                has_planet_flag = has_megastructure
+            }
+            planet = { remove_planet_flag = has_megastructure }
+        }
+        remove_megastructure = this
+    ]
+    [[GRAND_ARCHIVE]
+        solar_system.starbase = { starbase_event = { id = grand_archive.4500 } }
+    ]
+    [[SPY_ORB]
+        if = {
+            limit = { exists = owner }
+            owner = {
+                if = {
+                    limit = { has_country_flag = built_spyorb_contingency }
+                    remove_country_flag = built_spyorb_contingency
+                }
+                else_if = {
+                    limit = { has_country_flag = built_spyorb }
+                    remove_country_flag = built_spyorb
+                }
+            }
+        }
+        if = {
+            limit = {
+                exists = planet
+                has_planet_flag = has_megastructure
+            }
+            planet = { remove_planet_flag = has_megastructure }
+        }
+        remove_megastructure = this
+    ]
+    [[THINK_TANK]
+        if = {
+            limit = { exists = owner }
+            owner = {
+                if = {
+                    limit = { has_country_flag = built_think_tank_contingency }
+                    remove_country_flag = built_think_tank_contingency
+                }
+                else_if = {
+                    limit = { has_country_flag = built_think_tank }
+                    remove_country_flag = built_think_tank
+                }
+            }
+        }
+        if = {
+            limit = {
+                exists = planet
+                has_planet_flag = has_megastructure
+            }
+            planet = { remove_planet_flag = has_megastructure }
+        }
+        remove_megastructure = this
+    ]
+    [[STRATEGIC_COORDINATION_CENTER]
+        if = {
+            limit = { exists = owner }
+            owner = {
+                if = {
+                    limit = { has_country_flag = built_strategic_coordination_center_site_contingency }
+                    remove_country_flag = built_strategic_coordination_center_site_contingency
+                }
+                else_if = {
+                    limit = { has_country_flag = built_strategic_coordination_center_site }
+                    remove_country_flag = built_strategic_coordination_center_site
+                }
+            }
+        }
+        if = {
+            limit = {
+                exists = planet
+                has_planet_flag = has_megastructure
+            }
+            planet = { remove_planet_flag = has_megastructure }
+        }
+        remove_megastructure = this
+    ]
+    [[MEGA_ART_INSTALLATION]
+        if = {
+            limit = { exists = owner }
+            owner = {
+                if = {
+                    limit = { has_country_flag = built_mega_art_installation_contingency }
+                    remove_country_flag = built_mega_art_installation_contingency
+                }
+                else_if = {
+                    limit = { has_country_flag = built_mega_art_installation }
+                    remove_country_flag = built_mega_art_installation
+                }
+            }
+        }
+        if = {
+            limit = {
+                exists = planet
+                has_planet_flag = has_megastructure
+            }
+            planet = { remove_planet_flag = has_megastructure }
+        }
+        remove_megastructure = this
+    ]
+    [[INTERSTELLAR_ASSEMBLY]
+        if = {
+            limit = { exists = owner }
+            owner = {
+                if = {
+                    limit = { has_country_flag = built_interstellar_assembly_site_contingency }
+                    remove_country_flag = built_interstellar_assembly_site_contingency
+                }
+                else_if = {
+                    limit = { has_country_flag = built_interstellar_assembly_site }
+                    remove_country_flag = built_interstellar_assembly_site
+                }
+            }
+        }
+        if = {
+            limit = {
+                exists = planet
+                has_planet_flag = has_megastructure
+            }
+            planet = { remove_planet_flag = has_megastructure }
+        }
+        remove_megastructure = this
+    ]
+    [[RUINED_MEGA]
+        if = {
+            limit = {
+                exists = planet
+                has_planet_flag = has_megastructure
+            }
+            planet = { remove_planet_flag = has_megastructure }
+        }
+        remove_megastructure = this
+    ]
+    [[DYSON_SWARM]
+        if = {
+            limit = { exists = planet }
+            planet = {
+                if = {
+                    limit = { has_planet_flag = has_megastructure }
+                    remove_planet_flag = has_megastructure
+                }
+                switch = {
+                    trigger = has_modifier
+                    dyson_swarm_1_mod = { remove_modifier = dyson_swarm_1_mod }
+                    dyson_swarm_2_mod = { remove_modifier = dyson_swarm_2_mod }
+                    dyson_swarm_3_mod = { remove_modifier = dyson_swarm_3_mod }
+                }
+            }
+        }
+        if = {
+            limit = { exists = owner }
+            owner = {
+                if = {
+                    limit = { check_variable = { which = dyson_swarm_counter value >= 1 } }
+                    change_variable = {
+                        which = dyson_swarm_counter
+                        value = -1
+                    }
+                }
+            }
+        }
+        remove_megastructure = this
+    ]
+    [[ORBITAL_ARC_FURNACE]
+        solar_system = {
+            every_system_planet = {
+                limit = {
+                    OR = {
+                        has_modifier = orbital_arc_furnace_1_mod
+                        has_modifier = orbital_arc_furnace_2_mod
+                        has_modifier = orbital_arc_furnace_3_mod
+                        has_modifier = orbital_arc_furnace_4_mod
+                    }
+                }
+                dismantle_arc_furnace_effect = yes
+            }
+        }
+        if = {
+            limit = { exists = planet }
+            planet = {
+                if = {
+                    limit = { has_planet_flag = has_arc_furnace }
+                    set_planet_entity = { entity = "pc_molten" }
+                    remove_planet_flag = has_megastructure
+                    remove_planet_flag = has_arc_furnace
+                }
+            }
+        }
+        if = {
+            limit = { exists = owner }
+            owner = {
+                if = {
+                    limit = { check_variable = { which = arc_furnace_counter value >= 1 } }
+                    change_variable = { which = arc_furnace_counter value = -1 }
+                }
+            }
+        }
+        remove_megastructure = this
+    ]
+}
+
+# 移除行星上的巨构及相关标志位，scope: planet
+AIO_safe_remove_planet_megastructures = {
+    optimize_memory
+
+    if = {
+        limit = {
+            NOT = { has_planet_flag = megastructure }
+            has_planet_flag = has_megastructure
+        }
+        if = {
+            limit = {
+                is_colony = yes
+                AIO_planet_has_oribital_ring = yes
+            }
+            solar_system = {
+                random_starbase_in_system = {
+                    limit = {
+                        exists = planet
+                        planet = { is_same_value = prevprevprev }
+                        OR = {
+                            has_starbase_size = orbital_ring_tier_1
+                            has_starbase_size = orbital_ring_tier_2
+                            has_starbase_size = orbital_ring_tier_3
+                        }
+                    }
+                    destroy_fleet = this
+                }
+            }
+        }
+        else = {
+            solar_system = {
+                random_system_megastructure = {
+                    limit = {
+                        AIO_safe_remove_megastructure_exclude_API = no
+
+                        exists = planet
+                        planet = { is_same_value = prevprevprev }
+                    }
+                    if = {
+                        limit = {
+                            planet = {
+                                is_star = yes
+                                NOR = {
+                                    is_planet_class = pc_neutron_star
+                                    is_planet_class = pc_pulsar
+                                    is_planet_class = pc_black_hole
+                                }
+                            }
+                        }
+                        if = {
+                            limit = { AIO_is_dyson_sphere = yes }
+                            AIO_safe_remove_megastructures = { DYSON_SPHERE = 1 }
+                        }
+                        else_if = {
+                            limit = { AIO_is_dyson_sphere_disco = yes }
+                            AIO_safe_remove_megastructures = { DYSON_SPHERE_DISCO = 1 }
+                        }
+                        else_if = {
+                            limit = { AIO_is_mega_shipyard = yes }
+                            AIO_safe_remove_megastructures = { MEGA_SHIPYARD = 1 }
+                        }
+                        else_if = {
+                            limit = { AIO_is_dyson_swarm = yes }
+                            AIO_safe_remove_megastructures = { DYSON_SWARM = 1 }
+                        }
+                    }
+                    else_if = {
+                        limit = {
+                            planet = {
+                                OR = {
+                                    is_planet_class = pc_neutron_star
+                                    is_planet_class = pc_pulsar
+                                }
+                            }
+                        }
+                        if = {
+                            limit = { AIO_is_quantum_catapult = yes }
+                            AIO_safe_remove_megastructures = { QUANTUM_CATAPULT = 1 }
+                        }
+                    }
+                    else_if = {
+                        limit = { planet = { is_planet_class = pc_black_hole } }
+                        if = {
+                            limit = { AIO_is_matter_decompressor = yes }
+                            AIO_safe_remove_megastructures = { MATTER_DECOMPRESSOR = 1 }
+                        }
+                    }
+                    else = {
+                        if = {
+                            limit = { is_megastructure_type = grand_archive_0 }
+                            AIO_safe_remove_megastructures = { GRAND_ARCHIVE = 1 }
+                        }
+                        else_if = {
+                            limit = { AIO_is_spy_orb = yes }
+                            AIO_safe_remove_megastructures = { SPY_ORB = 1 }
+                        }
+                        else_if = {
+                            limit = { AIO_is_strategic_coordination_center = yes }
+                            AIO_safe_remove_megastructures = { STRATEGIC_COORDINATION_CENTER = 1 }
+                        }
+                        else_if = {
+                            limit = { AIO_is_think_tank = yes }
+                            AIO_safe_remove_megastructures = { THINK_TANK = 1 }
+                        }
+                        else_if = {
+                            limit = { AIO_is_mega_art_installation = yes }
+                            AIO_safe_remove_megastructures = { MEGA_ART_INSTALLATION = 1 }
+                        }
+                        else_if = {
+                            limit = { AIO_is_interstellar_assembly = yes }
+                            AIO_safe_remove_megastructures = { INTERSTELLAR_ASSEMBLY = 1 }
+                        }
+                        else_if = {
+                            limit = { AIO_is_orbital_arc_furnace = yes }
+                            AIO_safe_remove_megastructures = { ORBITAL_ARC_FURNACE = 1 }
+                        }
+                        else_if = {
+                            limit = { AIO_is_ruined_mega = yes }
+                            AIO_safe_remove_megastructures = { RUINED_MEGA = 1 }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    else_if = {
+        limit = { is_planet_class = pc_ringworld_habitable }
+        solar_system = {
+            random_system_megastructure = {
+                limit = {
+                    is_megastructure_type = grand_archive_0
+                    planet = { is_same_value = prevprevprev }
+                }
+                AIO_safe_remove_megastructures = { GRAND_ARCHIVE = 1 }
+            }
+        }
+    }
+}
+
+# 移除星系内巨构及相关标志位，scope: system
+AIO_safe_remove_system_megastructures = {
+    optimize_memory
+
+    every_system_megastructure = {
+        if = {
+            limit = { AIO_is_dyson_sphere = yes }
+            AIO_safe_remove_megastructures = { DYSON_SPHERE = 1 }
+        }
+        else_if = {
+            limit = { AIO_is_dyson_sphere_disco = yes }
+            AIO_safe_remove_megastructures = { DYSON_SPHERE_DISCO = 1 }
+        }
+        else_if = {
+            limit = { AIO_is_quantum_catapult = yes }
+            AIO_safe_remove_megastructures = { QUANTUM_CATAPULT = 1 }
+        }
+        else_if = {
+            limit = { AIO_is_matter_decompressor = yes }
+            AIO_safe_remove_megastructures = { MATTER_DECOMPRESSOR = 1 }
+        }
+        else_if = {
+            limit = { AIO_is_mega_shipyard = yes }
+            AIO_safe_remove_megastructures = { MEGA_SHIPYARD = 1 }
+        }
+        else_if = {
+            limit = { is_megastructure_type = grand_archive_0 }
+            AIO_safe_remove_megastructures = { GRAND_ARCHIVE = 1 }
+        }
+        else_if = {
+            limit = { AIO_is_spy_orb = yes }
+            AIO_safe_remove_megastructures = { SPY_ORB = 1 }
+        }
+        else_if = {
+            limit = { AIO_is_strategic_coordination_center = yes }
+            AIO_safe_remove_megastructures = { STRATEGIC_COORDINATION_CENTER = 1 }
+        }
+        else_if = {
+            limit = { AIO_is_think_tank = yes }
+            AIO_safe_remove_megastructures = { THINK_TANK = 1 }
+        }
+        else_if = {
+            limit = { AIO_is_mega_art_installation = yes }
+            AIO_safe_remove_megastructures = { MEGA_ART_INSTALLATION = 1 }
+        }
+        else_if = {
+            limit = { AIO_is_interstellar_assembly = yes }
+            AIO_safe_remove_megastructures = { INTERSTELLAR_ASSEMBLY = 1 }
+        }
+        else_if = {
+            limit = { AIO_is_dyson_swarm = yes }
+            AIO_safe_remove_megastructures = { DYSON_SWARM = 1 }
+        }
+        else_if = {
+            limit = { AIO_is_orbital_arc_furnace = yes }
+            AIO_safe_remove_megastructures = { ORBITAL_ARC_FURNACE = 1 }
+        }
+        else_if = {
+            limit = { AIO_is_gateway = yes }
+            remove_megastructure = this
+        }
+        else_if = {
+            limit = { AIO_is_hyper_relay = yes }
+            remove_megastructure = this
+        }
+        else_if = {
+            limit = { AIO_is_ruined_mega = yes }
+            AIO_safe_remove_megastructures = { RUINED_MEGA = 1 }
+        }
+        else_if = {
+            limit = {
+                AIO_is_AIO_mega = no
+                AIO_safe_remove_megastructure_exclude_API = no
+            }
+            remove_megastructure = this
+        }
+    }
+}
+
+# 安全移除轨道居住站，scope: planet
+AIO_safe_remove_habitat = {
+    optimize_memory
+
+    solar_system = {
+        every_system_megastructure = {
+            limit = {
+                OR = {
+                    is_megastructure_type = habitat_major_orbital
+                    is_megastructure_type = habitat_minor_orbital
+                }
+            }
+            remove_megastructure = this
+        }
+        every_system_planet = {
+            limit = { has_planet_flag = has_orbital }
+            remove_planet_flag = has_orbital
+        }
+        if = {
+            limit = { has_star_flag = has_habitat }
+            remove_star_flag = has_habitat
+        }
+    }
+    if = {
+        limit = { is_colony = yes }
+        destroy_colony = yes
+    }
+    remove_planet = yes
+}
+
+# 安全移除环形世界区段，scope: planet
+AIO_safe_remove_rw_section = {
+    optimize_memory
+
+    solar_system = {
+        if = {
+            limit = {
+                NOT = { has_megastructure = ring_world_2 }
+                count_system_planet = {
+                    limit = {
+                        OR = {
+                            is_planet_class = pc_ringworld_habitable
+                            is_planet_class = pc_shattered_ring_habitable
+                        }
+                    }
+                    count = 1
+                }
+            }
+            star = {
+                if = {
+                    limit = { has_planet_flag = has_megastructure }
+                    remove_planet_flag = has_megastructure
+                }
+            }
+            if = {
+                limit = { has_star_flag = ring_world_built }
+                remove_star_flag = ring_world_built
+            }
+        }
+    }
+    if = {
+        limit = { is_colony = yes }
+        destroy_colony = yes
+    }
+    remove_planet = yes
+}
+
+# 安全移除突出凝炼机，scope: planet
+AIO_safe_remove_cosmogenesis_world = {
+    optimize_memory
+
+    if = {
+        limit = { is_planet_class = pc_cosmogenesis_world }
+        owner = { remove_country_flag = cosmogenesis_world_built }
+        destroy_colony = yes
+        remove_planet = yes
+    }
+}
+
+# 移除星球及其上巨构，scope: planet
+AIO_safe_remove_planet = {
+    optimize_memory
+
+    if = {
+        limit = { AIO_safe_remove_planet_exclude_API = no }
+
+        if = {
+            limit = {
+                is_star = yes
+                NOT = { is_planet_class = pc_AIO_empty_space }
+            }
+            change_pc = pc_AIO_empty_space
+            clear_deposits = yes
+            AIO_safe_remove_planet_megastructures = yes
+        }
+        else_if = {
+            limit = {
+                is_colony = yes
+                NOR = {
+                    is_planet_class = pc_habitat
+                    is_planet_class = pc_ringworld_habitable
+                    is_planet_class = pc_shattered_ring_habitable
+                    is_planet_class = pc_cosmogenesis_world
+
+                    AND = {
+                        has_global_flag = ai_invasion_happened
+                        AIO_is_ai_planet = yes
+                    }
+                    has_planet_flag = synth_queen_bastille
+                }
+            }
+            destroy_colony = yes
+            AIO_safe_remove_planet_megastructures = yes
+            remove_planet = yes
+        }
+        else_if = {
+            limit = { is_planet_class = pc_habitat }
+            AIO_safe_remove_habitat = yes
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    is_planet_class = pc_ringworld_habitable
+                    is_planet_class = pc_shattered_ring_habitable
+                }
+            }
+            AIO_safe_remove_rw_section = yes
+        }
+        else_if = {
+            limit = { is_planet_class = pc_cosmogenesis_world }
+            AIO_safe_remove_cosmogenesis_world = yes
+        }
+        else_if = {
+            # 潜在的肃正球
+            limit = {
+                AIO_is_ai_planet = yes
+                NOT = { is_planet_class = pc_ai }
+            }
+            switch = {
+                trigger = has_planet_flag
+                machine_world_1 = {
+                    remove_planet_flag = machine_world_1
+                    remove_planet_flag = crisis_vital_planet
+                    solar_system = {
+                        remove_star_flag = AI_hub
+                        remove_star_flag = AI_system_1
+                    }
+                    random_galaxy_planet = {
+                        limit = {
+                            is_star = no
+                            is_artificial = no
+                            AIO_is_ai_planet = no
+                        }
+                        set_planet_flag = machine_world_1
+                        set_planet_flag = crisis_vital_planet
+                        solar_system = {
+                            set_star_flag = AI_hub
+                            set_star_flag = AI_system_1
+                        }
+                    }
+                }
+                machine_world_2 = {
+                    remove_planet_flag = machine_world_2
+                    remove_planet_flag = crisis_vital_planet
+                    solar_system = {
+                        remove_star_flag = AI_hub
+                        remove_star_flag = AI_system_2
+                    }
+                    random_galaxy_planet = {
+                        limit = {
+                            is_star = no
+                            is_artificial = no
+                            AIO_is_ai_planet = no
+                        }
+                        set_planet_flag = machine_world_2
+                        set_planet_flag = crisis_vital_planet
+                        solar_system = {
+                            set_star_flag = AI_hub
+                            set_star_flag = AI_system_2
+                        }
+                    }
+                }
+                machine_world_3 = {
+                    remove_planet_flag = machine_world_3
+                    remove_planet_flag = crisis_vital_planet
+                    solar_system = {
+                        remove_star_flag = AI_hub
+                        remove_star_flag = AI_system_3
+                    }
+                    random_galaxy_planet = {
+                        limit = {
+                            is_star = no
+                            is_artificial = no
+                            AIO_is_ai_planet = no
+                        }
+                        set_planet_flag = machine_world_3
+                        set_planet_flag = crisis_vital_planet
+                        solar_system = {
+                            set_star_flag = AI_hub
+                            set_star_flag = AI_system_3
+                        }
+                    }
+                }
+                machine_world_4 = {
+                    remove_planet_flag = machine_world_4
+                    remove_planet_flag = crisis_vital_planet
+                    solar_system = {
+                        remove_star_flag = AI_hub
+                        remove_star_flag = AI_system_4
+                    }
+                    random_galaxy_planet = {
+                        limit = {
+                            is_star = no
+                            is_artificial = no
+                            AIO_is_ai_planet = no
+                        }
+                        set_planet_flag = machine_world_4
+                        set_planet_flag = crisis_vital_planet
+                        solar_system = {
+                            set_star_flag = AI_hub
+                            set_star_flag = AI_system_4
+                        }
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                is_planet_class = pc_ai
+                NOT = { has_planet_flag = machine_lair }
+            }
+            planet_event = { id = AIO_ctrl_events.1007 }
+            remove_planet = yes
+        }
+        else_if = {
+            limit = {
+                is_planet_class = pc_ai
+                has_planet_flag = machine_lair
+            }
+            root = { save_event_target_as = final_machine_world_destroyer }
+            stop_crisis_sound = yes
+            planet_event = { id = crisis.2046 }
+            remove_planet = yes
+        }
+        else_if = {
+            limit = { NOT = { has_planet_flag = synth_queen_bastille } }
+            AIO_safe_remove_planet_megastructures = yes
+            remove_planet = yes
+        }
+    }
+}

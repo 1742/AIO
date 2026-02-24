@@ -1,0 +1,9 @@
+# 虚空
+sc_AIO_void = {
+	class = sc_AIO_void
+	planet = { key = pc_AIO_empty_space }
+	spawn_odds = 0
+	num_planets = { min = 0 max = 0 }
+
+	is_environmental_hazard = yes
+}

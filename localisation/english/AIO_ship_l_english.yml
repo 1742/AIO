@@ -1,0 +1,15 @@
+﻿l_english:
+ AIO_locator_builder: "Locator Builder"
+ AIO_locator_builder_plural: "$AIO_locator_builder$"
+ NAME_AIO_locator_builder: "$AIO_locator_builder$"
+
+ AIO_otherworld_walker: "Otherworld Walker"
+ AIO_otherworld_walker_plural: "$AIO_otherworld_walker$"
+ NAME_AIO_walker: "$AIO_otherworld_walker$"
+
+ AIO_Aforgomom_Wrath: "The Wrath of Aforgomom"
+ AIO_Aforgomom_Wrath_plural: "$AIO_Aforgomom_Wrath$"
+ NAME_AIO_Aforgomom_Wrath: "$AIO_Aforgomom_Wrath$"
+
+ QUASISTELLAR_GUN_ENTITY: "Celestial Meteor Lance"
+ AIO_EXTRA_LARGE_AURA_AFORGOMOM_CHAIN: "The Chain of Aforgomom"

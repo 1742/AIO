@@ -1,0 +1,39 @@
+define_text = {
+    name = AIO_num_AIO_recursive_node_raw
+    value = value:AIO_num_recursive_node_raw
+}
+
+define_text = {
+    name = AIO_num_AIO_recursive_node_raw_double
+    value = value:AIO_num_recursive_node_raw_double
+}
+
+define_text = {
+    name = AIO_num_AIO_recursive_node_per_100
+    value = value:AIO_num_recursive_node_per_100
+}
+
+define_text = {
+    name = AIO_num_AIO_recursive_node_per_200
+    value = value:AIO_num_recursive_node_per_200
+}
+
+define_text = {
+    name = AIO_num_AIO_recursive_node_per_1000
+    value = value:AIO_num_recursive_node_per_1000
+}
+
+define_text = {
+    name = AIO_AIO_recursive_node_produce_facor
+    value = value:AIO_recursive_node_produce_factor_display
+}
+
+define_text = {
+    name = AIO_AIO_recursive_node_upkeep_facor
+    value = value:AIO_recursive_node_upkeep_factor_display
+}
+
+define_text = {
+    name = AIO_AIO_resonator_factor
+    value = value:AIO_resonator_factor_display
+}

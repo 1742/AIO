@@ -1,0 +1,263 @@
+# All in One灾飞奖励
+
+# Level 1
+# 超然逻辑
+menp_AIO_al_research = {
+	portrait = "GFX_menp_AIO_al_research_icon"
+
+	modifier = {
+		all_technology_research_speed = 0.1
+        megastructure_build_speed_mult = 0.25
+	}
+
+	on_unlock = {
+		custom_tooltip = unlocks_AIO_allinone_research
+
+		add_research_option = tech_AIO_exponential_learning_theory
+		add_research_option = tech_AIO_ascending_dimensionality_theory
+	}
+}
+# 建筑
+menp_AIO_buildings_1 = {
+	portrait = "GFX_menp_AIO_buildings_1_icon"
+
+	on_unlock = {
+		custom_tooltip = unlocks_buildings_1
+		# 有AIO的整合建筑、超级铸造厂/纳米熔炉、次元复制机/次元制造机
+	}
+}
+# 舰船组件
+menp_AIO_fleet_component_1_1 = {
+	portrait = "GFX_menp_AIO_fleet_component_1_1_icon"
+
+	on_unlock = {
+		custom_tooltip = unlocks_AIO_allinone_fleet_component_1
+
+		add_research_option = tech_arc_emitter_2
+		add_research_option = tech_dragon_armor
+	}
+}
+menp_AIO_fleet_component_1_2 = {
+	portrait = "GFX_menp_AIO_fleet_component_2_icon"
+
+	on_unlock = {
+		custom_tooltip = menp_AIO_fleet_component_1_2_tt
+
+		add_research_option = tech_enigmatic_decoder
+		add_research_option = tech_dark_matter_propulsion
+	}
+}
+
+
+# Level 2
+# 铸门之人
+menp_AIO_mega_02 = {
+	portrait = "GFX_menp_AIO_mega_02_icon"
+
+	modifier = {
+		ship_jumpdrive_cooldown_mult = -0.25
+        ship_ftl_jumpdrive_range_mult = 0.5
+		fleet_mia_time_mult = -0.5
+		ship_emergency_ftl_min_days_mult = -0.3
+	}
+
+	on_unlock = {
+		custom_tooltip = unlocks_AIO_allinone_mega_01
+	}
+}
+# 建筑
+menp_AIO_buildings_2 = {
+	portrait = "GFX_menp_AIO_buildings_2_icon"
+
+	on_unlock = {
+		custom_tooltip = unlocks_buildings_2
+		# 有AIO的三级奇点/四级奇点、量子钻穿工厂/量子钻穿中心、营养复合体/营养中心
+	}
+}
+# 舰船组件
+menp_AIO_fleet_component_2 = {
+	portrait = "GFX_menp_AIO_fleet_component_1_2_icon"
+
+	on_unlock = {
+        if = {
+            limit = {
+                is_machine_empire = yes
+                country_uses_bio_ships = no
+            }
+            custom_tooltip = menp_AIO_ship_2_tt.machine.alloys
+        }
+        else_if = {
+            limit = {
+                is_machine_empire = yes
+                country_uses_bio_ships = yes
+            }
+            custom_tooltip = menp_AIO_ship_2_tt.machine.food
+        }
+        else_if = {
+            limit = {
+                is_hive_empire = yes
+                country_uses_bio_ships = no
+            }
+            custom_tooltip = menp_AIO_ship_2_tt.hive.alloys
+        }
+        else_if = {
+            limit = {
+                is_hive_empire = yes
+                country_uses_bio_ships = yes
+            }
+            custom_tooltip = menp_AIO_ship_2_tt.machine.food
+        }
+
+		add_research_option = tech_nanite_transmutation
+		add_research_option = tech_nanite_repair_system
+		add_research_option = tech_nanite_autocannon
+		add_research_option = tech_nanite_flak_batteries
+	}
+}
+# 舰船
+menp_AIO_ship_2 = {
+	portrait = "GFX_menp_AIO_ship_2_icon"
+
+	on_unlock = {
+		if = {
+			limit = { country_uses_bio_ships = no }
+			custom_tooltip = unlocks_ship_2
+			add_research_option = tech_cosmogenesis_escort
+		}
+		else = {
+			custom_tooltip = unlocks_ship_2_bio
+			add_research_option = tech_cosmogenesis_mauler
+			add_research_option = tech_cosmogenesis_weaver
+		}
+	}
+}
+
+
+# Level 3
+# 时空工程
+menp_AIO_mega_03 = {
+	portrait = "GFX_menp_AIO_mega_03_icon"
+
+	modifier = {
+		building_time_mult = -0.25
+        planet_buildings_cost_mult = 0.2
+        megastructure_build_speed_add = 1
+        megastructures_cost_mult = 0.2
+        starbase_shipyard_build_time_mult = -0.2
+        starbase_shipyard_build_cost_mult = 0.2
+	}
+
+	on_unlock = {
+		custom_tooltip = unlocks_AIO_allinone_mega_02
+	}
+}
+# 建筑
+menp_AIO_buildings_3 = {
+	portrait = "GFX_menp_AIO_buildings_3_icon"
+
+	on_unlock = {
+		custom_tooltip = unlocks_buildings_3
+		# 有AIO的皱缩空间仓库/高维度仓库、星系贸易中心/星际贸易枢纽、司法复合体/司法殿堂
+	}
+}
+# 舰船组件
+menp_AIO_fleet_component_3 = {
+	portrait = "GFX_menp_AIO_fleet_component_3_icon"
+
+	on_unlock = {
+		custom_tooltip = unlocks_techs_3
+
+		add_research_option = tech_enigmatic_encoder
+		add_research_option = tech_dark_matter_deflector
+	}
+}
+# 舰船
+menp_AIO_ship_3 = {
+	portrait = "GFX_menp_AIO_ship_3_icon"
+
+	on_unlock = {
+		if = {
+			limit = { country_uses_bio_ships = no }
+			custom_tooltip = unlocks_ship_3
+			add_research_option = tech_cosmogenesis_battlecruiser
+		}
+		else = {
+			custom_tooltip = unlocks_ship_3_bio
+			add_research_option = tech_cosmogenesis_harbinger
+		}
+	}
+}
+
+
+# Level 4
+# 恒视之主
+menp_AIO_mega_04 = {
+	portrait = "GFX_menp_AIO_mega_04_icon"
+
+	modifier = {
+		add_base_country_intel = 10
+        ship_weapon_range_mult = 0.2
+		ship_accuracy_mult = 0.2
+	}
+
+	on_unlock = {
+		custom_tooltip = unlocks_AIO_allinone_mega_03
+	}
+}
+# 建筑
+menp_AIO_buildings_4 = {
+	portrait = "GFX_menp_AIO_buildings_4_icon"
+
+	on_unlock = {
+		custom_tooltip = unlocks_buildings_4
+		# 有AIO的分型行政流程/量子行政流程/假突触簇集/假突触轴突、量子创新枢纽/超然创新部、重盾垣壁/神盾基地
+	}
+}
+# 舰船
+menp_AIO_ship_4 = {
+	portrait = "GFX_menp_AIO_ship_4_icon"
+
+	on_unlock = {
+		add_research_option = tech_dark_matter_power_core
+		if = {
+			limit = { country_uses_bio_ships = no }
+			custom_tooltip = unlocks_ship_4
+			add_research_option = tech_cosmogenesis_FE_titan
+		}
+		else = {
+			custom_tooltip = unlocks_ship_4_bio
+			add_research_option = tech_cosmogenesis_stinger
+		}
+	}
+}
+
+
+# Level 5
+# 维度嵌入
+menp_AIO_mega_05 = {
+	portrait = "GFX_menp_AIO_mega_05_icon"
+
+	modifier = {
+        all_technology_research_speed = 0.25
+        pop_bonus_workforce_mult = 0.25
+	}
+
+	on_unlock = {
+		custom_tooltip = unlocks_AIO_allinone_mega_04
+	}
+}
+# 建筑
+menp_AIO_buildings_5 = {
+	portrait = "GFX_menp_AIO_buildings_5_icon"
+
+	on_unlock = {
+		custom_tooltip = unlocks_buildings_5
+		# 有AIO的天空穹顶/九天穹顶、机器人生产节点/机器人生产中心/分子焕活所/生物再生所
+	}
+}
+# 局势加速
+menp_AIO_ascension_accelerate_5 = {
+	portrait = "GFX_menp_AIO_ascension_accelerate_5_icon"
+
+	on_unlock = { custom_tooltip = unlocks_ascension_accelerate_5 }
+}

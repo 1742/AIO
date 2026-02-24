@@ -1,0 +1,2672 @@
+# AIO应用无限事件
+namespace = AIO_AIT_events
+
+# ---------------------------------- #
+# 融合宇宙局势应用无限月度触发事件
+# ---------------------------------- #
+situation_event = {
+    id = AIO_AIT_events.201
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = { is_situation_type = situation_AIO_merge_cosmos }
+
+	immediate = {
+		# 检查资源够不够不然换方案
+		if = {
+			limit = {
+				current_situation_approach = AIO_merge_cosmos_solution
+				OR = {
+					# 检查资源够不够不然换方案
+					owner = {
+						OR = {
+							has_country_resource = { type = energy amount = 0 }
+							has_country_resource = { type = sr_dark_matter amount = 0 }
+						}
+					}
+					# 等待巨构完成时自动切换方案省资源
+					situation_monthly_progress = 0
+				}
+			}
+			set_situation_approach = AIO_merge_cosmos_pause_solution
+		}
+
+		# 应用无限相关
+		if = {
+			limit = {
+				situation_monthly_progress > 0
+				NOT = { has_situation_flag = AIO_merge_cosmos_has_AIT }
+			}
+			# 河系影响
+			owner = { country_event = { id = AIO_AIT_events.202 } }
+
+			# 随机应用无限
+			if = {
+				limit = { owner = { NOT = { has_country_flag = AIO_AIT_all_random } } }
+				random_list = {
+					2 = {  }
+					1 = {
+						modifier = {
+							factor = 0.5
+							owner = {
+								OR = {
+									has_country_flag = AIO_built_AIO_mega_02
+									has_country_flag = AIO_built_AIO_mega_03
+									has_country_flag = AIO_built_AIO_mega_04
+								}
+							}
+						}
+						owner = {
+							AIO_AIT_effects_manager = { AIT_RANDOM = 1 }
+							change_variable = { which = AIO_situation_AIT_time value = 1 }
+						}
+						set_timed_situation_flag = { flag = AIO_merge_cosmos_has_AIT months = 6 }
+					}
+				}
+			}
+			# 定向应用无限
+			if = {
+				limit = { owner = { has_country_resource = { type = AIO_advanced_logic amount >= 50000 } } }
+				owner = {
+					country_event = { id = AIO_AIT_events.401 }
+					change_variable = { which = AIO_situation_AIT_time value = 1 }
+				}
+                if = {
+                    limit = { NOT = { has_situation_flag = AIO_merge_cosmos_has_AIT } }
+                    set_timed_situation_flag = { flag = AIO_merge_cosmos_has_AIT months = 6 }
+                }
+			}
+		}
+	}
+
+    after = {
+		owner = { AIO_add_random_tech = yes }
+		if = {
+			limit = { AIO_AIT_all_random = yes }
+			owner = {
+				AIO_AIT_effects_manager = { CLEAR_RANDOM_AIT_FLAG = 1 }
+				set_country_flag = AIO_AIT_all_random
+			}
+		}
+    }
+}
+
+# 融合宇宙过程中河系影响
+country_event = {
+	id = AIO_AIT_events.202
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		any_situation = {
+			is_situation_type = situation_AIO_merge_cosmos
+			NOT = { has_situation_flag = AIO_merge_cosmos_has_AIT }
+		}
+	}
+
+	immediate = {
+		# 随机影响星系
+		no_scope = {
+			while = {
+				count = root.AIO_situation_AIT_random_affect_system_num
+				random_system = {
+					limit = {
+						any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
+						NOR = {
+							is_star_class = sc_AIO_void
+
+							has_star_flag = AIO_HS_system
+							has_star_flag = AIO_TUG_system
+
+							has_star_flag = synth_queen_capital
+						}
+					}
+					weights = {
+						base = 1
+						modifier = {
+							factor = 0.01
+							is_capital_system = yes
+						}
+						modifier = {
+							factor = 0.25
+							exists = owner
+							owner = { is_same_value = root }
+						}
+					}
+
+					random_list = {
+						1 = { # 随机丰富星系矿藏
+							save_event_target_as = AIO_AIT_situation_enrich_system
+							AIO_AIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 2 }
+							if = {
+								limit = { exists = owner }
+								owner = { country_event = { id = AIO_AIT_events.203 } }
+							}
+						}
+						1 = { # 随机改变天体类型
+							random_system_planet = {
+								limit = {
+                                    AIO_safe_remove_planet_exclude_API = no
+
+									is_artificial = no
+									is_star = no
+								}
+								AIO_safe_change_random_pc = yes
+								save_event_target_as = AIO_AIT_situation_change_pc
+								if = {
+									limit = { exists = controller }
+									controller = { country_event = { id = AIO_AIT_events.204 } }
+								}
+							}
+						}
+						1 = { # 随机退化殖民地
+							modifier = {
+								factor = 0
+								any_system_planet = { is_colony = no }
+							}
+							random_system_planet = {
+								limit = { is_colony = yes }
+								weights = {
+									base = 1
+									modifier = {
+										factor = 0.01
+										is_capital = yes
+									}
+								}
+								AIO_AIT_effects_manager = { DEGENERATE = 1 }
+								save_event_target_as = AIO_AIT_situation_degenerate_planet
+								if = {
+									limit = { exists = owner }
+									owner = { country_event = { id = AIO_AIT_events.205 } }
+								}
+							}
+						}
+						1 = { # 随机倒流殖民地
+							modifier = {
+								factor = 0
+								any_system_planet = { is_colony = no }
+							}
+							random_system_planet = {
+								limit = { is_colony = yes }
+								weights = {
+									base = 1
+									modifier = {
+										factor = 0.01
+										is_capital = yes
+									}
+								}
+								AIO_AIT_effects_manager = { TURN_BACK_TIME = 1 }
+								save_event_target_as = AIO_AIT_situation_turn_back_time_planet
+								if = {
+									limit = { exists = owner }
+									owner = { country_event = { id = AIO_AIT_events.206 } }
+								}
+							}
+						}
+						1 = { # 随机抹除天体
+							random_system_planet = {
+								limit = {
+                                    AIO_safe_remove_planet_exclude_API = no
+                                    NOT = { is_planet_class = pc_AIO_empty_space }
+                                }
+								save_event_target_as = AIO_AIT_situation_destroy_planet
+								AIO_AIT_effects_manager = { ERASE_PLANET = 1 }
+								if = {
+									limit = { exists = controller }
+									controller = { country_event = { id = AIO_AIT_events.207 } }
+								}
+							}
+						}
+						1 = { # 抹除星系
+                            modifier = {
+                                factor = 0
+                                AIO_safe_remove_system_exclude_API = yes
+                            }
+							save_event_target_as = AIO_AIT_situation_destroy_system
+							AIO_AIT_effects_manager = { ERASE_SYSTEM = 1 }
+							if = {
+								limit = { exists = owner }
+								owner = { country_event = { id = AIO_AIT_events.208 } }
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_AIT_events.203
+	title = AIO_AIT_events.situation_effect.title
+	desc = AIO_AIT_events.203.desc
+	picture = GFX_evt_asteroid_field
+
+	is_triggered_only = yes
+
+	location = event_target:AIO_AIT_situation_enrich_system
+
+	option = {
+		name = AIO_AIT_events.203.opinion_1
+		ai_chance = { base = 1000 }
+	}
+}
+
+country_event = {
+	id = AIO_AIT_events.204
+	title = AIO_AIT_events.situation_effect.title
+	desc = AIO_AIT_events.204.desc
+	picture = GFX_evt_arid
+
+	is_triggered_only = yes
+
+	location = event_target:AIO_AIT_situation_change_pc
+
+	option = {
+		name = AIO_AIT_events.204.opinion_1
+		if = {
+			limit = { NOT = { has_ascension_perk = ap_AIO_allinone } }
+			add_opinion_modifier = {
+				who = from.owner
+				modifier = opinion_cosmogenesis_thesis
+			}
+		}
+		ai_chance = { base = 1000 }
+	}
+}
+
+country_event = {
+	id = AIO_AIT_events.205
+	title = AIO_AIT_events.situation_effect.title
+	desc = AIO_AIT_events.205.desc
+	picture = GFX_evt_alien_hieroglyphics
+
+	is_triggered_only = yes
+
+	location = event_target:AIO_AIT_situation_degenerate_planet
+
+	option = {
+		name = AIO_AIT_events.205.opinion_1
+		if = {
+			limit = { NOT = { has_ascension_perk = ap_AIO_allinone } }
+			add_opinion_modifier = {
+				who = from.owner
+				modifier = opinion_cosmogenesis_thesis
+			}
+		}
+		ai_chance = { base = 1000 }
+	}
+}
+
+country_event = {
+	id = AIO_AIT_events.206
+	title = AIO_AIT_events.situation_effect.title
+	desc = AIO_AIT_events.206.desc
+	picture = GFX_evt_clocks
+
+	is_triggered_only = yes
+
+	location = event_target:AIO_AIT_situation_turn_back_time_planet
+
+	option = {
+		name = AIO_AIT_events.206.opinion_1
+		if = {
+			limit = { NOT = { has_ascension_perk = ap_AIO_allinone } }
+			add_opinion_modifier = {
+				who = from.owner
+				modifier = opinion_cosmogenesis_thesis
+			}
+		}
+		ai_chance = { base = 1000 }
+	}
+}
+
+country_event = {
+	id = AIO_AIT_events.207
+	title = AIO_AIT_events.situation_effect.title
+	desc = AIO_AIT_events.207.desc
+	picture = GFX_evt_shattered_planet
+
+	is_triggered_only = yes
+
+	location = event_target:AIO_AIT_situation_destroy_planet
+
+	option = {
+		name = AIO_AIT_events.207.opinion_1
+		if = {
+			limit = { NOT = { has_ascension_perk = ap_AIO_allinone } }
+			add_opinion_modifier = {
+				who = from.owner
+				modifier = opinion_cosmogenesis_thesis
+			}
+		}
+		ai_chance = { base = 1000 }
+	}
+}
+
+country_event = {
+	id = AIO_AIT_events.208
+	title = AIO_AIT_events.situation_effect.title
+	desc = AIO_AIT_events.208.desc
+	picture = GFX_evt_astral_rift_microverse
+
+	is_triggered_only = yes
+
+	location = event_target:AIO_AIT_situation_destroy_system
+
+	option = {
+		name = AIO_AIT_events.208.opinion_1
+		if = {
+			limit = { NOT = { has_ascension_perk = ap_AIO_allinone } }
+			add_opinion_modifier = {
+				who = from.owner
+				modifier = opinion_cosmogenesis_thesis
+			}
+		}
+		ai_chance = { base = 1000 }
+	}
+}
+
+# ---------------------------------- #
+# 随机应用无限
+# ---------------------------------- #
+# 陷入黑暗-触发
+country_event = { # this - maker
+	id = AIO_AIT_events.3010
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = { NOT = { has_global_flag = AIO_AIT_existed_blackout } }
+
+	immediate = {
+		set_country_flag = AIO_AIT_blackout_maker
+		set_global_flag = AIO_AIT_existed_blackout
+
+		no_scope = {
+			every_country = {
+				limit = { is_country_type = default }
+				if = {
+					limit = { is_ai = no }
+					country_event = { id = AIO_AIT_events.3011 }
+				}
+				else = {
+					add_modifier = { modifier = cosmogenesis_blackout_first_contact years = 3 }
+					if = {
+						limit = {
+							NOT = { is_same_value = root }
+							has_communications = root
+						}
+						add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = root }
+					}
+				}
+			}
+		}
+	}
+}
+# 陷入黑暗-玩家
+country_event = { # from - maker
+    id = AIO_AIT_events.3011
+    title = crisis.7205.name
+
+    desc = {
+        trigger = {
+            NOT = { has_country_flag = AIO_AIT_blackout_maker }
+            from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+        }
+        text = crisis.7205.desc.unknown
+    }
+    desc = {
+        trigger = {
+            NOT = { has_country_flag = AIO_AIT_blackout_maker }
+            from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+        }
+        text = crisis.7205.desc.known
+    }
+    desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_blackout_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+		}
+		text = crisis.7205.desc.again
+	}
+	desc = {
+		trigger = { has_country_flag = AIO_AIT_blackout_maker }
+		text = crisis.7205.desc.crisis
+	}
+
+    picture = GFX_evt_worrying_signal
+	show_sound = event_worrying_signal
+
+    is_triggered_only = yes
+
+    option = { # 非AIO帝国选项
+		name = crisis.7205.a
+		trigger = { AIO_can_AIT = no }
+        AIO_AIT_effects_manager = { BLACKOUT = 1 }
+	}
+
+	option = { # 其他能AIT帝国
+		name = crisis.7205.b
+		trigger = {
+			AIO_can_AIT = yes
+			NOT = { has_country_flag = AIO_AIT_blackout_maker }
+		}
+        AIO_AIT_effects_manager = { BLACKOUT = 1 }
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = { # 肇事者
+        name = crisis.7205.c
+        trigger = { has_country_flag = AIO_AIT_blackout_maker }
+        AIO_AIT_effects_manager = { BLACKOUT = 1 }
+        AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+    }
+}
+
+# 常数取整-触发
+country_event = {  # this - maker
+	id = AIO_AIT_events.3020
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = { NOT = { has_global_flag = AIO_AIT_existed_constant_round } }
+
+	immediate = {
+		set_country_flag = AIO_AIT_constant_round_maker
+		set_global_flag = AIO_AIT_existed_constant_round
+
+		no_scope = {
+			every_country = {
+				limit = { is_country_type = default }
+				if = {
+					limit = { is_ai = no }
+					country_event = { id = AIO_AIT_events.3021 }
+				}
+				else = {
+					add_modifier = { modifier = cosmogenesis_constant years = 3 }
+					if = {
+						limit = {
+							NOT = { is_same_value = root }
+							has_communications = root
+						}
+						add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = root }
+					}
+				}
+			}
+		}
+	}
+}
+# 常数取整-玩家
+country_event = { # Thesis: Constant FROM = crisis country
+	id = AIO_AIT_events.3021
+	title = "crisis.7210.name"
+
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_constant_round_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = crisis.7210.desc.unknown
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_constant_round_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+		}
+		text = crisis.7210.desc.known
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_constant_round_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value > 3 } }
+		}
+		text = crisis.7210.desc.again
+	}
+	desc = {
+		trigger = { has_country_flag = AIO_AIT_constant_round_maker }
+		text = crisis.7210.desc.crisis
+	}
+
+	picture = GFX_evt_cosmogenesis_crisis
+	show_sound = event_worrying_signal
+
+	is_triggered_only = yes
+
+	option = { # 非AIO帝国
+		name = crisis.7210.a
+		trigger = { AIO_can_AIT = no }
+		AIO_AIT_effects_manager = { CONSTANT_ROUND = 1 }
+	}
+
+	option = { # 其他AIO帝国
+		name = crisis.7210.b
+		trigger = {
+			AIO_can_AIT = yes
+			NOT = { has_country_flag = AIO_AIT_constant_round_maker }
+		}
+		AIO_AIT_effects_manager = { CONSTANT_ROUND = 1 }
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = { # AIO帝国
+		name = crisis.7210.c
+		trigger = { has_country_flag = AIO_AIT_constant_round_maker }
+		AIO_AIT_effects_manager = { CONSTANT_ROUND = 1 }
+		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+	}
+}
+
+# 超光-触发
+country_event = {
+	id = AIO_AIT_events.3030
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = { NOT = { has_global_flag = AIO_AIT_existed_superlight } }
+
+	immediate = {
+		set_country_flag = AIO_AIT_superlight_maker
+		set_global_flag = AIO_AIT_existed_superlight
+
+		no_scope = {
+			every_country = {
+				limit = { is_country_type = default }
+				if = {
+					limit = { is_ai = no }
+					country_event = { id = AIO_AIT_events.30311 }
+				}
+				else = { country_event = { id = AIO_AIT_events.30321 } }
+			}
+		}
+	}
+}
+
+# 超光-玩家-一阶段
+country_event = { # Thesis: Superlight FROM = crisis country
+	id = AIO_AIT_events.30311
+	title = "crisis.7215.name"
+
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_superlight_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = crisis.7215.desc.unknown
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_superlight_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+		}
+		text = crisis.7215.desc.known
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_superlight_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+		}
+		text = crisis.7215.desc.again
+	}
+	desc = {
+		trigger = { has_country_flag = AIO_AIT_superlight_maker }
+		text = crisis.7215.desc.crisis
+	}
+
+	picture = GFX_evt_supernova
+	show_sound = event_worrying_signal
+
+	is_triggered_only = yes
+
+	option = { # 非AIO帝国
+		name = crisis.7215.a
+		trigger = { AIO_can_AIT = no }
+        AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_1 = 1 }
+	}
+
+	option = { # 其他AIO帝国
+		name = crisis.7215.b
+		trigger = {
+			AIO_can_AIT = yes
+			NOT = { has_country_flag = AIO_AIT_superlight_maker }
+		}
+        AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_1 = 1 }
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = { # AIO帝国
+		name = crisis.7215.c
+		trigger = { has_country_flag = AIO_AIT_superlight_maker }
+		AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_1 = 1 }
+		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+	}
+
+	after = { hidden_effect = { country_event = { id = AIO_AIT_events.30312 days = 60 random = 10 } } }
+}
+# 超光-ai-一阶段
+country_event = { # Thesis: Superlight FROM = crisis country
+	id = AIO_AIT_events.30321
+	hide_window = yes
+
+	is_triggered_only = yes
+
+    immediate = { AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_1 = 1 } }
+
+	after = { hidden_effect = { country_event = { id = AIO_AIT_events.30322 days = 60 random = 10 } } }
+}
+
+# 超光-玩家-二阶段
+country_event = { # Thesis: Superlight FROMFROM = crisis country
+	id = AIO_AIT_events.30312
+	title = "crisis.7220.name"
+	desc = crisis.7220.desc
+
+	picture = GFX_evt_resource_cache
+	show_sound = event_worrying_signal
+
+	is_triggered_only = yes
+
+	option = {
+		name = crisis.7220.a
+		AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_2 = 1 }
+	}
+
+	after = { hidden_effect = { country_event = { id = AIO_AIT_events.30313 days = 351 random = 20 } } }
+}
+# 超光-ai-二阶段
+country_event = { # Thesis: Superlight FROMFROM = crisis country
+	id = AIO_AIT_events.30322
+	hide_window = yes
+
+	is_triggered_only = yes
+
+    immediate = { AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_2 = 1 } }
+
+	after = { hidden_effect = { country_event = { id = AIO_AIT_events.30323 days = 351 random = 20 } } }
+}
+
+# 超光-玩家-三阶段
+country_event = { # Thesis: Superlight FROOMFROMFROM = crisis country
+	id = AIO_AIT_events.30313
+	title = "crisis.7225.name"
+	desc = crisis.7225.desc
+	picture = GFX_evt_warm_barren
+	show_sound = event_worrying_signal
+
+	is_triggered_only = yes
+
+	option = {
+		name = crisis.7225.a
+		AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_3 = 1 }
+	}
+
+	after = { hidden_effect = { country_event = { id = AIO_AIT_events.30314 days = 331 random = 20 } } }
+}
+# 超光-ai-三阶段
+country_event = { # Thesis: Superlight FROOMFROMFROM = crisis country
+	id = AIO_AIT_events.30323
+	hide_window = yes
+
+	is_triggered_only = yes
+
+    immediate = { AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_3 = 1 } }
+
+	after = { hidden_effect = { country_event = { id = AIO_AIT_events.30324 days = 331 random = 20 } } }
+}
+
+# 超光-玩家-四阶段
+country_event = { # Thesis: Superlight FROOMFROMFROMFROM = crisis country
+	id = AIO_AIT_events.30314
+	title = "crisis.7230.name"
+	desc = crisis.7230.desc
+	picture = GFX_evt_relic_world_street
+	show_sound = event_worrying_signal
+
+	is_triggered_only = yes
+
+	option = {
+		name = crisis.7230.a
+		AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_4 = 1 }
+	}
+}
+# 超光-ai-四阶段
+country_event = { # Thesis: Superlight FROOMFROMFROMFROM = crisis country
+	id = AIO_AIT_events.30324
+	hide_window = yes
+
+	is_triggered_only = yes
+
+    immediate = { AIO_AIT_effects_manager = { SUPERLIGHT_STAGE_4 = 1 } }
+}
+
+# 合金延展性良性-触发
+country_event = {
+	id = AIO_AIT_events.3040
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = { NOT = { has_global_flag = AIO_AIT_existed_alloy_ductility } }
+
+	immediate = {
+		set_country_flag = AIO_AIT_alloy_ductility_maker
+		set_global_flag = AIO_AIT_existed_alloy_ductility
+
+		no_scope = {
+			every_country = {
+				limit = { is_country_type = default }
+				if = {
+					limit = { is_ai = no }
+					country_event = { id = AIO_AIT_events.3041 }
+				}
+				else = {
+					add_modifier = { modifier = cosmogenesis_alloy_ductility years = 3 }
+					if = {
+						limit = {
+							NOT = { is_same_value = root }
+							has_communications = root
+						}
+						add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = root }
+					}
+				}
+			}
+		}
+	}
+}
+# 合金延展性良性-玩家
+country_event = { # Thesis: Alloy Ductility - Good FROM = crisis country
+	id = AIO_AIT_events.3041
+	title = "crisis.7235.name"
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = crisis.7235.desc.unknown
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+		}
+		text = crisis.7235.desc.known
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+		}
+		text = crisis.7235.desc.again
+	}
+	desc = {
+		trigger = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+		text = crisis.7235.desc.crisis
+	}
+
+	picture = GFX_evt_engineering_research
+	show_sound = event_worrying_signal
+
+	is_triggered_only = yes
+
+	option = { # 非AIO帝国
+		name = crisis.7235.a
+		trigger = { AIO_can_AIT = no }
+		AIO_AIT_effects_manager = { ALLOY_DUCTILITY_GOOD = 1 }
+	}
+
+	option = { # 其他AIO帝国
+		name = crisis.7235.b
+		trigger = {
+			AIO_can_AIT = yes
+			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+		}
+		AIO_AIT_effects_manager = { ALLOY_DUCTILITY_GOOD = 1 }
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = { # AIO帝国
+		name = crisis.7235.c
+		trigger = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+		AIO_AIT_effects_manager = { ALLOY_DUCTILITY_GOOD = 1 }
+		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+	}
+}
+
+# 合金延展性劣性-触发
+country_event = {
+	id = AIO_AIT_events.3050
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = { NOT = { has_global_flag = AIO_AIT_existed_alloy_ductility } }
+
+	immediate = {
+		set_country_flag = AIO_AIT_alloy_ductility_maker
+		set_global_flag = AIO_AIT_existed_alloy_ductility
+
+		every_country = {
+			limit = { is_country_type = default }
+			if = {
+				limit = { is_ai = no }
+				country_event = { id = AIO_AIT_events.3051 }
+			}
+			else = {
+				add_modifier = { modifier = cosmogenesis_alloy_ductility_bad years = 3 }
+				if = {
+					limit = {
+						NOT = { is_same_value = root }
+						has_communications = root
+					}
+					add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = root }
+				}
+			}
+		}
+	}
+}
+# 合金延展性劣性，玩家帝国
+country_event = { # Thesis: Alloy Ductility - Bad FROM = crisis country
+	id = AIO_AIT_events.3051
+	title = "crisis.7240.name"
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = crisis.7240.desc.unknown
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = crisis.7240.desc.known
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = crisis.7240.desc.again
+	}
+	desc = {
+		trigger = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+		text = crisis.7240.desc.crisis
+	}
+
+	picture = GFX_evt_collapsing_roof
+	show_sound = event_worrying_signal
+
+	is_triggered_only = yes
+
+	option = { # 非AIO帝国
+		name = crisis.7240.a
+		trigger = { AIO_can_AIT = no }
+		AIO_AIT_effects_manager = { ALLOY_DUCTILITY_BAD = 1 }
+	}
+
+	option = { # 其他AIO帝国
+		name = crisis.7240.b
+		trigger = {
+			AIO_can_AIT = yes
+			NOT = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+		}
+		AIO_AIT_effects_manager = { ALLOY_DUCTILITY_BAD = 1 }
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = { # AIO帝国
+		name = crisis.7240.c
+		trigger = { has_country_flag = AIO_AIT_alloy_ductility_maker }
+		AIO_AIT_effects_manager = { ALLOY_DUCTILITY_BAD = 1 }
+		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+	}
+}
+
+# 营养调节良性-触发
+country_event = {
+	id = AIO_AIT_events.3060
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = { NOT = { has_global_flag = AIO_AIT_existed_altered_nutrition } }
+
+	immediate = {
+		set_country_flag = AIO_AIT_altered_nutrition_maker
+		set_global_flag = AIO_AIT_existed_altered_nutrition
+
+		no_scope = {
+			every_country = {
+				limit = { is_country_type = default }
+				if = {
+					limit = { is_ai = no }
+					country_event = { id = AIO_AIT_events.3061 }
+				}
+				else = {
+					if = {
+						limit = { country_uses_food = yes }
+						add_modifier = { modifier = cosmogenesis_altered_nutrition years = 3 }
+					}
+					if = {
+						limit = {
+							NOT = { is_same_value = root }
+							has_communications = root
+						}
+						add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = root }
+					}
+				}
+			}
+		}
+	}
+}
+# 营养调节良性-玩家
+country_event = { # Thesis: Altered Nutrition - Good FROM = crisis country
+	id = AIO_AIT_events.3061
+	title = "crisis.7245.name"
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = crisis.7245.desc.unknown
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+		}
+		text = crisis.7245.desc.known
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+		}
+		text = crisis.7245.desc.again
+	}
+	desc = {
+		trigger = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+		text = crisis.7245.desc.crisis
+	}
+
+	picture = GFX_evt_astral_rift_garden_2
+	show_sound = event_worrying_signal
+
+	is_triggered_only = yes
+
+	option = { #Non-Crisis option
+		name = crisis.7245.a
+		trigger = { NOT = { has_ascension_perk = ap_AIO_allinone } }
+		AIO_AIT_effects_manager = { ALTERED_NUTRITION_GOOD = 1 }
+	}
+
+	option = { #Fellow-Crisis option
+		name = crisis.7245.b
+		trigger = {
+			has_ascension_perk = ap_AIO_allinone
+			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+		}
+		AIO_AIT_effects_manager = { ALTERED_NUTRITION_GOOD = 1 }
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = { #Crisis option
+		name = crisis.7245.c
+		trigger = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+		AIO_AIT_effects_manager = { ALTERED_NUTRITION_GOOD = 1 }
+		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+	}
+}
+
+# 营养调节劣性-触发
+country_event = {
+	id = AIO_AIT_events.3070
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = { NOT = { has_global_flag = AIO_AIT_existed_altered_nutrition } }
+
+	immediate = {
+		set_country_flag = AIO_AIT_altered_nutrition_maker
+		set_global_flag = AIO_AIT_existed_altered_nutrition
+
+		no_scope = {
+			every_country = {
+				limit = { is_country_type = default }
+				if = {
+					limit = { is_ai = no }
+					country_event = { id = AIO_AIT_events.3071 }
+				}
+				else = {
+					if = {
+						limit = { country_uses_food = yes }
+						add_modifier = { modifier = cosmogenesis_altered_nutrition_bad years = 3 }
+					}
+					if = {
+						limit = {
+							NOT = { is_same_value = root }
+							has_communications = root
+						}
+						add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = root }
+					}
+				}
+			}
+		}
+	}
+}
+# 营养调节劣性-玩家
+country_event = { # Thesis: Altered Nutrition - Bad FROM = crisis country
+	id = AIO_AIT_events.3071
+	title = "crisis.7250.name"
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = crisis.7250.desc.unknown
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+		}
+		text = crisis.7250.desc.known
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+		}
+		text = crisis.7250.desc.again
+	}
+	desc = {
+		trigger = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+		text = crisis.7250.desc.crisis
+	}
+
+	picture = GFX_evt_astral_rift_garden_2_fire
+	show_sound = event_worrying_signal
+
+	is_triggered_only = yes
+
+	option = { #Non-Crisis option
+		name = crisis.7250.a
+		trigger = { AIO_can_AIT = no }
+		AIO_AIT_effects_manager = { ALTERED_NUTRITION_BAD = 1 }
+	}
+
+	option = { #Fellow-Crisis option
+		name = crisis.7250.b
+		trigger = {
+			AIO_can_AIT = yes
+			NOT = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+		}
+		AIO_AIT_effects_manager = { ALTERED_NUTRITION_BAD = 1 }
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = { #Crisis option
+		name = crisis.7250.c
+		trigger = { has_country_flag = AIO_AIT_altered_nutrition_maker }
+		AIO_AIT_effects_manager = { ALTERED_NUTRITION_BAD = 1 }
+		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+	}
+}
+
+# 质量偏移-触发
+country_event = { # this - maker
+	id = AIO_AIT_events.3080
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = { NOT = { has_global_flag = AIO_AIT_existed_mass_shift } }
+
+	immediate = {
+		set_country_flag = AIO_AIT_mass_shift_maker
+		set_global_flag = AIO_AIT_existed_mass_shift
+
+		no_scope = {
+			every_country = {
+				limit = { is_country_type = default }
+				if = {
+					limit = { is_ai = no }
+					country_event = { id = AIO_AIT_events.3081 }
+				}
+				else = {
+					AIO_AIT_effects_manager = { MASS_SHIFT = 1 }
+					if = {
+						limit = {
+							NOT = { is_same_value = root }
+							has_communications = root
+						}
+						add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = root }
+					}
+				}
+			}
+		}
+	}
+}
+# 质量偏移-玩家
+country_event = { # Thesis: Mass Shift FROM = crisis country
+	id = AIO_AIT_events.3081
+	title = "crisis.7255.name"
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_mass_shift_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = crisis.7255.desc.unknown
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_mass_shift_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+		}
+		text = crisis.7255.desc.known
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_mass_shift_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+		}
+		text = crisis.7255.desc.again
+	}
+	desc = {
+		trigger = { has_country_flag = AIO_AIT_mass_shift_maker }
+		text = crisis.7255.desc.crisis
+	}
+
+	picture = GFX_evt_rift_sphere
+	show_sound = event_worrying_signal
+
+	is_triggered_only = yes
+
+	immediate = { AIO_AIT_effects_manager = { MASS_SHIFT = 1 } }
+
+	option = { #Non-Crisis option
+		name = crisis.7255.a
+		trigger = { NOT = { has_ascension_perk = ap_AIO_allinone } }
+		AIO_AIT_effects_manager = { MASS_SHIFT_OPTION_SCRIPT = 1 }
+	}
+
+	option = { #Fellow-Crisis option
+		name = crisis.7255.b
+		trigger = {
+			has_ascension_perk = ap_AIO_allinone
+			NOT = { has_country_flag = AIO_AIT_mass_shift_maker }
+		}
+		AIO_AIT_effects_manager = { MASS_SHIFT_OPTION_SCRIPT = 1 }
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+	option = { #Crisis option
+		name = crisis.7255.c
+		trigger = { has_country_flag = AIO_AIT_mass_shift_maker }
+		AIO_AIT_effects_manager = { MASS_SHIFT_OPTION_SCRIPT = 1 }
+		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+	}
+}
+
+# 虚境撕裂-触发
+country_event = { # this - maker
+	id = AIO_AIT_events.3090
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = { NOT = { has_global_flag = AIO_AIT_existed_shroud_tear } }
+
+	immediate = {
+		AIO_AIT_effects_manager = { SHROUD_TEAR = 1 }
+
+		set_country_flag = AIO_AIT_shroud_tear_maker
+		set_global_flag = AIO_AIT_existed_shroud_tear
+
+		no_scope = {
+			every_country = {
+				limit = { is_country_type = default }
+				if = {
+					limit = { is_ai = no }
+					country_event = { id = AIO_AIT_events.3091 }
+				}
+				else = {
+					add_modifier = { modifier = cosmogenesis_shroud_tear years = 7 }
+					if = {
+						limit = {
+							NOT = { is_same_value = from }
+							has_communications = FROM
+						}
+						add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROM }
+					}
+				}
+			}
+		}
+	}
+}
+# 虚境撕裂-玩家
+country_event = { # FROM = maker
+	id = AIO_AIT_events.3091
+    title = "crisis.7260.name"
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_shroud_tear_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = crisis.7260.desc.unknown
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_shroud_tear_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+		}
+		text = crisis.7260.desc.known
+	}
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = AIO_AIT_shroud_tear_maker }
+			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+		}
+		text = crisis.7260.desc.again
+	}
+    desc = {
+        trigger = { has_country_flag = AIO_AIT_shroud_tear_maker }
+        text = crisis.7260.desc.crisis
+    }
+
+	picture = GFX_evt_astral_scar
+	show_sound = event_worrying_signal
+
+	is_triggered_only = yes
+
+	option = { #Non-Crisis option
+		name = crisis.7260.a
+		trigger = { AIO_can_AIT = no }
+		AIO_AIT_effects_manager = { SHROUD_TEAR_OPTION_SCRIPT = 1 }
+	}
+
+	option = { #Fellow-Crisis option
+		name = crisis.7260.b
+		trigger = {
+			AIO_can_AIT = yes
+			NOT = { has_country_flag = AIO_AIT_shroud_tear_maker }
+		}
+		AIO_AIT_effects_manager = { SHROUD_TEAR_OPTION_SCRIPT = 1 }
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	}
+
+    option = { #Crisis option
+		name = crisis.7260.c
+        trigger = { has_country_flag = AIO_AIT_shroud_tear_maker }
+		AIO_AIT_effects_manager = { SHROUD_TEAR_OPTION_SCRIPT = 1 }
+		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+	}
+}
+
+# 时间之墟触发事件
+country_event = { # this - maker
+    id = AIO_AIT_events.3100
+    hide_window = yes
+
+    is_triggered_only = yes
+	trigger = { NOT = { has_global_flag = AIO_AIT_existed_time_ruin } }
+
+    immediate = {
+		set_country_flag = AIO_AIT_time_ruin_maker
+		set_global_flag = AIO_AIT_existed_time_ruin
+
+        no_scope = {
+            every_country = {
+				limit = { is_country_type = default }
+                random_owned_planet = {
+					weights = {
+						base = 1
+						modifier = {
+							factor = 0.01
+							is_capital = yes
+						}
+					}
+
+                    set_planet_flag = AIO_AIT_time_ruin_planet
+                    if = {
+                        limit = { owner = { is_ai = no } }
+                        planet_event = { id = AIO_AIT_events.31011 }
+                    }
+                    else = { planet_event = { id = AIO_AIT_events.31021 } }
+                }
+            }
+        }
+    }
+}
+
+# 时间之墟-玩家-一阶段
+planet_event = {
+    id = AIO_AIT_events.31011
+	title = AIO_AIT_events.3100.title
+
+    # 普政
+	desc = {
+		trigger = {
+			owner = {
+				NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+				is_gestalt = no
+			}
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = AIO_AIT_events.31011.desc.normal.unknown
+	}
+	desc = {
+		trigger = {
+			owner = {
+				NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+				is_gestalt = no
+			}
+			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+		}
+		text = AIO_AIT_events.31011.desc.normal.known
+	}
+	desc = {
+		trigger = {
+			owner = {
+				NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+				is_gestalt = no
+			}
+			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+		}
+		text = AIO_AIT_events.31011.desc.normal.again
+	}
+    # 格式塔
+    desc = {
+		trigger = {
+			owner = {
+				NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+				is_gestalt = yes
+			}
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = AIO_AIT_events.31011.desc.gestalt.unknown
+	}
+	desc = {
+		trigger = {
+			owner = {
+				NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+				is_gestalt = yes
+			}
+			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+		}
+		text = AIO_AIT_events.31011.desc.gestalt.known
+	}
+	desc = {
+		trigger = {
+			owner = {
+				NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+				is_gestalt = yes
+			}
+			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+		}
+		text = AIO_AIT_events.31011.desc.gestalt.again
+	}
+    # 肇事者
+	desc = {
+		trigger = { owner = { has_country_flag = AIO_AIT_time_ruin_maker } }
+		text = AIO_AIT_events.31011.desc.crisis
+	}
+
+	picture = GFX_evt_rift_sphere
+	show_sound = event_ground_battle
+    location = root
+
+	is_triggered_only = yes
+    trigger = { has_planet_flag = AIO_AIT_time_ruin_planet }
+
+	option = { #Non-Crisis option
+		trigger = {
+            owner = {
+				AIO_can_AIT = no
+				is_gestalt = no
+			}
+        }
+		name = AIO_AIT_events.31011.not_crisis.normal.option_1
+        AIO_AIT_effects_manager = { TIME_RUIN_STAGE_1 = 1 }
+	}
+
+    option = { #Non-Crisis option
+		trigger = {
+            owner = {
+				is_gestalt = yes
+				AIO_can_AIT = no
+			}
+        }
+		name = AIO_AIT_events.31011.not_crisis.gestalt.option_1
+        AIO_AIT_effects_manager = { TIME_RUIN_STAGE_1 = 1 }
+	}
+
+	option = { #Fellow-Crisis option
+		name = AIO_AIT_events.31011.crisis.not_maker.option_1
+		trigger = {
+            owner = {
+                AIO_can_AIT = yes
+                NOT = { has_country_flag = AIO_AIT_time_ruin_maker }
+            }
+		}
+		AIO_AIT_effects_manager = { TIME_RUIN_STAGE_1 = 1 }
+        owner = {
+            add_monthly_resource_mult = {
+                resource = physics_research
+                value = @tier4researchreward
+                min = @tier4researchmin
+                max = @tier4researchmax
+            }
+        }
+	}
+
+	option = { #Crisis option
+		name = AIO_AIT_events.31011.crisis.option_1
+		trigger = { owner = { has_country_flag = AIO_AIT_time_ruin_maker } }
+        AIO_AIT_effects_manager = { TIME_RUIN_STAGE_1 = 1 }
+		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+	}
+
+    after = {
+        owner = {
+            begin_event_chain = {
+                event_chain = AIO_AIT_TR_events_chain
+                target = this
+            }
+            add_event_chain_counter = {
+                event_chain = AIO_AIT_TR_events_chain
+                counter = AIO_AIT_TR_events_chain
+                amount = 1
+            }
+            if = {
+                limit = { is_gestalt = no }
+				root = {
+					enable_special_project = {
+						name = AIO_AIT_TIME_RUIN_STAGE_1
+						owner = prev
+						location = this
+					}
+				}
+            }
+            else = {
+				root= {
+					enable_special_project = {
+						name = AIO_AIT_TIME_RUIN_STAGE_2
+						owner = prev
+						location = this
+					}
+				}
+            }
+        }
+    }
+}
+# 时间之墟-ai-一阶段
+planet_event = {
+    id = AIO_AIT_events.31021
+	hide_window = yes
+
+	is_triggered_only = yes
+    trigger = { has_planet_flag = AIO_AIT_time_ruin_planet }
+
+    immediate = {
+		owner = { begin_event_chain = { event_chain = AIO_AIT_TR_events_chain target = this } }
+
+        if = {
+            limit = { owner = { is_gestalt = no } }
+            planet_event = { id = AIO_AIT_events.31022 days = 180 }
+        }
+        else = { planet_event = { id = AIO_AIT_events.31023 days = 180 } }
+    }
+}
+
+# 时间之墟-玩家-二阶段
+# call by AIO_AIT_TIME_RUIN_STAGE_1, from - ship, fromfrom - planet
+planet_event = {
+    id = AIO_AIT_events.31012
+	title = AIO_AIT_events.3100.title
+    desc = AIO_AIT_events.31012.desc.normal
+
+	picture = GFX_evt_burning_settlement
+	show_sound = event_air_raid_siren
+
+	is_triggered_only = yes
+    trigger = {
+        has_planet_flag = AIO_AIT_time_ruin_planet
+        owner = { is_gestalt = no }
+    }
+
+	option = {
+		name = AIO_AIT_events.31012.normal.option_1
+		allow = {
+            owner = {
+                is_criminal_syndicate = no
+                resource_stockpile_compare = { resource = energy value >= 2000 }
+            }
+        }
+        AIO_AIT_effects_manager = { TIME_RUIN_STAGE_2_OPT1 = 1 }
+	}
+    option = {
+		name = AIO_AIT_events.31012.normal.option_2
+        AIO_AIT_effects_manager = { TIME_RUIN_STAGE_2_OPT2 = 1 }
+	}
+
+    after = {
+        owner = {
+            add_event_chain_counter = {
+				event_chain = AIO_AIT_TR_events_chain
+				counter = AIO_AIT_TR_events_chain
+				amount = 1
+			}
+        }
+		enable_special_project = {
+			name = AIO_AIT_TIME_RUIN_STAGE_2
+			owner = owner
+			location = this
+		}
+    }
+}
+# 时间之墟-ai-二阶段
+planet_event = {
+    id = AIO_AIT_events.31022
+	hide_window = yes
+
+	is_triggered_only = yes
+    trigger = {
+        has_planet_flag = AIO_AIT_time_ruin_planet
+        owner = { is_gestalt = no }
+    }
+
+	immediate = {
+        if = {
+            limit = {
+				owner = {
+					is_criminal_syndicate = no
+					resource_stockpile_compare = { resource = energy value >= 2000 }
+				}
+			}
+            AIO_AIT_effects_manager = { TIME_RUIN_STAGE_2_OPT1 = 1 }
+        }
+        else = { AIO_AIT_effects_manager = { TIME_RUIN_STAGE_2_OPT2 = 1 } }
+
+        planet_event = { id = AIO_AIT_events.31023 days = 180 }
+    }
+}
+
+# 时间之墟-玩家-三阶段
+# call by AIO_AIT_TIME_RUIN_STAGE_2, from - ship, fromfrom - planet
+planet_event = {
+    id = AIO_AIT_events.31013
+	title = AIO_AIT_events.3100.title
+    desc = {
+        trigger = { owner = { AIO_can_AIT = no } }
+        text = AIO_AIT_events.31013.desc.not_crisis
+    }
+    desc = {
+        trigger = { owner = { AIO_can_AIT = yes } }
+        text = AIO_AIT_events.31013.desc.crisis
+    }
+
+	picture = GFX_evt_astral_rift_entangled_dark_matter_2
+	show_sound = event_administrative_work
+
+	is_triggered_only = yes
+    trigger = { has_planet_flag = AIO_AIT_time_ruin_planet }
+
+    option = {
+		name = AIO_AIT_events.31013.option_1
+        AIO_AIT_effects_manager = { TIME_RUIN_STAGE_3_OPT1 = 1 }
+	}
+
+	option = {
+		name = AIO_AIT_events.31013.option_2
+        trigger = { owner = { AIO_can_AIT = yes } }
+        owner = {
+            add_event_chain_counter = {
+                event_chain = AIO_AIT_TR_events_chain
+                counter = AIO_AIT_TR_events_chain
+                amount = 1
+            }
+        }
+		enable_special_project = {
+			name = AIO_AIT_TIME_RUIN_STAGE_3
+			owner = owner
+			location = this
+		}
+	}
+}
+# 时间之墟-ai-三阶段
+planet_event = {
+    id = AIO_AIT_events.31023
+	hide_window = yes
+
+	is_triggered_only = yes
+    trigger = { has_planet_flag = AIO_AIT_time_ruin_planet }
+
+	immediate = { AIO_AIT_effects_manager = { TIME_RUIN_STAGE_3_OPT1 = 1 } }
+}
+
+# 时间之墟-玩家-四阶段
+# call by AIO_AIT_events.31013 or AIO_AIT_TIME_RUIN_STAGE_3
+planet_event = {
+    id = AIO_AIT_events.31014
+	title = AIO_AIT_events.3100.title
+	# 普政，清算
+    desc = {
+        trigger = {
+			owner = { AIO_can_AIT = no }
+			OR= {
+				has_modifier = AIO_AIT_TR_stage_2_opt_1_modifier  # 镇压和清算
+				has_modifier = AIO_AIT_TR_stage_3_liquidation_modifier  # 镇压、清算和研究
+			}
+		}
+        text = AIO_AIT_events.31014.desc.not_crisis.liquidation
+    }
+	# 普政，不清算
+    desc = {
+        trigger = {
+			owner = {
+				is_gestalt = no
+				AIO_can_AIT = no
+			}
+			OR = {
+				has_modifier = AIO_AIT_TR_stage_1_modifier  # 啥也没干
+				has_modifier = AIO_AIT_TR_stage_2_opt_2_modifier  # 镇压、不清算
+				has_modifier = AIO_AIT_TR_stage_3_unliquidation_modifier  # 镇压、不清算和研究
+			}
+        }
+        text = AIO_AIT_events.31014.desc.not_crisis.unliquidation
+    }
+	# 格式塔，非天灾
+	desc = {
+        trigger = {
+            owner = {
+				is_gestalt = yes
+				AIO_can_AIT = no
+			}
+            has_modifier = AIO_AIT_TR_stage_1_modifier
+        }
+        text = AIO_AIT_events.31014.desc.not_crisis.gestalt
+    }
+	# 天灾
+    desc = {
+        trigger = {
+            owner = { AIO_can_AIT = yes }
+			NOT = { has_planet_flag = AIO_finish_TR_special_project_release }
+        }
+        text = AIO_AIT_events.31014.desc.crisis.fail
+    }
+    desc = {
+        trigger = { has_planet_flag = AIO_finish_TR_special_project_release }
+        text = AIO_AIT_events.31014.desc.crisis.success
+    }
+
+	picture = GFX_evt_crisis_defeated
+	show_sound = event_celebration
+
+	is_triggered_only = yes
+    trigger = { has_planet_flag = AIO_AIT_time_ruin_planet }
+
+	option = {
+		name = AIO_AIT_events.31014.option_1.normal
+        trigger = {
+			owner = { AIO_can_AIT = no }
+			OR= {
+				has_modifier = AIO_AIT_TR_stage_2_opt_1_modifier  # 镇压和清算
+				has_modifier = AIO_AIT_TR_stage_3_liquidation_modifier  # 镇压、清算和研究
+			}
+		}
+        remove_modifier = AIO_AIT_TR_stage_3_liquidation_modifier
+        remove_deposit = d_AIO_TR_stage_1
+        remove_deposit = d_AIO_TR_stage_3
+        add_modifier = { modifier = AIO_AIT_TR_stage_4_liquidation_modifier years = 3 }
+        add_deposit = d_AIO_TR_monument
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = @tier3unityreward
+				min = @tier3unitymin
+				max = @tier3unitymax
+			}
+		}
+	}
+    option = {
+		name = AIO_AIT_events.31014.option_1.normal
+        trigger = {
+			owner = {
+				is_gestalt = no
+				AIO_can_AIT = no
+			}
+			OR = {
+				has_modifier = AIO_AIT_TR_stage_1_modifier  # 啥也没干
+				has_modifier = AIO_AIT_TR_stage_2_opt_2_modifier  # 镇压、不清算
+				has_modifier = AIO_AIT_TR_stage_3_unliquidation_modifier  # 镇压、不清算和研究
+			}
+        }
+		switch = {
+			trigger = has_modifier
+			AIO_AIT_TR_stage_1_modifier = { remove_modifier = AIO_AIT_TR_stage_1_modifier }
+			AIO_AIT_TR_stage_2_opt_2_modifier = { remove_modifier = AIO_AIT_TR_stage_2_opt_2_modifier }
+			AIO_AIT_TR_stage_3_unliquidation_modifier = { remove_modifier = AIO_AIT_TR_stage_3_unliquidation_modifier }
+		}
+		if = {
+			limit = { has_deposit = d_AIO_TR_stage_1 }
+			remove_deposit = d_AIO_TR_stage_1
+		}
+		if = {
+			limit = { has_deposit = d_AIO_TR_stage_3 }
+			remove_deposit = d_AIO_TR_stage_3
+		}
+		add_planet_devastation = 20
+        owner = { add_modifier = { modifier = AIO_AIT_TR_stage_4_unliquidation_modifier years = 3 } }
+	}
+    option = {
+		name = AIO_AIT_events.31014.option_1.normal
+        trigger = {
+            owner = {
+				is_gestalt = yes
+				AIO_can_AIT = no
+			}
+            has_modifier = AIO_AIT_TR_stage_1_modifier
+        }
+        remove_modifier = AIO_AIT_TR_stage_1_modifier
+		if = {
+			limit = { has_deposit = d_AIO_TR_stage_1 }
+			remove_deposit = d_AIO_TR_stage_1
+		}
+		if = {
+			limit = { has_deposit = d_AIO_TR_stage_3 }
+			remove_deposit = d_AIO_TR_stage_3
+		}
+	}
+    option = {
+		name = AIO_AIT_events.31014.option_1.normal
+        trigger = {
+            owner = { AIO_can_AIT = yes }
+			NOT = { has_planet_flag = AIO_finish_TR_special_project_release }
+        }
+        remove_modifier = AIO_AIT_TR_stage_1_modifier
+        remove_deposit = d_AIO_TR_stage_1
+	}
+    option = {
+		name = AIO_AIT_events.31041.option_1.crisis.success
+        custom_tooltip = add_crisis_currency_tt
+        trigger = { has_planet_flag = AIO_finish_TR_special_project_release }
+        remove_modifier = AIO_AIT_TR_stage_1_modifier
+        remove_deposit = d_AIO_TR_stage_1
+        owner = {
+            hidden_effect = {
+				if = {
+					limit = { has_ascension_perk = ap_cosmogenesis }
+					complete_crisis_objective = crisobj_research_thesis
+				}
+				else = { complete_crisis_objective = crisobj_AIO_research_thesis }
+			}
+            add_monthly_resource_mult = {
+                resource = physics_research
+                value = @tier4researchreward
+                min = @tier4researchmin
+                max = @tier4researchmax
+            }
+        }
+	}
+
+    after = {
+		remove_planet_flag = AIO_AIT_time_ruin_planet
+		owner = { end_event_chain = AIO_AIT_TR_events_chain }
+	}
+}
+# 时间之墟-ai-四阶段
+planet_event = {
+    id = AIO_AIT_events.31024
+	hide_window = yes
+
+	is_triggered_only = yes
+    trigger = { has_planet_flag = AIO_AIT_time_ruin_planet }
+
+	immediate = {
+		if = {
+			limit = { has_deposit = d_AIO_TR_stage_1 }
+			remove_deposit = d_AIO_TR_stage_1
+		}
+		if = {
+			limit = { has_deposit = d_AIO_TR_stage_3 }
+			remove_deposit = d_AIO_TR_stage_3
+		}
+
+        switch = {
+            trigger = has_modifier
+            AIO_AIT_TR_stage_1_modifier = { remove_modifier = AIO_AIT_TR_stage_1_modifier }
+            AIO_AIT_TR_stage_3_liquidation_modifier = {
+                remove_modifier = AIO_AIT_TR_stage_3_liquidation_modifier
+                add_modifier = { modifier = AIO_AIT_TR_stage_4_liquidation_modifier years = 3 }
+                add_deposit = d_AIO_TR_monument
+				owner = {
+					add_monthly_resource_mult = {
+						resource = unity
+						value = @tier3unityreward
+						min = @tier3unitymin
+						max = @tier3unitymax
+					}
+				}
+            }
+            AIO_AIT_TR_stage_3_unliquidation_modifier = {
+                remove_modifier = AIO_AIT_TR_stage_3_unliquidation_modifier
+				add_planet_devastation = 20
+                owner = { add_modifier = { modifier = AIO_AIT_TR_stage_4_unliquidation_modifier years = 3 } }
+            }
+        }
+
+		owner = { end_event_chain = AIO_AIT_TR_events_chain }
+        remove_planet_flag = AIO_AIT_time_ruin_planet
+    }
+}
+
+# 时间之墟行星被摧毁
+planet_event = {
+	id = AIO_AIT_events.3105
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = { has_planet_flag = AIO_AIT_time_ruin_planet }
+
+	immediate = {
+		owner = {
+			if = {
+				limit = { has_event_chain = AIO_AIT_TR_events_chain }
+				end_event_chain = AIO_AIT_TR_events_chain
+			}
+		}
+		if = {
+			limit = { has_deposit = d_AIO_TR_stage_1 }
+			remove_deposit = d_AIO_TR_stage_1
+		}
+		if = {
+			limit = { has_deposit = d_AIO_TR_stage_3 }
+			remove_deposit = d_AIO_TR_stage_3
+		}
+        switch = {
+            trigger = has_modifier
+            AIO_AIT_TR_stage_1_modifier = { remove_modifier = AIO_AIT_TR_stage_1_modifier }
+			AIO_AIT_TR_stage_2_opt_1_modifier = { remove_modifier = AIO_AIT_TR_stage_2_opt_1_modifier }
+			AIO_AIT_TR_stage_2_opt_2_modifier = { remove_modifier = AIO_AIT_TR_stage_2_opt_2_modifier }
+            AIO_AIT_TR_stage_3_liquidation_modifier = { remove_modifier = AIO_AIT_TR_stage_3_liquidation_modifier }
+            AIO_AIT_TR_stage_3_unliquidation_modifier = { remove_modifier = AIO_AIT_TR_stage_3_unliquidation_modifier }
+        }
+        remove_planet_flag = AIO_AIT_time_ruin_planet
+	}
+}
+
+# 重力膨胀-触发事件
+country_event = { # this - maker
+    id = AIO_AIT_events.3110
+    hide_window = yes
+
+    is_triggered_only = yes
+	trigger = { NOT = { has_global_flag = AIO_AIT_existed_gravity_swell } }
+
+    immediate = {
+		set_country_flag = AIO_AIT_gravity_swell_maker
+		set_global_flag = AIO_AIT_existed_gravity_swell
+
+        no_scope = {
+            every_country = {
+				limit = { is_country_type = default }
+                random_system_within_border = {
+					limit = {
+						star = {
+							NOR = {
+								is_planet_class = pc_black_hole
+								is_planet_class = pc_AIO_empty_space
+							}
+						}
+					}
+					weights = {
+						base = 1
+						modifier = {
+							factor = 0.1
+							is_capital_system = yes
+						}
+					}
+					star = { set_timed_planet_flag = { flag = AIO_AIT_gravity_swell_planet years = 15 } }
+					if = {
+						limit = { owner = { is_ai = no } }
+						system_event = { id = AIO_AIT_events.31111 }
+					}
+					else = {
+						owner = {
+							if = {
+								limit = {
+									NOT = { is_same_value = root }
+									has_communications = root
+								}
+								add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = root }
+							}
+							begin_event_chain = { event_chain = AIO_AIT_GS_events_chain target = this }
+						}
+						star = {
+							add_deposit = d_AIO_GS_deposit
+							planet_event = { id = AIO_AIT_events.31123 years = 10 }
+						}
+					}
+                }
+            }
+        }
+    }
+}
+
+# 重力膨胀-玩家-一阶段
+system_event = { # from - maker
+	id = AIO_AIT_events.31111
+	title = AIO_AIT_events.3110.title
+
+	# 受害者
+	desc = {
+		trigger = {
+			owner = { NOT = { has_country_flag = AIO_AIT_gravity_swell_maker } }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+		}
+		text = AIO_AIT_events.31111.desc.unknown
+	}
+	desc = {
+		trigger = {
+			owner = { NOT = { has_country_flag = AIO_AIT_gravity_swell_maker } }
+			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+		}
+		text = AIO_AIT_events.31111.desc.known
+	}
+	desc = {
+		trigger = {
+			owner = { NOT = { has_country_flag = AIO_AIT_gravity_swell_maker } }
+			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+		}
+		text = AIO_AIT_events.31111.desc.again
+	}
+	# 肇事者
+	desc = {
+		trigger = { owner = { has_country_flag = AIO_AIT_gravity_swell_maker } }
+		text = AIO_AIT_events.31111.desc.maker
+	}
+
+	picture = GFX_evt_binary_stars
+	show_sound = event_administrative_work
+	location = star
+
+	is_triggered_only = yes
+	trigger = { exists = owner }
+
+	option = {
+		trigger = { AIO_can_AIT = no }
+		name = AIO_AIT_events.31111.not_crisis.option_1
+	}
+
+	option = {
+		trigger = {
+			owner = { NOT = { has_country_flag = AIO_AIT_gravity_swell_maker } }
+			AIO_can_AIT = yes
+		}
+		name = AIO_AIT_events.31111.crisis.not_maker.option_1
+	}
+
+	option = {
+		trigger = { owner = { has_country_flag = AIO_AIT_gravity_swell_maker } }
+		name = AIO_AIT_events.31111.crisis.marker.option_1
+		AIO_AIT_effects_manager = { AIT_MAKER_CUSTOM_TOOLTIPS = 1 }
+	}
+
+	after = {
+		owner = {
+			if = {
+				limit = {
+					NOT = { is_same_value = from }
+					has_communications = from
+				}
+				add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = from }
+			}
+
+			begin_event_chain = { event_chain = AIO_AIT_GS_events_chain target = this }
+			add_event_chain_counter = {
+				event_chain = AIO_AIT_GS_events_chain
+				counter = AIO_AIT_GS_events_chain
+				amount = 1
+			}
+		}
+		star = {
+			enable_special_project = {
+				name = AIO_AIT_GRAVITY_SWELL_STAGE_1
+				owner = controller
+				location = this
+			}
+		}
+	}
+}
+
+# 重力膨胀-玩家-二阶段
+# call by special project AIO_AIT_GRAVITY_SWELL_STAGE_1
+# from - ship, fromfrom - planet
+system_event = {
+	id = AIO_AIT_events.31112
+	title = AIO_AIT_events.3110.title
+
+	# 不能编辑现实的国家
+	desc = {
+		trigger = {
+			AIO_can_AIT = no
+			AIO_system_existed_natural_colony = yes
+		}
+		text = AIO_AIT_events.31112.desc.not_crisis.has_colony
+	}
+	# 能编辑现实的国家
+	desc = {
+		trigger = {
+			AIO_can_AIT = yes
+			AIO_system_existed_natural_colony = yes
+		}
+		text = AIO_AIT_events.31112.desc.crisis.has_colony
+	}
+	# 殖民地不受影响的国家
+	desc = {
+		trigger = { AIO_system_existed_natural_colony = no }
+		text = AIO_AIT_events.31112.desc.no_colony
+	}
+
+	picture = GFX_evt_cosmic_storms_gravity_storm
+	show_sound = event_mystic_reveal_light
+	location = star
+
+	is_triggered_only = yes
+	trigger = { exists = owner }
+
+	option = {
+		name = AIO_AIT_events.31112.not_crisis.has_colony.option_1
+		trigger = { AIO_system_existed_natural_colony = yes }
+		star = { AIO_AIT_effects_manager = { GRAVITY_SWELL_STAGE_2 = 1 } }
+	}
+
+	option = {
+		name = AIO_AIT_events.31112.no_colony.option_1
+		trigger = { AIO_system_existed_natural_colony = no }
+		star = { AIO_AIT_effects_manager = { GRAVITY_SWELL_STAGE_2 = 1 } }
+	}
+
+	option = {
+		name = AIO_AIT_events.31112.crisis.option_1
+		trigger = { owner = { AIO_can_AIT = yes } }
+		star = { AIO_AIT_effects_manager = { GRAVITY_SWELL_STAGE_2 = 1 } }
+	}
+
+	after = {
+		if = {
+			limit = { AIO_system_existed_natural_colony = yes }
+			owner = {
+				add_event_chain_counter = {
+					event_chain = AIO_AIT_GS_events_chain
+					counter = AIO_AIT_GS_events_chain
+					amount = 2
+				}
+			}
+			star = {
+				enable_special_project = {
+					name = AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_1
+					owner = controller
+					location = this
+				}
+				enable_special_project = {
+					name = AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_2
+					owner = controller
+					location =this
+				}
+			}
+		}
+		if = {
+			limit = { owner = { AIO_can_AIT = yes } }
+			owner = {
+				add_event_chain_counter = {
+					event_chain = AIO_AIT_GS_events_chain
+					counter = AIO_AIT_GS_events_chain
+					amount = 1
+				}
+			}
+			star = {
+				enable_special_project = {
+					name = AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_3
+					owner = controller
+					location = this
+				}
+			}
+		}
+		if = {
+			limit = { AIO_system_existed_natural_colony = no }
+			owner = {
+				add_event_chain_counter = {
+					event_chain = AIO_AIT_GS_events_chain
+					counter = AIO_AIT_GS_events_chain
+					amount = 1
+				}
+			}
+			star = {
+				enable_special_project = {
+					name = AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_4
+					owner = controller
+					location = this
+				}
+			}
+		}
+	}
+}
+
+# 重力膨胀-玩家-三阶段
+# call by special project AIO_AIT_GRAVITY_SWELL_STAGE_1 on_fail, from - country, fromfrom - planet
+# AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_2 on_fail, from - country, fromfrom - planet
+# AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_3 on_success, from - ship, fromfrom - planet
+# AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_4 on_fail, from - country, fromfrom - planet
+system_event = {
+	id = AIO_AIT_events.31113
+	title = AIO_AIT_events.3110.title
+
+	# 星系内没有没有星环基地的殖民地
+	desc = {
+		trigger = {
+			star = { NOT = { has_planet_flag = AIO_AIT_GS_finish_reverse } }
+			NOT = {
+				any_system_colony = {
+					is_artificial = no
+					AIO_planet_has_oribital_ring = no
+				}
+			}
+		}
+		text = AIO_AIT_events.31113.desc.renovate_success
+	}
+	# 星系内有没有星环基地的殖民地
+	desc = {
+		trigger = {
+			star = { NOT = { has_planet_flag = AIO_AIT_GS_finish_reverse } }
+			any_system_colony = {
+				is_artificial = no
+				AIO_planet_has_oribital_ring = no
+			}
+		}
+		text = AIO_AIT_events.31113.desc.renovate_fail
+	}
+	# 星系内没有殖民地
+	desc = {
+		trigger = {
+			star = { NOT = { has_planet_flag = AIO_AIT_GS_finish_reverse } }
+			AIO_system_existed_natural_colony = no
+		}
+		text = AIO_AIT_events.31113.desc.withdraw
+	}
+	# 逆转成功
+	desc = {
+		trigger = { star = { has_planet_flag = AIO_AIT_GS_finish_reverse } }
+		text = AIO_AIT_events.31113.desc.reverse_success
+	}
+
+	picture = GFX_evt_black_hole
+	show_sound = event_sensor_ping
+	location = star
+
+	is_triggered_only = yes
+	trigger = { exists = owner }
+
+	option = {
+		name = AIO_AIT_events.31113.has_colony.success.option_1
+		trigger = {
+			star = { NOT = { has_planet_flag = AIO_AIT_GS_finish_reverse } }
+			AIO_system_existed_natural_colony = yes
+			NOT = {
+				any_system_colony = {
+					is_artificial = no
+					AIO_planet_has_oribital_ring = no
+				}
+			}
+		}
+	}
+
+	option = {
+		name = AIO_AIT_events.31113.has_colony.fail.option_1
+		trigger = {
+			star = { NOT = { has_planet_flag = AIO_AIT_GS_finish_reverse } }
+			any_system_colony = {
+				is_artificial = no
+				AIO_planet_has_oribital_ring = no
+			}
+		}
+	}
+
+	option = {
+		name = AIO_AIT_events.31113.no_colony.option_1
+		trigger = {
+			star = { NOT = { has_planet_flag = AIO_AIT_GS_finish_reverse } }
+			AIO_system_existed_natural_colony = no
+		}
+	}
+
+	option = {
+		name = AIO_AIT_events.31113.reverse_success.option_1
+		trigger = { star = { has_planet_flag = AIO_AIT_GS_finish_reverse } }
+		custom_tooltip = add_crisis_currency_tt
+        owner = {
+			hidden_effect = {
+				if = {
+					limit = { has_ascension_perk = ap_cosmogenesis }
+					complete_crisis_objective = crisobj_research_thesis
+				}
+				else = { complete_crisis_objective = crisobj_AIO_research_thesis }
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = { star = { NOT = { has_planet_flag = AIO_AIT_GS_finish_reverse } } }
+			every_system_colony = {
+				limit = {
+					is_artificial = no
+					AIO_planet_has_oribital_ring = no
+				}
+				destroy_colony = yes
+			}
+			star = {
+				AIO_safe_remove_planet_megastructures = yes
+				change_pc = pc_black_hole
+				add_deposit = d_dark_matter_deposit_2
+			}
+			AIO_change_system_planet_in_frozen = yes
+			if = {
+				limit = { AIO_is_single_star_class = yes }
+				set_star_class = sc_black_hole
+			}
+		}
+		else = {
+			star = {
+				if = {
+					limit = { has_planet_flag = AIO_AIT_gravity_swell_planet }
+					remove_planet_flag = AIO_AIT_gravity_swell_planet
+				}
+				remove_deposit = d_AIO_GS_deposit
+			}
+		}
+		owner = { end_event_chain = AIO_AIT_GS_events_chain }
+	}
+}
+# 重力膨胀-ai-三阶段
+planet_event = { # prev - planet
+	id = AIO_AIT_events.31123
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = { has_planet_flag = AIO_AIT_gravity_swell_planet }
+
+	after = {
+		solar_system = {
+			if = {
+				limit = {
+					any_system_colony = {
+						is_artificial = no
+						AIO_planet_has_oribital_ring = no
+					}
+				}
+				every_system_colony = {
+					limit = {
+						is_artificial = no
+						AIO_planet_has_oribital_ring = no
+					}
+					solar_system = {
+						spawn_megastructure = {
+							type = orbital_ring
+							planet = prev
+							owner = prev.owner
+						}
+					}
+					owner = { add_resource = { alloys = -500 } }
+				}
+			}
+			AIO_change_system_planet_in_frozen = yes
+			if = {
+				limit = { AIO_is_single_star_class = yes }
+				set_star_class = sc_black_hole
+			}
+		}
+		change_pc = pc_black_hole
+		remove_deposit = d_AIO_GS_deposit
+		if = {
+			limit = { has_planet_flag = AIO_AIT_gravity_swell_planet }
+			remove_planet_flag = AIO_AIT_gravity_swell_planet
+		}
+
+		controller = { end_event_chain = AIO_AIT_GS_events_chain }
+	}
+}
+
+
+# ---------------------------------- #
+# 定向应用无限选择界面
+# ---------------------------------- #
+# 主动选择
+country_event = {
+    id = AIO_AIT_events.401
+    title = AIO_AIT_events.401.title
+    desc = AIO_AIT_events.401.desc
+    location = root
+
+	diplomatic = yes
+	diplomatic_title = situation_AIO_merge_cosmos
+	picture_event_data = { room = AIO_DAIT_room }
+
+    is_triggered_only = yes
+    trigger = {
+        has_country_flag = AIO_crisis_country
+        OR = {
+            has_country_flag = AIO_built_AIO_mega_02
+            has_country_flag = AIO_built_AIO_mega_03
+            has_country_flag = AIO_built_AIO_mega_04
+        }
+		NOR = {
+            has_active_event = { AIO_AIT_events.401 }
+            has_active_event = { AIO_AIT_events.402 }
+
+            has_policy_flag = AIO_DAIT_policy_stop
+        }
+		has_country_resource = { type = AIO_advanced_logic amount >= 5000 }
+	}
+
+    option = {
+        name = AIO_AIT_events.401.option_1
+		# custom_tooltip = AIO_DAIT_ASLT_modifier_effect
+        trigger = { NOT = { has_modifier = AIO_DAIT_ASLT_modifier } }
+		add_modifier = { modifier = AIO_DAIT_ASLT_modifier }
+    }
+    option = {
+        name = AIO_AIT_events.401.option_2
+		# custom_tooltip = AIO_DAIT_uncausality_modifier_effect
+        trigger = { NOT = { has_modifier = AIO_DAIT_uncausality_modifier } }
+		add_modifier = { modifier = AIO_DAIT_uncausality_modifier }
+    }
+    option = {
+        name = AIO_AIT_events.401.option_3
+		# custom_tooltip = AIO_DAIT_simulate_cosmos_modifier_effect
+        trigger = { NOT = { has_modifier = AIO_DAIT_simulate_cosmos_modifier } }
+        add_modifier = { modifier = AIO_DAIT_simulate_cosmos_modifier }
+		every_owned_leader = {
+            if = {
+                limit = { is_councilor = yes }
+                add_experience = 10000
+            }
+            else = { add_experience = 5000 }
+
+            if = {
+                limit = { is_same_value = root.ruler }
+                add_skill = 5
+
+                if = {
+                    limit = { NOT = { has_ruler_trait = trait_ruler_AIO_priori_cosmos } }
+                    add_trait = {
+                        trait = trait_ruler_AIO_priori_cosmos
+                        show_message = yes
+                    }
+                }
+            }
+			remove_all_negative_traits = yes
+		}
+		every_pool_leader = { remove_all_negative_traits = yes }
+    }
+    option = {
+        name = AIO_AIT_events.401.option_4
+		custom_tooltip = AIO_DAIT_design_requirement_modifier_effect
+        trigger = { NOT = { has_modifier = AIO_DAIT_design_requirement_modifier } }
+        add_modifier = { modifier = AIO_DAIT_design_requirement_modifier }
+    }
+    option = {
+        name = AIO_AIT_events.401.option_5
+		# custom_tooltip = AIO_DAIT_superlight_modifier_effect
+        trigger = { NOT = { has_modifier = AIO_DAIT_superlight_modifier } }
+        allow = { NOT = { has_modifier = cosmogenesis_superlight } }
+        add_modifier = { modifier = AIO_DAIT_superlight_modifier }
+		every_owned_planet = {
+			limit = { is_artificial = no }
+			add_planet_devastation = 25
+		}
+    }
+	option = {
+        name = AIO_AIT_events.401.option_6
+		# custom_tooltip = AIO_directly_AIT_weave_substrate_modifier_effect
+        trigger = { NOT = { has_modifier = AIO_DAIT_weave_substrate_modifier } }
+        add_modifier = { modifier = AIO_DAIT_weave_substrate_modifier }
+    }
+	option = {
+        name = AIO_AIT_events.401.option_7
+		# custom_tooltip = AIO_directly_AIT_nanites_body_modifier_effect
+        trigger = { NOT = { has_modifier = AIO_DAIT_nanites_body_modifier } }
+        add_modifier = { modifier = AIO_DAIT_nanites_body_modifier }
+    }
+    option = {
+        name = AIO_AIT_events.401.option_8
+		# custom_tooltip = AIO_DAIT_void_mining_modifier_effect
+        trigger = { NOT = { has_modifier = AIO_DAIT_void_mining_modifier } }
+        add_modifier = { modifier = AIO_DAIT_void_mining_modifier }
+    }
+    option = {
+        name = AIO_AIT_events.401.option_9
+		custom_tooltip = AIO_AIT_events.401.option_9.effect
+        hidden_effect = {
+            every_system_within_border = {
+                limit = { NOT = { is_star_class = sc_AIO_void } }
+                random_list = {
+                    1 = { AIO_AIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 3 } }
+                    3 = { AIO_AIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 2 } }
+                    4 = { AIO_AIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 1 } }
+                    2 = {  }
+                }
+            }
+        }
+    }
+	option = {
+        name = AIO_AIT_events.401.option_10
+		# custom_tooltip = AIO_repeat_DAIT_produce_modifier_effect
+        hidden_effect = { change_variable = { which = AIO_DAIT_production_repeat_time value = 1 } }
+		add_modifier = { modifier = AIO_repeat_DAIT_production_modifier mult = AIO_DAIT_production_repeat_time }
+    }
+	option = {
+        name = AIO_AIT_events.401.option_11
+		# custom_tooltip = AIO_repeat_DAIT_technology_modifier_effect
+		allow = {
+			custom_tooltip = {
+				text = AIO_AIT_requires_AIO_repeat_tech_less_than_5
+				check_variable = { which = AIO_DAIT_technology_repeat_time value < 5 }
+			}
+		}
+        hidden_effect = { change_variable = { which = AIO_DAIT_technology_repeat_time value = 1 } }
+		add_modifier = { modifier = AIO_repeat_DAIT_technology_modifier mult = AIO_DAIT_technology_repeat_time }
+    }
+	option = {
+        name = AIO_AIT_events.401.option_12
+		# custom_tooltip = AIO_repeat_DAIT_military_modifier_effect
+        hidden_effect = { change_variable = { which = AIO_DAIT_military_repeat_time value = 1 } }
+		add_modifier = { modifier = AIO_repeat_DAIT_military_modifier mult = AIO_DAIT_military_repeat_time }
+    }
+	option = {
+		name = AIO_cancel
+		default_hide_option = yes
+        hidden_effect = { set_timed_country_flag = { flag = AIO_merge_cosmos_DAIT_cancel days = 1 } }
+	}
+
+	after = {
+        complete_crisis_objective = crisobj_AIO_research_thesis
+        if = {
+            limit = { NOT = { has_country_flag = AIO_merge_cosmos_DAIT_cancel } }
+            add_resource = { AIO_advanced_logic = -5000 }
+        }
+		else = {
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier4researchreward
+				min = @tier4researchmin
+				max = @tier4researchmax
+			}
+		}
+    }
+}
+
+# 随机选择，由研究应用无限触发
+country_event = {
+    id = AIO_AIT_events.402
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = {
+        has_country_flag = AIO_crisis_country
+		NOR = {
+            has_active_event = { AIO_AIT_events.401 }
+            has_active_event = { AIO_AIT_events.402 }
+
+            has_policy_flag = AIO_DAIT_policy_stop
+        }
+	}
+
+    immediate = {
+        if = {
+            limit = { has_country_resource = { type = AIO_advanced_logic amount >= 50000 } }
+            switch = {
+                trigger = has_policy_flag
+                AIO_DAIT_policy_balance = {
+                    random_list = {
+                        5 = {
+                            hidden_effect = { change_variable = { which = AIO_DAIT_production_repeat_time value = 1 } }
+                            add_modifier = { modifier = AIO_repeat_DAIT_production_modifier mult = AIO_DAIT_production_repeat_time }
+                        }
+                        5 = {
+                            hidden_effect = { change_variable = { which = AIO_DAIT_military_repeat_time value = 1 } }
+                            add_modifier = { modifier = AIO_repeat_DAIT_military_modifier mult = AIO_DAIT_military_repeat_time }
+                        }
+                    }
+                }
+                AIO_DAIT_policy_produce = {
+                    random_list = {
+                        7 = {
+                            hidden_effect = { change_variable = { which = AIO_DAIT_production_repeat_time value = 1 } }
+                            add_modifier = { modifier = AIO_repeat_DAIT_production_modifier mult = AIO_DAIT_production_repeat_time }
+                        }
+                        3 = {
+                            hidden_effect = { change_variable = { which = AIO_DAIT_military_repeat_time value = 1 } }
+                            add_modifier = { modifier = AIO_repeat_DAIT_military_modifier mult = AIO_DAIT_military_repeat_time }
+                        }
+                    }
+                }
+                AIO_DAIT_policy_military = {
+                    random_list = {
+                        7 = {
+                            hidden_effect = { change_variable = { which = AIO_DAIT_military_repeat_time value = 1 } }
+                            add_modifier = { modifier = AIO_repeat_DAIT_military_modifier mult = AIO_DAIT_military_repeat_time }
+                        }
+                        3 = {
+                            hidden_effect = { change_variable = { which = AIO_DAIT_production_repeat_time value = 1 } }
+                            add_modifier = { modifier = AIO_repeat_DAIT_production_modifier mult = AIO_DAIT_production_repeat_time }
+                        }
+                    }
+                }
+            }
+            add_resource = { AIO_advanced_logic = -5000 }
+        }
+    }
+}
+
+# 重织基底改变天体类型决议
+planet_event = {
+    id = AIO_AIT_events.403
+    title = AIO_AIT_events.401.option_6
+    desc = AIO_AIT_events.403.desc
+
+    location = root
+
+	diplomatic = yes
+	diplomatic_title = AIO_AIT_events.401.title
+	picture_event_data = { room = AIO_DAIT_room }
+
+    is_triggered_only = yes
+    trigger = {
+        is_artificial = no
+        NOT = { has_modifier = AIO_weave_substrate_change_pc_modifier }
+        controller = {
+            has_modifier = AIO_DAIT_weave_substrate_modifier
+            has_country_resource = { type = AIO_advanced_logic amount >= 5000 }
+        }
+	}
+
+    immediate = {
+        if = {
+            limit = { is_planet_class = pc_gas_giant }
+            set_planet_flag = AIO_is_gas_giant
+        }
+        save_event_target_as = AIO_ctrl_AIT_change_pc_target
+    }
+
+    # 各种天体选择
+    inline_script = { script = events/AIO_change_pc_event_inline_scripts }
+
+    option = {
+        name = AIO_cancel
+    }
+
+    after = {
+        if = {
+            limit = { has_planet_flag = AIO_is_gas_giant }
+            if = {
+                limit = { planet_size > 30 }
+                set_planet_size = 30
+            }
+            remove_planet_flag = AIO_is_gas_giant
+        }
+    }
+}

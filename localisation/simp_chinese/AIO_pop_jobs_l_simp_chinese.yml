@@ -1,0 +1,15 @@
+﻿l_simp_chinese:
+ # 岗位类型
+ pop_cat_AIO_recursive_node: "递归思维计算"
+ pop_cat_AIO_recursive_node_plural: "$pop_cat_AIO_recursive_node$"
+ pop_cat_AIO_recursive_node_desc: "这是基于自反馈神经网络与类意识嵌套的并行模型构建逻辑。每一层结构都在递归调用其它层的状态，从而产生高维推演能力与理论凝聚力。"
+ # 岗位
+ job_AIO_recursive_node: "递归节点"
+ job_AIO_recursive_node_plural: "$job_AIO_recursive_node$"
+ job_AIO_recursive_node_desc: "这些意识结构被设计为彼此嵌套、自我调用，它们同时进行模拟、观测与反馈，在无限回响中逼近真理。"
+ job_AIO_recursive_node_effect_desc: "[AIO_recursive_node.GetIcon]§Y[AIO_recursive_node.GetNamePlural]§!将$r_energy$转化为$r_research$和£AIO_advanced_logic£§Y$AIO_advanced_logic$§!"
+ mod_job_AIO_recursive_node_add: "£job_AIO_recursive_node£$job_AIO_recursive_node$岗位"
+ # 净化类型
+ purge_AIO_matryoshka_brain: "思想余烬"
+ purge_AIO_matryoshka_brain_tooltip: "担任递归节点"
+ purge_AIO_matryoshka_brain_tooltip_delayed: "§L唯余思化作薪柴，于天演中永恒燃烧。§!"

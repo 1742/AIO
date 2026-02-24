@@ -1,0 +1,8 @@
+# 双向以太相引擎特效
+
+ambient_object = {
+	name = "AIO_crisis_sphere_effect"
+	entity = "AIO_crisis_sphere_effect_entity"
+	selectable = no
+	show_name = no
+}

@@ -1,0 +1,7 @@
+﻿l_english:
+ concept_AIO_HS_system: "$AIO_HYPER_DIMENSIONAL_SPACE$"
+ concept_AIO_HS_system_desc: "Exists in space beyond the endless dimension, where §Y$AIO_mega_04$§! can be built to manipulate the laws of physics. It is usually generated in the upper left corner of the star map.\n§RWarning: Using a mod map will cause the $AIO_HYPER_DIMENSIONAL_SPACE$ to fail to generate!§!"
+ concept_AIO_TDTE_system: "$AIO_The_Ultimate_Gate$"
+ concept_AIO_TDTE_system_desc: "The connection point between reality and ['concept_AIO_HS_system']. It is also connected to any point in the current universe, and cannot be observed from the outside, only those who hold the silver key can pass through."
+ concept_AIO_DAIT: "Directional Apply Infinite Thesis"
+ concept_AIO_DAIT_desc: "Reality does not change randomly, and the universe will evolve into an ideal model in the laws we have designed.\nDirectional modification of the laws of the universe provides us with gains.\n(Can be triggered by Situation §Y$situation_AIO_merge_cosmos$§! and research Technology §Y$tech_AIO_DAIT$§!)\nIn Policy §Y$policy_AIO_DAIT_policy$§!, you can choose to manually or automatically select the project of §RInfinity Thesis§!."

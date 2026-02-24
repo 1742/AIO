@@ -1,0 +1,15 @@
+﻿l_english:
+ # job category
+ pop_cat_AIO_recursive_node: "Recursive Thinking Calculations"
+ pop_cat_AIO_recursive_node_plural: "$pop_cat_AIO_recursive_node$"
+ pop_cat_AIO_recursive_node_desc: "This is a parallel model construction logic based on self-feedback neural network nesting with consciousness-like nesting. Each layer structure recursively calls the states of other layers, resulting in high-dimensional deduction ability and theoretical cohesion."
+ # job
+ job_AIO_recursive_node: "Recursive Node"
+ job_AIO_recursive_node_plural: "$job_AIO_recursive_node$"
+ job_AIO_recursive_node_desc: "These structures of consciousness are designed to nest and self-invoke each other, simulating, observing, and feeding at the same time, approaching the truth in infinite echoes."
+ job_AIO_recursive_node_effect_desc: "[AIO_recursive_node.GetIcon]§Y[AIO_recursive_node.GetNamePlural]§! make $r_energy$ into $r_research$ and £AIO_advanced_logic£ §Y$AIO_advanced_logic$§!"
+ mod_job_AIO_recursive_node_add: "£job_AIO_recursive_node£$job_AIO_recursive_node$ jobs"
+ # purge type
+ purge_AIO_matryoshka_brain: "Embers of Thought"
+ purge_AIO_matryoshka_brain_tooltip: "Serve as a recursive node."
+ purge_AIO_matryoshka_brain_tooltip_delayed: "§LOnly my thoughts turn into firewood, which will burn forever in the cosmos.§!"

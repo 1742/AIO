@@ -1,0 +1,90 @@
+# AIO 亚弗戈蒙相关事件
+namespace = AIO_Aforgomom_events
+
+
+# ---------------------------------- #
+# 亚弗戈蒙之怒
+# ---------------------------------- #
+
+# 销毁亚弗戈蒙之怒事件
+fleet_event = {
+    id = AIO_Aforgomom_events.201
+    hide_window =yes
+
+    is_triggered_only = yes
+    trigger = { has_fleet_flag = AIO_Aforgomom_Wrath_fleet }
+
+    immediate = {
+        # 时间到了没打完，且数值没有溢出
+        if = {
+            limit = {
+                solar_system = { any_fleet_in_system = { owner = { NOT = { is_same_value = root.owner } } } }
+                owner = { check_variable = { which = AIO_Aforgomom_Wrath value < 10 } }
+            }
+            owner = { change_variable = { which = AIO_Aforgomom_Wrath value = 1 } }
+            if = {
+                limit = { has_modifier = AIO_Aforgomom_Wrath_modifier }
+                remove_modifier = AIO_Aforgomom_Wrath_modifier
+                add_modifier = { modifier = AIO_Aforgomom_Wrath_modifier mult = value:AIO_Aforgomom_Wrath_factor }
+            }
+            fleet_event = { id = AIO_Aforgomom_events.201 days = 100 }
+        }
+        # 时间到了没打完，且数值溢出，直接删船
+        else_if = {
+            limit = {
+                solar_system = { any_fleet_in_system = { owner = { NOT = { is_same_value = root.owner } } } }
+                owner = { check_variable = { which = AIO_Aforgomom_Wrath value >= 10 } }
+            }
+            owner = { set_variable = { which = AIO_Aforgomom_Wrath value = 0 } }
+            solar_system = {
+                every_fleet_in_system = {
+                    if = {
+                        limit = { NOT = { is_ship_size = AIO_Aforgomom_Wrath } }
+                        destroy_fleet = this
+                    }
+                    else = { delete_fleet = this }
+                }
+            }
+        }
+        else = {
+            owner = { set_variable = { which = AIO_Aforgomom_Wrath value = 0 } }
+            delete_fleet = this
+        }
+    }
+}
+
+# 亚弗戈蒙之怒被摧毁
+country_event = { # this - owner of combatant from - owner of destroyed
+    id = AIO_Aforgomom_events.202
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = { fromfromfrom = { has_fleet_flag = AIO_Aforgomom_Wrath_fleet } }
+
+    immediate = {
+        # 打不过，加buff
+        from = {
+            if = {
+                limit = { check_variable = { which = AIO_Aforgomom_Wrath value < 10 } }
+                change_variable = { which = AIO_Aforgomom_Wrath value = 1 }
+            }
+        }
+        fromfrom.solar_system = { AIO_AIT_effects_manager = { CREATE_AFORGOMOM_WRATH = 1 } }
+    }
+}
+
+
+# ---------------------------------- #
+# 遗珍
+# ---------------------------------- #
+
+# 获得遗珍并转交给犹格索托斯
+country_event = {
+    id = AIO_Aforgomom_events.301
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = { is_country_type = AIO_Aforgomom }
+
+    immediate = { event_target:AIO_empire_country = { country_event = { id = AIO_Tawi_communication_events.401 } } }
+}

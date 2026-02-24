@@ -1,0 +1,25 @@
+1.
+Original file - common/ascension_perks/00_ascension_perks.txt
+mod position - common/ascension_perks/AIO_vanilla_cover.txt
+It covers the judgment conditions for Defender of the Galaxy, Galactic Nemesis, Cosmogenesis, and Behemoth Fury
+
+2.
+Original file - common/policies/00_policies.txt
+mod location - common/policies/AIO_vanilla_policies_cover.txt
+Content: Covers Gestalt's logistics policies
+
+3. Several positions have been revised and localized
+
+
+
+1.
+原版文件 - common/ascension_perks/00_ascension_perks.txt
+mod位置 - common/ascension_perks/AIO_vanilla_cover.txt
+内容：覆盖了星河卫士、星海天罚、宇宙创生、巨兽之怒的判断条件
+
+2.
+原版文件 - common/policies/00_policies.txt
+mod位置 - common/policies/AIO_vanilla_policies_cover.txt
+内容：覆盖了格式塔后勤政策
+
+3. 若干岗位修正本地化

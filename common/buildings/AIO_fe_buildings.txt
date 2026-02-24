@@ -1,0 +1,1968 @@
+# AIO堕落帝国建筑
+
+# ---------------------------------- #
+# 初级建筑
+# ---------------------------------- #
+
+building_AIO_fe_automation_city = {
+    icon = building_automation_2
+
+	base_buildtime = @b2_time
+    can_build = no
+
+	category = pop_assembly
+
+	building_sets = {
+        fallen_empire
+		government
+		urban
+	}
+
+    prerequisites = { tech_AIO_fe_automatication }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_automatication }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_automatication } }
+	}
+
+	convert_to = { building_automation_city_2 }
+
+	planet_modifier = { district_automated_workforce = 0.75 }
+
+	resources = {
+		category = planet_buildings
+		cost = { alloys = @b3_minerals }
+		upkeep = {
+			energy = @b4_upkeep
+            nanites = 1
+			mult = value:city_districts_value
+		}
+	}
+
+	triggered_desc = { text = building_AIO_fe_automation_tt }
+}
+
+building_AIO_fe_automation_secondary = {
+    icon = building_automation_2
+
+	base_buildtime = @b2_time
+    can_build = no
+
+	category = pop_assembly
+
+	building_sets = {
+        fallen_empire
+		generator
+        mining
+        farming
+	}
+
+    prerequisites = { tech_AIO_fe_automatication }
+	show_tech_unlock_if = { always = no }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_automatication }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_automatication } }
+	}
+
+	convert_to = { building_automation_city_2 }
+
+	planet_modifier = { district_automated_workforce = 0.75 }
+
+	resources = {
+		category = planet_buildings
+		cost = { alloys = @b3_minerals }
+		upkeep = {
+			energy = @b4_upkeep
+            nanites = 1
+			mult = value:city_districts_value
+		}
+	}
+
+	triggered_desc = { text = building_AIO_fe_automation_tt }
+}
+
+building_AIO_micro_forge = {
+	icon = building_micro_forge
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = manufacturing
+
+	building_sets = {
+		fallen_empire
+		industrial
+		foundry
+	}
+
+	prerequisites = { tech_AIO_fe_forge_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_forge_1 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_forge_1 } }
+	}
+
+	convert_to = { building_micro_forge }
+
+	inline_script = {
+		script = jobs/foundry_add
+		AMOUNT = @fe_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			volatile_motes = @fe_sr_cost
+		}
+		upkeep = {
+			volatile_motes = 2
+			energy = 30
+		}
+	}
+
+	upgrades = { building_AIO_nano_forge }
+}
+
+building_AIO_nano_forge = {
+	icon = building_nano_forge
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = manufacturing
+
+	building_sets = {
+		fallen_empire
+		industrial
+		foundry
+	}
+
+	prerequisites = { tech_AIO_fe_forge_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_forge_2 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_forge_2 } }
+	}
+
+	convert_to = { building_nano_forge }
+
+	inline_script = {
+		script = jobs/foundry_add
+		AMOUNT = @fe_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			alloys = 25
+		}
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			volatile_motes = 2
+			energy = 30
+		}
+	}
+
+	planet_modifier = { planet_structures_upkeep_mult = -0.05 }
+}
+
+building_AIO_dimensional_replicator = {
+    icon = building_dimensional_replicator
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	planet_limit = 1
+
+	category = manufacturing
+
+	building_sets = {
+		fallen_empire
+		industrial
+		factory
+		foundry
+	}
+
+	prerequisites = { tech_AIO_fe_fabricator_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_fabricator_1 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_fabricator_1 } }
+	}
+
+	convert_to = { building_dimensional_replicator }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			alloys = @b3_alloy_upkeep
+			energy = 30
+		}
+	}
+
+	planet_modifier = {
+		planet_miners_volatile_motes_produces_add = 0.2
+		planet_miners_exotic_gases_produces_add = 0.2
+		planet_miners_rare_crystals_produces_add = 0.2
+
+		planet_pop_assemblers_sr_living_metal_produces_add = 0.1
+		planet_technician_sr_dark_matter_produces_add = 0.1
+
+		planet_pop_assemblers_alloys_upkeep_add = 1
+		planet_technician_energy_upkeep_add = 2
+		planet_miners_minerals_upkeep_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = { country_uses_bio_ships = no }
+		planet_metallurgists_nanites_produces_add = 0.1
+		planet_metallurgists_alloys_upkeep_add = 1
+	}
+
+	triggered_planet_modifier = {
+		potential = { country_uses_bio_ships = yes }
+		planet_farmers_nanites_produces_add = 0.1
+		planet_farmers_food_upkeep_add = 2
+	}
+
+	upgrades = { building_AIO_dimensional_fabricator }
+}
+
+building_AIO_dimensional_fabricator = {
+	base_buildtime = @b2_time
+	can_build = no
+	icon = building_dimensional_fabricator
+
+	planet_limit = 1
+
+	category = manufacturing
+
+	building_sets = {
+		fallen_empire
+		industrial
+		factory
+		foundry
+	}
+
+	prerequisites = { tech_AIO_fe_fabricator_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_fabricator_2 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_fabricator_2 } }
+	}
+
+	convert_to = { building_dimensional_fabricator }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			alloys = @b3_alloy_upkeep
+			energy = 30
+		}
+	}
+
+	planet_modifier = {
+		planet_miners_volatile_motes_produces_add = 0.5
+		planet_miners_exotic_gases_produces_add = 0.5
+		planet_miners_rare_crystals_produces_add = 0.5
+
+		planet_pop_assemblers_sr_living_metal_produces_add = 0.3
+		planet_technician_sr_dark_matter_produces_add = 0.3
+
+		planet_pop_assemblers_alloys_upkeep_add = 2
+		planet_technician_energy_upkeep_add = 4
+		planet_miners_minerals_upkeep_add = 4
+	}
+
+	triggered_planet_modifier = {
+		potential = { country_uses_bio_ships = no }
+		planet_metallurgists_nanites_produces_add = 0.3
+		planet_metallurgists_alloys_upkeep_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = { country_uses_bio_ships = yes }
+		planet_farmers_nanites_produces_add = 0.3
+		planet_farmers_food_upkeep_add = 4
+	}
+}
+
+
+# ---------------------------------- #
+# 先进建筑
+# ---------------------------------- #
+
+building_AIO_class_3_singularity = {
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+    icon = building_class_3_singularity
+
+	category = resource
+
+	building_sets = {
+		fallen_empire
+		fallen_empire_generator
+	}
+
+	prerequisites = { tech_AIO_fe_singularity_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_singularity_1 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_singularity_1 } }
+	}
+
+	convert_to = { building_class_3_singularity }
+
+	inline_script = {
+		script = jobs/technicians_add
+		AMOUNT = @fe_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			sr_dark_matter = @fe_sr_cost
+		}
+		produces = {
+			energy = 75
+		}
+		upkeep = {
+			alloys = @b3_alloy_upkeep
+			sr_dark_matter = 1
+		}
+	}
+
+	upgrades = { building_AIO_class_4_singularity }
+}
+
+building_AIO_class_4_singularity = {
+	base_buildtime = @b2_time
+	can_build = no
+    icon = building_class_4_singularity
+
+	category = resource
+
+	building_sets = {
+		fallen_empire
+		fallen_empire_generator
+	}
+
+	prerequisites = { tech_AIO_fe_singularity_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_singularity_2 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_singularity_2 } }
+	}
+
+	convert_to = { building_class_4_singularity }
+
+	inline_script = {
+		script = jobs/technicians_add
+		AMOUNT = @fe_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		produces = {
+			energy = 200
+		}
+		upkeep = {
+			alloys = @b3_alloy_upkeep
+			sr_dark_matter = 1
+		}
+	}
+}
+
+building_AIO_fe_mine_1 = {
+	icon = building_fe_mine_1
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = resource
+
+	building_sets = {
+		fallen_empire
+		fallen_empire_mining
+	}
+
+	prerequisites = { tech_AIO_fe_mine_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_mine_1 }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_mine_1 } }
+	}
+
+	convert_to = { building_fe_mine_1 }
+
+	inline_script = {
+		script = jobs/miners_add
+		AMOUNT = @fe_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			volatile_motes = @fe_sr_cost
+		}
+		upkeep = {
+			volatile_motes = 2
+			alloys = @b3_alloy_upkeep
+			energy = 30
+		}
+		produces = {
+			minerals = 50
+		}
+	}
+
+	upgrades = { building_AIO_fe_mine_2 }
+}
+
+building_AIO_fe_mine_2 = {
+	icon = building_fe_mine_2
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = resource
+
+	building_sets = {
+		fallen_empire
+		fallen_empire_mining
+	}
+
+	prerequisites = { tech_AIO_fe_mine_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_mine_2 }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_mine_2 } }
+	}
+
+	convert_to = { building_fe_mine_2 }
+
+	inline_script = {
+		script = jobs/miners_add
+		AMOUNT = @fe_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			volatile_motes = 2
+			alloys = @b3_alloy_upkeep
+			energy = 30
+		}
+		produces = {
+			minerals = 150
+		}
+	}
+}
+
+building_AIO_fe_food_1 = {
+	icon = building_nourishment_complex
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = resource
+
+	building_sets = {
+		fallen_empire
+		fallen_empire_farming
+	}
+
+	prerequisites = { tech_AIO_fe_food_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_food_1 }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_food_1 } }
+	}
+
+	convert_to = { building_nourishment_complex }
+
+	inline_script = {
+		script = jobs/farmers_add
+		AMOUNT = @fe_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			food = 40
+		}
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+	}
+
+	upgrades = { building_AIO_fe_food_2 }
+}
+
+building_AIO_fe_food_2 = {
+	icon = building_nourishment_center
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = resource
+
+	building_sets = {
+		fallen_empire
+		fallen_empire_farming
+	}
+
+	prerequisites = { tech_AIO_fe_food_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_food_2 }
+		NOT = { is_planet_class = pc_ringworld_habitable }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_food_2 } }
+	}
+
+	convert_to = { building_nourishment_center }
+
+	planet_modifier = { pop_environment_tolerance = 0.05 }
+
+	inline_script = {
+		script = jobs/farmers_add
+		AMOUNT = @fe_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		produces = {
+			food = 150
+		}
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+	}
+}
+
+
+# ---------------------------------- #
+# 综合建筑
+# ---------------------------------- #
+
+building_AIO_fe_silo_1 = {
+	icon = building_fe_silo_1
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = resource
+
+	building_sets = {
+		fallen_empire
+		generator
+		mining
+		farming
+	}
+
+	prerequisites = { tech_AIO_fe_silo_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_silo_1 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_silo_1 } }
+	}
+
+	convert_to = { building_fe_silo_1 }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+	}
+
+	country_modifier = {
+		country_resource_max_add = 50000
+		country_resource_max_minor_artifacts_add = 500
+	}
+
+	upgrades = { building_AIO_fe_silo_2 }
+}
+
+building_AIO_fe_silo_2 = {
+	icon = building_fe_silo_2
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = resource
+
+	building_sets = {
+		fallen_empire
+		generator
+		mining
+		farming
+	}
+
+	prerequisites = { tech_AIO_fe_silo_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_silo_2 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_silo_2 } }
+	}
+
+	convert_to = { building_fe_silo_2 }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+	}
+
+	country_modifier = {
+		country_resource_max_add = 100000
+		country_resource_max_minor_artifacts_add = 1000
+	}
+}
+
+building_AIO_fe_market_1 = {
+	icon = building_fe_market_1
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = trade
+
+	building_sets = {
+		fallen_empire
+		trade
+	}
+
+	prerequisites = { tech_AIO_fe_market_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_market_1 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_market_1 } }
+	}
+
+	convert_to = { building_fe_market_1 }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			rare_crystals = @fe_sr_cost
+		}
+		upkeep = {
+			rare_crystals = 2
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+	}
+
+	inline_script = {
+		script = "jobs/trader_add"
+		AMOUNT = @fe_jobs
+	}
+
+	upgrades = { building_AIO_fe_market_2 }
+}
+
+building_AIO_fe_market_2 = {
+	icon = building_fe_market_2
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = trade
+
+	building_sets = {
+		fallen_empire
+		trade
+	}
+
+	prerequisites = { tech_AIO_fe_market_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_market_2 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_market_2 } }
+	}
+
+	convert_to = { building_fe_market_2 }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			rare_crystals = 2
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+	}
+
+	inline_script = {
+		script = "jobs/trader_add"
+		AMOUNT = 1200
+	}
+
+	country_modifier = { country_trade_produces_mult = 0.01 }
+
+	planet_modifier = { planet_traders_trade_produces_add = 0.5 }
+}
+
+building_AIO_fe_security_1 = {
+	icon = building_fe_security_1
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = government
+
+	building_sets = {
+		fallen_empire
+		urban
+	}
+
+	prerequisites = { tech_AIO_fe_security_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_security_1 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_security_1 } }
+	}
+
+	convert_to = { building_fe_security_1 }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			rare_crystals = @fe_sr_cost
+		}
+		upkeep = {
+			rare_crystals = 2
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_patrol_drone_add = @fe_jobs }
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_patrol_drone_desc
+	}
+
+	upgrades = { building_AIO_fe_security_2 }
+}
+
+building_AIO_fe_security_2 = {
+	icon = building_fe_security_2
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = government
+
+	building_sets = {
+		fallen_empire
+		urban
+	}
+
+	prerequisites = { tech_AIO_fe_security_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_security_2 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_security_2 } }
+	}
+
+	convert_to = { building_fe_security_2 }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			rare_crystals = 2
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+	}
+
+	country_modifier = { country_edict_fund_add = 10 }
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = { planet_crime_no_happiness_add = -40 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = { job_patrol_drone_add = @fe_jobs }
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_patrol_drone_desc
+	}
+}
+
+
+# ---------------------------------- #
+# 非凡建筑
+# ---------------------------------- #
+
+building_AIO_fe_administration_machine_1 = {
+	icon = building_fe_administration_1
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = unity
+
+	building_sets = {
+		fallen_empire
+		unity
+	}
+
+	prerequisites = { tech_AIO_fe_administration_1 }
+	show_tech_unlock_if = { is_machine_empire = yes }
+
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			has_technology = tech_AIO_fe_administration_1
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			NOT = {
+				is_machine_empire = yes
+				has_technology = tech_AIO_fe_administration_1
+			}
+		}
+	}
+
+	convert_to = {
+		building_fe_administration_machine_2
+		building_fe_administration_2
+		building_fe_temple_2
+		building_fe_administration_hive_2
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			rare_crystals = @fe_sr_cost
+		}
+		upkeep = {
+			rare_crystals = 2
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+	}
+
+	inline_script = {
+		script = jobs/unity_jobs_add
+		AMOUNT = @fe_jobs
+	}
+
+	upgrades = { building_AIO_fe_administration_machine_2 }
+}
+
+building_AIO_fe_administration_machine_2 = {
+	icon = building_fe_administration_machine_2
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = unity
+
+	building_sets = {
+		fallen_empire
+		unity
+	}
+
+	prerequisites = { tech_AIO_fe_administration_2 }
+	show_tech_unlock_if = { is_machine_empire = yes }
+
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			has_technology = tech_AIO_fe_administration_2
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			NOT = {
+				is_machine_empire = yes
+				has_technology = tech_AIO_fe_administration_2
+			}
+		}
+	}
+
+	convert_to = {
+		building_fe_administration_machine_2
+		building_fe_administration_2
+		building_fe_temple_2
+		building_fe_administration_hive_2
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			rare_crystals = 2
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+
+		produces = {
+			unity = 20
+		}
+	}
+
+	planet_modifier = { pop_housing_usage_mult = -0.1 }
+
+	inline_script = {
+		script = jobs/unity_jobs_add
+		AMOUNT = @fe_jobs
+	}
+}
+
+building_AIO_fe_administration_hive_1 = {
+	icon = building_fe_administration_hive_1
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = unity
+
+	building_sets = {
+		fallen_empire
+		unity
+	}
+
+	prerequisites = { tech_AIO_fe_administration_1 }
+	show_tech_unlock_if = { is_hive_empire = yes }
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			has_technology = tech_AIO_fe_administration_1
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			NOT = {
+				is_hive_empire = yes
+				has_technology = tech_AIO_fe_administration_1
+			}
+		}
+	}
+
+	convert_to = {
+		building_fe_administration_1
+		building_fe_temple_1
+		building_fe_administration_machine_1
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			rare_crystals = @fe_sr_cost
+		}
+		upkeep = {
+			rare_crystals = 2
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+	}
+
+	inline_script = {
+		script = jobs/unity_jobs_add
+		AMOUNT = @fe_jobs
+	}
+
+
+	upgrades = { building_AIO_fe_administration_hive_2 }
+}
+
+building_AIO_fe_administration_hive_2 = {
+	icon = building_fe_administration_hive_2
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = unity
+
+	building_sets = {
+		fallen_empire
+		unity
+	}
+
+	prerequisites = { tech_AIO_fe_administration_2 }
+	show_tech_unlock_if = { is_hive_empire = yes }
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			has_technology = tech_AIO_fe_administration_2
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			NOT = {
+				is_hive_empire = yes
+				has_technology = tech_AIO_fe_administration_2
+			}
+		}
+	}
+
+	convert_to = {
+		building_fe_administration_2
+		building_fe_temple_2
+		building_fe_administration_machine_2
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			rare_crystals = 2
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+		produces = {
+			unity = 20
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_wilderness_empire = yes
+				has_tradition = tr_purity_finish
+			}
+		}
+		planet_building_build_speed_mult = 0.03
+		planet_decision_enact_speed_mult = 0.03
+	}
+
+	planet_modifier = {
+		pop_housing_usage_mult = -0.1
+	}
+
+	inline_script = {
+		script = jobs/unity_jobs_add
+		AMOUNT = @fe2_jobs
+	}
+}
+
+building_AIO_fe_lab_1 = {
+	icon = building_fe_lab_1
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = research
+
+	building_sets = {
+		fallen_empire
+		research
+		physics
+		society
+		engineering
+	}
+
+	prerequisites = { tech_AIO_fe_lab_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_lab_1 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_lab_1 } }
+	}
+
+	convert_to = { building_fe_lab_1 }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			exotic_gases = @fe_sr_cost
+		}
+		upkeep = {
+			exotic_gases = 2
+			alloys = @b3_alloy_upkeep
+			energy = 30
+		}
+	}
+
+	inline_script = {
+		script = jobs/researchers_add
+		AMOUNT = @building_static_jobs
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_galactic_community_member = yes
+			}
+			is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+			has_modifier = pm_extradimensional_experimentation
+		}
+		modifier = { job_calculator_physicist_add = 100 }
+	}
+
+
+	upgrades = { building_AIO_fe_lab_2 }
+}
+
+building_AIO_fe_lab_2 = {
+	icon = building_fe_lab_2
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = research
+
+	building_sets = {
+		fallen_empire
+		research
+		physics
+		society
+		engineering
+	}
+
+	prerequisites = { tech_AIO_fe_lab_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_lab_2 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_lab_2 } }
+	}
+
+	convert_to = { building_fe_lab_2 }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			exotic_gases = 2
+			alloys = @b3_alloy_upkeep
+			energy = 30
+		}
+		produces = {
+			physics_research = 20
+			society_research = 20
+			engineering_research = 20
+		}
+	}
+
+	inline_script = {
+		script = jobs/researchers_add
+		AMOUNT = @building_static_jobs_high
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+				is_galactic_community_member = yes
+			}
+			is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+			has_modifier = pm_extradimensional_experimentation
+		}
+		modifier = { job_calculator_physicist_add = 200 }
+	}
+}
+
+building_AIO_fe_fortress = {
+	icon = building_fe_fortress
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = army
+
+	building_sets = {
+		fallen_empire
+		fortress
+	}
+
+	prerequisites = { tech_AIO_fe_fortress_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_fortress_1 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_fortress_1 } }
+	}
+
+	convert_to = { building_fe_fortress }
+
+	inline_script = {
+		script = jobs/soldiers_add
+		AMOUNT = @fe_jobs
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b2_minerals
+			volatile_motes = @fe_sr_cost
+		}
+		upkeep = {
+			alloys = @b2_alloy_upkeep
+			volatile_motes = 2
+			energy = 15
+		}
+	}
+
+	upgrades = { building_AIO_fe_stronghold }
+}
+
+building_AIO_fe_stronghold = {
+	icon = building_fe_stronghold
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = army
+
+	building_sets = {
+		fallen_empire
+		fortress
+	}
+
+	prerequisites = { tech_AIO_fe_fortress_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_fortress_2 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_fortress_2 } }
+	}
+
+	convert_to = { building_fe_stronghold }
+
+	planetary_ftl_inhibitor = yes
+
+	inline_script = {
+		script = jobs/soldiers_add
+		AMOUNT = @fe_jobs
+	}
+
+	planet_modifier = { planet_orbital_bombardment_damage = -0.1 }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b2_minerals
+		}
+		upkeep = {
+			alloys = @b2_alloy_upkeep
+			volatile_motes = 2
+			energy = 15
+		}
+	}
+}
+
+
+# ---------------------------------- #
+# 奥术建筑
+# ---------------------------------- #
+
+building_AIO_fe_sky_dome = {
+	icon = building_fe_sky_dome
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = amenity
+
+	building_sets = {
+		fallen_empire
+		urban
+	}
+
+	prerequisites = { tech_AIO_fe_dome_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_dome_1 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_dome_1 } }
+	}
+
+	convert_to = { building_fe_sky_dome }
+
+	planet_modifier = {
+		planet_housing_add = 2500
+		planet_amenities_add = 5000
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b2_minerals
+		}
+		upkeep = {
+			alloys = @b1_alloy_upkeep
+			energy = 10
+		}
+	}
+
+	upgrades = { building_AIO_fe_dome }
+}
+
+building_AIO_fe_dome = {
+	icon = building_fe_dome
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = amenity
+
+	building_sets = {
+		fallen_empire
+		urban
+	}
+
+	prerequisites = { tech_AIO_fe_dome_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = { has_technology = tech_AIO_fe_dome_2 }
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = { NOT = { has_technology = tech_AIO_fe_dome_2 } }
+	}
+
+	convert_to = { building_fe_dome }
+
+	planet_modifier = {
+		planet_housing_add = 5000
+		planet_amenities_add = 10000
+		planet_pops_upkeep_mult = -0.05
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b2_minerals
+		}
+		upkeep = {
+			alloys = @b1_alloy_upkeep
+			energy = 10
+		}
+	}
+}
+
+building_AIO_fe_assembly_1 = {
+	icon = building_fe_assembly_1
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = pop_assembly
+
+	building_sets = {
+		fallen_empire
+		urban
+	}
+
+	prerequisites = { tech_AIO_fe_assembly_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			has_technology = tech_AIO_fe_assembly_1
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			NOT = {
+				is_machine_empire = yes
+				has_technology = tech_AIO_fe_assembly_1
+			}
+		}
+	}
+
+	convert_to = { building_fe_assembly_1 }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			sr_living_metal = @fe_sr_cost
+		}
+		upkeep = {
+			sr_living_metal = 1.5
+			alloys = @b3_alloy_upkeep
+			energy = 50
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_country_flag = synth_unscheduled_updates
+			}
+		}
+		modifier = { planet_pop_assembly_mult = 0.1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_country_flag = synth_safe_updates }
+		}
+		modifier = {
+			planet_pop_assembly_mult = -0.1
+			planet_stability_add = 5
+		}
+	}
+
+	inline_script = {
+		script = jobs/roboticist_add
+		AMOUNT = 150
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			any_owned_pop_group = { has_auto_modding_trait = yes }
+		}
+		modifier = { auto_mod_monthly_add = 200 }
+	}
+
+	upgrades = { building_AIO_fe_assembly_2 }
+}
+
+building_AIO_fe_assembly_2 = {
+	icon = building_fe_assembly_2
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = pop_assembly
+
+	building_sets = {
+		fallen_empire
+		urban
+	}
+
+	prerequisites = { tech_AIO_fe_assembly_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			has_technology = tech_AIO_fe_assembly_2
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			NOT = {
+				is_machine_empire = yes
+				has_technology = tech_AIO_fe_assembly_2
+			}
+		}
+	}
+
+	convert_to = { building_fe_assembly_2 }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			sr_living_metal = 2
+			alloys = @b3_alloy_upkeep
+			energy = 70
+		}
+	}
+
+	inline_script = {
+		script = jobs/roboticist_add
+		AMOUNT = 300
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_country_flag = synth_unscheduled_updates }
+		}
+		modifier = { planet_pop_assembly_mult = 0.1 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_country_flag = synth_safe_updates }
+		}
+		modifier = {
+			planet_pop_assembly_mult = -0.1
+			planet_stability_add = 5
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_machine_empire = yes }
+			any_owned_pop_group = { has_auto_modding_trait = yes }
+		}
+		modifier = { auto_mod_monthly_add = 500 }
+	}
+}
+
+building_AIO_fe_clinic_1 = {
+	icon = building_fe_clinic_1
+
+	base_buildtime = @b2_time
+	can_build = yes
+	can_demolish = yes
+
+	category = amenity
+
+	building_sets = {
+		fallen_empire
+		urban
+	}
+
+	prerequisites = { tech_AIO_fe_clinic_1 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			has_technology = tech_AIO_fe_clinic_1
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			NOT = {
+				is_hive_empire = yes
+				has_technology = tech_AIO_fe_clinic_1
+			}
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+			exotic_gases = @fe_sr_cost
+		}
+		upkeep = {
+			exotic_gases = 2
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_wilderness_empire = yes
+				has_tradition = tr_purity_finish
+			}
+		}
+		planet_building_build_speed_mult = 0.03
+		planet_decision_enact_speed_mult = 0.03
+	}
+
+	country_modifier = { leader_lifespan_add = 1 }
+
+	inline_script = {
+		script = jobs/spawning_drone_add
+		AMOUNT = 150
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_gene_tailoring }
+			any_owned_pop_group = { has_auto_modding_trait = yes }
+		}
+		modifier = { auto_mod_monthly_add = 400 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { game_start_auto_mod_empire = yes }
+			any_owned_pop_group = { has_auto_modding_trait = yes }
+		}
+		modifier = { auto_mod_monthly_add = 400 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_purity_heightened_attributes_tradition = yes
+					has_cloning_artificial_population_tradition = yes
+					has_mutation_somatic_subversiveness_tradition = yes
+				}
+			}
+		}
+		organic_pop_bonus_workforce_mult = @medical_workforce_mult
+	}
+
+	upgrades = { building_AIO_fe_clinic_2 }
+}
+
+building_AIO_fe_clinic_2 = {
+	icon = building_fe_clinic_2
+
+	base_buildtime = @b2_time
+	can_build = no
+
+	category = amenity
+
+	building_sets = {
+		fallen_empire
+		urban
+	}
+
+	prerequisites = { tech_AIO_fe_clinic_2 }
+	show_tech_unlock_if = { always = yes }
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			has_technology = tech_AIO_fe_clinic_2
+		}
+	}
+
+	destroy_trigger = {
+		exists = owner
+		owner = {
+			NOT = {
+				is_hive_empire = yes
+				has_technology = tech_AIO_fe_clinic_2
+			}
+		}
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			exotic_gases = 2
+			alloys = @b2_alloy_upkeep
+			energy = 15
+		}
+	}
+
+	country_modifier = { leader_lifespan_add = 2 }
+
+	inline_script = {
+		script = jobs/spawning_drone_add
+		AMOUNT = 300
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_gene_tailoring }
+			any_owned_pop_group = { has_auto_modding_trait = yes }
+		}
+		modifier = { auto_mod_monthly_add = 600 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { game_start_auto_mod_empire = yes }
+			any_owned_pop_group = { has_auto_modding_trait = yes }
+		}
+		modifier = { auto_mod_monthly_add = 600 }
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_purity_heightened_attributes_tradition = yes
+					has_cloning_artificial_population_tradition = yes
+					has_mutation_somatic_subversiveness_tradition = yes
+				}
+			}
+		}
+		organic_pop_bonus_workforce_mult = @medical_workforce_mult
+		mult = 2
+	}
+}

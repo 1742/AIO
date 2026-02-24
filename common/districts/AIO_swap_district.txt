@@ -1,0 +1,45 @@
+# AIO转换区划类型
+
+district_AIO_dm_production = {
+	is_capped_by_modifier = no
+	icon = district_generator
+	overlay_icon = GFX_AIO_district_sr_dark_matter
+	zone_slots = { slot_empty }
+
+	show_on_uncolonized = { always = no }
+
+	potential = { always = no }
+}
+
+district_AIO_nanites_production_miners = {
+	is_capped_by_modifier = no
+	icon = district_mining
+	overlay_icon = GFX_AIO_district_nanites
+	zone_slots = { slot_empty }
+
+	show_on_uncolonized = { always = no }
+
+	potential = { always = no }
+}
+
+district_AIO_nanites_production_farmers = {
+	is_capped_by_modifier = no
+	icon = district_farming
+	overlay_icon = GFX_AIO_district_nanites
+	zone_slots = { slot_empty }
+
+	show_on_uncolonized = { always = no }
+
+	potential = { always = no }
+}
+
+district_AIO_nanites_production_metallurgists = {
+	is_capped_by_modifier = no
+	icon = district_arcology_arms_industry
+	overlay_icon = GFX_AIO_district_nanites
+	zone_slots = { slot_empty }
+
+	show_on_uncolonized = { always = no }
+
+	potential = { always = no }
+}

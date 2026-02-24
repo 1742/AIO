@@ -1,0 +1,16 @@
+# AIO经济类型
+
+# 递归节点
+planet_AIO_recursive_node = {
+	icon = "job_AIO_recursive_node"
+	parent = planet_jobs_productive
+	generate_add_modifiers = {
+		produces
+        upkeep
+	}
+    generate_mult_modifiers = {
+        produces
+        upkeep
+    }
+	modifier_category = pop_job
+}

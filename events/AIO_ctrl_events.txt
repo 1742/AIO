@@ -1,0 +1,2881 @@
+# AIO控制面板
+namespace = AIO_ctrl_events
+
+
+# ---------------------------------- #
+# AIO编辑现实
+# ---------------------------------- #
+
+# AIO控制面板触发事件
+country_event = {
+    id = AIO_ctrl_events.201
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+        if= {
+            limit = { has_country_flag = AIO_has_meet_Tawi }
+            switch = {
+                trigger = has_country_flag
+                # 应用无限
+                # 反热力学第二定律
+                AIO_ctrl_AIT_ASLT_locating = { country_event = { id = AIO_ctrl_events.302 } }
+                AIO_ctrl_AIT_ASLT_finish_locate = { country_event = { id = AIO_ctrl_events.302 } }
+                # 反因果律
+                AIO_ctrl_AIT_uncausality_locating = { country_event = { id = AIO_ctrl_events.303 } }
+                AIO_ctrl_AIT_uncausality_finish_locate = { country_event = { id = AIO_ctrl_events.303 } }
+                # 设计需求
+                AIO_ctrl_AIT_design_requirement_locating = { country_event = { id = AIO_ctrl_events.304 } }
+                AIO_ctrl_AIT_design_requirement_finish_locate = { country_event = { id = AIO_ctrl_events.304 } }
+                # 超光
+                AIO_ctrl_AIT_superlight_locating = { country_event = { id = AIO_ctrl_events.305 } }
+                AIO_ctrl_AIT_superlight_finish_locate = { country_event = { id = AIO_ctrl_events.305 } }
+                # 改变天体
+                AIO_ctrl_AIT_change_pc_locating = { country_event = { id = AIO_ctrl_events.306 } }
+                AIO_ctrl_AIT_change_pc_finish_locate = { country_event = { id = AIO_ctrl_events.306 } }
+                # 丰富星系矿藏
+                AIO_ctrl_AIT_enrich_system_deposits_locating = { country_event = { id = AIO_ctrl_events.307 } }
+                AIO_ctrl_AIT_enrich_system_deposits_finish_locate = { country_event = { id = AIO_ctrl_events.307 } }
+                # 退化
+                AIO_ctrl_AIT_degenerate_locating = { country_event = { id = AIO_ctrl_events.308 } }
+                AIO_ctrl_AIT_degenerate_finish_locate = { country_event = { id = AIO_ctrl_events.308 } }
+                # 神启
+                AIO_ctrl_AIT_enlighten_locating = { country_event = { id = AIO_ctrl_events.309 } }
+                AIO_ctrl_AIT_enlighten_finish_locate = { country_event = { id = AIO_ctrl_events.309 } }
+                # 倒流
+                AIO_ctrl_AIT_turn_back_time_locating = { country_event = { id = AIO_ctrl_events.310 } }
+                AIO_ctrl_AIT_turn_back_time_finish_locate = { country_event = { id = AIO_ctrl_events.310 } }
+                # 模因扰动
+                AIO_ctrl_AIT_change_government_locating = { country_event = { id = AIO_ctrl_events.311 } }
+                AIO_ctrl_AIT_change_government_finish_locate = { country_event = { id = AIO_ctrl_events.311 } }
+                # 创造宇宙风暴
+                AIO_ctrl_AIT_create_storm_locating = { country_event = { id = AIO_ctrl_events.312 } }
+                AIO_ctrl_AIT_create_storm_finish_locate = { country_event = { id = AIO_ctrl_events.312 } }
+
+                # 亚弗戈蒙
+                # 打击星系
+                AIO_ctrl_AIT_strike_system_locating = { country_event = { id = AIO_ctrl_events.402 } }
+                AIO_ctrl_AIT_strike_system_finish_locate = { country_event = { id = AIO_ctrl_events.402 } }
+                # 去军事化
+                AIO_ctrl_AIT_demilitarization_locating = { country_event = { id = AIO_ctrl_events.403 } }
+                AIO_ctrl_AIT_demilitarization_finish_locate = { country_event = { id = AIO_ctrl_events.403 } }
+                # 消灭星球陆军
+                AIO_ctrl_AIT_destroy_planet_army_locating = { country_event = { id = AIO_ctrl_events.404 } }
+                AIO_ctrl_AIT_destroy_planet_army_finish_locate = { country_event = { id = AIO_ctrl_events.404 } }
+                # 抹除国家
+                AIO_ctrl_AIT_erase_country_locating = { country_event = { id = AIO_ctrl_events.405 } }
+                AIO_ctrl_AIT_erase_country_finish_locate = { country_event = { id = AIO_ctrl_events.405 } }
+                # 抹除天体
+                AIO_ctrl_AIT_erase_planet_locating = { country_event = { id = AIO_ctrl_events.406 } }
+                AIO_ctrl_AIT_erase_planet_finish_locate = { country_event = { id = AIO_ctrl_events.406 } }
+                # 抹除星系
+                AIO_ctrl_AIT_erase_system_locating = { country_event = { id = AIO_ctrl_events.407 } }
+                AIO_ctrl_AIT_erase_system_finish_locate = { country_event = { id = AIO_ctrl_events.407 } }
+                # 抹除星团
+                AIO_ctrl_AIT_erase_star_cluster_locating = { country_event = { id = AIO_ctrl_events.408 } }
+                AIO_ctrl_AIT_erase_star_cluster_finish_locate = { country_event = { id = AIO_ctrl_events.408 } }
+
+                # 主菜单
+                default = { country_event = { id = AIO_ctrl_events.202 } }
+            }
+        }
+        else = {
+            set_country_flag = AIO_has_meet_Tawi
+            country_event = { id = AIO_Tawi_communication_events.201 }
+        }
+    }
+}
+
+
+# AIO控制面板主界面
+country_event = {
+    id = AIO_ctrl_events.202
+    title = AIO_Tawi_full_name
+
+    desc = {
+        trigger = { NOT = { has_country_flag = AIO_has_enter_library } }
+        text = AIO_ctrl_events.202.desc.first_enter_library
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_has_enter_library }
+        text = AIO_ctrl_events.202.desc.normal
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        name = AIO_ctrl_events.202.option_1
+        custom_tooltip = AIO_ctrl_events.202.option_1.tt
+        country_event = { id = AIO_ctrl_events.301 days = 1 }
+    }
+
+    option = {
+        name = AIO_ctrl_events.202.option_2
+        custom_tooltip = AIO_ctrl_events.202.option_2.tt
+        country_event = { id = AIO_ctrl_events.401 days = 1 }
+    }
+
+    option = {
+        allow = {
+            custom_tooltip = {
+                fail_text = AIO_ctrl_events.202.option_3.allow
+                NOT = { any_owned_fleet = { has_fleet_flag = AIO_otherworld_walker } }
+            }
+        }
+        name = AIO_ctrl_events.202.option_3
+        response_text = AIO_ctrl_events.202.option_3.respone
+        hidden_effect = { AIO_AIT_effects_manager = { CREATE_SCIENCE_SHIP = 1 } }
+    }
+
+    option = {
+        name = AIO_ctrl_events.202.option_4
+        country_event = { id = AIO_Tawi_communication_events.203 days = 1 }
+    }
+
+    option = {
+        name = AIO_ctrl_events.202.option_5
+        custom_tooltip = AIO_ctrl_events.202.option_5.tt
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = { NOT = { has_country_flag = AIO_has_enter_library } }
+            set_country_flag = AIO_has_enter_library
+        }
+    }
+}
+
+# AIO控制面板应用无限界面
+country_event = {
+    id = AIO_ctrl_events.301
+    title = AIO_Tawi_full_name
+    desc = AIO_ctrl_events.301.desc
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        name = AIO_ctrl_events.301.option_1
+        allow = {
+            custom_tooltip = {
+                text = AIO_requires_not_has_ASLT
+                NOT = { has_global_flag = AIO_ctrl_AIT_existed_ASLT }
+            }
+        }
+        country_event = { id = AIO_ctrl_events.302 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.301.option_2
+        allow = {
+            custom_tooltip = {
+                text = AIO_requires_not_has_uncausality
+                NOT = { has_global_flag = AIO_ctrl_AIT_existed_uncausality }
+            }
+        }
+        country_event = { id = AIO_ctrl_events.303 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.301.option_3
+        allow = {
+            custom_tooltip = {
+                text = AIO_requires_not_has_design_requirement
+                NOT = { has_global_flag = AIO_ctrl_AIT_existed_design_requirement }
+            }
+        }
+        country_event = { id = AIO_ctrl_events.304 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.301.option_4
+        allow = {
+            custom_tooltip = {
+                text = AIO_requires_not_has_superlight
+                NOT = { has_global_flag = AIO_ctrl_AIT_existed_superlight }
+            }
+        }
+        country_event = { id = AIO_ctrl_events.305 days = 1 }
+    }
+
+    option = {
+        name = AIO_ctrl_events.301.option_5
+        country_event = { id = AIO_ctrl_events.306 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.301.option_6
+        country_event = { id = AIO_ctrl_events.307 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.301.option_7
+        country_event = { id = AIO_ctrl_events.308 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.301.option_8
+        country_event = { id = AIO_ctrl_events.309 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.301.option_9
+        country_event = { id = AIO_ctrl_events.310 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.301.option_10
+        country_event = { id = AIO_ctrl_events.311 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.301.option_11
+        country_event = { id = AIO_ctrl_events.312 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.301.option_12
+        AIO_AIT_effects_manager = { RECOVER_ALL_GLOBAL_RULES = 1 }
+        country_event = { id = AIO_ctrl_events.301 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.301.option_13
+        country_event = { id = AIO_ctrl_events.202 days = 1 }
+        default_hide_option = yes
+    }
+    option = { 
+        name = AIO_exit
+    }
+}
+
+# 反热力学第二定律说明界面
+country_event = {
+    id = AIO_ctrl_events.302
+    title = AIO_ctrl_events.301.option_1
+
+    desc = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_ASLT_locating
+                has_country_flag = AIO_ctrl_AIT_ASLT_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.302.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_ASLT_locating }
+        text = AIO_ctrl_events.302.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_ASLT_finish_locate }
+        text = AIO_ctrl_events.302.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_ASLT_locating
+                has_country_flag = AIO_ctrl_AIT_ASLT_finish_locate
+            }
+        }
+        name = AIO_global
+        every_country = {
+            limit = {
+                is_country_type = default
+                NOT = { has_modifier = AIO_after_ascension_ASLT_modifier }
+            }
+            add_modifier = { modifier = AIO_after_ascension_ASLT_modifier days = -1 }
+        }
+        hidden_effect = { set_global_flag = AIO_ctrl_AIT_existed_ASLT }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_ASLT_locating
+                has_country_flag = AIO_ctrl_AIT_ASLT_finish_locate
+            }
+        }
+        name = AIO_specific
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_ASLT_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_ASLT_locating
+                has_country_flag = AIO_ctrl_AIT_ASLT_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_ASLT_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_ASLT_finish_locate }
+        name = AIO_confirm
+        event_target:AIO_ctrl_AIT_ASLT_target = {
+            if = {
+                limit = {
+                    NOT = { has_modifier = AIO_after_ascension_ASLT_modifier }
+                    OR = {
+                        is_country_type = default
+                        is_country_type = fallen_empire
+                        is_country_type = awakened_fallen_empire
+                    }
+                }
+                add_modifier = { modifier = AIO_after_ascension_ASLT_modifier days = -1 }
+            }
+        }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = ASLT }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_ASLT_locating
+                has_country_flag = AIO_ctrl_AIT_ASLT_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = ASLT }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_ASLT_locating
+                    has_country_flag = AIO_ctrl_AIT_ASLT_finish_locate
+                    
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.301 }
+        }
+    }
+}
+
+# 反因果律说明界面
+country_event = {
+    id = AIO_ctrl_events.303
+    title = AIO_ctrl_events.301.option_2
+
+    desc = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_uncausality_locating
+                has_country_flag = AIO_ctrl_AIT_uncausality_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.303.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_uncausality_locating }
+        text = AIO_ctrl_events.303.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_uncausality_finish_locate }
+        text = AIO_ctrl_events.303.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_uncausality_locating
+                has_country_flag = AIO_ctrl_AIT_uncausality_finish_locate
+            }
+        }
+        name = AIO_global
+        every_country = {
+            limit = {
+                OR = {
+                    is_country_type = default
+                    is_country_type = fallen_empire
+                    is_country_type = awakened_fallen_empire
+                }
+                NOT = { has_modifier = AIO_after_ascension_uncausality_modifier }
+            }
+            add_modifier = { modifier = AIO_after_ascension_uncausality_modifier days = -1 }
+        }
+        hidden_effect = { set_global_flag = AIO_ctrl_AIT_existed_uncausality }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_uncausality_locating
+                has_country_flag = AIO_ctrl_AIT_uncausality_finish_locate
+            }
+        }
+        name = AIO_specific
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_uncausality_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_uncausality_locating
+                has_country_flag = AIO_ctrl_AIT_uncausality_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_uncausality_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_uncausality_finish_locate }
+        name = AIO_confirm
+        event_target:AIO_ctrl_AIT_uncausality_target = {
+            if = {
+                limit = {
+                    NOT = { has_modifier = AIO_after_ascension_uncausality_modifier }
+                    OR = {
+                        is_country_type = default
+                        is_country_type = fallen_empire
+                        is_country_type = awakened_fallen_empire
+                    }
+                }
+                add_modifier = { modifier = AIO_after_ascension_uncausality_modifier days = -1 }
+            }
+        }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = uncausality }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_uncausality_locating
+                has_country_flag = AIO_ctrl_AIT_uncausality_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = uncausality }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_uncausality_locating
+                    has_country_flag = AIO_ctrl_AIT_uncausality_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.301 }
+        }
+    }
+}
+
+# 设计需求说明界面
+country_event = {
+    id = AIO_ctrl_events.304
+    title = AIO_ctrl_events.301.option_3
+
+    desc = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_design_requirement_locating
+                has_country_flag = AIO_ctrl_AIT_design_requirement_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.304.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_design_requirement_locating }
+        text = AIO_ctrl_events.304.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_design_requirement_finish_locate }
+        text = AIO_ctrl_events.304.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_design_requirement_locating
+                has_country_flag = AIO_ctrl_AIT_design_requirement_finish_locate
+            }
+        }
+        name = AIO_global
+        every_country = {
+            limit = {
+                OR = {
+                    is_country_type = default
+                    is_country_type = fallen_empire
+                    is_country_type = awakened_fallen_empire
+                }
+                NOT = { has_modifier = AIO_after_ascension_design_requirement_modifier }
+            }
+            add_modifier = { modifier = AIO_after_ascension_design_requirement_modifier days = -1 }
+        }
+        hidden_effect = { set_global_flag = AIO_ctrl_AIT_existed_design_requirement }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_design_requirement_locating
+                has_country_flag = AIO_ctrl_AIT_design_requirement_finish_locate
+            }
+        }
+        name = AIO_specific
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_design_requirement_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_design_requirement_locating
+                has_country_flag = AIO_ctrl_AIT_design_requirement_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_design_requirement_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_design_requirement_finish_locate }
+        name = AIO_confirm
+        event_target:AIO_ctrl_AIT_design_requirement_target = {
+            if = {
+                limit = {
+                    NOT = { has_modifier = AIO_after_ascension_design_requirement_modifier }
+                    OR = {
+                        is_country_type = default
+                        is_country_type = fallen_empire
+                        is_country_type = awakened_fallen_empire
+                    }
+                }
+                add_modifier = { modifier = AIO_after_ascension_design_requirement_modifier days = -1 }
+            }
+        }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = design_requirement }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_design_requirement_locating
+                has_country_flag = AIO_ctrl_AIT_design_requirement_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = design_requirement }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_design_requirement_locating
+                    has_country_flag = AIO_ctrl_AIT_design_requirement_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.301 }
+        }
+    }
+}
+
+# 超光说明界面
+country_event = {
+    id = AIO_ctrl_events.305
+    title = AIO_ctrl_events.301.option_4
+
+    desc = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_superlight_locating
+                has_country_flag = AIO_ctrl_AIT_superlight_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.305.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_superlight_locating }
+        text = AIO_ctrl_events.305.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_superlight_finish_locate }
+        text = AIO_ctrl_events.305.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_superlight_locating
+                has_country_flag = AIO_ctrl_AIT_superlight_finish_locate
+            }
+        }
+        name = AIO_global
+        every_country = {
+            limit = {
+                OR = {
+                    is_country_type = default
+                    is_country_type = fallen_empire
+                    is_country_type = awakened_fallen_empire
+                }
+                NOT = { has_modifier = AIO_after_ascension_superlight_modifier }
+            }
+            add_modifier = { modifier = AIO_after_ascension_superlight_modifier days = -1 }
+            every_owned_planet = {
+                limit = { is_artificial = no }
+                add_planet_devastation = 60
+
+                remove_random_district = yes
+                remove_random_building = yes
+            }
+        }
+        hidden_effect = { set_global_flag = AIO_ctrl_AIT_existed_superlight }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_superlight_locating
+                has_country_flag = AIO_ctrl_AIT_superlight_finish_locate
+            }
+        }
+        name = AIO_specific
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_superlight_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_superlight_locating
+                has_country_flag = AIO_ctrl_AIT_superlight_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_superlight_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_superlight_finish_locate }
+        name = AIO_confirm
+        event_target:AIO_ctrl_AIT_superlight_target = {
+            if = {
+                limit = {
+                    NOT = { has_modifier = AIO_after_ascension_superlight_modifier }
+                    OR = {
+                        is_country_type = default
+                        is_country_type = fallen_empire
+                        is_country_type = awakened_fallen_empire
+                    }
+                }
+                add_modifier = { modifier = AIO_after_ascension_superlight_modifier days = -1 }
+                every_owned_planet = {
+                    limit = { is_artificial = no }
+                    add_planet_devastation = 60
+
+                    remove_random_district = yes
+                    remove_random_building = yes
+                }
+            }
+        }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = superlight }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_superlight_locating
+                has_country_flag = AIO_ctrl_AIT_superlight_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = superlight }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_superlight_locating
+                    has_country_flag = AIO_ctrl_AIT_superlight_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.301 }
+        }
+    }
+}
+
+# 改变天体说明界面
+country_event = {
+    id = AIO_ctrl_events.306
+    title = AIO_ctrl_events.301.option_5
+
+    desc = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_change_pc_locating
+                has_country_flag = AIO_ctrl_AIT_change_pc_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.306.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_change_pc_locating }
+        text = AIO_ctrl_events.306.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_change_pc_finish_locate }
+        text = AIO_ctrl_events.306.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_change_pc_locating
+                has_country_flag = AIO_ctrl_AIT_change_pc_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.306.option_1
+
+        hidden_effect = {
+            set_variable = { which = AIO_ctrl_AIT_change_pc_num value = 1 }
+            switch = {
+                trigger = galaxy_size
+                tiny = { set_variable = { which = AIO_ctrl_AIT_change_pc_num value = 20 } }
+                small = { set_variable = { which = AIO_ctrl_AIT_change_pc_num value = 40 } }
+                large = { set_variable = { which = AIO_ctrl_AIT_change_pc_num value = 80 } }
+                huge = { set_variable = { which = AIO_ctrl_AIT_change_pc_num value = 100 } }
+            }
+            while = {
+                count = AIO_ctrl_AIT_change_pc_num
+                no_scope = {
+                    random_system = {
+                        limit = {
+                            NOR = {
+                                has_star_flag = AIO_HS_system
+                                has_star_flag = AIO_TUG_system
+                            }
+                        }
+                        random_system_planet = {
+                            limit = {
+                                is_artificial = no
+                                NOR = {
+                                    is_planet_class = pc_AIO_empty_space
+
+                                    is_planet_class = pc_ai
+                                    has_planet_flag = synth_queen_bastille
+                                }
+                            }
+                            AIO_safe_change_random_pc = yes
+                        }
+                    }
+                }
+            }
+            clear_variable = AIO_ctrl_AIT_change_pc_num
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_change_pc_locating
+                has_country_flag = AIO_ctrl_AIT_change_pc_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.306.option_2
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_change_pc_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_change_pc_locating
+                has_country_flag = AIO_ctrl_AIT_change_pc_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_change_pc_locating }
+        name = AIO_continue
+    }
+
+    # 各种天体选择
+    inline_script = { script = events/AIO_change_pc_event_inline_scripts }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_change_pc_locating
+                has_country_flag = AIO_ctrl_AIT_change_pc_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = change_pc }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_change_pc_locating
+                    has_country_flag = AIO_ctrl_AIT_change_pc_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.301 }
+        }
+    }
+}
+
+# 丰富星系矿藏说明界面
+country_event = {
+    id = AIO_ctrl_events.307
+    title = AIO_ctrl_events.301.option_6
+
+    desc = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_locating
+                has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.307.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_locating }
+        text = AIO_ctrl_events.307.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_finish_locate }
+        text = AIO_ctrl_events.307.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_locating
+                has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.307.option_1
+
+        hidden_effect = {
+            set_variable = { which = AIO_ctrl_AIT_enrich_system_deposits_num value = 1 }
+            switch = {
+                trigger = galaxy_size
+                tiny = { set_variable = { which = AIO_ctrl_AIT_enrich_system_deposits_num value = 20 } }
+                small = { set_variable = { which = AIO_ctrl_AIT_enrich_system_deposits_num value = 40 } }
+                large = { set_variable = { which = AIO_ctrl_AIT_enrich_system_deposits_num value = 80 } }
+                huge = { set_variable = { which = AIO_ctrl_AIT_enrich_system_deposits_num value = 100 } }
+            }
+            while = {
+                count = AIO_ctrl_AIT_enrich_system_deposits_num
+                no_scope = {
+                    random_system = {
+                        limit = {
+                            NOR = {
+                                has_star_flag = AIO_HS_system
+                                has_star_flag = AIO_TUG_system
+                            }
+                        }
+                        AIO_AIT_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 }
+                    }
+                }
+            }
+            clear_variable = AIO_ctrl_AIT_enrich_system_deposits_num
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_locating
+                has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.307.option_2
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_enrich_system_deposits_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_locating
+                has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_locating }
+        name = AIO_continue
+    }
+
+    inline_script = { script = events/AIO_enrich_system_deposits_inline_scripts }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_locating
+                has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = enrich_system_deposits }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_locating
+                    has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.301 }
+        }
+    }
+}
+
+# 退化说明界面
+country_event = {
+    id = AIO_ctrl_events.308
+    title = AIO_ctrl_events.301.option_7
+
+    desc = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_degenerate_locating
+                has_country_flag = AIO_ctrl_AIT_degenerate_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.308.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_degenerate_locating }
+        text = AIO_ctrl_events.308.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_degenerate_finish_locate }
+        text = AIO_ctrl_events.308.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_degenerate_locating
+                has_country_flag = AIO_ctrl_AIT_degenerate_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.308.option_1
+
+        hidden_effect = {
+            set_variable = { which = AIO_ctrl_AIT_degenerate_num value = 1 }
+            switch = {
+                trigger = galaxy_size
+                tiny = { set_variable = { which = AIO_ctrl_AIT_degenerate_num value = 20 } }
+                small = { set_variable = { which = AIO_ctrl_AIT_degenerate_num value = 40 } }
+                large = { set_variable = { which = AIO_ctrl_AIT_degenerate_num value = 80 } }
+                huge = { set_variable = { which = AIO_ctrl_AIT_degenerate_num value = 100 } }
+            }
+            while = {
+                count = AIO_ctrl_AIT_degenerate_num
+                no_scope = {
+                    random_system = {
+                        limit = {
+                            NOR = {
+                                has_star_flag = AIO_HS_system
+                                has_star_flag = AIO_TUG_system
+                            }
+                            any_system_planet = {
+                                is_colony = yes
+                                owner = {
+                                    OR = {
+                                        is_country_type = default
+                                        is_country_type = fallen_empire
+                                        is_country_type = awakened_fallen_empire
+                                    }
+                                }
+                            }
+                        }
+                        random_system_colony = { AIO_AIT_effects_manager = { DEGENERATE = 1 } }
+                    }
+                }
+            }
+            clear_variable = AIO_ctrl_AIT_degenerate_num
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_degenerate_locating
+                has_country_flag = AIO_ctrl_AIT_degenerate_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.308.option_2
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_degenerate_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_degenerate_locating
+                has_country_flag = AIO_ctrl_AIT_degenerate_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_degenerate_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_degenerate_finish_locate }
+        name = AIO_confirm
+        event_target:AIO_ctrl_AIT_degenerate_target = { AIO_AIT_effects_manager = { DEGENERATE = 1 } }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = degenerate }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_degenerate_locating
+                has_country_flag = AIO_ctrl_AIT_degenerate_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = degenerate }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_degenerate_locating
+                    has_country_flag = AIO_ctrl_AIT_degenerate_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.301 }
+        }
+    }
+}
+
+# 神启说明界面
+country_event = {
+    id = AIO_ctrl_events.309
+    title = AIO_ctrl_events.301.option_8
+
+    desc = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_enlighten_locating
+                has_country_flag = AIO_ctrl_AIT_enlighten_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.309.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_enlighten_locating }
+        text = AIO_ctrl_events.309.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_enlighten_finish_locate }
+        text = AIO_ctrl_events.309.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_enlighten_locating
+                has_country_flag = AIO_ctrl_AIT_enlighten_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.309.option_1
+
+        hidden_effect = {
+            set_variable = { which = AIO_ctrl_AIT_enlighten_planet_num value = 1 }
+            switch = {
+                trigger = galaxy_size
+                tiny = { set_variable = { which = AIO_ctrl_AIT_enlighten_planet_num value = 20 } }
+                small = { set_variable = { which = AIO_ctrl_AIT_enlighten_planet_num value = 40 } }
+                large = { set_variable = { which = AIO_ctrl_AIT_enlighten_planet_num value = 80 } }
+                huge = { set_variable = { which = AIO_ctrl_AIT_enlighten_planet_num value = 100 } }
+            }
+            while = {
+                count = AIO_ctrl_AIT_enlighten_planet_num
+                no_scope = {
+                    random_system = {
+                        limit = {
+                            NOR = {
+                                has_star_flag = AIO_HS_system
+                                has_star_flag = AIO_TUG_system
+                            }
+                            any_system_planet = {
+                                is_colony = yes
+                                owner = {
+                                    OR = {
+                                        is_country_type = default
+                                        is_country_type = primitive
+                                    }
+                                }
+                            }
+                        }
+                        random_system_colony = { AIO_AIT_effects_manager = { ENLIGHTEN = 1 } }
+                    }
+                }
+            }
+            clear_variable = AIO_ctrl_AIT_enlighten_planet_num
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_enlighten_locating
+                has_country_flag = AIO_ctrl_AIT_enlighten_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.309.option_2
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_enlighten_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_enlighten_locating
+                has_country_flag = AIO_ctrl_AIT_enlighten_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_enlighten_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_enlighten_finish_locate }
+        name = AIO_confirm
+        event_target:AIO_ctrl_AIT_enlighten_target = {
+            if = {
+                limit = { NOT = { is_planet_class = pc_ai } }
+                AIO_AIT_effects_manager = { ENLIGHTEN = 1 }
+            }
+        }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = enlighten }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_enlighten_locating
+                has_country_flag = AIO_ctrl_AIT_enlighten_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = enlighten }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_enlighten_locating
+                    has_country_flag = AIO_ctrl_AIT_enlighten_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.301 }
+        }
+    }
+}
+
+# 倒流说明界面
+country_event = {
+    id = AIO_ctrl_events.310
+    title = AIO_ctrl_events.301.option_9
+
+    desc = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_turn_back_time_locating
+                has_country_flag = AIO_ctrl_AIT_turn_back_time_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.310.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_turn_back_time_locating }
+        text = AIO_ctrl_events.310.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_turn_back_time_finish_locate }
+        text = AIO_ctrl_events.310.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_turn_back_time_locating
+                has_country_flag = AIO_ctrl_AIT_turn_back_time_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.310.option_1
+
+        hidden_effect = {
+            set_variable = { which = AIO_ctrl_AIT_turn_back_time_planet_num value = 1 }
+            switch = {
+                trigger = galaxy_size
+                tiny = { set_variable = { which = AIO_ctrl_AIT_turn_back_time_planet_num value = 20 } }
+                small = { set_variable = { which = AIO_ctrl_AIT_turn_back_time_planet_num value = 40 } }
+                large = { set_variable = { which = AIO_ctrl_AIT_turn_back_time_planet_num value = 80 } }
+                huge = { set_variable = { which = AIO_ctrl_AIT_turn_back_time_planet_num value = 100 } }
+            }
+            while = {
+                count = AIO_ctrl_AIT_turn_back_time_planet_num
+                no_scope = {
+                    random_system = {
+                        limit = {
+                            NOR = {
+                                has_star_flag = AIO_HS_system
+                                has_star_flag = AIO_TUG_system
+                            }
+                            AND = {
+                                exists = owner
+                                owner = {
+                                    OR = {
+                                        is_country_type = default
+                                        is_country_type = fallen_empire
+                                        is_country_type = awakened_fallen_empire
+                                    }
+                                }
+                            }
+                            any_system_planet = { is_colony = yes }
+                        }
+                        random_system_colony = { AIO_AIT_effects_manager = { TURN_BACK_TIME = 1 } }
+                    }
+                }
+            }
+            clear_variable = AIO_ctrl_AIT_turn_back_time_planet_num
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_turn_back_time_locating
+                has_country_flag = AIO_ctrl_AIT_turn_back_time_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.310.option_2
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_turn_back_time_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_turn_back_time_locating
+                has_country_flag = AIO_ctrl_AIT_turn_back_time_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_turn_back_time_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_turn_back_time_finish_locate }
+        name = AIO_confirm
+        event_target:AIO_ctrl_AIT_turn_back_time_target = { AIO_AIT_effects_manager = { TURN_BACK_TIME = 1 } }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = turn_back_time }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_turn_back_time_locating
+                has_country_flag = AIO_ctrl_AIT_turn_back_time_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = turn_back_time }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_turn_back_time_locating
+                    has_country_flag = AIO_ctrl_AIT_turn_back_time_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.301 }
+        }
+    }
+}
+
+# 模因扰动说明界面
+country_event = {
+    id = AIO_ctrl_events.311
+    title = AIO_ctrl_events.301.option_10
+
+    desc = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_change_government_locating
+                has_country_flag = AIO_ctrl_AIT_change_government_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.311.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_change_government_locating }
+        text = AIO_ctrl_events.311.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_change_government_finish_locate }
+        text = AIO_ctrl_events.311.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_change_government_locating
+                has_country_flag = AIO_ctrl_AIT_change_government_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.311.option_1
+
+        hidden_effect = {
+            every_country = {
+                limit = { is_country_type = default }
+                change_government = random
+            }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_change_government_locating
+                has_country_flag = AIO_ctrl_AIT_change_government_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.311.option_2
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_change_government_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_change_government_locating
+                has_country_flag = AIO_ctrl_AIT_change_government_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_change_government_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_change_government_finish_locate }
+        name = AIO_confirm
+        event_target:AIO_ctrl_AIT_change_government_target = {
+            if = {
+                limit = { is_country_type = default }
+                change_government = {
+                    authority = random
+                    civics = random
+                    remove_invalid_civics = yes
+                }
+            }
+        }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = change_government }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_change_government_locating
+                has_country_flag = AIO_ctrl_AIT_change_government_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = change_government }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_change_government_locating
+                    has_country_flag = AIO_ctrl_AIT_change_government_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.301 }
+        }
+    }
+}
+
+# 创造宇宙风暴说明界面
+country_event = {
+    id = AIO_ctrl_events.312
+    title = AIO_ctrl_events.301.option_11
+
+    desc = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_create_storm_locating
+                has_country_flag = AIO_ctrl_AIT_create_storm_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.312.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_create_storm_locating }
+        text = AIO_ctrl_events.312.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_create_storm_finish_locate }
+        text = AIO_ctrl_events.312.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_create_storm_locating
+                has_country_flag = AIO_ctrl_AIT_create_storm_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.312.option_1
+
+        hidden_effect = {
+            if = { 
+                limit = { 
+                    OR = { 
+                        galaxy_size = tiny
+                        galaxy_size = small
+                        galaxy_size = medium
+                    }
+                }
+                no_scope = {
+                    while = {
+                        count = 4
+                        random_system = {
+                            limit = {
+                                is_inside_storm = no
+                                NOT = { any_cosmic_storm = { distance = { min_jumps = 8 } } }
+                            }
+                            AIO_create_random_cosmic_storm = yes
+                        }
+                    }
+                }
+            }
+            else = {
+                while = {
+                    count = 8
+                    random_system = {
+                        limit = {
+                            is_inside_storm = no
+                            NOT = { any_cosmic_storm = { distance = { min_jumps = 8 } } }
+                        }
+                        AIO_create_random_cosmic_storm = yes
+                    }
+                }
+            }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_create_storm_locating
+                has_country_flag = AIO_ctrl_AIT_create_storm_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.312.option_2
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_create_storm_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_create_storm_locating
+                has_country_flag = AIO_ctrl_AIT_create_storm_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_create_storm_locating }
+        name = AIO_continue
+    }
+
+    inline_script = { script = events/AIO_create_storm_inline_scripts }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_create_storm_locating
+                has_country_flag = AIO_ctrl_AIT_create_storm_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = create_storm }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_create_storm_locating
+                    has_country_flag = AIO_ctrl_AIT_create_storm_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.301 }
+        }
+    }
+}
+
+# AIO控制面板亚弗戈蒙界面
+country_event = {
+    id = AIO_ctrl_events.401
+    title = AIO_ctrl_events.401.title
+    desc = AIO_ctrl_events.401.desc
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        name = AIO_ctrl_events.401.option_1
+        country_event = { id = AIO_ctrl_events.402 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.401.option_2
+        country_event = { id = AIO_ctrl_events.403 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.401.option_3
+        country_event = { id = AIO_ctrl_events.404 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.401.option_4
+        country_event = { id = AIO_ctrl_events.405 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.401.option_5
+        country_event = { id = AIO_ctrl_events.406 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.401.option_6
+        country_event = { id = AIO_ctrl_events.407 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.401.option_7
+        country_event = { id = AIO_ctrl_events.408 days = 1 }
+    }
+    option = {
+        name = AIO_ctrl_events.401.option_8
+        country_event = { id = AIO_ctrl_events.202 days = 1 }
+        default_hide_option = yes
+    }
+}
+
+# 打击指定星系说明页面
+country_event = { 
+    id = AIO_ctrl_events.402
+    title = AIO_ctrl_events.401.option_1
+
+    desc = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_strike_system_locating
+                has_country_flag = AIO_ctrl_AIT_strike_system_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.402.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_strike_system_locating }
+        text = AIO_ctrl_events.402.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_strike_system_finish_locate }
+        text = AIO_ctrl_events.402.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_strike_system_locating
+                has_country_flag = AIO_ctrl_AIT_strike_system_finish_locate
+            }
+        }
+        name = AIO_continue
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_strike_system_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_strike_system_locating
+                has_country_flag = AIO_ctrl_AIT_strike_system_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_strike_system_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_strike_system_finish_locate }
+        name = AIO_confirm
+        event_target:AIO_ctrl_AIT_strike_system_target = { AIO_AIT_effects_manager = { CREATE_AFORGOMOM_WRATH = 1 } }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = strike_system }
+    }
+    option = {
+        trigger = {
+            has_country_flag = AIO_ctrl_AIT_strike_system_finish_locate
+            event_target:AIO_ctrl_AIT_strike_system_target = { exists = owner }
+        }
+        name = AIO_ctrl_events.402.opinion_2
+        event_target:AIO_ctrl_AIT_strike_system_target.owner = {
+            every_system_within_border = {
+                limit = { NOT = { any_fleet_in_system = { has_fleet_flag = AIO_Aforgomom_Wrath_fleet } } }
+                AIO_AIT_effects_manager = { CREATE_AFORGOMOM_WRATH = 1 }
+            }
+            every_owned_fleet = {
+                limit = { solar_system = { NOT = { any_fleet_in_system = { has_fleet_flag = AIO_Aforgomom_Wrath_fleet } } } }
+                AIO_AIT_effects_manager = { CREATE_AFORGOMOM_WRATH = 1 }
+            }
+        }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = strike_system }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_strike_system_locating
+                has_country_flag = AIO_ctrl_AIT_strike_system_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = strike_system }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_strike_system_locating
+                    has_country_flag = AIO_ctrl_AIT_strike_system_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.401 }
+        }
+    }
+}
+
+# 去军事化说明页面
+country_event = {
+    id = AIO_ctrl_events.403
+    title = AIO_ctrl_events.401.option_2
+
+    desc = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_demilitarization_locating
+                has_country_flag = AIO_ctrl_AIT_demilitarization_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.403.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_demilitarization_locating }
+        text = AIO_ctrl_events.403.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_demilitarization_finish_locate }
+        text = AIO_ctrl_events.403.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_demilitarization_locating
+                has_country_flag = AIO_ctrl_AIT_demilitarization_finish_locate
+            }
+        }
+        name = AIO_continue
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_demilitarization_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_demilitarization_locating
+                has_country_flag = AIO_ctrl_AIT_demilitarization_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_demilitarization_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_demilitarization_finish_locate }
+        name = AIO_confirm
+
+        event_target:AIO_ctrl_AIT_demilitarization_target = {
+            every_owned_fleet = {
+                limit = {
+                    NOT = { is_ship_size = synth_queen_titan }
+                    OR= {
+                        is_ship_class = shipclass_military
+                        is_ship_class = shipclass_military_special
+                        is_ship_size = juggernaut
+                        is_ship_class = shipclass_transport
+                    }
+                }
+                destroy_fleet = this
+            }
+            hidden_effect = { clear_variable = AIO_ctrl_AIT_demilitarization_num }
+        }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = demilitarization }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_demilitarization_locating
+                has_country_flag = AIO_ctrl_AIT_demilitarization_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = demilitarization }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_demilitarization_locating
+                    has_country_flag = AIO_ctrl_AIT_demilitarization_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.401 }
+        }
+    }
+}
+
+# 消灭星球陆军说明页面
+country_event = {
+    id = AIO_ctrl_events.404
+    title = AIO_ctrl_events.401.option_3
+
+    desc = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_destroy_planet_army_locating
+                has_country_flag = AIO_ctrl_AIT_destroy_planet_army_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.404.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_destroy_planet_army_locating }
+        text = AIO_ctrl_events.404.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_destroy_planet_army_finish_locate }
+        text = AIO_ctrl_events.404.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_destroy_planet_army_locating
+                has_country_flag = AIO_ctrl_AIT_destroy_planet_army_finish_locate
+            }
+        }
+        name = AIO_continue
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_destroy_planet_army_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_destroy_planet_army_locating
+                has_country_flag = AIO_ctrl_AIT_destroy_planet_army_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_destroy_planet_army_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_destroy_planet_army_finish_locate }
+        name = AIO_confirm
+
+        event_target:AIO_ctrl_AIT_destroy_planet_army_target = {
+            every_planet_army = {
+                remove_army = yes
+                planet = { add_planet_devastation = 1 }
+            }
+            hidden_effect = { clear_variable = AIO_ctrl_AIT_destroy_planet_army_num }
+        }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = destroy_planet_army }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_destroy_planet_army_locating
+                has_country_flag = AIO_ctrl_AIT_destroy_planet_army_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = destroy_planet_army }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_destroy_planet_army_locating
+                    has_country_flag = AIO_ctrl_AIT_destroy_planet_army_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.401 }
+        }
+    }
+}
+
+# 抹除国家说明页面
+country_event = {
+    id = AIO_ctrl_events.405
+    title = AIO_ctrl_events.401.option_4
+
+    desc = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_erase_country_locating
+                has_country_flag = AIO_ctrl_AIT_erase_country_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.405.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_country_locating }
+        text = AIO_ctrl_events.405.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_country_finish_locate }
+        text = AIO_ctrl_events.405.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_erase_country_locating
+                has_country_flag = AIO_ctrl_AIT_erase_country_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.405.option_1
+
+        every_country = {
+            limit = {
+                OR = {
+                    is_country_type = default
+                    is_country_type = fallen_empire
+                    is_country_type = awakened_fallen_empire
+                }
+            }
+            destroy_country = yes
+        }
+    }
+    option = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_erase_country_locating
+                has_country_flag = AIO_ctrl_AIT_erase_country_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.405.option_2
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_erase_country_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_erase_country_locating
+                has_country_flag = AIO_ctrl_AIT_erase_country_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_country_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_country_finish_locate }
+        name = AIO_confirm
+
+        event_target:AIO_ctrl_AIT_erase_country_target = {
+            if = {
+                limit = {
+                    OR = {
+                        is_country_type = default
+                        is_country_type = fallen_empire
+                        is_country_type = awakened_fallen_empire
+                    }
+                }
+                destroy_country = yes
+            }
+            hidden_effect = {
+                clear_variable = AIO_ctrl_AIT_erase_country_system_num
+                clear_variable = AIO_ctrl_AIT_erase_country_colony_num
+                clear_variable = AIO_ctrl_AIT_erase_country_species_num
+                clear_variable = AIO_ctrl_AIT_erase_country_pop_num
+                clear_variable = AIO_ctrl_AIT_erase_country_navy_num
+            }
+        }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = erase_country }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_erase_country_locating
+                has_country_flag = AIO_ctrl_AIT_erase_country_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = erase_country }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_erase_country_locating
+                    has_country_flag = AIO_ctrl_AIT_erase_country_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.401 }
+        }
+    }
+}
+
+# 抹除天体说明页面
+country_event = {
+    id = AIO_ctrl_events.406
+    title = AIO_ctrl_events.401.option_5
+
+    desc = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_erase_planet_locating
+                has_country_flag = AIO_ctrl_AIT_erase_planet_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.406.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_planet_locating }
+        text = AIO_ctrl_events.406.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_planet_finish_locate }
+        text = AIO_ctrl_events.406.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_erase_planet_locating
+                has_country_flag = AIO_ctrl_AIT_erase_planet_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.406.option_1
+
+        hidden_effect = {
+            set_variable = { which = AIO_ctrl_AIT_erase_planet_num value = 1 }
+            switch = {
+                trigger = galaxy_size
+                tiny = { set_variable = { which = AIO_ctrl_AIT_erase_planet_num value = 20 } }
+                small = { set_variable = { which = AIO_ctrl_AIT_erase_planet_num value = 40 } }
+                large = { set_variable = { which = AIO_ctrl_AIT_erase_planet_num value = 80 } }
+                huge = { set_variable = { which = AIO_ctrl_AIT_erase_planet_num value = 100 } }
+            }
+            while = {
+                count = AIO_ctrl_AIT_erase_planet_num
+                no_scope = {
+                    random_system = {
+                        limit = {
+                            NOR = {
+                                is_same_value = event_target:AIO_HS_system
+                                is_same_value = event_target:AIO_TUG_system
+                            }
+                        }
+                        random_system_planet = {
+                            limit = { NOT = { is_planet_class = pc_AIO_empty_space } }
+                            AIO_AIT_effects_manager = { ERASE_PLANET = 1 }
+                        }
+                    }
+                }
+            }
+            clear_variable = AIO_ctrl_AIT_erase_planet_num
+        }
+    }
+    option = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_erase_planet_locating
+                has_country_flag = AIO_ctrl_AIT_erase_planet_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.406.option_2
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_erase_planet_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_erase_planet_locating
+                has_country_flag = AIO_ctrl_AIT_erase_planet_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_planet_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_planet_finish_locate }
+        name = AIO_confirm
+
+        event_target:AIO_ctrl_AIT_erase_planet_target = { AIO_AIT_effects_manager = { ERASE_PLANET = 1 } }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = erase_planet }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_erase_planet_locating
+                has_country_flag = AIO_ctrl_AIT_erase_planet_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = erase_planet }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_erase_planet_locating
+                    has_country_flag = AIO_ctrl_AIT_erase_planet_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.401 }
+        }
+    }
+}
+
+# 抹除星系说明页面
+country_event = {
+    id = AIO_ctrl_events.407
+    title = AIO_ctrl_events.401.option_6
+
+    desc = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_erase_system_locating
+                has_country_flag = AIO_ctrl_AIT_erase_system_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.407.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_system_locating }
+        text = AIO_ctrl_events.407.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_system_finish_locate }
+        text = AIO_ctrl_events.407.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_erase_system_locating
+                has_country_flag = AIO_ctrl_AIT_erase_system_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.407.option_1
+
+        hidden_effect = {
+            set_variable = { which = AIO_ctrl_AIT_erase_system_num value = 1 }
+            switch = {
+                trigger = galaxy_size
+                tiny = { set_variable = { which = AIO_ctrl_AIT_erase_system_num value = 20 } }
+                small = { set_variable = { which = AIO_ctrl_AIT_erase_system_num value = 40 } }
+                large = { set_variable = { which = AIO_ctrl_AIT_erase_system_num value = 80 } }
+                huge = { set_variable = { which = AIO_ctrl_AIT_erase_system_num value = 100 } }
+            }
+            while = {
+                count = AIO_ctrl_AIT_erase_system_num
+                no_scope = {
+                    random_system = {
+                        limit = {
+                            NOR = {
+                                has_star_flag = AIO_HS_system
+                                has_star_flag = AIO_TUG_system
+
+                                has_star_flag = synth_queen_capital
+                            }
+                            any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
+                        }
+                        AIO_AIT_effects_manager = { ERASE_SYSTEM = 1 }
+                    }
+                }
+            }
+            clear_variable = AIO_ctrl_AIT_erase_system_num
+        }
+    }
+    option = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_erase_system_locating
+                has_country_flag = AIO_ctrl_AIT_erase_system_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.407.option_2
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_erase_system_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_erase_system_locating
+                has_country_flag = AIO_ctrl_AIT_erase_system_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_system_locating }
+        name = AIO_continue
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_system_finish_locate }
+        name = AIO_confirm
+
+        event_target:AIO_ctrl_AIT_erase_system_target = {
+            if = {
+                limit = {
+                    NOR = {
+                        has_star_flag = AIO_HS_system
+                        has_star_flag = AIO_TUG_system
+
+                        has_star_flag = synth_queen_capital
+                    }
+                    any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
+                }
+                AIO_AIT_effects_manager = { ERASE_SYSTEM = 1 }
+
+                hidden_effect = {
+                    clear_variable = AIO_ctrl_AIT_erase_system_planet_num
+                    clear_variable = AIO_ctrl_AIT_erase_system_colony_num
+                    clear_variable = AIO_ctrl_AIT_erase_system_mega_num
+                }
+            }
+        }
+        AIO_AIT_effects_manager = { REMOVE_AIO_LOCATOR = 1 AIT_CLASS = erase_system }
+    }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_erase_system_locating
+                has_country_flag = AIO_ctrl_AIT_erase_system_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = erase_system }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_erase_system_locating
+                    has_country_flag = AIO_ctrl_AIT_erase_system_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.401 }
+        }
+    }
+}
+
+# 抹除星团说明页面
+country_event = {
+    id = AIO_ctrl_events.408
+    title = AIO_ctrl_events.401.option_7
+
+    desc = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_erase_star_cluster_locating
+                has_country_flag = AIO_ctrl_AIT_erase_star_cluster_finish_locate
+            }
+        }
+        text = AIO_ctrl_events.408.prepare_locate.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_star_cluster_locating }
+        text = AIO_ctrl_events.408.locating.desc
+    }
+    desc = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_star_cluster_finish_locate }
+        text = AIO_ctrl_events.408.finish_locate.desc
+    }
+
+    diplomatic = yes
+    diplomatic_title = AIO_ctrl_events_title
+    picture_event_data = {
+        room = AIO_library_room
+        portrait = AIO_TAWI_PORTRAITS_1
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_erase_star_cluster_locating
+                has_country_flag = AIO_ctrl_AIT_erase_star_cluster_finish_locate
+            }
+        }
+        allow = {
+            custom_tooltip = {
+                text = AIO_ctrl_events.408.destroying_galaxy.allow
+                NOT = { has_global_flag = AIO_ctrl_AIT_erase_galaxy }
+            }
+        }
+        name = AIO_ctrl_events.408.option_1
+        hidden_effect = { set_global_flag = AIO_ctrl_AIT_erase_galaxy }
+        if = {
+            limit = { NOT = { any_situation = { is_situation_type = situation_AIO_erase_galaxy } } }
+            start_situation = { type = situation_AIO_erase_galaxy target = this }
+        }
+    }
+
+    option = {
+        trigger = {
+            NOR = {
+                has_country_flag = AIO_ctrl_AIT_erase_star_cluster_locating
+                has_country_flag = AIO_ctrl_AIT_erase_star_cluster_finish_locate
+            }
+        }
+        name = AIO_ctrl_events.408.option_2
+        custom_tooltip = AIO_unlock_locator
+        hidden_effect = {
+            set_country_flag = AIO_ctrl_AIT_erase_star_cluster_locating
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+    option = {
+        trigger = {
+            NOT = {
+                has_country_flag = AIO_ctrl_AIT_erase_star_cluster_locating
+                has_country_flag = AIO_ctrl_AIT_erase_star_cluster_finish_locate
+            }
+        }
+        name = AIO_return
+    }
+
+    option = {
+        trigger = { has_country_flag = AIO_ctrl_AIT_erase_star_cluster_locating }
+        name = AIO_continue
+    }
+
+    inline_script = { script = events/AIO_erase_star_cluster_inline_scripts }
+    option = {
+        trigger = {
+            OR = {
+                has_country_flag = AIO_ctrl_AIT_erase_star_cluster_locating
+                has_country_flag = AIO_ctrl_AIT_erase_star_cluster_finish_locate
+            }
+        }
+        name = AIO_cancel
+        AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = erase_star_cluster }
+    }
+
+    option = {
+        name = AIO_exit
+        hidden_effect = { set_timed_country_flag = { flag = AIO_ctrl_exit_menu days = 1 } }
+        default_hide_option = yes
+    }
+
+    after = {
+        if = {
+            limit = {
+                NOR = {
+                    has_country_flag = AIO_ctrl_AIT_erase_star_cluster_locating
+                    has_country_flag = AIO_ctrl_AIT_erase_star_cluster_finish_locate
+
+                    has_country_flag = AIO_ctrl_exit_menu
+                }
+            }
+            country_event = { id = AIO_ctrl_events.401 }
+        }
+    }
+}
+
+# ---------------------------------- #
+# 其他效果实现
+# ---------------------------------- #
+
+# 定位舰被摧毁
+country_event = {
+    id = AIO_ctrl_events.1001
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = { fromfromfrom = { has_fleet_flag = AIO_locator_builder } }
+
+    immediate = {
+        fromfrom = {
+            clear_global_event_target = AIO_locator_builder
+            AIO_AIT_effects_manager = { CREATE_LOCATOR_BUILDER = 1 }
+        }
+    }
+}
+
+# 定位舰被解散
+country_event = { # this - owner from - fleet
+    id = AIO_ctrl_events.1002
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = { from = { has_fleet_flag = AIO_locator_builder } }
+
+    immediate = {
+        switch = {
+            trigger = has_country_flag
+            AIO_ctrl_AIT_ASLT_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = ASLT } }
+            AIO_ctrl_AIT_uncausality_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = uncausality } }
+            AIO_ctrl_AIT_design_requirement_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = design_requirement } }
+            AIO_ctrl_AIT_superlight_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = superlight } }
+            AIO_ctrl_AIT_change_pc_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = change_pc } }
+            AIO_ctrl_AIT_enrich_system_deposits_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = enrich_system_deposits } }
+            AIO_ctrl_AIT_degenerate_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = degenerate } }
+            AIO_ctrl_AIT_enlighten_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = enlighten } }
+            AIO_ctrl_AIT_turn_back_time_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = turn_back_time } }
+            AIO_ctrl_AIT_change_government_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = change_government } }
+            AIO_ctrl_AIT_create_storm_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = create_storm } }
+
+            AIO_ctrl_AIT_strike_system_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = strike_system } }
+            AIO_ctrl_AIT_demilitarization_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = demilitarization } }
+            AIO_ctrl_AIT_destroy_planet_army_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = destroy_planet_army } }
+            AIO_ctrl_AIT_erase_country_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = erase_country } }
+            AIO_ctrl_AIT_erase_planet_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = erase_planet } }
+            AIO_ctrl_AIT_erase_system_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = erase_system } }
+            AIO_ctrl_AIT_erase_star_cluster_locating = { AIO_AIT_effects_manager = { CANCEL_AIO_LOCATOR = 1 AIT_CLASS = erase_star_cluster } }
+        }
+    }
+}
+
+# 异界行者被摧毁
+country_event = {
+    id = AIO_ctrl_events.1003
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = { fromfromfrom = { has_fleet_flag = AIO_otherworld_walker } }
+
+    immediate = {
+        from = {
+            if = {
+                limit = { any_owned_leader = { has_leader_flag = AIO_ctrl_otherworld_walker_scientist } }
+                random_owned_leader = {
+                    limit = { has_leader_flag = AIO_ctrl_otherworld_walker_scientist }
+                    kill_leader = { show_notification = no fire = yes }
+                }
+            }
+            clear_global_event_target = AIO_ctrl_otherworld_walker
+        }
+    }
+}
+
+# 异界行者被解散
+country_event = { # this - owner from - fleet
+    id = AIO_ctrl_events.1004
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = { from = { has_fleet_flag = AIO_otherworld_walker } }
+
+    immediate = {
+        if = {
+            limit = { any_owned_leader = { has_leader_flag = AIO_ctrl_otherworld_walker_scientist } }
+            random_owned_leader = {
+                limit = { has_leader_flag = AIO_ctrl_otherworld_walker_scientist }
+                kill_leader = { show_notification = no fire = yes }
+            }
+        }
+        clear_global_event_target = AIO_ctrl_otherworld_walker
+    }
+}
+
+# AIO帝国巨构拥有者改变时
+country_event = { # this - new owner, from - mega, fromfrom - old owner
+    id = AIO_ctrl_events.1005
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = {
+        fromfrom = { is_country_type = AIO_empire }
+        from = {
+            OR = {
+                is_megastructure_type = AIO_mega_01_fact
+                is_megastructure_type = AIO_mega_04
+                is_megastructure_type = AIO_mega_04_activate
+            }
+        }
+    }
+
+    immediate = { from = { set_owner = root.fromfrom } }
+}
+
+# 毁灭银河定期事件，每3个月触发一次，12次清除绝大部分星系
+situation_event = {
+    id = AIO_ctrl_events.1006
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = {
+        has_global_flag = AIO_ctrl_AIT_erase_galaxy
+        NOT = { has_situation_flag = AIO_ctrl_situation_erase_galaxy_pause }
+    }
+
+    immediate = {
+        no_scope = {
+            while = {
+                count = root.AIO_situaation_AIO_erase_galaxy_speed
+                limit = {
+                    any_system = {
+                        AIO_safe_remove_system_exclude_API = no
+
+                        NOT = {
+                            is_star_class = sc_AIO_void
+
+                            has_star_flag = AIO_HS_system
+                            has_star_flag = AIO_TUG_system
+                            has_star_flag = synth_queen_capital
+                        }
+                    }
+                }
+
+                random_system = {
+                    limit = {
+                        AIO_safe_remove_system_exclude_API = no
+
+                        NOR = {
+                            is_star_class = sc_AIO_void
+
+                            has_star_flag = AIO_HS_system
+                            has_star_flag = AIO_TUG_system
+                            has_star_flag = synth_queen_capital
+                        }
+                    }
+                    AIO_AIT_effects_manager = { ERASE_SYSTEM = 1 }
+                }
+            }
+        }
+        set_timed_situation_flag = { flag = AIO_ctrl_situation_erase_galaxy_pause months = 3 }
+    }
+}
+
+# 摧毁肃正球事件
+planet_event = {
+    id = AIO_ctrl_events.1007
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                is_planet_class = pc_ai
+                NOT = { has_planet_flag = machine_lair }
+            }
+            destroy_machine_world = yes
+        }
+    }
+}
+

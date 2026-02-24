@@ -1,0 +1,8 @@
+﻿l_simp_chinese:
+ policy_AIO_DAIT_policy: "应用无限"
+ policy_AIO_DAIT_policy_desc: "我们可以事事亲为，主动选择$AIO_AIT_events.401.title$的方向，也可以托管给复合子个体决定。"
+ AIO_DAIT_policy_default: "主动选择"
+ AIO_DAIT_policy_balance: "均衡调整"
+ AIO_DAIT_policy_produce: "$AIO_AIT_events.401.option_10$"
+ AIO_DAIT_policy_military: "$AIO_AIT_events.401.option_12$"
+ AIO_DAIT_policy_stop: "停止$AIO_AIT_events.401.title$"

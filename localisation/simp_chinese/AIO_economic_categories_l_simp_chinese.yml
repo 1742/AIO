@@ -1,0 +1,3 @@
+﻿l_simp_chinese:
+ # 递归节点经济
+ planet_AIO_recursive_node: "$job_AIO_recursive_node$"

@@ -1,0 +1,15 @@
+﻿l_simp_chinese:
+ AIO_locator_builder: "定位舰"
+ AIO_locator_builder_plural: "$AIO_locator_builder$"
+ NAME_AIO_locator_builder: "$AIO_locator_builder$"
+
+ AIO_otherworld_walker: "异界行者"
+ AIO_otherworld_walker_plural: "$AIO_otherworld_walker$"
+ NAME_AIO_otherworld_walker: "$AIO_otherworld_walker$"
+
+ AIO_Aforgomom_Wrath: "亚弗戈蒙之怒"
+ AIO_Aforgomom_Wrath_plural: "$AIO_Aforgomom_Wrath$"
+ NAME_AIO_Aforgomom_Wrath: "$AIO_Aforgomom_Wrath$"
+
+ QUASISTELLAR_GUN_ENTITY: "天陨光矛"
+ AIO_EXTRA_LARGE_AURA_AFORGOMOM_CHAIN: "亚弗戈蒙之链"

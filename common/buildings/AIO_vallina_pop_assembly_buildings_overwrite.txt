@@ -1,0 +1,261 @@
+# 原版人口建筑覆盖
+
+# ---------------------------------- #
+# 自动化建筑
+# ---------------------------------- #
+building_automation_city_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	category = pop_assembly
+	icon = building_automation_2
+
+	building_sets = {
+		government
+		urban
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = @b5_upkeep
+			mult = value:city_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_construction_templates
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = automation_city_2_tooltip
+	}
+
+    upgrades = { building_AIO_fe_automation_city }
+}
+
+building_automation_generator_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	category = pop_assembly
+	icon = building_automation_2
+
+	building_sets = {
+		generator
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			mult = value:generator_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_construction_templates
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = automation_2_tooltip
+	}
+
+    upgrades = { building_AIO_fe_automation_secondary }
+}
+
+building_automation_mining_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	category = pop_assembly
+	icon = building_automation_2
+
+	building_sets = {
+		mining
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			mult = value:mining_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_construction_templates
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = automation_2_tooltip
+	}
+
+    upgrades = { building_AIO_fe_automation_secondary }
+}
+
+building_automation_farming_2 = {
+	base_buildtime = @b2_time
+	can_build = no
+	category = pop_assembly
+	icon = building_automation_2
+
+	building_sets = {
+		farming
+	}
+
+	potential = {
+		owner = { is_wilderness_empire = no }
+	}
+
+	allow = {
+		hidden_trigger = {
+			OR = {
+				owner = { is_ai = no }
+				NAND = {
+					free_district_slots = 0
+					free_building_slots <= 1
+					free_housing <= 0
+					free_jobs <= 0
+				}
+			}
+		}
+	}
+
+	destroy_trigger = {
+		owner = {
+			is_wilderness_empire = yes
+		}
+	}
+
+	planet_modifier = {
+		district_automated_workforce = 0.5
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			mult = value:farming_districts_value
+		}
+	}
+
+	prerequisites = {
+		tech_construction_templates
+	}
+
+	show_tech_unlock_if = {
+		always = no
+	}
+
+	triggered_desc = {
+		text = automation_2_tooltip
+	}
+
+    upgrades = { building_AIO_fe_automation_secondary }
+}

@@ -1,0 +1,16 @@
+﻿l_simp_chinese:
+ district_AIO_matryoshka_brain: "套娃脑区划"
+ district_AIO_matryoshka_brain_desc: "在这片区域内构建的是一种递归结构型运算网。随着$job_AIO_recursive_node$数量的增加，系统的总体认知速率将呈指数增长。"
+ district_AIO_matryoshka_brain_plural: "$district_AIO_matryoshka_brain$"
+ district_AIO_MB_recursive_node_factor: "当前拥有§Y[AIO_num_AIO_recursive_node_per_1000]K§!个£job_AIO_recursive_node£§Y$job_AIO_recursive_node$§!提供的修正：\n - 产出：§G+[AIO_AIO_recursive_node_produce_facor]%§!\n - 维护费：§R+[AIO_AIO_recursive_node_upkeep_facor]%§!"
+ mod_district_AIO_matryoshka_brain_max_add: "£mod_planet_max_districts_add£$district_AIO_matryoshka_brain$上限"
+ # 转换区划
+ district_AIO_dm_production: "$zone_AIO_dm_production$"
+ district_AIO_dm_production_desc: "$zone_AIO_dm_production_desc$"
+ district_AIO_dm_production_plural: "$district_AIO_dm_production$"
+ district_AIO_nanites_production_metallurgists: "$zone_AIO_nanites_production_metallurgists$"
+ district_AIO_nanites_production_metallurgists_desc: "$zone_AIO_nanites_production_metallurgists_desc$"
+ district_AIO_nanites_production_metallurgists_plural: "$district_AIO_nanites_production_metallurgists$"
+ district_AIO_nanites_production_farmers: "$zone_AIO_nanites_production_farmers$"
+ district_AIO_nanites_production_farmers_desc: "$zone_AIO_nanites_production_farmers_desc$"
+ district_AIO_nanites_production_farmers_plural: "$district_AIO_nanites_production_farmers$"

@@ -1,0 +1,9 @@
+﻿l_english:
+ AIO_hyperdimensional_space_NAME: "Nameless Mist"
+ AIO_hyperdimensional_space_DESC: "The endless abyss beyond the endless dimension."
+ AIO_HYPER_DIMENSIONAL_SPACE: "$AIO_hyperdimensional_space_NAME$"
+
+ AIO_The_Ultimate_Gate: "The Ultimate Gate"
+
+ AIO_Abyss: "Abyss"
+ AIO_abyss_edge: "Abyss Edge"

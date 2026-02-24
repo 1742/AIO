@@ -1,0 +1,13 @@
+# AIO政府
+
+gov_AIO_empire = {
+	ruler_title = AIO_empire_ruler_title
+
+	use_regnal_names = yes
+
+	possible = { has_civic = civic_AIO_dream }
+
+	weight = {
+		base = @gov_authority_swap_weight
+	}
+}

@@ -1,0 +1,7 @@
+spriteTypes = {
+    spriteType = {
+		name = "GFX_ap_AIO_allinone"
+		texturefile = gfx/interface/icons/ascension_perks/ap_AIO.dds
+		alwaystransparent = yes
+	}
+}

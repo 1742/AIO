@@ -1,0 +1,65 @@
+# 巨构侧栏图标
+
+spriteTypes = {
+    # 视界引擎
+    spriteType = {
+		name = "GFX_AIO_horizon_engine_outliner_icon"
+		textureFile = gfx/interface/icons/megastructures/AIO_horizon_engine.dds
+	}
+
+    # 万门之门
+    spriteType = {
+		name = "GFX_AIO_mega_01_fact_outliner_icon"
+		textureFile = gfx/interface/icons/megastructures/AIO_mega_01.dds
+	}
+    spriteType = {
+		name = "GFX_AIO_mega_01_outliner_icon"
+		textureFile = gfx/interface/icons/megastructures/AIO_mega_01.dds
+	}
+
+    # 万门之门节点
+    spriteType = {
+		name = "GFX_AIO_mega_01_node_outliner_icon"
+		textureFile = gfx/interface/icons/megastructures/AIO_mega_01_node.dds
+	}
+
+    # 银匙之匙
+    spriteType = {
+		name = "GFX_AIO_mega_02_outliner_icon"
+		textureFile = gfx/interface/icons/megastructures/AIO_mega_02.dds
+	}
+
+	# 永恒王座
+    spriteType = {
+		name = "GFX_AIO_mega_03_outliner_icon"
+		textureFile = gfx/interface/icons/megastructures/AIO_mega_03.dds
+	}
+
+	# 犹格索托斯
+    spriteType = {
+		name = "GFX_AIO_mega_04_outliner_icon"
+		textureFile = gfx/interface/icons/megastructures/AIO_mega_04.dds
+	}
+	spriteType = {
+		name = "GFX_AIO_mega_04_activate_outliner_icon"
+		textureFile = gfx/interface/icons/megastructures/AIO_mega_04.dds
+	}
+
+	# 定位器
+	spriteType = {
+		name = "GFX_AIO_mega_country_locator_outliner_icon"
+		textureFile = gfx/interface/icons/megastructures/AIO_locator.dds
+	}
+	spriteType = {
+		name = "GFX_AIO_mega_system_locator_outliner_icon"
+		textureFile = gfx/interface/icons/megastructures/AIO_locator.dds
+	}
+	spriteType = {
+		name = "GFX_AIO_mega_planet_locator_outliner_icon"
+		textureFile = gfx/interface/icons/megastructures/AIO_locator.dds
+	}
+	spriteType = {
+		name = "GFX_AIO_mega_colony_locator_outliner_icon"
+		textureFile = gfx/interface/icons/megastructures/AIO_locator.dds
+	}
+}

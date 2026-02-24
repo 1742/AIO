@@ -1,0 +1,6 @@
+﻿l_english:
+ d_AIO_TR_stage_1: "$AIO_AIT_TR_events_chain_title$"
+ d_AIO_TR_stage_3: "Temporary Laboratory"
+ d_AIO_TR_monument: "The Monument of $d_AIO_TR_stage_1$"
+
+ d_AIO_GS_deposit: "$AIO_AIT_GS_events_chain_title$"

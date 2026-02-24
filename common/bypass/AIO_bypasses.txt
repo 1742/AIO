@@ -1,0 +1,86 @@
+# AIO bypass星门类型
+
+bypass_AIO_ultimate_gate = {
+	name = AIO_mega_01
+    # 自动寻路是否会使用
+	is_pathfind = yes
+    # 此类型是否需要操作或是否可以自动使用，emmm实际功能尚不清楚
+	uses_action = no
+    # 此bypass类型是否需要探索后才使用
+	requires_exploration = no
+    # 国家/地区是否记得见过该类型的特定实例，或者他们是否只记得一般地看到过该类型
+	remember_instances = no
+    # 是否总是激活的
+	always_active = yes
+    # 准备时间
+	windup_time = 0
+    # 结束时间
+	winddown_time = 0
+    # 0 means instant
+	ftl_multiplier = 0
+    # 图标序号
+	icon_frame = 30
+    # 在星图中的提示
+	galactic_map_tooltip_header = AIO_mega_01
+	galactic_map_tooltip_desc = AIO_mega_01_DESC
+    # 连接类型，可填
+    # any_other - 任意相同类型的实例，如星门
+    # one_to_one - 一对一，如虫洞
+    # scripted_connection - 脚本判断，如L星门
+    # hyper_relay - 如超空间中继
+    # to_any_system - 任意星系，如量子弹弓
+	connection_type = any_other
+    # 等待播放跳转动画的天数
+	animation_time = 1
+    # 特效
+	ftl_ship_effect = "gateway_ftl_ship_effect_entity"
+	ftl_bypass_effect = "gateway_ftl_bypass_effect_entity"
+    # 前置科技
+	# prerequisites = {  }
+    # 使用条件
+	country_can_use = {
+        # this - 意图使用的国家
+        # from - 星系的拥有者（可能不存在）
+		custom_tooltip = {
+			fail_text = THE_Ultimate_Gate_COUNTRY_CANNOT_USE
+			OR = {
+				has_country_flag = AIO_built_AIO_mega_01
+				has_country_flag = AIO_built_AIO_mega_02
+				has_country_flag = AIO_built_AIO_mega_03
+				has_country_flag = AIO_built_AIO_mega_04
+
+				is_country_type = AIO_empire
+				is_country_type = AIO_Aforgomom
+			}
+		}
+	}
+	# 连接规则
+	# scripted_connection = {
+	# 	# nexus - 可以通往所有相同类型的node
+	# 	# node - 可以能通往所有相同类型的nexus
+	# 	# 不管怎样若可通则是双向的
+	#
+	# 	# 满足node条件下的星系中的bypass作为node, 只能通往nexus
+	# 	node = {
+	# 		NOR = {
+	# 			is_same_value = event_target:AIO_HS_system
+	# 			is_same_value = event_target:AIO_TDTE_system
+	# 		}
+	# 	}
+	# 	# 满足nexus条件下的星系作为nexus, 可到达所有其他相同类型的node
+	# 	nexus = {
+	# 		OR = {
+	# 			is_same_value = event_target:AIO_HS_system
+	# 			is_same_value = event_target:AIO_TDTE_system
+	# 		}
+	# 	}
+	# }
+
+    respect_closed_borders = yes
+	block_access_if_hostile = yes
+    can_bypass_be_locked = no
+	extends_sensors = no
+}
+
+
+
