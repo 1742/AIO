@@ -1,0 +1,259 @@
+#region reality editor 页码
+
+@AIO_DAIT_material_tab_name = "material"
+@AIO_DAIT_material_tab_index = 1
+@AIO_DAIT_energy_tab_name = "energy"
+@AIO_DAIT_energy_tab_index = 2
+@AIO_DAIT_metric_tab_name = "metric"
+@AIO_DAIT_metric_tab_index = 3
+
+#endregion
+
+
+#region 各 buff 参数
+@AIO_DAIT_buff_c_value_1 = 10000
+@AIO_DAIT_buff_c_value_3 = 30000
+@AIO_DAIT_buff_c_value_9 = 90000
+
+#region material
+
+#region 原子晶格效率
+
+# 岗位产出资源
+@AIO_DAIT_material_option_1_effect_1_cap = 10
+@AIO_DAIT_material_option_1_effect_1_c_value_level = 9
+
+#endregion
+
+
+#region 重子装配阈值
+
+# 建筑花费、舰船花费
+@AIO_DAIT_material_option_2_effect_1_cap = -0.9
+@AIO_DAIT_material_option_2_effect_1_c_value_level = 3
+# 巨型结构花费
+@AIO_DAIT_material_option_2_effect_2_cap = -0.9
+@AIO_DAIT_material_option_2_effect_2_c_value_level = 3
+
+#endregion
+
+
+#region 生物/机械自举
+
+# 人口增长速度、机械组装速度
+@AIO_DAIT_material_option_3_effect_1_cap = 1
+@AIO_DAIT_material_option_3_effect_1_c_value_level = 1
+
+#endregion
+
+
+#region 结构抗熵极限
+
+# 建筑维护费、区划维护费
+@AIO_DAIT_material_option_4_effect_1_cap = -0.9
+@AIO_DAIT_material_option_4_effect_1_c_value_level = 3
+
+#endregion
+
+
+#region 泡利不相容屏蔽
+
+# 最大区划数
+@AIO_DAIT_material_option_5_effect_1_cap = 10
+@AIO_DAIT_material_option_5_effect_1_c_value_level = 3
+
+# 人口住房使用
+@AIO_DAIT_material_option_5_effect_2_cap = -0.9
+@AIO_DAIT_material_option_5_effect_2_c_value_level = 3
+
+#endregion
+
+
+#region 物质守恒破缺
+
+# 每摧毁一艘敌军舰船：舰队中的随机舰船：装甲值恢复
+@AIO_DAIT_material_option_6_effect_1_cap = 10000
+@AIO_DAIT_material_option_6_effect_1_c_value_level = 3
+
+#endregion
+
+
+#region 行星相态重写
+
+# 物种宜居性下限
+@AIO_DAIT_material_option_7_effect_1_cap = 0.7
+@AIO_DAIT_material_option_7_effect_1_c_value_level = 1
+
+# 环境改造速度
+@AIO_DAIT_material_option_7_effect_2_cap = 10
+@AIO_DAIT_material_option_7_effect_2_c_value_level = 3
+
+#endregion
+
+#endregion
+
+
+#region energy and interactions
+
+#region 真空零点能级
+
+# 岗位产出的能量币
+@AIO_DAIT_energy_option_1_effect_1_cap = 10
+@AIO_DAIT_energy_option_1_effect_1_c_value_level = 3
+
+# 护盾承受值
+@AIO_DAIT_energy_option_1_effect_2_cap = 10
+@AIO_DAIT_energy_option_1_effect_2_c_value_level = 3
+
+#endregion
+
+
+#region 麦克斯韦妖协议
+
+# 岗位能量币维护费、舰船 能量币维护费
+@AIO_DAIT_energy_option_2_effect_1_cap = -0.9
+@AIO_DAIT_energy_option_2_effect_1_c_value_level = 3
+
+#endregion
+
+
+#region 强相互作用耦合
+
+# 船体值
+@AIO_DAIT_energy_option_3_effect_1_cap = 10
+@AIO_DAIT_energy_option_3_effect_1_c_value_level = 9
+
+# 装甲值
+@AIO_DAIT_energy_option_3_effect_2_cap = 10
+@AIO_DAIT_energy_option_3_effect_2_c_value_level = 3
+
+#endregion
+
+
+#region 精细结构常数
+
+# 舰船武器伤害
+@AIO_DAIT_energy_option_4_effect_1_cap = 10
+@AIO_DAIT_energy_option_4_effect_1_c_value_level = 9
+
+#endregion
+
+
+#region 作用量极小化
+
+# 行星基础设施建造速度
+@AIO_DAIT_energy_option_5_effect_1_cap = 10
+@AIO_DAIT_energy_option_5_effect_1_c_value_level = 3
+
+# 巨型结构建造速度
+@AIO_DAIT_energy_option_5_effect_2_cap = 10
+@AIO_DAIT_energy_option_5_effect_2_c_value_level = 1
+
+# 舰船建造速度
+@AIO_DAIT_energy_option_5_effect_3_cap = 10
+@AIO_DAIT_energy_option_5_effect_3_c_value_level = 9
+
+# 恒星基地建筑建造速度、恒星基地升级速度
+@AIO_DAIT_energy_option_5_effect_4_cap = 10
+@AIO_DAIT_energy_option_5_effect_4_c_value_level = 3
+
+#endregion
+
+
+#region 能量耗散逆转
+
+# 每摧毁一艘敌军舰船：舰队中的随机舰船：护盾值恢复
+@AIO_DAIT_energy_option_6_effect_1_cap = 10000
+@AIO_DAIT_energy_option_6_effect_1_c_value_level = 3
+
+#endregion
+
+#endregion
+
+
+#region time-space metric
+
+#region 拓扑流形刚度
+
+# 帝国规模
+@AIO_DAIT_metric_option_1_effect_1_cap = -0.9
+@AIO_DAIT_metric_option_1_effect_1_c_value_level = 9
+
+#endregion
+
+
+#region 闵可夫斯基度规
+
+# 亚光速航速
+@AIO_DAIT_metric_option_2_effect_1_cap = 1
+@AIO_DAIT_metric_option_2_effect_1_c_value_level = 3
+
+# 超空间跳跃充能时间、超空间跳跃冷却
+@AIO_DAIT_metric_option_2_effect_2_cap = -0.9
+@AIO_DAIT_metric_option_2_effect_2_c_value_level = 3
+
+#endregion
+
+
+#region 光锥闭合曲线
+
+# 闪避概率、每日船体再生
+@AIO_DAIT_metric_option_3_effect_1_cap = 10
+@AIO_DAIT_metric_option_3_effect_1_c_value_level = 9
+
+# 每日装甲再生、每日护盾再生
+@AIO_DAIT_metric_option_3_effect_2_cap = 10
+@AIO_DAIT_metric_option_3_effect_2_c_value_level = 3
+
+#endregion
+
+
+#region 非定域性关联
+
+# 探测范围
+@AIO_DAIT_metric_option_4_effect_1_cap = 3
+@AIO_DAIT_metric_option_4_effect_1_c_value_level = 1
+
+# 追踪
+@AIO_DAIT_metric_option_4_effect_2_cap = 10
+@AIO_DAIT_metric_option_4_effect_2_c_value_level = 9
+
+#endregion
+
+
+#region 事件视界投影
+
+# 舰船武器射程
+@AIO_DAIT_metric_option_5_effect_1_cap = 0.6
+@AIO_DAIT_metric_option_5_effect_1_c_value_level = 9
+
+# 命中
+@AIO_DAIT_metric_option_5_effect_2_cap = 1
+@AIO_DAIT_metric_option_5_effect_2_c_value_level = 9
+
+# 量子弹弓准确度
+@AIO_DAIT_metric_option_5_effect_3_cap = 2.5
+@AIO_DAIT_metric_option_5_effect_3_c_value_level = 3
+
+# 跃迁引擎范围
+@AIO_DAIT_metric_option_5_effect_4_cap = 5
+@AIO_DAIT_metric_option_5_effect_4_c_value_level = 3
+
+#endregion
+
+
+#region 因果律攻防
+
+# 装甲穿透、护盾穿透
+@AIO_DAIT_metric_option_6_effect_1_cap = 1
+@AIO_DAIT_metric_option_6_effect_1_c_value_level = 9
+
+# 伤害减免
+@AIO_DAIT_metric_option_6_effect_2_cap = -0.9
+@AIO_DAIT_metric_option_6_effect_2_c_value_level = 9
+
+#endregion
+
+#endregion
+
+#endregion

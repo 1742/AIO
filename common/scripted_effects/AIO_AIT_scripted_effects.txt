@@ -1,0 +1,1560 @@
+# 随机应用无限效果
+AIO_RAIT_effects_manager = {
+    optimize_memory
+
+    # AIO应用无限课题
+    # 随机器
+    [[RANDOM_EVENTS]
+        random_list = {
+            1 = { # 陷入黑暗
+                modifier = {
+                    factor = 0
+                    has_global_flag = AIO_RAIT_existed_blackout
+                }
+                country_event = { id = AIO_AIT_events.3010 }
+            }
+            1 = { # 常数取整
+                modifier = {
+                    factor = 0
+                    has_global_flag = AIO_RAIT_existed_constant_round
+                }
+                country_event = { id = AIO_AIT_events.3020 }
+            }
+            1 = { # 超光
+                modifier = {
+                    factor = 0
+                    OR = {
+                        has_global_flag = AIO_RAIT_existed_superlight
+                        has_global_flag = AIO_RE_existed_superlight
+                    }
+                }
+                country_event = { id = AIO_AIT_events.3030 }
+            }
+            1 = { # 合金延展性良性
+                modifier = {
+                    factor = 0
+                    has_global_flag = AIO_RAIT_existed_alloy_ductility
+                }
+                country_event = { id = AIO_AIT_events.3040 }
+            }
+            1 = { # 合金延展性劣性
+                modifier = {
+                    factor = 0
+                    has_global_flag = AIO_RAIT_existed_alloy_ductility
+                }
+                country_event = { id = AIO_AIT_events.3050 }
+            }
+            1 = { # 调节营养良性
+                modifier = {
+                    factor = 0
+                    has_global_flag = AIO_RAIT_existed_altered_nutrition
+                }
+                country_event = { id = AIO_AIT_events.3060 }
+            }
+            1 = { # 调节营养劣性
+                modifier = {
+                    factor = 0
+                    has_global_flag = AIO_RAIT_existed_altered_nutrition
+                }
+                country_event = { id = AIO_AIT_events.3070 }
+            }
+            1 = { # 质量偏移
+                modifier = {
+                    factor = 0
+                    has_global_flag = AIO_RAIT_existed_mass_shift
+                }
+                country_event = { id = AIO_AIT_events.3080 }
+            }
+            1 = { # 虚境撕裂
+                modifier = {
+                    factor = 0
+                    has_global_flag = AIO_RAIT_existed_shroud_tear
+                }
+                country_event = { id = AIO_AIT_events.3090 }
+            }
+            1 = { # 时间之墟
+                modifier = {
+                    factor = 0
+                    has_global_flag = AIO_RAIT_existed_time_ruin
+                }
+                country_event = { id = AIO_AIT_events.3100 }
+            }
+            1 = { # 重力膨胀
+                modifier = {
+                    factor = 0
+                    has_global_flag = AIO_RAIT_existed_gravity_swell
+                }
+                country_event = { id = AIO_AIT_events.3110 }
+            }
+        }
+    ]
+    # 清除随机应用无限标志
+    [[CLEAR_RANDOM_AIT_FLAG]
+        # 全局标志
+        if = {
+            limit = { has_global_flag = AIO_RAIT_existed_blackout }
+            remove_global_flag = AIO_RAIT_existed_blackout
+        }
+        if = {
+            limit = { has_global_flag = AIO_RAIT_existed_constant_round }
+            remove_global_flag = AIO_RAIT_existed_constant_round
+        }
+        if = {
+            limit = { has_global_flag = AIO_RAIT_existed_superlight }
+            remove_global_flag = AIO_RAIT_existed_superlight
+        }
+        if = {
+            limit = { has_global_flag = AIO_RAIT_existed_alloy_ductility }
+            remove_global_flag = AIO_RAIT_existed_alloy_ductility
+        }
+        if = {
+            limit = { has_global_flag = AIO_RAIT_existed_altered_nutrition }
+            remove_global_flag = AIO_RAIT_existed_altered_nutrition
+        }
+        if = {
+            limit = { has_global_flag = AIO_RAIT_existed_mass_shift }
+            remove_global_flag = AIO_RAIT_existed_mass_shift
+        }
+        if = {
+            limit = { has_global_flag = AIO_RAIT_existed_shroud_tear }
+            remove_global_flag = AIO_RAIT_existed_shroud_tear
+        }
+        if = {
+            limit = { has_global_flag = AIO_RAIT_existed_time_ruin }
+            remove_global_flag = AIO_RAIT_existed_time_ruin
+        }
+        if = {
+            limit = { has_global_flag = AIO_RAIT_existed_gravity_swell }
+            remove_global_flag = AIO_RAIT_existed_gravity_swell
+        }
+
+        # maker标志
+        if = {
+            limit = { has_country_flag = AIO_RAIT_blackout_maker }
+            remove_country_flag = AIO_RAIT_blackout_maker
+        }
+        if = {
+            limit = { has_country_flag = AIO_RAIT_constant_round_maker }
+            remove_country_flag = AIO_RAIT_constant_round_maker
+        }
+        if = {
+            limit = { has_country_flag = AIO_RAIT_superlight_maker }
+            remove_country_flag = AIO_RAIT_superlight_maker
+        }
+        if = {
+            limit = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
+            remove_country_flag = AIO_RAIT_alloy_ductility_maker
+        }
+        if = {
+            limit = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
+            remove_country_flag = AIO_RAIT_altered_nutrition_maker
+        }
+        if = {
+            limit = { has_country_flag = AIO_RAIT_mass_shift_maker }
+            remove_country_flag = AIO_RAIT_mass_shift_maker
+        }
+        if = {
+            limit = { has_country_flag = AIO_RAIT_shroud_tear_maker }
+            remove_country_flag = AIO_RAIT_shroud_tear_maker
+        }
+        if = {
+            limit = { has_country_flag = AIO_RAIT_time_ruin_maker }
+            remove_country_flag = AIO_RAIT_time_ruin_maker
+        }
+        if = {
+            limit = { has_country_flag = AIO_RAIT_gravity_swell_maker }
+            remove_country_flag = AIO_RAIT_gravity_swell_maker
+        }
+
+        if = {
+            limit = { has_country_flag = AIO_RAIT_all_random }
+            remove_country_flag = AIO_RAIT_all_random
+        }
+    ]
+    # maker提示
+    [[MAKER_CUSTOM_TOOLTIPS]
+        custom_tooltip = add_crisis_currency_tt
+        hidden_effect = { complete_crisis_objective = crisobj_AIO_research_thesis }
+        if = {
+            limit = {
+                any_country = {
+                    is_country_type = default
+                    has_communications = root
+                }
+            }
+            custom_tooltip = cosmogenesis_negative_opinion_tt
+        }
+    ]
+
+    # 陷入黑暗
+    [[BLACKOUT]
+        if = {
+            limit = { has_first_contact_dlc = yes }
+            add_modifier = { modifier = cosmogenesis_blackout_first_contact years = 3 }
+        }
+        else = { add_modifier = { modifier = cosmogenesis_blackout years = 3 } }
+        if = {
+            limit = {
+                NOT = { is_same_value = from }
+                has_communications = from
+            }
+            add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROM }
+        }
+    ]
+    # 常数取整
+    [[CONSTANT_ROUND]
+        add_modifier = {
+            modifier = cosmogenesis_constant
+            years = 3
+        }
+        if = {
+            limit = {
+                NOT = { is_same_value = from }
+                has_communications = FROM
+            }
+            add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROM }
+        }
+    ]
+    # 超光
+    [[SUPERLIGHT_STAGE_1]
+        add_modifier = { modifier = cosmogenesis_superlight years = 3 }
+        if = {
+            limit = {
+                NOT = { is_same_value = from }
+                has_communications = FROM
+            }
+            add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROM }
+        }
+    ]
+    [[SUPERLIGHT_STAGE_2]
+        every_owned_planet = {
+            add_modifier = { modifier = cosmogenesis_superlight_planet_1 days = 360 }
+            add_planet_devastation = 20
+        }
+        if = {
+            limit = {
+                NOT = { root = { is_same_value = FROMFROM } }
+                has_communications = FROMFROM
+            }
+            add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROMFROM }
+        }
+        else_if = {
+            limit = { is_same_value = FROMFROM }
+            custom_tooltip = cosmogenesis_negative_opinion_tt
+        }
+    ]
+    [[SUPERLIGHT_STAGE_3]
+        every_owned_planet = {
+            add_modifier = { modifier = cosmogenesis_superlight_planet_2 days = 330 }
+            add_planet_devastation = 50
+        }
+        random_owned_planet = {
+            limit = { is_dry = yes }
+            weights = {
+                base = 1
+                modifier = {
+                    factor = 0.1
+                    is_capital = yes
+                }
+            }
+            change_pc = pc_barren
+            hidden_effect = {
+                destroy_colony = yes
+                add_modifier = { modifier = terraforming_candidate days = -1 }
+            }
+        }
+        random_owned_planet = {
+            limit = {
+                is_dry = no
+                is_artificial = no
+                NOR = {
+                    is_planet_class = pc_machine
+                    is_planet_class = pc_hive
+                    is_planet_class = pc_nanotech
+                }
+            }
+            change_pc = pc_desert
+        }
+        if = {
+            limit = {
+                NOT = { root = { is_same_value = FROMFROMFROM } }
+                has_communications = FROMFROMFROM
+            }
+            add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROMFROMFROM }
+        }
+        else_if = {
+            limit = { is_same_value = FROMFROMFROM }
+            custom_tooltip = cosmogenesis_negative_opinion_tt
+        }
+    ]
+    [[SUPERLIGHT_STAGE_4]
+        every_owned_planet = {
+            add_modifier = { modifier = cosmogenesis_superlight_planet_1 days = 250 }
+            add_planet_devastation = 20
+        }
+        if = {
+            limit = {
+                NOT = { root = { is_same_value = FROMFROMFROMFROM } }
+                has_communications = FROMFROMFROMFROM
+            }
+            add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROMFROMFROMFROM }
+        }
+        else_if = {
+            limit = { is_same_value = FROMFROMFROMFROM }
+            custom_tooltip = cosmogenesis_negative_opinion_tt
+        }
+    ]
+    # 合金延展性良性
+    [[ALLOY_DUCTILITY_GOOD]
+        add_modifier = { modifier = cosmogenesis_alloy_ductility years = 3 }
+        if = {
+            limit = {
+                NOT = { is_same_value = from }
+                has_communications = FROM
+            }
+            add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROM }
+        }
+    ]
+    # 合金延展性劣性
+    [[ALLOY_DUCTILITY_BAD]
+        add_modifier = { modifier = cosmogenesis_alloy_ductility_bad years = 3 }
+        if = {
+            limit = {
+                NOT = { is_same_value = from }
+                has_communications = FROM
+            }
+            add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROM }
+        }
+    ]
+    # 营养调制良性
+    [[ALTERED_NUTRITION_GOOD]
+        if = {
+            limit = { country_uses_food = yes }
+            add_modifier = { modifier = cosmogenesis_altered_nutrition years = 3 }
+        }
+        if = {
+            limit = {
+                NOT = { is_same_value = from }
+                has_communications = FROM
+            }
+            add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROM }
+        }
+    ]
+    # 营养调制劣性
+    [[ALTERED_NUTRITION_BAD]
+        if = {
+            limit = { country_uses_food = yes }
+            add_modifier = { modifier = cosmogenesis_altered_nutrition_bad years = 3 }
+        }
+        if = {
+            limit = {
+                NOT = { is_same_value = from }
+                has_communications = FROM
+            }
+            add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROM }
+        }
+    ]
+    # 质量偏移
+    [[MASS_SHIFT]
+        every_owned_planet = {
+            limit = {
+                has_modifier = low_gravity
+                is_artificial = no
+            }
+            random_list = {
+                90 = {  }
+                10 = {
+                    modifier = {
+                        factor = 0.5
+                        planet_size > 16
+                    }
+                    modifier = {
+                        factor = 0.25
+                        planet_size > 19
+                    }
+                    modifier = {
+                        factor = 1.5
+                        planet_size < 12
+                    }
+                    modifier = {
+                        factor = 2
+                        planet_size < 8
+                    }
+                    add_modifier = { modifier = leaking_atmosphere days = -1 }
+                    enable_special_project = { name = COSMOGENESIS_LEAKING_ATMOSPHERE }
+                    set_timed_planet_flag = { flag = mass_shift_affected days = 5 }
+                }
+            }
+        }
+        every_owned_planet = {
+            limit = {
+                NOR = {
+                    has_modifier = high_gravity
+                    has_modifier = low_gravity
+                }
+                is_artificial = no
+            }
+            random_list = {
+                90 = {  }
+                10 = {
+                    modifier = {
+                        factor = 0.5
+                        planet_size > 19
+                    }
+                    modifier = {
+                        factor = 0.5
+                        planet_size > 22
+                    }
+                    modifier = {
+                        factor = 2
+                        planet_size < 16
+                    }
+                    modifier = {
+                        factor = 2
+                        planet_size < 12
+                    }
+                    add_modifier = { modifier = low_gravity days = -1 }
+                    set_timed_planet_flag = { flag = mass_shift_affected days = 5 }
+                }
+            }
+        }
+        every_owned_planet = {
+            limit = {
+                has_modifier = high_gravity
+                is_artificial = no
+            }
+            random_list = {
+                40 = {  }
+                60 = {
+                    remove_modifier = high_gravity
+                    set_timed_planet_flag = { flag = mass_shift_affected days = 5 }
+                }
+            }
+        }
+    ]
+    [[MASS_SHIFT_OPTION_SCRIPT]
+        if = {
+            limit = { any_owned_planet = { has_planet_flag = mass_shift_affected } }
+            custom_tooltip = mass_shift_tooltip
+            owned_planet_list_tooltip = { limit = { has_planet_flag = mass_shift_affected } }
+        }
+        if = {
+            limit = {
+                NOT = { is_same_value = from }
+                has_communications = FROM
+            }
+            add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROM }
+        }
+    ]
+    # 虚境撕裂
+    [[SHROUD_TEAR]
+        no_scope = {
+            while = {
+                count = 30
+                random_system = {
+                    limit = { NOT = { any_fleet_in_system = { has_fleet_flag = AIO_crisis_shroud_entity } } }
+                    create_country = {
+                        name = "NAME_Creatures_of_the_Shroud"
+                        type = shroud_spirits
+                        flag = {
+                            icon = {
+                                category = "special"
+                                file = "the_shroud.dds"
+                            }
+                            background= {
+                                category = "backgrounds"
+                                file = "00_solid.dds"
+                            }
+                            colors = {
+                                "dark_purple"
+                                "black"
+                                "null"
+                                "null"
+                            }
+                        }
+                    }
+                    last_created_country = {
+                        save_event_target_as = AIO_shroud_country
+                        add_modifier = { modifier = supercharged_shroud_country years = 3 }
+                    }
+                    create_fleet = {
+                        name = "NAME_Psionic_Entity"
+                        settings = {
+                            spawn_debris = no
+                            is_boss = yes
+                        }
+                        effect = {
+                            set_owner = event_target:AIO_shroud_country
+                            set_fleet_flag = AIO_crisis_shroud_entity
+                            create_ship = {
+                                name = "NAME_Psionic_Entity"
+                                design = "NAME_Corrupted_Avatar"
+                            }
+                            set_location = {
+                                target = prev.star
+                                distance = 100
+                                angle = random
+                            }
+                            set_fleet_stance = aggressive
+                            set_aggro_range_measure_from = return_point
+                            set_aggro_range = 2000
+                        }
+                    }
+                }
+                every_playable_country = { establish_communications_no_message = event_target:AIO_shroud_country }
+            }
+        }
+    ]
+    [[SHROUD_TEAR_OPTION_SCRIPT]
+        add_modifier = { modifier = cosmogenesis_shroud_tear years = 7 }
+        if = {
+            limit = {
+                NOT = { is_same_value = from }
+                has_communications = FROM
+            }
+            add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROM }
+        }
+    ]
+    # 时间之墟
+    [[TIME_RUIN_STAGE_1]
+        if = {
+            limit = {
+                has_planet_flag = AIO_AIT_time_ruin_planet
+                NOT = { has_modifier = AIO_RAIT_TR_stage_1_modifier }
+            }
+            add_modifier = { modifier = AIO_RAIT_TR_stage_1_modifier days = -1 }
+            add_deposit = d_AIO_TR_stage_1
+        }
+        owner = {
+            if = {
+                limit = {
+                    NOT = { is_same_value = from }
+                    has_communications = FROM
+                }
+                add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = FROM }
+            }
+        }
+    ]
+    [[TIME_RUIN_STAGE_2_OPT1]
+        remove_modifier = AIO_RAIT_TR_stage_1_modifier
+        add_modifier = { modifier = AIO_RAIT_TR_stage_2_opt_1_modifier days = -1 }
+        add_resource = { energy = -2000 }
+        owner = {
+            add_monthly_resource_mult = {
+                resource = unity
+                value = @tier3unityreward
+                min = @tier3unitymin
+                max = @tier3unitymax
+            }
+        }
+    ]
+    [[TIME_RUIN_STAGE_2_OPT2]
+        remove_modifier = AIO_RAIT_TR_stage_1_modifier
+        add_modifier = { modifier = AIO_RAIT_TR_stage_2_opt_2_modifier days = -1 }
+    ]
+    [[TIME_RUIN_STAGE_3_OPT1]
+        if = {
+            limit = { has_modifier = AIO_RAIT_TR_stage_2_opt_1_modifier }
+            remove_modifier = AIO_RAIT_TR_stage_2_opt_1_modifier
+            add_modifier = { modifier = AIO_RAIT_TR_stage_3_liquidation_modifier days = -1 }
+        }
+        else_if = {
+            limit = { has_modifier = AIO_RAIT_TR_stage_2_opt_2_modifier }
+            remove_modifier = AIO_RAIT_TR_stage_2_opt_2_modifier
+            add_modifier = { modifier = AIO_RAIT_TR_stage_3_unliquidation_modifier days = -1 }
+        }
+        add_deposit = d_AIO_TR_stage_3
+        if = {
+            limit = { is_ai = no }
+            hidden_effect = { planet_event = { id = AIO_AIT_events.31014 days = 360 random = 90 } }
+        }
+        else = { hidden_effect = { planet_event = { id = AIO_AIT_events.31024 days = 360 random = 90 } }  }
+    ]
+    # 重力膨胀
+    [[GRAVITY_SWELL_STAGE_2]
+        add_deposit = d_AIO_GS_deposit
+    ]
+}
+
+# 初始化/重置 DAIT buff 数值
+AIO_DAIT_init_values = {
+    optimize_memory
+
+    set_variable = { which = AIO_DAIT_material_option_1_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_2_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_3_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_4_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_5_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_6_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_7_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_1_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_2_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_3_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_4_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_5_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_6_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_1_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_2_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_3_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_4_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_5_alloc_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_6_alloc_value value = 0 }
+
+    set_variable = { which = AIO_DAIT_material_option_1_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_2_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_2_effect_2_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_3_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_4_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_5_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_5_effect_2_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_6_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_7_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_material_option_7_effect_2_value value = 0 }
+
+    set_variable = { which = AIO_DAIT_energy_option_1_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_1_effect_2_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_2_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_3_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_3_effect_2_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_4_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_5_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_5_effect_2_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_5_effect_3_value value = 0 }
+    set_variable = { which = AIO_DAIT_energy_option_6_effect_1_value value = 0 }
+
+    set_variable = { which = AIO_DAIT_metric_option_1_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_2_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_2_effect_2_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_3_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_3_effect_2_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_4_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_4_effect_2_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_5_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_5_effect_2_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_5_effect_3_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_5_effect_4_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_6_effect_1_value value = 0 }
+    set_variable = { which = AIO_DAIT_metric_option_6_effect_2_value value = 0 }
+}
+
+# 计算 DAIT 数值
+AIO_DAIT_base_calculate_buff_values = {
+    optimize_memory
+
+    set_variable = { which = AIO_DAIT_temp_alloc_value value = $ALLOC_VAR$ }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_temp_alloc_value value != 0 } }
+        multiply_variable = { which = AIO_DAIT_temp_alloc_value value = 0.01 }
+        export_resource_income_to_variable = { resource = AIO_advanced_logic variable = AIO_DAIT_temp_calc_input }
+        if = {
+            limit = { check_variable = { which = AIO_DAIT_temp_calc_input value < 0 } }
+            set_variable = { which = AIO_DAIT_temp_calc_input value = 0 }
+        }
+        multiply_variable = { which = AIO_DAIT_temp_calc_input value = AIO_DAIT_temp_alloc_value }
+    }
+    else = {
+        set_variable = { which = AIO_DAIT_temp_calc_input value = 0 }
+    }
+
+    # 护甲公式
+    # 计算分母
+    set_variable = { which = AIO_DAIT_temp_calc_denom value = AIO_DAIT_temp_calc_input }
+    [[C_LEVEL]
+        set_variable = { which = AIO_DAIT_temp_calc_c_level value = $C_LEVEL$ }
+        if = {
+            limit = { check_variable = { which = AIO_DAIT_temp_calc_c_level value = 1 } }
+            change_variable = { which = AIO_DAIT_temp_calc_denom value = @AIO_DAIT_buff_c_value_1 }
+        }
+        else_if = {
+            limit = { check_variable = { which = AIO_DAIT_temp_calc_c_level value = 3 } }
+            change_variable = { which = AIO_DAIT_temp_calc_denom value = @AIO_DAIT_buff_c_value_3 }
+        }
+        else_if = {
+            limit = { check_variable = { which = AIO_DAIT_temp_calc_c_level value = 9 } }
+            change_variable = { which = AIO_DAIT_temp_calc_denom value = @AIO_DAIT_buff_c_value_9 }
+        }
+        clear_variable = AIO_DAIT_temp_calc_c_level
+    ]
+
+    # 除以分母，防止除0
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_temp_calc_denom value != 0 } }
+        set_variable = { which = AIO_DAIT_temp_calc_result value = AIO_DAIT_temp_calc_input }
+        divide_variable = { which = AIO_DAIT_temp_calc_result value = AIO_DAIT_temp_calc_denom }
+    }
+    else = {
+        set_variable = { which = AIO_DAIT_temp_calc_result value = 0 }
+    }
+
+    # 乘以 Capacity
+    multiply_variable = { which = AIO_DAIT_temp_calc_result value = $CAPACITY$ }
+
+    # 是否转换成百分比
+    [[PERCENTAGE] multiply_variable = { which = AIO_DAIT_temp_calc_result value = 100 } ]
+
+    # 输出结果
+    set_variable = { which = $OUTPUT_VAR$ value = AIO_DAIT_temp_calc_result }
+
+    # 清除临时变量
+    clear_variable = AIO_DAIT_temp_alloc_value
+    clear_variable = AIO_DAIT_temp_calc_input
+    clear_variable = AIO_DAIT_temp_calc_denom
+    clear_variable = AIO_DAIT_temp_calc_result
+}
+
+# 计算各选项的效果数值
+AIO_DAIT_option_calculate_buff_values = {
+    [[material_option_1]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_material_option_1_alloc_value
+            C_LEVEL = @AIO_DAIT_material_option_1_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_material_option_1_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_material_option_1_effect_1_value
+        }
+    ]
+    [[material_option_2]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_material_option_2_alloc_value
+            C_LEVEL = @AIO_DAIT_material_option_2_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_material_option_2_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_material_option_2_effect_1_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_material_option_2_alloc_value
+            C_LEVEL = @AIO_DAIT_material_option_2_effect_2_c_value_level
+            CAPACITY = @AIO_DAIT_material_option_2_effect_2_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_material_option_2_effect_2_value
+        }
+    ]
+    [[material_option_3]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_material_option_3_alloc_value
+            C_LEVEL = @AIO_DAIT_material_option_3_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_material_option_3_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_material_option_3_effect_1_value
+        }
+    ]
+    [[material_option_4]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_material_option_4_alloc_value
+            C_LEVEL = @AIO_DAIT_material_option_4_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_material_option_4_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_material_option_4_effect_1_value
+        }
+    ]
+    [[material_option_5]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_material_option_5_alloc_value
+            C_LEVEL = @AIO_DAIT_material_option_5_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_material_option_5_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_material_option_5_effect_1_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_material_option_5_alloc_value
+            C_LEVEL = @AIO_DAIT_material_option_5_effect_2_c_value_level
+            CAPACITY = @AIO_DAIT_material_option_5_effect_2_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_material_option_5_effect_2_value
+        }
+    ]
+    [[material_option_6]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_material_option_6_alloc_value
+            C_LEVEL = @AIO_DAIT_material_option_6_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_material_option_6_effect_1_cap
+            OUTPUT_VAR = AIO_DAIT_material_option_6_effect_1_value
+        }
+    ]
+    [[material_option_7]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_material_option_7_alloc_value
+            C_LEVEL = @AIO_DAIT_material_option_7_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_material_option_7_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_material_option_7_effect_1_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_material_option_7_alloc_value
+            C_LEVEL = @AIO_DAIT_material_option_7_effect_2_c_value_level
+            CAPACITY = @AIO_DAIT_material_option_7_effect_2_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_material_option_7_effect_2_value
+        }
+    ]
+
+    [[energy_option_1]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_energy_option_1_alloc_value
+            C_LEVEL = @AIO_DAIT_energy_option_1_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_energy_option_1_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_energy_option_1_effect_1_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_energy_option_1_alloc_value
+            C_LEVEL = @AIO_DAIT_energy_option_1_effect_2_c_value_level
+            CAPACITY = @AIO_DAIT_energy_option_1_effect_2_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_energy_option_1_effect_2_value
+        }
+    ]
+    [[energy_option_2]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_energy_option_2_alloc_value
+            C_LEVEL = @AIO_DAIT_energy_option_2_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_energy_option_2_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_energy_option_2_effect_1_value
+        }
+    ]
+    [[energy_option_3]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_energy_option_3_alloc_value
+            C_LEVEL = @AIO_DAIT_energy_option_3_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_energy_option_3_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_energy_option_3_effect_1_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_energy_option_3_alloc_value
+            C_LEVEL = @AIO_DAIT_energy_option_3_effect_2_c_value_level
+            CAPACITY = @AIO_DAIT_energy_option_3_effect_2_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_energy_option_3_effect_2_value
+        }
+    ]
+    [[energy_option_4]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_energy_option_4_alloc_value
+            C_LEVEL = @AIO_DAIT_energy_option_4_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_energy_option_4_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_energy_option_4_effect_1_value
+        }
+    ]
+    [[energy_option_5]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_energy_option_5_alloc_value
+            C_LEVEL = @AIO_DAIT_energy_option_5_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_energy_option_5_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_energy_option_5_effect_1_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_energy_option_5_alloc_value
+            C_LEVEL = @AIO_DAIT_energy_option_5_effect_2_c_value_level
+            CAPACITY = @AIO_DAIT_energy_option_5_effect_2_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_energy_option_5_effect_2_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_energy_option_5_alloc_value
+            C_LEVEL = @AIO_DAIT_energy_option_5_effect_3_c_value_level
+            CAPACITY = @AIO_DAIT_energy_option_5_effect_3_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_energy_option_5_effect_3_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_energy_option_5_alloc_value
+            C_LEVEL = @AIO_DAIT_energy_option_5_effect_4_c_value_level
+            CAPACITY = @AIO_DAIT_energy_option_5_effect_4_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = HW_energy_option_5_effect_4_value
+        }
+    ]
+    [[energy_option_6]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_energy_option_6_alloc_value
+            C_LEVEL = @AIO_DAIT_energy_option_6_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_energy_option_6_effect_1_cap
+            OUTPUT_VAR = AIO_DAIT_energy_option_6_effect_1_value
+        }
+    ]
+
+    [[metric_option_1]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_1_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_1_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_1_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_1_effect_1_value
+        }
+    ]
+    [[metric_option_2]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_2_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_2_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_2_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_2_effect_1_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_2_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_2_effect_2_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_2_effect_2_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_2_effect_2_value
+        }
+    ]
+    [[metric_option_3]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_3_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_3_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_3_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_3_effect_1_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_3_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_3_effect_2_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_3_effect_2_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_3_effect_2_value
+        }
+    ]
+    [[metric_option_4]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_4_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_4_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_4_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_4_effect_1_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_4_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_4_effect_2_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_4_effect_2_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_4_effect_2_value
+        }
+    ]
+    [[metric_option_5]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_5_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_5_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_5_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_5_effect_1_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_5_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_5_effect_2_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_5_effect_2_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_5_effect_2_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_5_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_5_effect_3_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_5_effect_3_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_5_effect_3_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_5_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_5_effect_4_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_5_effect_4_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_5_effect_4_value
+        }
+    ]
+    [[metric_option_6]
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_6_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_6_effect_1_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_6_effect_1_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_6_effect_1_value
+        }
+        AIO_DAIT_base_calculate_buff_values = {
+            ALLOC_VAR = AIO_DAIT_metric_option_6_alloc_value
+            C_LEVEL = @AIO_DAIT_metric_option_6_effect_2_c_value_level
+            CAPACITY = @AIO_DAIT_metric_option_6_effect_2_cap
+            PERCENTAGE = yes
+            OUTPUT_VAR = AIO_DAIT_metric_option_6_effect_2_value
+        }
+    ]
+}
+
+# 飞升后现实编辑
+AIO_RE_effects_manager = {
+    optimize_memory
+
+    # 飞升后
+    # 改变天体，scope: planet
+    [[CHANGE_PC_STAR]
+        change_pc = $NEW_PC|this$
+        solar_system = {
+            every_system_colony = {
+                limit = {
+                    is_artificial = no
+                    AIO_planet_has_oribital_ring = no
+
+                    NOR = {
+                        is_planet_class = pc_ai
+
+                        AND = {
+                            exists = event_target:synth_queen_capital
+                            is_same_value = event_target:synth_queen_capital
+                        }
+                    }
+                }
+                destroy_colony = yes
+            }
+            if = {
+                limit = { prev = { is_planet_class = pc_black_hole } }
+                AIO_change_system_planet_in_frozen = yes
+            }
+            AIO_change_star_class = yes
+        }
+    ]
+    [[CHANGE_PC_PLANET]
+        if = {
+            limit = {
+                NOR = {
+                    is_planet_class = pc_ai
+
+                    AND = {
+                        exists = event_target:synth_queen_capital
+                        is_same_value = event_target:synth_queen_capital
+                    }
+                }
+            }
+            change_pc = $NEW_PC|this$
+            if = {
+                limit = {
+                    is_colony = yes
+                    is_colonizable = no
+                }
+                destroy_colony = yes
+            }
+        }
+    ]
+    # 丰富星系矿藏，scope: system
+    [[ENRICH_SYSTEM_DEPOSITS]
+        if = {
+            limit = { NOT = { is_star_class = sc_AIO_void } }
+            while = {
+                count = $TIME|1$
+                every_system_planet = {
+                    limit = {
+                        is_artificial = no
+                        NOT = { is_planet_class = pc_AIO_empty_space }
+                    }
+                    AIO_add_random_planet_deposit = yes
+                }
+            }
+        }
+    ]
+    # 退化，scope: colony
+    [[DEGENERATE]
+        if = {
+            limit = { owner = { NOT = { is_country_type = primitive } } }
+            every_owned_pop_group = {
+                limit = {
+                    OR = {
+                        has_trait = trait_mechanical
+                        has_trait = trait_machine_unit
+                    }
+                }
+                kill_all_pop = yes
+            }
+            every_planet_army = { remove_army = yes }
+            while = {
+                limit = { any_owned_pop_group = { is_sapient = yes } }
+                weighted_random_owned_pop_group = {
+                    limit = { is_sapient = yes }
+                    species = { save_event_target_as = species_target }
+                    create_devolved_species = yes
+                }
+                every_owned_pop_group = {
+                    limit = {
+                        is_same_species = event_target:species_target
+                        is_sapient = yes
+                    }
+                    change_species = event_target:devolved_species_target
+                }
+            }
+            if = {
+                limit = { owner = { count_owned_planet = { count = 1 } } }
+                owner = {
+                    every_owned_fleet = { destroy_fleet = this }
+                    set_country_type = primitive
+                }
+            }
+            else = {
+                create_country = {
+                    type = primitive
+                    name = random
+                    flag = random
+
+                    effect = {
+                        prev = {
+                            set_owner = prev
+                            set_capital = yes
+                        }
+                    }
+                }
+            }
+            check_planet_employment = yes
+        }
+    ]
+    # 神启，scope: colony
+    [[ENLIGHTEN]
+        random_owned_pop_group = {
+            if = {
+                limit = {
+                    is_sapient = no
+                    NOT = { has_trait = trait_presapient_forcefully_devolved }
+                }
+                modify_species = {
+                    species = this.species
+                    sapient = yes
+                    add_trait = trait_AIO_psionic
+                    effect = { save_event_target_as = AIO_psionic_species }
+                }
+            }
+            else_if = {
+                limit = {
+                    is_sapient = no
+                    has_trait = trait_presapient_forcefully_devolved
+                }
+                modify_species = {
+                    species = this.species
+                    sapient = yes
+                    add_trait = trait_AIO_psionic
+                    remove_trait = trait_presapient_forcefully_devolved
+                    effect = { save_event_target_as = AIO_psionic_species }
+                }
+            }
+            else = {
+                modify_species = {
+                    species = this.species
+                    add_trait = trait_AIO_psionic
+                    effect = { save_event_target_as = AIO_psionic_species }
+                }
+            }
+            change_species = event_target:AIO_psionic_species
+        }
+        owner = {
+            if = {
+                limit = { is_country_type = primitive }
+                set_name = random
+                set_country_type = default
+                prev = { set_capital = yes }
+                set_origin = origin_default
+                change_country_flag = random
+                shift_ethic = ethic_spiritualist
+                change_government = {
+                    authority = random
+                    civics = random
+                    remove_invalid_civics = yes
+                }
+                # 创建统治者
+                create_leader = { class = random_ruler }
+                # 解锁3个内阁席位
+                unlock_council_slots = 3
+                # 添加随机科技
+                add_tech_progress = { tech = tech_epigenetic_triggers progress = 1 }
+                while = {
+                    count = 30
+                    AIO_add_random_tech = yes
+                }
+            }
+            # 起始资源
+            add_resource = {
+                energy = 1000
+                minerals = 1000
+                food = 1000
+                consumer_goods = 200
+                alloys = 400
+                unity = 3000
+            }
+            # 添加人口
+            random_owned_pop_group = {
+                limit = { has_trait = trait_AIO_psionic }
+                add_pop_amount = 1000
+            }
+            # 添加buff
+            add_modifier = { modifier = AIO_the_craving_of_stellaris_modifier years = 10 }
+            # 添加总督
+            create_leader = { class = official }
+            # 添加区划
+            capital_scope = {
+                clear_blockers = yes
+                if = {
+                    limit = { uses_district_set = standard }
+                    while = {
+                        count < 3
+                        add_district = district_city
+                    }
+                    while = {
+                        count < 2
+                        add_district = district_generator
+                    }
+                    while = {
+                        count < 2
+                        add_district = district_mining
+                    }
+                    while = {
+                        count < 3
+                        add_district = district_farming
+                    }
+                }
+                else_if = {
+                    limit = { uses_district_set = ring_world }
+                    while = {
+                        count < 4
+                        add_district = district_rw_city
+                    }
+                }
+                else_if = {
+                    limit = { uses_district_set = city_world }
+                    while = {
+                        count < 4
+                        add_district = district_arcology_housing
+                    }
+                }
+                else_if = {
+                    limit = { uses_district_set = habitat }
+                    while = {
+                        count < 3
+                        add_district = district_hab_housing
+                    }
+                }
+                check_planet_employment = yes
+            }
+            capital_scope.solar_system = {
+                # 创建恒星基地
+                if = {
+                    limit = { exists = starbase }
+                    destroy_fleet = starbase
+                }
+                create_starbase = {
+                    size = starbase_starport
+                    owner = prev
+
+                    effect = {
+                        set_starbase_module = { slot = 2 module = shipyard }
+                    }
+                }
+                # 创建科研船
+                prev = {
+                    create_leader = {
+                        class = scientist
+                        effect = { save_event_target_as = AIO_ctrl_AIT_enlight_primitive_scientist }
+                    }
+                }
+                create_fleet = {
+                    effect = {
+                        set_owner = prevprev
+                        set_leader = event_target:AIO_ctrl_AIT_enlight_primitive_scientist
+                        create_ship = {
+                            name = random
+                            design = NAME_Scholarium_Science
+                        }
+
+                        set_location = {
+                            target = prev
+                            angle = random
+                            direction = in_system
+                        }
+                    }
+                }
+                # 创建工程船
+                create_fleet = {
+                    effect = {
+                        set_owner = prevprev
+                        create_ship = {
+                            name = random
+                            design = NAME_Prospectorium_Constructor
+                        }
+
+                        set_location = {
+                            target = prev
+                            angle = random
+                            direction = in_system
+                        }
+                    }
+                }
+            }
+        }
+    ]
+    # 倒流，scope: colony
+    [[TURN_BACK_TIME]
+        # 减少区划
+        if = {
+            limit = { num_districts = { type = any value > 3 } }
+            # 建筑降级
+            downgrade_all_buildings = yes
+            # 减少30%的人口
+            every_owned_pop_group = {
+                kill_pop_group = {
+                    pop_group = this
+                    percentage = 0.3
+                }
+            }
+            # 减少3个的区划
+            while = {
+                count = 3
+                remove_random_district = yes
+            }
+            check_planet_employment = yes
+        }
+        else = { destroy_colony = yes }
+    ]
+    # 创建宇宙风暴，scope: system
+    [[CREATE_STORM]
+        no_scope = {
+            random_system = {
+                limit = { distance = { min_jumps = 5 max_jumps = 25 source = prevprev } }
+                save_event_target_as = AIO_ctrl_AIT_create_storm_endpoint
+            }
+        }
+
+        create_cosmic_storm = {
+            type = $STORM_TYPE|nexus_storm$
+            immediate = yes
+            cosmic_storm_start_position = this
+            storm_end_position = event_target:AIO_ctrl_AIT_create_storm_endpoint
+        }
+    ]
+
+    # 抹除天体，scope: planet
+    [[ERASE_PLANET]
+        AIO_safe_remove_planet = yes
+    ]
+    # 抹除星系，scope: system
+    [[ERASE_SYSTEM]
+        if = {
+            limit = { AIO_safe_remove_system_exclude_API = no }
+
+            every_system_planet = { AIO_safe_remove_planet = yes }
+            AIO_safe_remove_system_megastructures = yes
+            every_fleet_in_system = {
+                limit = { AIO_safe_remove_fleet_exclude_API = no }
+                destroy_fleet = this
+            }
+            every_ambient_object = { destroy_ambient_object = this }
+            set_star_class = sc_AIO_void
+        }
+    ]
+    # 抹除星团，scope: any
+    [[ERASE_STAR_CLUSTER]
+        event_target:AIO_RE_erase_star_cluster_target = {
+            every_system = {
+                limit = {
+                    AIO_safe_remove_system_exclude_API = no
+
+                    NOR = {
+                        has_star_flag = AIO_HS_system
+                        has_star_flag = AIO_TUG_system
+
+                        has_star_flag = synth_queen_capital
+                    }
+                    any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
+                    OR = {
+                        is_same_value = prev
+                        distance = {
+                            source = prev
+                            max_jumps = $MAX_JUMPS|1$
+                            use_bypasses = no
+                        }
+                    }
+                }
+                every_system_planet = { AIO_safe_remove_planet = yes }
+                AIO_safe_remove_system_megastructures = yes
+                every_fleet_in_system = {
+                    limit = { AIO_safe_remove_fleet_exclude_API = no }
+                    destroy_fleet = this
+                }
+                every_ambient_object = { destroy_ambient_object = this }
+                set_star_class = sc_AIO_void
+            }
+        }
+    ]
+
+    # 恢复全局修改的规则
+    [[RECOVER_ALL_GLOBAL_RULES]
+        every_country = {
+            limit = {
+                OR = {
+                    is_country_type = default
+                    is_country_type = fallen_empire
+                    is_country_type = awakened_fallen_empire
+                }
+            }
+            if = {
+                limit = { has_modifier = AIO_RE_ASLT_modifier }
+                remove_modifier = AIO_RE_ASLT_modifier
+            }
+            if = {
+                limit = { has_modifier = AIO_RE_design_requirement_modifier }
+                remove_modifier = AIO_RE_design_requirement_modifier
+            }
+            if = {
+                limit = { has_modifier = AIO_RE_superlight_modifier }
+                remove_modifier = AIO_RE_superlight_modifier
+            }
+        }
+
+        if = {
+            limit = { has_global_flag = AIO_RE_existed_ASLT }
+            remove_global_flag = AIO_RE_existed_ASLT
+        }
+        if = {
+            limit = { has_global_flag = AIO_RE_existed_design_requirement }
+            remove_global_flag = AIO_RE_existed_design_requirement
+        }
+        if = {
+            limit = { has_global_flag = AIO_RE_existed_superlight }
+            remove_global_flag = AIO_RE_existed_superlight
+        }
+    ]
+
+    # 生成定位用工程船
+    [[CREATE_LOCATOR_BUILDER]
+        event_target:AIO_HS_system = {
+            create_fleet = {
+                effect = {
+                    set_owner = event_target:AIO_empire_country
+                    create_ship = {
+                        name = AIO_locator_builder
+                        design = "NAME_AIO_locator_builder"
+                        graphical_culture = event_target:AIO_empire_country
+                    }
+                    set_location = {
+                        target = prev
+                        distance = 45
+                        angle = random
+                    }
+                    set_fleet_flag = AIO_locator_builder
+                    save_global_event_target_as = AIO_locator_builder
+                }
+            }
+        }
+    ]
+    # 清除AIO定位器
+    [[REMOVE_AIO_LOCATOR]
+        hidden_effect = {
+            # 清除定位器
+            if = {
+                limit = { exists = event_target:AIO_locator_target }
+                event_target:AIO_locator_target = { remove_megastructure = this }
+                clear_global_event_target = AIO_locator_target
+            }
+            # 清除定位目标标记
+            if = {
+                limit = { exists = event_target:AIO_RE_$RE_CLASS|none$_target }
+                clear_global_event_target = AIO_RE_$RE_CLASS|none$_target
+            }
+            # 清除完成定位标志
+            remove_country_flag = AIO_RE_$RE_CLASS|none$_finish_locate
+        }
+    ]
+    # 取消AIO定位
+    [[CANCEL_AIO_LOCATOR]
+        hidden_effect = {
+            if = { # 未定位
+                limit = { has_country_flag = AIO_RE_$RE_CLASS|none$_locating }
+                # 清除定位舰
+                event_target:AIO_locator_builder = { delete_fleet = this }
+                clear_global_event_target = AIO_locator_builder
+                # 清除正在定位标志
+                remove_country_flag = AIO_RE_$RE_CLASS|none$_locating
+            }
+            else_if = { # 已定位
+                limit = { has_country_flag = AIO_RE_$RE_CLASS|none$_finish_locate }
+                # 清除定位器
+                event_target:AIO_locator_target = { remove_megastructure = this }
+                clear_global_event_target = AIO_locator_target
+                # 清除定位目标标记
+                if = {
+                    limit = { exists = event_target:AIO_RE_$RE_CLASS|none$_target }
+                    clear_global_event_target = AIO_RE_$RE_CLASS|none$_target
+                }
+                # 清除完成定位标志
+                remove_country_flag = AIO_RE_$RE_CLASS|none$_finish_locate
+            }
+        }
+    ]
+
+    # 生成科研船，scope: AIO_empire
+    [[CREATE_SCIENCE_SHIP]
+        clone_leader = {
+            target = ruler
+            effect = {
+                set_name = AIO_otherworld_walker
+                set_age = 1
+                change_leader_class = scientist
+                remove_all_traits = yes
+                add_trait = { trait = trait_leader_AIO_lord_of_constant_sight show_message = no }
+                set_leader_flag = AIO_RE_otherworld_walker_scientist
+                save_event_target_as = AIO_RE_otherworld_walker_leader
+            }
+        }
+        create_fleet = {
+            effect = {
+                set_name = AIO_otherworld_walker
+                set_owner = root
+                set_leader = event_target:AIO_RE_otherworld_walker_leader
+                create_ship = {
+                    name = AIO_otherworld_walker
+                    design = NAME_AIO_otherworld_walker
+                }
+
+                set_location = {
+                    target = event_target:AIO_HS_system
+                    angle = random
+                    direction = in_system
+                }
+
+                set_fleet_stance = aggressive
+                set_cloaking_active = yes
+                set_fleet_flag = AIO_otherworld_walker
+                save_global_event_target_as = AIO_RE_otherworld_walker
+            }
+        }
+    ]
+
+    # 生成亚弗戈蒙之怒，scope: system
+    [[CREATE_AFORGOMOM_WRATH]
+        create_fleet = {
+            effect = {
+                set_name = AIO_Aforgomom_Wrath
+                set_owner = event_target:AIO_Aforgomom_country
+                create_ship = {
+                    name = AIO_Aforgomom_Wrath
+                    design = NAME_AIO_Aforgomom_Wrath
+                    graphical_culture = event_target:AIO_Aforgomom_country
+                }
+                set_location = {
+                    target = prev.star
+                    distance = 0
+                    angle = random
+                }
+                # 加buff
+                if = {
+                    limit = { # 检查数值是否溢出
+                        event_target:AIO_Aforgomom_country = {
+                            check_variable = { which = AIO_Aforgomom_Wrath value > 0 }
+                            check_variable = { which = AIO_Aforgomom_Wrath value < 10 }
+                        }
+                    }
+                    add_modifier = { modifier = AIO_Aforgomom_Wrath_modifier mult = value:AIO_Aforgomom_Wrath_factor days = -1 }
+                }
+                set_fleet_stance = aggressive
+                set_aggro_range = 10000
+                set_fleet_flag = AIO_Aforgomom_Wrath_fleet
+
+                fleet_event = { id = AIO_Aforgomom_events.201 days = 100 }
+            }
+        }
+    ]
+}

@@ -1,0 +1,2832 @@
+guiTypes = {
+
+    ### FACTION OVERVIEW GUI ###
+
+    containerWindowType = {
+        name = "AIO_DAIT"
+        orientation = "center"
+        origo = "center"
+        moveable = yes
+        size = { width = 1058 height = 593 }
+
+        background = {
+            name = "background"
+            quadTextureSprite = "GFX_AIO_DAIT_Bg"
+        }
+
+        buttonType = {
+            name = "close"
+            quadTextureSprite = "GFX_AIO_DAIT_Exit_Button"
+            orientation = "upper_left"
+            position = { x = 905 y = 19 }
+            size = { x = 135 y = 40 }
+            shortcut = "ESCAPE"
+            clicksound = "back_click"
+        }
+
+
+        #region Sidebar
+
+        containerWindowType = {
+            name = "sidebar"
+            orientation = "upper_left"
+            position = { x = 0 y = 80 }
+
+            effectButtonType = {
+                name = "sidebar_material_deactive"
+                orientation = "upper_left"
+                position = { x = 15 y = 5 }
+                quadTextureSprite = "GFX_AIO_DAIT_Sidebar_Button"
+                buttonFont = "cg_16b"
+                buttonText = "AIO_DAIT_sidebar_material"
+                effect = "AIO_DAIT_Sidebar_Material_Button_Deactive"
+                multiline = yes
+            }
+            effectButtonType = {
+                name = "sidebar_material_active"
+                orientation = "upper_left"
+                position = { x = 15 y = 5 }
+                quadTextureSprite = "GFX_AIO_DAIT_Sidebar_Button_Active"
+                buttonFont = "cg_16b"
+                buttonText = "AIO_DAIT_sidebar_material"
+                effect = "AIO_DAIT_Sidebar_Material_Button_Active"
+                alwaysTransparent = yes
+                multiline = yes
+            }
+
+            effectButtonType = {
+                name = "sidebar_energy_deactive"
+                orientation = "upper_left"
+                position = { x = 15 y = 58 }
+                quadTextureSprite = "GFX_AIO_DAIT_Sidebar_Button"
+                buttonFont = "cg_16b"
+                buttonText = "AIO_DAIT_sidebar_energy"
+                effect = "AIO_DAIT_Sidebar_Energy_Button_Deactive"
+                multiline = yes
+            }
+            effectButtonType = {
+                name = "sidebar_energy_active"
+                orientation = "upper_left"
+                position = { x = 15 y = 58 }
+                quadTextureSprite = "GFX_AIO_DAIT_Sidebar_Button_Active"
+                buttonFont = "cg_16b"
+                buttonText = "AIO_DAIT_sidebar_energy"
+                effect = "AIO_DAIT_Sidebar_Energy_Button_Active"
+                alwaysTransparent = yes
+                multiline = yes
+            }
+
+            effectButtonType = {
+                name = "sidebar_metric_deactive"
+                orientation = "upper_left"
+                position = { x = 15 y = 111 }
+                quadTextureSprite = "GFX_AIO_DAIT_Sidebar_Button"
+                buttonFont = "cg_16b"
+                buttonText = "AIO_DAIT_sidebar_metric"
+                effect = "AIO_DAIT_Sidebar_Metric_Button_Deactive"
+                multiline = yes
+            }
+            effectButtonType = {
+                name = "sidebar_metric_active"
+                orientation = "upper_left"
+                position = { x = 15 y = 111 }
+                quadTextureSprite = "GFX_AIO_DAIT_Sidebar_Button_Active"
+                buttonFont = "cg_16b"
+                buttonText = "AIO_DAIT_sidebar_metric"
+                effect = "AIO_DAIT_Sidebar_Metric_Button_Active"
+                alwaysTransparent = yes
+                multiline = yes
+            }
+        }
+
+        #endregion
+
+
+        #region Menu
+
+        #region Material
+
+        containerWindowType = {
+            name = "material_view"
+            orientation = "upper_left"
+            position = { x = 220 y = 110 }
+            size = { x = 820 y = 360 }
+
+            # first page
+            containerWindowType = {
+                name = "hw_material_option.1"
+                orientation = "upper_left"
+                position = { x = 0 y = 0 }
+                size = { width = 820 height = 120 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 120 y = 30 }
+                    buttonText = "hw_material_option.1.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_material_option_1_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 450 y = 20 }
+                    buttonText = "hw_material_option.1.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_material_option_1_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 20 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 20 }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 5 y = 0 }
+                            size = { x = 325 y = 100% }
+                            buttonText = "hw_material_option.1.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_1_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 330 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_material_option.1.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_1_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 65 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_1_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_1_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "HW_material_option_1_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "hw_material_option.2"
+                orientation = "upper_left"
+                position = { x = 0 y = 120 }
+                size = { width = 820 height = 150 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 120 y = 30 }
+                    buttonText = "hw_material_option.2.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_material_option_2_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 490 y = 20 }
+                    buttonText = "hw_material_option.2.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_material_option_2_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 40 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 50% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 5 y = 0 }
+                            size = { x = 190 y = 100% }
+                            buttonText = "hw_material_option.2.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_2_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 195 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_material_option.2.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_2_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "2"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 20 }
+                        size = { x = 100% y = 50% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 2 y = 0 }
+                            size = { x = 130 y = 100% }
+                            buttonText = "hw_material_option.2.effect.2.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_2_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 135 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_material_option.2.effect.2.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_2_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 85 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_2_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_2_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 135 }
+                    effect = "HW_material_option_2_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+
+            # second page
+            containerWindowType = {
+                name = "hw_material_option.3"
+                orientation = "upper_left"
+                position = { x = 0 y = 0 }
+                size = { width = 820 height = 120 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 130 y = 30 }
+                    buttonText = "hw_material_option.3.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_material_option_3_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 425 y = 20 }
+                    buttonText = "hw_material_option.3.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_material_option_3_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 20 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 20 }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 10 y = 0 }
+                            size = { x = 270 y = 100% }
+                            buttonText = "hw_material_option.3.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_3_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 275 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_material_option.3.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_3_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 65 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_3_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_3_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "HW_material_option_3_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "hw_material_option.4"
+                orientation = "upper_left"
+                position = { x = 0 y = 120 }
+                size = { width = 820 height = 120 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 130 y = 30 }
+                    buttonText = "hw_material_option.4.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_material_option_4_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 400 y = 20 }
+                    buttonText = "hw_material_option.4.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_material_option_4_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 20 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 20 }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 10 y = 0 }
+                            size = { x = 200 y = 100% }
+                            buttonText = "hw_material_option.4.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_4_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 205 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_material_option.4.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_4_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 65 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_4_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_4_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "HW_material_option_4_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+
+            # third page
+            containerWindowType = {
+                name = "hw_material_option.5"
+                orientation = "upper_left"
+                position = { x = 0 y = 0 }
+                size = { width = 820 height = 150 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 130 y = 30 }
+                    buttonText = "hw_material_option.5.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_material_option_5_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 520 y = 20 }
+                    buttonText = "hw_material_option.5.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_material_option_5_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 40 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 50% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 10 y = 0 }
+                            size = { x = 110 y = 100% }
+                            buttonText = "hw_material_option.5.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 115 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_material_option.5.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "2"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 20 }
+                        size = { x = 100% y = 50% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 5 y = 0 }
+                            size = { x = 130 y = 100% }
+                            buttonText = "hw_material_option.5.effect.2.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 135 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_material_option.5.effect.2.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 85 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_5_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_5_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "HW_material_option_5_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "hw_material_option.6"
+                orientation = "upper_left"
+                position = { x = 0 y = 150 }
+                size = { width = 820 height = 120 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 120 y = 30 }
+                    buttonText = "hw_material_option.6.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_material_option_6_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 490 y = 20 }
+                    buttonText = "hw_material_option.6.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_material_option_6_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 20 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 20 }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 5 y = 0 }
+                            size = { x = 390 y = 100% }
+                            buttonText = "hw_material_option.6.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_6_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 395 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_material_option.6.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_6_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 65 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_6_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_6_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "HW_material_option_6_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            # forth page
+            containerWindowType = {
+                name = "hw_material_option.7"
+                orientation = "upper_left"
+                position = { x = 0 y = 0 }
+                size = { width = 820 height = 150 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 120 y = 30 }
+                    buttonText = "hw_material_option.7.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_material_option_7_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 410 y = 20 }
+                    buttonText = "hw_material_option.7.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_material_option_7_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 40 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 50% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 10 y = 0 }
+                            size = { x = 115 y = 100% }
+                            buttonText = "hw_material_option.7.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_7_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 120 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_material_option.7.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_7_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "2"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 20 }
+                        size = { x = 100% y = 50% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 10 y = 0 }
+                            size = { x = 120 y = 100% }
+                            buttonText = "hw_material_option.7.effect.2.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_7_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 125 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_material_option.7.effect.2.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_material_option_7_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 85 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_7_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_material_option_7_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "HW_material_option_7_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+
+            # page change
+            containerWindowType = {
+                name = "page_change"
+                orientation = "upper_left"
+                position = { x = 670 y = 360 }
+                size = { width = 150 height = 30 }
+                
+                effectButtonType = { 
+                    name = "last_page"
+                    orientation = "upper_left"
+                    position = { x = 0 y = 0 }
+                    quadTextureSprite = "GFX_HW_Last_Page_Button"
+                    effect = "HW_material_view_last_page_button"
+                }
+                
+                effectButtonType = { 
+                    name = "page"
+                    orientation = "upper_left"
+                    position = { x = 30 y = 5 }
+                    size = { x = 80 y = 20 }
+                    buttonText = "hw_material_current_page"
+                    buttonFont = "cg_16b"
+                    format = "center"
+                    multiline = no
+                    effect = "HW_material_view_current_page"
+                    alwaysTransparent = yes
+                }
+                
+                effectButtonType = { 
+                    name = "next_page"
+                    orientation = "upper_left"
+                    position = { x = 112 y = 0 }
+                    quadTextureSprite = "GFX_HW_Next_Page_Button"
+                    effect = "HW_material_view_next_page_button"
+                }
+            }
+        }
+
+        #endregion
+
+
+        #region Energy and Interactions
+
+        containerWindowType = {
+            name = "energy_view"
+            orientation = "upper_left"
+            position = { x = 220 y = 110 }
+            size = { x = 820 y = 360 }
+
+            # first page
+            containerWindowType = {
+                name = "hw_energy_option.1"
+                orientation = "upper_left"
+                position = { x = 0 y = 0 }
+                size = { width = 820 height = 150 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 120 y = 30 }
+                    buttonText = "hw_energy_option.1.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_energy_option_1_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 520 y = 20 }
+                    buttonText = "hw_energy_option.1.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_energy_option_1_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 40 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 50% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 5 y = 0 }
+                            size = { x = 165 y = 100% }
+                            buttonText = "hw_energy_option.1.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_1_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 170 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_energy_option.1.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_1_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "2"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 20 }
+                        size = { x = 100% y = 50% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 5 y = 0 }
+                            size = { x = 110 y = 100% }
+                            buttonText = "hw_energy_option.1.effect.2.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_1_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 115 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_energy_option.1.effect.2.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_1_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 85 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_energy_option_1_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_energy_option_1_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "HW_energy_option_1_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "hw_energy_option.2"
+                orientation = "upper_left"
+                position = { x = 0 y = 150 } # 第一个
+                size = { width = 820 height = 120 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 140 y = 30 }
+                    buttonText = "hw_energy_option.2.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_energy_option_2_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 460 y = 20 }
+                    buttonText = "hw_energy_option.2.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_energy_option_2_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 20 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 20 }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 5 y = 0 }
+                            size = { x = 290 y = 100% }
+                            buttonText = "hw_energy_option.2.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_2_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 295 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_energy_option.2.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_2_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 65 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_energy_option_2_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_energy_option_2_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "HW_energy_option_2_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+
+            # second page
+            containerWindowType = {
+                name = "hw_energy_option.3"
+                orientation = "upper_left"
+                position = { x = 0 y = 0 }
+                size = { width = 820 height = 150 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 140 y = 30 }
+                    buttonText = "hw_energy_option.3.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_energy_option_3_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 430 y = 20 }
+                    buttonText = "hw_energy_option.3.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_energy_option_3_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 40 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 50% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 80 y = 100% }
+                            buttonText = "hw_energy_option.3.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_3_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 85 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_energy_option.3.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_3_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "2"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 20 }
+                        size = { x = 100% y = 50% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 80 y = 100% }
+                            buttonText = "hw_energy_option.3.effect.2.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_3_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 85 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_energy_option.3.effect.2.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_3_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 85 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_energy_option_3_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_energy_option_3_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "HW_energy_option_3_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "hw_energy_option.4"
+                orientation = "upper_left"
+                position = { x = 0 y = 150 }
+                size = { width = 820 height = 120 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 120 y = 30 }
+                    buttonText = "hw_energy_option.4.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_energy_option_4_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 460 y = 20 }
+                    buttonText = "hw_energy_option.4.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_energy_option_4_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 20 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 20 }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 130 y = 100% }
+                            buttonText = "hw_energy_option.4.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_4_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 135 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_energy_option.4.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_4_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 65 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_energy_option_4_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_energy_option_4_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "HW_energy_option_4_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+
+            # third page
+            containerWindowType = {
+                name = "hw_energy_option.5"
+                orientation = "upper_left"
+                position = { x = 0 y = 0 }
+                size = { width = 820 height = 210 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 120 y = 30 }
+                    buttonText = "hw_energy_option.5.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_energy_option_5_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 630 y = 20 }
+                    buttonText = "hw_energy_option.5.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_energy_option_5_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 80 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 25% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 5 y = 0 }
+                            size = { x = 175 y = 100% }
+                            buttonText = "hw_energy_option.5.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 180 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_energy_option.5.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "2"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 20 }
+                        size = { x = 100% y = 25% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 155 y = 100% }
+                            buttonText = "hw_energy_option.5.effect.2.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 160 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_energy_option.5.effect.2.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "3"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 40 }
+                        size = { x = 100% y = 25% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 130 y = 100% }
+                            buttonText = "hw_energy_option.5.effect.3.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 135 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_energy_option.5.effect.3.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "4"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 60 }
+                        size = { x = 100% y = 25% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 5 y = 0 }
+                            size = { x = 300 y = 100% }
+                            buttonText = "hw_energy_option.5.effect.4.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 305 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_energy_option.5.effect.4.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 125 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_energy_option_5_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 125 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_energy_option_5_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 170 }
+                    effect = "HW_energy_option_5_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "hw_energy_option.6"
+                orientation = "upper_left"
+                position = { x = 0 y = 190 }
+                size = { width = 820 height = 120 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 120 y = 30 }
+                    buttonText = "hw_energy_option.6.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_energy_option_6_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 520 y = 20 }
+                    buttonText = "hw_energy_option.6.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_energy_option_6_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 100% y = 20 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 20 }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 5 y = 0 }
+                            size = { x = 395 y = 100% }
+                            buttonText = "hw_energy_option.6.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_6_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 400 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_energy_option.6.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_energy_option_6_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 65 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_energy_option_6_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_energy_option_6_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "HW_energy_option_6_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+
+            # page change
+            containerWindowType = {
+                name = "page_change"
+                orientation = "upper_left"
+                position = { x = 670 y = 360 }
+                size = { width = 150 height = 30 }
+
+                effectButtonType = {
+                    name = "last_page"
+                    orientation = "upper_left"
+                    position = { x = 0 y = 0 }
+                    quadTextureSprite = "GFX_HW_Last_Page_Button"
+                    effect = "HW_energy_view_last_page_button"
+                }
+
+                effectButtonType = {
+                    name = "page"
+                    orientation = "upper_left"
+                    position = { x = 30 y = 5 }
+                    size = { x = 80 y = 20 }
+                    buttonText = "hw_energy_current_page"
+                    buttonFont = "cg_16b"
+                    format = "center"
+                    multiline = no
+                    effect = "HW_energy_view_current_page"
+                    alwaysTransparent = yes
+                }
+
+                effectButtonType = {
+                    name = "next_page"
+                    orientation = "upper_left"
+                    position = { x = 112 y = 0 }
+                    quadTextureSprite = "GFX_HW_Next_Page_Button"
+                    effect = "HW_energy_view_next_page_button"
+                }
+            }
+        }
+
+        #endregion
+
+
+        #region Time-Space Metric
+
+        containerWindowType = {
+            name = "metric_view"
+            orientation = "upper_left"
+            position = { x = 220 y = 110 }
+            size = { x = 820 y = 360 }
+
+            # first page
+            containerWindowType = {
+                name = "hw_metric_option.1"
+                orientation = "upper_left"
+                position = { x = 0 y = 0 }
+                size = { width = 820 height = 120 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 120 y = 30 }
+                    buttonText = "hw_metric_option.1.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_metric_option_1_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 490 y = 20 }
+                    buttonText = "hw_metric_option.1.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_metric_option_1_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 20 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 20 }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 5 y = 0 }
+                            size = { x = 90 y = 100% }
+                            buttonText = "hw_metric_option.1.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_1_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 95 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.1.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_1_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 65 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_metric_option_1_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_metric_option_1_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "HW_metric_option_1_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "hw_metric_option.2"
+                orientation = "upper_left"
+                position = { x = 0 y = 120 } # 第一个
+                size = { width = 820 height = 150 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 140 y = 30 }
+                    buttonText = "hw_metric_option.2.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_metric_option_2_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 545 y = 20 }
+                    buttonText = "hw_metric_option.2.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_metric_option_2_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 40 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 50%  }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 110 y = 100% }
+                            buttonText = "hw_metric_option.2.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_2_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 115 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.2.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_2_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "2"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 20 }
+                        size = { x = 100% y = 50%  }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 275 y = 100% }
+                            buttonText = "hw_metric_option.2.effect.2.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_2_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 280 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.2.effect.2.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_2_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 85 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_metric_option_2_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_metric_option_2_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "HW_metric_option_2_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+
+            # second page
+            containerWindowType = {
+                name = "hw_metric_option.3"
+                orientation = "upper_left"
+                position = { x = 0 y = 0 }
+                size = { width = 820 height = 150 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 120 y = 30 }
+                    buttonText = "hw_metric_option.3.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_metric_option_3_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 515 y = 20 }
+                    buttonText = "hw_metric_option.3.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_metric_option_3_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 40 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 50%  }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 220 y = 100% }
+                            buttonText = "hw_metric_option.3.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_3_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 225 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.3.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_3_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "2"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 20 }
+                        size = { x = 100% y = 50%  }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 240 y = 100% }
+                            buttonText = "hw_metric_option.3.effect.2.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_3_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 245 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.3.effect.2.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_3_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 85 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_metric_option_3_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_metric_option_3_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "HW_metric_option_3_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "hw_metric_option.4"
+                orientation = "upper_left"
+                position = { x = 0 y = 150 } # 第一个
+                size = { width = 820 height = 150 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 120 y = 30 }
+                    buttonText = "hw_metric_option.4.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_metric_option_4_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 615 y = 20 }
+                    buttonText = "hw_metric_option.4.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_metric_option_4_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 40 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 50%  }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 95 y = 100% }
+                            buttonText = "hw_metric_option.4.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_4_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 100 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.4.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_4_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "2"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 20 }
+                        size = { x = 100% y = 50%  }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 70 y = 100% }
+                            buttonText = "hw_metric_option.4.effect.2.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_4_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 75 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.4.effect.2.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_4_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 85 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_metric_option_4_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_metric_option_4_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "HW_metric_option_4_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+
+            # third page
+            containerWindowType = {
+                name = "hw_metric_option.5"
+                orientation = "upper_left"
+                position = { x = 0 y = 0 }
+                size = { width = 820 height = 210 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 120 y = 30 }
+                    buttonText = "hw_metric_option.5.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_metric_option_5_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 390 y = 20 }
+                    buttonText = "hw_metric_option.5.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_metric_option_5_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 80 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 25% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 125 y = 100% }
+                            buttonText = "hw_metric_option.5.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 135 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.5.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "2"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 20 }
+                        size = { x = 100% y = 25% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 70 y = 100% }
+                            buttonText = "hw_metric_option.5.effect.2.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 75 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.5.effect.2.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "3"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 40 }
+                        size = { x = 100% y = 25% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 135 y = 100% }
+                            buttonText = "hw_metric_option.5.effect.3.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 140 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.5.effect.3.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "4"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 60 }
+                        size = { x = 100% y = 25% }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 120 y = 100% }
+                            buttonText = "hw_metric_option.5.effect.4.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 125 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.5.effect.4.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_5_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 125 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_metric_option_5_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 125 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_metric_option_5_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 170 }
+                    effect = "HW_metric_option_5_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "hw_metric_option.6"
+                orientation = "upper_left"
+                position = { x = 0 y = 190 }
+                size = { width = 820 height = 150 } # 单个条目高度
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = "upper_left"
+                    position = { x = 15 y = 5 }
+                    size = { x = 100 y = 30 }
+                    buttonText = "hw_metric_option.6.title"
+                    buttonFont = "malgun_goth_24"
+                    format = "left"
+                    multiline = no
+                    effect = "HW_metric_option_6_title"
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 45 }
+                    size = { x = 380 y = 20 }
+                    buttonText = "hw_metric_option.6.desc"
+                    buttonFont = "cg_16b"
+                    format = "left"
+                    multiline = yes
+                    effect = "HW_metric_option_6_desc"
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                containerWindowType = {
+                    name = "effect"
+                    orientation = "upper_left"
+                    position = { x = 18 y = 40 }
+                    size = { x = 784 y = 40 }
+
+                    containerWindowType = {
+                        name = "1"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 0 }
+                        size = { x = 100% y = 50%  }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 165 y = 100% }
+                            buttonText = "hw_metric_option.6.effect.1.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_6_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 170 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.6.effect.1.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_6_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+
+                    containerWindowType = {
+                        name = "2"
+                        orientation = "upper_left"
+                        position = { x = 0 y = 20 }
+                        size = { x = 100% y = 50%  }
+
+                        effectButtonType = {
+                            name = "desc"
+                            orientation = "upper_left"
+                            position = { x = 0 y = 0 }
+                            size = { x = 95 y = 100% }
+                            buttonText = "hw_metric_option.6.effect.2.desc"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_6_effect"
+                            alwaysTransparent = yes
+                        }
+
+                        effectButtonType = {
+                            name = "value"
+                            orientation = "upper_left"
+                            position = { x = 100 y = 0 }
+                            size = { x = 85 y = 100% }
+                            buttonText = "hw_metric_option.6.effect.2.value"
+                            buttonFont = "cg_16b"
+                            format = "left"
+                            multiline = no
+                            effect = "HW_metric_option_6_effect"
+                            alwaysTransparent = yes
+                        }
+                    }
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = "upper_left"
+                    position = { x = 650 y = 85 }
+                    quadTextureSprite = "GFX_HW_Add_Button"
+                    scale = 0.6
+                    effect = "HW_metric_option_6_add"
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = "upper_left"
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_HW_Subtract_Button"
+                    scale = 0.6
+                    effect = "HW_metric_option_6_subtract"
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_HW_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "HW_metric_option_6_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+
+            # page change
+            containerWindowType = {
+                name = "page_change"
+                orientation = "upper_left"
+                position = { x = 670 y = 360 }
+                size = { width = 150 height = 30 }
+
+                effectButtonType = {
+                    name = "last_page"
+                    orientation = "upper_left"
+                    position = { x = 0 y = 0 }
+                    quadTextureSprite = "GFX_HW_Last_Page_Button"
+                    effect = "HW_metric_view_last_page_button"
+                }
+
+                effectButtonType = {
+                    name = "page"
+                    orientation = "upper_left"
+                    position = { x = 30 y = 5 }
+                    size = { x = 80 y = 20 }
+                    buttonText = "hw_metric_current_page"
+                    buttonFont = "cg_16b"
+                    format = "center"
+                    multiline = no
+                    effect = "HW_metric_view_current_page"
+                    alwaysTransparent = yes
+                }
+
+                effectButtonType = {
+                    name = "next_page"
+                    orientation = "upper_left"
+                    position = { x = 112 y = 0 }
+                    quadTextureSprite = "GFX_HW_Next_Page_Button"
+                    effect = "HW_metric_view_next_page_button"
+                }
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+
+        #region ALL OF THIS IS HIDDEN OR DISPLACED !
+
+        buttonType = { name = "focus_button" position = { x = -1180 y = -1112 } spriteType = "GFX_fleetview_focus" } # hidden
+        instantTextBoxType = { name = "heading" font = "malgun_goth_24" position = { x = -1120 y = -115 } } # hidden
+        buttonType = { name = "alien_message_background" size = { x = 0 y = 0 } position = { x = -1110 y = -11430 } spriteType = "GFX_tiles_dark_area_cut_8" } # hidden
+        buttonType = { name = "confirm_button" quadTextureSprite = "GFX_standard_button_142_34_button" } # hidden
+        containerWindowType = {
+            name = "portrait_background"
+            position = { x = -1117 y = -1145 }
+            size = { width = 0 height = 0 } 	# hide portrait window
+            iconType = { name = "event_picture" spriteType = "GFX_diplomacy_portrait_frame" } # hidden
+            iconType = { name = "portrait" spriteType = "GFX_portrait_character" } # hidden
+        }
+        containerWindowType = {
+            name = "portrait"
+            position = { x = -1117 y = -1145 }
+            size = { width = 0 height = 0 } # hide portrait window
+            iconType = { name = "portrait" spriteType = "GFX_portrait_gamesetup_mask" } # hidden
+            iconType = { name = "black_frame" spriteType = "GFX_diplomacy_portrait_shadow_frame" } # hidden
+            iconType = { name = "stripes_1" spriteType = "GFX_diplomacy_stripes_2" } # hidden
+            iconType = { name = "city_frame" spriteType = "GFX_diplomacy_portrait_frame" } # hidden
+        }
+        iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" } # hidden
+        instantTextBoxType = { name = "empire_name" font = "malgun_goth_24" } # hidden
+        instantTextBoxType = { name = "empire_government_type" font = "cg_16b" } # hidden
+        instantTextBoxType = { name = "empire_personality_type" font = "cg_16b" } # hidden
+        overlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -1145 y = -11138 } } # hidden
+        iconType = { name = "empire_flag" spriteType = "GFX_empire_flag_128" position = { x = -1125 y = -11235 } } # hidden
+        containerWindowType = {
+            name = "leader_details"
+            position = { x = -1125 y = -1175 }
+            containerWindowType = { name = "empire_traits_box" } # hidden
+            instantTextBoxType = { name = "empire_traits_label" font = "cg_16b" } # hidden
+            overlappingElementsBoxType = { name = "leader_traits" } # hidden
+            instantTextBoxType = { name = "leader_name" font = "cg_16b" } # hidden
+            instantTextBoxType = { name = "leader_species" font = "cg_16b" } # hidden
+        }
+        containerWindowType = {
+            name = "opinion_window"
+            position = { x = -1127 y = -11110 }
+            size = { width = 94 height = 30 }
+            iconType = { name = "their_opinion_icon" spriteType = "GFX_diplomacy_opinion" } # hidden
+            instantTextBoxType = { name = "their_opinion" font = "cg_16b" }
+        }
+
+        ### EVENT DIPLO ###
+
+        containerWindowType = {
+            name = "EVENT_DIPLO"
+            position = { x = 2 y = 50 }
+            #size = { width = 563 height = 220 }
+            moveable = no
+
+            instantTextBoxType = {
+                name = "action_title"
+                font = "malgun_goth_24"
+                position = { x = 20 y = 0 }
+                maxWidth = 200
+                alwaysTransparent = yes
+            }
+            instantTextBoxType = {
+                name = "action_desc"
+                font = "malgun_goth_24"
+                position = { x = 490 y = 0 }
+                maxWidth = 500
+                maxHeight = 180
+                orientation = "UPPER_LEFT"
+                format = center
+                alwaysTransparent = yes
+                text_color_code = "H"
+            }
+            listboxType = { name = "option_list" position = { x = -11500 y = -1130 } } # hidden option list
+        }
+        # Description Section
+        instantTextBoxType = {
+            name = "alien_message"
+            font = "cg_16b"
+            position = { x = 20 y = 100 }
+            maxWidth = 465
+            maxHeight = 220
+            format = left
+            scrollbartype = "standardtext_slider"
+        }
+
+        #endregion
+    }
+}

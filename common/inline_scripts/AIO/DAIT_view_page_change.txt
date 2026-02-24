@@ -1,0 +1,27 @@
+HW_$TAB_NAME$_view_last_page_button = {
+    potential = { check_variable = { which = HW_tab value = $TAB_INDEX$ } }
+    allow = {
+        custom_tooltip = {
+            check_variable = { which = HW_page value > 1 }
+            check_variable = { which = HW_$TAB_NAME$_total_pages value > 1 }
+            fail_text = "hw_change_view_page_fail_text"
+        }
+    }
+    effect = { hidden_effect = { change_variable = { which = HW_page value = -1 } } }
+}
+
+HW_$TAB_NAME$_view_current_page = {
+    potential = { check_variable = { which = HW_tab value = $TAB_INDEX$ } }
+    allow = { always = no }
+}
+
+HW_$TAB_NAME$_view_next_page_button = {
+    potential = { check_variable = { which = HW_tab value = $TAB_INDEX$ } }
+    allow = {
+        custom_tooltip = {
+            check_variable = { which = HW_page value < HW_$TAB_NAME$_total_pages }
+            fail_text = "hw_change_view_page_fail_text"
+        }
+    }
+    effect = { hidden_effect = { change_variable = { which = HW_page value = 1 } } }
+}

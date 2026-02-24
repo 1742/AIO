@@ -1,0 +1,48 @@
+option = {
+    trigger = { has_country_flag = AIO_RE_create_storm_finish_locate }
+    name = electric_storm
+    event_target:AIO_RE_create_storm_target = { AIO_RE_effects_manager = { CREATE_STORM = 1 STORM_TYPE = electric_storm } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = create_storm }
+}
+option = {
+    trigger = { has_country_flag = AIO_RE_create_storm_finish_locate }
+    name = particle_storm
+    event_target:AIO_RE_create_storm_target = { AIO_RE_effects_manager = { CREATE_STORM = 1 STORM_TYPE = particle_storm } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = create_storm }
+}
+option = {
+    trigger = { has_country_flag = AIO_RE_create_storm_finish_locate }
+    name = gravity_storm
+    event_target:AIO_RE_create_storm_target = { AIO_RE_effects_manager = { CREATE_STORM = 1 STORM_TYPE = gravity_storm } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = create_storm }
+}
+option = {
+    trigger = { has_country_flag = AIO_RE_create_storm_finish_locate }
+    name = magnetic_storm
+    event_target:AIO_RE_create_storm_target = { AIO_RE_effects_manager = { CREATE_STORM = 1 STORM_TYPE = magnetic_storm } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = create_storm }
+}
+option = {
+    trigger = { has_country_flag = AIO_RE_create_storm_finish_locate }
+    name = solar_storm
+    event_target:AIO_RE_create_storm_target = { AIO_RE_effects_manager = { CREATE_STORM = 1 STORM_TYPE = solar_storm } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = create_storm }
+}
+option = {
+    trigger = { has_country_flag = AIO_RE_create_storm_finish_locate }
+    name = celestial_storm
+    event_target:AIO_RE_create_storm_target = { AIO_RE_effects_manager = { CREATE_STORM = 1 STORM_TYPE = celestial_storm } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = create_storm }
+}
+option = {
+    trigger = { has_country_flag = AIO_RE_create_storm_finish_locate }
+    name = shroud_storm
+    event_target:AIO_RE_create_storm_target = { AIO_RE_effects_manager = { CREATE_STORM = 1 STORM_TYPE = shroud_storm } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = create_storm }
+}
+option = {
+    trigger = { has_country_flag = AIO_RE_create_storm_finish_locate }
+    name = nexus_storm
+    event_target:AIO_RE_create_storm_target = { AIO_RE_effects_manager = { CREATE_STORM = 1 STORM_TYPE = nexus_storm } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = create_storm }
+}
