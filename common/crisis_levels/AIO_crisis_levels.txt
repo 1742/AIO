@@ -17,8 +17,8 @@ crisis_AIO_level_1 = {
 				target = root
 			}
 			add_event_chain_counter = {
-				event_chain = "AIO_crisis_events_chain"
-				counter = "AIO_crisis_events_chain"
+				event_chain = AIO_crisis_events_chain
+				counter = AIO_crisis_events_chain
 				amount = 1
 			}
 		}
