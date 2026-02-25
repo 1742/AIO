@@ -1,5 +1,7 @@
 # AIO 动态数值
 
+#region 融合宇宙局势
+
 # AIO暗物质驱动协议维护费
 AIO_edict_dm_engine_dm_upkeep = {
     base = 0
@@ -87,6 +89,11 @@ AIO_merge_cosmos_AIT_modifier = {
     min = 1
 	max = 2
 }
+
+#endregion
+
+
+#region 递归节点计数
 
 # AIO递归节点数量
 AIO_num_recursive_node_raw = {
@@ -206,6 +213,23 @@ AIO_resonator_factor_display = {
 	mult = 10
 }
 
+#endregion
+
+
+#region DAIT buff 数值百分比
+
+AIO_DAIT_option_effect_value_perc = {
+    base = 0
+
+    set = this.AIO_DAIT_$TAB$_option_$OPTION$_effect_$EFFECT$_value
+    mult = 100
+}
+
+#endregion
+
+
+#region 现实编辑
+
 # 亚弗戈蒙之怒修正
 AIO_Aforgomom_Wrath_factor = {
     base = 2.71
@@ -217,15 +241,17 @@ AIO_Aforgomom_Wrath_factor = {
 
 # 银河星系数量
 AIO_galaxy_size = {
-	base = 0
+    base = 0
 
-	complex_trigger_modifier = {
-		trigger = count_system
-		trigger_scope = no_scope
-		parameters = { limit = { NOT = { is_star_class = sc_AIO_void } } }
-		mode = add
-	}
-	subtract = 3
+    complex_trigger_modifier = {
+        trigger = count_system
+        trigger_scope = no_scope
+        parameters = { limit = { NOT = { is_star_class = sc_AIO_void } } }
+        mode = add
+    }
+    subtract = 3
 
-	min = 10
+    min = 10
 }
+
+#endregion

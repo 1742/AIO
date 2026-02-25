@@ -21,7 +21,10 @@ country_event = {
 
     is_triggered_only = yes
 
-    immediate = { set_global_flag = AIO_mod_active }
+    immediate = {
+        set_global_flag = AIO_mod_active
+        AIO_DAIT_init_values = yes
+    }
 
     option = {
         name = AIO_mod_events.201.option_1

@@ -222,6 +222,8 @@ AIO_crisis_effects_manager = {
 
         # 清除随机应用无限标志位
         AIO_RAIT_effects_manager = { CLEAR_RANDOM_AIT_FLAG = 1 }
+        # 清除定向应用无限变量
+        AIO_DAIT_clear_values = yes
 
         # 结束事件链
         end_event_chain = AIO_crisis_events_chain

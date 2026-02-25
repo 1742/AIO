@@ -1,3 +1,5 @@
+#region 递归节点
+
 define_text = {
     name = AIO_num_AIO_recursive_node_raw
     value = value:AIO_num_recursive_node_raw
@@ -37,3 +39,150 @@ define_text = {
     name = AIO_AIO_resonator_factor
     value = value:AIO_resonator_factor_display
 }
+
+#endregion
+
+
+#region DAIT buff 数值
+
+define_text = {
+    name = AIO_DAIT_material_option_1_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|material|OPTION|1|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_material_option_2_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|material|OPTION|2|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_material_option_2_effect_2_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|material|OPTION|2|EFFECT|2|
+}
+define_text = {
+    name = AIO_DAIT_material_option_3_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|material|OPTION|3|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_material_option_4_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|material|OPTION|4|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_material_option_5_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|material|OPTION|5|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_material_option_5_effect_2_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|material|OPTION|5|EFFECT|2|
+}
+define_text = {
+    name = AIO_DAIT_material_option_6_effect_1_value
+    value = AIO_DAIT_material_option_6_effect_1_value
+}
+define_text = {
+    name = AIO_DAIT_material_option_7_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|material|OPTION|7|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_material_option_7_effect_2_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|material|OPTION|7|EFFECT|2|
+}
+
+define_text = {
+    name = AIO_DAIT_energy_option_1_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|energy|OPTION|1|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_energy_option_1_effect_2_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|energy|OPTION|1|EFFECT|2|
+}
+define_text = {
+    name = AIO_DAIT_energy_option_2_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|energy|OPTION|2|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_energy_option_3_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|energy|OPTION|3|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_energy_option_3_effect_2_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|energy|OPTION|3|EFFECT|2|
+}
+define_text = {
+    name = AIO_DAIT_energy_option_4_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|energy|OPTION|4|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_energy_option_5_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|energy|OPTION|5|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_energy_option_5_effect_2_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|energy|OPTION|5|EFFECT|2|
+}
+define_text = {
+    name = AIO_DAIT_energy_option_5_effect_3_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|energy|OPTION|5|EFFECT|3|
+}
+define_text = {
+    name = AIO_DAIT_energy_option_5_effect_4_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|energy|OPTION|5|EFFECT|4|
+}
+define_text = {
+    name = AIO_DAIT_energy_option_6_effect_1_value
+    value = AIO_DAIT_energy_option_6_effect_1_value
+}
+
+define_text = {
+    name = AIO_DAIT_metric_option_1_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|1|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_metric_option_2_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|2|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_metric_option_2_effect_2_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|2|EFFECT|2|
+}
+define_text = {
+    name = AIO_DAIT_metric_option_3_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|3|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_metric_option_3_effect_2_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|3|EFFECT|2|
+}
+define_text = {
+    name = AIO_DAIT_metric_option_4_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|4|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_metric_option_4_effect_2_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|4|EFFECT|2|
+}
+define_text = {
+    name = AIO_DAIT_metric_option_5_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|5|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_metric_option_5_effect_2_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|5|EFFECT|2|
+}
+define_text = {
+    name = AIO_DAIT_metric_option_5_effect_3_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|5|EFFECT|3|
+}
+define_text = {
+    name = AIO_DAIT_metric_option_5_effect_4_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|5|EFFECT|4|
+}
+define_text = {
+    name = AIO_DAIT_metric_option_6_effect_1_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|6|EFFECT|1|
+}
+define_text = {
+    name = AIO_DAIT_metric_option_6_effect_2_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|6|EFFECT|2|
+}
+
+#endregion
+

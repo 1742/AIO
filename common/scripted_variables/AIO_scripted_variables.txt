@@ -1,19 +1,22 @@
-#region reality editor 页码
+#region DAIT 页码
 
 @AIO_DAIT_material_tab_name = "material"
 @AIO_DAIT_material_tab_index = 1
+@AIO_DAIT_material_total_pages = 4
 @AIO_DAIT_energy_tab_name = "energy"
 @AIO_DAIT_energy_tab_index = 2
+@AIO_DAIT_energy_total_pages = 3
 @AIO_DAIT_metric_tab_name = "metric"
 @AIO_DAIT_metric_tab_index = 3
+@AIO_DAIT_metric_total_pages = 3
 
 #endregion
 
 
 #region 各 buff 参数
-@AIO_DAIT_buff_c_value_1 = 10000
-@AIO_DAIT_buff_c_value_3 = 30000
-@AIO_DAIT_buff_c_value_9 = 90000
+@AIO_DAIT_buff_c_value_1 = 0.1
+@AIO_DAIT_buff_c_value_3 = 0.3
+@AIO_DAIT_buff_c_value_9 = 0.9
 
 #region material
 

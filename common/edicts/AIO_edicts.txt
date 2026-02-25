@@ -117,17 +117,19 @@ edict_AIO_nanite_farming = {
 edict_AIO_invoke_DAIT_menu = {
     icon = "GFX_edict_type_policy"
 
-    resources = {
-        category = edicts
-
-        cost = { AIO_advanced_logic = 5000 }
-    }
+    resources = { category = edicts }
 
     potential = {
-        is_ai = no
+        # OR = {
+        #     has_country_flag = AIO_built_AIO_mega_01
+        #     has_country_flag = AIO_built_AIO_mega_02
+        #     has_country_flag = AIO_built_AIO_mega_03
+        #     has_country_flag = AIO_built_AIO_mega_04
+        # }
+        NOT = { is_country_type = AIO_empire }
     }
 
-    effect = {
+    # allow = { has_country_resource = { type = AIO_advanced_logic amount > 45000 } }
 
-    }
+    effect = { country_event = { id = AIO_AIT_events.401 } }
 }

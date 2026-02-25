@@ -70,7 +70,7 @@
  AIO_DAIT_energy_option_2_modifier_1: "$AIO_DAIT_energy_option.2.title$"
  AIO_DAIT_energy_option_3_modifier_1: "$AIO_DAIT_energy_option.3.title$-I"
  AIO_DAIT_energy_option_3_modifier_2: "$AIO_DAIT_energy_option.3.title$-II"
- AIO_DAIT_energy_option_4_modifier_1: "$AIO_DAIT_energy_option.4.title$-I"
+ AIO_DAIT_energy_option_4_modifier_1: "$AIO_DAIT_energy_option.4.title$"
  AIO_DAIT_energy_option_5_modifier_1: "$AIO_DAIT_energy_option.5.title$-I"
  AIO_DAIT_energy_option_5_modifier_2: "$AIO_DAIT_energy_option.5.title$-II"
  AIO_DAIT_energy_option_5_modifier_3: "$AIO_DAIT_energy_option.5.title$-III"

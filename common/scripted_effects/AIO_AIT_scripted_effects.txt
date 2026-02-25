@@ -586,6 +586,12 @@ AIO_RAIT_effects_manager = {
 AIO_DAIT_init_values = {
     optimize_memory
 
+    set_variable = { which = AIO_DAIT_tab value = 1 }
+    set_variable = { which = AIO_DAIT_page value = 1 }
+    set_variable = { which = AIO_DAIT_material_total_pages value = @AIO_DAIT_material_total_pages }
+    set_variable = { which = AIO_DAIT_energy_total_pages value = @AIO_DAIT_energy_total_pages }
+    set_variable = { which = AIO_DAIT_metric_total_pages value = @AIO_DAIT_metric_total_pages }
+
     set_variable = { which = AIO_DAIT_material_option_1_alloc_value value = 0 }
     set_variable = { which = AIO_DAIT_material_option_2_alloc_value value = 0 }
     set_variable = { which = AIO_DAIT_material_option_3_alloc_value value = 0 }
@@ -643,6 +649,37 @@ AIO_DAIT_init_values = {
     set_variable = { which = AIO_DAIT_metric_option_6_effect_2_value value = 0 }
 }
 
+# 清除 DAIT 数值
+AIO_DAIT_clear_values = {
+    optimize_memory
+
+    clear_variable = AIO_DAIT_tab
+    clear_variable = AIO_DAIT_page
+    clear_variable = AIO_DAIT_material_total_pages
+    clear_variable = AIO_DAIT_energy_total_pages
+    clear_variable = AIO_DAIT_metric_total_pages
+
+    clear_variable = AIO_DAIT_material_option_1_alloc_value
+    clear_variable = AIO_DAIT_material_option_2_alloc_value
+    clear_variable = AIO_DAIT_material_option_3_alloc_value
+    clear_variable = AIO_DAIT_material_option_4_alloc_value
+    clear_variable = AIO_DAIT_material_option_5_alloc_value
+    clear_variable = AIO_DAIT_material_option_6_alloc_value
+    clear_variable = AIO_DAIT_material_option_7_alloc_value
+    clear_variable = AIO_DAIT_energy_option_1_alloc_value
+    clear_variable = AIO_DAIT_energy_option_2_alloc_value
+    clear_variable = AIO_DAIT_energy_option_3_alloc_value
+    clear_variable = AIO_DAIT_energy_option_4_alloc_value
+    clear_variable = AIO_DAIT_energy_option_5_alloc_value
+    clear_variable = AIO_DAIT_energy_option_6_alloc_value
+    clear_variable = AIO_DAIT_metric_option_1_alloc_value
+    clear_variable = AIO_DAIT_metric_option_2_alloc_value
+    clear_variable = AIO_DAIT_metric_option_3_alloc_value
+    clear_variable = AIO_DAIT_metric_option_4_alloc_value
+    clear_variable = AIO_DAIT_metric_option_5_alloc_value
+    clear_variable = AIO_DAIT_metric_option_6_alloc_value
+}
+
 # 计算 DAIT 数值
 AIO_DAIT_base_calculate_buff_values = {
     optimize_memory
@@ -651,7 +688,9 @@ AIO_DAIT_base_calculate_buff_values = {
     if = {
         limit = { check_variable = { which = AIO_DAIT_temp_alloc_value value != 0 } }
         multiply_variable = { which = AIO_DAIT_temp_alloc_value value = 0.01 }
-        export_resource_income_to_variable = { resource = AIO_advanced_logic variable = AIO_DAIT_temp_calc_input }
+        # export_resource_income_to_variable = { resource = AIO_advanced_logic variable = AIO_DAIT_temp_calc_input }
+        export_resource_income_to_variable = { resource = energy variable = AIO_DAIT_temp_calc_input }
+
         if = {
             limit = { check_variable = { which = AIO_DAIT_temp_calc_input value < 0 } }
             set_variable = { which = AIO_DAIT_temp_calc_input value = 0 }
@@ -695,9 +734,6 @@ AIO_DAIT_base_calculate_buff_values = {
     # 乘以 Capacity
     multiply_variable = { which = AIO_DAIT_temp_calc_result value = $CAPACITY$ }
 
-    # 是否转换成百分比
-    [[PERCENTAGE] multiply_variable = { which = AIO_DAIT_temp_calc_result value = 100 } ]
-
     # 输出结果
     set_variable = { which = $OUTPUT_VAR$ value = AIO_DAIT_temp_calc_result }
 
@@ -715,7 +751,6 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_material_option_1_alloc_value
             C_LEVEL = @AIO_DAIT_material_option_1_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_material_option_1_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_material_option_1_effect_1_value
         }
     ]
@@ -724,14 +759,12 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_material_option_2_alloc_value
             C_LEVEL = @AIO_DAIT_material_option_2_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_material_option_2_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_material_option_2_effect_1_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_material_option_2_alloc_value
             C_LEVEL = @AIO_DAIT_material_option_2_effect_2_c_value_level
             CAPACITY = @AIO_DAIT_material_option_2_effect_2_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_material_option_2_effect_2_value
         }
     ]
@@ -740,7 +773,6 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_material_option_3_alloc_value
             C_LEVEL = @AIO_DAIT_material_option_3_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_material_option_3_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_material_option_3_effect_1_value
         }
     ]
@@ -749,7 +781,6 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_material_option_4_alloc_value
             C_LEVEL = @AIO_DAIT_material_option_4_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_material_option_4_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_material_option_4_effect_1_value
         }
     ]
@@ -758,14 +789,12 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_material_option_5_alloc_value
             C_LEVEL = @AIO_DAIT_material_option_5_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_material_option_5_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_material_option_5_effect_1_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_material_option_5_alloc_value
             C_LEVEL = @AIO_DAIT_material_option_5_effect_2_c_value_level
             CAPACITY = @AIO_DAIT_material_option_5_effect_2_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_material_option_5_effect_2_value
         }
     ]
@@ -782,14 +811,12 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_material_option_7_alloc_value
             C_LEVEL = @AIO_DAIT_material_option_7_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_material_option_7_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_material_option_7_effect_1_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_material_option_7_alloc_value
             C_LEVEL = @AIO_DAIT_material_option_7_effect_2_c_value_level
             CAPACITY = @AIO_DAIT_material_option_7_effect_2_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_material_option_7_effect_2_value
         }
     ]
@@ -799,14 +826,12 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_energy_option_1_alloc_value
             C_LEVEL = @AIO_DAIT_energy_option_1_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_energy_option_1_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_energy_option_1_effect_1_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_energy_option_1_alloc_value
             C_LEVEL = @AIO_DAIT_energy_option_1_effect_2_c_value_level
             CAPACITY = @AIO_DAIT_energy_option_1_effect_2_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_energy_option_1_effect_2_value
         }
     ]
@@ -815,7 +840,6 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_energy_option_2_alloc_value
             C_LEVEL = @AIO_DAIT_energy_option_2_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_energy_option_2_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_energy_option_2_effect_1_value
         }
     ]
@@ -824,14 +848,12 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_energy_option_3_alloc_value
             C_LEVEL = @AIO_DAIT_energy_option_3_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_energy_option_3_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_energy_option_3_effect_1_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_energy_option_3_alloc_value
             C_LEVEL = @AIO_DAIT_energy_option_3_effect_2_c_value_level
             CAPACITY = @AIO_DAIT_energy_option_3_effect_2_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_energy_option_3_effect_2_value
         }
     ]
@@ -840,7 +862,6 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_energy_option_4_alloc_value
             C_LEVEL = @AIO_DAIT_energy_option_4_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_energy_option_4_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_energy_option_4_effect_1_value
         }
     ]
@@ -849,28 +870,24 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_energy_option_5_alloc_value
             C_LEVEL = @AIO_DAIT_energy_option_5_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_energy_option_5_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_energy_option_5_effect_1_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_energy_option_5_alloc_value
             C_LEVEL = @AIO_DAIT_energy_option_5_effect_2_c_value_level
             CAPACITY = @AIO_DAIT_energy_option_5_effect_2_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_energy_option_5_effect_2_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_energy_option_5_alloc_value
             C_LEVEL = @AIO_DAIT_energy_option_5_effect_3_c_value_level
             CAPACITY = @AIO_DAIT_energy_option_5_effect_3_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_energy_option_5_effect_3_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_energy_option_5_alloc_value
             C_LEVEL = @AIO_DAIT_energy_option_5_effect_4_c_value_level
             CAPACITY = @AIO_DAIT_energy_option_5_effect_4_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = HW_energy_option_5_effect_4_value
         }
     ]
@@ -888,7 +905,6 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_1_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_1_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_1_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_1_effect_1_value
         }
     ]
@@ -897,14 +913,12 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_2_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_2_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_2_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_2_effect_1_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_2_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_2_effect_2_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_2_effect_2_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_2_effect_2_value
         }
     ]
@@ -913,14 +927,12 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_3_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_3_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_3_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_3_effect_1_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_3_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_3_effect_2_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_3_effect_2_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_3_effect_2_value
         }
     ]
@@ -929,14 +941,12 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_4_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_4_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_4_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_4_effect_1_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_4_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_4_effect_2_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_4_effect_2_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_4_effect_2_value
         }
     ]
@@ -945,28 +955,24 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_5_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_5_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_5_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_5_effect_1_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_5_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_5_effect_2_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_5_effect_2_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_5_effect_2_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_5_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_5_effect_3_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_5_effect_3_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_5_effect_3_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_5_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_5_effect_4_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_5_effect_4_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_5_effect_4_value
         }
     ]
@@ -975,24 +981,171 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_6_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_6_effect_1_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_6_effect_1_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_6_effect_1_value
         }
         AIO_DAIT_base_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_metric_option_6_alloc_value
             C_LEVEL = @AIO_DAIT_metric_option_6_effect_2_c_value_level
             CAPACITY = @AIO_DAIT_metric_option_6_effect_2_cap
-            PERCENTAGE = yes
             OUTPUT_VAR = AIO_DAIT_metric_option_6_effect_2_value
         }
     ]
 }
 
-# 添加 buff
+# 加 buff
 AIO_DAIT_add_buffs = {
     optimize_memory
 
+    AIO_DAIT_option_calculate_buff_values = { material_option_1 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { material_option_2 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { material_option_3 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { material_option_4 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { material_option_5 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { material_option_6 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { material_option_7 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { energy_option_1 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { energy_option_2 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { energy_option_3 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { energy_option_4 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { energy_option_5 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { energy_option_6 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { metric_option_1 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { metric_option_2 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { metric_option_3 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { metric_option_4 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { metric_option_5 = 1 }
+    AIO_DAIT_option_calculate_buff_values = { metric_option_6 = 1 }
 
+    add_modifier = {
+        modifier = AIO_DAIT_material_option_1_modifier_1
+        mult = AIO_DAIT_material_option_1_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_material_option_2_modifier_1
+        mult = AIO_DAIT_material_option_2_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_material_option_2_modifier_2
+        mult = AIO_DAIT_material_option_2_effect_2_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_material_option_3_modifier_1
+        mult = AIO_DAIT_material_option_3_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_material_option_4_modifier_1
+        mult = AIO_DAIT_material_option_4_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_material_option_5_modifier_1
+        mult = AIO_DAIT_material_option_5_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_material_option_5_modifier_2
+        mult = AIO_DAIT_material_option_5_effect_2_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_material_option_7_modifier_1
+        mult = AIO_DAIT_material_option_7_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_material_option_7_modifier_2
+        mult = AIO_DAIT_material_option_7_effect_2_value
+    }
+
+    add_modifier = {
+        modifier = AIO_DAIT_energy_option_1_modifier_1
+        mult = AIO_DAIT_energy_option_1_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_energy_option_1_modifier_2
+        mult = AIO_DAIT_energy_option_1_effect_2_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_energy_option_2_modifier_1
+        mult = AIO_DAIT_energy_option_2_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_energy_option_3_modifier_1
+        mult = AIO_DAIT_energy_option_3_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_energy_option_3_modifier_2
+        mult = AIO_DAIT_energy_option_3_effect_2_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_energy_option_4_modifier_1
+        mult = AIO_DAIT_energy_option_4_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_energy_option_5_modifier_1
+        mult = AIO_DAIT_energy_option_5_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_energy_option_5_modifier_2
+        mult = AIO_DAIT_energy_option_5_effect_2_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_energy_option_5_modifier_3
+        mult = AIO_DAIT_energy_option_5_effect_3_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_energy_option_5_modifier_4
+        mult = AIO_DAIT_energy_option_5_effect_4_value
+    }
+
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_1_modifier_1
+        mult = AIO_DAIT_metric_option_1_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_2_modifier_1
+        mult = AIO_DAIT_metric_option_2_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_2_modifier_2
+        mult = AIO_DAIT_metric_option_2_effect_2_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_3_modifier_1
+        mult = AIO_DAIT_metric_option_3_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_3_modifier_2
+        mult = AIO_DAIT_metric_option_3_effect_2_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_4_modifier_1
+        mult = AIO_DAIT_metric_option_4_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_4_modifier_2
+        mult = AIO_DAIT_metric_option_4_effect_2_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_5_modifier_1
+        mult = AIO_DAIT_metric_option_5_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_5_modifier_2
+        mult = AIO_DAIT_metric_option_5_effect_2_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_5_modifier_3
+        mult = AIO_DAIT_metric_option_5_effect_3_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_5_modifier_4
+        mult = AIO_DAIT_metric_option_5_effect_4_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_6_modifier_1
+        mult = AIO_DAIT_metric_option_6_effect_1_value
+    }
+    add_modifier = {
+        modifier = AIO_DAIT_metric_option_6_modifier_2
+        mult = AIO_DAIT_metric_option_6_effect_2_value
+    }
 }
 
 #endregion

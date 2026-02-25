@@ -2390,12 +2390,12 @@ country_event = {
 
     is_triggered_only = yes
     trigger = {
-        OR = {
-			has_country_flag = AIO_built_AIO_mega_01
-			has_country_flag = AIO_built_AIO_mega_02
-			has_country_flag = AIO_built_AIO_mega_03
-			has_country_flag = AIO_built_AIO_mega_04
-		}
+        # OR = {
+		# 	has_country_flag = AIO_built_AIO_mega_01
+		# 	has_country_flag = AIO_built_AIO_mega_02
+		# 	has_country_flag = AIO_built_AIO_mega_03
+		# 	has_country_flag = AIO_built_AIO_mega_04
+		# }
 		NOT = { has_active_event = { AIO_AIT_events.401 } }
 	}
 
@@ -2403,6 +2403,27 @@ country_event = {
         name = OK
 		default_hide_option = yes
     }
+}
+
+# 每季度更新 DAIT buff
+country_event = {
+	id = AIO_AIT_events.402
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		# OR = {
+		# 	has_country_flag = AIO_built_AIO_mega_01
+		# 	has_country_flag = AIO_built_AIO_mega_02
+		# 	has_country_flag = AIO_built_AIO_mega_03
+		# 	has_country_flag = AIO_built_AIO_mega_04
+		# }
+		NOT = { is_country_type = AIO_empire }
+	}
+
+	immediate = { AIO_DAIT_add_buffs = yes }
+
+	after = { country_event = { id = AIO_AIT_events.402 months = 3 } }
 }
 
 #endregion
