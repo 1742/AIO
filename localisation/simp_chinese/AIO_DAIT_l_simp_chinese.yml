@@ -26,7 +26,7 @@
  AIO_DAIT_material_option.3.effect.1.value: "§G+ [this.AIO_DAIT_material_option_3_effect_1_value]%§!"
  AIO_DAIT_material_option.3.effect.allocate_tip: "该项当前数值：§I[this.AIO_DAIT_material_option_3_alloc_value]%§!\n当前已使用的总数值：§I[this.AIO_DAIT_total_alloc_value]%§!"
  AIO_DAIT_material_option.4.title: "结构抗熵极限"
- AIO_DAIT_material_option.4.desc: "物质不再自然降解，减少了维持其存在所需的外部能量输入。"
+ AIO_DAIT_material_option.4.desc: "物质不再自然降解，减少了维持其存在所需的外部物质输入。"
  AIO_DAIT_material_option.4.effect.1.desc: "£mod_upkeep_mult£ $mod_planet_buildings_upkeep_mult$、$mod_planet_districts_upkeep_mult$："
  AIO_DAIT_material_option.4.effect.1.value: "§G[this.AIO_DAIT_material_option_4_effect_1_value]%§!"
  AIO_DAIT_material_option.4.effect.allocate_tip: "该项当前数值：§I[this.AIO_DAIT_material_option_4_alloc_value]%§!\n当前已使用的总数值：§I[this.AIO_DAIT_total_alloc_value]%§!"

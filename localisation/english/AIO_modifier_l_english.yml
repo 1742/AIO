@@ -46,7 +46,7 @@
  AIO_menp_nanites_processor_metallurgists: "$menp_AIO_fleet_component_2$"
  AIO_menp_nanites_processor_farmers: "$menp_AIO_fleet_component_2$"
 
- AIO_RAIT_TR_stage_1_modifier: "$AIO_AIT_TR_events_chain_title$"
+ AIO_RAIT_TR_stage_1_modifier: "$AIO_RAIT_TR_events_chain_title$"
  AIO_RAIT_TR_stage_2_opt_1_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
  AIO_RAIT_TR_stage_2_opt_2_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
  AIO_RAIT_TR_stage_3_liquidation_modifier: "$AIO_RAIT_TR_stage_1_modifier$"

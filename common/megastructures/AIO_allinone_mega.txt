@@ -79,6 +79,7 @@ AIO_mega_01_fact = {
 			}
 			create_ambient_object = {
 				type = "crisis_sphere_1"
+				play_animation_once = no
 				location = this
 
 				effect = {
@@ -154,14 +155,23 @@ AIO_mega_01_node = {
 	}
 	dismantle_potential = { always = no }
 
-	build_time = 0
+	build_time = 1
 
 	# bypass类型
 	bypass_type = bypass_AIO_ultimate_gate
 
-	on_build_complete = {
+	on_build_start = {
+		spawn_megastructure = {
+			type = AIO_mega_01_node
+			coords_from = fromfrom
+			owner = from
+			graphical_culture = from
+		}
+
 		system_event = { id = AIO_crisis_events.904 days = 100 }
 	}
+
+	on_build_complete = { remove_megastructure = fromfrom }
 }
 
 # 无名之雾中的万门之门
@@ -179,7 +189,7 @@ AIO_mega_01 = {
 	build_time = 1
 	resources = {
 		category = megastructures
-		produces = { AIO_advanced_logic = 100 }
+		produces = { AIO_advanced_logic = 1000 }
 
 		upkeep = {
 			energy = 1500
@@ -196,6 +206,7 @@ AIO_mega_01 = {
 		# 加特效
 		create_ambient_object = {
 			type = "AIO_crisis_sphere_effect"
+			play_animation_once = no
 			location = star
 			# 我也不到为啥要上移50才对的准中心，应该是虚空星系原因
 			entity_offset_height = 50
@@ -270,7 +281,7 @@ AIO_mega_02 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 500 }
+		produces = { AIO_advanced_logic = 3000 }
 
 		upkeep = {
 			energy = 1000
@@ -340,7 +351,7 @@ AIO_mega_03 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 1000 }
+		produces = { AIO_advanced_logic = 9000 }
 
 		upkeep = {
 			energy = 2000
@@ -413,7 +424,7 @@ AIO_mega_04 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 10000 }
+		produces = { AIO_advanced_logic = 12000 }
 
         upkeep = {
             trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
@@ -454,8 +465,8 @@ AIO_mega_04_activate = {
 	potential = {
 		is_country_type = AIO_empire
 		NOR = {
-            has_active_event = { AIO_ctrl_events.201 }
-            has_active_event = { AIO_ctrl_events.202 }
+            has_active_event = { AIO_RE_events.201 }
+            has_active_event = { AIO_RE_events.202 }
         }
 	}
 	dismantle_potential = { always = no }
@@ -467,6 +478,6 @@ AIO_mega_04_activate = {
 			upgrade_megastructure_to = AIO_mega_04
 			finish_upgrade = yes
 		}
-		from = { country_event = { id = AIO_ctrl_events.201 } }
+		from = { country_event = { id = AIO_RE_events.201 } }
 	}
 }

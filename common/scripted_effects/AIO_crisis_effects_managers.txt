@@ -215,12 +215,10 @@ AIO_crisis_effects_manager = {
         remove_country_flag = AIO_finish_merge_cosmos_stage_3
         remove_country_flag = AIO_finish_merge_cosmos_stage_4
         remove_country_flag = AIO_finish_merge_cosmos_stage_5
-        remove_country_flag = AIO_finish_merge_cosmos_stage_6
-        remove_country_flag = AIO_finish_merge_cosmos_stage_7
         remove_country_flag = AIO_finish_merge_cosmos
         # 循环应用无限变量
         clear_variable = AIO_situation_AIT_time
-        clear_variable = AIO_situation_AIT_random_affect_system_num
+        clear_variable = AIO_situation_RAIT_affect_system_num
 
         # 清除随机应用无限标志位
         AIO_RAIT_effects_manager = { CLEAR_RANDOM_AIT_FLAG = 1 }
@@ -425,10 +423,7 @@ AIO_crisis_effects_manager = {
                             # 改变政权
                             modifier = {
                                 factor = 0
-                                OR = {
-                                    is_country_type = fallen_empire
-                                    is_country_type = awakened_fallen_empire
-                                }
+                                NOT = { is_country_type = default }
                             }
                             change_government = {
                                 authority = random
@@ -573,7 +568,7 @@ AIO_safe_change_random_pc = {
                 is_planet_class = pc_ai
                 NOT = { has_planet_flag = machine_lair }
             }
-            planet_event = { id = AIO_ctrl_events.1007 }
+            planet_event = { id = AIO_RE_events.1007 }
             AIO_change_random_pc = { PLANET = 1 }
             reset_planet = yes
         }
@@ -696,7 +691,7 @@ AIO_create_random_cosmic_storm = {
     no_scope = {
         random_system = {
             limit = { distance = { min_jumps = 5 max_jumps = 10 source = prevprev } }
-            save_event_target_as = AIO_ctrl_AIT_create_storm_endpoint
+            save_event_target_as = AIO_RE_create_storm_endpoint
         }
     }
 
@@ -706,7 +701,7 @@ AIO_create_random_cosmic_storm = {
                 type = electric_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_ctrl_AIT_create_storm_endpoint
+                storm_end_position = event_target:AIO_RE_create_storm_endpoint
             }
         }
         4 = {
@@ -714,7 +709,7 @@ AIO_create_random_cosmic_storm = {
                 type = particle_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_ctrl_AIT_create_storm_endpoint
+                storm_end_position = event_target:AIO_RE_create_storm_endpoint
             }
         }
         4 = {
@@ -722,7 +717,7 @@ AIO_create_random_cosmic_storm = {
                 type = gravity_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_ctrl_AIT_create_storm_endpoint
+                storm_end_position = event_target:AIO_RE_create_storm_endpoint
             }
         }
         4 = {
@@ -730,7 +725,7 @@ AIO_create_random_cosmic_storm = {
                 type = magnetic_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_ctrl_AIT_create_storm_endpoint
+                storm_end_position = event_target:AIO_RE_create_storm_endpoint
             }
         }
         4 = {
@@ -738,7 +733,7 @@ AIO_create_random_cosmic_storm = {
                 type = solar_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_ctrl_AIT_create_storm_endpoint
+                storm_end_position = event_target:AIO_RE_create_storm_endpoint
             }
         }
         4 = {
@@ -746,7 +741,7 @@ AIO_create_random_cosmic_storm = {
                 type = celestial_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_ctrl_AIT_create_storm_endpoint
+                storm_end_position = event_target:AIO_RE_create_storm_endpoint
             }
         }
         4 = {
@@ -754,7 +749,7 @@ AIO_create_random_cosmic_storm = {
                 type = shroud_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_ctrl_AIT_create_storm_endpoint
+                storm_end_position = event_target:AIO_RE_create_storm_endpoint
             }
         }
         5 = {
@@ -762,7 +757,7 @@ AIO_create_random_cosmic_storm = {
                 type = nexus_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_ctrl_AIT_create_storm_endpoint
+                storm_end_position = event_target:AIO_RE_create_storm_endpoint
             }
         }
     }

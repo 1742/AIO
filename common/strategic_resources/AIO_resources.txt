@@ -3,6 +3,8 @@ AIO_advanced_logic = {
 	tradable = no
 	category = other
 
+	max = 50000
+
 	ai_weight = {
 		weight = 1
 	}

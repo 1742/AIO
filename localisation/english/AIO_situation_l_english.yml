@@ -5,7 +5,7 @@
  situation_AIO_merge_cosmos_type: "Merge Cosmos"
  situation_AIO_merge_cosmos_desc: "The universe was never designed to be unified, but we have mastered its basic structure. By adjusting the underlying expression of the law, we gradually converge each dimension and spatio-temporal state into a single existence model. The advancement of each stage will make the structure of "reality" more compliant, simpler and closer to our will. \n\n Effect: When the situation progresses, an §RInfinity Thesis§! is triggered every six months. It will affect systems and planets in the galaxy."
  situation_AIO_merge_cosmos_monthly_change_tooltip: ""
- AIO_merge_cosmos_advanced_logic_modifier: "$AIO_advanced_logic$ inventory"
+ AIO_merge_cosmos_advanced_logic_modifier: "$AIO_advanced_logic$ produce"
  AIO_merge_cosmos_apply_infinite_thesis_modifier: "§RApply Infinity Thesis§!"
  AIO_merge_cosmos_requires_AIO_mega_01: "£trigger_no£needs $AIO_mega_01$"
  AIO_merge_cosmos_requires_AIO_mega_02: "£trigger_no£needs $AIO_mega_02$"

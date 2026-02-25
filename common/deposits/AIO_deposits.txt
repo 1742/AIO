@@ -13,7 +13,7 @@ d_AIO_TR_stage_1 = {
 	station = shipclass_research_station
 	is_for_colonizable = yes
 
-	potential = { has_planet_flag = AIO_AIT_time_ruin_planet }
+	potential = { has_planet_flag = AIO_RAIT_time_ruin_planet }
 
 	drop_weight = { weight = 0 }
 }
@@ -32,7 +32,7 @@ d_AIO_TR_stage_3 = {
 		}
 	}
 
-	potential = { has_planet_flag = AIO_AIT_time_ruin_planet }
+	potential = { has_planet_flag = AIO_RAIT_time_ruin_planet }
 
 	drop_weight = { weight = 0 }
 }
@@ -50,7 +50,7 @@ d_AIO_TR_monument = {
 	}
 	planet_modifier = { planet_jobs_unity_produces_mult = 0.2 }
 
-	potential = { has_planet_flag = AIO_AIT_time_ruin_planet }
+	potential = { has_planet_flag = AIO_RAIT_time_ruin_planet }
 
 	drop_weight = { weight = 0 }
 }

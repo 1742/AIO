@@ -2,8 +2,8 @@ AIO_DAIT_Sidebar_Material_Button_Deactive = {
     potential = { always = yes }
     allow = {
         custom_tooltip = {
-            NOT = { check_variable = { which = AIO_DAIT_tab value = 1 } }
             fail_text = "AIO_DAIT_sidebar_change_faile_text"
+            NOT = { check_variable = { which = AIO_DAIT_tab value = 1 } }
         }
     }
     effect = {
@@ -22,8 +22,8 @@ AIO_DAIT_Sidebar_Energy_Button_Deactive = {
     potential = { always = yes }
     allow = {
         custom_tooltip = {
-            NOT = { check_variable = { which = AIO_DAIT_tab value = 2 } }
             fail_text = "AIO_DAIT_sidebar_change_faile_text"
+            NOT = { check_variable = { which = AIO_DAIT_tab value = 2 } }
         }
     }
     effect = {
@@ -42,8 +42,8 @@ AIO_DAIT_Sidebar_Metric_Button_Deactive = {
     potential = { always = yes }
     allow = {
         custom_tooltip = {
-            NOT = { check_variable = { which = AIO_DAIT_tab value = 3 } }
             fail_text = "AIO_DAIT_sidebar_change_faile_text"
+            NOT = { check_variable = { which = AIO_DAIT_tab value = 3 } }
         }
     }
     effect = {

@@ -1,17 +1,17 @@
 option = {
-    trigger = { has_country_flag = AIO_ctrl_AIT_erase_star_cluster_finish_locate }
+    trigger = { has_country_flag = AIO_RE_erase_star_cluster_located }
     name = AIO_RE_events.408.option_3
     AIO_RE_effects_manager = { ERASE_STAR_CLUSTER = 1 MAX_JUMPS = 1 }
     AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = erase_star_cluster }
 }
 option = {
-    trigger = { has_country_flag = AIO_ctrl_AIT_erase_star_cluster_finish_locate }
+    trigger = { has_country_flag = AIO_RE_erase_star_cluster_located }
     name = AIO_RE_events.408.option_4
     AIO_RE_effects_manager = { ERASE_STAR_CLUSTER = 1 MAX_JUMPS = 5 }
     AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = erase_star_cluster }
 }
 option = {
-    trigger = { has_country_flag = AIO_ctrl_AIT_erase_star_cluster_finish_locate }
+    trigger = { has_country_flag = AIO_RE_erase_star_cluster_located }
     name = AIO_RE_events.408.option_5
     AIO_RE_effects_manager = { ERASE_STAR_CLUSTER = 1 MAX_JUMPS = 10 }
     AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = erase_star_cluster }

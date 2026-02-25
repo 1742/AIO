@@ -29,9 +29,9 @@ AIO_DAIT_$TAB_NAME$_option_$OPTION$_add = {
     }
     allow = {
         custom_tooltip = {
+            text = "AIO_DAIT_$TAB_NAME$_option.$OPTION$.effect.allocate_tip"
             check_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value < 100 }
             check_variable = { which = AIO_DAIT_total_alloc_value value < 100 }
-            text = "AIO_DAIT_$TAB_NAME$_option.$OPTION$.effect.allocate_tip"
         }
     }
     effect = {
@@ -59,9 +59,9 @@ AIO_DAIT_$TAB_NAME$_option_$OPTION$_subtract = {
     }
     allow = {
         custom_tooltip = {
+            text = "AIO_DAIT_$TAB_NAME$_option.$OPTION$.effect.allocate_tip"
             check_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value > 0 }
             check_variable = { which = AIO_DAIT_total_alloc_value value > 0 }
-            text = "AIO_DAIT_$TAB_NAME$_option.$OPTION$.effect.allocate_tip"
         }
     }
     effect = {

@@ -1,4 +1,5 @@
-# 随机应用无限效果
+#region 随机应用无限效果
+
 AIO_RAIT_effects_manager = {
     optimize_memory
 
@@ -519,7 +520,7 @@ AIO_RAIT_effects_manager = {
     [[TIME_RUIN_STAGE_1]
         if = {
             limit = {
-                has_planet_flag = AIO_AIT_time_ruin_planet
+                has_planet_flag = AIO_RAIT_time_ruin_planet
                 NOT = { has_modifier = AIO_RAIT_TR_stage_1_modifier }
             }
             add_modifier = { modifier = AIO_RAIT_TR_stage_1_modifier days = -1 }
@@ -575,6 +576,11 @@ AIO_RAIT_effects_manager = {
         add_deposit = d_AIO_GS_deposit
     ]
 }
+
+#endregion
+
+
+#region DAIT
 
 # 初始化/重置 DAIT buff 数值
 AIO_DAIT_init_values = {
@@ -982,7 +988,18 @@ AIO_DAIT_option_calculate_buff_values = {
     ]
 }
 
-# 飞升后现实编辑
+# 添加 buff
+AIO_DAIT_add_buffs = {
+    optimize_memory
+
+
+}
+
+#endregion
+
+
+#region 飞升后现实编辑
+
 AIO_RE_effects_manager = {
     optimize_memory
 
@@ -1314,7 +1331,7 @@ AIO_RE_effects_manager = {
         no_scope = {
             random_system = {
                 limit = { distance = { min_jumps = 5 max_jumps = 25 source = prevprev } }
-                save_event_target_as = AIO_ctrl_AIT_create_storm_endpoint
+                save_event_target_as = AIO_RE_create_storm_endpoint
             }
         }
 
@@ -1322,7 +1339,7 @@ AIO_RE_effects_manager = {
             type = $STORM_TYPE|nexus_storm$
             immediate = yes
             cosmic_storm_start_position = this
-            storm_end_position = event_target:AIO_ctrl_AIT_create_storm_endpoint
+            storm_end_position = event_target:AIO_RE_create_storm_endpoint
         }
     ]
 
@@ -1347,7 +1364,7 @@ AIO_RE_effects_manager = {
     ]
     # 抹除星团，scope: any
     [[ERASE_STAR_CLUSTER]
-        event_target:AIO_RE_erase_star_cluster_target = {
+        event_target:AIO_RE_target = {
             every_system = {
                 limit = {
                     AIO_safe_remove_system_exclude_API = no
@@ -1443,19 +1460,13 @@ AIO_RE_effects_manager = {
     # 清除AIO定位器
     [[REMOVE_AIO_LOCATOR]
         hidden_effect = {
-            # 清除定位器
-            if = {
-                limit = { exists = event_target:AIO_locator_target }
-                event_target:AIO_locator_target = { remove_megastructure = this }
-                clear_global_event_target = AIO_locator_target
-            }
             # 清除定位目标标记
             if = {
-                limit = { exists = event_target:AIO_RE_$RE_CLASS|none$_target }
-                clear_global_event_target = AIO_RE_$RE_CLASS|none$_target
+                limit = { exists = event_target:AIO_RE_target }
+                clear_global_event_target = AIO_RE_target
             }
             # 清除完成定位标志
-            remove_country_flag = AIO_RE_$RE_CLASS|none$_finish_locate
+            remove_country_flag = AIO_RE_$RE_CLASS|none$_located
         }
     ]
     # 取消AIO定位
@@ -1471,16 +1482,13 @@ AIO_RE_effects_manager = {
             }
             else_if = { # 已定位
                 limit = { has_country_flag = AIO_RE_$RE_CLASS|none$_finish_locate }
-                # 清除定位器
-                event_target:AIO_locator_target = { remove_megastructure = this }
-                clear_global_event_target = AIO_locator_target
                 # 清除定位目标标记
                 if = {
-                    limit = { exists = event_target:AIO_RE_$RE_CLASS|none$_target }
-                    clear_global_event_target = AIO_RE_$RE_CLASS|none$_target
+                    limit = { exists = event_target:AIO_RE_target }
+                    clear_global_event_target = AIO_RE_target
                 }
                 # 清除完成定位标志
-                remove_country_flag = AIO_RE_$RE_CLASS|none$_finish_locate
+                remove_country_flag = AIO_RE_$RE_CLASS|none$_located
             }
         }
     ]
@@ -1558,3 +1566,5 @@ AIO_RE_effects_manager = {
         }
     ]
 }
+
+#endregion

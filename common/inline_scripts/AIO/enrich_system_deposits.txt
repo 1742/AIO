@@ -1,20 +1,20 @@
 # 丰富星系矿藏选项脚本
 
 option = {
-    trigger = { has_country_flag = AIO_RE_enrich_system_deposits_finish_locate }
+    trigger = { has_country_flag = AIO_RE_enrich_system_deposits_located }
     name = AIO_RE_events.306.option_3
-    event_target:AIO_RE_enrich_system_deposits_target = { AIO_RE_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 } }
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 } }
     AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = enrich_system_deposits }
 }
 option = {
-    trigger = { has_country_flag = AIO_RE_enrich_system_deposits_finish_locate }
+    trigger = { has_country_flag = AIO_RE_enrich_system_deposits_located }
     name = AIO_RE_events.306.option_4
-    event_target:AIO_RE_enrich_system_deposits_target = { AIO_RE_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 5 } }
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 5 } }
     AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = enrich_system_deposits }
 }
 option = {
-    trigger = { has_country_flag = AIO_RE_enrich_system_deposits_finish_locate }
+    trigger = { has_country_flag = AIO_RE_enrich_system_deposits_located }
     name = AIO_RE_events.306.option_5
-    event_target:AIO_RE_enrich_system_deposits_target = { AIO_RE_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 10 } }
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 10 } }
     AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = enrich_system_deposits }
 }

@@ -226,18 +226,15 @@ country_event = {
     immediate = {
         hidden_effect = {
             set_variable = { which = AIO_situation_AIT_time value = 0 }
-            set_variable = { which = AIO_situation_AIT_random_affect_system_num value = 0 }
-            set_variable = { which = AIO_DAIT_production_repeat_time value = 0 }
-            set_variable = { which = AIO_DAIT_technology_repeat_time value = 0 }
-            set_variable = { which = AIO_DAIT_military_repeat_time value = 0 }
+            set_variable = { which = AIO_situation_RAIT_affect_system_num value = 0 }
 
             switch = {
                 trigger = galaxy_size
-                tiny = { set_variable = { which = AIO_situation_AIT_random_affect_system_num value = 1 } }
-                small = { set_variable = { which = AIO_situation_AIT_random_affect_system_num value = 3 } }
-                medium = { set_variable = { which = AIO_situation_AIT_random_affect_system_num value = 5 } }
-                large = { set_variable = { which = AIO_situation_AIT_random_affect_system_num value = 10 } }
-                huge = { set_variable = { which = AIO_situation_AIT_random_affect_system_num value = 20 } }
+                tiny = { set_variable = { which = AIO_situation_RAIT_affect_system_num value = 1 } }
+                small = { set_variable = { which = AIO_situation_RAIT_affect_system_num value = 3 } }
+                medium = { set_variable = { which = AIO_situation_RAIT_affect_system_num value = 5 } }
+                large = { set_variable = { which = AIO_situation_RAIT_affect_system_num value = 10 } }
+                huge = { set_variable = { which = AIO_situation_RAIT_affect_system_num value = 20 } }
             }
         }
     }
@@ -261,6 +258,9 @@ country_event = {
 
     immediate = {
         set_country_flag = AIO_finish_merge_cosmos_stage_1
+
+        # 创建或恢复无名之雾
+        AIO_crisis_effects_manager = { CREATE_HS_SYSTEM = 1 }
     }
 
     option = {
@@ -272,25 +272,22 @@ country_event = {
 # 融合宇宙二阶段完成
 country_event = {
     id = AIO_crisis_events.502
-    title = situation_AIO_merge_cosmos
-    desc = AIO_crisis_events.502.desc
-    picture = GFX_evt_situation_the_seal
-	show_sound = event_mystic_reveal
-	location = FROM
+    # title = situation_AIO_merge_cosmos
+    # desc = AIO_crisis_events.502.desc
+    # picture = GFX_evt_situation_the_seal
+	# show_sound = event_mystic_reveal
+	# location = FROM
+    hide_window = yes
 
 	is_triggered_only = yes
 
     immediate = {
         set_country_flag = AIO_finish_merge_cosmos_stage_2
-
-        # 创建或恢复无名之雾
-        AIO_crisis_effects_manager = { CREATE_HS_SYSTEM = 1 }
     }
 
-    option = {
-        name = AIO_crisis_events.502.option_1
-        custom_tooltip = AIO_crisis_events.502.tt
-    }
+    # option = {
+    #     name = AIO_crisis_events.502.option_1
+    # }
 }
 
 # 融合宇宙三阶段完成
@@ -336,48 +333,8 @@ country_event = {
 # 融合宇宙五阶段完成
 country_event = {
     id = AIO_crisis_events.505
-    # title = situation_AIO_merge_cosmos
-    # desc = AIO_crisis_events.505.desc
-	# show_sound = event_mystic_reveal
-	# location = FROM
-    hide_window = yes
-
-	is_triggered_only = yes
-
-    immediate = {
-        set_country_flag = AIO_finish_merge_cosmos_stage_5
-    }
-
-    # option = {
-    #     name = AIO_crisis_events.505.option_1
-    # }
-}
-
-# 融合宇宙六阶段完成
-country_event = {
-    id = AIO_crisis_events.506
-    # title = situation_AIO_merge_cosmos
-    # desc = AIO_crisis_events.506.desc
-	# show_sound = event_mystic_reveal
-	# location = FROM
-    hide_window = yes
-
-	is_triggered_only = yes
-
-    immediate = {
-        set_country_flag = AIO_finish_merge_cosmos_stage_6
-    }
-
-    # option = {
-    #     name = AIO_crisis_events.506.option_1
-    # }
-}
-
-# 融合宇宙七阶段完成
-country_event = {
-    id = AIO_crisis_events.507
     title = AIO_crisis_events_title
-    desc = AIO_crisis_events.507.desc
+    desc = AIO_crisis_events.505.desc
     picture = GFX_evt_situation_the_seal
 	show_sound = event_mystic_reveal
 	location = FROM
@@ -395,19 +352,18 @@ country_event = {
 			amount = 1
 		}
 
-        set_country_flag = AIO_finish_merge_cosmos_stage_7
         set_country_flag = AIO_finish_merge_cosmos
     }
 
     option = {
-        name = AIO_crisis_events.507.option_1
+        name = AIO_crisis_events.505.option_1
         country_event = { id = AIO_crisis_events.601 days = 30 }
         default_hide_option = yes
     }
 
     option = {
-        name = AIO_crisis_events.507.option_2
-        custom_tooltip = AIO_crisis_events.507.option_2.tt
+        name = AIO_crisis_events.505.option_2
+        custom_tooltip = AIO_crisis_events.505.option_2.tt
         enable_special_project = {
             name = AIO_ASCENSION
             owner = this
@@ -847,30 +803,5 @@ country_event = {
                 set_country_flag = protected_from_queen_storm
             }
         }
-    }
-}
-
-# 研究应用无限触发选择
-country_event = {
-    id = AIO_crisis_events.909
-    hide_window = yes
-
-    is_triggered_only = yes
-    trigger = {
-        last_increased_tech = tech_AIO_DAIT
-        has_country_flag = AIO_crisis_country
-        OR = {
-            has_country_flag = AIO_built_AIO_mega_02
-            has_country_flag = AIO_built_AIO_mega_03
-            has_country_flag = AIO_built_AIO_mega_04
-        }
-    }
-
-    after = {
-        if = {
-            limit = { has_policy_flag = AIO_DAIT_policy_default }
-            country_event = { id = AIO_AIT_events.401 }
-        }
-        else = { country_event = { id = AIO_AIT_events.402 } }
     }
 }

@@ -21,57 +21,57 @@ country_event = {
                 # 应用无限
                 # 反热力学第二定律
                 AIO_RE_ASLT_locating = { country_event = { id = AIO_RE_events.302 } }
-                AIO_RE_ASLT_finish_locate = { country_event = { id = AIO_RE_events.302 } }
+                AIO_RE_ASLT_located = { country_event = { id = AIO_RE_events.302 } }
                 # 设计需求
                 AIO_RE_design_requirement_locating = { country_event = { id = AIO_RE_events.303 } }
-                AIO_RE_design_requirement_finish_locate = { country_event = { id = AIO_RE_events.303 } }
+                AIO_RE_design_requirement_located = { country_event = { id = AIO_RE_events.303 } }
                 # 超光
                 AIO_RE_superlight_locating = { country_event = { id = AIO_RE_events.304 } }
-                AIO_RE_superlight_finish_locate = { country_event = { id = AIO_RE_events.304 } }
+                AIO_RE_superlight_located = { country_event = { id = AIO_RE_events.304 } }
                 # 改变天体
                 AIO_RE_change_pc_locating = { country_event = { id = AIO_RE_events.305 } }
-                AIO_RE_change_pc_finish_locate = { country_event = { id = AIO_RE_events.305 } }
+                AIO_RE_change_pc_located = { country_event = { id = AIO_RE_events.305 } }
                 # 丰富星系矿藏
                 AIO_RE_enrich_system_deposits_locating = { country_event = { id = AIO_RE_events.306 } }
-                AIO_RE_enrich_system_deposits_finish_locate = { country_event = { id = AIO_RE_events.306 } }
+                AIO_RE_enrich_system_deposits_located = { country_event = { id = AIO_RE_events.306 } }
                 # 退化
                 AIO_RE_degenerate_locating = { country_event = { id = AIO_RE_events.307 } }
-                AIO_RE_degenerate_finish_locate = { country_event = { id = AIO_RE_events.307 } }
+                AIO_RE_degenerate_located = { country_event = { id = AIO_RE_events.307 } }
                 # 神启
                 AIO_RE_enlighten_locating = { country_event = { id = AIO_RE_events.308 } }
-                AIO_RE_enlighten_finish_locate = { country_event = { id = AIO_RE_events.308 } }
+                AIO_RE_enlighten_located = { country_event = { id = AIO_RE_events.308 } }
                 # 倒流
                 AIO_RE_turn_back_time_locating = { country_event = { id = AIO_RE_events.309 } }
-                AIO_RE_turn_back_time_finish_locate = { country_event = { id = AIO_RE_events.309 } }
+                AIO_RE_turn_back_time_located = { country_event = { id = AIO_RE_events.309 } }
                 # 模因扰动
                 AIO_RE_change_government_locating = { country_event = { id = AIO_RE_events.310 } }
-                AIO_RE_change_government_finish_locate = { country_event = { id = AIO_RE_events.310 } }
+                AIO_RE_change_government_located = { country_event = { id = AIO_RE_events.310 } }
                 # 创造宇宙风暴
                 AIO_RE_create_storm_locating = { country_event = { id = AIO_RE_events.311 } }
-                AIO_RE_create_storm_finish_locate = { country_event = { id = AIO_RE_events.311 } }
+                AIO_RE_create_storm_located = { country_event = { id = AIO_RE_events.311 } }
 
                 # 亚弗戈蒙
                 # 打击星系
                 AIO_RE_strike_system_locating = { country_event = { id = AIO_RE_events.402 } }
-                AIO_RE_strike_system_finish_locate = { country_event = { id = AIO_RE_events.402 } }
+                AIO_RE_strike_system_located = { country_event = { id = AIO_RE_events.402 } }
                 # 去军事化
                 AIO_RE_demilitarization_locating = { country_event = { id = AIO_RE_events.403 } }
-                AIO_RE_demilitarization_finish_locate = { country_event = { id = AIO_RE_events.403 } }
+                AIO_RE_demilitarization_located = { country_event = { id = AIO_RE_events.403 } }
                 # 消灭星球陆军
                 AIO_RE_destroy_planet_army_locating = { country_event = { id = AIO_RE_events.404 } }
-                AIO_RE_destroy_planet_army_finish_locate = { country_event = { id = AIO_RE_events.404 } }
+                AIO_RE_destroy_planet_army_located = { country_event = { id = AIO_RE_events.404 } }
                 # 抹除国家
                 AIO_RE_erase_country_locating = { country_event = { id = AIO_RE_events.405 } }
-                AIO_RE_erase_country_finish_locate = { country_event = { id = AIO_RE_events.405 } }
+                AIO_RE_erase_country_located = { country_event = { id = AIO_RE_events.405 } }
                 # 抹除天体
                 AIO_RE_erase_planet_locating = { country_event = { id = AIO_RE_events.406 } }
-                AIO_RE_erase_planet_finish_locate = { country_event = { id = AIO_RE_events.406 } }
+                AIO_RE_erase_planet_located = { country_event = { id = AIO_RE_events.406 } }
                 # 抹除星系
                 AIO_RE_erase_system_locating = { country_event = { id = AIO_RE_events.407 } }
-                AIO_RE_erase_system_finish_locate = { country_event = { id = AIO_RE_events.407 } }
+                AIO_RE_erase_system_located = { country_event = { id = AIO_RE_events.407 } }
                 # 抹除星团
                 AIO_RE_erase_star_cluster_locating = { country_event = { id = AIO_RE_events.408 } }
-                AIO_RE_erase_star_cluster_finish_locate = { country_event = { id = AIO_RE_events.408 } }
+                AIO_RE_erase_star_cluster_located = { country_event = { id = AIO_RE_events.408 } }
 
                 # 主菜单
                 default = { country_event = { id = AIO_RE_events.202 } }
@@ -245,7 +245,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_ASLT_locating
-                has_country_flag = AIO_RE_ASLT_finish_locate
+                has_country_flag = AIO_RE_ASLT_located
             }
         }
         text = AIO_RE_events.302.prepare_locate.desc
@@ -255,7 +255,7 @@ country_event = {
         text = AIO_RE_events.302.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_ASLT_finish_locate }
+        trigger = { has_country_flag = AIO_RE_ASLT_located }
         text = AIO_RE_events.302.finish_locate.desc
     }
 
@@ -272,7 +272,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_ASLT_locating
-                has_country_flag = AIO_RE_ASLT_finish_locate
+                has_country_flag = AIO_RE_ASLT_located
             }
         }
         name = AIO_global
@@ -289,7 +289,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_ASLT_locating
-                has_country_flag = AIO_RE_ASLT_finish_locate
+                has_country_flag = AIO_RE_ASLT_located
             }
         }
         name = AIO_specific
@@ -303,7 +303,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_ASLT_locating
-                has_country_flag = AIO_RE_ASLT_finish_locate
+                has_country_flag = AIO_RE_ASLT_located
             }
         }
         name = AIO_return
@@ -315,9 +315,9 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_ASLT_finish_locate }
+        trigger = { has_country_flag = AIO_RE_ASLT_located }
         name = AIO_confirm
-        event_target:AIO_RE_ASLT_target = {
+        event_target:AIO_RE_target = {
             if = {
                 limit = {
                     NOT = { has_modifier = AIO_RE_ASLT_modifier }
@@ -336,7 +336,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_ASLT_locating
-                has_country_flag = AIO_RE_ASLT_finish_locate
+                has_country_flag = AIO_RE_ASLT_located
             }
         }
         name = AIO_cancel
@@ -354,7 +354,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_ASLT_locating
-                    has_country_flag = AIO_RE_ASLT_finish_locate
+                    has_country_flag = AIO_RE_ASLT_located
                     
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -373,7 +373,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_design_requirement_locating
-                has_country_flag = AIO_RE_design_requirement_finish_locate
+                has_country_flag = AIO_RE_design_requirement_located
             }
         }
         text = AIO_RE_events.303.prepare_locate.desc
@@ -383,7 +383,7 @@ country_event = {
         text = AIO_RE_events.303.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_design_requirement_finish_locate }
+        trigger = { has_country_flag = AIO_RE_design_requirement_located }
         text = AIO_RE_events.303.finish_locate.desc
     }
 
@@ -400,7 +400,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_design_requirement_locating
-                has_country_flag = AIO_RE_design_requirement_finish_locate
+                has_country_flag = AIO_RE_design_requirement_located
             }
         }
         name = AIO_global
@@ -421,7 +421,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_design_requirement_locating
-                has_country_flag = AIO_RE_design_requirement_finish_locate
+                has_country_flag = AIO_RE_design_requirement_located
             }
         }
         name = AIO_specific
@@ -435,7 +435,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_design_requirement_locating
-                has_country_flag = AIO_RE_design_requirement_finish_locate
+                has_country_flag = AIO_RE_design_requirement_located
             }
         }
         name = AIO_return
@@ -447,9 +447,9 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_design_requirement_finish_locate }
+        trigger = { has_country_flag = AIO_RE_design_requirement_located }
         name = AIO_confirm
-        event_target:AIO_RE_design_requirement_target = {
+        event_target:AIO_RE_target = {
             if = {
                 limit = {
                     NOT = { has_modifier = AIO_RE_design_requirement_modifier }
@@ -468,7 +468,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_design_requirement_locating
-                has_country_flag = AIO_RE_design_requirement_finish_locate
+                has_country_flag = AIO_RE_design_requirement_located
             }
         }
         name = AIO_cancel
@@ -486,7 +486,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_design_requirement_locating
-                    has_country_flag = AIO_RE_design_requirement_finish_locate
+                    has_country_flag = AIO_RE_design_requirement_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -505,7 +505,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_superlight_locating
-                has_country_flag = AIO_RE_superlight_finish_locate
+                has_country_flag = AIO_RE_superlight_located
             }
         }
         text = AIO_RE_events.304.prepare_locate.desc
@@ -515,7 +515,7 @@ country_event = {
         text = AIO_RE_events.304.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_superlight_finish_locate }
+        trigger = { has_country_flag = AIO_RE_superlight_located }
         text = AIO_RE_events.304.finish_locate.desc
     }
 
@@ -532,7 +532,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_superlight_locating
-                has_country_flag = AIO_RE_superlight_finish_locate
+                has_country_flag = AIO_RE_superlight_located
             }
         }
         name = AIO_global
@@ -560,7 +560,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_superlight_locating
-                has_country_flag = AIO_RE_superlight_finish_locate
+                has_country_flag = AIO_RE_superlight_located
             }
         }
         name = AIO_specific
@@ -574,7 +574,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_superlight_locating
-                has_country_flag = AIO_RE_superlight_finish_locate
+                has_country_flag = AIO_RE_superlight_located
             }
         }
         name = AIO_return
@@ -586,9 +586,9 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_superlight_finish_locate }
+        trigger = { has_country_flag = AIO_RE_superlight_located }
         name = AIO_confirm
-        event_target:AIO_RE_superlight_target = {
+        event_target:AIO_RE_target = {
             if = {
                 limit = {
                     NOT = { has_modifier = AIO_RE_superlight_modifier }
@@ -614,7 +614,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_superlight_locating
-                has_country_flag = AIO_RE_superlight_finish_locate
+                has_country_flag = AIO_RE_superlight_located
             }
         }
         name = AIO_cancel
@@ -632,7 +632,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_superlight_locating
-                    has_country_flag = AIO_RE_superlight_finish_locate
+                    has_country_flag = AIO_RE_superlight_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -651,7 +651,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_change_pc_locating
-                has_country_flag = AIO_RE_change_pc_finish_locate
+                has_country_flag = AIO_RE_change_pc_located
             }
         }
         text = AIO_RE_events.305.prepare_locate.desc
@@ -661,7 +661,7 @@ country_event = {
         text = AIO_RE_events.305.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_change_pc_finish_locate }
+        trigger = { has_country_flag = AIO_RE_change_pc_located }
         text = AIO_RE_events.305.finish_locate.desc
     }
 
@@ -678,10 +678,10 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_change_pc_locating
-                has_country_flag = AIO_RE_change_pc_finish_locate
+                has_country_flag = AIO_RE_change_pc_located
             }
         }
-        name = AIO_RE_events.306.option_1
+        name = AIO_RE_events.305.option_1
 
         hidden_effect = {
             set_variable = { which = AIO_RE_change_pc_num value = 1 }
@@ -724,10 +724,10 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_change_pc_locating
-                has_country_flag = AIO_RE_change_pc_finish_locate
+                has_country_flag = AIO_RE_change_pc_located
             }
         }
-        name = AIO_RE_events.306.option_2
+        name = AIO_RE_events.305.option_2
         custom_tooltip = AIO_unlock_locator
         hidden_effect = {
             set_country_flag = AIO_RE_change_pc_locating
@@ -738,7 +738,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_change_pc_locating
-                has_country_flag = AIO_RE_change_pc_finish_locate
+                has_country_flag = AIO_RE_change_pc_located
             }
         }
         name = AIO_return
@@ -755,7 +755,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_change_pc_locating
-                has_country_flag = AIO_RE_change_pc_finish_locate
+                has_country_flag = AIO_RE_change_pc_located
             }
         }
         name = AIO_cancel
@@ -773,7 +773,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_change_pc_locating
-                    has_country_flag = AIO_RE_change_pc_finish_locate
+                    has_country_flag = AIO_RE_change_pc_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -792,7 +792,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_enrich_system_deposits_locating
-                has_country_flag = AIO_RE_enrich_system_deposits_finish_locate
+                has_country_flag = AIO_RE_enrich_system_deposits_located
             }
         }
         text = AIO_RE_events.306.prepare_locate.desc
@@ -802,7 +802,7 @@ country_event = {
         text = AIO_RE_events.306.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_enrich_system_deposits_finish_locate }
+        trigger = { has_country_flag = AIO_RE_enrich_system_deposits_located }
         text = AIO_RE_events.306.finish_locate.desc
     }
 
@@ -819,10 +819,10 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_enrich_system_deposits_locating
-                has_country_flag = AIO_RE_enrich_system_deposits_finish_locate
+                has_country_flag = AIO_RE_enrich_system_deposits_located
             }
         }
-        name = AIO_RE_events.307.option_1
+        name = AIO_RE_events.306.option_1
 
         hidden_effect = {
             set_variable = { which = AIO_RE_enrich_system_deposits_num value = 1 }
@@ -854,10 +854,10 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_enrich_system_deposits_locating
-                has_country_flag = AIO_RE_enrich_system_deposits_finish_locate
+                has_country_flag = AIO_RE_enrich_system_deposits_located
             }
         }
-        name = AIO_RE_events.307.option_2
+        name = AIO_RE_events.306.option_2
         custom_tooltip = AIO_unlock_locator
         hidden_effect = {
             set_country_flag = AIO_RE_enrich_system_deposits_locating
@@ -868,7 +868,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_enrich_system_deposits_locating
-                has_country_flag = AIO_RE_enrich_system_deposits_finish_locate
+                has_country_flag = AIO_RE_enrich_system_deposits_located
             }
         }
         name = AIO_return
@@ -884,7 +884,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_enrich_system_deposits_locating
-                has_country_flag = AIO_RE_enrich_system_deposits_finish_locate
+                has_country_flag = AIO_RE_enrich_system_deposits_located
             }
         }
         name = AIO_cancel
@@ -902,7 +902,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_enrich_system_deposits_locating
-                    has_country_flag = AIO_RE_enrich_system_deposits_finish_locate
+                    has_country_flag = AIO_RE_enrich_system_deposits_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -921,7 +921,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_degenerate_locating
-                has_country_flag = AIO_RE_degenerate_finish_locate
+                has_country_flag = AIO_RE_degenerate_located
             }
         }
         text = AIO_RE_events.307.prepare_locate.desc
@@ -931,7 +931,7 @@ country_event = {
         text = AIO_RE_events.307.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_degenerate_finish_locate }
+        trigger = { has_country_flag = AIO_RE_degenerate_located }
         text = AIO_RE_events.307.finish_locate.desc
     }
 
@@ -948,10 +948,10 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_degenerate_locating
-                has_country_flag = AIO_RE_degenerate_finish_locate
+                has_country_flag = AIO_RE_degenerate_located
             }
         }
-        name = AIO_RE_events.308.option_1
+        name = AIO_RE_events.307.option_1
 
         hidden_effect = {
             set_variable = { which = AIO_RE_degenerate_num value = 1 }
@@ -993,10 +993,10 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_degenerate_locating
-                has_country_flag = AIO_RE_degenerate_finish_locate
+                has_country_flag = AIO_RE_degenerate_located
             }
         }
-        name = AIO_RE_events.308.option_2
+        name = AIO_RE_events.307.option_2
         custom_tooltip = AIO_unlock_locator
         hidden_effect = {
             set_country_flag = AIO_RE_degenerate_locating
@@ -1007,7 +1007,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_degenerate_locating
-                has_country_flag = AIO_RE_degenerate_finish_locate
+                has_country_flag = AIO_RE_degenerate_located
             }
         }
         name = AIO_return
@@ -1019,16 +1019,16 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_degenerate_finish_locate }
+        trigger = { has_country_flag = AIO_RE_degenerate_located }
         name = AIO_confirm
-        event_target:AIO_RE_degenerate_target = { AIO_RE_effects_manager = { DEGENERATE = 1 } }
+        event_target:AIO_RE_target = { AIO_RE_effects_manager = { DEGENERATE = 1 } }
         AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = degenerate }
     }
     option = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_degenerate_locating
-                has_country_flag = AIO_RE_degenerate_finish_locate
+                has_country_flag = AIO_RE_degenerate_located
             }
         }
         name = AIO_cancel
@@ -1046,7 +1046,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_degenerate_locating
-                    has_country_flag = AIO_RE_degenerate_finish_locate
+                    has_country_flag = AIO_RE_degenerate_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -1065,7 +1065,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_enlighten_locating
-                has_country_flag = AIO_RE_enlighten_finish_locate
+                has_country_flag = AIO_RE_enlighten_located
             }
         }
         text = AIO_RE_events.308.prepare_locate.desc
@@ -1075,7 +1075,7 @@ country_event = {
         text = AIO_RE_events.308.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_enlighten_finish_locate }
+        trigger = { has_country_flag = AIO_RE_enlighten_located }
         text = AIO_RE_events.308.finish_locate.desc
     }
 
@@ -1092,10 +1092,10 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_enlighten_locating
-                has_country_flag = AIO_RE_enlighten_finish_locate
+                has_country_flag = AIO_RE_enlighten_located
             }
         }
-        name = AIO_RE_events.309.option_1
+        name = AIO_RE_events.308.option_1
 
         hidden_effect = {
             set_variable = { which = AIO_RE_enlighten_planet_num value = 1 }
@@ -1120,6 +1120,8 @@ country_event = {
                                 owner = {
                                     OR = {
                                         is_country_type = default
+                                        is_country_type = fallen_empire
+                                        is_country_type = awakened_fallen_empire
                                         is_country_type = primitive
                                     }
                                 }
@@ -1136,10 +1138,10 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_enlighten_locating
-                has_country_flag = AIO_RE_enlighten_finish_locate
+                has_country_flag = AIO_RE_enlighten_located
             }
         }
-        name = AIO_RE_events.309.option_2
+        name = AIO_RE_events.308.option_2
         custom_tooltip = AIO_unlock_locator
         hidden_effect = {
             set_country_flag = AIO_RE_enlighten_locating
@@ -1150,7 +1152,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_enlighten_locating
-                has_country_flag = AIO_RE_enlighten_finish_locate
+                has_country_flag = AIO_RE_enlighten_located
             }
         }
         name = AIO_return
@@ -1162,9 +1164,9 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_enlighten_finish_locate }
+        trigger = { has_country_flag = AIO_RE_enlighten_located }
         name = AIO_confirm
-        event_target:AIO_RE_enlighten_target = {
+        event_target:AIO_RE_target = {
             if = {
                 limit = {
                     owner = {
@@ -1183,7 +1185,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_enlighten_locating
-                has_country_flag = AIO_RE_enlighten_finish_locate
+                has_country_flag = AIO_RE_enlighten_located
             }
         }
         name = AIO_cancel
@@ -1201,7 +1203,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_enlighten_locating
-                    has_country_flag = AIO_RE_enlighten_finish_locate
+                    has_country_flag = AIO_RE_enlighten_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -1220,7 +1222,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_turn_back_time_locating
-                has_country_flag = AIO_RE_turn_back_time_finish_locate
+                has_country_flag = AIO_RE_turn_back_time_located
             }
         }
         text = AIO_RE_events.309.prepare_locate.desc
@@ -1230,7 +1232,7 @@ country_event = {
         text = AIO_RE_events.309.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_turn_back_time_finish_locate }
+        trigger = { has_country_flag = AIO_RE_turn_back_time_located }
         text = AIO_RE_events.309.finish_locate.desc
     }
 
@@ -1247,10 +1249,10 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_turn_back_time_locating
-                has_country_flag = AIO_RE_turn_back_time_finish_locate
+                has_country_flag = AIO_RE_turn_back_time_located
             }
         }
-        name = AIO_RE_events.310.option_1
+        name = AIO_RE_events.309.option_1
 
         hidden_effect = {
             set_variable = { which = AIO_RE_turn_back_time_planet_num value = 1 }
@@ -1293,10 +1295,10 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_turn_back_time_locating
-                has_country_flag = AIO_RE_turn_back_time_finish_locate
+                has_country_flag = AIO_RE_turn_back_time_located
             }
         }
-        name = AIO_RE_events.310.option_2
+        name = AIO_RE_events.309.option_2
         custom_tooltip = AIO_unlock_locator
         hidden_effect = {
             set_country_flag = AIO_RE_turn_back_time_locating
@@ -1307,7 +1309,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_turn_back_time_locating
-                has_country_flag = AIO_RE_turn_back_time_finish_locate
+                has_country_flag = AIO_RE_turn_back_time_located
             }
         }
         name = AIO_return
@@ -1319,16 +1321,16 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_turn_back_time_finish_locate }
+        trigger = { has_country_flag = AIO_RE_turn_back_time_located }
         name = AIO_confirm
-        event_target:AIO_RE_turn_back_time_target = { AIO_RE_effects_manager = { TURN_BACK_TIME = 1 } }
+        event_target:AIO_RE_target = { AIO_RE_effects_manager = { TURN_BACK_TIME = 1 } }
         AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = turn_back_time }
     }
     option = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_turn_back_time_locating
-                has_country_flag = AIO_RE_turn_back_time_finish_locate
+                has_country_flag = AIO_RE_turn_back_time_located
             }
         }
         name = AIO_cancel
@@ -1346,7 +1348,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_turn_back_time_locating
-                    has_country_flag = AIO_RE_turn_back_time_finish_locate
+                    has_country_flag = AIO_RE_turn_back_time_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -1365,7 +1367,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_change_government_locating
-                has_country_flag = AIO_RE_change_government_finish_locate
+                has_country_flag = AIO_RE_change_government_located
             }
         }
         text = AIO_RE_events.310.prepare_locate.desc
@@ -1375,7 +1377,7 @@ country_event = {
         text = AIO_RE_events.310.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_change_government_finish_locate }
+        trigger = { has_country_flag = AIO_RE_change_government_located }
         text = AIO_RE_events.310.finish_locate.desc
     }
 
@@ -1392,10 +1394,10 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_change_government_locating
-                has_country_flag = AIO_RE_change_government_finish_locate
+                has_country_flag = AIO_RE_change_government_located
             }
         }
-        name = AIO_RE_events.311.option_1
+        name = AIO_RE_events.310.option_1
 
         hidden_effect = {
             every_country = {
@@ -1408,10 +1410,10 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_change_government_locating
-                has_country_flag = AIO_RE_change_government_finish_locate
+                has_country_flag = AIO_RE_change_government_located
             }
         }
-        name = AIO_RE_events.311.option_2
+        name = AIO_RE_events.310.option_2
         custom_tooltip = AIO_unlock_locator
         hidden_effect = {
             set_country_flag = AIO_RE_change_government_locating
@@ -1422,7 +1424,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_change_government_locating
-                has_country_flag = AIO_RE_change_government_finish_locate
+                has_country_flag = AIO_RE_change_government_located
             }
         }
         name = AIO_return
@@ -1434,9 +1436,9 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_change_government_finish_locate }
+        trigger = { has_country_flag = AIO_RE_change_government_located }
         name = AIO_confirm
-        event_target:AIO_RE_change_government_target = {
+        event_target:AIO_RE_target = {
             if = {
                 limit = { is_country_type = default }
                 change_government = {
@@ -1452,7 +1454,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_change_government_locating
-                has_country_flag = AIO_RE_change_government_finish_locate
+                has_country_flag = AIO_RE_change_government_located
             }
         }
         name = AIO_cancel
@@ -1470,7 +1472,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_change_government_locating
-                    has_country_flag = AIO_RE_change_government_finish_locate
+                    has_country_flag = AIO_RE_change_government_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -1489,7 +1491,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_create_storm_locating
-                has_country_flag = AIO_RE_create_storm_finish_locate
+                has_country_flag = AIO_RE_create_storm_located
             }
         }
         text = AIO_RE_events.311.prepare_locate.desc
@@ -1499,7 +1501,7 @@ country_event = {
         text = AIO_RE_events.311.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_create_storm_finish_locate }
+        trigger = { has_country_flag = AIO_RE_create_storm_located }
         text = AIO_RE_events.311.finish_locate.desc
     }
 
@@ -1516,7 +1518,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_create_storm_locating
-                has_country_flag = AIO_RE_create_storm_finish_locate
+                has_country_flag = AIO_RE_create_storm_located
             }
         }
         name = AIO_RE_events.311.option_1
@@ -1561,7 +1563,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_create_storm_locating
-                has_country_flag = AIO_RE_create_storm_finish_locate
+                has_country_flag = AIO_RE_create_storm_located
             }
         }
         name = AIO_RE_events.311.option_2
@@ -1575,7 +1577,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_create_storm_locating
-                has_country_flag = AIO_RE_create_storm_finish_locate
+                has_country_flag = AIO_RE_create_storm_located
             }
         }
         name = AIO_return
@@ -1591,7 +1593,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_create_storm_locating
-                has_country_flag = AIO_RE_create_storm_finish_locate
+                has_country_flag = AIO_RE_create_storm_located
             }
         }
         name = AIO_cancel
@@ -1609,7 +1611,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_create_storm_locating
-                    has_country_flag = AIO_RE_create_storm_finish_locate
+                    has_country_flag = AIO_RE_create_storm_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -1678,7 +1680,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_strike_system_locating
-                has_country_flag = AIO_RE_strike_system_finish_locate
+                has_country_flag = AIO_RE_strike_system_located
             }
         }
         text = AIO_RE_events.402.prepare_locate.desc
@@ -1688,7 +1690,7 @@ country_event = {
         text = AIO_RE_events.402.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_strike_system_finish_locate }
+        trigger = { has_country_flag = AIO_RE_strike_system_located }
         text = AIO_RE_events.402.finish_locate.desc
     }
 
@@ -1705,7 +1707,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_strike_system_locating
-                has_country_flag = AIO_RE_strike_system_finish_locate
+                has_country_flag = AIO_RE_strike_system_located
             }
         }
         name = AIO_continue
@@ -1719,7 +1721,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_strike_system_locating
-                has_country_flag = AIO_RE_strike_system_finish_locate
+                has_country_flag = AIO_RE_strike_system_located
             }
         }
         name = AIO_return
@@ -1731,18 +1733,18 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_strike_system_finish_locate }
+        trigger = { has_country_flag = AIO_RE_strike_system_located }
         name = AIO_confirm
-        event_target:AIO_RE_strike_system_target = { AIO_RE_effects_manager = { CREATE_AFORGOMOM_WRATH = 1 } }
+        event_target:AIO_RE_target = { AIO_RE_effects_manager = { CREATE_AFORGOMOM_WRATH = 1 } }
         AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = strike_system }
     }
     option = {
         trigger = {
-            has_country_flag = AIO_RE_strike_system_finish_locate
-            event_target:AIO_RE_strike_system_target = { exists = owner }
+            has_country_flag = AIO_RE_strike_system_located
+            event_target:AIO_RE_target = { exists = owner }
         }
         name = AIO_RE_events.402.opinion_2
-        event_target:AIO_RE_strike_system_target.owner = {
+        event_target:AIO_RE_target.owner = {
             every_system_within_border = {
                 limit = { NOT = { any_fleet_in_system = { has_fleet_flag = AIO_Aforgomom_Wrath_fleet } } }
                 AIO_RE_effects_manager = { CREATE_AFORGOMOM_WRATH = 1 }
@@ -1758,7 +1760,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_strike_system_locating
-                has_country_flag = AIO_RE_strike_system_finish_locate
+                has_country_flag = AIO_RE_strike_system_located
             }
         }
         name = AIO_cancel
@@ -1776,7 +1778,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_strike_system_locating
-                    has_country_flag = AIO_RE_strike_system_finish_locate
+                    has_country_flag = AIO_RE_strike_system_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -1795,7 +1797,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_demilitarization_locating
-                has_country_flag = AIO_RE_demilitarization_finish_locate
+                has_country_flag = AIO_RE_demilitarization_located
             }
         }
         text = AIO_RE_events.403.prepare_locate.desc
@@ -1805,7 +1807,7 @@ country_event = {
         text = AIO_RE_events.403.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_demilitarization_finish_locate }
+        trigger = { has_country_flag = AIO_RE_demilitarization_located }
         text = AIO_RE_events.403.finish_locate.desc
     }
 
@@ -1822,7 +1824,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_demilitarization_locating
-                has_country_flag = AIO_RE_demilitarization_finish_locate
+                has_country_flag = AIO_RE_demilitarization_located
             }
         }
         name = AIO_continue
@@ -1836,7 +1838,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_demilitarization_locating
-                has_country_flag = AIO_RE_demilitarization_finish_locate
+                has_country_flag = AIO_RE_demilitarization_located
             }
         }
         name = AIO_return
@@ -1848,10 +1850,10 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_demilitarization_finish_locate }
+        trigger = { has_country_flag = AIO_RE_demilitarization_located }
         name = AIO_confirm
 
-        event_target:AIO_RE_demilitarization_target = {
+        event_target:AIO_RE_target = {
             every_owned_fleet = {
                 limit = {
                     NOT = { is_ship_size = synth_queen_titan }
@@ -1872,7 +1874,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_demilitarization_locating
-                has_country_flag = AIO_RE_demilitarization_finish_locate
+                has_country_flag = AIO_RE_demilitarization_located
             }
         }
         name = AIO_cancel
@@ -1890,7 +1892,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_demilitarization_locating
-                    has_country_flag = AIO_RE_demilitarization_finish_locate
+                    has_country_flag = AIO_RE_demilitarization_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -1909,7 +1911,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_destroy_planet_army_locating
-                has_country_flag = AIO_RE_destroy_planet_army_finish_locate
+                has_country_flag = AIO_RE_destroy_planet_army_located
             }
         }
         text = AIO_RE_events.404.prepare_locate.desc
@@ -1919,7 +1921,7 @@ country_event = {
         text = AIO_RE_events.404.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_destroy_planet_army_finish_locate }
+        trigger = { has_country_flag = AIO_RE_destroy_planet_army_located }
         text = AIO_RE_events.404.finish_locate.desc
     }
 
@@ -1936,7 +1938,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_destroy_planet_army_locating
-                has_country_flag = AIO_RE_destroy_planet_army_finish_locate
+                has_country_flag = AIO_RE_destroy_planet_army_located
             }
         }
         name = AIO_continue
@@ -1950,7 +1952,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_destroy_planet_army_locating
-                has_country_flag = AIO_RE_destroy_planet_army_finish_locate
+                has_country_flag = AIO_RE_destroy_planet_army_located
             }
         }
         name = AIO_return
@@ -1962,10 +1964,10 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_destroy_planet_army_finish_locate }
+        trigger = { has_country_flag = AIO_RE_destroy_planet_army_located }
         name = AIO_confirm
 
-        event_target:AIO_RE_destroy_planet_army_target = {
+        event_target:AIO_RE_target = {
             every_planet_army = {
                 remove_army = yes
                 planet = { add_planet_devastation = 1 }
@@ -1978,7 +1980,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_destroy_planet_army_locating
-                has_country_flag = AIO_RE_destroy_planet_army_finish_locate
+                has_country_flag = AIO_RE_destroy_planet_army_located
             }
         }
         name = AIO_cancel
@@ -1996,7 +1998,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_destroy_planet_army_locating
-                    has_country_flag = AIO_RE_destroy_planet_army_finish_locate
+                    has_country_flag = AIO_RE_destroy_planet_army_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -2015,7 +2017,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_erase_country_locating
-                has_country_flag = AIO_RE_erase_country_finish_locate
+                has_country_flag = AIO_RE_erase_country_located
             }
         }
         text = AIO_RE_events.405.prepare_locate.desc
@@ -2025,7 +2027,7 @@ country_event = {
         text = AIO_RE_events.405.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_erase_country_finish_locate }
+        trigger = { has_country_flag = AIO_RE_erase_country_located }
         text = AIO_RE_events.405.finish_locate.desc
     }
 
@@ -2042,7 +2044,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_erase_country_locating
-                has_country_flag = AIO_RE_erase_country_finish_locate
+                has_country_flag = AIO_RE_erase_country_located
             }
         }
         name = AIO_RE_events.405.option_1
@@ -2062,7 +2064,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_erase_country_locating
-                has_country_flag = AIO_RE_erase_country_finish_locate
+                has_country_flag = AIO_RE_erase_country_located
             }
         }
         name = AIO_RE_events.405.option_2
@@ -2076,7 +2078,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_erase_country_locating
-                has_country_flag = AIO_RE_erase_country_finish_locate
+                has_country_flag = AIO_RE_erase_country_located
             }
         }
         name = AIO_return
@@ -2088,10 +2090,10 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_erase_country_finish_locate }
+        trigger = { has_country_flag = AIO_RE_erase_country_located }
         name = AIO_confirm
 
-        event_target:AIO_RE_erase_country_target = {
+        event_target:AIO_RE_target = {
             if = {
                 limit = {
                     OR = {
@@ -2116,7 +2118,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_erase_country_locating
-                has_country_flag = AIO_RE_erase_country_finish_locate
+                has_country_flag = AIO_RE_erase_country_located
             }
         }
         name = AIO_cancel
@@ -2134,7 +2136,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_erase_country_locating
-                    has_country_flag = AIO_RE_erase_country_finish_locate
+                    has_country_flag = AIO_RE_erase_country_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -2153,7 +2155,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_erase_planet_locating
-                has_country_flag = AIO_RE_erase_planet_finish_locate
+                has_country_flag = AIO_RE_erase_planet_located
             }
         }
         text = AIO_RE_events.406.prepare_locate.desc
@@ -2163,7 +2165,7 @@ country_event = {
         text = AIO_RE_events.406.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_erase_planet_finish_locate }
+        trigger = { has_country_flag = AIO_RE_erase_planet_located }
         text = AIO_RE_events.406.finish_locate.desc
     }
 
@@ -2180,7 +2182,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_erase_planet_locating
-                has_country_flag = AIO_RE_erase_planet_finish_locate
+                has_country_flag = AIO_RE_erase_planet_located
             }
         }
         name = AIO_RE_events.406.option_1
@@ -2218,7 +2220,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_erase_planet_locating
-                has_country_flag = AIO_RE_erase_planet_finish_locate
+                has_country_flag = AIO_RE_erase_planet_located
             }
         }
         name = AIO_RE_events.406.option_2
@@ -2232,7 +2234,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_erase_planet_locating
-                has_country_flag = AIO_RE_erase_planet_finish_locate
+                has_country_flag = AIO_RE_erase_planet_located
             }
         }
         name = AIO_return
@@ -2244,17 +2246,17 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_erase_planet_finish_locate }
+        trigger = { has_country_flag = AIO_RE_erase_planet_located }
         name = AIO_confirm
 
-        event_target:AIO_RE_erase_planet_target = { AIO_RE_effects_manager = { ERASE_PLANET = 1 } }
+        event_target:AIO_RE_target = { AIO_RE_effects_manager = { ERASE_PLANET = 1 } }
         AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = erase_planet }
     }
     option = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_erase_planet_locating
-                has_country_flag = AIO_RE_erase_planet_finish_locate
+                has_country_flag = AIO_RE_erase_planet_located
             }
         }
         name = AIO_cancel
@@ -2272,7 +2274,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_erase_planet_locating
-                    has_country_flag = AIO_RE_erase_planet_finish_locate
+                    has_country_flag = AIO_RE_erase_planet_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -2291,7 +2293,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_erase_system_locating
-                has_country_flag = AIO_RE_erase_system_finish_locate
+                has_country_flag = AIO_RE_erase_system_located
             }
         }
         text = AIO_RE_events.407.prepare_locate.desc
@@ -2301,7 +2303,7 @@ country_event = {
         text = AIO_RE_events.407.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_erase_system_finish_locate }
+        trigger = { has_country_flag = AIO_RE_erase_system_located }
         text = AIO_RE_events.407.finish_locate.desc
     }
 
@@ -2318,7 +2320,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_erase_system_locating
-                has_country_flag = AIO_RE_erase_system_finish_locate
+                has_country_flag = AIO_RE_erase_system_located
             }
         }
         name = AIO_RE_events.407.option_1
@@ -2356,7 +2358,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_erase_system_locating
-                has_country_flag = AIO_RE_erase_system_finish_locate
+                has_country_flag = AIO_RE_erase_system_located
             }
         }
         name = AIO_RE_events.407.option_2
@@ -2370,7 +2372,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_erase_system_locating
-                has_country_flag = AIO_RE_erase_system_finish_locate
+                has_country_flag = AIO_RE_erase_system_located
             }
         }
         name = AIO_return
@@ -2382,10 +2384,10 @@ country_event = {
     }
 
     option = {
-        trigger = { has_country_flag = AIO_RE_erase_system_finish_locate }
+        trigger = { has_country_flag = AIO_RE_erase_system_located }
         name = AIO_confirm
 
-        event_target:AIO_ctrl_AIT_erase_system_target = {
+        event_target:AIO_RE_target = {
             if = {
                 limit = {
                     NOR = {
@@ -2411,7 +2413,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_erase_system_locating
-                has_country_flag = AIO_RE_erase_system_finish_locate
+                has_country_flag = AIO_RE_erase_system_located
             }
         }
         name = AIO_cancel
@@ -2429,7 +2431,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_erase_system_locating
-                    has_country_flag = AIO_RE_erase_system_finish_locate
+                    has_country_flag = AIO_RE_erase_system_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -2448,7 +2450,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_erase_star_cluster_locating
-                has_country_flag = AIO_RE_erase_star_cluster_finish_locate
+                has_country_flag = AIO_RE_erase_star_cluster_located
             }
         }
         text = AIO_RE_events.408.prepare_locate.desc
@@ -2458,7 +2460,7 @@ country_event = {
         text = AIO_RE_events.408.locating.desc
     }
     desc = {
-        trigger = { has_country_flag = AIO_RE_erase_star_cluster_finish_locate }
+        trigger = { has_country_flag = AIO_RE_erase_star_cluster_located }
         text = AIO_RE_events.408.finish_locate.desc
     }
 
@@ -2475,13 +2477,13 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_erase_star_cluster_locating
-                has_country_flag = AIO_RE_erase_star_cluster_finish_locate
+                has_country_flag = AIO_RE_erase_star_cluster_located
             }
         }
         allow = {
             custom_tooltip = {
-                text = AIO_RE_events.408.destroying_galaxy.allow
                 NOT = { has_global_flag = AIO_RE_erase_galaxy }
+                text = AIO_RE_events.408.destroying_galaxy.allow
             }
         }
         name = AIO_RE_events.408.option_1
@@ -2496,7 +2498,7 @@ country_event = {
         trigger = {
             NOR = {
                 has_country_flag = AIO_RE_erase_star_cluster_locating
-                has_country_flag = AIO_RE_erase_star_cluster_finish_locate
+                has_country_flag = AIO_RE_erase_star_cluster_located
             }
         }
         name = AIO_RE_events.408.option_2
@@ -2510,7 +2512,7 @@ country_event = {
         trigger = {
             NOT = {
                 has_country_flag = AIO_RE_erase_star_cluster_locating
-                has_country_flag = AIO_RE_erase_star_cluster_finish_locate
+                has_country_flag = AIO_RE_erase_star_cluster_located
             }
         }
         name = AIO_return
@@ -2526,7 +2528,7 @@ country_event = {
         trigger = {
             OR = {
                 has_country_flag = AIO_RE_erase_star_cluster_locating
-                has_country_flag = AIO_RE_erase_star_cluster_finish_locate
+                has_country_flag = AIO_RE_erase_star_cluster_located
             }
         }
         name = AIO_cancel
@@ -2544,7 +2546,7 @@ country_event = {
             limit = {
                 NOR = {
                     has_country_flag = AIO_RE_erase_star_cluster_locating
-                    has_country_flag = AIO_RE_erase_star_cluster_finish_locate
+                    has_country_flag = AIO_RE_erase_star_cluster_located
 
                     has_country_flag = AIO_RE_exit_menu
                 }
@@ -2683,7 +2685,7 @@ situation_event = {
     immediate = {
         no_scope = {
             while = {
-                count = root.AIO_situaation_AIO_erase_galaxy_speed
+                count = root.AIO_situation_AIO_erase_galaxy_speed
                 limit = {
                     any_system = {
                         AIO_safe_remove_system_exclude_API = no
@@ -2735,4 +2737,3 @@ planet_event = {
         }
     }
 }
-

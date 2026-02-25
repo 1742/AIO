@@ -2,22 +2,22 @@
  # 局势影响提示
  AIO_AIT_events.situation_effect.title: "现实扰动"
  # 局势随机丰富星系矿藏
- AIO_AIT_events.203.desc: "[event_target:AIO_AIT_situation_enrich_system.GetName]周围的时空发生变动，整个星系涌现出原来没有的资源！"
+ AIO_AIT_events.203.desc: "[event_target:AIO_situation_RAIT_target.GetName]周围的时空发生变动，整个星系涌现出原来没有的资源！"
  AIO_AIT_events.203.opinion_1: "真神奇！"
  # 局势随机改变行星
- AIO_AIT_events.204.desc: "[event_target:AIO_AIT_situation_change_pc.GetName]周围的时空发生剧烈变动，现在它已经变为一颗[event_target:AIO_AIT_situation_change_pc.GetClassName]！"
+ AIO_AIT_events.204.desc: "[event_target:AIO_situation_RAIT_target.GetName]周围的时空发生剧烈变动，现在它已经变为一颗[event_target:AIO_situation_RAIT_target.GetClassName]！"
  AIO_AIT_events.204.opinion_1: "可恶！"
  # 局势随机退化殖民地
- AIO_AIT_events.205.desc: "[event_target:AIO_AIT_situation_degenerate_planet.GetName]周围的时空发生变动，整个殖民地的物种都退化了！"
+ AIO_AIT_events.205.desc: "[event_target:AIO_situation_RAIT_target.GetName]周围的时空发生变动，整个殖民地的物种都退化了！"
  AIO_AIT_events.205.opinion_1: "可恶！"
  # 局势随机倒流殖民地
- AIO_AIT_events.206.desc: "[event_target:AIO_AIT_situation_turn_back_time_planet.GetName]周围的时空发生剧烈变动，整个殖民地的发展倒退回了几年前！"
+ AIO_AIT_events.206.desc: "[event_target:AIO_situation_RAIT_target.GetName]周围的时空发生剧烈变动，整个殖民地的发展倒退回了几年前！"
  AIO_AIT_events.206.opinion_1: "可恶！"
  # 局势随机摧毁行星
- AIO_AIT_events.207.desc: "[event_target:AIO_AIT_situation_destroy_planet.GetName]周围的产生巨大的能量波动，它从宇宙中完全消失了！"
+ AIO_AIT_events.207.desc: "[event_target:AIO_situation_RAIT_target.GetName]周围的产生巨大的能量波动，它从宇宙中完全消失了！"
  AIO_AIT_events.207.opinion_1: "可恶！"
  # 局势随机摧毁星系
- AIO_AIT_events.208.desc: "[event_target:AIO_AIT_situation_destroy_system.GetName]产生巨大的能量波动，星系中的一切都瞬间蒸发了！"
+ AIO_AIT_events.208.desc: "[event_target:AIO_situation_RAIT_target.GetName]产生巨大的能量波动，星系中的一切都瞬间蒸发了！"
  AIO_AIT_events.208.opinion_1: "可恶！"
 
  # 随机应用无限
@@ -26,7 +26,7 @@
  AIO_AIT_known: "在物理定律被第二次“修改”之后，我们确定了这种异常的来源。很显然，[From.GetName]就是罪魁祸首。这与有关他们不计后果地追求先进科学知识的传言相吻合。"
  AIO_AIT_again: "[From.GetName]的实验又一次改变了宇宙的物理法则。我们应该假定他们是在搞一些极端危险的把戏，并对此做好准备。"
  # 时间之墟
- AIO_AIT_events.3100.title: "$AIO_AIT_TR_events_chain_title$"
+ AIO_AIT_events.3100.title: "$AIO_RAIT_TR_events_chain_title$"
  # 时间之墟一阶段
  AIO_AIT_events.31011.desc.normal.unknown: "殖民地[this.GetName]像是陷入了某种时间循环，每天零点21分星球的一切物质都会回到前一天的位置和状态，甚至逝者也复活了！居住其上的一部分居民的记忆不会随着时间倒流而忘却，许多人因此变得无法无天，拉帮结派，烧杀淫掠，无所不为，星球的秩序已经崩溃！\n\n$AIO_AIT_unknown$"
  AIO_AIT_events.31011.desc.normal.known: "殖民地[this.GetName]像是陷入了某种时间循环，每天零点21分星球的一切物质都会回到前一天的位置和状态，甚至逝者也复活了！居住其上的一部分居民的记忆不会随着时间倒流而忘却，许多人因此变得无法无天，拉帮结派，烧杀淫掠，无所不为，星球的秩序已经崩溃！\n\n$AIO_AIT_known$"
@@ -58,7 +58,7 @@
  AIO_AIT_events.31041.option_1.crisis.success: "我们对时空的理解更进一步。"
 
  # 重力膨胀
- AIO_AIT_events.3110.title: "$AIO_AIT_GS_events_chain_title$"
+ AIO_AIT_events.3110.title: "$AIO_RAIT_GS_events_chain_title$"
  # 重力膨胀一阶段
  AIO_AIT_events.31111.desc.unknown: "我们观察到[this.GetName]星系内的引力出现异常波动。该恒星的行星活动日益频繁，天体体积正在缓慢收缩，这种现象已对整个星系的地壳与气候造成显著干扰。我们最好密切关注这一现象的发展。\n\n$AIO_AIT_unknown$"
  AIO_AIT_events.31111.desc.known: "我们观察到[this.GetName]星系内的引力出现异常波动。该恒星的行星活动日益频繁，天体体积正在缓慢收缩，这种现象已对整个星系的地壳与气候造成显著干扰。我们最好密切关注这一现象的发展。\n\n$AIO_AIT_known$"
@@ -87,22 +87,3 @@
 
  # 定向应用无限
  AIO_AIT_events.401.title: "§R应用无限§!"
- AIO_AIT_events.401.desc: "现实不再随机的演化，而是等待指令。我们可以在此刻，设定优先权重，以决定§R应用无限§!的表现形式。每一种选择，都是一条或数条宇宙法则的改变。\n\n可以在政策§Y$policy_AIO_DAIT_policy$§!设定自动选择由科技触发的['concept_AIO_DAIT']。"
- AIO_AIT_events.401.option_1: "反热力学第二定律"
- AIO_AIT_events.401.option_2: "反因果律"
- AIO_AIT_events.401.option_3: "模拟宇宙"
- AIO_AIT_events.401.option_4: "设计需求"
- AIO_AIT_events.401.option_5: "超光"
- AIO_AIT_events.401.option_6: "重织基底"
- AIO_AIT_events.401.option_7: "纳米舰体"
- AIO_AIT_events.401.option_8: "虚空开采"
- AIO_AIT_events.401.option_9: "资源涌现"
- AIO_AIT_events.401.option_9.effect: "随机为帝国境内星系添加矿藏"
- AIO_AIT_events.401.option_10: "提高生产"
- AIO_AIT_events.401.option_11: "提高科研"
- AIO_AIT_events.401.option_12: "提高军事"
- AIO_AIT_events.403.desc: "选择要修改成的天体类型，恒星只能改为恒星，行星只能改为行星。"
-
- # 条件提示
- AIO_AIT_requires_AIO_repeat_tech_less_than_5: "£trigger_no£§Y$AIO_repeat_DAIT_technology_modifier$§!次数已达上限！"
-

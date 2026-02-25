@@ -17,9 +17,7 @@ on_yearly_pulse = {
 on_tech_increased = {
     events = {
         AIO_crisis_events.802  # 天灾目标，研究科技
-        # AIO_crisis_events.806  # 完成1级老登建筑，获得2级老登建筑选项
         AIO_crisis_events.907 # 完成科技升维假设，提示建造视相引擎
-        AIO_crisis_events.909  # 研究应用无限后触发定向应用无限
     }
 }
 
@@ -48,8 +46,8 @@ on_ship_built = {
 on_fleet_destroyed_perp = {
     events = {
         AIO_Aforgomom_events.202 # 亚弗戈蒙之怒被摧毁
-        AIO_ctrl_events.1001 # 定位舰被摧毁
-        AIO_ctrl_events.1003 # 异界行者被摧毁
+        AIO_RE_events.1001 # 定位舰被摧毁
+        AIO_RE_events.1003 # 异界行者被摧毁
     }
 }
 
@@ -58,8 +56,8 @@ on_fleet_destroyed_perp = {
 # From = disbanded fleet
 on_fleet_disbanded = {
     events = {
-        AIO_ctrl_events.1002  # 定位舰被解散
-        AIO_ctrl_events.1004  # 异界行者被解散
+        AIO_RE_events.1002  # 定位舰被解散
+        AIO_RE_events.1004  # 异界行者被解散
     }
 }
 
@@ -77,7 +75,7 @@ on_colony_destroyed = {
 
 on_megastructure_change_owner = {
     events = {
-        AIO_ctrl_events.1005 # AIO帝国控有相关巨构
+        AIO_RE_events.1005 # AIO帝国控有相关巨构
     }
 }
 

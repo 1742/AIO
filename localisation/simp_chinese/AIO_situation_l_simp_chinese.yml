@@ -5,7 +5,7 @@
  situation_AIO_merge_cosmos_type: "融合宇宙"
  situation_AIO_merge_cosmos_desc: "宇宙从未被设计为可统一，但我们已掌握其基础构造。通过调整规律的底层表达，我们将各个维度、时空状态，逐步收束为单一存在模型。每一个阶段的推进，都会使“现实”的结构变得更顺从、更简单、更接近我们的意志。\n\n效果：局势推进时，每6个月触发§R应用无限§!并影响河系内的星系和天体。"
  situation_AIO_merge_cosmos_monthly_change_tooltip: ""
- AIO_merge_cosmos_advanced_logic_modifier: "$AIO_advanced_logic$库存"
+ AIO_merge_cosmos_advanced_logic_modifier: "$AIO_advanced_logic$产出"
  AIO_merge_cosmos_apply_infinite_thesis_modifier: "§R应用无限§!"
  AIO_merge_cosmos_requires_AIO_mega_01: "£trigger_no£需要$AIO_mega_01$"
  AIO_merge_cosmos_requires_AIO_mega_02: "£trigger_no£需要$AIO_mega_02$"

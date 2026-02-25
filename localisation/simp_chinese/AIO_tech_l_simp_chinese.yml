@@ -11,11 +11,6 @@
  tech_AIO_ascending_dimensionality_theory: "升维假设"
  tech_AIO_ascending_dimensionality_theory_desc: "我们最强的大脑提出了升维的假设，揭示了宇宙本质的更高维度。为突破维度间的障壁，我们需要特殊的结构聚集能量。"
  AIO_ascending_dimensionality_theory_tech_desc: "§H$tech_AIO_ascending_dimensionality_theory$§!\n借助前文明技术设计的§Y$AIO_horizon_engine$§!将会完成这一任务。"
- # 应用无限
- tech_AIO_DAIT: "应用无限"
- tech_AIO_DAIT_desc: "通过进一步调整现实法则，使宇宙演化为我们设定的理想模型。"
- tech_AIO_DAIT.prereqfor_desc.title: "扭曲§H现实法则§!"
- tech_AIO_DAIT.prereqfor_desc.desc: "触发['concept_AIO_DAIT']，定向修改§H现实法则§!以解构当前宇宙。"
 
  # ---------------------------------- #
  # 老登建筑

@@ -2,22 +2,22 @@
  # merge cosmos situation affect tips
  AIO_AIT_events.situation_effect.title: "Reality Disturbed"
  # randomly enrich system deposits
- AIO_AIT_events.203.desc: "The space-time around the [event_target:AIO_AIT_situation_enrich_system.GetName] has changed, and resources that did not exist have emerged throughout the galaxy!"
+ AIO_AIT_events.203.desc: "The space-time around the [event_target:AIO_situation_RAIT_target.GetName] has changed, and resources that did not exist have emerged throughout the galaxy!"
  AIO_AIT_events.203.opinion_1: "$AMAZING$"
  # randomly change planet class
- AIO_AIT_events.204.desc: "The space-time around the [event_target:AIO_AIT_situation_change_pc.GetName] has changed drastically, and now it has become a [event_target:AIO_AIT_situation_change_pc.GetClassName]！"
+ AIO_AIT_events.204.desc: "The space-time around the [event_target:AIO_situation_RAIT_target.GetName] has changed drastically, and now it has become a [event_target:AIO_situation_RAIT_target.GetClassName]！"
  AIO_AIT_events.204.opinion_1: "$AIO_dawn_it$"
  # randomly degenerate colonies
- AIO_AIT_events.205.desc: "The space-time around the [event_target:AIO_AIT_situation_degenerate_planet.GetName] has changed drastically, and all the species in the entire colony have regressed!"
+ AIO_AIT_events.205.desc: "The space-time around the [event_target:AIO_situation_RAIT_target.GetName] has changed drastically, and all the species in the entire colony have regressed!"
  AIO_AIT_events.205.opinion_1: "$AIO_dawn_it$"
  # randomly turn back colonies' time
- AIO_AIT_events.206.desc: "The space-time around the [event_target:AIO_AIT_situation_turn_back_time_planet.GetName] has changed drastically, and the development of the entire colony has regressed to a few years ago!"
+ AIO_AIT_events.206.desc: "The space-time around the [event_target:AIO_situation_RAIT_target.GetName] has changed drastically, and the development of the entire colony has regressed to a few years ago!"
  AIO_AIT_events.206.opinion_1: "$AIO_dawn_it$"
  # randomly remove planet
- AIO_AIT_events.207.desc: "The space-time around the [event_target:AIO_AIT_situation_destroy_planet.GetName] has changed drastically, and it has completely vanished from the universe!"
+ AIO_AIT_events.207.desc: "The space-time around the [event_target:AIO_situation_RAIT_target.GetName] has changed drastically, and it has completely vanished from the universe!"
  AIO_AIT_events.207.opinion_1: "$AIO_dawn_it$"
  # randomly remove system
- AIO_AIT_events.208.desc: "The space-time around the [event_target:AIO_AIT_situation_destroy_system.GetName] has changed drastically, and everything in the system evaporated instantly!"
+ AIO_AIT_events.208.desc: "The space-time around the [event_target:AIO_situation_RAIT_target.GetName] has changed drastically, and everything in the system evaporated instantly!"
  AIO_AIT_events.208.opinion_1: "$AIO_dawn_it$"
 
  # randomly apply infinity thesis
@@ -26,7 +26,7 @@
  AIO_AIT_known: "After the laws of physics were "modified" for the second time, we identified the source of this anomaly. Obviously, [From.GetName] is the culprit. This is in line with the rumors about their reckless pursuit of advanced scientific knowledge."
  AIO_AIT_again: "The experiment of [From.GetName] once again changed the physical laws of the universe. We should assume that they are playing some extremely dangerous tricks and be prepared for it."
  # Ruins of Time
- AIO_AIT_events.3100.title: "$AIO_AIT_TR_events_chain_title$"
+ AIO_AIT_events.3100.title: "$AIO_RAIT_TR_events_chain_title$"
  # Ruins of Time, first stage
  AIO_AIT_events.31011.desc.normal.unknown: "The colony [this.GetName] seems to be trapped in some kind of time loop. At 0:21 every day, all the matter on the planet returns to the position and state of the previous day, and even the deceased come back to life! The memories of some of the residents living on it will not be forgotten with the passage of time. As a result, many people have become lawless, forming cliques, burning, killing, looting and committing all kinds of crimes. The order of the planet has collapsed!\n\n$AIO_AIT_unknown$"
  AIO_AIT_events.31011.desc.normal.known: "The colony [this.GetName] seems to be trapped in some kind of time loop. At 0:21 every day, all the matter on the planet returns to the position and state of the previous day, and even the deceased come back to life! The memories of some of the residents living on it will not be forgotten with the passage of time. As a result, many people have become lawless, forming cliques, burning, killing, looting and committing all kinds of crimes. The order of the planet has collapsed!\n\n$AIO_AIT_known$"
@@ -58,7 +58,7 @@
  AIO_AIT_events.31041.option_1.crisis.success: "Our understanding of time and space has advanced further."
 
  # Gravity Expansion
- AIO_AIT_events.3110.title: "$AIO_AIT_GS_events_chain_title$"
+ AIO_AIT_events.3110.title: "$AIO_RAIT_GS_events_chain_title$"
  # Gravity Expansion, first stage
  AIO_AIT_events.31111.desc.unknown: "We have observed abnormal fluctuations in the gravity within the [this.GetName] galaxy. The planetary activities of this star are becoming increasingly frequent, and the volume of celestial bodies is slowly shrinking. This phenomenon has caused significant disturbances to the crust and climate of the entire galaxy. We'd better pay close attention to the development of this phenomenon.\n\n$AIO_AIT_unknown$"
  AIO_AIT_events.31111.desc.known: "We have observed abnormal fluctuations in the gravity within the [this.GetName] galaxy. The planetary activities of this star are becoming increasingly frequent, and the volume of celestial bodies is slowly shrinking. This phenomenon has caused significant disturbances to the crust and climate of the entire galaxy. We'd better pay close attention to the development of this phenomenon.\n\n$AIO_AIT_known$"
@@ -87,22 +87,3 @@
 
  # directional apply infinity thesis
  AIO_AIT_events.401.title: "§RApply Infinity Thesis§!"
- AIO_AIT_events.401.desc: "Reality no longer evolves randomly but waits for instructions. At this moment, we can set the priority weights to determine the expression of §RApply Infinity Thesis§!. Every choice represents a change in one or several laws of the universe.\n\nYou can automatically select technology-triggered ['concept_AIO_DAIT'] in the policy §Y$policy_AIO_DAIT_policy$§!."
- AIO_AIT_events.401.option_1: "Anti-the-Second-Law-of-thermodynamics"
- AIO_AIT_events.401.option_2: "Anti-causality law"
- AIO_AIT_events.401.option_3: "Simulated universe"
- AIO_AIT_events.401.option_4: "Design requirement"
- AIO_AIT_events.401.option_5: "Superlight"
- AIO_AIT_events.401.option_6: "Weave Substrate"
- AIO_AIT_events.401.option_7: "Nanites Ship Hull"
- AIO_AIT_events.401.option_8: "Void Mining"
- AIO_AIT_events.401.option_9: "Resource Emerge"
- AIO_AIT_events.401.option_9.effect: "Randomly add deposits to systems within our empire."
- AIO_AIT_events.401.option_10: "Enhance Production"
- AIO_AIT_events.401.option_11: "Enhance Research"
- AIO_AIT_events.401.option_12: "Enhance Military"
- AIO_AIT_events.403.desc: "Select the type of object you want to modify, and the star can only be changed to a star, and the planet can only be changed to a planet."
-
- # condition tooltips
- AIO_AIT_requires_AIO_repeat_tech_less_than_5: "£trigger_no£§Y$AIO_repeat_DAIT_technology_modifier$§! has reached its limit!"
-

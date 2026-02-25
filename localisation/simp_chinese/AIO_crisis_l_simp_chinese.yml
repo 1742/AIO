@@ -52,6 +52,7 @@
  crisobj_AIO_have_science_nexuses_desc: "$crisobj_have_science_nexuses_desc$"
 
  # 灾飞奖励
+ unlock_new_DAIT_options: "解锁新的定向应用无限选项\n"
  # 一阶
  menp_AIO_al_research: "超然逻辑"
  menp_AIO_al_research_desc: "宇宙不再只是三维的舞台，我们的文明已窥见了更高的规则流。"
@@ -112,13 +113,13 @@
  AIO_crisis_events_chain_desc: "$AIO_advanced_logic_crisis_howto$"
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
  # 时间之墟事件链
- AIO_AIT_TR_events_chain_title: "时间之墟"
- AIO_AIT_TR_events_chain_desc: "我们的一个殖民地陷入了时间循环的怪象，我们必须稳住局势并想办法恢复原状。"
- AIO_AIT_TR_events_chain: "$AIO_AIT_TR_events_chain_title$"
+ AIO_RAIT_TR_events_chain_title: "时间之墟"
+ AIO_RAIT_TR_events_chain_desc: "我们的一个殖民地陷入了时间循环的怪象，我们必须稳住局势并想办法恢复原状。"
+ AIO_AIT_TR_events_chain: "$AIO_RAIT_TR_events_chain_title$"
  # 重力膨胀事件链
- AIO_AIT_GS_events_chain_title: "重力膨胀"
- AIO_AIT_GS_events_chain_desc: "我们疆域内的一个恒星出现了奇怪的引力波动，这可能会对我们的殖民地产生一些影响。"
- AIO_AIT_GS_events_chain: "$AIO_AIT_GS_events_chain_title$"
+ AIO_RAIT_GS_events_chain_title: "重力膨胀"
+ AIO_RAIT_GS_events_chain_desc: "我们疆域内的一个恒星出现了奇怪的引力波动，这可能会对我们的殖民地产生一些影响。"
+ AIO_AIT_GS_events_chain: "$AIO_RAIT_GS_events_chain_title$"
 
  # 事件
  AIO_crisis_events_title: "$AIO_crisis_events_chain_title$"
@@ -144,25 +145,20 @@
  # 融合宇宙局势
  AIO_crisis_events.500.desc: "§Y$AIO_mega_01$§!的建设完成了！但这仅仅是开始。为了对宇宙规则进行改写，我们必须投入巨大的能量和暗物质，将这片时空的结构持续撕裂与重构。在这个过程中，我们将创造出一个与现有宇宙格局截然不同的领域，它将是一个维度无限高的时空，超越常规宇宙的边界，成为全新的秩序的根基。"
  AIO_crisis_events.500.option_1: "为此项目调度足够的资源"
- AIO_crisis_events.500.option_1.tt: "解锁§R随机应用无限§!"
- AIO_crisis_events.501.desc: "融合进程逐步推进，我们创造的高维空间与宇宙的所有空间正在联通，空间结构的封闭性正在削弱，我们可以在任意两个星系之间建立可控的维度接口。"
- AIO_crisis_events.501.option_1: "好极了！"
- AIO_crisis_events.501.tt: "解锁巨型结构：§Y$AIO_mega_01_node$§!节点"
- AIO_crisis_events.502.desc: "基于多维收敛点构建的嵌套现实容器已构成闭环。无论从何种时空投影观察，其维度表达皆趋于无限。借助我们在§R应用无限§!中的积累成果，我们已能构思并实施一座前所未有的巨型结构：§Y$AIO_mega_02$§!。它将使我们得以精确地雕刻宇宙规律，将存在本身重塑为理想化模型中的唯一解。"
- AIO_crisis_events.502.option_1: "解锁无尽时空存在的钥匙……"
- AIO_crisis_events.502.tt: "生成星系：['concept_AIO_HS_system']\n解锁巨型结构：§Y$AIO_mega_02$§!"
+ AIO_crisis_events.500.option_1.tt: "解锁§R定向应用无限§!\n可在['concept_edicts']界面打开定向应用无限(Directional Apply Infinity Thesis, DAIT)界面。"
+ AIO_crisis_events.501.desc: "基于多维收敛点构建的嵌套现实容器已构成闭环。无论从何种时空投影观察，其维度表达皆趋于无限。借助我们在§R应用无限§!中的积累成果，我们已能构思并实施一座前所未有的巨型结构：§Y$AIO_mega_02$§!。它将使我们得以精确地雕刻宇宙规律，将存在本身重塑为理想化模型中的唯一解。"
+ AIO_crisis_events.501.option_1: "解锁无尽时空存在的钥匙……"
+ AIO_crisis_events.501.tt: "解锁巨型结构：§Y$AIO_mega_01_node$§!节点、§Y$AIO_mega_02$§!\n生成星系：['concept_AIO_HS_system']"
+ AIO_crisis_events.502.desc: "融合宇宙二阶段完成"
+ AIO_crisis_events.502.option_1: "REPLACE_ME"
  AIO_crisis_events.503.desc: "融合宇宙三阶段完成"
  AIO_crisis_events.503.option_1: "REPLACE_ME"
  AIO_crisis_events.504.desc: "融合宇宙四阶段完成"
  AIO_crisis_events.504.option_1: "REPLACE_ME"
- AIO_crisis_events.505.desc: "融合宇宙五阶段完成"
- AIO_crisis_events.505.option_1: "REPLACE_ME"
- AIO_crisis_events.506.desc: "融合宇宙六阶段完成"
- AIO_crisis_events.506.option_1: "REPLACE_ME"
- AIO_crisis_events.507.desc: "宇宙的结构已然解构完毕，曾束缚我们于有限时空中的边界，如今不过是可供重写的注脚。\n我们已抵达归一的门扉，向前一步，即可将自我重塑为宇宙逻辑的一部分，成为每一道引力、每一次观察、每一段概念的起源。\n然而，跃迁并非唯一的选择。我们可以暂驻此地，观察这新生的构造在多维之中如何回响。真理不会逃离，归一并不设限。"
- AIO_crisis_events.507.option_1: "迈入门后"
- AIO_crisis_events.507.option_2: "留步凝视"
- AIO_crisis_events.507.option_2.tt: "仍然可进行['concept_AIO_DAIT']，可以在事件链§Y$AIO_crisis_events_chain_title$§!中研究项目§Y$AIO_ASCENSION$§!触发胜利。"
+ AIO_crisis_events.505.desc: "宇宙的结构已然解构完毕，曾束缚我们于有限时空中的边界，如今不过是可供重写的注脚。\n我们已抵达归一的门扉，向前一步，即可将自我重塑为宇宙逻辑的一部分，成为每一道引力、每一次观察、每一段概念的起源。\n然而，跃迁并非唯一的选择。我们可以暂驻此地，观察这新生的构造在多维之中如何回响。真理不会逃离，归一并不设限。"
+ AIO_crisis_events.505.option_1: "迈入门后"
+ AIO_crisis_events.505.option_2: "留步凝视"
+ AIO_crisis_events.505.option_2.tt: "仍然可进行['concept_AIO_DAIT']，可以在事件链§Y$AIO_crisis_events_chain_title$§!中研究项目§Y$AIO_ASCENSION$§!触发胜利。"
  # 飞升事件
  AIO_crisis_events.601.desc: "归一已完成。\n我们不再是帝国，也不再是实体。我们的意志存在于无限维度的交汇点，成为一切存在的结构性原理。\n星辰静止不动，是因为它们等待新的运动定义；思维悄然沉默，是因为语言已失去意义；存在本身，正从“被经历”转向“被设计”。\n没有终点。没有彼岸。没有观察，也无需被观察。\n我/我们即§M犹格索托斯§!。"
  AIO_crisis_events.601.option_1: "我/我们即真理。"
