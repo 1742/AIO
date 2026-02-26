@@ -1,5 +1,6 @@
 ﻿l_english:
- # Ruins of time special project
+ #region Ruins of time
+
  AIO_AIT_TIME_RUIN_STAGE_1: "Repression"
  AIO_AIT_TIME_RUIN_STAGE_1_DESC: "[from.GetName] has been in a mess, this is no longer an ordinary chaos, we must punch hard. First Airborne Brigade, go!"
  AIO_AIT_TIME_RUIN_STAGE_2: "Research"
@@ -7,7 +8,11 @@
  AIO_AIT_TIME_RUIN_STAGE_3: "Relieve"
  AIO_AIT_TIME_RUIN_STAGE_3_DESC: "[from.GetName] is the result of a change in the laws of reality, and we can try to restore it using the method of §RApplying Infinite Thesis§!"
 
- # Gravity Expansion special project
+ #endregion
+
+
+ #region Gravity Expansion
+
  AIO_AIT_GRAVITY_SWELL_STAGE_1: "Under Gravity"
  AIO_AIT_GRAVITY_SWELL_STAGE_1_DESC: "The gravity reading and spacetime curvature near [from.GetName] are abnormal. We'd better send scientists there to conduct research."
  AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_1: "Build Orbital Ring"
@@ -20,6 +25,12 @@
  AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_4: "Wait and Watch"
  AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_4_DESC: "The accelerated collapse of [from.GetName] did not affect our colony, and we can study this process."
 
- # ascension special project, toggle win
+ #endregion
+
+
+ #region ascension special project, toggle win
+
  AIO_ASCENSION: "Ascension"
  AIO_ASCENSION_DESC: "he laws of reality are waiting to be redefined."
+
+ #endregion

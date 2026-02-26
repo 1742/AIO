@@ -1,14 +1,10 @@
 ﻿l_english:
+ #region fallen building
+
  building_AIO_fe_automation_city: "$tech_AIO_fe_automatication$"
  building_AIO_fe_automation_city_desc: "$tech_AIO_fe_automatication_desc$"
- building_AIO_fe_automation_city_2: "$tech_AIO_fe_automatication_2$"
- building_AIO_fe_automation_city_2_desc: "$tech_AIO_fe_automatication_2_desc$"
  building_AIO_fe_automation_secondary: "$tech_AIO_fe_automatication$"
  building_AIO_fe_automation_secondary_desc: "$tech_AIO_fe_automatication_desc$"
- building_AIO_fe_automation_secondary_2: "$tech_AIO_fe_automatication_2$"
- building_AIO_fe_automation_secondary_2_desc: "$tech_AIO_fe_automatication_2_desc$"
- building_AIO_fe_automation_1_tt: "$automation_city_tooltip$ £nanites£ §R+1§!"
- building_AIO_fe_automation_2_tt: "$automation_city_tooltip$ £nanites£ §R+2§!"
  building_AIO_dimensional_replicator: "$building_dimensional_replicator$"
  building_AIO_dimensional_replicator_desc: "$building_dimensional_replicator_desc$"
  building_AIO_dimensional_fabricator: "$building_dimensional_fabricator$"
@@ -69,3 +65,34 @@
  building_AIO_fe_clinic_1_desc: "$building_fe_clinic_1_desc$"
  building_AIO_fe_clinic_2: "AIO-$building_fe_clinic_2$"
  building_AIO_fe_clinic_2_desc: "$building_fe_clinic_2_desc$"
+
+ #endregion
+
+
+ #region matryoshka brain building
+
+ # Resonator
+ building_AIO_MB_resonator: "Resonator"
+ building_AIO_MB_resonator_desc: "Resonators can redirect and harness the cognitive potential of free minds and autonomous systems, guiding each node to improve the processing efficiency of its neighbors."
+ building_AIO_resonator_tt: "Per §Y$job_AIO_recursive_node$§! produce: §G+0.1%§!\n(current: §G+[AIO_AIO_resonator_factor]%§!)"
+ # Stabilisator
+ building_AIO_MB_stabilisator: "Stabilisator"
+ building_AIO_MB_stabilisator_desc: "The stabilization system filters out the computational noise generated when the physical pressure exceeds the limit of the recursive node. Reducing interference means improving overall output."
+ # Overclocker
+ building_AIO_MB_overclocker: "Overclocker"
+ building_AIO_MB_overclocker_desc: "Overclockers can increase the frequency of the recursive node processor for higher and faster output, but it also causes a higher failure rate."
+ # Preserver
+ building_AIO_MB_preserver: "Preserver"
+ building_AIO_MB_preserver_desc: "Drones in this network are very vulnerable to energy fluctuations, and the conservator strives to reduce these fluctuations to protect recursive nodes."
+ # Reactor
+ building_AIO_MB_reactor: "Reactor"
+ building_AIO_MB_reactor_desc: "The more recursive nodes connected to the network, the more energy demand is used to sustain it. Installing additional reactors will alleviate the complex logistical actions inherent in powering the matryoshka brain."
+ # Life Support
+ building_AIO_MB_life_support: "Life Support"
+ building_AIO_MB_life_support_desc: "This dedicated facility can organize the maintenance of key components of the matryoshka doll brain to support more nodes and a healthier network environment."
+ # Cogitator
+ building_AIO_MB_cogitator: "Cogitator"
+ building_AIO_MB_cogitator_desc: "The computation of the hyperspace supply chain is very complex. Redistributing some of the processing power to this task could help even the most massive fleets advance deeper into enemy territory."
+ building_AIO_lathe_cogitator_tt: "§Y$MOD_COUNTRY_NAVAL_CAP_ADD$§!: Per 100 §Y$job_AIO_recursive_node$§! §G+1§!\n(current: §G+[AIO_num_AIO_recursive_node_per_100]%§!)\n§Y$MOD_SHIP_EXPERIENCE_GAIN_MULT$§!：Per 100 §Y$job_AIO_recursive_node$§!: §G+2%§!\n(current：§G+[AIO_num_AIO_recursive_node_per_200]%§!)"
+
+ #endregion

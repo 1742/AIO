@@ -4,6 +4,9 @@
  AIO_Tawi: "塔维尔"
  AIO_Aforgomom: "亚弗戈蒙"
 
+
+ #region 主界面
+
  AIO_RE_events.202.desc.first_enter_library: "眼前的空无一物的时空泛起震荡？虽然你不太清楚空无一物的黑暗空间是怎么泛起涟漪的，但你的“感官”是这么回答你的。\n\n一片模糊的金色、黄色、棕色的光点浮现，组成一幅“低分辨率”的图案，随着分辨率的不断提高，你发现自己站在一座巨大的古典图书馆中。它没有边界，遥远的穹顶上是不断旋转却永不重复的星图。你翻开一本书，它记述着一段历史，一个文明，一次悲剧。\n\n你转过身，在一片空地上，一架巨大的打字机正缓缓的吐出写满不明文字和图案的书页，每一页，都是一个正在被写下的世界。\n\n在塔维尔的引导下，你步入一处静谧的书房区域。书桌上，一盏白炽灯洒下昏黄灯光，仿佛把这片超维之地映出了一丝人类记忆的温度。一支细长的钢笔放在一本摊开的书上面。它没有墨水，但当你拿起它时，你便知道，只要写下，世界就会照做。\n\n塔维尔站在书桌对面，像是这座馆藏的唯一守护人。祂目光柔和，却异常专注地注视着你。\n\n“这就是你的控制区——或者，如果你喜欢更古典的称呼，也可以叫它‘图书馆’。从这里，你可以翻阅世界、编辑现实，也可以……将某些段落直接撕掉，亚弗戈蒙会帮你做到。不过我建议你不要太频繁使用那支笔。它不会提醒你什么时候‘写错’了。”\n\n祂轻轻一笑。\n\n“当然，如果你足够自信，我不会拦你。”"
  AIO_RE_events.202.desc.normal: "“欢迎回来。”\n\n你正置身于星空下的书房，一座存在于无限维度之上的图书馆。这里，每一页书写的，都是宇宙的结构。\n\n塔维尔站在桌对面，似乎早已等候你多时。"
  AIO_RE_events.202.option_1: "现实编辑"
@@ -17,7 +20,12 @@
  AIO_RE_events.202.option_5: "离开书房"
  AIO_RE_events.202.option_5.tt: "返回观测者的位置。"
 
- AIO_RE_events.301.title: "应用无限"
+ #endregion
+
+
+ #region 显示编辑
+
+ AIO_RE_events.301.title: "现实编辑"
  AIO_RE_events.301.desc: "塔维尔翻开一页空白的书，将它推向你。祂的动作轻柔，语气一如既往地平静。\n\n“你可以在这里对现实进行修改。物质、因果、意识、秩序……很多事物都可以被重新定义，只要你愿意。”\n\n“当然，改写不代表理解。你最好知道自己在做什么。”\n\n祂停顿片刻，仿佛还想说什么，但最终只是轻轻点头。\n\n“开始吧。”"
  AIO_RE_events.301.option_1: "反热力学第二定律"
  AIO_RE_events.301.option_2: "设计需求"
@@ -102,7 +110,11 @@
  AIO_RE_events.311.option_2: "在指定星系生成宇宙风暴"
  AIO_RE_events.311.effect: "在目标星系生成指定宇宙风暴"
 
- # 亚弗戈蒙界面
+ #endregion
+
+
+ #region 亚弗戈蒙界面
+
  AIO_RE_events.401.title: "亚弗戈蒙"
  AIO_RE_events.401.desc: "空间变得比以往更安静，仿佛某种看不见的存在正在等你说话。\n\n“祂没有形体，也不会回应你。如果你准备好，我会将你的指令转达给亚弗戈蒙。”\n\n“准备好了，就开始吧。”"
  AIO_RE_events.401.option_1: "打击指定星系"
@@ -113,6 +125,7 @@
  AIO_RE_events.401.option_6: "抹除星系"
  AIO_RE_events.401.option_7: "抹除星团"
  AIO_RE_events.401.option_8: "回到主菜单"
+
  # 打击指定星系说明
  AIO_RE_events.402.prepare_locate.desc: "“祂会向目标倾泻无尽怒意，无差别地攻击范围内的一切。”\n\n效果：$AIO_RE_events.402.effect$"
  AIO_RE_events.402.locating.desc: "“你已选择对特定£system£星系进行§Y$AIO_RE_events.401.option_1$§!编辑。请在目标星系上建立§Y$AIO_locator$§!。在标定完成前，你仍可以返回此处，对该操作做出取消。”"
@@ -165,22 +178,18 @@
  AIO_RE_events.408.destroying_galaxy.allow: "银河正在消亡"
  AIO_RE_events.408.destroying_galaxy.tt: "每90天抹除20个星系"
 
+ #endregion
+
+
+ #region 提示
+
  AIO_requires_not_has_ASLT: "£trigger_no£已经存在§Y$AIO_RE_ASLT_modifier$§!"
  AIO_requires_not_has_design_requirement: "£trigger_no£已经存在§Y$AIO_RE_design_requirement_modifier$§!"
  AIO_requires_not_has_superlight: "£trigger_no£已经存在§Y$AIO_RE_superlight_modifier$§!"
  AIO_requires_not_exist_Aformom_Wrath_fleet: "£trigger_no£已存在§Y$AIO_Aforgomom_Wrath$§!"
 
-
- # 常用语
- AIO_confirm: "确认"
- AIO_cancel: "取消"
- AIO_return: "返回"
- AIO_exit: "退出"
- AIO_close_communication: "关闭通讯"
- AIO_continue: "继续"
- AIO_think_more: "容我三思"
  AIO_global: "为所有帝国添加"
  AIO_specific: "为特定帝国添加"
  AIO_unlock_locator: "解锁§Y定位器§!"
 
-
+ #endregion

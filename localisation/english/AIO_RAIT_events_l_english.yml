@@ -1,32 +1,39 @@
 ﻿l_english:
- # merge cosmos situation affect tips
+ #region merge cosmos situation affect tips
+
  AIO_AIT_events.situation_effect.title: "Reality Disturbed"
- # randomly enrich system deposits
+ # enrich system deposits
  AIO_AIT_events.203.desc: "The space-time around the [event_target:AIO_situation_RAIT_target.GetName] has changed, and resources that did not exist have emerged throughout the galaxy!"
  AIO_AIT_events.203.opinion_1: "$AMAZING$"
- # randomly change planet class
+ # change planet class
  AIO_AIT_events.204.desc: "The space-time around the [event_target:AIO_situation_RAIT_target.GetName] has changed drastically, and now it has become a [event_target:AIO_situation_RAIT_target.GetClassName]！"
  AIO_AIT_events.204.opinion_1: "$AIO_dawn_it$"
- # randomly degenerate colonies
+ # degenerate colonies
  AIO_AIT_events.205.desc: "The space-time around the [event_target:AIO_situation_RAIT_target.GetName] has changed drastically, and all the species in the entire colony have regressed!"
  AIO_AIT_events.205.opinion_1: "$AIO_dawn_it$"
- # randomly turn back colonies' time
+ # turn back colonies' time
  AIO_AIT_events.206.desc: "The space-time around the [event_target:AIO_situation_RAIT_target.GetName] has changed drastically, and the development of the entire colony has regressed to a few years ago!"
  AIO_AIT_events.206.opinion_1: "$AIO_dawn_it$"
- # randomly remove planet
+ # remove planet
  AIO_AIT_events.207.desc: "The space-time around the [event_target:AIO_situation_RAIT_target.GetName] has changed drastically, and it has completely vanished from the universe!"
  AIO_AIT_events.207.opinion_1: "$AIO_dawn_it$"
- # randomly remove system
+ # remove system
  AIO_AIT_events.208.desc: "The space-time around the [event_target:AIO_situation_RAIT_target.GetName] has changed drastically, and everything in the system evaporated instantly!"
  AIO_AIT_events.208.opinion_1: "$AIO_dawn_it$"
 
- # randomly apply infinity thesis
+ #endregion
+
+ #region randomly apply infinity thesis
+
  # the suspect of AIT from other country
  AIO_AIT_unknown: "It is still unclear who or what has caused these changes, but we suspect that it might be the work of a certain country."
  AIO_AIT_known: "After the laws of physics were "modified" for the second time, we identified the source of this anomaly. Obviously, [From.GetName] is the culprit. This is in line with the rumors about their reckless pursuit of advanced scientific knowledge."
  AIO_AIT_again: "The experiment of [From.GetName] once again changed the physical laws of the universe. We should assume that they are playing some extremely dangerous tricks and be prepared for it."
- # Ruins of Time
+
+ #region Ruins of Time
+
  AIO_AIT_events.3100.title: "$AIO_RAIT_TR_events_chain_title$"
+
  # Ruins of Time, first stage
  AIO_AIT_events.31011.desc.normal.unknown: "The colony [this.GetName] seems to be trapped in some kind of time loop. At 0:21 every day, all the matter on the planet returns to the position and state of the previous day, and even the deceased come back to life! The memories of some of the residents living on it will not be forgotten with the passage of time. As a result, many people have become lawless, forming cliques, burning, killing, looting and committing all kinds of crimes. The order of the planet has collapsed!\n\n$AIO_AIT_unknown$"
  AIO_AIT_events.31011.desc.normal.known: "The colony [this.GetName] seems to be trapped in some kind of time loop. At 0:21 every day, all the matter on the planet returns to the position and state of the previous day, and even the deceased come back to life! The memories of some of the residents living on it will not be forgotten with the passage of time. As a result, many people have become lawless, forming cliques, burning, killing, looting and committing all kinds of crimes. The order of the planet has collapsed!\n\n$AIO_AIT_known$"
@@ -39,15 +46,18 @@
  AIO_AIT_events.31011.not_crisis.gestalt.option_1: "Send scientists to conduct research immediately!"
  AIO_AIT_events.31011.crisis.not_maker.option_1: "Fascinating! Send scientists to conduct research immediately!"
  AIO_AIT_events.31011.crisis.option_1: "Now that things have come to this, let's take this opportunity to study some physics."
+
  # Ruins of Time, second stage
  AIO_AIT_events.31012.desc.normal: "Our peacekeeping forces are also affected by the time loop of [this.GetName]. After several days of landing operations (where soldiers return to track every day), the situation at [this.GetName] has stabilized. Our scientists are in position and ready to study this peculiar physical condition. Next, we are going to deal with a complex matter. Many victims have suffered inhumane treatment over the past year. They demand that the perpetrators be severely punished, which will enhance citizens' trust in the government. However, the incident occurred in such a chaotic manner that all the evidence vanished with the passage of time. We estimate that there were countless people involved in the criminal act. If they were punished strictly in accordance with morality and law, it would consume a great deal of time and money..."
  AIO_AIT_events.31012.normal.option_1: "Any evil will eventually be brought to justice!"
  AIO_AIT_events.31012.normal.option_2: "All criminal acts that ignore this process."
+
  # Ruins of Time, third stage
  AIO_AIT_events.31013.desc.not_crisis: "Our scientists have done their best. They are helpless against the changes in the passage of time, but the rollback time on [this.GetName] has been postponed, which indicates that this phenomenon is fading. Scientists propose that some more expensive scientific experiments could be conducted on this planet, but it won't cause any material loss anyway."
  AIO_AIT_events.31013.desc.crisis: "Our scientists have discovered through the super-dimensional device that the high-dimensional spacetime near [this.GetName] forms a complex ring. The planet will return to its origin along this "high-dimensional orbit". Maybe we can use the super-dimensional device to upgrade the spacetime around [this.GetName] and then readjust it. Or we can take advantage of this feature to conduct some costly scientific experiments at [this.GetName], which won't cause any material loss anyway."
  AIO_AIT_events.31013.option_1: "Well, that's it."
  AIO_AIT_events.31013.option_2: "Remove the time loop phenomenon on [this.GetName]."
+
  # Ruins of Time, fourth stage
  AIO_AIT_events.31014.desc.not_crisis.liquidation: "[this.GetName] has a brand new day! The passage of time nearby has completely returned to normal. To commemorate this event, the people on [this.GetName] decided to build a monument on it to remember the tragedy in this chaos and the rescue workers who sacrificed their lives due to aid."
  AIO_AIT_events.31014.desc.not_crisis.unliquidation: "[this.GetName] has a brand new day! The passage of time nearby has completely returned to normal, but the hatred formed in the chaos has not yet been eliminated..."
@@ -57,8 +67,13 @@
  AIO_AIT_events.31014.option_1.normal: "[this.GetName], welcome to a new day!"
  AIO_AIT_events.31041.option_1.crisis.success: "Our understanding of time and space has advanced further."
 
- # Gravity Expansion
+ #endregion
+
+
+ #region Gravity Expansion
+
  AIO_AIT_events.3110.title: "$AIO_RAIT_GS_events_chain_title$"
+
  # Gravity Expansion, first stage
  AIO_AIT_events.31111.desc.unknown: "We have observed abnormal fluctuations in the gravity within the [this.GetName] galaxy. The planetary activities of this star are becoming increasingly frequent, and the volume of celestial bodies is slowly shrinking. This phenomenon has caused significant disturbances to the crust and climate of the entire galaxy. We'd better pay close attention to the development of this phenomenon.\n\n$AIO_AIT_unknown$"
  AIO_AIT_events.31111.desc.known: "We have observed abnormal fluctuations in the gravity within the [this.GetName] galaxy. The planetary activities of this star are becoming increasingly frequent, and the volume of celestial bodies is slowly shrinking. This phenomenon has caused significant disturbances to the crust and climate of the entire galaxy. We'd better pay close attention to the development of this phenomenon.\n\n$AIO_AIT_known$"
@@ -67,6 +82,7 @@
  AIO_AIT_events.31111.not_crisis.option_1: "Send scientists to conduct research."
  AIO_AIT_events.31111.crisis.not_maker.option_1: "Interesting, send scientists to conduct research."
  AIO_AIT_events.31111.crisis.marker.option_1: "Conduct an analysis."
+
  # Gravity Expansion, second stage
  AIO_AIT_events.31112.desc.not_crisis.has_colony: "Scientists report that the gravity near the star [this.GetName] is increasing at an astonishing rate, and its volume is contracting at an accelerating rate! According to preliminary predictions, the star may collapse into a black hole within a few years, thereby destroying the entire ecosystem and planetary colonies within the galaxy. We must make a decision immediately: Evacuate? Or to transform the orbital ring to maintain the planet's climate?"
  AIO_AIT_events.31112.desc.crisis.has_colony: "Scientists report that the gravity near the star [this.GetName] is increasing at an astonishing rate, and its volume is contracting at an accelerating rate! According to preliminary predictions, the star may collapse into a black hole within a few years, thereby destroying the entire ecosystem and planetary colonies within the galaxy. We must make a decision immediately: Evacuate? Renovation? Or use our reality editing technology to reverse everything."
@@ -74,6 +90,7 @@
  AIO_AIT_events.31112.not_crisis.has_colony.option_1: "We'll handle it well."
  AIO_AIT_events.31112.no_colony.option_1: "Study this process."
  AIO_AIT_events.31112.crisis.option_1: "Reverse collapse."
+
  # Gravity Expansion, third stage
  AIO_AIT_events.31113.desc.renovate_success: "Our engineers and workers worked day and night to complete the [this.GetName] ring structure adjustment, stabilizing the orbit and energy cycle in time before the star collapsed. Although this planet wil be on the edge of a black hole, its surface environment has been successfully maintained and is habitable."
  AIO_AIT_events.31113.desc.renovate_fail: "Despite the significant investment of resources, the engineering team admitted that the progress of the renovation lagged far behind the rate of gravitational changes. The star of [this.GetName] has completely collapsed, forming a new black hole. Strong gravitational fluctuations disrupted the structure of the entire system. We failed to completely evacuate the colony population within [this.GetName] in time. They vanished along with the planetary geological disaster when the star eventually collapsed. This disaster dealt a huge blow to the psychology of the people across the country."
@@ -84,6 +101,8 @@
  AIO_AIT_events.31113.has_colony.fail.option_1: "We need to improve the disaster response plan."
  AIO_AIT_events.31113.no_colony.option_1: "Fortunately, our colony was not affected."
  AIO_AIT_events.31113.reverse_success.option_1: "Our understanding of time and space has advanced further."
+
+ #endregion
 
  # directional apply infinity thesis
  AIO_AIT_events.401.title: ""

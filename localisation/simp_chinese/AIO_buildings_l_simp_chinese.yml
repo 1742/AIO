@@ -1,4 +1,6 @@
 ﻿l_simp_chinese:
+ #region 老登建筑
+
  building_AIO_fe_automation_city: "$tech_AIO_fe_automatication$"
  building_AIO_fe_automation_city_desc: "$tech_AIO_fe_automatication_desc$"
  building_AIO_fe_automation_secondary: "$tech_AIO_fe_automatication$"
@@ -64,3 +66,34 @@
  building_AIO_fe_clinic_1_desc: "$building_fe_clinic_1_desc$"
  building_AIO_fe_clinic_2: "AIO-$building_fe_clinic_2$"
  building_AIO_fe_clinic_2_desc: "$building_fe_clinic_2_desc$"
+
+ #endregion
+
+
+ #region 套娃脑建筑
+
+ # 节点共振器
+ building_AIO_MB_resonator: "节点共振器"
+ building_AIO_MB_resonator_desc: "共振器可以将游离思维和自主系统的认知潜力进行重定向并加以利用，引导每个节点提高其邻近单元的处理效率。"
+ building_AIO_resonator_tt: "每§Y$job_AIO_recursive_node$§!产出§G+0.1%§!\n（当前值：§G+[AIO_AIO_resonator_factor]%§!）"
+ # 数据稳定器
+ building_AIO_MB_stabilisator: "数据稳定器"
+ building_AIO_MB_stabilisator_desc: "稳定化系统会滤除物理压力超出递归节点极限时产生的计算噪音。降低干扰就意味着整体产出的提升。"
+ # 计算超频器
+ building_AIO_MB_overclocker: "计算超频器"
+ building_AIO_MB_overclocker_desc: "超频器可以提高递归节点处理器的主频，得到更高更快的产出，但也会造成更高的故障率。"
+ # 核心保存器
+ building_AIO_MB_preserver: "核心保存器"
+ building_AIO_MB_preserver_desc: "该网络中的子个体在能量波动面前非常脆弱，保存器努力降低这些波动以保护递归节点。"
+ # 扩展反应堆
+ building_AIO_MB_reactor: "扩展反应堆"
+ building_AIO_MB_reactor_desc: "网络中接入的递归节点越多，用于维持的能量需求就越多。安装额外的反应堆将减轻为套娃脑供电所固有的复杂后勤行动。"
+ # 节点保持器
+ building_AIO_MB_life_support: "节点保持器"
+ building_AIO_MB_life_support_desc: "该专用设施可对套娃脑关键部件的维护进行组织，以支持更多的节点和更健康的网络环境。"
+ # 战争推演器
+ building_AIO_MB_cogitator: "战争推演器"
+ building_AIO_MB_cogitator_desc: "超空间供应链的计算是很复杂的。将一些处理能力重新分配到这项任务中，甚至可以帮助最庞大的舰队挺进敌人领土的更深处。"
+ building_AIO_lathe_cogitator_tt: "§Y海军容量§!：每100§Y$job_AIO_recursive_node$§!§G+1§!\n（当前值：§G+[AIO_num_AIO_recursive_node_per_100]%§!）\n§Y舰船经验获得§!：每§Y$job_AIO_recursive_node$§!§G+2%§!\n（当前值：§G+[AIO_num_AIO_recursive_node_per_200]%§!）"
+
+ #endregion

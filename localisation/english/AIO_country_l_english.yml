@@ -1,31 +1,34 @@
 ﻿l_english:
- # country type
+ #region country type
+
  AIO_empire: "§MYog Sothoth§!"
  AIO_empire_desc: "Truth"
 
- # government
+ #endregion
+
+
+ #region government
+
  AIO_empire_ruler_title: "The Most Ancient and Prolonged of Life"
  gov_AIO_empire: "The Law of Reality"
  gov_AIO_empire_desc: "$AIO_empire_desc$"
 
- # policy
- logistics_policy_gestalt_resource_with_food: "Resource Logistics"
- logistics_policy_gestalt_resource_with_food_desc: "Energy is the blood of the structure; we just need to make it flow faster.\n\nPer $r_trade$ convert to 0.2 $r_energy$, 0.2 $r_minerals$, 0.2 $r_food$."
- logistics_policy_gestalt_resource_without_food: "$logistics_policy_gestalt_resource_with_food$"
- logistics_policy_gestalt_resource_without_food_desc: "Energy is the blood of the structure; we just need to make it flow faster.\n\nPer $r_trade$ convert to 0.3 $r_energy$ and 0.3 $r_minerals$."
- logistics_policy_gestalt_industry_with_goods: "Production Conversion"
- logistics_policy_gestalt_industry_with_goods_desc: "Just by being added to the furnace, value itself can also be forged into a weapon.\n\nPer $r_trade$ convert to 0.2$r_alloys$ and 0.2$r_consumer_goods$."
- logistics_policy_gestalt_industry_without_goods: "$logistics_policy_gestalt_industry_with_goods$"
- logistics_policy_gestalt_industry_without_goods_desc: "Just by being added to the furnace, value itself can also be forged into a weapon.\n\nPer $r_trade$ convert to 0.3 $r_alloys$."
- logistics_policy_gestalt_data: "Knowledge Redistribution"
- logistics_policy_gestalt_data_desc: "A unified will requires unified motivation, and redistribution is the foundation.\n\nPer $r_trade$ convert to 0.2$r_research$ and 0.15 $r_unity$."
+ #endregion
 
- # civic
+
+ #region civic
+
  civic_AIO_dream: "§RDream§!"
  civic_AIO_dream_desc: "There is no need for the verification of truth, nor for the certainty of reality. All that you have fabricated in vain has already become reality."
  civic_tooltip_AIO_dream_effect: "It can apply infinity thesis at will."
 
- # origin
+ #endregion
+
+
+ #region origin
+
  origin_AIO_YogSothoth: "$ap_AIO_allinone$"
  origin_AIO_YogSothoth_desc: "We are already the truth of the universe.\n\n§RWarning: Unbalanced origin, similar to the observer pattern.§!"
  origin_AIO_YogSothoth_tt_effects: " - Start the game as $AIO_empire$\n - remove all ['concept_colonies'], ['concept_system'] and ['concept_fleet']\n - generate ['concept_AIO_HS_system'] and ['concept_AIO_TDTE_system']\n - §Y$AIO_mega_04$§! and §Y$AIO_mega_01_fact$§! is available at the beginning of game"
+
+ #endregion

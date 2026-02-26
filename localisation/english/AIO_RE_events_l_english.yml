@@ -4,6 +4,9 @@
  AIO_Tawi: "Tawi"
  AIO_Aforgomom: "Aforgomom"
 
+
+ #region main view
+
  AIO_RE_events.202.desc.first_enter_library: "The empty space-time before my eyes is shaking? Although you may not be quite sure how the empty and dark space stirs up ripples, your "senses" answer you this way.\n\nA blurry array of golden, yellow and brown light spots emerged, forming a "low-resolution" pattern. As the resolution kept increasing, you found yourself standing in a huge classical library. It has no boundaries. On the distant dome is a constantly rotating but never-repeating star map. In an open space, a huge typewriter is slowly spitting out pages filled with unknown words and patterns. Each page is a world being written down.\n\nUnder Tawi's guidance, you enter a quiet study area. On the desk, a slender pen was placed on top of an open book. It has no ink, but when you pick it up, you know that as long as you write it down, the world will do the same.\n\nTawi stood opposite the desk, as if she was the sole guardian of this collection. Her gaze was gentle, yet she was looking at you with extraordinary concentration.\n\n"This is your control area - or, if you prefer a more classical name, you can also call it 'library'. From here, you can browse the world, edit reality, or... just tear off some paragraphs directly. Aforgomom will do it for you. However, I suggest you not use that pen too frequently. It won't remind you when you 'made a mistake'.""
  AIO_RE_events.202.desc.normal: ""Welcome back."\n\nYou are now in a study under the starry sky, a library existing in an infinite dimension. Here, every page is written about the structure of the universe.\n\nTawi stood across the table, as if she had been waiting for you for a long time."
  AIO_RE_events.202.option_1: "Edit Reality"
@@ -17,7 +20,12 @@
  AIO_RE_events.202.option_5: "Leave the study."
  AIO_RE_events.202.option_5.tt: "Return to the position of the observer."
 
- AIO_RE_events.301.title: "Apply Infinity Thesis"
+ #endregion
+
+
+ #region reality edit view
+
+ AIO_RE_events.301.title: "Reality Edit"
  AIO_RE_events.301.desc: "Tawi opened a blank page of the book and pushed it towards you. Her movements were gentle and her tone remained as calm as ever.\n\n"You can modify the reality here. Matter, reason and result, consciousness, order... Many things can be redefined as long as you are willing."\n\n"Of course, rewriting doesn't mean understanding. You'd better know what you are doing."\n\nShe paused for a moment, as if she still wanted to say something, but in the end, she just nodded slightly.\n\n"Let's start.""
  AIO_RE_events.301.option_1: "Anti-the second law of thermodynamics"
  AIO_RE_events.301.option_2: "Design Requirement"
@@ -102,7 +110,11 @@
  AIO_RE_events.311.option_2: "Generate cosmic storms in the designated system"
  AIO_RE_events.311.effect: "Generate a specified cosmic storm in the target system."
 
- # Aforgomom window
+ #endregion
+
+
+ #region Aforgomom view
+
  AIO_RE_events.401.title: "$AIO_Aforgomom$"
  AIO_RE_events.401.desc: "The space grows quieter than ever, as if an unseen presence is holding its breath, waiting for you to speak.\n\n"He has no form. He will not answer you. If you're ready, I will relay your command to Aforgomom."\n\n"Say the word, and we shall begin.""
  AIO_RE_events.401.option_1: "Strike System"
@@ -113,6 +125,7 @@
  AIO_RE_events.401.option_6: "Erase System"
  AIO_RE_events.401.option_7: "Erase Star Cluster"
  AIO_RE_events.401.option_8: "Return"
+
  # Strike System
  AIO_RE_events.402.prepare_locate.desc: ""He will unleash boundless wrath upon the target, striking indiscriminately at all within its reach."\n\nEffects: $AIO_RE_events.402.effect$"
  AIO_RE_events.402.locating.desc: ""You have currently chosen to do §Y$AIO_RE_events.401.option_1$§! edit for a specified £system£ system. Please establish a §Y$AIO_locator$§! within the target system. Before the positioning is completed, you can still return here to terminate the operation.""
@@ -165,20 +178,18 @@
  AIO_RE_events.408.destroying_galaxy.allow: "The Galaxy is dying out."
  AIO_RE_events.408.destroying_galaxy.tt: "Erase 20 systems every 90 days."
 
+ #endregion
+
+
+ #region tooltips
+
  AIO_requires_not_has_ASLT: "£trigger_no£already exists §Y$AIO_RE_ASLT_modifier$§!"
  AIO_requires_not_has_design_requirement: "£trigger_no£already exists §Y$AIO_RE_design_requirement_modifier$§!"
  AIO_requires_not_has_superlight: "£trigger_no£already exists §Y$AIO_RE_superlight_modifier$§!"
  AIO_requires_not_exist_Aformom_Wrath_fleet: "£trigger_no£already exists §Y$AIO_Aforgomom_Wrath$§!"
 
-
- # common sentences
- AIO_confirm: "Confirm"
- AIO_cancel: "Cancel"
- AIO_return: "Return"
- AIO_exit: "Exit"
- AIO_close_communication: "Turn off the communication."
- AIO_continue: "Continue"
- AIO_think_more: "Allow me to think twice."
  AIO_global: "Added for all empires."
  AIO_specific: "Added for a specific empire."
  AIO_unlock_locator: "Unlock §YLocator§!"
+
+ #endregion

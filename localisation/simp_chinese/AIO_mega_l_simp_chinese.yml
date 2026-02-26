@@ -1,8 +1,14 @@
 ﻿l_simp_chinese:
+ #region 视界引擎
+
  AIO_horizon_engine: "视界引擎"
  AIO_horizon_engine_DESC: "用于抽取现实与虚境的能量。"
  AIO_horizon_engine_MEGASTRUCTURE_DETAILS: "我们不是唯一拥有此技术的文明，已经有其他帝国选择了这条道路。我们对其进行了改良，它缓慢而无声地将现实与虚境剥离、侵蚀，将我们这个维度最深处的结构性意义化为供能。"
 
+ #endregion
+
+
+ #region AIO巨构
 
  AIO_mega_01_fact: "$AIO_mega_01$"
  AIO_mega_01_fact_DESC: "$AIO_mega_01_DESC$"
@@ -24,6 +30,11 @@
  AIO_mega_04_activate: "$AIO_mega_04$"
  AIO_mega_04_activate_DESC: "$AIO_mega_04_DESC$"
 
+ #endregion
+
+
+ #region 定位器
+
  AIO_locator: "定位器"
  AIO_mega_country_locator: "帝国定位器"
  AIO_mega_country_locator_DESC: "用于定位国家。"
@@ -38,9 +49,14 @@
  AIO_mega_colony_locator_DESC: "用于定位殖民地星球。"
  AIO_mega_colony_locator_MEGASTRUCTURE_DETAILS: "$AIO_mega_colony_locator_DESC$"
 
+ #endregion
+
+
+ #region 提示
+
  AIO_existed_TDTE: "£trigger_no£该星系已存在$AIO_mega_01$连接！"
  AIO_requires_system_not_existed_storm: "£trigger_no£该星系已存在宇宙风暴！"
  AIO_requires_is_colony: "£trigger_no£需要是殖民地!"
  AIO_requires_not_Cetana_captial: "£trigger_no£为了防止事件链卡住，请不要试图编辑塞塔娜的据点。"
 
-
+ #endregion

@@ -1,11 +1,16 @@
 ﻿l_english:
- # pop
+ #region pop
+
  mod_planet_jobs_sr_zro_produces_mult: "£job£ jobs produce  £sr_zro£ $sr_zro$"
  mod_planet_jobs_sr_dark_matter_produces_mult: "£job£ jobs produce  £sr_dark_matter£ $sr_dark_matter$"
  mod_planet_jobs_nanites_produces_mult: "£job£ jobs produce  £nanites£ $nanites$"
  mod_planet_pops_produces_mult: "Population Produce"
 
- # jobs
+ #endregion
+
+
+ #region jobs
+
  # roboticist
  mod_planet_pop_assemblers_sr_living_metal_produces_add: "Per 100 [roboticist.GetIcon] [GetPopAssemblersPlural] produce £sr_living_metal£ $sr_living_metal$"
  mod_planet_pop_assemblers_alloys_upkeep_add: "Per 100 [roboticist.GetIcon] [GetPopAssemblersPlural] £alloys£ $alloys$ upkeep"
@@ -36,6 +41,11 @@
  mod_planet_AIO_recursive_node_produces_mult: "[AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] produce"
  mod_planet_AIO_recursive_node_upkeep_mult: "[AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] £energy£ $energy$ upkeep"
 
+ #endregion
+
+
+ #region country
+
  mod_terraform_speed_mult: "£planet£ Planet Terraform Speed"
  mod_building_time_mult: "£mod_planet_building_build_speed_mult£ Building Time Cost"
  mod_ships_nanites_upkeep_mult: "Ships £nanites£ nanites upkeep"
@@ -43,8 +53,18 @@
  MOD_ALL_TECHNOLOGY_RESEARCH_SPEED: "All Research Speed"
  mod_megastructures_energy_upkeep_mult: "Megastructure Energy Upkeep"
 
+ #endregion
+
+
+ #region crisis reward
+
  AIO_menp_nanites_processor_metallurgists: "$menp_AIO_fleet_component_2$"
  AIO_menp_nanites_processor_farmers: "$menp_AIO_fleet_component_2$"
+
+ #endregion
+
+
+ #region RAIT
 
  AIO_RAIT_TR_stage_1_modifier: "$AIO_RAIT_TR_events_chain_title$"
  AIO_RAIT_TR_stage_2_opt_1_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
@@ -53,6 +73,49 @@
  AIO_RAIT_TR_stage_3_unliquidation_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
  AIO_RAIT_TR_stage_4_liquidation_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
  AIO_RAIT_TR_stage_4_unliquidation_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
+
+ #endregion
+
+
+ #region DAIT
+
+ AIO_DAIT_material_option_1_modifier_1: "$AIO_DAIT_material_option.1.title$"
+ AIO_DAIT_material_option_2_modifier_1: "$AIO_DAIT_material_option.2.title$-I"
+ AIO_DAIT_material_option_2_modifier_2: "$AIO_DAIT_material_option.2.title$-II"
+ AIO_DAIT_material_option_3_modifier_1: "$AIO_DAIT_material_option.3.title$"
+ AIO_DAIT_material_option_4_modifier_1: "$AIO_DAIT_material_option.4.title$"
+ AIO_DAIT_material_option_5_modifier_1: "$AIO_DAIT_material_option.5.title$-I"
+ AIO_DAIT_material_option_5_modifier_2: "$AIO_DAIT_material_option.5.title$-II"
+ AIO_DAIT_material_option_7_modifier_1: "$AIO_DAIT_material_option.7.title$-I"
+ AIO_DAIT_material_option_7_modifier_2: "$AIO_DAIT_material_option.7.title$-II"
+ AIO_DAIT_energy_option_1_modifier_1: "$AIO_DAIT_energy_option.1.title$-I"
+ AIO_DAIT_energy_option_1_modifier_2: "$AIO_DAIT_energy_option.1.title$-II"
+ AIO_DAIT_energy_option_2_modifier_1: "$AIO_DAIT_energy_option.2.title$"
+ AIO_DAIT_energy_option_3_modifier_1: "$AIO_DAIT_energy_option.3.title$-I"
+ AIO_DAIT_energy_option_3_modifier_2: "$AIO_DAIT_energy_option.3.title$-II"
+ AIO_DAIT_energy_option_4_modifier_1: "$AIO_DAIT_energy_option.4.title$"
+ AIO_DAIT_energy_option_5_modifier_1: "$AIO_DAIT_energy_option.5.title$-I"
+ AIO_DAIT_energy_option_5_modifier_2: "$AIO_DAIT_energy_option.5.title$-II"
+ AIO_DAIT_energy_option_5_modifier_3: "$AIO_DAIT_energy_option.5.title$-III"
+ AIO_DAIT_energy_option_5_modifier_4: "$AIO_DAIT_energy_option.5.title$-IV"
+ AIO_DAIT_metric_option_1_modifier_1: "$AIO_DAIT_metric_option.1.title$"
+ AIO_DAIT_metric_option_2_modifier_1: "$AIO_DAIT_metric_option.2.title$-I"
+ AIO_DAIT_metric_option_2_modifier_2: "$AIO_DAIT_metric_option.2.title$-II"
+ AIO_DAIT_metric_option_3_modifier_1: "$AIO_DAIT_metric_option.3.title$-I"
+ AIO_DAIT_metric_option_3_modifier_2: "$AIO_DAIT_metric_option.3.title$-II"
+ AIO_DAIT_metric_option_4_modifier_1: "$AIO_DAIT_metric_option.4.title$-I"
+ AIO_DAIT_metric_option_4_modifier_2: "$AIO_DAIT_metric_option.4.title$-II"
+ AIO_DAIT_metric_option_5_modifier_1: "$AIO_DAIT_metric_option.5.title$-I"
+ AIO_DAIT_metric_option_5_modifier_2: "$AIO_DAIT_metric_option.5.title$-II"
+ AIO_DAIT_metric_option_5_modifier_3: "$AIO_DAIT_metric_option.5.title$-III"
+ AIO_DAIT_metric_option_5_modifier_4: "$AIO_DAIT_metric_option.5.title$-IV"
+ AIO_DAIT_metric_option_6_modifier_1: "$AIO_DAIT_metric_option.6.title$-I"
+ AIO_DAIT_metric_option_6_modifier_2: "$AIO_DAIT_metric_option.6.title$-II"
+
+ #endregion
+
+
+ #region reality edit
 
  AIO_Aforgomom_Wrath_modifier: "$AIO_Aforgomom_Wrath$"
 
@@ -64,3 +127,5 @@
  AIO_RE_superlight_modifier_effects: "§Y$AIO_RE_superlight_modifier$§!：\n - £mod_empire_size_mult£$MOD_EMPIRE_SIZE_MULT$§G-30%§!\n - £mod_energy_produces_mult£$mod_planet_jobs_energy_produces_mult$§G+50%§!\n - £mod_ship_speed_mult£$MOD_SHIP_SPEED_MULT$§G+20%§!\n - £mod_weapon_type_energy_weapon_damage_mult£$mod_weapon_type_energy_weapon_damage_mult$§G+20%§!\nThe empire's all §Ynatural colonies§!：\n - $planet_devastation$§R+60%§!\n - remove 1 random district\n - remove 1 random building"
 
  AIO_the_craving_of_stellaris_modifier: "The Craving of Stellaris"
+
+ #endregion

@@ -1,32 +1,39 @@
 ﻿l_simp_chinese:
- # 局势影响提示
+ #region 河系影响提示
+
  AIO_AIT_events.situation_effect.title: "现实扰动"
- # 局势随机丰富星系矿藏
+ # 丰富星系矿藏
  AIO_AIT_events.203.desc: "[event_target:AIO_situation_RAIT_target.GetName]周围的时空发生变动，整个星系涌现出原来没有的资源！"
  AIO_AIT_events.203.opinion_1: "真神奇！"
- # 局势随机改变行星
+ # 改变行星
  AIO_AIT_events.204.desc: "[event_target:AIO_situation_RAIT_target.GetName]周围的时空发生剧烈变动，现在它已经变为一颗[event_target:AIO_situation_RAIT_target.GetClassName]！"
  AIO_AIT_events.204.opinion_1: "可恶！"
- # 局势随机退化殖民地
+ # 退化殖民地
  AIO_AIT_events.205.desc: "[event_target:AIO_situation_RAIT_target.GetName]周围的时空发生变动，整个殖民地的物种都退化了！"
  AIO_AIT_events.205.opinion_1: "可恶！"
- # 局势随机倒流殖民地
+ # 倒流殖民地
  AIO_AIT_events.206.desc: "[event_target:AIO_situation_RAIT_target.GetName]周围的时空发生剧烈变动，整个殖民地的发展倒退回了几年前！"
  AIO_AIT_events.206.opinion_1: "可恶！"
- # 局势随机摧毁行星
+ # 摧毁行星
  AIO_AIT_events.207.desc: "[event_target:AIO_situation_RAIT_target.GetName]周围的产生巨大的能量波动，它从宇宙中完全消失了！"
  AIO_AIT_events.207.opinion_1: "可恶！"
- # 局势随机摧毁星系
+ # 摧毁星系
  AIO_AIT_events.208.desc: "[event_target:AIO_situation_RAIT_target.GetName]产生巨大的能量波动，星系中的一切都瞬间蒸发了！"
  AIO_AIT_events.208.opinion_1: "可恶！"
 
- # 随机应用无限
- # 应用无限其他帝国怀疑
+ #endregion
+
+ #region 随机应用无限
+
+ # 其他帝国怀疑
  AIO_AIT_unknown: "目前尚不清楚是谁或什么东西造成了这些变化，但我们怀疑可能是某一个国家所为。"
  AIO_AIT_known: "在物理定律被第二次“修改”之后，我们确定了这种异常的来源。很显然，[From.GetName]就是罪魁祸首。这与有关他们不计后果地追求先进科学知识的传言相吻合。"
  AIO_AIT_again: "[From.GetName]的实验又一次改变了宇宙的物理法则。我们应该假定他们是在搞一些极端危险的把戏，并对此做好准备。"
- # 时间之墟
+
+ #region 时间之墟
+
  AIO_AIT_events.3100.title: "$AIO_RAIT_TR_events_chain_title$"
+
  # 时间之墟一阶段
  AIO_AIT_events.31011.desc.normal.unknown: "殖民地[this.GetName]像是陷入了某种时间循环，每天零点21分星球的一切物质都会回到前一天的位置和状态，甚至逝者也复活了！居住其上的一部分居民的记忆不会随着时间倒流而忘却，许多人因此变得无法无天，拉帮结派，烧杀淫掠，无所不为，星球的秩序已经崩溃！\n\n$AIO_AIT_unknown$"
  AIO_AIT_events.31011.desc.normal.known: "殖民地[this.GetName]像是陷入了某种时间循环，每天零点21分星球的一切物质都会回到前一天的位置和状态，甚至逝者也复活了！居住其上的一部分居民的记忆不会随着时间倒流而忘却，许多人因此变得无法无天，拉帮结派，烧杀淫掠，无所不为，星球的秩序已经崩溃！\n\n$AIO_AIT_known$"
@@ -39,15 +46,18 @@
  AIO_AIT_events.31011.not_crisis.gestalt.option_1: "立刻派出科学家进行研究！"
  AIO_AIT_events.31011.crisis.not_maker.option_1: "令人着迷，立刻派出科学家进行研究！"
  AIO_AIT_events.31011.crisis.option_1: "事已至此，趁机研究点物理学吧。"
+
  # 时间之墟二阶段
  AIO_AIT_events.31012.desc.normal: "我们的维和部队也受[this.GetName]的时间循环影响，在进行多天的登陆作战（士兵们每天都会回到轨道上）后，[this.GetName]的局势稳定下来。我们的科学家们已经就位，准备研究这一奇特的物理现状。接下来我们要处理一件复杂的事情，许多受害者在这一年时间遭受了非人的对待，他们要求对施害者严加惩罚，这将提高公民对政府的信任。但是事件发生的太过混乱，所有的证据都随着时间倒流消失了，我们估计参与过犯罪行为的人数不胜数，如果严格按照道德和法律惩处，将会消耗大量时间和金钱……"
  AIO_AIT_events.31012.normal.option_1: "任何邪恶终将绳之以法！"
  AIO_AIT_events.31012.normal.option_2: "无视这一过程的所有犯罪行为。"
+
  # 时间之墟三阶段
  AIO_AIT_events.31013.desc.not_crisis: "我们的科学家尽力了，他们对时间流逝的改变束手无策，但是[this.GetName]上的回退时间推迟了，这表明这一现象正在消退，科学家们提议可以在这颗星球上做一些花费较高的科学实验，反正不会造成什么物质损失。"
  AIO_AIT_events.31013.desc.crisis: "我们的科学家通过超维装置发现了[this.GetName]附近的高维时空形成一个复杂的环形，星球在会顺着这个”高维轨道“回到原点，也许我们可以使用超维装置将[this.GetName]周围的时空升维后重新调整。或者我们可以利用这一特性在[this.GetName]进行一些一些花费较高的科学实验，反正不会造成什么物质损失。"
  AIO_AIT_events.31013.option_1: "那就这样吧。"
  AIO_AIT_events.31013.option_2: "解除[this.GetName]上的时间循环现象。"
+
  # 时间之墟四阶段
  AIO_AIT_events.31014.desc.not_crisis.liquidation: "[this.GetName]迎来了新的一天！其附近的时间流逝彻底恢复正常，为纪念这一事件，[this.GetName]上的人民决定在上建造一座纪念碑，以铭记这场混乱中的悲剧与因援助而牺牲救援人员。"
  AIO_AIT_events.31014.desc.not_crisis.unliquidation: "[this.GetName]迎来了新的一天！其附近的时间流逝彻底恢复正常，但那些在混乱中形成的仇恨仍未消除……"
@@ -57,8 +67,13 @@
  AIO_AIT_events.31014.option_1.normal: "[this.GetName]，欢迎来到新的一天！"
  AIO_AIT_events.31041.option_1.crisis.success: "我们对时空的理解更进一步。"
 
- # 重力膨胀
+ #endregion
+
+
+ #region 重力膨胀
+
  AIO_AIT_events.3110.title: "$AIO_RAIT_GS_events_chain_title$"
+
  # 重力膨胀一阶段
  AIO_AIT_events.31111.desc.unknown: "我们观察到[this.GetName]星系内的引力出现异常波动。该恒星的行星活动日益频繁，天体体积正在缓慢收缩，这种现象已对整个星系的地壳与气候造成显著干扰。我们最好密切关注这一现象的发展。\n\n$AIO_AIT_unknown$"
  AIO_AIT_events.31111.desc.known: "我们观察到[this.GetName]星系内的引力出现异常波动。该恒星的行星活动日益频繁，天体体积正在缓慢收缩，这种现象已对整个星系的地壳与气候造成显著干扰。我们最好密切关注这一现象的发展。\n\n$AIO_AIT_known$"
@@ -67,6 +82,7 @@
  AIO_AIT_events.31111.not_crisis.option_1: "派出科学家进行研究。"
  AIO_AIT_events.31111.crisis.not_maker.option_1: "Interesting，派出科学家进行研究。"
  AIO_AIT_events.31111.crisis.marker.option_1: "进行分析。"
+
  # 重力膨胀二阶段
  AIO_AIT_events.31112.desc.not_crisis.has_colony: "科学家报告称，[this.GetName]恒星附近的引力正在以惊人的速度增强，其体积呈加速收缩趋势！根据初步预测，该恒星可能在数年内坍缩为黑洞，进而毁灭整个星系内的生态系统和星球殖民地。我们必须立即做出决策：撤离？或是改造星环基地以维持星球气候？"
  AIO_AIT_events.31112.desc.crisis.has_colony: "科学家报告称，[this.GetName]恒星附近的引力正在以惊人的速度增强，其体积呈加速收缩趋势！根据初步预测，该恒星可能在数年内坍缩为黑洞，进而毁灭整个星系内的生态系统和星球殖民地。我们必须立即做出决策：撤离？改造？或使用我们的现实编辑技术逆转一切。"
@@ -74,6 +90,7 @@
  AIO_AIT_events.31112.not_crisis.has_colony.option_1: "我们会处理好的。"
  AIO_AIT_events.31112.no_colony.option_1: "研究这一过程。"
  AIO_AIT_events.31112.crisis.option_1: "逆转坍缩。"
+
  # 重力膨胀三阶段
  AIO_AIT_events.31113.desc.renovate_success: "我们的工程师和工人夜以继日地完成了[this.GetName]星环结构调整，在恒星坍缩前及时稳固了轨道和能量循环。尽管这颗行星处于黑洞边缘，但其表面环境已被成功维持，可继续居住。"
  AIO_AIT_events.31113.desc.renovate_fail: "尽管投入了大量资源，但工程团队承认改造进度远远落后于引力变化的速度。[this.GetName]的恒星已彻底塌缩，形成一个新的黑洞。强引力波动扰乱了整个星系的结构。\n我们未能及时将[this.GetName]内的殖民地人口完全撤出，他们在恒星最终坍缩时与行星地质灾难一同消失。这场灾难对全国民众心理造成了巨大打击。"
@@ -85,5 +102,6 @@
  AIO_AIT_events.31113.no_colony.option_1: "幸好我们的殖民地没有受到影响。"
  AIO_AIT_events.31113.reverse_success.option_1: "我们对时空的理解更进一步。"
 
- # 定向应用无限
- AIO_AIT_events.401.title: ""
+ #endregion
+
+ #endregion

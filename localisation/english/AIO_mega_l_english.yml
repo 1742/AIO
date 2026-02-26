@@ -1,8 +1,15 @@
 ﻿l_english:
+ #region Horizon Engine
+
  AIO_horizon_engine: "Horizon Engine"
  AIO_horizon_engine_DESC: "Used to extract energy from reality and shroud."
  AIO_horizon_engine_MEGASTRUCTURE_DETAILS: "We are not the only civilization with this technology, there are already other empires that have chosen this path. We have improved it, slowly and silently stripping and eroding reality from the shroud, turning the deepest structural meaning of our dimension into energy."
 
+
+ #endregion
+
+
+ #region AIO megastructure
 
  AIO_mega_01_fact: "$AIO_mega_01$"
  AIO_mega_01_fact_DESC: "$AIO_mega_01_DESC$"
@@ -24,6 +31,11 @@
  AIO_mega_04_activate: "$AIO_mega_04$"
  AIO_mega_04_activate_DESC: "$AIO_mega_04_DESC$"
 
+ #endregion
+
+
+ #region Locator
+
  AIO_locator: "Locator"
  AIO_mega_country_locator: "Empire Locator"
  AIO_mega_country_locator_DESC: "Locate empire."
@@ -38,7 +50,14 @@
  AIO_mega_colony_locator_DESC: "Locate colony."
  AIO_mega_colony_locator_MEGASTRUCTURE_DETAILS: "$AIO_mega_colony_locator_DESC$"
 
+ #endregion
+
+
+ #region tooltips
+
  AIO_existed_TDTE: "£trigger_no£The system has existed $AIO_mega_01$ connection!"
  AIO_requires_system_not_existed_storm: "£trigger_no£The system is existed cosmic storm!"
  AIO_requires_is_colony: "£trigger_no£Target must be colony!"
  AIO_requires_not_Cetana_captial: "£trigger_no£To prevent the event chain from getting stuck, don't try to edit Cetana's stronghold."
+
+ #endregion
