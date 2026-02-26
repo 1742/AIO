@@ -14,9 +14,9 @@
 
 
 #region 各 buff 参数
-@AIO_DAIT_buff_c_value_1 = 0.1
-@AIO_DAIT_buff_c_value_3 = 0.3
-@AIO_DAIT_buff_c_value_9 = 0.9
+@AIO_DAIT_buff_c_value_1 = 10000
+@AIO_DAIT_buff_c_value_3 = 30000
+@AIO_DAIT_buff_c_value_9 = 90000
 
 #region material
 

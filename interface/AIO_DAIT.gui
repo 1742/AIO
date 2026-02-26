@@ -164,10 +164,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 65 }
+                    position = { x = 615 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_material_option_1_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.1.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_1_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -240,10 +251,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 85 }
+                    position = { x = 615 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_material_option_2_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.2.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_2_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -317,10 +339,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 65 }
+                    position = { x = 615 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_material_option_3_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.3.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_3_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -393,10 +426,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 65 }
+                    position = { x = 615 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_material_option_4_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.4.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_4_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -470,10 +514,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 85 }
+                    position = { x = 615 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_material_option_5_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.5.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_5_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -546,10 +601,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 65 }
+                    position = { x = 615 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_material_option_6_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.6.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_6_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -623,10 +689,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 85 }
+                    position = { x = 615 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_material_option_7_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.7.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_7_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -749,10 +826,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 85 }
+                    position = { x = 615 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_energy_option_1_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.1.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_energy_option_1_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -825,10 +913,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 65 }
+                    position = { x = 615 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_energy_option_2_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.2.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_energy_option_2_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -902,10 +1001,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 85 }
+                    position = { x = 615 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_energy_option_3_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.3.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_energy_option_3_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -978,10 +1088,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 65 }
+                    position = { x = 615 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_energy_option_4_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.4.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_energy_option_4_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -1055,10 +1176,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 125 }
+                    position = { x = 615 y = 125 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_energy_option_5_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 131 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.5.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_energy_option_5_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -1131,10 +1263,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 65 }
+                    position = { x = 615 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_energy_option_6_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.6.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_energy_option_6_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -1257,10 +1400,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 65 }
+                    position = { x = 615 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_metric_option_1_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.1.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_metric_option_1_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -1333,10 +1487,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 85 }
+                    position = { x = 615 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_metric_option_2_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.2.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_metric_option_2_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -1410,10 +1575,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 85 }
+                    position = { x = 615 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_metric_option_3_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.3.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_metric_option_3_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -1486,10 +1662,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 85 }
+                    position = { x = 615 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_metric_option_4_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.4.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_metric_option_4_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -1563,10 +1750,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 125 }
+                    position = { x = 615 y = 125 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_metric_option_5_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 131 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.5.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_metric_option_5_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"
@@ -1639,10 +1837,21 @@ guiTypes = {
                 effectButtonType = {
                     name = "add"
                     orientation = upper_left
-                    position = { x = 650 y = 85 }
+                    position = { x = 615 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
                     effect = AIO_DAIT_metric_option_6_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.6.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_metric_option_6_alloc_value
+                    alwaysTransparent = yes
                 }
                 effectButtonType = {
                     name = "subtract"

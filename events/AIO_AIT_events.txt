@@ -2390,12 +2390,12 @@ country_event = {
 
     is_triggered_only = yes
     trigger = {
-        # OR = {
-		# 	has_country_flag = AIO_built_AIO_mega_01
-		# 	has_country_flag = AIO_built_AIO_mega_02
-		# 	has_country_flag = AIO_built_AIO_mega_03
-		# 	has_country_flag = AIO_built_AIO_mega_04
-		# }
+        OR = {
+			has_country_flag = AIO_built_AIO_mega_01
+			has_country_flag = AIO_built_AIO_mega_02
+			has_country_flag = AIO_built_AIO_mega_03
+			has_country_flag = AIO_built_AIO_mega_04
+		}
 		NOT = { has_active_event = { AIO_AIT_events.401 } }
 	}
 
@@ -2412,12 +2412,12 @@ country_event = {
 
 	is_triggered_only = yes
 	trigger = {
-		# OR = {
-		# 	has_country_flag = AIO_built_AIO_mega_01
-		# 	has_country_flag = AIO_built_AIO_mega_02
-		# 	has_country_flag = AIO_built_AIO_mega_03
-		# 	has_country_flag = AIO_built_AIO_mega_04
-		# }
+		OR = {
+			has_country_flag = AIO_built_AIO_mega_01
+			has_country_flag = AIO_built_AIO_mega_02
+			has_country_flag = AIO_built_AIO_mega_03
+			has_country_flag = AIO_built_AIO_mega_04
+		}
 		NOT = { is_country_type = AIO_empire }
 	}
 

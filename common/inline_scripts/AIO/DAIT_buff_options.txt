@@ -29,7 +29,7 @@ AIO_DAIT_$TAB_NAME$_option_$OPTION$_add = {
     }
     allow = {
         custom_tooltip = {
-            text = "AIO_DAIT_$TAB_NAME$_option.$OPTION$.effect.allocate_tip"
+            text = "AIO_DAIT_alloc_fail_text"
             check_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value < 100 }
             check_variable = { which = AIO_DAIT_total_alloc_value value < 100 }
         }
@@ -52,6 +52,14 @@ AIO_DAIT_$TAB_NAME$_option_$OPTION$_add = {
     }
 }
 
+AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value = {
+    potential = {
+        check_variable = { which = AIO_DAIT_tab value = $TAB_INDEX$ }
+        check_variable = { which = AIO_DAIT_page value = $PAGE$ }
+    }
+    allow = { always = no }
+}
+
 AIO_DAIT_$TAB_NAME$_option_$OPTION$_subtract = {
     potential = {
         check_variable = { which = AIO_DAIT_tab value = $TAB_INDEX$ }
@@ -59,7 +67,7 @@ AIO_DAIT_$TAB_NAME$_option_$OPTION$_subtract = {
     }
     allow = {
         custom_tooltip = {
-            text = "AIO_DAIT_$TAB_NAME$_option.$OPTION$.effect.allocate_tip"
+            text = "AIO_DAIT_alloc_fail_text"
             check_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value > 0 }
             check_variable = { which = AIO_DAIT_total_alloc_value value > 0 }
         }

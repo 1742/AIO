@@ -120,16 +120,16 @@ edict_AIO_invoke_DAIT_menu = {
     resources = { category = edicts }
 
     potential = {
-        # OR = {
-        #     has_country_flag = AIO_built_AIO_mega_01
-        #     has_country_flag = AIO_built_AIO_mega_02
-        #     has_country_flag = AIO_built_AIO_mega_03
-        #     has_country_flag = AIO_built_AIO_mega_04
-        # }
+        OR = {
+            has_country_flag = AIO_built_AIO_mega_01
+            has_country_flag = AIO_built_AIO_mega_02
+            has_country_flag = AIO_built_AIO_mega_03
+            has_country_flag = AIO_built_AIO_mega_04
+        }
         NOT = { is_country_type = AIO_empire }
     }
 
-    # allow = { has_country_resource = { type = AIO_advanced_logic amount > 45000 } }
+    allow = { has_country_resource = { type = AIO_advanced_logic amount > 45000 } }
 
     effect = { country_event = { id = AIO_AIT_events.401 } }
 }
