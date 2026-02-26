@@ -888,7 +888,7 @@ AIO_DAIT_option_calculate_buff_values = {
             ALLOC_VAR = AIO_DAIT_energy_option_5_alloc_value
             C_LEVEL = @AIO_DAIT_energy_option_5_effect_4_c_value_level
             CAPACITY = @AIO_DAIT_energy_option_5_effect_4_cap
-            OUTPUT_VAR = HW_energy_option_5_effect_4_value
+            OUTPUT_VAR = AIO_DAIT_energy_option_5_effect_4_value
         }
     ]
     [[energy_option_6]

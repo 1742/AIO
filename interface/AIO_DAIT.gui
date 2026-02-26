@@ -108,345 +108,227 @@ guiTypes = {
 
         containerWindowType = {
             name = "material_view"
-            orientation = "upper_left"
+            orientation = upper_left
             position = { x = 220 y = 110 }
-            size = { x = 820 y = 360 }
+            size = { x = 820 y = 400 }
 
-            # first page
+            # 第一页
             containerWindowType = {
                 name = "AIO_DAIT_material_option.1"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 0 y = 0 }
-                size = { width = 820 height = 120 } # 单个条目高度
+                size = { width = 100% height = 120 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 120 y = 30 }
-                    buttonText = "AIO_DAIT_material_option.1.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_material_option_1_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.1.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_1_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 450 y = 20 }
-                    buttonText = "AIO_DAIT_material_option.1.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.1.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_material_option_1_desc"
+                    effect = AIO_DAIT_material_option_1_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 20 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 20 }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 5 y = 0 }
-                            size = { x = 325 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.1.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_1_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 330 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.1.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_1_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.1.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_1_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_1_add"
+                    effect = AIO_DAIT_material_option_1_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_1_subtract"
+                    effect = AIO_DAIT_material_option_1_subtract
                 }
 
                 # 分割线
                 effectButtonType = {
                     name = "separate_line"
                     quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 10 y = 110 }
-                    effect = "AIO_DAIT_material_option_1_separate_line"
+                    effect = AIO_DAIT_material_option_1_separate_line
                     alwaysTransparent = yes
                 }
             }
 
             containerWindowType = {
                 name = "AIO_DAIT_material_option.2"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 0 y = 120 }
-                size = { width = 820 height = 150 } # 单个条目高度
+                size = { width = 100% height = 140 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 120 y = 30 }
-                    buttonText = "AIO_DAIT_material_option.2.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_material_option_2_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.2.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_2_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 490 y = 20 }
-                    buttonText = "AIO_DAIT_material_option.2.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.2.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_material_option_2_desc"
+                    effect = AIO_DAIT_material_option_2_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 40 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 50% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 5 y = 0 }
-                            size = { x = 190 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.2.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_2_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 195 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.2.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_2_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "2"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 20 }
-                        size = { x = 100% y = 50% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 2 y = 0 }
-                            size = { x = 130 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.2.effect.2.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_2_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 135 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.2.effect.2.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_2_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_material_option.2.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = no
+                    effect = AIO_DAIT_material_option_2_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_2_add"
+                    effect = AIO_DAIT_material_option_2_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_2_subtract"
+                    effect = AIO_DAIT_material_option_2_subtract
                 }
 
                 # 分割线
                 effectButtonType = {
                     name = "separate_line"
                     quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
-                    orientation = "upper_left"
-                    position = { x = 10 y = 135 }
-                    effect = "AIO_DAIT_material_option_2_separate_line"
+                    orientation = upper_left
+                    position = { x = 10 y = 130 }
+                    effect = AIO_DAIT_material_option_2_separate_line
                     alwaysTransparent = yes
                 }
             }
 
-
-            # second page
+            # 第二页
             containerWindowType = {
                 name = "AIO_DAIT_material_option.3"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 0 y = 0 }
-                size = { width = 820 height = 120 } # 单个条目高度
+                size = { width = 100% height = 120 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 130 y = 30 }
-                    buttonText = "AIO_DAIT_material_option.3.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_material_option_3_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.3.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_3_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 425 y = 20 }
-                    buttonText = "AIO_DAIT_material_option.3.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.3.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_material_option_3_desc"
+                    effect = AIO_DAIT_material_option_3_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 20 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 20 }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 10 y = 0 }
-                            size = { x = 270 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.3.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_3_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 275 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.3.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_3_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.3.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_3_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_3_add"
+                    effect = AIO_DAIT_material_option_3_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_3_subtract"
+                    effect = AIO_DAIT_material_option_3_subtract
                 }
 
                 # 分割线
@@ -462,95 +344,67 @@ guiTypes = {
 
             containerWindowType = {
                 name = "AIO_DAIT_material_option.4"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 0 y = 120 }
-                size = { width = 820 height = 120 } # 单个条目高度
+                size = { width = 100% height = 120 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 130 y = 30 }
-                    buttonText = "AIO_DAIT_material_option.4.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_material_option_4_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.4.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_4_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 400 y = 20 }
-                    buttonText = "AIO_DAIT_material_option.4.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.4.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_material_option_4_desc"
+                    effect = AIO_DAIT_material_option_4_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 20 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 20 }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 10 y = 0 }
-                            size = { x = 200 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.4.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_4_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 205 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.4.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_4_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.4.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_4_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_4_add"
+                    effect = AIO_DAIT_material_option_4_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_4_subtract"
+                    effect = AIO_DAIT_material_option_4_subtract
                 }
 
                 # 分割线
@@ -564,132 +418,70 @@ guiTypes = {
                 }
             }
 
-
-            # third page
+            # 第三页
             containerWindowType = {
                 name = "AIO_DAIT_material_option.5"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 0 y = 0 }
-                size = { width = 820 height = 150 } # 单个条目高度
+                size = { width = 100% height = 140 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 130 y = 30 }
-                    buttonText = "AIO_DAIT_material_option.5.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_material_option_5_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.5.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_5_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 520 y = 20 }
-                    buttonText = "AIO_DAIT_material_option.5.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.5.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_material_option_5_desc"
+                    effect = AIO_DAIT_material_option_5_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 40 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 50% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 10 y = 0 }
-                            size = { x = 110 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.5.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 115 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.5.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "2"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 20 }
-                        size = { x = 100% y = 50% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 5 y = 0 }
-                            size = { x = 130 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.5.effect.2.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 135 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.5.effect.2.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_material_option.5.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_5_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_5_add"
+                    effect = AIO_DAIT_material_option_5_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_5_subtract"
+                    effect = AIO_DAIT_material_option_5_subtract
                 }
 
                 # 分割线
@@ -705,95 +497,67 @@ guiTypes = {
 
             containerWindowType = {
                 name = "AIO_DAIT_material_option.6"
-                orientation = "upper_left"
-                position = { x = 0 y = 150 }
-                size = { width = 820 height = 120 } # 单个条目高度
+                orientation = upper_left
+                position = { x = 0 y = 140 }
+                size = { width = 100% height = 120 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 120 y = 30 }
-                    buttonText = "AIO_DAIT_material_option.6.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_material_option_6_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.6.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_6_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 490 y = 20 }
-                    buttonText = "AIO_DAIT_material_option.6.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.6.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_material_option_6_desc"
+                    effect = AIO_DAIT_material_option_6_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 20 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 20 }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 5 y = 0 }
-                            size = { x = 390 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.6.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_6_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 395 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.6.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_6_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.6.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_6_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_6_add"
+                    effect = AIO_DAIT_material_option_6_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_6_subtract"
+                    effect = AIO_DAIT_material_option_6_subtract
                 }
 
                 # 分割线
@@ -807,131 +571,70 @@ guiTypes = {
                 }
             }
 
-            # forth page
+            # 第四页
             containerWindowType = {
                 name = "AIO_DAIT_material_option.7"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 0 y = 0 }
-                size = { width = 820 height = 150 } # 单个条目高度
+                size = { width = 100% height = 140 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 120 y = 30 }
-                    buttonText = "AIO_DAIT_material_option.7.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_material_option_7_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.7.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_7_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 410 y = 20 }
-                    buttonText = "AIO_DAIT_material_option.7.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.7.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_material_option_7_desc"
+                    effect = AIO_DAIT_material_option_7_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 40 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 50% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 10 y = 0 }
-                            size = { x = 115 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.7.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_7_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 120 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.7.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_7_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "2"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 20 }
-                        size = { x = 100% y = 50% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 10 y = 0 }
-                            size = { x = 120 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.7.effect.2.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_7_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 125 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_material_option.7.effect.2.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_material_option_7_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_material_option.7.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_7_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_7_add"
+                    effect = AIO_DAIT_material_option_7_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_material_option_7_subtract"
+                    effect = AIO_DAIT_material_option_7_subtract
                 }
 
                 # 分割线
@@ -945,41 +648,40 @@ guiTypes = {
                 }
             }
 
-
-            # page change
+            # 切页
             containerWindowType = {
                 name = "page_change"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 670 y = 360 }
                 size = { width = 150 height = 30 }
                 
                 effectButtonType = { 
                     name = "last_page"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 0 y = 0 }
                     quadTextureSprite = "GFX_AIO_DAIT_Last_Page_Button"
-                    effect = "AIO_DAIT_material_view_last_page_button"
+                    effect = AIO_DAIT_material_view_last_page_button
                 }
                 
                 effectButtonType = { 
                     name = "page"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 30 y = 5 }
                     size = { x = 80 y = 20 }
-                    buttonText = "AIO_DAIT_material_current_page"
-                    buttonFont = "cg_16b"
-                    format = "center"
+                    buttonText = AIO_DAIT_material_current_page
+                    buttonFont = cg_16b
+                    format = center
                     multiline = no
-                    effect = "AIO_DAIT_material_view_current_page"
+                    effect = AIO_DAIT_material_view_current_page
                     alwaysTransparent = yes
                 }
                 
                 effectButtonType = { 
                     name = "next_page"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 112 y = 0 }
                     quadTextureSprite = "GFX_AIO_DAIT_Next_Page_Button"
-                    effect = "AIO_DAIT_material_view_next_page_button"
+                    effect = AIO_DAIT_material_view_next_page_button
                 }
             }
         }
@@ -991,378 +693,227 @@ guiTypes = {
 
         containerWindowType = {
             name = "energy_view"
-            orientation = "upper_left"
+            orientation = upper_left
             position = { x = 220 y = 110 }
-            size = { x = 820 y = 360 }
+            size = { x = 820 y = 400 }
 
-            # first page
+            # 第一页
             containerWindowType = {
                 name = "AIO_DAIT_energy_option.1"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 0 y = 0 }
-                size = { width = 820 height = 150 } # 单个条目高度
+                size = { width = 100% height = 140 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 120 y = 30 }
-                    buttonText = "AIO_DAIT_energy_option.1.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_energy_option_1_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_energy_option.1.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_energy_option_1_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 520 y = 20 }
-                    buttonText = "AIO_DAIT_energy_option.1.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.1.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_energy_option_1_desc"
+                    effect = AIO_DAIT_energy_option_1_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 40 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 50% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 5 y = 0 }
-                            size = { x = 165 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.1.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_1_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 170 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.1.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_1_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "2"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 20 }
-                        size = { x = 100% y = 50% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 5 y = 0 }
-                            size = { x = 110 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.1.effect.2.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_1_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 115 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.1.effect.2.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_1_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_energy_option.1.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_1_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_energy_option_1_add"
+                    effect = AIO_DAIT_energy_option_1_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_energy_option_1_subtract"
+                    effect = AIO_DAIT_energy_option_1_subtract
                 }
 
                 # 分割线
                 effectButtonType = {
                     name = "separate_line"
                     quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 10 y = 130 }
-                    effect = "AIO_DAIT_energy_option_1_separate_line"
+                    effect = AIO_DAIT_energy_option_1_separate_line
                     alwaysTransparent = yes
                 }
             }
 
             containerWindowType = {
                 name = "AIO_DAIT_energy_option.2"
-                orientation = "upper_left"
-                position = { x = 0 y = 150 } # 第一个
-                size = { width = 820 height = 120 } # 单个条目高度
+                orientation = upper_left
+                position = { x = 0 y = 140 }
+                size = { width = 100% height = 120 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 140 y = 30 }
-                    buttonText = "AIO_DAIT_energy_option.2.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_energy_option_2_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_energy_option.2.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_energy_option_2_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 460 y = 20 }
-                    buttonText = "AIO_DAIT_energy_option.2.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.2.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_energy_option_2_desc"
+                    effect = AIO_DAIT_energy_option_2_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 20 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 20 }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 5 y = 0 }
-                            size = { x = 290 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.2.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_2_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 295 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.2.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_2_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.2.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = no
+                    effect = AIO_DAIT_energy_option_2_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_energy_option_2_add"
+                    effect = AIO_DAIT_energy_option_2_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_energy_option_2_subtract"
+                    effect = AIO_DAIT_energy_option_2_subtract
                 }
 
                 # 分割线
                 effectButtonType = {
                     name = "separate_line"
                     quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 10 y = 110 }
-                    effect = "AIO_DAIT_energy_option_2_separate_line"
+                    effect = AIO_DAIT_energy_option_2_separate_line
                     alwaysTransparent = yes
                 }
             }
 
-
-            # second page
+            # 第二页
             containerWindowType = {
                 name = "AIO_DAIT_energy_option.3"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 0 y = 0 }
-                size = { width = 820 height = 150 } # 单个条目高度
+                size = { width = 100% height = 140 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 140 y = 30 }
-                    buttonText = "AIO_DAIT_energy_option.3.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_energy_option_3_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_energy_option.3.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_energy_option_3_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 430 y = 20 }
-                    buttonText = "AIO_DAIT_energy_option.3.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.3.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_energy_option_3_desc"
+                    effect = AIO_DAIT_energy_option_3_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 40 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 50% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 80 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.3.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_3_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 85 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.3.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_3_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "2"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 20 }
-                        size = { x = 100% y = 50% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 80 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.3.effect.2.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_3_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 85 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.3.effect.2.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_3_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_energy_option.3.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_3_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_energy_option_3_add"
+                    effect = AIO_DAIT_energy_option_3_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_energy_option_3_subtract"
+                    effect = AIO_DAIT_energy_option_3_subtract
                 }
 
                 # 分割线
@@ -1378,95 +929,67 @@ guiTypes = {
 
             containerWindowType = {
                 name = "AIO_DAIT_energy_option.4"
-                orientation = "upper_left"
-                position = { x = 0 y = 150 }
-                size = { width = 820 height = 120 } # 单个条目高度
+                orientation = upper_left
+                position = { x = 0 y = 140 }
+                size = { width = 100% height = 120 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 120 y = 30 }
-                    buttonText = "AIO_DAIT_energy_option.4.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_energy_option_4_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_energy_option.4.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_energy_option_4_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 460 y = 20 }
-                    buttonText = "AIO_DAIT_energy_option.4.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.4.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_energy_option_4_desc"
+                    effect = AIO_DAIT_energy_option_4_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 20 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 20 }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 130 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.4.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_4_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 135 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.4.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_4_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.4.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_4_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_energy_option_4_add"
+                    effect = AIO_DAIT_energy_option_4_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_energy_option_4_subtract"
+                    effect = AIO_DAIT_energy_option_4_subtract
                 }
 
                 # 分割线
@@ -1480,198 +1003,70 @@ guiTypes = {
                 }
             }
 
-
-            # third page
+            # 第三页
             containerWindowType = {
                 name = "AIO_DAIT_energy_option.5"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 0 y = 0 }
-                size = { width = 820 height = 210 } # 单个条目高度
+                size = { width = 100% height = 180 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 120 y = 30 }
-                    buttonText = "AIO_DAIT_energy_option.5.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_energy_option_5_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_energy_option.5.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_energy_option_5_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 630 y = 20 }
-                    buttonText = "AIO_DAIT_energy_option.5.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.5.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_energy_option_5_desc"
+                    effect = AIO_DAIT_energy_option_5_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 80 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 25% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 5 y = 0 }
-                            size = { x = 175 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.5.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 180 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.5.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "2"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 20 }
-                        size = { x = 100% y = 25% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 155 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.5.effect.2.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 160 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.5.effect.2.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "3"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 40 }
-                        size = { x = 100% y = 25% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 130 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.5.effect.3.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 135 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.5.effect.3.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "4"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 60 }
-                        size = { x = 100% y = 25% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 5 y = 0 }
-                            size = { x = 300 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.5.effect.4.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 305 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.5.effect.4.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 80 }
+                    buttonText = AIO_DAIT_energy_option.5.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_5_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 125 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_energy_option_5_add"
+                    effect = AIO_DAIT_energy_option_5_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 125 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_energy_option_5_subtract"
+                    effect = AIO_DAIT_energy_option_5_subtract
                 }
 
                 # 分割线
@@ -1687,95 +1082,67 @@ guiTypes = {
 
             containerWindowType = {
                 name = "AIO_DAIT_energy_option.6"
-                orientation = "upper_left"
-                position = { x = 0 y = 190 }
-                size = { width = 820 height = 120 } # 单个条目高度
+                orientation = upper_left
+                position = { x = 0 y = 180 }
+                size = { width = 100% height = 120 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 120 y = 30 }
-                    buttonText = "AIO_DAIT_energy_option.6.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_energy_option_6_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_energy_option.6.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_energy_option_6_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 520 y = 20 }
-                    buttonText = "AIO_DAIT_energy_option.6.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.6.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_energy_option_6_desc"
+                    effect = AIO_DAIT_energy_option_6_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 100% y = 20 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 20 }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 5 y = 0 }
-                            size = { x = 395 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.6.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_6_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 400 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_energy_option.6.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_energy_option_6_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.6.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_6_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_energy_option_6_add"
+                    effect = AIO_DAIT_energy_option_6_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_energy_option_6_subtract"
+                    effect = AIO_DAIT_energy_option_6_subtract
                 }
 
                 # 分割线
@@ -1789,41 +1156,40 @@ guiTypes = {
                 }
             }
 
-
-            # page change
+            # 切页
             containerWindowType = {
                 name = "page_change"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 670 y = 360 }
                 size = { width = 150 height = 30 }
 
                 effectButtonType = {
                     name = "last_page"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 0 y = 0 }
                     quadTextureSprite = "GFX_AIO_DAIT_Last_Page_Button"
-                    effect = "AIO_DAIT_energy_view_last_page_button"
+                    effect = AIO_DAIT_energy_view_last_page_button
                 }
 
                 effectButtonType = {
                     name = "page"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 30 y = 5 }
                     size = { x = 80 y = 20 }
-                    buttonText = "AIO_DAIT_energy_current_page"
-                    buttonFont = "cg_16b"
-                    format = "center"
+                    buttonText = AIO_DAIT_energy_current_page
+                    buttonFont = cg_16b
+                    format = center
                     multiline = no
-                    effect = "AIO_DAIT_energy_view_current_page"
+                    effect = AIO_DAIT_energy_view_current_page
                     alwaysTransparent = yes
                 }
 
                 effectButtonType = {
                     name = "next_page"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 112 y = 0 }
                     quadTextureSprite = "GFX_AIO_DAIT_Next_Page_Button"
-                    effect = "AIO_DAIT_energy_view_next_page_button"
+                    effect = AIO_DAIT_energy_view_next_page_button
                 }
             }
         }
@@ -1835,378 +1201,227 @@ guiTypes = {
 
         containerWindowType = {
             name = "metric_view"
-            orientation = "upper_left"
+            orientation = upper_left
             position = { x = 220 y = 110 }
-            size = { x = 820 y = 360 }
+            size = { x = 820 y = 400 }
 
-            # first page
+            # 第一页
             containerWindowType = {
                 name = "AIO_DAIT_metric_option.1"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 0 y = 0 }
-                size = { width = 820 height = 120 } # 单个条目高度
+                size = { width = 100% height = 120 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 120 y = 30 }
-                    buttonText = "AIO_DAIT_metric_option.1.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_metric_option_1_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_metric_option.1.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_metric_option_1_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 490 y = 20 }
-                    buttonText = "AIO_DAIT_metric_option.1.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.1.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_metric_option_1_desc"
+                    effect = AIO_DAIT_metric_option_1_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 20 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 20 }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 5 y = 0 }
-                            size = { x = 90 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.1.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_1_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 95 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.1.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_1_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.1.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_1_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_metric_option_1_add"
+                    effect = AIO_DAIT_metric_option_1_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 65 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_metric_option_1_subtract"
+                    effect = AIO_DAIT_metric_option_1_subtract
                 }
 
                 # 分割线
                 effectButtonType = {
                     name = "separate_line"
                     quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 10 y = 110 }
-                    effect = "AIO_DAIT_metric_option_1_separate_line"
+                    effect = AIO_DAIT_metric_option_1_separate_line
                     alwaysTransparent = yes
                 }
             }
 
             containerWindowType = {
                 name = "AIO_DAIT_metric_option.2"
-                orientation = "upper_left"
-                position = { x = 0 y = 120 } # 第一个
-                size = { width = 820 height = 150 } # 单个条目高度
+                orientation = upper_left
+                position = { x = 0 y = 120 }
+                size = { width = 100% height = 140 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 140 y = 30 }
-                    buttonText = "AIO_DAIT_metric_option.2.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_metric_option_2_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_metric_option.2.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_metric_option_2_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 545 y = 20 }
-                    buttonText = "AIO_DAIT_metric_option.2.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.2.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_metric_option_2_desc"
+                    effect = AIO_DAIT_metric_option_2_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 40 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 50%  }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 110 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.2.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_2_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 115 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.2.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_2_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "2"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 20 }
-                        size = { x = 100% y = 50%  }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 275 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.2.effect.2.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_2_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 280 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.2.effect.2.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_2_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_metric_option.2.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_2_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_metric_option_2_add"
+                    effect = AIO_DAIT_metric_option_2_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_metric_option_2_subtract"
+                    effect = AIO_DAIT_metric_option_2_subtract
                 }
 
                 # 分割线
                 effectButtonType = {
                     name = "separate_line"
                     quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 10 y = 130 }
-                    effect = "AIO_DAIT_metric_option_2_separate_line"
+                    effect = AIO_DAIT_metric_option_2_separate_line
                     alwaysTransparent = yes
                 }
             }
 
-
-            # second page
+            # 第二页
             containerWindowType = {
                 name = "AIO_DAIT_metric_option.3"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 0 y = 0 }
-                size = { width = 820 height = 150 } # 单个条目高度
+                size = { width = 100% height = 140 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 120 y = 30 }
-                    buttonText = "AIO_DAIT_metric_option.3.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_metric_option_3_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_metric_option.3.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_metric_option_3_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 515 y = 20 }
-                    buttonText = "AIO_DAIT_metric_option.3.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.3.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_metric_option_3_desc"
+                    effect = AIO_DAIT_metric_option_3_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 40 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 50%  }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 220 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.3.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_3_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 225 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.3.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_3_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "2"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 20 }
-                        size = { x = 100% y = 50%  }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 240 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.3.effect.2.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_3_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 245 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.3.effect.2.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_3_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_metric_option.3.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_3_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_metric_option_3_add"
+                    effect = AIO_DAIT_metric_option_3_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_metric_option_3_subtract"
+                    effect = AIO_DAIT_metric_option_3_subtract
                 }
 
                 # 分割线
@@ -2222,128 +1437,67 @@ guiTypes = {
 
             containerWindowType = {
                 name = "AIO_DAIT_metric_option.4"
-                orientation = "upper_left"
-                position = { x = 0 y = 150 } # 第一个
-                size = { width = 820 height = 150 } # 单个条目高度
+                orientation = upper_left
+                position = { x = 0 y = 140 }
+                size = { width = 100% height = 140 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 120 y = 30 }
-                    buttonText = "AIO_DAIT_metric_option.4.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_metric_option_4_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_metric_option.4.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_metric_option_4_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 615 y = 20 }
-                    buttonText = "AIO_DAIT_metric_option.4.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.4.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_metric_option_4_desc"
+                    effect = AIO_DAIT_metric_option_4_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 40 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 50%  }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 95 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.4.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_4_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 100 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.4.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_4_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "2"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 20 }
-                        size = { x = 100% y = 50%  }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 70 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.4.effect.2.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_4_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 75 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.4.effect.2.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_4_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_metric_option.4.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_4_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_metric_option_4_add"
+                    effect = AIO_DAIT_metric_option_4_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_metric_option_4_subtract"
+                    effect = AIO_DAIT_metric_option_4_subtract
                 }
 
                 # 分割线
@@ -2357,198 +1511,70 @@ guiTypes = {
                 }
             }
 
-
-            # third page
+            # 第三页
             containerWindowType = {
                 name = "AIO_DAIT_metric_option.5"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 0 y = 0 }
-                size = { width = 820 height = 210 } # 单个条目高度
+                size = { width = 100% height = 180 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 120 y = 30 }
-                    buttonText = "AIO_DAIT_metric_option.5.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_metric_option_5_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_metric_option.5.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_metric_option_5_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 390 y = 20 }
-                    buttonText = "AIO_DAIT_metric_option.5.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.5.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_metric_option_5_desc"
+                    effect = AIO_DAIT_metric_option_5_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 80 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 25% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 125 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.5.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 135 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.5.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "2"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 20 }
-                        size = { x = 100% y = 25% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 70 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.5.effect.2.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 75 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.5.effect.2.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "3"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 40 }
-                        size = { x = 100% y = 25% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 135 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.5.effect.3.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 140 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.5.effect.3.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "4"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 60 }
-                        size = { x = 100% y = 25% }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 120 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.5.effect.4.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 125 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.5.effect.4.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_5_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 80 }
+                    buttonText = AIO_DAIT_metric_option.5.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_5_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 125 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_metric_option_5_add"
+                    effect = AIO_DAIT_metric_option_5_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 125 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_metric_option_5_subtract"
+                    effect = AIO_DAIT_metric_option_5_subtract
                 }
 
                 # 分割线
@@ -2564,128 +1590,67 @@ guiTypes = {
 
             containerWindowType = {
                 name = "AIO_DAIT_metric_option.6"
-                orientation = "upper_left"
-                position = { x = 0 y = 190 }
-                size = { width = 820 height = 150 } # 单个条目高度
+                orientation = upper_left
+                position = { x = 0 y = 180 }
+                size = { width = 100% height = 140 }
 
                 # 标题
                 effectButtonType = {
                     name = "title"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 15 y = 5 }
-                    size = { x = 100 y = 30 }
-                    buttonText = "AIO_DAIT_metric_option.6.title"
-                    buttonFont = "malgun_goth_24"
-                    format = "left"
-                    multiline = no
-                    effect = "AIO_DAIT_metric_option_6_title"
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_metric_option.6.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_metric_option_6_title
                     alwaysTransparent = yes
                 }
 
                 # 描述
                 effectButtonType = {
                     name = "desc"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 45 }
-                    size = { x = 380 y = 20 }
-                    buttonText = "AIO_DAIT_metric_option.6.desc"
-                    buttonFont = "cg_16b"
-                    format = "left"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.6.desc
+                    buttonFont = cg_16b
+                    format = left
                     multiline = yes
-                    effect = "AIO_DAIT_metric_option_6_desc"
+                    effect = AIO_DAIT_metric_option_6_desc
                     alwaysTransparent = yes
                 }
 
                 # 效果
-                containerWindowType = {
+                effectButtonType = {
                     name = "effect"
-                    orientation = "upper_left"
-                    position = { x = 18 y = 40 }
-                    size = { x = 784 y = 40 }
-
-                    containerWindowType = {
-                        name = "1"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 0 }
-                        size = { x = 100% y = 50%  }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 165 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.6.effect.1.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_6_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 170 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.6.effect.1.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_6_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
-
-                    containerWindowType = {
-                        name = "2"
-                        orientation = "upper_left"
-                        position = { x = 0 y = 20 }
-                        size = { x = 100% y = 50%  }
-
-                        effectButtonType = {
-                            name = "desc"
-                            orientation = "upper_left"
-                            position = { x = 0 y = 0 }
-                            size = { x = 95 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.6.effect.2.desc"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_6_effect"
-                            alwaysTransparent = yes
-                        }
-
-                        effectButtonType = {
-                            name = "value"
-                            orientation = "upper_left"
-                            position = { x = 100 y = 0 }
-                            size = { x = 85 y = 100% }
-                            buttonText = "AIO_DAIT_metric_option.6.effect.2.value"
-                            buttonFont = "cg_16b"
-                            format = "left"
-                            multiline = no
-                            effect = "AIO_DAIT_metric_option_6_effect"
-                            alwaysTransparent = yes
-                        }
-                    }
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_metric_option.6.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_6_effect
+                    alwaysTransparent = yes
                 }
 
                 # 调整数值按钮
                 effectButtonType = {
                     name = "add"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 650 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_metric_option_6_add"
+                    effect = AIO_DAIT_metric_option_6_add
                 }
                 effectButtonType = {
                     name = "subtract"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 700 y = 85 }
                     quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
                     scale = 0.6
-                    effect = "AIO_DAIT_metric_option_6_subtract"
+                    effect = AIO_DAIT_metric_option_6_subtract
                 }
 
                 # 分割线
@@ -2699,41 +1664,40 @@ guiTypes = {
                 }
             }
 
-
-            # page change
+            # 切页
             containerWindowType = {
                 name = "page_change"
-                orientation = "upper_left"
+                orientation = upper_left
                 position = { x = 670 y = 360 }
                 size = { width = 150 height = 30 }
 
                 effectButtonType = {
                     name = "last_page"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 0 y = 0 }
                     quadTextureSprite = "GFX_AIO_DAIT_Last_Page_Button"
-                    effect = "AIO_DAIT_metric_view_last_page_button"
+                    effect = AIO_DAIT_metric_view_last_page_button
                 }
 
                 effectButtonType = {
                     name = "page"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 30 y = 5 }
                     size = { x = 80 y = 20 }
-                    buttonText = "AIO_DAIT_metric_current_page"
-                    buttonFont = "cg_16b"
-                    format = "center"
+                    buttonText = AIO_DAIT_metric_current_page
+                    buttonFont = cg_16b
+                    format = center
                     multiline = no
-                    effect = "AIO_DAIT_metric_view_current_page"
+                    effect = AIO_DAIT_metric_view_current_page
                     alwaysTransparent = yes
                 }
 
                 effectButtonType = {
                     name = "next_page"
-                    orientation = "upper_left"
+                    orientation = upper_left
                     position = { x = 112 y = 0 }
                     quadTextureSprite = "GFX_AIO_DAIT_Next_Page_Button"
-                    effect = "AIO_DAIT_metric_view_next_page_button"
+                    effect = AIO_DAIT_metric_view_next_page_button
                 }
             }
         }
