@@ -24,7 +24,7 @@
 
 # 岗位产出资源
 @AIO_DAIT_material_option_1_effect_1_cap = 10
-@AIO_DAIT_material_option_1_effect_1_c_value_level = 9
+@AIO_DAIT_material_option_1_effect_1_c_value_level = 3
 
 #endregion
 
