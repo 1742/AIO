@@ -2,9 +2,7 @@
 namespace = AIO_RE_events
 
 
-# ---------------------------------- #
-# AIO编辑现实
-# ---------------------------------- #
+#region 主界面
 
 # AIO控制面板触发事件
 country_event = {
@@ -84,7 +82,6 @@ country_event = {
     }
 }
 
-
 # AIO控制面板主界面
 country_event = {
     id = AIO_RE_events.202
@@ -151,7 +148,11 @@ country_event = {
     }
 }
 
-# AIO控制面板应用无限界面
+#endregion
+
+
+#region AIO控制面板应用无限界面
+
 country_event = {
     id = AIO_RE_events.301
     title = AIO_Tawi_full_name
@@ -1621,7 +1622,11 @@ country_event = {
     }
 }
 
-# AIO控制面板亚弗戈蒙界面
+#endregion
+
+
+#region AIO控制面板亚弗戈蒙界面
+
 country_event = {
     id = AIO_RE_events.401
     title = AIO_RE_events.401.title
@@ -2556,9 +2561,10 @@ country_event = {
     }
 }
 
-# ---------------------------------- #
-# 其他效果实现
-# ---------------------------------- #
+#endregion
+
+
+#region 其他效果实现
 
 # 定位舰被摧毁
 country_event = {
@@ -2737,3 +2743,5 @@ planet_event = {
         }
     }
 }
+
+#endregion

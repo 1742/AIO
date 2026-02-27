@@ -2,10 +2,6 @@
 namespace = AIO_Aforgomom_events
 
 
-# ---------------------------------- #
-# 亚弗戈蒙之怒
-# ---------------------------------- #
-
 # 销毁亚弗戈蒙之怒事件
 fleet_event = {
     id = AIO_Aforgomom_events.201
@@ -50,6 +46,7 @@ fleet_event = {
     }
 }
 
+
 # 亚弗戈蒙之怒被摧毁
 country_event = { # this - owner of combatant from - owner of destroyed
     id = AIO_Aforgomom_events.202
@@ -70,10 +67,6 @@ country_event = { # this - owner of combatant from - owner of destroyed
     }
 }
 
-
-# ---------------------------------- #
-# 遗珍
-# ---------------------------------- #
 
 # 获得遗珍并转交给犹格索托斯
 country_event = {

@@ -221,13 +221,13 @@ AIO_DAIT_material_option_1_modifier_1 = {
 AIO_DAIT_material_option_2_modifier_1 = {
     icon = gfx/interface/icons/modifiers/mod_planet_building_cost_mult.dds
 
-    planet_buildings_cost_mult = 1
-    starbase_shipyard_build_cost_mult = 1
+    planet_buildings_cost_mult = -1
+    starbase_shipyard_build_cost_mult = -1
 }
 AIO_DAIT_material_option_2_modifier_2 = {
     icon = gfx/interface/icons/modifiers/mod_alloys_cost_mult.dds
 
-    megastructures_cost_mult = 1
+    megastructures_cost_mult = -1
 }
 
 #endregion
@@ -248,8 +248,8 @@ AIO_DAIT_material_option_3_modifier_1 = {
 AIO_DAIT_material_option_4_modifier_1 = {
     icon = gfx/interface/icons/modifiers/mod_upkeep_mult.dds
 
-    planet_buildings_upkeep_mult = 1
-    planet_districts_upkeep_mult = 1
+    planet_buildings_upkeep_mult = -1
+    planet_districts_upkeep_mult = -1
 }
 
 #endregion
@@ -264,7 +264,7 @@ AIO_DAIT_material_option_5_modifier_1 = {
 AIO_DAIT_material_option_5_modifier_2 = {
     icon = gfx/interface/icons/modifiers/mod_pop_housing_usage_mult.dds
 
-    pop_housing_usage_mult = 1
+    pop_housing_usage_mult = -1
 }
 
 #endregion
@@ -309,8 +309,8 @@ AIO_DAIT_energy_option_1_modifier_2 = {
 AIO_DAIT_energy_option_2_modifier_1 = {
     icon = gfx/interface/icons/modifiers/mod_energy_upkeep_mult.dds
 
-    planet_jobs_energy_upkeep_mult = 1
-    ships_energy_upkeep_mult = 1
+    planet_jobs_energy_upkeep_mult = -1
+    ships_energy_upkeep_mult = -1
 }
 
 #endregion
@@ -376,7 +376,7 @@ AIO_DAIT_energy_option_5_modifier_4 = {
 AIO_DAIT_metric_option_1_modifier_1 = {
     icon = gfx/interface/icons/modifiers/mod_empire_size_mult.dds
 
-    empire_size_mult = 1
+    empire_size_mult = -1
 }
 
 #endregion
@@ -391,8 +391,8 @@ AIO_DAIT_metric_option_2_modifier_1 = {
 AIO_DAIT_metric_option_2_modifier_2 = {
     icon = gfx/interface/icons/modifiers/mod_ship_windup_mult.dds
 
-    ship_windup_mult = 1
-    ship_winddown_mult = 1
+    ship_windup_mult = -1
+    ship_winddown_mult = -1
 }
 
 #endregion
@@ -465,7 +465,7 @@ AIO_DAIT_metric_option_6_modifier_1 = {
 AIO_DAIT_metric_option_6_modifier_2 = {
     icon = gfx/interface/icons/modifiers/mod_ship_damage_reduction_mult.dds
 
-    ship_damage_reduction_mult = 1
+    ship_damage_reduction_mult = -1
 }
 
 #endregion

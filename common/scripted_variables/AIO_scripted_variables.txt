@@ -32,10 +32,10 @@
 #region 重子装配阈值
 
 # 建筑花费、舰船花费
-@AIO_DAIT_material_option_2_effect_1_cap = -0.9
+@AIO_DAIT_material_option_2_effect_1_cap = 0.9
 @AIO_DAIT_material_option_2_effect_1_c_value_level = 3
 # 巨型结构花费
-@AIO_DAIT_material_option_2_effect_2_cap = -0.9
+@AIO_DAIT_material_option_2_effect_2_cap = 0.9
 @AIO_DAIT_material_option_2_effect_2_c_value_level = 3
 
 #endregion
@@ -53,7 +53,7 @@
 #region 结构抗熵极限
 
 # 建筑维护费、区划维护费
-@AIO_DAIT_material_option_4_effect_1_cap = -0.9
+@AIO_DAIT_material_option_4_effect_1_cap = 0.9
 @AIO_DAIT_material_option_4_effect_1_c_value_level = 3
 
 #endregion
@@ -66,7 +66,7 @@
 @AIO_DAIT_material_option_5_effect_1_c_value_level = 3
 
 # 人口住房使用
-@AIO_DAIT_material_option_5_effect_2_cap = -0.9
+@AIO_DAIT_material_option_5_effect_2_cap = 0.9
 @AIO_DAIT_material_option_5_effect_2_c_value_level = 3
 
 #endregion
@@ -114,7 +114,7 @@
 #region 麦克斯韦妖协议
 
 # 岗位能量币维护费、舰船 能量币维护费
-@AIO_DAIT_energy_option_2_effect_1_cap = -0.9
+@AIO_DAIT_energy_option_2_effect_1_cap = 0.9
 @AIO_DAIT_energy_option_2_effect_1_c_value_level = 3
 
 #endregion
@@ -179,7 +179,7 @@
 #region 拓扑流形刚度
 
 # 帝国规模
-@AIO_DAIT_metric_option_1_effect_1_cap = -0.9
+@AIO_DAIT_metric_option_1_effect_1_cap = 0.9
 @AIO_DAIT_metric_option_1_effect_1_c_value_level = 9
 
 #endregion
@@ -192,7 +192,7 @@
 @AIO_DAIT_metric_option_2_effect_1_c_value_level = 3
 
 # 超空间跳跃充能时间、超空间跳跃冷却
-@AIO_DAIT_metric_option_2_effect_2_cap = -0.9
+@AIO_DAIT_metric_option_2_effect_2_cap = 0.9
 @AIO_DAIT_metric_option_2_effect_2_c_value_level = 3
 
 #endregion
@@ -252,7 +252,7 @@
 @AIO_DAIT_metric_option_6_effect_1_c_value_level = 9
 
 # 伤害减免
-@AIO_DAIT_metric_option_6_effect_2_cap = -0.9
+@AIO_DAIT_metric_option_6_effect_2_cap = 0.9
 @AIO_DAIT_metric_option_6_effect_2_c_value_level = 9
 
 #endregion

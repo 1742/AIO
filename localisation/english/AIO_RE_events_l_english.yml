@@ -87,7 +87,7 @@
  AIO_RE_events.308.finish_locate.desc: "Blank pages reveal words that do not exist:\n\nScope: §Y[event_target:AIO_RE_enlighten_target.GetName]§!\nOwner: §Y[event_target:AIO_RE_enlighten_target.owner.GetName]§!\nEditing Project: §Y$AIO_RE_events.301.option_7$§!\nEffects: $AIO_RE_events.308.effect$\n\n"Are you sure?""
  AIO_RE_events.308.option_1: "Randomly enlighten the species of planets within the galaxy"
  AIO_RE_events.308.option_2: "Enlighten some species on the designated planet"
- AIO_RE_events.308.effect: "Add §M$trait_AIO_psionic$§! to random species on the target planet. If it is an unenlightened species, it will be upgraded to an enlightened species and a $ethic_spiritualist$ empire will be created."
+ AIO_RE_events.308.effect: "Add §M$trait_latent_psionic$§! to random species on the target planet. If it is an unenlightened species, it will be upgraded to an enlightened species and a $ethic_spiritualist$ empire will be created."
  # Turn Back Time
  AIO_RE_events.309.prepare_locate.desc: "Tawi opened a book, and the ink lines on the edges of the pages seemed like slowly rewinding tree rings.\n\n"History is not always about moving forward. You can choose to slightly contract the time structure of a planet and revert it to an earlier state."\n\nEffects: $AIO_RE_events.309.effect$"
  AIO_RE_events.309.locating.desc: "Tawi gently closed the book.\n\n"You have currently chosen to do §Y$AIO_RE_events.301.option_8$§! edit for a specified £colony£ colony. Please establish a §Y$AIO_locator$§! within the target colony. Before the positioning is completed, you can still return here to terminate the operation.""

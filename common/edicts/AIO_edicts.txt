@@ -117,6 +117,8 @@ edict_AIO_nanite_farming = {
 edict_AIO_invoke_DAIT_menu = {
     icon = "GFX_edict_type_policy"
 
+    length = 1
+
     resources = { category = edicts }
 
     potential = {

@@ -87,7 +87,7 @@
  AIO_RE_events.308.finish_locate.desc: "空白的书页浮现出本不存在字句：\n\n作用域：§Y[event_target:AIO_RE_enlighten_target.GetName]§!\n所属帝国：§Y[event_target:AIO_RE_enlighten_target.owner.GetName]§!\n编辑项目：§Y$AIO_RE_events.301.option_7$§!\n效果：$AIO_RE_events.308.effect$\n\n“确定吗？”"
  AIO_RE_events.308.option_1: "随机启发银河系内的星球物种"
  AIO_RE_events.308.option_2: "启发指定星球上的部分物种"
- AIO_RE_events.308.effect: "为目标星球上的随机物种添加§M$trait_AIO_psionic$§!，若为未开智物种，则提升为智慧物种，并创建$ethic_spiritualist$帝国。"
+ AIO_RE_events.308.effect: "为目标星球上的随机物种添加§M$trait_latent_psionic$§!，若为未开智物种，则提升为智慧物种，并创建$ethic_spiritualist$帝国。"
  # 倒流说明
  AIO_RE_events.309.prepare_locate.desc: "塔维尔翻开一本书，页边的墨线像是正在缓慢倒卷的年轮。\n\n“历史并非只能向前。你可以选择让一颗星球的时间结构轻微收束，回退至早先的状态。”\n\n效果：$AIO_RE_events.309.effect$"
  AIO_RE_events.309.locating.desc: "塔维尔将那本书轻合。\n\n“你已选择对特定£planet£行星进行§Y$AIO_RE_events.301.option_8$§!编辑。请在目标星球上建立§Y$AIO_locator$§!。在标定完成前，你仍可以返回此处，对该操作做出取消。”"

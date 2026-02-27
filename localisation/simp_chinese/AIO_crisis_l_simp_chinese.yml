@@ -165,7 +165,7 @@
  # 视界引擎完成
  AIO_crisis_events.301.desc: "位于[from.GetName]的§Y$AIO_horizon_engine$§!完成"
  # 犹格索托斯完成
- AIO_crisis_events.401.desc: "位于[from.GetName]的§Y$AIO_mega_01$§!完成"
+ AIO_crisis_events.401.desc: "位于[from.GetName]的§Y$AIO_mega_01$§!完成\n解锁巨型结构：§Y$AIO_mega_01_node$节点§!"
  AIO_crisis_events.402.desc: "位于[from.GetName]的§Y$AIO_mega_02$§!完成"
  AIO_crisis_events.403.desc: "位于[from.GetName]的§Y$AIO_mega_03$§!完成"
  AIO_crisis_events.404.desc: "位于[from.GetName]的§Y$AIO_mega_04$§!完成"

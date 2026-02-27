@@ -22,7 +22,7 @@ AIO_mega_01_fact = {
 
 	upgrade_from = { AIO_horizon_engine }
 
-	build_time = 3600
+	build_time = 1800
 
 	resources = {
 		category = megastructures
@@ -62,57 +62,7 @@ AIO_mega_01_fact = {
 		event_target:AIO_horizon_engine_effect = { destroy_ambient_object = this }
 		clear_global_event_target = AIO_horizon_engine_effect
 
-		# 加特效
-		fromfrom.planet = {
-			create_ambient_object = {
-				type = "star_explosion"
-				play_animation_once = yes
-				location = this
-
-				effect = {
-					set_location = {
-						target = prev
-						distance = 0
-						angle = random
-					}
-				}
-			}
-			create_ambient_object = {
-				type = "crisis_sphere_1"
-				play_animation_once = no
-				location = this
-
-				effect = {
-					set_location = {
-						target = prev
-						distance = 0
-						angle = random
-					}
-					save_global_event_target_as = AIO_TUG_system_effect
-				}
-			}
-		}
-
-		# 清除星系内其他巨构
-		AIO_safe_remove_system_megastructures = yes
-		# 清除星系内天体
-		every_system_planet = {
-			if = {
-				limit = { is_star = no }
-				remove_planet = yes
-			}
-			else = {
-				change_pc = pc_AIO_empty_space
-				clear_deposits = yes
-			}
-		}
-		# 改变星系类型
-		set_star_class = sc_black_hole
-		# 改名
-		set_name = AIO_The_Ultimate_Gate
-		# 标志位
-		set_star_flag = AIO_TUG_system
-		save_global_event_target_as = AIO_TUG_system
+		AIO_crisis_effects_manager = { CREATE_TUG_SYSTEM = 1 }
 
 		from = {
 			set_country_flag = AIO_built_AIO_mega_01
@@ -185,7 +135,7 @@ AIO_mega_01 = {
 	build_time = 1
 	resources = {
 		category = megastructures
-		produces = { AIO_advanced_logic = 10000 }
+		produces = { AIO_advanced_logic = 5000 }
 
 		upkeep = {
 			energy = 1500
@@ -253,6 +203,7 @@ AIO_mega_02 = {
 	upgrade_from = { AIO_mega_01 }
 
 	build_time = 3600
+
 	resources = {
 		category = megastructures
 
@@ -277,7 +228,7 @@ AIO_mega_02 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 30000 }
+		produces = { AIO_advanced_logic = 10000 }
 
 		upkeep = {
 			energy = 1000
@@ -322,6 +273,7 @@ AIO_mega_03 = {
 	upgrade_from = { AIO_mega_02 }
 
 	build_time = 3600
+
 	resources = {
 		category = megastructures
 
@@ -346,7 +298,7 @@ AIO_mega_03 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 90000 }
+		produces = { AIO_advanced_logic = 15000 }
 
 		upkeep = {
 			energy = 2000
@@ -394,6 +346,7 @@ AIO_mega_04 = {
 	}
 
 	build_time = 3600
+
 	resources = {
 		category = megastructures
 
@@ -418,7 +371,7 @@ AIO_mega_04 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 120000 }
+		produces = { AIO_advanced_logic = 20000 }
 
         upkeep = {
             trigger = { owner = { NOT = { is_country_type = AIO_empire } } }

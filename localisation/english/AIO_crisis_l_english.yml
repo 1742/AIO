@@ -166,7 +166,7 @@
  # horizon engine finish
  AIO_crisis_events.301.desc: "The §Y$AIO_horizon_engine$§! located at [from.GetName] is completed."
  # Yog Sothoth finish
- AIO_crisis_events.401.desc: "The §Y$AIO_mega_01$§! located at [from.GetName] is completed."
+ AIO_crisis_events.401.desc: "The §Y$AIO_mega_01$§! located at [from.GetName] is completed.\nUnlock megastructure: §Y$AIO_mega_01_node$ node§!"
  AIO_crisis_events.402.desc: "The §Y$AIO_mega_02$§! located at [from.GetName] is completed."
  AIO_crisis_events.403.desc: "The §Y$AIO_mega_03$§! located at [from.GetName] is completed."
  AIO_crisis_events.404.desc: "The §Y$AIO_mega_04$§! located at [from.GetName] is completed."

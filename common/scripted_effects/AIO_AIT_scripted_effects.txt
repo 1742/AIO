@@ -726,8 +726,7 @@ AIO_DAIT_base_calculate_buff_values = {
     if = {
         limit = { check_variable = { which = AIO_DAIT_temp_alloc_value value != 0 } }
         multiply_variable = { which = AIO_DAIT_temp_alloc_value value = 0.01 }
-        # export_resource_income_to_variable = { resource = AIO_advanced_logic variable = AIO_DAIT_temp_calc_input }
-        export_resource_income_to_variable = { resource = energy variable = AIO_DAIT_temp_calc_input }
+        export_resource_income_to_variable = { resource = AIO_advanced_logic variable = AIO_DAIT_temp_calc_input }
 
         if = {
             limit = { check_variable = { which = AIO_DAIT_temp_calc_input value < 0 } }
@@ -1054,135 +1053,539 @@ AIO_DAIT_add_buffs = {
     AIO_DAIT_option_calculate_buff_values = { metric_option_5 = 1 }
     AIO_DAIT_option_calculate_buff_values = { metric_option_6 = 1 }
 
-    add_modifier = {
-        modifier = AIO_DAIT_material_option_1_modifier_1
-        mult = AIO_DAIT_material_option_1_effect_1_value
+
+    #region material
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_material_option_1_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_material_option_1_modifier_1
+            mult = AIO_DAIT_material_option_1_effect_1_value
+        }
     }
-    add_modifier = {
-        modifier = AIO_DAIT_material_option_2_modifier_1
-        mult = AIO_DAIT_material_option_2_effect_1_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_material_option_2_modifier_2
-        mult = AIO_DAIT_material_option_2_effect_2_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_material_option_3_modifier_1
-        mult = AIO_DAIT_material_option_3_effect_1_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_material_option_4_modifier_1
-        mult = AIO_DAIT_material_option_4_effect_1_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_material_option_5_modifier_1
-        mult = AIO_DAIT_material_option_5_effect_1_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_material_option_5_modifier_2
-        mult = AIO_DAIT_material_option_5_effect_2_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_material_option_7_modifier_1
-        mult = AIO_DAIT_material_option_7_effect_1_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_material_option_7_modifier_2
-        mult = AIO_DAIT_material_option_7_effect_2_value
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_material_option_1_modifier_1 }
+        remove_modifier = AIO_DAIT_material_option_1_modifier_1
     }
 
-    add_modifier = {
-        modifier = AIO_DAIT_energy_option_1_modifier_1
-        mult = AIO_DAIT_energy_option_1_effect_1_value
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_material_option_2_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_material_option_2_modifier_1
+            mult = AIO_DAIT_material_option_2_effect_1_value
+        }
     }
-    add_modifier = {
-        modifier = AIO_DAIT_energy_option_1_modifier_2
-        mult = AIO_DAIT_energy_option_1_effect_2_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_energy_option_2_modifier_1
-        mult = AIO_DAIT_energy_option_2_effect_1_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_energy_option_3_modifier_1
-        mult = AIO_DAIT_energy_option_3_effect_1_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_energy_option_3_modifier_2
-        mult = AIO_DAIT_energy_option_3_effect_2_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_energy_option_4_modifier_1
-        mult = AIO_DAIT_energy_option_4_effect_1_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_energy_option_5_modifier_1
-        mult = AIO_DAIT_energy_option_5_effect_1_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_energy_option_5_modifier_2
-        mult = AIO_DAIT_energy_option_5_effect_2_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_energy_option_5_modifier_3
-        mult = AIO_DAIT_energy_option_5_effect_3_value
-    }
-    add_modifier = {
-        modifier = AIO_DAIT_energy_option_5_modifier_4
-        mult = AIO_DAIT_energy_option_5_effect_4_value
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_material_option_2_modifier_1 }
+        remove_modifier = AIO_DAIT_material_option_2_modifier_1
     }
 
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_1_modifier_1
-        mult = AIO_DAIT_metric_option_1_effect_1_value
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_material_option_2_effect_2_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_material_option_2_modifier_2
+            mult = AIO_DAIT_material_option_2_effect_2_value
+        }
     }
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_2_modifier_1
-        mult = AIO_DAIT_metric_option_2_effect_1_value
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_material_option_2_modifier_2 }
+        remove_modifier = AIO_DAIT_material_option_2_modifier_2
     }
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_2_modifier_2
-        mult = AIO_DAIT_metric_option_2_effect_2_value
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_material_option_3_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_material_option_3_modifier_1
+            mult = AIO_DAIT_material_option_3_effect_1_value
+        }
     }
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_3_modifier_1
-        mult = AIO_DAIT_metric_option_3_effect_1_value
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_material_option_3_modifier_1 }
+        remove_modifier = AIO_DAIT_material_option_3_modifier_1
     }
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_3_modifier_2
-        mult = AIO_DAIT_metric_option_3_effect_2_value
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_material_option_4_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_material_option_4_modifier_1
+            mult = AIO_DAIT_material_option_4_effect_1_value
+        }
     }
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_4_modifier_1
-        mult = AIO_DAIT_metric_option_4_effect_1_value
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_material_option_4_modifier_1 }
+        remove_modifier = AIO_DAIT_material_option_4_modifier_1
     }
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_4_modifier_2
-        mult = AIO_DAIT_metric_option_4_effect_2_value
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_material_option_5_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_material_option_5_modifier_1
+            mult = AIO_DAIT_material_option_5_effect_1_value
+        }
     }
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_4_modifier_3
-        mult = AIO_DAIT_metric_option_4_effect_3_value
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_material_option_5_modifier_1 }
+        remove_modifier = AIO_DAIT_material_option_5_modifier_1
     }
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_5_modifier_1
-        mult = AIO_DAIT_metric_option_5_effect_1_value
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_material_option_5_effect_2_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_material_option_5_modifier_2
+            mult = AIO_DAIT_material_option_5_effect_2_value
+        }
     }
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_5_modifier_2
-        mult = AIO_DAIT_metric_option_5_effect_2_value
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_material_option_5_modifier_2 }
+        remove_modifier = AIO_DAIT_material_option_5_modifier_2
     }
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_5_modifier_3
-        mult = AIO_DAIT_metric_option_5_effect_3_value
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_material_option_7_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_material_option_7_modifier_1
+            mult = AIO_DAIT_material_option_7_effect_1_value
+        }
     }
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_6_modifier_1
-        mult = AIO_DAIT_metric_option_6_effect_1_value
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_material_option_7_modifier_1 }
+        remove_modifier = AIO_DAIT_material_option_7_modifier_1
     }
-    add_modifier = {
-        modifier = AIO_DAIT_metric_option_6_modifier_2
-        mult = AIO_DAIT_metric_option_6_effect_2_value
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_material_option_7_effect_2_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_material_option_7_modifier_2
+            mult = AIO_DAIT_material_option_7_effect_2_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_material_option_7_modifier_2 }
+        remove_modifier = AIO_DAIT_material_option_7_modifier_2
+    }
+
+    #endregion
+
+
+    #region energy and interactions
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_energy_option_1_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_energy_option_1_modifier_1
+            mult = AIO_DAIT_energy_option_1_effect_1_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_1_modifier_1 }
+        remove_modifier = AIO_DAIT_energy_option_1_modifier_1
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_energy_option_1_effect_2_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_energy_option_1_modifier_2
+            mult = AIO_DAIT_energy_option_1_effect_2_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_1_modifier_2 }
+        remove_modifier = AIO_DAIT_energy_option_1_modifier_2
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_energy_option_2_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_energy_option_2_modifier_1
+            mult = AIO_DAIT_energy_option_2_effect_1_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_2_modifier_1 }
+        remove_modifier = AIO_DAIT_energy_option_2_modifier_1
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_energy_option_3_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_energy_option_3_modifier_1
+            mult = AIO_DAIT_energy_option_3_effect_1_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_3_modifier_1 }
+        remove_modifier = AIO_DAIT_energy_option_3_modifier_1
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_energy_option_3_effect_2_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_energy_option_3_modifier_2
+            mult = AIO_DAIT_energy_option_3_effect_2_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_3_modifier_2 }
+        remove_modifier = AIO_DAIT_energy_option_3_modifier_2
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_energy_option_4_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_energy_option_4_modifier_1
+            mult = AIO_DAIT_energy_option_4_effect_1_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_4_modifier_1 }
+        remove_modifier = AIO_DAIT_energy_option_4_modifier_1
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_energy_option_5_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_energy_option_5_modifier_1
+            mult = AIO_DAIT_energy_option_5_effect_1_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_5_modifier_1 }
+        remove_modifier = AIO_DAIT_energy_option_5_modifier_1
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_energy_option_5_effect_2_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_energy_option_5_modifier_2
+            mult = AIO_DAIT_energy_option_5_effect_2_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_5_modifier_2 }
+        remove_modifier = AIO_DAIT_energy_option_5_modifier_2
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_energy_option_5_effect_3_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_energy_option_5_modifier_3
+            mult = AIO_DAIT_energy_option_5_effect_3_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_5_modifier_3 }
+        remove_modifier = AIO_DAIT_energy_option_5_modifier_3
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_energy_option_5_effect_4_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_energy_option_5_modifier_4
+            mult = AIO_DAIT_energy_option_5_effect_4_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_5_modifier_4 }
+        remove_modifier = AIO_DAIT_energy_option_5_modifier_4
+    }
+
+    #endregion
+
+
+    #region time-space metric
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_1_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_1_modifier_1
+            mult = AIO_DAIT_metric_option_1_effect_1_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_1_modifier_1 }
+        remove_modifier = AIO_DAIT_metric_option_1_modifier_1
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_2_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_2_modifier_1
+            mult = AIO_DAIT_metric_option_2_effect_1_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_2_modifier_1 }
+        remove_modifier = AIO_DAIT_metric_option_2_modifier_1
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_2_effect_2_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_2_modifier_2
+            mult = AIO_DAIT_metric_option_2_effect_2_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_2_modifier_2 }
+        remove_modifier = AIO_DAIT_metric_option_2_modifier_2
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_3_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_3_modifier_1
+            mult = AIO_DAIT_metric_option_3_effect_1_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_3_modifier_1 }
+        remove_modifier = AIO_DAIT_metric_option_3_modifier_1
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_3_effect_2_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_3_modifier_2
+            mult = AIO_DAIT_metric_option_3_effect_2_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_3_modifier_2 }
+        remove_modifier = AIO_DAIT_metric_option_3_modifier_2
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_4_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_4_modifier_1
+            mult = AIO_DAIT_metric_option_4_effect_1_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_4_modifier_1 }
+        remove_modifier = AIO_DAIT_metric_option_4_modifier_1
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_4_effect_2_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_4_modifier_2
+            mult = AIO_DAIT_metric_option_4_effect_2_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_4_modifier_2 }
+        remove_modifier = AIO_DAIT_metric_option_4_modifier_2
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_4_effect_3_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_4_modifier_3
+            mult = AIO_DAIT_metric_option_4_effect_3_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_4_modifier_3 }
+        remove_modifier = AIO_DAIT_metric_option_4_modifier_3
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_5_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_5_modifier_1
+            mult = AIO_DAIT_metric_option_5_effect_1_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_5_modifier_1 }
+        remove_modifier = AIO_DAIT_metric_option_5_modifier_1
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_5_effect_2_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_5_modifier_2
+            mult = AIO_DAIT_metric_option_5_effect_2_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_5_modifier_2 }
+        remove_modifier = AIO_DAIT_metric_option_5_modifier_2
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_5_effect_3_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_5_modifier_3
+            mult = AIO_DAIT_metric_option_5_effect_3_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_5_modifier_3 }
+        remove_modifier = AIO_DAIT_metric_option_5_modifier_3
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_6_effect_1_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_6_modifier_1
+            mult = AIO_DAIT_metric_option_6_effect_1_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_6_modifier_1 }
+        remove_modifier = AIO_DAIT_metric_option_6_modifier_1
+    }
+
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_metric_option_6_effect_2_value value > 0 } }
+        add_modifier = {
+            modifier = AIO_DAIT_metric_option_6_modifier_2
+            mult = AIO_DAIT_metric_option_6_effect_2_value
+        }
+    }
+    else_if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_6_modifier_2 }
+        remove_modifier = AIO_DAIT_metric_option_6_modifier_2
+    }
+
+    #endregion
+}
+
+# 移除 buff
+AIO_DAIT_remove_buffs = {
+    optimize_memory
+
+    if = {
+        limit = { has_modifier = AIO_DAIT_material_option_1_modifier_1 }
+        remove_modifier = AIO_DAIT_material_option_1_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_material_option_2_modifier_1 }
+        remove_modifier = AIO_DAIT_material_option_2_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_material_option_2_modifier_2 }
+        remove_modifier = AIO_DAIT_material_option_2_modifier_2
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_material_option_3_modifier_1 }
+        remove_modifier = AIO_DAIT_material_option_3_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_material_option_4_modifier_1 }
+        remove_modifier = AIO_DAIT_material_option_4_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_material_option_5_modifier_1 }
+        remove_modifier = AIO_DAIT_material_option_5_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_material_option_5_modifier_2 }
+        remove_modifier = AIO_DAIT_material_option_5_modifier_2
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_material_option_7_modifier_1 }
+        remove_modifier = AIO_DAIT_material_option_7_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_material_option_7_modifier_2 }
+        remove_modifier = AIO_DAIT_material_option_7_modifier_2
+    }
+
+    if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_1_modifier_1 }
+        remove_modifier = AIO_DAIT_energy_option_1_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_1_modifier_2 }
+        remove_modifier = AIO_DAIT_energy_option_1_modifier_2
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_2_modifier_1 }
+        remove_modifier = AIO_DAIT_energy_option_2_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_3_modifier_1 }
+        remove_modifier = AIO_DAIT_energy_option_3_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_3_modifier_2 }
+        remove_modifier = AIO_DAIT_energy_option_3_modifier_2
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_4_modifier_1 }
+        remove_modifier = AIO_DAIT_energy_option_4_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_5_modifier_1 }
+        remove_modifier = AIO_DAIT_energy_option_5_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_5_modifier_2 }
+        remove_modifier = AIO_DAIT_energy_option_5_modifier_2
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_5_modifier_3 }
+        remove_modifier = AIO_DAIT_energy_option_5_modifier_3
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_energy_option_5_modifier_4 }
+        remove_modifier = AIO_DAIT_energy_option_5_modifier_4
+    }
+
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_1_modifier_1 }
+        remove_modifier = AIO_DAIT_metric_option_1_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_2_modifier_1 }
+        remove_modifier = AIO_DAIT_metric_option_2_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_2_modifier_2 }
+        remove_modifier = AIO_DAIT_metric_option_2_modifier_2
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_3_modifier_1 }
+        remove_modifier = AIO_DAIT_metric_option_3_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_3_modifier_2 }
+        remove_modifier = AIO_DAIT_metric_option_3_modifier_2
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_4_modifier_1 }
+        remove_modifier = AIO_DAIT_metric_option_4_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_4_modifier_2 }
+        remove_modifier = AIO_DAIT_metric_option_4_modifier_2
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_4_modifier_3 }
+        remove_modifier = AIO_DAIT_metric_option_4_modifier_3
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_5_modifier_1 }
+        remove_modifier = AIO_DAIT_metric_option_5_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_5_modifier_2 }
+        remove_modifier = AIO_DAIT_metric_option_2_modifier_2
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_5_modifier_3 }
+        remove_modifier = AIO_DAIT_metric_option_5_modifier_3
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_6_modifier_1 }
+        remove_modifier = AIO_DAIT_metric_option_6_modifier_1
+    }
+    if = {
+        limit = { has_modifier = AIO_DAIT_metric_option_6_modifier_2 }
+        remove_modifier = AIO_DAIT_metric_option_6_modifier_2
     }
 }
 
@@ -1324,8 +1727,8 @@ AIO_RE_effects_manager = {
                 modify_species = {
                     species = this.species
                     sapient = yes
-                    add_trait = trait_AIO_psionic
-                    effect = { save_event_target_as = AIO_psionic_species }
+                    add_trait = trait_latent_psionic
+                    effect = { save_event_target_as = AIO_enlighten_psionic_species }
                 }
             }
             else_if = {
@@ -1336,19 +1739,19 @@ AIO_RE_effects_manager = {
                 modify_species = {
                     species = this.species
                     sapient = yes
-                    add_trait = trait_AIO_psionic
+                    add_trait = trait_latent_psionic
                     remove_trait = trait_presapient_forcefully_devolved
-                    effect = { save_event_target_as = AIO_psionic_species }
+                    effect = { save_event_target_as = AIO_enlighten_psionic_species }
                 }
             }
             else = {
                 modify_species = {
                     species = this.species
-                    add_trait = trait_AIO_psionic
-                    effect = { save_event_target_as = AIO_psionic_species }
+                    add_trait = trait_latent_psionic
+                    effect = { save_event_target_as = AIO_enlighten_psionic_species }
                 }
             }
-            change_species = event_target:AIO_psionic_species
+            change_species = event_target:AIO_enlighten_psionic_species
         }
         owner = {
             if = {
@@ -1356,7 +1759,7 @@ AIO_RE_effects_manager = {
                 set_name = random
                 set_country_type = default
                 prev = { set_capital = yes }
-                set_origin = origin_default
+                set_origin = origin_shroudwalker_apprentice
                 change_country_flag = random
                 shift_ethic = ethic_spiritualist
                 change_government = {
@@ -1386,7 +1789,7 @@ AIO_RE_effects_manager = {
             }
             # 添加人口
             random_owned_pop_group = {
-                limit = { has_trait = trait_AIO_psionic }
+                limit = { has_trait = trait_latent_psionic }
                 add_pop_amount = 1000
             }
             # 添加buff
@@ -1456,13 +1859,13 @@ AIO_RE_effects_manager = {
                 prev = {
                     create_leader = {
                         class = scientist
-                        effect = { save_event_target_as = AIO_ctrl_AIT_enlight_primitive_scientist }
+                        effect = { save_event_target_as = AIO_RE_enlight_primitive_scientist }
                     }
                 }
                 create_fleet = {
                     effect = {
                         set_owner = prevprev
-                        set_leader = event_target:AIO_ctrl_AIT_enlight_primitive_scientist
+                        set_leader = event_target:AIO_RE_enlight_primitive_scientist
                         create_ship = {
                             name = random
                             design = NAME_Scholarium_Science

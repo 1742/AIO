@@ -77,6 +77,77 @@ AIO_change_star_class = {
 AIO_crisis_effects_manager = {
     optimize_memory
 
+    # 创建穷极之门星系，scope: system
+    [[CREATE_TUG_SYSTEM]
+        if = {
+            limit = { any_system_megastructure = { is_megastructure_type = AIO_mega_01_fact } }
+
+            # 加特效
+            random_system_megastructure = {
+                limit = { is_megastructure_type = AIO_mega_01_fact }
+                planet = {
+                    create_ambient_object = {
+                        type = "star_explosion"
+                        play_animation_once = yes
+                        location = this
+
+                        effect = {
+                            set_location = {
+                                target = prev
+                                distance = 0
+                                angle = random
+                            }
+                        }
+                    }
+                    create_ambient_object = {
+                        type = "crisis_sphere_1"
+                        play_animation_once = no
+                        location = this
+
+                        effect = {
+                            set_location = {
+                                target = prev
+                                distance = 0
+                                angle = random
+                            }
+                            save_global_event_target_as = AIO_TUG_system_effect
+                        }
+                    }
+                }
+            }
+
+            # 清除星系内其他巨构
+            AIO_safe_remove_system_megastructures = yes
+            # 清除星系内天体
+            every_system_planet = {
+                if = {
+                    limit = { is_star = no }
+                    remove_planet = yes
+                }
+                else = {
+                    change_pc = pc_AIO_empty_space
+                    clear_deposits = yes
+                }
+            }
+            # 清除星系内舰船
+            every_fleet_in_system = {
+                limit = {
+                    AIO_safe_remove_fleet_exclude_API = no
+                    NOT = { is_ship_class = shipclass_starbase }
+                }
+                destroy_fleet = this
+            }
+
+            # 改变星系类型
+            set_star_class = sc_black_hole
+            # 改名
+            set_name = AIO_The_Ultimate_Gate
+            # 标志位
+            set_star_flag = AIO_TUG_system
+            save_global_event_target_as = AIO_TUG_system
+        }
+    ]
+
     # 创建或恢复无名之雾，scope: AIO_crisis_country
     [[CREATE_HS_SYSTEM]
         if = {
@@ -208,28 +279,6 @@ AIO_crisis_effects_manager = {
 
     # 飞升效果，scope: AIO crisis country
     [[ASCENSION_EFFECT]
-        # 移除标志位及变量
-        # 局势
-        remove_country_flag = AIO_finish_merge_cosmos_stage_1
-        remove_country_flag = AIO_finish_merge_cosmos_stage_2
-        remove_country_flag = AIO_finish_merge_cosmos_stage_3
-        remove_country_flag = AIO_finish_merge_cosmos_stage_4
-        remove_country_flag = AIO_finish_merge_cosmos
-        # 循环应用无限变量
-        clear_variable = AIO_situation_AIT_time
-        clear_variable = AIO_situation_RAIT_affect_system_num
-
-        # 清除随机应用无限标志位
-        AIO_RAIT_effects_manager = { CLEAR_RANDOM_AIT_FLAG = 1 }
-        # 清除定向应用无限变量
-        AIO_DAIT_clear_values = yes
-
-        # 结束事件链
-        end_event_chain = AIO_crisis_events_chain
-
-        # 结束所有战争
-        every_war = { end_war_effect = yes }
-
         # 转变国家类型
         set_country_type = AIO_empire
         if = {
@@ -363,7 +412,10 @@ AIO_crisis_effects_manager = {
                 set_country_flag = protected_from_queen_storm
             }
         }
+    ]
 
+    # 飞升引发的河系效果，scope: AIO crisis country
+    [[ASCENSION_GALAXY_EFFECT]
         # 河系影响
         no_scope = {
             every_system = {

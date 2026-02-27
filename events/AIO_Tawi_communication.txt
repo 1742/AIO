@@ -1,9 +1,9 @@
 # AIO塔维尔交互
 namespace = AIO_Tawi_communication_events
 
-# ---------------------------------- #
-# 初见塔维尔
-# ---------------------------------- #
+
+#region 初见塔维尔
+
 country_event = {
     id = AIO_Tawi_communication_events.201
     fire_only_once = yes
@@ -66,10 +66,10 @@ country_event = {
     }
 }
 
+#endregion
 
-# ---------------------------------- #
-# 闲聊
-# ---------------------------------- #
+
+#region 闲聊
 
 country_event = {
     id = AIO_Tawi_communication_events.203
@@ -122,10 +122,10 @@ country_event = {
     }
 }
 
+#endregion
 
-# ---------------------------------- #
-# 外交事件
-# ---------------------------------- #
+
+#region 外交事件
 
 # 其他帝国
 country_event = { # this - 触发通讯者 from - 被通讯者
@@ -152,10 +152,11 @@ country_event = { # this - 触发通讯者 from - 被通讯者
     }
 }
 
+#endregion
 
-# ---------------------------------- #
-# 亚弗戈蒙转交遗珍
-# ---------------------------------- #
+
+#region 亚弗戈蒙转交遗珍
+
 country_event = {
     id = AIO_Tawi_communication_events.401
     title = AIO_Tawi_communication_events.401.title
@@ -177,3 +178,4 @@ country_event = {
     }
 }
 
+#endregion

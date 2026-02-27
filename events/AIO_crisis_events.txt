@@ -2,9 +2,7 @@
 namespace = AIO_crisis_events
 
 
-# ---------------------------------- #
-# 天灾等级事件
-# ---------------------------------- #
+#region 天灾等级事件
 
 # 解锁一阶段
 country_event = {
@@ -106,9 +104,10 @@ country_event = {
     }
 }
 
-# ---------------------------------- #
-# 视界引擎事件
-# ---------------------------------- #
+#endregion
+
+
+#region 巨构
 
 # 视界引擎完成
 country_event = {
@@ -126,11 +125,6 @@ country_event = {
         }
     }
 }
-
-
-# ---------------------------------- #
-# 犹格索托斯巨构建造事件
-# ---------------------------------- #
 
 # 万门之门建造完成
 country_event = {
@@ -207,9 +201,10 @@ country_event = {
     }
 }
 
-# ---------------------------------- #
-# 融合宇宙局势事件
-# ---------------------------------- #
+#endregion
+
+
+#region 融合宇宙局势事件
 
 # 开始融合宇宙
 country_event = {
@@ -221,6 +216,7 @@ country_event = {
 	location = FROM
 
 	is_triggered_only = yes
+    trigger = { has_country_flag = AIO_built_AIO_mega_01 }
 
     immediate = {
         hidden_effect = {
@@ -247,6 +243,10 @@ country_event = {
                     mult = 0.25
                 }
             }
+
+            # 开启 DAIT 季度事件，直到完成飞升或灭绝
+            AIO_DAIT_init_values = yes
+            country_event = { id = AIO_AIT_events.402 }
         }
     }
 
@@ -401,10 +401,10 @@ country_event = {
     }
 }
 
+#endregion
 
-# ---------------------------------- #
-# 飞升事件
-# ---------------------------------- #
+
+#region 飞升事件
 
 country_event = {
     id = AIO_crisis_events.601
@@ -420,15 +420,35 @@ country_event = {
 
     option = {
         name = AIO_crisis_events.601.option_1
-        hidden_effect = { AIO_crisis_effects_manager = { ASCENSION_EFFECT = 1 } }
+        hidden_effect = {
+            # 移除标志位及变量
+            clear_variable = AIO_situation_AIT_time
+            clear_variable = AIO_situation_RAIT_affect_system_num
+            # 清除随机应用无限标志位
+            AIO_RAIT_effects_manager = { CLEAR_RANDOM_AIT_FLAG = 1 }
+            # 清除定向应用无限变量
+            AIO_DAIT_remove_buffs = yes
+            AIO_DAIT_clear_values = yes
+
+            # 结束事件链
+            end_event_chain = AIO_crisis_events_chain
+
+            # 结束所有战争
+            every_war = { end_war_effect = yes }
+
+            AIO_crisis_effects_manager = { ASCENSION_EFFECT = 1 }
+
+            AIO_crisis_effects_manager = { ASCENSION_GALAXY_EFFECT = 1 }
+        }
         win = yes
         default_hide_option = yes
     }
 }
 
-# ---------------------------------- #
-# AIO灾飞帝国灭亡事件
-# ---------------------------------- #
+#endregion
+
+
+#region AIO灾飞帝国灭亡事件
 
 # 被灭亡
 country_event = {
@@ -521,9 +541,10 @@ country_event = {
     }
 }
 
-# ---------------------------------- #
-# AIO天灾目标
-# ---------------------------------- #
+#endregion
+
+
+#region AIO天灾目标
 
 # 部署递归节点
 event = {
@@ -573,9 +594,10 @@ event = {
     }
 }
 
-# ---------------------------------- #
-# 其他效果实现
-# ---------------------------------- #
+#endregion
+
+
+#region 其他效果实现
 
 # 禁止AIO飞升帝国造船
 ship_event = {
@@ -695,6 +717,17 @@ country_event = {
     fire_only_once = yes
 
     immediate = {
+        set_country_flag = AIO_built_AIO_horizon_engine
+        set_country_flag = AIO_built_AIO_mega_01
+        set_country_flag = AIO_built_AIO_mega_02
+        set_country_flag = AIO_built_AIO_mega_03
+        set_country_flag = AIO_built_AIO_mega_04
+        set_country_flag = AIO_finish_merge_cosmos_stage_1
+        set_country_flag = AIO_finish_merge_cosmos_stage_2
+        set_country_flag = AIO_finish_merge_cosmos_stage_3
+        set_country_flag = AIO_finish_merge_cosmos_stage_4
+        set_country_flag = AIO_finish_merge_cosmos
+
         set_country_flag = AIO_empire_country
         save_global_event_target_as = AIO_empire_country
         # 允许进入牢塞星系
@@ -705,36 +738,14 @@ country_event = {
 
         # 激活灾飞路径
         add_ascension_perk = ap_AIO_allinone
-        add_resource = { AIO_advanced_logic = 45000 }
+        add_resource = { AIO_advanced_logic = 50000 }
 
         # 空想要3点国民理念点，不加够会转变政体失败
         give_technology = { tech = tech_planetary_unification }
         give_technology = { tech = tech_colonial_centralization }
         give_technology = { tech = tech_galactic_administration }
-        # 转变国家类型
-        set_country_type = AIO_empire
-        if = {
-            limit = { has_authority = auth_machine_intelligence }
-            change_government = {
-                authority = auth_machine_intelligence
-                civics = { civic = civic_AIO_dream }
-            }
-        }
-        else = {
-            change_government = {
-                authority = auth_hive_mind
-                civics = { civic = civic_AIO_dream }
-            }
-        }
-        set_name = AIO_empire
         # 创建穷极之门
-        capital_scope.solar_system = {
-            spawn_megastructure = {
-                type = AIO_mega_01_fact
-                planet = star
-                owner = root
-            }
-        }
+        capital_scope.solar_system = { AIO_crisis_effects_manager = { CREATE_TUG_SYSTEM = 1 } }
         # 创建无名之雾
         AIO_crisis_effects_manager = { CREATE_HS_SYSTEM = 1 }
         # 创建犹格索托斯
@@ -749,106 +760,9 @@ country_event = {
                 owner = root
             }
         }
-        # 杀死领袖
-        every_owned_leader = {
-            if = {
-                limit = {
-                    AIO_safe_remove_leader_exclude_API = no
 
-                    is_ruler = no
-                    is_councilor = no
-                    NOT = { has_leader_flag = gray_leader }
-                }
-                kill_leader = { show_notification = no fire = yes }
-            }
-            else = { set_skill = 10 }
-        }
-        # 摧毁殖民地
-        every_owned_planet = { destroy_colony = yes }
-        # 转移首都
-        event_target:AIO_HS_system.star = {
-            set_owner = root
-            set_capital = yes
-            destroy_colony = yes
-        }
-        # 移除拥有的巨构和所有恒星基地
-        every_system_within_border = {
-            AIO_safe_remove_system_megastructures = yes
-            destroy_fleet = starbase
-        }
-        # 摧毁所有舰队
-        every_owned_fleet = {
-            limit = { AIO_safe_remove_fleet_exclude_API = no }
-            destroy_fleet = this
-        }
-        # 与所有国家获得通讯并获得全部情报
-        every_country = {
-            limit = { NOT = { is_same_value = root } }
-            if = {
-                limit = { NOT = { has_communications = root } }
-                establish_communications_no_message = root
-            }
-            root = { add_intel = { who = prev amount = 100 } }
-        }
-
-        # 创建亚弗戈蒙帝国
-        create_country = {
-            name = "AIO_Aforgomom"
-            type = AIO_Aforgomom
-            flag = root
-
-            effect = {
-                ruler = {
-                    set_name = AIO_Aforgomom
-                    if = {
-                        limit = { root.ruler = { gender = male } }
-                        set_gender = female
-                    }
-                    else_if = {
-                        limit = { root.ruler = { gender = female } }
-                        set_gender = male
-                    }
-                    else = { set_gender = indeterminable }
-                    set_age = -1
-                    change_species = root.owner_main_species
-                    change_leader_portrait = root.ruler
-                    set_skill = 10
-                    remove_all_traits = yes
-                    if = {
-                        limit = { root = { has_authority = auth_machine_intelligence } }
-                        add_trait = { trait = leader_trait_ruler_machine_intelligence }
-                    }
-                    else = { add_trait = { trait = leader_trait_ruler_hive_mind } }
-                    change_background_ethic = ethic_gestalt_consciousness
-                    if = {
-                        limit = { root.ruler = { leader_class = official } }
-                        change_leader_class = official
-                    }
-                    else_if = {
-                        limit = { root.ruler = { leader_class = scientist } }
-                        change_leader_class = scientist
-                    }
-                    else = { change_leader_class = commander }
-                }
-
-                room_name_override = crisis_room
-
-                root = { add_intel = { who = prev amount = 100 } }
-                every_country = {
-                    if = {
-                        limit = { NOT = { has_communications = prev } }
-                        establish_communications_no_message = prev
-                    }
-                    prev = { add_intel = { who = prev amount = 100 } }
-                }
-
-                set_variable = { which = AIO_Aforgomom_Wrath value = 0 }
-                set_country_flag = AIO_Aforgomom_country
-                save_global_event_target_as = AIO_Aforgomom_country
-
-                # 允许进入牢塞星系
-                set_country_flag = protected_from_queen_storm
-            }
-        }
+        AIO_crisis_effects_manager = { ASCENSION_EFFECT = 1 }
     }
 }
+
+#endregion
