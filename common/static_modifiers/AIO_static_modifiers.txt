@@ -409,6 +409,11 @@ AIO_DAIT_metric_option_4_modifier_1 = {
     ship_sensor_range_add = 1
 }
 AIO_DAIT_metric_option_4_modifier_2 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_weapon_range_mult.dds
+
+    ship_weapon_range_mult = 1
+}
+AIO_DAIT_metric_option_4_modifier_3 = {
     icon = gfx/interface/icons/modifiers/mod_ship_tracking_mult.dds
 
     ship_tracking_mult = 1
@@ -419,21 +424,16 @@ AIO_DAIT_metric_option_4_modifier_2 = {
 #region 事件视界投影
 
 AIO_DAIT_metric_option_5_modifier_1 = {
-    icon = gfx/interface/icons/modifiers/mod_ship_weapon_range_mult.dds
-
-    ship_weapon_range_mult = 1
-}
-AIO_DAIT_metric_option_5_modifier_2 = {
     icon = gfx/interface/icons/modifiers/mod_ship_accuracy_mult.dds
 
     ship_accuracy_mult = 1
 }
-AIO_DAIT_metric_option_5_modifier_3 = {
+AIO_DAIT_metric_option_5_modifier_2 = {
     icon = gfx/interface/icons/modifiers/mod_catapult_range_mult.dds
 
     catapult_range_mult = 1
 }
-AIO_DAIT_metric_option_5_modifier_4 = {
+AIO_DAIT_metric_option_5_modifier_3 = {
     icon = gfx/interface/icons/modifiers/mod_ship_ftl_jumpdrive_range_mult.dds
 
     ship_ftl_jumpdrive_range_mult = 1

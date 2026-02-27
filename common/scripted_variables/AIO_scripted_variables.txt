@@ -217,30 +217,30 @@
 @AIO_DAIT_metric_option_4_effect_1_cap = 3
 @AIO_DAIT_metric_option_4_effect_1_c_value_level = 1
 
-# 追踪
-@AIO_DAIT_metric_option_4_effect_2_cap = 10
+# 舰船武器射程
+@AIO_DAIT_metric_option_4_effect_2_cap = 0.6
 @AIO_DAIT_metric_option_4_effect_2_c_value_level = 9
+
+# 追踪
+@AIO_DAIT_metric_option_4_effect_3_cap = 10
+@AIO_DAIT_metric_option_4_effect_3_c_value_level = 9
 
 #endregion
 
 
 #region 事件视界投影
 
-# 舰船武器射程
-@AIO_DAIT_metric_option_5_effect_1_cap = 0.6
+# 命中
+@AIO_DAIT_metric_option_5_effect_1_cap = 1
 @AIO_DAIT_metric_option_5_effect_1_c_value_level = 9
 
-# 命中
-@AIO_DAIT_metric_option_5_effect_2_cap = 1
-@AIO_DAIT_metric_option_5_effect_2_c_value_level = 9
-
 # 量子弹弓准确度
-@AIO_DAIT_metric_option_5_effect_3_cap = 2.5
-@AIO_DAIT_metric_option_5_effect_3_c_value_level = 3
+@AIO_DAIT_metric_option_5_effect_2_cap = 2.5
+@AIO_DAIT_metric_option_5_effect_2_c_value_level = 3
 
 # 跃迁引擎范围
-@AIO_DAIT_metric_option_5_effect_4_cap = 5
-@AIO_DAIT_metric_option_5_effect_4_c_value_level = 3
+@AIO_DAIT_metric_option_5_effect_3_cap = 5
+@AIO_DAIT_metric_option_5_effect_3_c_value_level = 3
 
 #endregion
 

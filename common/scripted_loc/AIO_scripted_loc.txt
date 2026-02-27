@@ -160,6 +160,10 @@ define_text = {
     value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|4|EFFECT|2|
 }
 define_text = {
+    name = AIO_DAIT_metric_option_4_effect_3_display_value
+    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|4|EFFECT|3|
+}
+define_text = {
     name = AIO_DAIT_metric_option_5_effect_1_display_value
     value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|5|EFFECT|1|
 }
@@ -170,10 +174,6 @@ define_text = {
 define_text = {
     name = AIO_DAIT_metric_option_5_effect_3_display_value
     value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|5|EFFECT|3|
-}
-define_text = {
-    name = AIO_DAIT_metric_option_5_effect_4_display_value
-    value = value:AIO_DAIT_option_effect_value_perc|TAB|metric|OPTION|5|EFFECT|4|
 }
 define_text = {
     name = AIO_DAIT_metric_option_6_effect_1_display_value

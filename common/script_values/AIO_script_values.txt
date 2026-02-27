@@ -218,14 +218,6 @@ AIO_resonator_factor_display = {
 
 #region DAIT
 
-# 分配数值
-AIO_DAIT_option_alloc_value_perc = {
-    base = 0
-
-    set = this.AIO_DAIT_$TAB$_option_$OPTION$_alloc_value
-    mult = 100
-}
-
 # buff 数值百分比
 AIO_DAIT_option_effect_value_perc = {
     base = 0
