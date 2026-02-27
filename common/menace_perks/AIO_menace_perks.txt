@@ -53,7 +53,6 @@ menp_AIO_mega_02 = {
 
 	on_unlock = {
 		custom_tooltip = unlocks_AIO_allinone_mega_01
-		custom_tooltip = unlock_new_DAIT_options
 	}
 }
 # 建筑
@@ -131,7 +130,6 @@ menp_AIO_mega_03 = {
 
 	on_unlock = {
 		custom_tooltip = unlocks_AIO_allinone_mega_02
-		custom_tooltip = unlock_new_DAIT_options
 	}
 }
 # 建筑
@@ -179,7 +177,6 @@ menp_AIO_mega_04 = {
 
 	on_unlock = {
 		custom_tooltip = unlocks_AIO_allinone_mega_03
-		custom_tooltip = unlock_new_DAIT_options
 	}
 }
 # 建筑
@@ -217,7 +214,6 @@ menp_AIO_mega_05 = {
 
 	on_unlock = {
 		custom_tooltip = unlocks_AIO_allinone_mega_04
-		custom_tooltip = unlock_new_DAIT_options
 	}
 }
 # 建筑

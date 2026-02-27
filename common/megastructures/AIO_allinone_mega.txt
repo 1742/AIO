@@ -115,7 +115,6 @@ AIO_mega_01_fact = {
 		save_global_event_target_as = AIO_TUG_system
 
 		from = {
-			remove_country_flag = AIO_built_AIO_horizon_engine
 			set_country_flag = AIO_built_AIO_mega_01
 
 			country_event = { id = AIO_crisis_events.401 }
@@ -138,10 +137,7 @@ AIO_mega_01_node = {
 	portrait = "GFX_megastructure_construction_background"
 
 	potential = {
-		OR = {
-			has_country_flag = AIO_finish_merge_cosmos_stage_1
-			is_country_type = AIO_empire
-		}
+		has_country_flag = AIO_built_AIO_mega_01
 	}
 	possible = {
 		custom_tooltip = {
@@ -189,7 +185,7 @@ AIO_mega_01 = {
 	build_time = 1
 	resources = {
 		category = megastructures
-		produces = { AIO_advanced_logic = 1000 }
+		produces = { AIO_advanced_logic = 10000 }
 
 		upkeep = {
 			energy = 1500
@@ -250,7 +246,7 @@ AIO_mega_02 = {
 			has_menace_perk = menp_AIO_mega_03
 			is_country_type = AIO_empire
 		}
-		NOT = { has_megastructure = AIO_mega_02 }
+		NOT = { has_country_flag = AIO_built_AIO_mega_02 }
 	}
 	dismantle_potential = { always = no }
 
@@ -281,7 +277,7 @@ AIO_mega_02 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 3000 }
+		produces = { AIO_advanced_logic = 30000 }
 
 		upkeep = {
 			energy = 1000
@@ -296,7 +292,6 @@ AIO_mega_02 = {
 
 	on_build_complete = {
 		from = {
-			remove_country_flag = AIO_built_AIO_mega_01
 			set_country_flag = AIO_built_AIO_mega_02
 
 			country_event = { id = AIO_crisis_events.402 }
@@ -351,7 +346,7 @@ AIO_mega_03 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 9000 }
+		produces = { AIO_advanced_logic = 90000 }
 
 		upkeep = {
 			energy = 2000
@@ -366,7 +361,6 @@ AIO_mega_03 = {
 
 	on_build_complete = {
 		from = {
-			remove_country_flag = AIO_built_AIO_mega_02
 			set_country_flag = AIO_built_AIO_mega_03
 
 			country_event = { id = AIO_crisis_events.403 }
@@ -424,7 +418,7 @@ AIO_mega_04 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 12000 }
+		produces = { AIO_advanced_logic = 120000 }
 
         upkeep = {
             trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
@@ -443,7 +437,6 @@ AIO_mega_04 = {
 
 	on_build_complete = {
 		from = {
-			remove_country_flag = AIO_built_AIO_mega_03
 			set_country_flag = AIO_built_AIO_mega_04
 
 			country_event = { id = AIO_crisis_events.404 }

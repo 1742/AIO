@@ -1,6 +1,19 @@
 # AIO静态修正
 
 
+#region 融合宇宙全局 debuff
+
+AIO_merge_cosmos_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_all_technology_research_speed.dds
+
+    planet_jobs_physics_research_produces_mult = -1
+    planet_jobs_society_research_produces_mult = -1
+    planet_jobs_engineering_research_produces_mult = -1
+}
+
+#endregion
+
+
 #region RAIT
 
 #region time ruin

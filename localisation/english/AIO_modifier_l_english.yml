@@ -64,6 +64,13 @@
  #endregion
 
 
+ #region 融合宇宙 debuff
+
+ AIO_merge_cosmos_modifier: "$situation_AIO_merge_cosmos$"
+
+ #endregion
+
+
  #region RAIT
 
  AIO_RAIT_TR_stage_1_modifier: "$AIO_RAIT_TR_events_chain_title$"

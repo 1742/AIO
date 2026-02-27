@@ -214,7 +214,6 @@ AIO_crisis_effects_manager = {
         remove_country_flag = AIO_finish_merge_cosmos_stage_2
         remove_country_flag = AIO_finish_merge_cosmos_stage_3
         remove_country_flag = AIO_finish_merge_cosmos_stage_4
-        remove_country_flag = AIO_finish_merge_cosmos_stage_5
         remove_country_flag = AIO_finish_merge_cosmos
         # 循环应用无限变量
         clear_variable = AIO_situation_AIT_time

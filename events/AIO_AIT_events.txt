@@ -53,7 +53,7 @@ situation_event = {
 						owner = { has_country_flag = AIO_built_AIO_mega_02 }
 					}
 					modifier = {
-						factor = 0.25
+						factor = 0.5
 						owner = { has_country_flag = AIO_built_AIO_mega_03 }
 					}
 					owner = {
@@ -2421,7 +2421,21 @@ country_event = {
 		NOT = { is_country_type = AIO_empire }
 	}
 
-	immediate = { AIO_DAIT_add_buffs = yes }
+	immediate = {
+		AIO_DAIT_add_buffs = yes
+
+		# 给科技
+		export_resource_income_to_variable = { resource = AIO_advanced_logic variable = AIO_DAIT_temp_give_tech }
+		divide_variable = { which = AIO_DAIT_temp_give_tech value = 10000 }
+		floor_variable = AIO_DAIT_temp_give_tech
+
+		while = {
+			count = AIO_DAIT_temp_give_tech
+			AIO_add_random_tech = yes
+		}
+
+		clear_variable = AIO_DAIT_temp_give_tech
+	}
 
 	after = { country_event = { id = AIO_AIT_events.402 months = 3 } }
 }

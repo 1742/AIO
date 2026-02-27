@@ -32,7 +32,7 @@ situation_AIO_merge_cosmos = {
     on_monthly = { events = { AIO_AIT_events.201 } }
 
     on_progress_complete = {
-        owner = { country_event = { id = AIO_crisis_events.505 } }
+        owner = { country_event = { id = AIO_crisis_events.504 } }
         # 局势到达最右端时触发，要写摧毁局势
         destroy_situation = this
     }
@@ -65,37 +65,19 @@ situation_AIO_merge_cosmos = {
         # 巨构限制
         modifier = {
             current_stage = stage_1
-            owner = {
-                NOR = {
-                    has_country_flag = AIO_built_AIO_mega_01
-                    has_country_flag = AIO_built_AIO_mega_02
-                    has_country_flag = AIO_built_AIO_mega_03
-                    has_country_flag = AIO_built_AIO_mega_04
-                }
-            }
+            owner = { NOT = { has_country_flag = AIO_built_AIO_mega_01 } }
             desc = AIO_merge_cosmos_requires_AIO_mega_01
             mult = 0
         }
         modifier = {
             current_stage = stage_2
-            owner = {
-                NOR = {
-                    has_country_flag = AIO_built_AIO_mega_02
-                    has_country_flag = AIO_built_AIO_mega_03
-                    has_country_flag = AIO_built_AIO_mega_04
-                }
-            }
+            owner = { NOT = { has_country_flag = AIO_built_AIO_mega_02 } }
             desc = AIO_merge_cosmos_requires_AIO_mega_02
             mult = 0
         }
         modifier = {
             current_stage = stage_3
-            owner = {
-                NOR = {
-                    has_country_flag = AIO_built_AIO_mega_03
-                    has_country_flag = AIO_built_AIO_mega_04
-                }
-            }
+            owner = { NOT = { has_country_flag = AIO_built_AIO_mega_03 } }
             desc = AIO_merge_cosmos_requires_AIO_mega_03
             mult = 0
         }
@@ -115,17 +97,17 @@ situation_AIO_merge_cosmos = {
         modifier = {
             owner = { has_country_flag = AIO_built_AIO_mega_02 }
             desc = AIO_mega_02
-            mult = 1.2
+            mult = 1.1
         }
         modifier = {
             owner = { has_country_flag = AIO_built_AIO_mega_03 }
             desc = AIO_mega_03
-            mult = 1.3
+            mult = 1.1
         }
         modifier = {
             owner = { has_country_flag = AIO_built_AIO_mega_04 }
             desc = AIO_mega_04
-            mult = 1.5
+            mult = 1.1
         }
 
         # 帝国规模修正
@@ -162,7 +144,7 @@ situation_AIO_merge_cosmos = {
             # 进度条下图标的背景，就是哪个棱形
             icon_background = GFX_situation_stage_frame_blue
             # 到哪个值时结束该阶段
-            end = 66
+            end = 100
         }
         stage_2 = {
             # 进度条下的图标
@@ -170,7 +152,7 @@ situation_AIO_merge_cosmos = {
             # 进度条下图标的背景，就是哪个棱形
             icon_background = GFX_situation_stage_frame_blue
             # 到哪个值时结束该阶段
-            end = 198
+            end = 300
 
             on_first_enter = { owner = { country_event = { id = AIO_crisis_events.501 } } }
         }
@@ -180,7 +162,7 @@ situation_AIO_merge_cosmos = {
             # 进度条下图标的背景，就是哪个棱形
             icon_background = GFX_situation_stage_frame_blue
             # 到哪个值时结束该阶段
-            end = 396
+            end = 600
 
             on_first_enter = { owner = { country_event = { id = AIO_crisis_events.502 } } }
         }
@@ -190,19 +172,9 @@ situation_AIO_merge_cosmos = {
             # 进度条下图标的背景，就是哪个棱形
             icon_background = GFX_situation_stage_frame_blue
             # 到哪个值时结束该阶段
-            end = 660
-
-            on_first_enter = { owner = { country_event = { id = AIO_crisis_events.503 } } }
-        }
-        stage_5 = {
-            # 进度条下的图标
-            icon = GFX_situation_stage_5
-            # 进度条下图标的背景，就是哪个棱形
-            icon_background = GFX_situation_stage_frame_blue
-            # 到哪个值时结束该阶段
             end = 1000
 
-            on_first_enter = { owner = { country_event = { id = AIO_crisis_events.504 } } }
+            on_first_enter = { owner = { country_event = { id = AIO_crisis_events.503 } } }
         }
     }
 

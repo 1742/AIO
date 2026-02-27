@@ -39,12 +39,12 @@
  # 灾飞路径提示文本
  AIO_allinone_level_2_req_success_tooltip: "£trigger_yes£完成§Y$AIO_horizon_engine$§!"
  AIO_allinone_level_2_req_fail_tooltip: "£trigger_no£完成§Y$AIO_horizon_engine$§!"
- AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£完成§Y$situation_AIO_merge_cosmos$§!$stage_2$"
- AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£完成§Y$situation_AIO_merge_cosmos$§!$stage_2$"
- AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£完成§Y$situation_AIO_merge_cosmos$§!$stage_4$"
- AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£完成§Y$situation_AIO_merge_cosmos$§!$stage_4$"
- AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£完成§Y$situation_AIO_merge_cosmos$§!$stage_6$"
- AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£完成§Y$situation_AIO_merge_cosmos$§!$stage_6$"
+ AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£完成§Y$situation_AIO_merge_cosmos$§!$stage_1$"
+ AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£完成§Y$situation_AIO_merge_cosmos$§!$stage_1$"
+ AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£完成§Y$situation_AIO_merge_cosmos$§!$stage_2$"
+ AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£完成§Y$situation_AIO_merge_cosmos$§!$stage_2$"
+ AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£完成§Y$situation_AIO_merge_cosmos$§!$stage_3$"
+ AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£完成§Y$situation_AIO_merge_cosmos$§!$stage_3$"
 
  #endregion
 
@@ -64,7 +64,6 @@
 
  #region 灾飞奖励
 
- unlock_new_DAIT_options: "解锁新的定向应用无限选项\n"
  # 一阶
  menp_AIO_al_research: "超然逻辑"
  menp_AIO_al_research_desc: "宇宙不再只是三维的舞台，我们的文明已窥见了更高的规则流。"
@@ -149,7 +148,6 @@
  AIO_crisis_events.202.option_1: "我们是铸门者。"
  AIO_crisis_events.203.desc: "随着§Y$AIO_mega_01$§!的启用，时空开始暴露出前所未见的脆弱之处。仅是在宇宙打一个“洞”是不够的，我们最强的大脑已经构思出了一种能够“选择”时空的巨型结构——§Y$AIO_mega_02$§!，它将为后续的规则修改铺平道路。"
  AIO_crisis_events.203.option_1: "$EXCELLENT$"
- AIO_crisis_events.203.tt: "完成§Y$AIO_mega_02$§!后解锁['concept_AIO_DAIT']"
  AIO_crisis_events.204.desc: "§Y$AIO_mega_02$§!已成为我们扭转宇宙命运的钥匙，但其潜力尚未完全释放。为继续推进融合进程，我们必须将其锻造为更高维度的基点——§Y$AIO_mega_03$§!。只有当§Y$AIO_mega_03$§!屹立于多重现实的顶点，我们才能真正掌控规律的终极形态。"
  AIO_crisis_events.204.option_1: "$menp_AIO_mega_04_desc$"
  AIO_crisis_events.205.desc: "§Y$AIO_mega_03$§!已屹立于多重现实的最尖端。然其存在，仅为承载真正的我们而设。现在，我们必须将其升华为终极形态——§M$AIO_mega_04$§!。不再是结构，不再是帝国，而是存在与规律的等价物。当其完成，融合将封闭，重写将开始。所有分歧、所有维度、所有终局，都将……"
@@ -191,12 +189,10 @@
  AIO_crisis_events.502.option_1: "REPLACE_ME"
  AIO_crisis_events.503.desc: "融合宇宙三阶段完成"
  AIO_crisis_events.503.option_1: "REPLACE_ME"
- AIO_crisis_events.504.desc: "融合宇宙四阶段完成"
- AIO_crisis_events.504.option_1: "REPLACE_ME"
- AIO_crisis_events.505.desc: "宇宙的结构已然解构完毕，曾束缚我们于有限时空中的边界，如今不过是可供重写的注脚。\n我们已抵达归一的门扉，向前一步，即可将自我重塑为宇宙逻辑的一部分，成为每一道引力、每一次观察、每一段概念的起源。\n然而，跃迁并非唯一的选择。我们可以暂驻此地，观察这新生的构造在多维之中如何回响。真理不会逃离，归一并不设限。"
- AIO_crisis_events.505.option_1: "迈入门后"
- AIO_crisis_events.505.option_2: "留步凝视"
- AIO_crisis_events.505.option_2.tt: "仍然可进行['concept_AIO_DAIT']，可以在事件链§Y$AIO_crisis_events_chain_title$§!中研究项目§Y$AIO_ASCENSION$§!触发胜利。"
+ AIO_crisis_events.504.desc: "宇宙的结构已然解构完毕，曾束缚我们于有限时空中的边界，如今不过是可供重写的注脚。\n我们已抵达归一的门扉，向前一步，即可将自我重塑为宇宙逻辑的一部分，成为每一道引力、每一次观察、每一段概念的起源。\n然而，跃迁并非唯一的选择。我们可以暂驻此地，观察这新生的构造在多维之中如何回响。"
+ AIO_crisis_events.504.option_1: "迈入门后"
+ AIO_crisis_events.504.option_2: "留步凝视"
+ AIO_crisis_events.504.option_2.tt: "仍然可进行['concept_AIO_DAIT']，可以在事件链§Y$AIO_crisis_events_chain_title$§!中研究项目§Y$AIO_ASCENSION$§!触发胜利。"
 
  #endregion
 

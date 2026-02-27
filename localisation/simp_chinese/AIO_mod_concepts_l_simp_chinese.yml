@@ -4,4 +4,4 @@
  concept_AIO_TDTE_system: "$AIO_The_Ultimate_Gate$"
  concept_AIO_TDTE_system_desc: "现实与['concept_AIO_HS_system']的连接点，亦联通当前宇宙的任意一点，从外无法观测其内，唯持有银匙者方可通过。"
  concept_AIO_DAIT: "定向应用无限"
- concept_AIO_DAIT_desc: "现实不在随机变动，宇宙会在我们设计好的规律中演化为理想模型。\n定向修改宇宙规律以为我们提供增益。\n（可以在['concept_edicts']打开定向应用无限菜单。）"
+ concept_AIO_DAIT_desc: "现实不在随机变动，宇宙会在我们设计好的规律中演化为理想模型。\n定向修改宇宙规律以为我们提供增益和§Y$technology_NAME$§!，增益的数值和£AIO_advanced_logic£ §Y$AIO_advanced_logic$§!产出相关，每3个月更新一次数值。\n（可以在['concept_edicts']打开定向应用无限菜单。）"

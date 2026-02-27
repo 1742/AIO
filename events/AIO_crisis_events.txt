@@ -65,7 +65,6 @@ country_event = {
 
     option = {
         name = AIO_crisis_events.203.option_1
-        custom_tooltip = AIO_crisis_events.203.tt
     }
 }
 
@@ -236,6 +235,18 @@ country_event = {
                 large = { set_variable = { which = AIO_situation_RAIT_affect_system_num value = 10 } }
                 huge = { set_variable = { which = AIO_situation_RAIT_affect_system_num value = 20 } }
             }
+
+            every_country = {
+                limit = {
+                    is_country_type = default
+                    NOT = { has_ascension_perk = ap_cosmogenesis }
+                }
+
+                add_modifier = {
+                    modifier = AIO_merge_cosmos_modifier
+                    mult = 0.25
+                }
+            }
         }
     }
 
@@ -261,6 +272,18 @@ country_event = {
 
         # 创建或恢复无名之雾
         AIO_crisis_effects_manager = { CREATE_HS_SYSTEM = 1 }
+
+        every_country = {
+                limit = {
+                    is_country_type = default
+                    NOT = { has_ascension_perk = ap_cosmogenesis }
+                }
+
+                add_modifier = {
+                    modifier = AIO_merge_cosmos_modifier
+                    mult = 0.5
+                }
+            }
     }
 
     option = {
@@ -283,6 +306,18 @@ country_event = {
 
     immediate = {
         set_country_flag = AIO_finish_merge_cosmos_stage_2
+
+        every_country = {
+            limit = {
+                is_country_type = default
+                NOT = { has_ascension_perk = ap_cosmogenesis }
+            }
+
+            add_modifier = {
+                modifier = AIO_merge_cosmos_modifier
+                mult = 0.75
+            }
+        }
     }
 
     # option = {
@@ -303,6 +338,15 @@ country_event = {
 
     immediate = {
         set_country_flag = AIO_finish_merge_cosmos_stage_3
+
+        every_country = {
+            limit = {
+                is_country_type = default
+                NOT = { has_ascension_perk = ap_cosmogenesis }
+            }
+
+            add_modifier = { modifier = AIO_merge_cosmos_modifier }
+        }
     }
 
     # option = {
@@ -313,28 +357,8 @@ country_event = {
 # 融合宇宙四阶段完成
 country_event = {
     id = AIO_crisis_events.504
-    # title = situation_AIO_merge_cosmos
-    # desc = AIO_crisis_events.504.desc
-	# show_sound = event_mystic_reveal
-	# location = FROM
-    hide_window = yes
-
-	is_triggered_only = yes
-
-    immediate = {
-        set_country_flag = AIO_finish_merge_cosmos_stage_4
-    }
-
-    # option = {
-    #     name = AIO_crisis_events.504.option_1
-    # }
-}
-
-# 融合宇宙五阶段完成
-country_event = {
-    id = AIO_crisis_events.505
     title = AIO_crisis_events_title
-    desc = AIO_crisis_events.505.desc
+    desc = AIO_crisis_events.504.desc
     picture = GFX_evt_situation_the_seal
 	show_sound = event_mystic_reveal
 	location = FROM
@@ -352,18 +376,23 @@ country_event = {
 			amount = 1
 		}
 
+        set_country_flag = AIO_finish_merge_cosmos_stage_4
         set_country_flag = AIO_finish_merge_cosmos
+
+        hidden_effect = {
+            remove_modifier = AIO_merge_cosmos_modifier
+        }
     }
 
     option = {
-        name = AIO_crisis_events.505.option_1
+        name = AIO_crisis_events.504.option_1
         country_event = { id = AIO_crisis_events.601 days = 30 }
         default_hide_option = yes
     }
 
     option = {
-        name = AIO_crisis_events.505.option_2
-        custom_tooltip = AIO_crisis_events.505.option_2.tt
+        name = AIO_crisis_events.504.option_2
+        custom_tooltip = AIO_crisis_events.504.option_2.tt
         enable_special_project = {
             name = AIO_ASCENSION
             owner = this
@@ -410,6 +439,24 @@ country_event = {
     trigger = { has_ascension_perk = ap_AIO_allinone }
 
     immediate = {
+        # 摧毁局势
+        random_situation = {
+            limit = { is_situation_type = situation_AIO_merge_cosmos }
+            destroy_situation = this
+        }
+
+        # 移除 debuff
+        if = {
+            limit = { NOT = { any_country = { any_situation = { is_situation_type = situation_AIO_merge_cosmos } } } }
+            every_country = {
+                limit = { has_modifier = AIO_merge_cosmos_modifier }
+                remove_modifier = AIO_merge_cosmos_modifier
+            }
+        }
+
+        # 移除 RAIT 标志位
+        AIO_RAIT_effects_manager = { CLEAR_RANDOM_AIT_FLAG = 1 }
+
         # 摧毁无名之雾
         event_target:AIO_HS_system = {
             # 移除特效

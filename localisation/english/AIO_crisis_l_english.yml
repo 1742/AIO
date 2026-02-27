@@ -39,12 +39,12 @@
  # crisis path tooltips
  AIO_allinone_level_2_req_success_tooltip: "£trigger_yes£requires §Y$AIO_horizon_engine$§!"
  AIO_allinone_level_2_req_fail_tooltip: "£trigger_no£requires §Y$AIO_horizon_engine$§!"
- AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£requires finish §Y$situation_AIO_merge_cosmos$§! $stage_2$"
- AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£requires finish §Y$situation_AIO_merge_cosmos$§!$stage_2$"
- AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£requires §Y$situation_AIO_merge_cosmos$§!$stage_4$"
- AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£requires §Y$situation_AIO_merge_cosmos$§!$stage_4$"
- AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£requires §Y$situation_AIO_merge_cosmos$§!$stage_6$"
- AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£requires §Y$situation_AIO_merge_cosmos$§!$stage_6$"
+ AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£requires finish §Y$situation_AIO_merge_cosmos$§! $stage_1$"
+ AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£requires finish §Y$situation_AIO_merge_cosmos$§!$stage_1$"
+ AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£requires §Y$situation_AIO_merge_cosmos$§!$stage_2$"
+ AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£requires §Y$situation_AIO_merge_cosmos$§!$stage_2$"
+ AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£requires §Y$situation_AIO_merge_cosmos$§!$stage_3$"
+ AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£requires §Y$situation_AIO_merge_cosmos$§!$stage_3$"
 
  #endregion
 
@@ -65,7 +65,6 @@
 
  #region Reward
 
- unlock_new_DAIT_options: "Unlock new DAIT options.\n"
  # first stage
  menp_AIO_al_research: "Advanced Logic"
  menp_AIO_al_research_desc: "The universe is no longer merely a three-dimensional stage; our civilization has caught a glimpse of a higher flow of rules."
@@ -150,7 +149,6 @@
  AIO_crisis_events.202.option_1: "We are Gate Builder."
  AIO_crisis_events.203.desc: "With the opening of §Y$AIO_mega_01$§!, time and space began to reveal an unprecedented vulnerability. It is not enough to merely drill a "hole" in the universe. Our most powerful brain has already conceived a megastructure capable of "selecting" time and space - §Y$AIO_mega_02$§!. It will pave the way for subsequent rule modifications."
  AIO_crisis_events.203.option_1: "$EXCELLENT$"
- AIO_crisis_events.203.tt: "Unlocked §RDirectional Apply Infinity Thesis§! after finish §Y$AIO_mega_02$§!"
  AIO_crisis_events.204.desc: "§Y$AIO_mega_02$§! has become the key for us to reverse the fate of the universe, but its potential has not yet been fully unleashed. To further advance the integration process, we must forge it into a higher-dimensional base point - §Y$AIO_mega_03$§!. Only when §Y$AIO_mega_03$§! stands at the peak of multiple realities can we truly control the ultimate form of the law."
  AIO_crisis_events.204.option_1: "$menp_AIO_mega_04_desc$"
  AIO_crisis_events.205.desc: "§Y$AIO_mega_03$§! has already stood at the forefront of multiple realities. However, its existence is merely to carry the true us. Now, we must elevate it to its ultimate form - §M$AIO_mega_04$§!. It is no longer a structure, no longer an empire, but an equivalent of existence and law. When it is completed, the integration will be closed and rewriting will begin. All differences, all dimensions, all endings will..."
@@ -192,12 +190,10 @@
  AIO_crisis_events.502.option_1: "REPLACE_ME"
  AIO_crisis_events.503.desc: "The third stage of Merge Cosmos has been completed."
  AIO_crisis_events.503.option_1: "REPLACE_ME"
- AIO_crisis_events.504.desc: "The fourth stage of Merge Cosmos has been completed."
- AIO_crisis_events.504.option_1: "REPLACE_ME"
- AIO_crisis_events.505.desc: "The structure of the universe has been dismantled; the boundaries that once confined us within limited spacetime are now mere annotations awaiting revision.\nWe have reached the Gate of Unification. A single step forward would allow us to reshape the self into a principle of cosmic logic—becoming the source of every gravity, every observation, every concept ever conceived.\nYet, transcendence is not the only choice. We may linger here, observing how this newborn construct resonates across higher dimensions.Truth does not flee. Unification imposes no demand."
- AIO_crisis_events.505.option_1: "Step through the gate."
- AIO_crisis_events.505.option_2: "Remain and observe."
- AIO_crisis_events.505.option_2.tt: "You can still ['concept_AIO_DAIT']. Start a special project §Y$AIO_ASCENSION$§! in §Y$AIO_crisis_events_chain$§! eventchain to complete ascension later."
+ AIO_crisis_events.504.desc: "The structure of the universe has been dismantled; the boundaries that once confined us within limited spacetime are now mere annotations awaiting revision.\nWe have reached the Gate of Unification. A single step forward would allow us to reshape the self into a principle of cosmic logic—becoming the source of every gravity, every observation, every concept ever conceived.\nYet, transcendence is not the only choice. We may linger here, observing how this newborn construct resonates across higher dimensions."
+ AIO_crisis_events.504.option_1: "Step through the gate."
+ AIO_crisis_events.504.option_2: "Remain and observe."
+ AIO_crisis_events.504.option_2.tt: "You can still ['concept_AIO_DAIT']. Start a special project §Y$AIO_ASCENSION$§! in §Y$AIO_crisis_events_chain$§! eventchain to complete ascension later."
 
  #endregion
 
