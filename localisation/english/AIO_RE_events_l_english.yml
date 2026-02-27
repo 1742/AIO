@@ -26,7 +26,7 @@
  #region reality edit view
 
  AIO_RE_events.301.title: "Reality Edit"
- AIO_RE_events.301.desc: "Tawi opened a blank page of the book and pushed it towards you. Her movements were gentle and her tone remained as calm as ever.\n\n"You can modify the reality here. Matter, reason and result, consciousness, order... Many things can be redefined as long as you are willing."\n\n"Of course, rewriting doesn't mean understanding. You'd better know what you are doing."\n\nShe paused for a moment, as if she still wanted to say something, but in the end, she just nodded slightly.\n\n"Let's start.""
+ AIO_RE_events.301.desc: "Tawi opened a blank page of the book and pushed it towards you. Her movements were gentle and her tone remained as calm as ever.\n\n"You can modify the reality here. Matter, reason and result, consciousness, order... Many things can be redefined as long as you are willing."\n\n"Rewriting doesn't mean understanding. You'd better know what you are doing."\n\nShe paused for a moment, as if she still wanted to say something, but in the end, she just nodded slightly.\n\n"Let's start.""
  AIO_RE_events.301.option_1: "Anti-the second law of thermodynamics"
  AIO_RE_events.301.option_2: "Design Requirement"
  AIO_RE_events.301.option_3: "Superlight"
