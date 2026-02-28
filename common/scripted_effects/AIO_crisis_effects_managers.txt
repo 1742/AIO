@@ -146,6 +146,13 @@ AIO_crisis_effects_manager = {
             set_star_flag = AIO_TUG_system
             save_global_event_target_as = AIO_TUG_system
         }
+        else = {
+            spawn_megastructure = {
+                type = AIO_mega_01_fact
+                planet = star
+                owner = this.owner
+            }
+        }
     ]
 
     # 创建或恢复无名之雾，scope: AIO_crisis_country
