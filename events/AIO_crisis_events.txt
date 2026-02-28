@@ -745,7 +745,14 @@ country_event = {
         give_technology = { tech = tech_colonial_centralization }
         give_technology = { tech = tech_galactic_administration }
         # 创建穷极之门
-        capital_scope.solar_system = { AIO_crisis_effects_manager = { CREATE_TUG_SYSTEM = 1 } }
+        capital_scope.solar_system = {
+            spawn_megastructure = {
+                type = AIO_mega_01_fact
+                planet = star
+                owner = root
+                graphical_culture = root
+            }
+        }
         # 创建无名之雾
         AIO_crisis_effects_manager = { CREATE_HS_SYSTEM = 1 }
         # 创建犹格索托斯

@@ -191,9 +191,9 @@ AIO_mega_planet_locator = {
 	}
 	dismantle_potential = { always = no }
 
-	build_time = 1
+	build_time = 0
 
-	on_build_start = {
+	on_build_complete = {
 		event_target:AIO_locator_builder = { delete_fleet = this }
 		clear_global_event_target = AIO_locator_builder
 
@@ -214,9 +214,9 @@ AIO_mega_planet_locator = {
 			root.fromfrom.planet = { save_global_event_target_as = AIO_RE_target }
 			country_event = { id = AIO_RE_events.201 }
 		}
-	}
 
-	on_build_complete = { remove_megastructure = fromfrom }
+		fromfrom = { remove_megastructure = this }
+	}
 }
 
 AIO_mega_colony_locator = {
@@ -250,9 +250,9 @@ AIO_mega_colony_locator = {
 		}
 	}
 
-	build_time = 1
+	build_time = 0
 
-	on_build_start = {
+	on_build_complete = {
 		event_target:AIO_locator_builder = { delete_fleet = this }
 		clear_global_event_target = AIO_locator_builder
 
@@ -286,7 +286,7 @@ AIO_mega_colony_locator = {
 			root.fromfrom.planet = { save_global_event_target_as = AIO_RE_target }
 			country_event = { id = AIO_RE_events.201 }
 		}
-	}
 
-	on_build_complete = { remove_megastructure = fromfrom }
+		fromfrom = { remove_megastructure = this }
+	}
 }
