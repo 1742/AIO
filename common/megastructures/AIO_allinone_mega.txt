@@ -48,6 +48,20 @@ AIO_mega_01_fact = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
+		produces = {
+			trigger = {
+				owner = {
+					NOR = {
+						has_megastructure = AIO_mega_01
+						has_country_flag = AIO_built_AIO_mega_02
+						has_country_flag = AIO_built_AIO_mega_03
+						has_country_flag = AIO_built_AIO_mega_04
+					}
+				}
+			}
+			AIO_advanced_logic = 5000
+		}
+
 		upkeep = {
 			trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
 			energy = 1000
@@ -101,23 +115,12 @@ AIO_mega_01_node = {
 	}
 	dismantle_potential = { always = no }
 
-	build_time = 1
+	build_time = 0
 
 	# bypass类型
 	bypass_type = bypass_AIO_ultimate_gate
 
-	on_build_start = {
-		spawn_megastructure = {
-			type = AIO_mega_01_node
-			coords_from = fromfrom
-			owner = from
-			graphical_culture = from
-		}
-
-		system_event = { id = AIO_crisis_events.904 days = 100 }
-	}
-
-	on_build_complete = { remove_megastructure = fromfrom }
+	on_build_complete = { system_event = { id = AIO_crisis_events.904 days = 100 } }
 }
 
 # 无名之雾中的万门之门
@@ -135,7 +138,7 @@ AIO_mega_01 = {
 	build_time = 1
 	resources = {
 		category = megastructures
-		produces = { AIO_advanced_logic = 5000 }
+		produces = { AIO_advanced_logic = 10000 }
 
 		upkeep = {
 			energy = 1500
@@ -228,7 +231,7 @@ AIO_mega_02 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 10000 }
+		produces = { AIO_advanced_logic = 30000 }
 
 		upkeep = {
 			energy = 1000
@@ -298,7 +301,7 @@ AIO_mega_03 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 15000 }
+		produces = { AIO_advanced_logic = 90000 }
 
 		upkeep = {
 			energy = 2000
@@ -371,7 +374,7 @@ AIO_mega_04 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 20000 }
+		produces = { AIO_advanced_logic = 1000000 }
 
         upkeep = {
             trigger = { owner = { NOT = { is_country_type = AIO_empire } } }

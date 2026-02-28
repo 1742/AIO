@@ -30,16 +30,13 @@ situation_event = {
 			set_situation_approach = AIO_merge_cosmos_pause_solution
 		}
 
-		# 河系影响
-		owner = { country_event = { id = AIO_AIT_events.202 } }
-
 		# 随机应用无限
 		if = {
 			limit = {
 				situation_monthly_progress > 0
+				NOT = { has_situation_flag = AIO_merge_cosmos_has_AIT }
 				owner = {
 					NOR = {
-						has_country_flag = AIO_merge_cosmos_has_AIT
 						has_country_flag = AIO_RAIT_all_random
 						has_country_flag = AIO_built_AIO_mega_04
 					}
@@ -63,6 +60,9 @@ situation_event = {
 					set_timed_situation_flag = { flag = AIO_merge_cosmos_has_AIT months = 6 }
 				}
 			}
+
+			# 河系影响
+			owner = { country_event = { id = AIO_AIT_events.202 } }
 		}
 	}
 
