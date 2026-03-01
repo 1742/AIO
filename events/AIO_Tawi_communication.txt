@@ -12,7 +12,7 @@ country_event = {
     desc = AIO_Tawi_communication_events.201.desc
 
     diplomatic = yes
-    diplomatic_title = AIO_ctrl_events_title
+    diplomatic_title = AIO_RE_events_title
     picture_event_data = {
         room = crisis_room
         portrait = AIO_TAWI_PORTRAITS_1

@@ -2440,4 +2440,38 @@ country_event = {
 	after = { country_event = { id = AIO_AIT_events.402 months = 3 } }
 }
 
+
+# 摧毁舰船回复装甲/护盾
+# This = owner of ship 1 (combatant)
+# From = owner of ship 2 (destroyed)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
+country_event = {
+	id = AIO_AIT_events.403
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			check_variable = { which = AIO_DAIT_material_option_6_effect_1_value value > 0 }
+			check_variable = { which = AIO_DAIT_energy_option_6_effect_1_value value > 0 }
+		}
+	}
+
+	immediate = {
+		fleet = {
+			random_controlled_ship = {
+				if = {
+					limit = { check_variable = { which = AIO_DAIT_material_option_6_effect_1_value value > 0 } }
+					repair_armor_amount = owner.AIO_DAIT_material_option_6_effect_1_value
+				}
+				else_if = {
+					limit = { check_variable = { which = AIO_DAIT_energy_option_6_effect_1_value value > 0 } }
+					repair_shield_amount = owner.AIO_DAIT_energy_option_6_effect_1_value
+				}
+			}
+		}
+	}
+}
+
 #endregion

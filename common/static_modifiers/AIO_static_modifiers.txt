@@ -444,7 +444,7 @@ AIO_DAIT_metric_option_5_modifier_1 = {
 AIO_DAIT_metric_option_5_modifier_2 = {
     icon = gfx/interface/icons/modifiers/mod_catapult_range_mult.dds
 
-    catapult_range_mult = 1
+    catapult_spread_mult = 1
 }
 AIO_DAIT_metric_option_5_modifier_3 = {
     icon = gfx/interface/icons/modifiers/mod_ship_ftl_jumpdrive_range_mult.dds
@@ -465,7 +465,7 @@ AIO_DAIT_metric_option_6_modifier_1 = {
 AIO_DAIT_metric_option_6_modifier_2 = {
     icon = gfx/interface/icons/modifiers/mod_ship_damage_reduction_mult.dds
 
-    ship_damage_reduction_mult = -1
+    ship_damage_reduction_mult = 1
 }
 
 #endregion

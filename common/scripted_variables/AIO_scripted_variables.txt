@@ -14,9 +14,9 @@
 
 
 #region 各 buff 参数
-@AIO_DAIT_buff_c_value_1 = 10000
-@AIO_DAIT_buff_c_value_3 = 30000
-@AIO_DAIT_buff_c_value_9 = 90000
+@AIO_DAIT_buff_c_value_1 = 1000
+@AIO_DAIT_buff_c_value_3 = 3000
+@AIO_DAIT_buff_c_value_9 = 9000
 
 #region material
 
@@ -62,7 +62,7 @@
 #region 泡利不相容屏蔽
 
 # 最大区划数
-@AIO_DAIT_material_option_5_effect_1_cap = 10
+@AIO_DAIT_material_option_5_effect_1_cap = 1
 @AIO_DAIT_material_option_5_effect_1_c_value_level = 3
 
 # 人口住房使用
@@ -180,7 +180,7 @@
 
 # 帝国规模
 @AIO_DAIT_metric_option_1_effect_1_cap = 0.9
-@AIO_DAIT_metric_option_1_effect_1_c_value_level = 9
+@AIO_DAIT_metric_option_1_effect_1_c_value_level = 3
 
 #endregion
 
