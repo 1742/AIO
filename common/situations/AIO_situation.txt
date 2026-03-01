@@ -32,15 +32,15 @@ situation_AIO_merge_cosmos = {
     on_monthly = { events = { AIO_AIT_events.201 } }
 
     on_progress_complete = {
-        owner = { country_event = { id = AIO_crisis_events.507 } }
-        # 局势到达最右端时触发，也要写摧毁局势
+        owner = { country_event = { id = AIO_crisis_events.504 } }
+        # 局势到达最右端时触发，要写摧毁局势
         destroy_situation = this
     }
 
     # 每月局势变化
     monthly_progress = {
         # 如果是双向事件则可以填负数
-        base = 1
+        base = 10
 
         # 行动方案修正
         modifier = {
@@ -64,52 +64,25 @@ situation_AIO_merge_cosmos = {
 
         # 巨构限制
         modifier = {
-            OR = {
-                current_stage = stage_1
-                current_stage = stage_2
-            }
-            owner = {
-                NOR = {
-                    has_country_flag = AIO_built_AIO_mega_01
-                    has_country_flag = AIO_built_AIO_mega_02
-                    has_country_flag = AIO_built_AIO_mega_03
-                    has_country_flag = AIO_built_AIO_mega_04
-                }
-            }
+            current_stage = stage_1
+            owner = { NOT = { has_country_flag = AIO_built_AIO_mega_01 } }
             desc = AIO_merge_cosmos_requires_AIO_mega_01
             mult = 0
         }
         modifier = {
-            OR = {
-                current_stage = stage_3
-                current_stage = stage_4
-            }
-            owner = {
-                NOR = {
-                    has_country_flag = AIO_built_AIO_mega_02
-                    has_country_flag = AIO_built_AIO_mega_03
-                    has_country_flag = AIO_built_AIO_mega_04
-                }
-            }
+            current_stage = stage_2
+            owner = { NOT = { has_country_flag = AIO_built_AIO_mega_02 } }
             desc = AIO_merge_cosmos_requires_AIO_mega_02
             mult = 0
         }
         modifier = {
-            OR = {
-                current_stage = stage_5
-                current_stage = stage_6
-            }
-            owner = {
-                NOR = {
-                    has_country_flag = AIO_built_AIO_mega_03
-                    has_country_flag = AIO_built_AIO_mega_04
-                }
-            }
+            current_stage = stage_3
+            owner = { NOT = { has_country_flag = AIO_built_AIO_mega_03 } }
             desc = AIO_merge_cosmos_requires_AIO_mega_03
             mult = 0
         }
         modifier = {
-            current_stage = stage_7
+            current_stage = stage_4
             owner = { NOT = { has_country_flag = AIO_built_AIO_mega_04 } }
             desc = AIO_merge_cosmos_requires_AIO_mega_04
             mult = 0
@@ -124,17 +97,17 @@ situation_AIO_merge_cosmos = {
         modifier = {
             owner = { has_country_flag = AIO_built_AIO_mega_02 }
             desc = AIO_mega_02
-            mult = 1.2
+            mult = 1.1
         }
         modifier = {
             owner = { has_country_flag = AIO_built_AIO_mega_03 }
             desc = AIO_mega_03
-            mult = 1.3
+            mult = 1.1
         }
         modifier = {
             owner = { has_country_flag = AIO_built_AIO_mega_04 }
             desc = AIO_mega_04
-            mult = 1.4
+            mult = 1.1
         }
 
         # 帝国规模修正
@@ -144,10 +117,7 @@ situation_AIO_merge_cosmos = {
         }
         # 超然逻辑库存修正
         modifier = {
-            NOR = {
-                current_situation_approach = AIO_merge_cosmos_pause_solution
-                current_stage = stage_7
-            }
+            NOT = { current_situation_approach = AIO_merge_cosmos_pause_solution }
             desc = AIO_merge_cosmos_advanced_logic_modifier
             mult = value:AIO_merge_cosmos_advanced_logic_modifier
         }
@@ -174,7 +144,7 @@ situation_AIO_merge_cosmos = {
             # 进度条下图标的背景，就是哪个棱形
             icon_background = GFX_situation_stage_frame_blue
             # 到哪个值时结束该阶段
-            end = 82
+            end = 100
         }
         stage_2 = {
             # 进度条下的图标
@@ -182,7 +152,7 @@ situation_AIO_merge_cosmos = {
             # 进度条下图标的背景，就是哪个棱形
             icon_background = GFX_situation_stage_frame_blue
             # 到哪个值时结束该阶段
-            end = 184
+            end = 300
 
             on_first_enter = { owner = { country_event = { id = AIO_crisis_events.501 } } }
         }
@@ -192,7 +162,7 @@ situation_AIO_merge_cosmos = {
             # 进度条下图标的背景，就是哪个棱形
             icon_background = GFX_situation_stage_frame_blue
             # 到哪个值时结束该阶段
-            end = 306
+            end = 600
 
             on_first_enter = { owner = { country_event = { id = AIO_crisis_events.502 } } }
         }
@@ -202,39 +172,9 @@ situation_AIO_merge_cosmos = {
             # 进度条下图标的背景，就是哪个棱形
             icon_background = GFX_situation_stage_frame_blue
             # 到哪个值时结束该阶段
-            end = 447
-
-            on_first_enter = { owner = { country_event = { id = AIO_crisis_events.503 } } }
-        }
-        stage_5 = {
-            # 进度条下的图标
-            icon = GFX_situation_stage_5
-            # 进度条下图标的背景，就是哪个棱形
-            icon_background = GFX_situation_stage_frame_blue
-            # 到哪个值时结束该阶段
-            end = 610
-
-            on_first_enter = { owner = { country_event = { id = AIO_crisis_events.504 } } }
-        }
-        stage_6 = {
-            # 进度条下的图标
-            icon = GFX_situation_stage_6
-            # 进度条下图标的背景，就是哪个棱形
-            icon_background = GFX_situation_stage_frame_blue
-            # 到哪个值时结束该阶段
-            end = 794
-
-            on_first_enter = { owner = { country_event = { id = AIO_crisis_events.505 } } }
-        }
-        stage_7 = {
-            # 进度条下的图标
-            icon = GFX_situation_stage_7
-            # 进度条下图标的背景，就是哪个棱形
-            icon_background = GFX_situation_stage_frame_blue
-            # 到哪个值时结束该阶段
             end = 1000
 
-            on_first_enter = { owner = { country_event = { id = AIO_crisis_events.506 } } }
+            on_first_enter = { owner = { country_event = { id = AIO_crisis_events.503 } } }
         }
     }
 
@@ -259,154 +199,61 @@ situation_AIO_merge_cosmos = {
         resources = {
             category = situations
 
-            # 1、2阶段
+            # 1阶段
             upkeep = {
-                trigger = {
-                    OR = {
-                        current_stage = stage_1
-                        current_stage = stage_2
-                    }
-                }
-                energy = 0.25
-                mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value
+                trigger = {current_stage = stage_1}
+                energy = 1
+                mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value|SCALE|0.25|
             }
             upkeep = {
-                trigger = {
-                    OR = {
-                        current_stage = stage_1
-                        current_stage = stage_2
-                    }
-                }
-                sr_dark_matter = 0.25
-                mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value
+                trigger = { current_stage = stage_1}
+                sr_dark_matter = 1
+                mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value|SCALE|0.25|
             }
 
-            # 3、4阶段，尚未反热力学第二定律
+            # 2阶段
             upkeep = {
-                trigger = {
-                    OR = {
-                        current_stage = stage_3
-                        current_stage = stage_4
-                    }
-                    owner = { NOT = { has_modifier = AIO_directly_AIT_ASLT_modifier } }
-                }
-                energy = 0.5
-                mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value
+                trigger = { current_stage = stage_2 }
+                energy = 1
+                mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value|SCALE|0.5|
             }
             upkeep = {
-                trigger = {
-                    OR = {
-                        current_stage = stage_3
-                        current_stage = stage_4
-                    }
-                    owner = { NOT = { has_modifier = AIO_directly_AIT_ASLT_modifier } }
-                }
-                sr_dark_matter = 0.5
-                mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value
-            }
-            # 3、4阶段，反热力学第二定律，-30%维护费
-            upkeep = {
-                trigger = {
-                    OR = {
-                        current_stage = stage_3
-                        current_stage = stage_4
-                    }
-                    owner = { has_modifier = AIO_directly_AIT_ASLT_modifier }
-                }
-                energy = 0.35
-                mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value
-            }
-            upkeep = {
-                trigger = {
-                    OR = {
-                        current_stage = stage_3
-                        current_stage = stage_4
-                    }
-                    owner = { has_modifier = AIO_directly_AIT_ASLT_modifier }
-                }
-                sr_dark_matter = 0.35
-                mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value
+                trigger = { current_stage = stage_2 }
+                sr_dark_matter = 1
+                mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value|SCALE|0.5|
             }
 
-            # 5、6阶段，尚未反热力学第二定律
+            # 3阶段
             upkeep = {
-                trigger = {
-                    OR = {
-                        current_stage = stage_5
-                        current_stage = stage_6
-                    }
-                    owner = { NOT = { has_modifier = AIO_directly_AIT_ASLT_modifier } }
-                }
-                energy = 0.75
-                mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value
+                trigger = { current_stage = stage_3 }
+                energy = 1
+                mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value|SCALE|0.75|
             }
             upkeep = {
-                trigger = {
-                    OR = {
-                        current_stage = stage_5
-                        current_stage = stage_6
-                    }
-                    owner = { NOT = { has_modifier = AIO_directly_AIT_ASLT_modifier } }
-                }
-                sr_dark_matter = 0.75
-                mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value
-            }
-            # 5、6阶段，反热力学第二定律，-30%维护费
-            upkeep = {
-                trigger = {
-                    OR = {
-                        current_stage = stage_5
-                        current_stage = stage_6
-                    }
-                    owner = { has_modifier = AIO_directly_AIT_ASLT_modifier }
-                }
-                energy = 0.525
-                mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value
-            }
-            upkeep = {
-                trigger = {
-                    OR = {
-                        current_stage = stage_5
-                        current_stage = stage_6
-                    }
-                    owner = { has_modifier = AIO_directly_AIT_ASLT_modifier }
-                }
-                sr_dark_matter = 0.525
-                mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value
+                trigger = { current_stage = stage_3 }
+                sr_dark_matter = 1
+                mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value|SCALE|0.75|
             }
 
-            # 7阶段，尚未反热力学第二定律
+            # 4、5阶段
             upkeep = {
                 trigger = {
-                    current_stage = stage_7
-                    owner = { NOT = { has_modifier = AIO_directly_AIT_ASLT_modifier } }
+                    OR = {
+                        current_stage = stage_4
+                        current_stage = stage_5
+                    }
                 }
                 energy = 1
                 mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value
             }
             upkeep = {
                 trigger = {
-                    current_stage = stage_7
-                    owner = { NOT = { has_modifier = AIO_directly_AIT_ASLT_modifier } }
+                    OR = {
+                        current_stage = stage_4
+                        current_stage = stage_5
+                    }
                 }
                 sr_dark_matter = 1
-                mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value
-            }
-            # 7阶段，反热力学第二定律，-30%维护费
-            upkeep = {
-                trigger = {
-                    current_stage = stage_7
-                    owner = { has_modifier = AIO_directly_AIT_ASLT_modifier }
-                }
-                energy = 0.7
-                mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value
-            }
-            upkeep = {
-                trigger = {
-                    current_stage = stage_7
-                    owner = { has_modifier = AIO_directly_AIT_ASLT_modifier }
-                }
-                sr_dark_matter = 0.7
                 mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value
             }
         }
@@ -467,17 +314,17 @@ situation_AIO_erase_galaxy = {
 
     # 开始事件
     on_start = {
-        set_variable = { which = AIO_situaation_AIO_erase_galaxy_speed value = value:AIO_galaxy_size }
-        divide_variable = { which = AIO_situaation_AIO_erase_galaxy_speed value = 12 }
-        ceiling_variable = AIO_situaation_AIO_erase_galaxy_speed
+        set_variable = { which = AIO_situation_AIO_erase_galaxy_speed value = value:AIO_galaxy_size }
+        divide_variable = { which = AIO_situation_AIO_erase_galaxy_speed value = 12 }
+        ceiling_variable = AIO_situation_AIO_erase_galaxy_speed
     }
 
-    on_monthly = { events = { AIO_ctrl_events.1006 } }
+    on_monthly = { events = { AIO_RE_events.1006 } }
 
     on_progress_complete = {
         if = {
-            limit = { has_global_flag = AIO_ctrl_AIT_erase_galaxy }
-            remove_global_flag = AIO_ctrl_AIT_erase_galaxy
+            limit = { has_global_flag = AIO_RE_erase_galaxy }
+            remove_global_flag = AIO_RE_erase_galaxy
         }
         # 局势到达最右端时触发，也要写摧毁局势
         destroy_situation = this
@@ -492,7 +339,7 @@ situation_AIO_erase_galaxy = {
 
         modifier = {
             desc = AIO_situation_AIO_erase_galaxy_galaxy_size_modifier
-            has_situation_flag = AIO_ctrl_situation_erase_galaxy_pause
+            has_situation_flag = AIO_RE_situation_erase_galaxy_pause
             factor = 0
         }
     }
@@ -531,8 +378,8 @@ situation_AIO_erase_galaxy = {
         # 选择事件，也可以在这里写限制条件
         on_select = {
             if = {
-                limit = { has_global_flag = AIO_ctrl_AIT_erase_galaxy }
-                remove_global_flag = AIO_ctrl_AIT_erase_galaxy
+                limit = { has_global_flag = AIO_RE_erase_galaxy }
+                remove_global_flag = AIO_RE_erase_galaxy
             }
             destroy_situation = this
         }

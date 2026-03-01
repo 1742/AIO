@@ -5,7 +5,7 @@ special_project = {
 	icon = gfx/interface/icons/situation_log/situation_log_alert.dds
 
 	key = "AIO_AIT_TIME_RUIN_STAGE_1"
-	event_chain = AIO_AIT_TR_events_chain
+	event_chain = AIO_RAIT_TR_events_chain
 	location = yes
 
 	picture = GFX_evt_burning_city
@@ -32,7 +32,7 @@ special_project = {
 	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
 
 	key = "AIO_AIT_TIME_RUIN_STAGE_2"
-	event_chain = AIO_AIT_TR_events_chain
+	event_chain = AIO_RAIT_TR_events_chain
 	location = yes
 
 	picture = GFX_evt_physics_research
@@ -62,7 +62,7 @@ special_project = {
 	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
 
 	key = "AIO_AIT_TIME_RUIN_STAGE_3"
-	event_chain = AIO_AIT_TR_events_chain
+	event_chain = AIO_RAIT_TR_events_chain
 	location = yes
 
 	picture = GFX_evt_clocks
@@ -94,7 +94,7 @@ special_project = {
 	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
 
 	key = "AIO_AIT_GRAVITY_SWELL_STAGE_1"
-	event_chain = AIO_AIT_GS_events_chain
+	event_chain = AIO_RAIT_GS_events_chain
 	location = yes
 
 	picture = GFX_evt_physics_research
@@ -119,12 +119,12 @@ special_project = {
 	}
 }
 
-# 重力膨胀二阶段，改造星环
+# 重力膨胀二阶段，建造星环
 special_project = {
 	icon = gfx/interface/icons/situation_log/situation_log_alert.dds
 
 	key = "AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_1"
-	event_chain = AIO_AIT_GS_events_chain
+	event_chain = AIO_RAIT_GS_events_chain
 	location = yes
 
 	picture = GFX_evt_orbital_ring
@@ -146,7 +146,7 @@ special_project = {
 	icon = gfx/interface/icons/situation_log/situation_log_alert.dds
 
 	key = "AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_2"
-	event_chain = AIO_AIT_GS_events_chain
+	event_chain = AIO_RAIT_GS_events_chain
 	location = yes
 
 	picture = GFX_evt_big_landing_ship
@@ -170,7 +170,7 @@ special_project = {
 	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
 
 	key = "AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_3"
-	event_chain = AIO_AIT_GS_events_chain
+	event_chain = AIO_RAIT_GS_events_chain
 	location = yes
 
 	picture = GFX_evt_cosmogenesis_crisis
@@ -187,7 +187,7 @@ special_project = {
 	}
 
 	on_success = { # this - ship, from - planet(location)
-		from = { set_timed_planet_flag = { flag = AIO_AIT_GS_finish_reverse days = 5 } }
+		from = { set_timed_planet_flag = { flag = AIO_RAIT_GS_finish_reverse days = 5 } }
 		solar_system = { system_event = { id = AIO_AIT_events.31113 } }
 	}
 }
@@ -197,7 +197,7 @@ special_project = {
 	icon = gfx/interface/icons/situation_log/situation_log_main_quest.dds
 
 	key = "AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_4"
-	event_chain = AIO_AIT_GS_events_chain
+	event_chain = AIO_RAIT_GS_events_chain
 	location = yes
 
 	picture = GFX_evt_black_hole

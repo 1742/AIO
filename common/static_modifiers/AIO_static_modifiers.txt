@@ -1,7 +1,25 @@
 # AIO静态修正
 
+
+#region 融合宇宙全局 debuff
+
+AIO_merge_cosmos_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_all_technology_research_speed.dds
+
+    planet_jobs_physics_research_produces_mult = -1
+    planet_jobs_society_research_produces_mult = -1
+    planet_jobs_engineering_research_produces_mult = -1
+}
+
+#endregion
+
+
+#region RAIT
+
+#region time ruin
+
 # 时间之墟一阶段修正
-AIO_AIT_TR_stage_1_modifier = {
+AIO_RAIT_TR_stage_1_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
 
     planet_stability_mult = -0.6
@@ -21,7 +39,7 @@ AIO_AIT_TR_stage_1_modifier = {
     planet_orbital_bombardment_damage = -100
 }
 # 时间之墟二阶段修正
-AIO_AIT_TR_stage_2_opt_1_modifier = {
+AIO_RAIT_TR_stage_2_opt_1_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
 
     logistic_growth_mult = -10
@@ -52,7 +70,7 @@ AIO_AIT_TR_stage_2_opt_1_modifier = {
     planet_building_build_speed_mult = -1
     planet_orbital_bombardment_damage = -100
 }
-AIO_AIT_TR_stage_2_opt_2_modifier = {
+AIO_RAIT_TR_stage_2_opt_2_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
 
     logistic_growth_mult = -10
@@ -84,7 +102,7 @@ AIO_AIT_TR_stage_2_opt_2_modifier = {
     planet_orbital_bombardment_damage = -100
 }
 # 时间之墟三阶段修正
-AIO_AIT_TR_stage_3_liquidation_modifier = {
+AIO_RAIT_TR_stage_3_liquidation_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
 
     logistic_growth_mult = -10
@@ -118,7 +136,7 @@ AIO_AIT_TR_stage_3_liquidation_modifier = {
     planet_building_build_speed_mult = -1
     planet_orbital_bombardment_damage = -100
 }
-AIO_AIT_TR_stage_3_unliquidation_modifier = {
+AIO_RAIT_TR_stage_3_unliquidation_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
 
     logistic_growth_mult = -10
@@ -153,7 +171,7 @@ AIO_AIT_TR_stage_3_unliquidation_modifier = {
     planet_orbital_bombardment_damage = -100
 }
 # 时间之墟四阶段修正
-AIO_AIT_TR_stage_4_liquidation_modifier = {
+AIO_RAIT_TR_stage_4_liquidation_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult.dds
 
     planet_stability_mult = 0.2
@@ -165,7 +183,7 @@ AIO_AIT_TR_stage_4_liquidation_modifier = {
     planet_jobs_unity_produces_mult = 0.5
     planet_jobs_trade_produces_mult = 0.2
 }
-AIO_AIT_TR_stage_4_unliquidation_modifier = {
+AIO_RAIT_TR_stage_4_unliquidation_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
 
     planet_stability_mult = -0.2
@@ -173,136 +191,291 @@ AIO_AIT_TR_stage_4_unliquidation_modifier = {
     planet_amenities_mult = -0.2
 }
 
-# 反热力学第二定律
-AIO_DAIT_ASLT_modifier = {
-    icon = gfx/interface/icons/modifiers/mod_energy_upkeep_mult.dds
+#endregion
 
-    planet_stability_mult = 0.2
-    planet_jobs_energy_upkeep_mult = -0.2
-    planet_buildings_energy_upkeep_mult = -0.3
-    megastructures_energy_upkeep_mult = -0.3
-    ships_energy_upkeep_mult = -0.2
-    starbases_energy_upkeep_mult = -0.3
+#endregion
 
-    empire_size_mult = 0.2
-    physics_tech_cost_mult = 0.2
-    society_tech_cost_mult = 0.2
-    engineering_tech_cost_mult = 0.2
+
+#region DAIT
+
+#region material
+
+#region 原子晶格效率
+
+AIO_DAIT_material_option_1_modifier_1 = {
+    icon = gfx/interface/icons/text_icons/tooltip_job.dds
+
+    planet_jobs_minerals_produces_mult = 1
+    planet_jobs_food_produces_mult = 1
+    planet_jobs_alloys_produces_mult = 1
+    planet_jobs_consumer_goods_produces_mult = 1
+    planet_jobs_volatile_motes_produces_mult = 1
+    planet_jobs_exotic_gases_produces_mult = 1
+    planet_jobs_rare_crystals_produces_mult = 1
 }
 
-# 反因果律
-AIO_DAIT_uncausality_modifier = {
-    icon = gfx/interface/icons/modifiers/mod_cost_mult.dds
+#endregion
 
-    planet_buildings_cost_mult = -0.2
-    megastructures_cost_mult = -0.2
-    starbase_shipyard_build_cost_mult = -0.2
-    physics_tech_cost_mult = -0.2
-    society_tech_cost_mult = -0.2
-    engineering_tech_cost_mult = -0.2
+#region 重子装配阈值
 
-    planet_stability_mult = -0.3
+AIO_DAIT_material_option_2_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_planet_building_cost_mult.dds
+
+    planet_buildings_cost_mult = -1
+    starbase_shipyard_build_cost_mult = -1
+}
+AIO_DAIT_material_option_2_modifier_2 = {
+    icon = gfx/interface/icons/modifiers/mod_alloys_cost_mult.dds
+
+    megastructures_cost_mult = -1
 }
 
-# 模拟宇宙
-AIO_DAIT_simulate_cosmos_modifier = {
-    icon = gfx/interface/icons/modifiers/mod_empire_size_systems_mult.dds
+#endregion
 
-    category_computing_research_speed_mult = 0.5
-    all_technology_research_speed = 0.3
+#region 生物/机械自举
 
-    leaders_upkeep_mult = 0.3
+AIO_DAIT_material_option_3_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_logistic_growth_mult.dds
+
+    logistic_growth_mult = 1
+    planet_pop_assembly_mult = 1
 }
 
-# 设计需求
-AIO_DAIT_design_requirement_modifier = {
-    icon = gfx/interface/icons/modifiers/mod_trade_logistics_mult.dds
+#endregion
 
-    pop_logistics_drone_bonus_workforce_mult = 0.5
-    country_resource_max_add = 100000
+#region 结构抗熵极限
 
-    planet_jobs_produces_mult = -0.1
+AIO_DAIT_material_option_4_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_upkeep_mult.dds
+
+    planet_buildings_upkeep_mult = -1
+    planet_districts_upkeep_mult = -1
 }
 
-# 超光
-AIO_DAIT_superlight_modifier = {
-    icon = gfx/interface/icons/modifiers/mod_weapon_type_energy_weapon_damage_mult.dds
+#endregion
 
-    empire_size_mult = -0.25
-    planet_jobs_energy_produces_mult = 0.3
-    ship_speed_mult = 0.2
-    ship_fire_rate_mult = 0.2
-    weapon_type_energy_weapon_damage_mult = 0.25
-}
+#region 泡利不相容屏蔽
 
-# 重织基底
-AIO_DAIT_weave_substrate_modifier = {
+AIO_DAIT_material_option_5_modifier_1 = {
     icon = gfx/interface/icons/modifiers/mod_planet_max_districts_mult.dds
 
-    planet_max_districts_mult = 0.3
-    terraform_speed_mult = 2
-    empire_size_colonies_mult = 1
+    planet_max_districts_mult = 1
+}
+AIO_DAIT_material_option_5_modifier_2 = {
+    icon = gfx/interface/icons/modifiers/mod_pop_housing_usage_mult.dds
+
+    pop_housing_usage_mult = -1
 }
 
-# 纳米舰体
-AIO_DAIT_nanites_body_modifier = {
-    icon = gfx/interface/icons/modifiers/mod_nanites_cost_mult.dds
+#endregion
 
-    planet_metallurgists_nanites_produces_mult = 0.2
-    planet_metallurgists_upkeep_mult = 0.15
-    ship_hull_regen_add_static = 0.15
-    ship_armor_regen_add_static = 0.15
-    ship_shield_regen_add_static = 0.15
-    ships_nanites_upkeep_mult = 0.3
+#region 行星相态重写
+
+AIO_DAIT_material_option_7_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_habitability.dds
+
+    habitability_ceil_mult = 1
+}
+AIO_DAIT_material_option_7_modifier_2 = {
+    icon = gfx/interface/icons/modifiers/mod_country_terraform_speed_mult.dds
+
+    terraform_speed_mult = 1
 }
 
-# 虚空开采
-AIO_DAIT_void_mining_modifier = {
-    icon = gfx/interface/icons/modifiers/mod_produces_mult.dds
+#endregion
 
-    station_gatherers_produces_mult = 2
+#endregion
+
+
+#region energy and interactions
+
+#region 真空零点能级
+
+AIO_DAIT_energy_option_1_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_energy_produces_mult.dds
+
+    planet_jobs_energy_produces_mult = 1
+}
+AIO_DAIT_energy_option_1_modifier_2 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_shield_mult.dds
+
+    ship_shield_mult = 1
 }
 
-# 提高生产
-AIO_repeat_DAIT_production_modifier = {
-    icon = gfx/interface/icons/modifiers/mod_pop_bonus_workforce_mult.dds
+#endregion
 
-    planet_jobs_produces_mult = 0.02
-    planet_jobs_upkeep_mult = -0.01
-    pop_bonus_workforce_mult = 0.1
-    bonus_automated_workforce_mult = 0.1
-    planet_buildings_cost_mult = -0.1
+#region 麦克斯韦妖协议
+
+AIO_DAIT_energy_option_2_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_energy_upkeep_mult.dds
+
+    planet_jobs_energy_upkeep_mult = -1
+    ships_energy_upkeep_mult = -1
 }
 
-# 提高科研
-AIO_repeat_DAIT_technology_modifier = {
-    icon = gfx/interface/icons/modifiers/mod_all_technology_research_speed.dds
+#endregion
 
-    all_technology_research_speed = 0.2
-    physics_tech_cost_mult = -0.1
-    society_tech_cost_mult = -0.1
-    engineering_tech_cost_mult = -0.1
+#region 强相互作用耦合
 
-    planet_researchers_upkeep_mult = 0.05
-    planet_AIO_recursive_node_upkeep_mult = 0.05
+AIO_DAIT_energy_option_3_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_hull_mult.dds
+
+    ship_hull_mult = 1
+}
+AIO_DAIT_energy_option_3_modifier_2 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_armor_mult.dds
+
+    ship_armor_mult = 1
 }
 
-# 提高军事
-AIO_repeat_DAIT_military_modifier = {
+#endregion
+
+#region 精细结构常数
+
+AIO_DAIT_energy_option_4_modifier_1 = {
     icon = gfx/interface/icons/modifiers/mod_weapon_damage_mult.dds
 
-    country_naval_cap_add = 50
-    starbase_building_build_speed_mult = 0.05
-    starbase_shipyard_build_speed_mult = 0.05
-    ship_weapon_damage = 0.05
-    ship_hull_mult = 0.01
-    ship_armor_mult = 0.05
-    ship_shield_mult = 0.05
-    ships_energy_upkeep_mult = 0.05
+    ship_weapon_damage = 1
 }
 
-# 飞升后反热力学第二定律
-AIO_after_ascension_ASLT_modifier = {
+#endregion
+
+#region 作用量极小化
+
+AIO_DAIT_energy_option_5_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_planet_building_build_speed_mult.dds
+
+    planet_building_build_speed_mult = 1
+}
+AIO_DAIT_energy_option_5_modifier_2 = {
+    icon = gfx/interface/icons/modifiers/mod_megastructure_build_speed_mult.dds
+
+    megastructure_build_speed_mult = 1
+}
+AIO_DAIT_energy_option_5_modifier_3 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_build_speed_mult.dds
+
+    starbase_shipyard_build_speed_mult = 1
+}
+AIO_DAIT_energy_option_5_modifier_4 = {
+    icon = gfx/interface/icons/modifiers/mod_starbase_building_build_speed_mult.dds
+
+    starbase_building_build_speed_mult = 1
+    starbase_upgrade_speed_mult = 1
+}
+
+#endregion
+
+#endregion
+
+
+#region time-space metric
+
+#region 拓扑流形刚度
+
+AIO_DAIT_metric_option_1_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_empire_size_mult.dds
+
+    empire_size_mult = -1
+}
+
+#endregion
+
+#region 闵可夫斯基度规
+
+AIO_DAIT_metric_option_2_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_speed_mult.dds
+
+    ship_speed_mult = 1
+}
+AIO_DAIT_metric_option_2_modifier_2 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_windup_mult.dds
+
+    ship_windup_mult = -1
+    ship_winddown_mult = -1
+}
+
+#endregion
+
+#region 光锥闭合曲线
+
+AIO_DAIT_metric_option_3_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_evasion_mult.dds
+
+    ship_evasion_mult = 1
+    ship_hull_regen_add_perc = 1
+}
+AIO_DAIT_metric_option_3_modifier_2 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_shield_regen_add_perc.dds
+
+    ship_armor_regen_add_perc = 1
+    ship_shield_regen_add_perc = 1
+}
+
+#endregion
+
+#region 非定域性关联
+
+AIO_DAIT_metric_option_4_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_sensor_range_add.dds
+
+    ship_sensor_range_add = 1
+}
+AIO_DAIT_metric_option_4_modifier_2 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_weapon_range_mult.dds
+
+    ship_weapon_range_mult = 1
+}
+AIO_DAIT_metric_option_4_modifier_3 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_tracking_mult.dds
+
+    ship_tracking_mult = 1
+}
+
+#endregion
+
+#region 事件视界投影
+
+AIO_DAIT_metric_option_5_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_accuracy_mult.dds
+
+    ship_accuracy_mult = 1
+}
+AIO_DAIT_metric_option_5_modifier_2 = {
+    icon = gfx/interface/icons/modifiers/mod_catapult_range_mult.dds
+
+    catapult_spread_mult = 1
+}
+AIO_DAIT_metric_option_5_modifier_3 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_ftl_jumpdrive_range_mult.dds
+
+    ship_ftl_jumpdrive_range_mult = 1
+}
+
+#endregion
+
+#region 因果律攻防
+
+AIO_DAIT_metric_option_6_modifier_1 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_shield_penetration_add.dds
+
+    ship_armor_penetration_add = 1
+    ship_shield_penetration_add = 1
+}
+AIO_DAIT_metric_option_6_modifier_2 = {
+    icon = gfx/interface/icons/modifiers/mod_ship_damage_reduction_mult.dds
+
+    ship_damage_reduction_mult = 1
+}
+
+#endregion
+
+#endregion
+
+#region Reality Editor
+
+# 反热力学第二定律
+AIO_RE_ASLT_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult.dds
 
     planet_stability_mult = 0.2
@@ -318,24 +491,8 @@ AIO_after_ascension_ASLT_modifier = {
     engineering_tech_cost_mult = 0.3
 }
 
-# 飞升后反因果律
-AIO_after_ascension_uncausality_modifier = {
-    icon = gfx/interface/icons/modifiers/mod_cost_mult.dds
-
-    planet_buildings_cost_mult = -0.3
-    megastructures_cost_mult = -0.3
-    starbase_shipyard_build_cost_mult = -0.3
-    physics_tech_cost_mult = -0.3
-    society_tech_cost_mult = -0.3
-    engineering_tech_cost_mult = -0.3
-
-    planet_stability_mult = -0.5
-    planet_amenities_mult = -0.4
-    planet_pops_upkeep_mult = 0.3
-}
-
-# 飞升后设计需求
-AIO_after_ascension_design_requirement_modifier = {
+# 设计需求
+AIO_RE_design_requirement_modifier = {
     icon = gfx/interface/icons/modifiers/mod_trade_logistics_mult.dds
 
     planet_jobs_trade_produces_mult = 0.3
@@ -344,8 +501,8 @@ AIO_after_ascension_design_requirement_modifier = {
     planet_jobs_produces_mult = -0.2
 }
 
-# 飞升后超光
-AIO_after_ascension_superlight_modifier = {
+# 超光
+AIO_RE_superlight_modifier = {
     icon = gfx/interface/icons/modifiers/mod_energy_produces_mult.dds
 
     empire_size_mult = -0.3
@@ -371,14 +528,4 @@ AIO_the_craving_of_stellaris_modifier = {
     planet_amenities_add = 1000
 }
 
-# 后勤政策
-AIO_logistics_policy_gestalt_data = {
-    icon = gfx/interface/icons/modifiers/mod_planet_amenities_no_happiness_add.dds
-
-    planet_amenities_add = 1500
-}
-
-# 重织基底改造星球提示
-AIO_weave_substrate_change_pc_modifier = {
-    icon = gfx/interface/icons/planet_modifiers/pm_planet_from_space.dds
-}
+#endregion

@@ -1,0 +1,116 @@
+﻿l_english:
+ AIO_AIT_events.401.title: ""
+
+ #region 侧栏
+
+ AIO_DAIT_sidebar_material: "Material"
+ AIO_DAIT_sidebar_energy: "Energy"
+ AIO_DAIT_sidebar_metric: "Metric"
+
+ #endregion
+
+
+ #region tooltips
+
+ AIO_DAIT_sidebar_change_faile_text: "The current page is displayed!"
+ AIO_DAIT_change_view_page_fail_text: "It will be out of the pages!"
+ AIO_DAIT_alloc_fail_text: "Out of range!\nTotal values currently used: §I[this.AIO_DAIT_total_alloc_value]%§!"
+
+ #endregion
+
+
+ #region material
+
+ AIO_DAIT_material_option.1.title: "Atomic Lattice Efficiency"
+ AIO_DAIT_material_option.1.desc: "Modify the bonding angle between atoms so that the substance spontaneously forms a better structure when it is mined and processed."
+ AIO_DAIT_material_option.1.effect: "£job£ Job produce £minerals£, £food£, £alloys£, £consumer_goods£, £volatile_motes£, £exotic_gases£, £rare_crystals£: §G+ [this.AIO_DAIT_material_option_1_effect_1_display_value]%§!"
+ AIO_DAIT_material_option.1.effect.allocate.value: "§I[this.AIO_DAIT_material_option_1_alloc_value]%§!"
+ AIO_DAIT_material_option.2.title: "Baryon Assembly Threshold"
+ AIO_DAIT_material_option.2.desc: "Lowering the energy threshold required for quarks to form protons and neutrons makes it cheaper for matter to "emerge" out of thin air."
+ AIO_DAIT_material_option.2.effect: "£mod_planet_building_cost_mult£ $mod_planet_buildings_cost_mult$, £mod_ship_build_cost_mult£ $MOD_STARBASE_SHIP_BUILD_COST_MULT$: §G- [this.AIO_DAIT_material_option_2_effect_1_display_value]%§!\n$MOD_MEGASTRUCTURE_BUILD_COST_MULT$: §G- [this.AIO_DAIT_material_option_2_effect_2_display_value]%§!"
+ AIO_DAIT_material_option.2.effect.allocate.value: "§I[this.AIO_DAIT_material_option_2_alloc_value]%§!"
+ AIO_DAIT_material_option.3.title: "Bootstrap Replication"
+ AIO_DAIT_material_option.3.desc: "Modify the self-replicating underlying code to allow organisms or machines to multiply exponentially like viruses."
+ AIO_DAIT_material_option.3.effect: "£mod_logistic_growth_mult£ $MOD_LOGISTIC_GROWTH_MULT$, £mod_planet_pop_assembly_mult£ $MOD_PLANET_POP_ASSEMBLY_MULT$: §G+ [this.AIO_DAIT_material_option_3_effect_1_display_value]%§!"
+ AIO_DAIT_material_option.3.effect.allocate.value: "§I[this.AIO_DAIT_material_option_3_alloc_value]%§!"
+ AIO_DAIT_material_option.4.title: "Structural Negentropy"
+ AIO_DAIT_material_option.4.desc: "Matter no longer degrades naturally, reducing the external material input required to maintain its existence."
+ AIO_DAIT_material_option.4.effect: "£mod_upkeep_mult£ $mod_planet_buildings_upkeep_mult$, $mod_planet_districts_upkeep_mult$: §G- [this.AIO_DAIT_material_option_4_effect_1_display_value]%§!"
+ AIO_DAIT_material_option.4.effect.allocate.value: "§I[this.AIO_DAIT_material_option_4_alloc_value]%§!"
+ AIO_DAIT_material_option.5.title: "Pauli Exclusion Shielding"
+ AIO_DAIT_material_option.5.desc: "Shield the principle of incompatibility of fermions, allowing more matter (population/buildings) to be stacked on the same spatial coordinates."
+ AIO_DAIT_material_option.5.effect: "£mod_max_districts_add£ $MOD_PLANET_MAX_DISTRICTS_MULT$: §G+ [this.AIO_DAIT_material_option_5_effect_1_display_value]%§!\n£mod_pop_housing_usage_mult£ $MOD_POP_HOUSING_USAGE_MULT$: §G- [this.AIO_DAIT_material_option_5_effect_2_display_value]%§!"
+ AIO_DAIT_material_option.5.effect.allocate.value: "§I[this.AIO_DAIT_material_option_5_alloc_value]%§!"
+ AIO_DAIT_material_option.6.title: "Conservation Violation"
+ AIO_DAIT_material_option.6.desc: "Correcting the first law of thermodynamics, destroyed ships do not turn to dust, but are reduced to pure alloys."
+ AIO_DAIT_material_option.6.effect: "For each enemy ship destroyed, random ships in £military_ship£§Yfleet§!:\n£ship_stats_armor£ Armor Restoration: §G+ [this.AIO_DAIT_material_option_6_effect_1_display_value]§!"
+ AIO_DAIT_material_option.6.effect.allocate.value: "§I[this.AIO_DAIT_material_option_6_alloc_value]%§!"
+ AIO_DAIT_material_option.7.title: "Planetary Phase Rewrite"
+ AIO_DAIT_material_option.7.desc: "Reshaping the planet's crust as a fluid makes it easier to change the type of celestial body."
+ AIO_DAIT_material_option.7.effect: "$MOD_HABITABILITY_FLOOR_MULT$: §G+ [this.AIO_DAIT_material_option_7_effect_1_display_value]%§!\n£mod_country_terraform_speed_mult£ $MOD_COUNTRY_TERRAFORM_SPEED_MULT$: §G+ [this.AIO_DAIT_material_option_7_effect_2_display_value]%§!"
+ AIO_DAIT_material_option.7.effect.allocate.value: "§I[this.AIO_DAIT_material_option_7_alloc_value]%§!"
+ AIO_DAIT_material_current_page: "[this.AIO_DAIT_page] / [this.AIO_DAIT_material_total_pages]"
+
+ #endregion
+
+
+ #region 能量与相互作用
+
+ AIO_DAIT_energy_option.1.title: "Vacuum Zero-Point Level"
+ AIO_DAIT_energy_option.1.desc: "By increasing the ground state energy contained in the vacuum, the shield no longer needs a generator, but draws energy directly from space."
+ AIO_DAIT_energy_option.1.effect: "$mod_planet_jobs_energy_produces_mult$: §G+ [this.AIO_DAIT_energy_option_1_effect_1_display_value]%§!\n£ship_stats_shield£ $MOD_SHIP_SHIELD_MULT$: §G+ [this.AIO_DAIT_energy_option_1_effect_2_display_value]%§!"
+ AIO_DAIT_energy_option.1.effect.allocate.value: "§I[this.AIO_DAIT_energy_option_1_alloc_value]%§!"
+ AIO_DAIT_energy_option.2.title: "Maxwell's Demon Protocol"
+ AIO_DAIT_energy_option.2.desc: "Automatically screening high-energy particles at the microscopic level, eliminating unnecessary thermal motion and greatly improving system efficiency."
+ AIO_DAIT_energy_option.2.effect: "£mod_energy_upkeep_mult£ $mod_planet_jobs_energy_upkeep_mult$, $mod_ships_energy_upkeep_mult$: §G- [this.AIO_DAIT_energy_option_2_effect_1_display_value]%§!"
+ AIO_DAIT_energy_option.2.effect.allocate.value: "§I[this.AIO_DAIT_energy_option_2_alloc_value]%§!"
+ AIO_DAIT_energy_option.3.title: "Strong Force Coupling"
+ AIO_DAIT_energy_option.3.desc: "Increases the force that holds the nuclei together, making your ship material harder than neutron star matter."
+ AIO_DAIT_energy_option.3.effect: "£ship_stats_hitpoints£ $MOD_SHIP_HULL_MULT$: §G+ [this.AIO_DAIT_energy_option_3_effect_1_display_value]%§!\n£ship_stats_armor£ $MOD_SHIP_ARMOR_MULT$: §G+ [this.AIO_DAIT_energy_option_3_effect_1_display_value]%§!"
+ AIO_DAIT_energy_option.3.effect.allocate.value: "§I[this.AIO_DAIT_energy_option_3_alloc_value]%§!"
+ AIO_DAIT_energy_option.4.title: "Fine-Structure Constant"
+ AIO_DAIT_energy_option.4.desc: "Modify the intensity of the electromagnetic interaction so that the energy carried by the laser and plasma rises exponentially."
+ AIO_DAIT_energy_option.4.effect: "£mod_ship_weapon_damage£ $MOD_SHIP_WEAPON_DAMAGE$: §G+ [this.AIO_DAIT_energy_option_4_effect_1_display_value]%§!"
+ AIO_DAIT_energy_option.4.effect.allocate.value: "§I[this.AIO_DAIT_energy_option_4_alloc_value]%§!"
+ AIO_DAIT_energy_option.5.title: "Action Minimization"
+ AIO_DAIT_energy_option.5.desc: "The universe always tends to take the path of the least "action". You modify this path so that the building process is physically "instantaneous"."
+ AIO_DAIT_energy_option.5.effect: "£mod_planet_building_build_speed_mult£ $MOD_PLANET_BUILDING_BUILD_SPEED_MULT$: §G+ [this.AIO_DAIT_energy_option_5_effect_1_display_value]%§!\n£mod_megastructure_build_speed_mult£ $MOD_MEGASTRUCTURE_BUILD_SPEED_MULT$: §G+[this.AIO_DAIT_energy_option_5_effect_2_display_value]%§!\n£mod_ship_build_speed_mult£ $MOD_SHIP_BUILD_SPEED_MULT$: §G+ [this.AIO_DAIT_energy_option_5_effect_3_display_value]%§!\n£mod_starbase_building_build_speed_mult£ $MOD_STARBASE_BUILDING_BUILD_SPEED_MULT$, $MOD_STARBASE_UPGRADE_SPEED_MULT$: §G+ [this.AIO_DAIT_energy_option_5_effect_4_display_value]%§!"
+ AIO_DAIT_energy_option.5.effect.allocate.value: "§I[this.AIO_DAIT_energy_option_5_alloc_value]%§!"
+ AIO_DAIT_energy_option.6.title: "Dissipation Inversion"
+ AIO_DAIT_energy_option.6.desc: "Entropy decreases. Enemy attack energy does not deal damage, but is absorbed by your ship and converted into a shield."
+ AIO_DAIT_energy_option.6.effect: "For each enemy ship destroyed, random ships in £military_ship£§Yfleet§!:\n£ship_stats_shield£ Shield Restored:§G+ [this.AIO_DAIT_energy_option_6_effect_1_display_value]§!"
+ AIO_DAIT_energy_option.6.effect.allocate.value: "§I[this.AIO_DAIT_energy_option_6_alloc_value]%§!"
+ AIO_DAIT_energy_current_page: "[this.AIO_DAIT_page] / [this.AIO_DAIT_energy_total_pages]"
+
+ #endregion
+
+
+ #region 时空度规
+
+ AIO_DAIT_metric_option.1.title: "Topological Stiffness"
+ AIO_DAIT_metric_option.1.desc: "It is possible to "fold" your empire mathematically so that it is treated as a single point in the management sense."
+ AIO_DAIT_metric_option.1.effect: "£mod_empire_size_mult£ $MOD_EMPIRE_SIZE_MULT$: §G- [this.AIO_DAIT_metric_option_1_effect_1_display_value]%§!"
+ AIO_DAIT_metric_option.1.effect.allocate.value: "§I[this.AIO_DAIT_metric_option_1_alloc_value]%§!"
+ AIO_DAIT_metric_option.2.title: "Minkowski Metric"
+ AIO_DAIT_metric_option.2.desc: "Modified the distance definition for straight spacetime so that your ship can travel the same distance only through a shorter "gauge length"."
+ AIO_DAIT_metric_option.2.effect: "£mod_ship_speed_mult£ $MOD_SHIP_SPEED_MULT$: §G+ [this.AIO_DAIT_metric_option_2_effect_1_display_value]%§!\n£mod_ship_windup_mult£ $MOD_SHIP_WINDUP_MULT$, $MOD_SHIP_WINDDOWN_MULT$: §G- [this.AIO_DAIT_metric_option_2_effect_2_display_value]%§!"
+ AIO_DAIT_metric_option.2.effect.allocate.value: "§I[this.AIO_DAIT_metric_option_2_alloc_value]%§!"
+ AIO_DAIT_metric_option.3.title: "Closed Timelike Curves"
+ AIO_DAIT_metric_option.3.desc: "Allows ships to perform local time retrospective. Almost lost? No, you just jumped back to a point in time before you were hit."
+ AIO_DAIT_metric_option.3.effect: "£mod_ship_evasion_mult£ $MOD_SHIP_EVASION_MULT$, £mod_ship_hull_regen_add_perc£ $MOD_SHIP_HULL_REGEN_ADD_PERC$: §G+ [this.AIO_DAIT_metric_option_3_effect_1_display_value]%§!\n£mod_ship_armor_regen_add_perc£ $MOD_SHIP_ARMOR_REGEN_ADD_PERC$, £mod_ship_shield_regen_add_perc£ $MOD_SHIP_SHIELD_REGEN_ADD_PERC$: §G+ [this.AIO_DAIT_metric_option_3_effect_2_display_value]%§!"
+ AIO_DAIT_metric_option.3.effect.allocate.value: "§I[this.AIO_DAIT_metric_option_3_alloc_value]%§!"
+ AIO_DAIT_metric_option.4.title: "Non-local Correlation"
+ AIO_DAIT_metric_option.4.desc: "Quantum entanglement that can transmit valid information. You don't need to "see" the enemy, because everything in the universe is entangled with you, you are omniscient and omnipotent."
+ AIO_DAIT_metric_option.4.effect: "£mod_ship_sensor_range_add£ $MOD_SHIP_SENSOR_RANGE_MULT$: §G+ [this.AIO_DAIT_metric_option_4_effect_1_display_value]%§!\n£mod_ship_weapon_range_mult£ $MOD_SHIP_WEAPON_RANGE_MULT$: §G+ [this.AIO_DAIT_metric_option_4_effect_2_display_value]%§!\n£mod_ship_tracking_mult£ $MOD_SHIP_TRACKING_MULT$: §G+ [this.AIO_DAIT_metric_option_4_effect_3_display_value]%§!"
+ AIO_DAIT_metric_option.4.effect.allocate.value: "§I[this.AIO_DAIT_metric_option_4_alloc_value]%§!"
+ AIO_DAIT_metric_option.5.title: "Event Horizon Projection"
+ AIO_DAIT_metric_option.5.desc: "Projects the weapon's attack point directly to the target's coordinates, ignoring distance restrictions."
+ AIO_DAIT_metric_option.5.effect: "£mod_ship_accuracy_mult£ $MOD_SHIP_ACCURACY_MULT$: §G+ [this.AIO_DAIT_metric_option_5_effect_1_display_value]%§!\n£mod_catapult_range_mult£ $MOD_CATAPULT_SPREAD_MULT$: §G+ [this.AIO_DAIT_metric_option_5_effect_2_display_value]%§!\n£mod_ship_ftl_jumpdrive_range_mult£ $MOD_SHIP_FTL_JUMPDRIVE_RANGE_MULT$: §G+ [this.AIO_DAIT_metric_option_5_effect_3_display_value]%§!"
+ AIO_DAIT_metric_option.5.effect.allocate.value: "§I[this.AIO_DAIT_metric_option_5_alloc_value]%§!"
+ AIO_DAIT_metric_option.6.title: "Causality Firewall"
+ AIO_DAIT_metric_option.6.desc: "The causal link between "causing harm" and "being harmed" can be arbitrarily established."
+ AIO_DAIT_metric_option.6.effect: "£mod_ship_armor_penetration_add£ $MOD_SHIP_ARMOR_PENETRATION_ADD$, $MOD_SHIP_SHIELD_PENETRATION_ADD$: §G+ [this.AIO_DAIT_metric_option_6_effect_1_display_value]%§!\n£mod_ship_damage_reduction_add£ Damage Reduce: §G+ [this.AIO_DAIT_metric_option_6_effect_2_display_value]%§!"
+ AIO_DAIT_metric_option.6.effect.allocate.value: "§I[this.AIO_DAIT_metric_option_6_alloc_value]%§!"
+ AIO_DAIT_metric_current_page: "[this.AIO_DAIT_page] / [this.AIO_DAIT_metric_total_pages]"
+
+ #endregion

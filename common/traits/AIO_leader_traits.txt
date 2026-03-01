@@ -48,7 +48,7 @@ trait_leader_AIO_lord_of_constant_sight = {
 		TIER = 2
 	}
 
-	leader_potential_add = { has_leader_flag = AIO_ctrl_otherworld_walker_scientist }
+	leader_potential_add = { has_leader_flag = AIO_RE_otherworld_walker_scientist }
 	leader_class = { scientist }
 
 	modifier = {

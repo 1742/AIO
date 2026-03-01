@@ -1,0 +1,187 @@
+# 菜单选项
+
+
+#region material
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_material_tab_name
+    TAB_INDEX = @AIO_DAIT_material_tab_index
+    OPTION = 1
+    PAGE = 1
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_material_tab_name
+    TAB_INDEX = @AIO_DAIT_material_tab_index
+    OPTION = 2
+    PAGE = 1
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_material_tab_name
+    TAB_INDEX = @AIO_DAIT_material_tab_index
+    OPTION = 3
+    PAGE = 2
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_material_tab_name
+    TAB_INDEX = @AIO_DAIT_material_tab_index
+    OPTION = 4
+    PAGE = 2
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_material_tab_name
+    TAB_INDEX = @AIO_DAIT_material_tab_index
+    OPTION = 5
+    PAGE = 3
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_material_tab_name
+    TAB_INDEX = @AIO_DAIT_material_tab_index
+    OPTION = 6
+    PAGE = 3
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_material_tab_name
+    TAB_INDEX = @AIO_DAIT_material_tab_index
+    OPTION = 7
+    PAGE = 4
+}
+
+inline_script = {
+    script = "AIO/DAIT_view_page_change"
+    TAB_NAME = @AIO_DAIT_material_tab_name
+    TAB_INDEX = @AIO_DAIT_material_tab_index
+}
+
+#endregion
+
+
+
+#region energy and interactions
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_energy_tab_name
+    TAB_INDEX = @AIO_DAIT_energy_tab_index
+    OPTION = 1
+    PAGE = 1
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_energy_tab_name
+    TAB_INDEX = @AIO_DAIT_energy_tab_index
+    OPTION = 2
+    PAGE = 1
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_energy_tab_name
+    TAB_INDEX = @AIO_DAIT_energy_tab_index
+    OPTION = 3
+    PAGE = 2
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_energy_tab_name
+    TAB_INDEX = @AIO_DAIT_energy_tab_index
+    OPTION = 4
+    PAGE = 2
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_energy_tab_name
+    TAB_INDEX = @AIO_DAIT_energy_tab_index
+    OPTION = 5
+    PAGE = 3
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_energy_tab_name
+    TAB_INDEX = @AIO_DAIT_energy_tab_index
+    OPTION = 6
+    PAGE = 3
+}
+
+inline_script = {
+    script = "AIO/DAIT_view_page_change"
+    TAB_NAME = @AIO_DAIT_energy_tab_name
+    TAB_INDEX = @AIO_DAIT_energy_tab_index
+}
+
+#endregion
+
+
+#region time-space metric
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_metric_tab_name
+    TAB_INDEX = @AIO_DAIT_metric_tab_index
+    OPTION = 1
+    PAGE = 1
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_metric_tab_name
+    TAB_INDEX = @AIO_DAIT_metric_tab_index
+    OPTION = 2
+    PAGE = 1
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_metric_tab_name
+    TAB_INDEX = @AIO_DAIT_metric_tab_index
+    OPTION = 3
+    PAGE = 2
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_metric_tab_name
+    TAB_INDEX = @AIO_DAIT_metric_tab_index
+    OPTION = 4
+    PAGE = 2
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_metric_tab_name
+    TAB_INDEX = @AIO_DAIT_metric_tab_index
+    OPTION = 5
+    PAGE = 3
+}
+
+inline_script = {
+    script = "AIO/DAIT_buff_options"
+    TAB_NAME = @AIO_DAIT_metric_tab_name
+    TAB_INDEX = @AIO_DAIT_metric_tab_index
+    OPTION = 6
+    PAGE = 3
+}
+
+inline_script = {
+    script = "AIO/DAIT_view_page_change"
+    TAB_NAME = @AIO_DAIT_metric_tab_name
+    TAB_INDEX = @AIO_DAIT_metric_tab_index
+}
+
+#endregion

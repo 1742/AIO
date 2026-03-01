@@ -1,4 +1,6 @@
 ﻿l_english:
+ #region crisis technology
+
  tech_AIO_exponential_learning_theory: "$tech_cosmogenesis_crisis_1$"
  tech_AIO_exponential_learning_theory_desc: "$tech_cosmogenesis_crisis_1_desc$"
  AIO_level_1_tech_title: "Unlock §H$ap_AIO_allinone$§! §HLevel 2§!"
@@ -8,14 +10,11 @@
  tech_AIO_ascending_dimensionality_theory_desc: "To break through the barriers between dimensions, we need special structures to gather energy."
  AIO_ascending_dimensionality_theory_tech_desc: "§H$tech_AIO_ascending_dimensionality_theory$§!\nThe §Y$AIO_horizon_engine$§!, designed with pre-civilization technology, will accomplish this task."
 
- tech_AIO_DAIT: "Apply Infinite Thesis"
- tech_AIO_DAIT_desc: "By further adjusting the laws of reality, the universe will evolve into the ideal model we set."
- tech_AIO_DAIT.prereqfor_desc.title: "Bend the §HRules of Reality§!"
- tech_AIO_DAIT.prereqfor_desc.desc: "Trigger ['concept_AIO_DAIT']. Modify §HRules of Reality§! to deconstruct the current universe."
+ #endregion
 
- # ---------------------------------- #
- # AIO fallen empire building
- # ---------------------------------- #
+
+ #region AIO fallen empire building
+
  tech_AIO_fe_automatication: "AIO-Integrated Architecture"
  tech_AIO_fe_automatication_desc: "Under the comprehensive integration of resource allocation, logistics and process chain, the automation system has been pushed to a higher level."
  tech_AIO_fe_fabricator_1: "$tech_fe_fabricator_1$"
@@ -74,3 +73,5 @@
  tech_AIO_fe_clinic_1_desc: "$tech_fe_clinic_1_desc$"
  tech_AIO_fe_clinic_2: "AIO-$tech_fe_clinic_2$"
  tech_AIO_fe_clinic_2_desc: "$tech_fe_clinic_2_desc$"
+
+ #endregion

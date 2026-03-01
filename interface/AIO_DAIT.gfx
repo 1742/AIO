@@ -1,0 +1,80 @@
+spriteTypes = {
+    # 主背景背景
+    corneredTileSpriteType = {
+        name = "GFX_AIO_DAIT_Bg"
+        textureFile = "gfx/interface/AIO_DAIT/bg.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+        borderSize = { x = 1058 y = 593 }
+    }
+
+    # 退出键
+    corneredTileSpriteType = {
+        name = "GFX_AIO_DAIT_Exit_Button"
+        textureFile = "gfx/interface/AIO_DAIT/exit_button.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+        borderSize = { x = 135 y = 40 }
+    }
+
+    # 侧边栏按钮三态图
+    spriteType = {
+        name = "GFX_AIO_DAIT_Sidebar_Button"
+        texturefile = "gfx/interface/AIO_DAIT/sidebar_button_d_n_h.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+        noOfFrames = 3
+    }
+    # 侧栏按钮激活
+    spriteType = {
+        name = "GFX_AIO_DAIT_Sidebar_Button_Active"
+        texturefile = "gfx/interface/AIO_DAIT/sidebar_button_active.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+        noOfFrames = 1
+    }
+
+    # 选项区域背景
+    corneredTileSpriteType = {
+        name = "GFX_AIO_DAIT_Page_View_Bg"
+        textureFile = "gfx/interface/AIO_DAIT/page_view_bg.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+        borderSize = { x = 820 y = 360 }
+    }
+
+    # 加号三态图
+    spriteType = {
+        name = "GFX_AIO_DAIT_Add_Button"
+        texturefile = "gfx/interface/AIO_DAIT/add_button.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+        noOfFrames = 3
+    }
+
+    # 减号三态图
+    spriteType = {
+        name = GFX_AIO_DAIT_Subtract_Button
+        texturefile = gfx/interface/AIO_DAIT/subtract_button.dds
+        effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+        noOfFrames = 3
+    }
+
+    # 分割线
+    spriteType = {
+        name = "GFX_AIO_DAIT_Separate_Line"
+        texturefile = "gfx/interface/AIO_DAIT/separate_line.dds"
+        effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+        noOfFrames = 1
+    }
+
+    # 上一页三态图
+    spriteType = {
+        name = GFX_AIO_DAIT_Last_Page_Button
+        texturefile = gfx/interface/AIO_DAIT/last_page_d_a_a.dds
+        effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+        noOfFrames = 3
+    }
+
+    # 下一页三态图
+    spriteType = {
+        name = GFX_AIO_DAIT_Next_Page_Button
+        texturefile = gfx/interface/AIO_DAIT/next_page_d_a_a.dds
+        effectFile = "gfx/FX/buttonstate_onlydisable.shader"
+        noOfFrames = 3
+    }
+}

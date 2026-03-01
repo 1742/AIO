@@ -1,0 +1,100 @@
+AIO_DAIT_$TAB_NAME$_option_$OPTION$_title = {
+    potential = {
+        check_variable = { which = AIO_DAIT_tab value = $TAB_INDEX$ }
+        check_variable = { which = AIO_DAIT_page value = $PAGE$ }
+    }
+    allow = { always = no }
+}
+
+AIO_DAIT_$TAB_NAME$_option_$OPTION$_desc = {
+    potential = {
+        check_variable = { which = AIO_DAIT_tab value = $TAB_INDEX$ }
+        check_variable = { which = AIO_DAIT_page value = $PAGE$ }
+    }
+    allow = { always = no }
+}
+
+AIO_DAIT_$TAB_NAME$_option_$OPTION$_effect = {
+    potential = {
+        check_variable = { which = AIO_DAIT_tab value = $TAB_INDEX$ }
+        check_variable = { which = AIO_DAIT_page value = $PAGE$ }
+    }
+    allow = { always = no }
+}
+
+AIO_DAIT_$TAB_NAME$_option_$OPTION$_add = {
+    potential = {
+        check_variable = { which = AIO_DAIT_tab value = $TAB_INDEX$ }
+        check_variable = { which = AIO_DAIT_page value = $PAGE$ }
+    }
+    allow = {
+        custom_tooltip = {
+            text = "AIO_DAIT_alloc_fail_text"
+            check_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value < 100 }
+            check_variable = { which = AIO_DAIT_total_alloc_value value < 100 }
+        }
+    }
+    effect = {
+        hidden_effect = {
+            change_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value = 5 }
+            if = {
+                limit = { check_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value <= 100 } }
+                change_variable = { which = AIO_DAIT_total_alloc_value value = 5 }
+            }
+            else = {
+                set_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value = 100 }
+                set_variable = { which = AIO_DAIT_total_alloc_value value = 100 }
+            }
+
+            # 更新 buff 数值
+            AIO_DAIT_option_calculate_buff_values = { $TAB_NAME$_option_$OPTION$ = 1 }
+        }
+    }
+}
+
+AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value = {
+    potential = {
+        check_variable = { which = AIO_DAIT_tab value = $TAB_INDEX$ }
+        check_variable = { which = AIO_DAIT_page value = $PAGE$ }
+    }
+    allow = { always = no }
+}
+
+AIO_DAIT_$TAB_NAME$_option_$OPTION$_subtract = {
+    potential = {
+        check_variable = { which = AIO_DAIT_tab value = $TAB_INDEX$ }
+        check_variable = { which = AIO_DAIT_page value = $PAGE$ }
+    }
+    allow = {
+        custom_tooltip = {
+            text = "AIO_DAIT_alloc_fail_text"
+            check_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value > 0 }
+            check_variable = { which = AIO_DAIT_total_alloc_value value > 0 }
+        }
+    }
+    effect = {
+        hidden_effect = {
+            change_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value = -5 }
+            if = {
+                limit = { check_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value >= 0 } }
+                change_variable = { which = AIO_DAIT_total_alloc_value value = -5 }
+            }
+            else = {
+                change_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value = 5 }
+                subtract_variable = { which = AIO_DAIT_total_alloc_value value = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value }
+                set_variable = { which = AIO_DAIT_$TAB_NAME$_option_$OPTION$_alloc_value value = 0 }
+            }
+
+            # 更新 buff 数值
+            AIO_DAIT_option_calculate_buff_values = { $TAB_NAME$_option_$OPTION$ = 1 }
+        }
+    }
+}
+
+AIO_DAIT_$TAB_NAME$_option_$OPTION$_separate_line = {
+    potential = {
+        check_variable = { which = AIO_DAIT_tab value = $TAB_INDEX$ }
+        check_variable = { which = AIO_DAIT_page value = $PAGE$ }
+    }
+    allow = { always = no }
+}

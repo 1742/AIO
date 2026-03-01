@@ -2,10 +2,6 @@
 namespace = AIO_Aforgomom_events
 
 
-# ---------------------------------- #
-# 亚弗戈蒙之怒
-# ---------------------------------- #
-
 # 销毁亚弗戈蒙之怒事件
 fleet_event = {
     id = AIO_Aforgomom_events.201
@@ -22,11 +18,8 @@ fleet_event = {
                 owner = { check_variable = { which = AIO_Aforgomom_Wrath value < 10 } }
             }
             owner = { change_variable = { which = AIO_Aforgomom_Wrath value = 1 } }
-            if = {
-                limit = { has_modifier = AIO_Aforgomom_Wrath_modifier }
-                remove_modifier = AIO_Aforgomom_Wrath_modifier
-                add_modifier = { modifier = AIO_Aforgomom_Wrath_modifier mult = value:AIO_Aforgomom_Wrath_factor }
-            }
+            add_modifier = { modifier = AIO_Aforgomom_Wrath_modifier mult = value:AIO_Aforgomom_Wrath_factor }
+
             fleet_event = { id = AIO_Aforgomom_events.201 days = 100 }
         }
         # 时间到了没打完，且数值溢出，直接删船
@@ -53,6 +46,7 @@ fleet_event = {
     }
 }
 
+
 # 亚弗戈蒙之怒被摧毁
 country_event = { # this - owner of combatant from - owner of destroyed
     id = AIO_Aforgomom_events.202
@@ -69,14 +63,10 @@ country_event = { # this - owner of combatant from - owner of destroyed
                 change_variable = { which = AIO_Aforgomom_Wrath value = 1 }
             }
         }
-        fromfrom.solar_system = { AIO_AIT_effects_manager = { CREATE_AFORGOMOM_WRATH = 1 } }
+        fromfrom.solar_system = { AIO_RE_effects_manager = { CREATE_AFORGOMOM_WRATH = 1 } }
     }
 }
 
-
-# ---------------------------------- #
-# 遗珍
-# ---------------------------------- #
 
 # 获得遗珍并转交给犹格索托斯
 country_event = {

@@ -1,0 +1,27 @@
+AIO_DAIT_$TAB_NAME$_view_last_page_button = {
+    potential = { check_variable = { which = AIO_DAIT_tab value = $TAB_INDEX$ } }
+    allow = {
+        custom_tooltip = {
+            fail_text = "AIO_DAIT_change_view_page_fail_text"
+            check_variable = { which = AIO_DAIT_page value > 1 }
+            check_variable = { which = AIO_DAIT_$TAB_NAME$_total_pages value > 1 }
+        }
+    }
+    effect = { hidden_effect = { change_variable = { which = AIO_DAIT_page value = -1 } } }
+}
+
+AIO_DAIT_$TAB_NAME$_view_current_page = {
+    potential = { check_variable = { which = AIO_DAIT_tab value = $TAB_INDEX$ } }
+    allow = { always = no }
+}
+
+AIO_DAIT_$TAB_NAME$_view_next_page_button = {
+    potential = { check_variable = { which = AIO_DAIT_tab value = $TAB_INDEX$ } }
+    allow = {
+        custom_tooltip = {
+            fail_text = "AIO_DAIT_change_view_page_fail_text"
+            check_variable = { which = AIO_DAIT_page value < AIO_DAIT_$TAB_NAME$_total_pages }
+        }
+    }
+    effect = { hidden_effect = { change_variable = { which = AIO_DAIT_page value = 1 } } }
+}

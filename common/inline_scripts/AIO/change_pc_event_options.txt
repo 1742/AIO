@@ -1,0 +1,306 @@
+# 恒星
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = yes } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_black_hole } } }
+    name = pc_black_hole
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_STAR = 1 NEW_PC = pc_black_hole } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = yes } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_a_star } } }
+    name = pc_a_star
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_STAR = 1 NEW_PC = pc_a_star } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = yes } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_b_star } } }
+    name = pc_b_star
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_STAR = 1 NEW_PC = pc_b_star } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = yes } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_f_star } } }
+    name = pc_f_star
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_STAR = 1 NEW_PC = pc_f_star } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = yes } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_g_star } } }
+    name = pc_g_star
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_STAR = 1 NEW_PC = pc_g_star } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = yes } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_k_star } } }
+    name = pc_k_star
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_STAR = 1 NEW_PC = pc_k_star } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = yes } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_m_giant_star } } }
+    name = pc_m_giant_star
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_STAR = 1 NEW_PC = pc_m_giant_star } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = yes } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_m_star } } }
+    name = pc_m_star
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_STAR = 1 NEW_PC = pc_m_star } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = yes } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_neutron_star } } }
+    name = pc_neutron_star
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_STAR = 1 NEW_PC = pc_neutron_star } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = yes } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_pulsar } } }
+    name = pc_pulsar
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_STAR = 1 NEW_PC = pc_pulsar } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = yes } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_rift_star } } }
+    name = pc_rift_star
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_STAR = 1 NEW_PC = pc_rift_star } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = yes } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_t_star } } }
+    name = pc_t_star
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_STAR = 1 NEW_PC = pc_t_star } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+
+# 行星
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_desert } } }
+    name = pc_desert
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_desert } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_arid } } }
+    name = pc_arid
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_arid } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_savannah } } }
+    name = pc_savannah
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_savannah } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_tropical } } }
+    name = pc_tropical
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_tropical } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_continental } } }
+    name = pc_continental
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_continental } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_ocean } } }
+    name = pc_ocean
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_ocean } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_tundra } } }
+    name = pc_tundra
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_tundra } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_arctic } } }
+    name = pc_arctic
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_arctic } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_alpine } } }
+    name = pc_alpine
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_alpine } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_volcanic } } }
+    name = pc_volcanic
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_volcanic } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_gas_giant } } }
+    name = pc_gas_giant
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_gas_giant } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_asteroid } } }
+    name = pc_asteroid
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_asteroid } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_ice_asteroid } } }
+    name = pc_ice_asteroid
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_ice_asteroid } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_rare_crystal_asteroid } } }
+    name = pc_rare_crystal_asteroid
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_rare_crystal_asteroid } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_molten } } }
+    name = pc_molten
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_molten } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_barren } } }
+    name = pc_barren
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_barren } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_barren_cold } } }
+    name = pc_barren_cold
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_barren_cold } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_toxic } } }
+    name = pc_toxic
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_toxic } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_frozen } } }
+    name = pc_frozen
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_frozen } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_nuked } } }
+    name = pc_nuked
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_nuked } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_hive } } }
+    name = pc_hive
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_hive } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_machine } } }
+    name = pc_machine
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_machine } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_shielded } } }
+    name = pc_shielded
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_shielded } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_gaia } } }
+    name = pc_gaia
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_gaia } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_nanotech } } }
+    name = pc_nanotech
+    custom_tooltip = AIO_RE_change_pc_nanotech
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_nanotech } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_shrouded } } }
+    name = pc_shrouded
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_shrouded } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_broken } } }
+    name = pc_broken
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_broken } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_shattered } } }
+    name = pc_shattered
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_shattered } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_gray_goo } } }
+    name = pc_gray_goo
+    custom_tooltip = AIO_RE_change_pc_gray_goo
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_gray_goo } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_city } } }
+    name = pc_city
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_city } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}
+option = {
+    trigger = { event_target:AIO_RE_target = { is_star = no } }
+    allow = { event_target:AIO_RE_target = { NOT = { is_planet_class = pc_relic } } }
+    name = pc_relic
+    event_target:AIO_RE_target = { AIO_RE_effects_manager = { CHANGE_PC_PLANET = 1 NEW_PC = pc_relic } }
+    AIO_RE_effects_manager = { REMOVE_AIO_LOCATOR = 1 RE_CLASS = change_pc }
+}

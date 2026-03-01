@@ -109,6 +109,7 @@ AIO_horizon_engine = {
 
 				create_ambient_object = {
 					type = "crisis_sphere_1"
+					play_animation_once = no
 					location = this
 
 					effect = {

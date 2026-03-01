@@ -22,7 +22,7 @@ AIO_mega_01_fact = {
 
 	upgrade_from = { AIO_horizon_engine }
 
-	build_time = 3600
+	build_time = 1800
 
 	resources = {
 		category = megastructures
@@ -48,6 +48,20 @@ AIO_mega_01_fact = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
+		produces = {
+			trigger = {
+				owner = {
+					NOR = {
+						has_megastructure = AIO_mega_01
+						has_country_flag = AIO_built_AIO_mega_02
+						has_country_flag = AIO_built_AIO_mega_03
+						has_country_flag = AIO_built_AIO_mega_04
+					}
+				}
+			}
+			AIO_advanced_logic = 500
+		}
+
 		upkeep = {
 			trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
 			energy = 1000
@@ -62,59 +76,9 @@ AIO_mega_01_fact = {
 		event_target:AIO_horizon_engine_effect = { destroy_ambient_object = this }
 		clear_global_event_target = AIO_horizon_engine_effect
 
-		# 加特效
-		fromfrom.planet = {
-			create_ambient_object = {
-				type = "star_explosion"
-				play_animation_once = yes
-				location = this
-
-				effect = {
-					set_location = {
-						target = prev
-						distance = 0
-						angle = random
-					}
-				}
-			}
-			create_ambient_object = {
-				type = "crisis_sphere_1"
-				location = this
-
-				effect = {
-					set_location = {
-						target = prev
-						distance = 0
-						angle = random
-					}
-					save_global_event_target_as = AIO_TUG_system_effect
-				}
-			}
-		}
-
-		# 清除星系内其他巨构
-		AIO_safe_remove_system_megastructures = yes
-		# 清除星系内天体
-		every_system_planet = {
-			if = {
-				limit = { is_star = no }
-				remove_planet = yes
-			}
-			else = {
-				change_pc = pc_AIO_empty_space
-				clear_deposits = yes
-			}
-		}
-		# 改变星系类型
-		set_star_class = sc_black_hole
-		# 改名
-		set_name = AIO_The_Ultimate_Gate
-		# 标志位
-		set_star_flag = AIO_TUG_system
-		save_global_event_target_as = AIO_TUG_system
+		AIO_crisis_effects_manager = { CREATE_TUG_SYSTEM = 1 }
 
 		from = {
-			remove_country_flag = AIO_built_AIO_horizon_engine
 			set_country_flag = AIO_built_AIO_mega_01
 
 			country_event = { id = AIO_crisis_events.401 }
@@ -137,10 +101,7 @@ AIO_mega_01_node = {
 	portrait = "GFX_megastructure_construction_background"
 
 	potential = {
-		OR = {
-			has_country_flag = AIO_finish_merge_cosmos_stage_1
-			is_country_type = AIO_empire
-		}
+		has_country_flag = AIO_built_AIO_mega_01
 	}
 	possible = {
 		custom_tooltip = {
@@ -159,9 +120,7 @@ AIO_mega_01_node = {
 	# bypass类型
 	bypass_type = bypass_AIO_ultimate_gate
 
-	on_build_complete = {
-		system_event = { id = AIO_crisis_events.904 days = 100 }
-	}
+	on_build_complete = { system_event = { id = AIO_crisis_events.904 days = 100 } }
 }
 
 # 无名之雾中的万门之门
@@ -179,7 +138,7 @@ AIO_mega_01 = {
 	build_time = 1
 	resources = {
 		category = megastructures
-		produces = { AIO_advanced_logic = 100 }
+		produces = { AIO_advanced_logic = 1000 }
 
 		upkeep = {
 			energy = 1500
@@ -196,6 +155,7 @@ AIO_mega_01 = {
 		# 加特效
 		create_ambient_object = {
 			type = "AIO_crisis_sphere_effect"
+			play_animation_once = no
 			location = star
 			# 我也不到为啥要上移50才对的准中心，应该是虚空星系原因
 			entity_offset_height = 50
@@ -239,13 +199,14 @@ AIO_mega_02 = {
 			has_menace_perk = menp_AIO_mega_03
 			is_country_type = AIO_empire
 		}
-		NOT = { has_megastructure = AIO_mega_02 }
+		NOT = { has_country_flag = AIO_built_AIO_mega_02 }
 	}
 	dismantle_potential = { always = no }
 
 	upgrade_from = { AIO_mega_01 }
 
 	build_time = 3600
+
 	resources = {
 		category = megastructures
 
@@ -270,7 +231,7 @@ AIO_mega_02 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 500 }
+		produces = { AIO_advanced_logic = 3000 }
 
 		upkeep = {
 			energy = 1000
@@ -285,7 +246,6 @@ AIO_mega_02 = {
 
 	on_build_complete = {
 		from = {
-			remove_country_flag = AIO_built_AIO_mega_01
 			set_country_flag = AIO_built_AIO_mega_02
 
 			country_event = { id = AIO_crisis_events.402 }
@@ -316,6 +276,7 @@ AIO_mega_03 = {
 	upgrade_from = { AIO_mega_02 }
 
 	build_time = 3600
+
 	resources = {
 		category = megastructures
 
@@ -340,7 +301,7 @@ AIO_mega_03 = {
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 1000 }
+		produces = { AIO_advanced_logic = 5000 }
 
 		upkeep = {
 			energy = 2000
@@ -355,7 +316,6 @@ AIO_mega_03 = {
 
 	on_build_complete = {
 		from = {
-			remove_country_flag = AIO_built_AIO_mega_02
 			set_country_flag = AIO_built_AIO_mega_03
 
 			country_event = { id = AIO_crisis_events.403 }
@@ -389,6 +349,7 @@ AIO_mega_04 = {
 	}
 
 	build_time = 3600
+
 	resources = {
 		category = megastructures
 
@@ -432,7 +393,6 @@ AIO_mega_04 = {
 
 	on_build_complete = {
 		from = {
-			remove_country_flag = AIO_built_AIO_mega_03
 			set_country_flag = AIO_built_AIO_mega_04
 
 			country_event = { id = AIO_crisis_events.404 }
@@ -454,8 +414,8 @@ AIO_mega_04_activate = {
 	potential = {
 		is_country_type = AIO_empire
 		NOR = {
-            has_active_event = { AIO_ctrl_events.201 }
-            has_active_event = { AIO_ctrl_events.202 }
+            has_active_event = { AIO_RE_events.201 }
+            has_active_event = { AIO_RE_events.202 }
         }
 	}
 	dismantle_potential = { always = no }
@@ -467,6 +427,6 @@ AIO_mega_04_activate = {
 			upgrade_megastructure_to = AIO_mega_04
 			finish_upgrade = yes
 		}
-		from = { country_event = { id = AIO_ctrl_events.201 } }
+		from = { country_event = { id = AIO_RE_events.201 } }
 	}
 }

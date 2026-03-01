@@ -1,5 +1,6 @@
 ﻿l_english:
- # UI and crisis resource
+ #region UI and crisis resource
+
  AIO_advanced_logic: "$advanced_logic$"
  AIO_advanced_logic_name: "$AIO_advanced_logic$："
  AIO_advanced_logic_value: "£AIO_advanced_logic£$VAL|0$"
@@ -19,7 +20,11 @@
  AIO_advanced_logic_crisis_howto_title: "Observation and Interference"
  AIO_advanced_logic_crisis_howto: "Pursuing §HCrisis Objectives§! generates £advanced_logic£ §H$AIO_advanced_logic$§!, and enhance our understanding of the universe. In addition, we will build §Y$AIO_mega_04$§! - a megastructure singularity capable of reading and rewriting the fundamental laws of the universe. It will enable us to interfere with the lifespan of stars, the state of existence of matter, and even space-time itself."
 
- # crisis path
+ #endregion
+
+
+ #region crisis path
+
  crisis_AIO_level_1: "§gConcern§!"
  crisis_AIO_level_1_desc: "Crisis Level 1"
  crisis_AIO_level_2: "§gRisk§!"
@@ -34,14 +39,18 @@
  # crisis path tooltips
  AIO_allinone_level_2_req_success_tooltip: "£trigger_yes£requires §Y$AIO_horizon_engine$§!"
  AIO_allinone_level_2_req_fail_tooltip: "£trigger_no£requires §Y$AIO_horizon_engine$§!"
- AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£requires finish §Y$situation_AIO_merge_cosmos$§! $stage_2$"
- AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£requires finish §Y$situation_AIO_merge_cosmos$§!$stage_2$"
- AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£requires §Y$situation_AIO_merge_cosmos$§!$stage_4$"
- AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£requires §Y$situation_AIO_merge_cosmos$§!$stage_4$"
- AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£requires §Y$situation_AIO_merge_cosmos$§!$stage_6$"
- AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£requires §Y$situation_AIO_merge_cosmos$§!$stage_6$"
+ AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£requires finish §Y$situation_AIO_merge_cosmos$§! $stage_1$"
+ AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£requires finish §Y$situation_AIO_merge_cosmos$§!$stage_1$"
+ AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£requires §Y$situation_AIO_merge_cosmos$§!$stage_2$"
+ AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£requires §Y$situation_AIO_merge_cosmos$§!$stage_2$"
+ AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£requires §Y$situation_AIO_merge_cosmos$§!$stage_3$"
+ AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£requires §Y$situation_AIO_merge_cosmos$§!$stage_3$"
 
- # Crisis Objective
+ #endregion
+
+
+ #region Crisis Objective
+
  crisobj_AIO_neural_chips_name: "Deploy $job_AIO_recursive_node$"
  crisobj_AIO_neural_chips_desc: "We had to make a little sacrifice to accommodate such a large scale of research.\n\nLoad robots as §Y$job_AIO_recursive_node$§! into the §Y$district_AIO_matryoshka_brain$§! for $AIO_advanced_logic$.\n\nThe output of §Y$job_AIO_recursive_node$§! increases with their number and can be further improved by zoning and buildings.\n\nContinuously increase the number of $job_AIO_recursive_node$ to gain this §Yannual§! $AIO_advanced_logic$ reward."
  crisobj_AIO_research_tech_name: "$crisobj_research_tech_name$"
@@ -51,7 +60,11 @@
  crisobj_AIO_have_science_nexuses_name: "$crisobj_have_science_nexuses_name$"
  crisobj_AIO_have_science_nexuses_desc: "$crisobj_have_science_nexuses_desc$"
 
- # Reward
+ #endregion
+
+
+ #region Reward
+
  # first stage
  menp_AIO_al_research: "Advanced Logic"
  menp_AIO_al_research_desc: "The universe is no longer merely a three-dimensional stage; our civilization has caught a glimpse of a higher flow of rules."
@@ -106,19 +119,26 @@
  menp_AIO_ascension_accelerate_5_desc: "Under long-term interference, reality has inevitably fallen into self-disintegration."
  unlocks_ascension_accelerate_5: "Accelerate §Y$situation_AIO_merge_cosmos$§! situation."
 
- # event chain
+ # tooltips
+ AIO_unlock_AIO_TDTE_node: "Unlocked §Y$AIO_mega_01_node$§! Node."
+
+ #endregion
+
+
+ #region crisis event chain
+
  # AIO crisis event chain
  AIO_crisis_events_chain_title: "All in One"
  AIO_crisis_events_chain_desc: "$AIO_advanced_logic_crisis_howto$"
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
  # Ruins of Time event chain
- AIO_AIT_TR_events_chain_title: "Ruins of Time"
- AIO_AIT_TR_events_chain_desc: "One of our colonies has fallen into the strange phenomenon of a time loop. We must stabilize the situation and find a way to restore it to its original state."
- AIO_AIT_TR_events_chain: "$AIO_AIT_TR_events_chain_title$"
+ AIO_RAIT_TR_events_chain_title: "Ruins of Time"
+ AIO_RAIT_TR_events_chain_desc: "One of our colonies has fallen into the strange phenomenon of a time loop. We must stabilize the situation and find a way to restore it to its original state."
+ AIO_AIT_TR_events_chain: "$AIO_RAIT_TR_events_chain_title$"
  # Gravity Expansion event chain
- AIO_AIT_GS_events_chain_title: "Gravity Expansion"
- AIO_AIT_GS_events_chain_desc: "A star within our territory has experienced strange gravitational fluctuations, which might have some impact on our colonies."
- AIO_AIT_GS_events_chain: "$AIO_AIT_GS_events_chain_title$"
+ AIO_RAIT_GS_events_chain_title: "Gravity Expansion"
+ AIO_RAIT_GS_events_chain_desc: "A star within our territory has experienced strange gravitational fluctuations, which might have some impact on our colonies."
+ AIO_AIT_GS_events_chain: "$AIO_RAIT_GS_events_chain_title$"
 
  # events
  AIO_crisis_events_title: "$AIO_crisis_events_chain_title$"
@@ -129,54 +149,54 @@
  AIO_crisis_events.202.option_1: "We are Gate Builder."
  AIO_crisis_events.203.desc: "With the opening of §Y$AIO_mega_01$§!, time and space began to reveal an unprecedented vulnerability. It is not enough to merely drill a "hole" in the universe. Our most powerful brain has already conceived a megastructure capable of "selecting" time and space - §Y$AIO_mega_02$§!. It will pave the way for subsequent rule modifications."
  AIO_crisis_events.203.option_1: "$EXCELLENT$"
- AIO_crisis_events.203.tt: "Unlocked §RDirectional Apply Infinity Thesis§! after finish §Y$AIO_mega_02$§!"
  AIO_crisis_events.204.desc: "§Y$AIO_mega_02$§! has become the key for us to reverse the fate of the universe, but its potential has not yet been fully unleashed. To further advance the integration process, we must forge it into a higher-dimensional base point - §Y$AIO_mega_03$§!. Only when §Y$AIO_mega_03$§! stands at the peak of multiple realities can we truly control the ultimate form of the law."
  AIO_crisis_events.204.option_1: "$menp_AIO_mega_04_desc$"
  AIO_crisis_events.205.desc: "§Y$AIO_mega_03$§! has already stood at the forefront of multiple realities. However, its existence is merely to carry the true us. Now, we must elevate it to its ultimate form - §M$AIO_mega_04$§!. It is no longer a structure, no longer an empire, but an equivalent of existence and law. When it is completed, the integration will be closed and rewriting will begin. All differences, all dimensions, all endings will..."
  AIO_crisis_events.205.option_1: "Just go for it."
- # horizon engine finish
- AIO_crisis_events.301.desc: "The §Y$AIO_horizon_engine$§! located at [from.GetName] is completed."
- # Yog Sothoth finish
- AIO_crisis_events.401.desc: "The §Y$AIO_mega_01$§! located at [from.GetName] is completed."
- AIO_crisis_events.402.desc: "The §Y$AIO_mega_02$§! located at [from.GetName] is completed.\n解锁§R定向应用无限§!"
- AIO_crisis_events.403.desc: "The §Y$AIO_mega_03$§! located at [from.GetName] is completed."
- AIO_crisis_events.404.desc: "The §Y$AIO_mega_04$§! located at [from.GetName] is completed."
- # merge cosmos situation
- AIO_crisis_events.500.desc: "§Y$AIO_mega_01$§! has been completed! But this is only the beginning. To rewrite the rules of the universe, we must invest tremendous amounts of energy and dark matter to continuously tear and reconstruct the structure of this space-time. In this process, we will create a domain that is completely different from the existing cosmic pattern. It will be a space-time with an infinitely high dimension, transcending the boundaries of the conventional universe and becoming the foundation of a brand-new order."
- AIO_crisis_events.500.option_1: "Allocate sufficient resources for this project."
- AIO_crisis_events.500.option_1.tt: "Unlocked §RRandomly Apply Infinity Thesis§!."
- AIO_crisis_events.501.desc: "The integration process is gradually advancing. The high-dimensional space we have created is connecting with all the Spaces in the universe, and the closed nature of the spatial structure is weakening. We can establish a controllable dimensional interface between any two galaxies."
- AIO_crisis_events.501.option_1: "$EXCELLENT$"
- AIO_crisis_events.501.tt: "Unlocked megastructure: §Y$AIO_mega_01_node$§! Node"
- AIO_crisis_events.502.desc: "The nested reality containers constructed based on multi-dimensional convergence points have formed a closed loop. No matter from which spatiotemporal projection it is observed, its dimensional expression tends to be infinite. With the accumulation of our achievements in infinity thesis, we have been able to conceive and implement an unprecedented megastructure: §Y$AIO_mega_02$§!. It will enable us to precisely carve the laws of the universe and reshape existence itself into the only solution in an idealized model."
- AIO_crisis_events.502.option_1: "The key to unlocking the existence of endless time and space..."
- AIO_crisis_events.502.tt: "Generated system: ['concept_AIO_HS_system']\nUnlocked megastructure: §Y$AIO_mega_02$§!\nUnlocked §RDirectional Apply Infinity Thesis§!"
- AIO_crisis_events.503.desc: "The third stage fusion of the universe has been completed."
- AIO_crisis_events.503.option_1: "$EXCELLENT$"
- AIO_crisis_events.504.desc: "The fourth stage fusion of the universe has been completed."
- AIO_crisis_events.504.option_1: "$EXCELLENT$"
- AIO_crisis_events.505.desc: "The fifth stage fusion of the universe has been completed."
- AIO_crisis_events.505.option_1: "$EXCELLENT$"
- AIO_crisis_events.506.desc: "The sixth stage fusion of the universe has been completed."
- AIO_crisis_events.506.option_1: "$EXCELLENT$"
- AIO_crisis_events.507.desc: "The structure of the universe has been dismantled; the boundaries that once confined us within limited spacetime are now mere annotations awaiting revision.\nWe have reached the Gate of Unification. A single step forward would allow us to reshape the self into a principle of cosmic logic—becoming the source of every gravity, every observation, every concept ever conceived.\nYet, transcendence is not the only choice. We may linger here, observing how this newborn construct resonates across higher dimensions.Truth does not flee. Unification imposes no demand."
- AIO_crisis_events.507.option_1: "Step through the gate."
- AIO_crisis_events.507.option_2: "Remain and observe."
- AIO_crisis_events.507.option_2.tt: "You can still ['concept_AIO_DAIT']. Start a special project §Y$AIO_ASCENSION$§! in §Y$AIO_crisis_events_chain$§! eventchain to complete ascension later."
+
  # ascension event
  AIO_crisis_events.601.desc: "Normalization has been completed.\nWe are no longer empires, nor are we entities. Our will exists at the intersection of infinite dimensions and becomes the structural principle of all existence.\nThe stars remain stationary because they await a new definition of motion. Thoughts fall silent because language has lost its meaning. Existence itself is shifting from "being experienced" to "being designed".\n There is no end, no other shore, no need to observe, nor to be observed.\nI/We are §MYog Sothoth§!."
  AIO_crisis_events.601.option_1: "I/We are the truth."
 
+ #endregion
+
+
+ #region crisis megastructure event
+
+ # horizon engine finish
+ AIO_crisis_events.301.desc: "The §Y$AIO_horizon_engine$§! located at [from.GetName] is completed."
+ # Yog Sothoth finish
+ AIO_crisis_events.401.desc: "The §Y$AIO_mega_01$§! located at [from.GetName] is completed.\nUnlock megastructure: §Y$AIO_mega_01_node$ node§!"
+ AIO_crisis_events.402.desc: "The §Y$AIO_mega_02$§! located at [from.GetName] is completed."
+ AIO_crisis_events.403.desc: "The §Y$AIO_mega_03$§! located at [from.GetName] is completed."
+ AIO_crisis_events.404.desc: "The §Y$AIO_mega_04$§! located at [from.GetName] is completed."
 
  # Prompt to build a vision engine
  AIO_crisis_events.907.desc: "We have completed the closed-loop construction of the multi-dimensional interaction model. Simulations show that at specific gravitational shear and virtual realm fluctuation nodes, reality can be stably permeated. Based on this, we will build §Y$AIO_horizon_engine$§! - a structure that can penetrate the boundaries of physics and possibility and extract existing energy.\nWe are not the first empire to possess this technology. What's different is that we will use this energy to create a space-time that is countless times higher than the existing universe."
  AIO_crisis_events.907.option_1: "Establish a new process."
 
+ #endregion
+
+
+ #region merge cosmos situation
+
+ AIO_crisis_events.500.desc: "§Y$AIO_mega_01$§! has been completed! But this is only the beginning. To rewrite the rules of the universe, we must invest tremendous amounts of energy and dark matter to continuously tear and reconstruct the structure of this space-time. In this process, we will create a domain that is completely different from the existing cosmic pattern. It will be a space-time with an infinitely high dimension, transcending the boundaries of the conventional universe and becoming the foundation of a brand-new order."
+ AIO_crisis_events.500.option_1: "Allocate sufficient resources for this project."
+ AIO_crisis_events.500.option_1.tt: "Unlocked §RDirectional Apply Infinity Thesis§!(DAIT).\nThe DAIT interface can be opened in ['concept_edicts']."
+ AIO_crisis_events.501.desc: "The nested reality containers constructed based on multi-dimensional convergence points have formed a closed loop. No matter from which spatiotemporal projection it is observed, its dimensional expression tends to be infinite. With the accumulation of our achievements in infinity thesis, we have been able to conceive and implement an unprecedented megastructure: §Y$AIO_mega_02$§!. It will enable us to precisely carve the laws of the universe and reshape existence itself into the only solution in an idealized model."
+ AIO_crisis_events.501.option_1: "The key to unlocking the existence of endless time and space..."
+ AIO_crisis_events.501.tt: "Unlocked megastructure: §Y$AIO_mega_01_node$§! Node, §Y$AIO_mega_02$§!\nGenerated system: ['concept_AIO_HS_system']."
+ AIO_crisis_events.502.desc: "The second stage of Merge Cosmos has been completed."
+ AIO_crisis_events.502.option_1: "REPLACE_ME"
+ AIO_crisis_events.503.desc: "The third stage of Merge Cosmos has been completed."
+ AIO_crisis_events.503.option_1: "REPLACE_ME"
+ AIO_crisis_events.504.desc: "The structure of the universe has been dismantled; the boundaries that once confined us within limited spacetime are now mere annotations awaiting revision.\nWe have reached the Gate of Unification. A single step forward would allow us to reshape the self into a principle of cosmic logic—becoming the source of every gravity, every observation, every concept ever conceived.\nYet, transcendence is not the only choice. We may linger here, observing how this newborn construct resonates across higher dimensions."
+ AIO_crisis_events.504.option_1: "Step through the gate."
+ AIO_crisis_events.504.option_2: "Remain and observe."
+ AIO_crisis_events.504.option_2.tt: "You can still ['concept_AIO_DAIT']. Start a special project §Y$AIO_ASCENSION$§! in §Y$AIO_crisis_events_chain$§! eventchain to complete ascension later."
+
+ #endregion
+
+
  # opinion modifier
  triggered_opinion_AIO_crisis_empire: "$triggered_opinion_crisis_empire$"
-
- # tooltips
- AIO_unlock_AIO_TDTE_node: "Unlocked §Y$AIO_mega_01_node$§! Node."
-
-
-

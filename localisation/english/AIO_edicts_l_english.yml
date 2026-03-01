@@ -7,3 +7,5 @@
  edict_edict_AIO_living_metal_construction_desc: "The ductility and activity of living metals allow us to create alloys with better performance, and the architecturally strong structure greatly reduces the number of calculations and repairs before construction."
  edict_edict_AIO_nanite_farming: "Nanites Farming"
  edict_edict_AIO_nanite_farming_desc: "Use nanites to edit and repair crop genes to improve crop yield and quality."
+
+ edict_edict_AIO_invoke_DAIT_menu: "Directional Apply Infinity Thesis"

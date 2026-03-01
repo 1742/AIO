@@ -67,7 +67,7 @@ crisis_AIO_level_3 = {
 			success_text = AIO_allinone_level_3_req_success_tooltip
 			fail_text = AIO_allinone_level_3_req_fail_tooltip
 			OR = {
-				has_country_flag = AIO_finish_merge_cosmos_stage_2
+				has_country_flag = AIO_finish_merge_cosmos_stage_1
 				has_country_flag = AIO_empire_country
 			}
 		}
@@ -101,7 +101,7 @@ crisis_AIO_level_4 = {
 			success_text = AIO_allinone_level_4_req_success_tooltip
 			fail_text = AIO_allinone_level_4_req_fail_tooltip
 			OR = {
-				has_country_flag = AIO_finish_merge_cosmos_stage_4
+				has_country_flag = AIO_finish_merge_cosmos_stage_2
 				has_country_flag = AIO_empire_country
 			}
 		}
@@ -134,7 +134,7 @@ crisis_AIO_level_5 = {
 			success_text = AIO_allinone_level_5_req_success_tooltip
 			fail_text = AIO_allinone_level_5_req_fail_tooltip
 			OR = {
-				has_country_flag = AIO_finish_merge_cosmos_stage_6
+				has_country_flag = AIO_finish_merge_cosmos_stage_3
 				has_country_flag = AIO_empire_country
 			}
 		}

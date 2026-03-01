@@ -1,9 +1,8 @@
 # AIO万物归一科技
+@EnigmaticEngineeringDraw = 0.025
 
+#region 天灾科技
 
-# ---------------------------------- #
-# 天灾科技
-# ---------------------------------- #
 tech_AIO_exponential_learning_theory = {
 	icon = tech_cosmogenesis_crisis_1
 	area = physics
@@ -51,10 +50,11 @@ tech_AIO_ascending_dimensionality_theory = {
     }
 }
 
+#endregion
 
-# ---------------------------------- #
-# 老登建筑科技
-# ---------------------------------- #
+
+#region 老登建筑科技
+
 tech_AIO_fe_automatication = {
     icon = tech_construction_templates
 
@@ -63,21 +63,34 @@ tech_AIO_fe_automatication = {
     tier = 4
     category = { industry }
     ai_update_type = all
-    weight = 1
+    weight = @tier5weight3
     is_rare = yes
 
-    potential = { has_menace_perk = menp_AIO_buildings_1 }
+    potential = { has_ascension_perk = ap_AIO_allinone }
 
     prerequisites = { tech_construction_templates }
 
-    modifier = { planet_building_build_speed_mult = 0.1 }
+    modifier = {
+		planet_building_build_speed_mult = 0.1
+		bonus_automated_workforce_mult = 0.5
+	}
 
     weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_1
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_1 }
+		}
         modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -93,17 +106,27 @@ tech_AIO_fe_forge_1 = {
 	tier = @fallentechtier
 	category = { industry }
 	ai_update_type = all
-	weight = 1
+	weight = @tier5weight3
 	is_rare = yes
 
-	potential = { has_menace_perk = menp_AIO_buildings_1 }
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_1
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_1 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -121,8 +144,6 @@ tech_AIO_fe_forge_2 = {
 	ai_update_type = all
 	weight = @tier5weight3
 	is_rare = yes
-
-	potential = { has_menace_perk = menp_AIO_buildings_1 }
 
 	prerequisites = { "tech_AIO_fe_forge_1" }
 
@@ -142,17 +163,27 @@ tech_AIO_fe_fabricator_1 = {
 	tier = @fallentechtier
 	category = { materials }
 	ai_update_type = all
-	weight = 1
+	weight = @tier5weight3
 	is_rare = yes
 
-	potential = { has_menace_perk = menp_AIO_buildings_1 }
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_1
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_1 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -170,8 +201,6 @@ tech_AIO_fe_fabricator_2 = {
 	ai_update_type = all
 	weight = @tier5weight3
 	is_rare = yes
-
-	potential = { has_menace_perk = menp_AIO_buildings_1 }
 
 	prerequisites = { "tech_AIO_fe_fabricator_1" }
 
@@ -191,17 +220,27 @@ tech_AIO_fe_singularity_1 = {
 	tier = @fallentechtier
 	category = { particles }
 	ai_update_type = all
-	weight = 1
+	weight = @tier5weight3
 	is_rare = yes
 
-	potential = { has_menace_perk = menp_AIO_buildings_2 }
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_2
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_2 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -219,8 +258,6 @@ tech_AIO_fe_singularity_2 = {
 	ai_update_type = all
 	weight = @tier5weight3
 	is_rare = yes
-
-	potential = { has_menace_perk = menp_AIO_buildings_2 }
 
 	prerequisites = { "tech_AIO_fe_singularity_1" }
 
@@ -240,17 +277,27 @@ tech_AIO_fe_mine_1 = {
 	tier = @fallentechtier
 	category = { materials }
 	ai_update_type = all
-	weight = 1
+	weight = @tier5weight3
 	is_rare = yes
 
-	potential = { has_menace_perk = menp_AIO_buildings_2 }
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_2
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_2 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -268,8 +315,6 @@ tech_AIO_fe_mine_2 = {
 	ai_update_type = all
 	weight = @tier5weight3
 	is_rare = yes
-
-	potential = { has_menace_perk = menp_AIO_buildings_2 }
 
 	prerequisites = { "tech_AIO_fe_mine_1" }
 
@@ -289,22 +334,31 @@ tech_AIO_fe_food_1 = {
 	tier = @fallentechtier
 	category = { biology }
 	ai_update_type = all
-	weight = 1
+	weight = @tier5weight3
 	is_rare = yes
 
-	potential = { has_menace_perk = menp_AIO_buildings_2 }
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_2
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_2 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
 		}
-
 		modifier = {
 			factor = 2
 			country_uses_bio_ships = yes
@@ -322,8 +376,6 @@ tech_AIO_fe_food_2 = {
 	ai_update_type = all
 	weight = @tier5weight3
 	is_rare = yes
-
-	potential = { has_menace_perk = menp_AIO_buildings_2 }
 
 	prerequisites = { "tech_AIO_fe_food_1" }
 
@@ -343,17 +395,27 @@ tech_AIO_fe_silo_1 = {
 	tier = @fallentechtier
 	category = { field_manipulation }
 	ai_update_type = all
-	weight = 1
+	weight = @tier5weight3
 	is_rare = yes
 
-	potential = { has_menace_perk = menp_AIO_buildings_3 }
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_3
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_3 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -371,8 +433,6 @@ tech_AIO_fe_silo_2 = {
 	ai_update_type = all
 	weight = @tier5weight3
 	is_rare = yes
-
-	potential = { has_menace_perk = menp_AIO_buildings_3 }
 
 	prerequisites = { "tech_AIO_fe_silo_1" }
 
@@ -395,14 +455,24 @@ tech_AIO_fe_market_1 = {
 	weight = @tier5weight3
 	is_rare = yes
 
-	potential = { has_menace_perk = menp_AIO_buildings_3 }
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_3
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_3 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -441,17 +511,27 @@ tech_AIO_fe_security_1 = {
 	tier = @fallentechtier
 	category = { statecraft }
 	ai_update_type = all
-	weight = 1
+	weight = @tier5weight3
 	is_rare = yes
 
-	potential = { has_menace_perk = menp_AIO_buildings_3 }
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_3
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_3 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -469,8 +549,6 @@ tech_AIO_fe_security_2 = {
 	ai_update_type = all
 	weight = @tier5weight3
 	is_rare = yes
-
-	potential = { has_menace_perk = menp_AIO_buildings_3 }
 
 	prerequisites = { "tech_AIO_fe_security_1" }
 
@@ -490,17 +568,27 @@ tech_AIO_fe_administration_1 = {
 	tier = @fallentechtier
 	category = { statecraft }
 	ai_update_type = all
-	weight = 1
+	weight = @tier5weight3
 	is_rare = yes
 
-	potential = { has_menace_perk = menp_AIO_buildings_4 }
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_4
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_4 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -518,8 +606,6 @@ tech_AIO_fe_administration_2 = {
 	ai_update_type = all
 	weight = @tier5weight3
 	is_rare = yes
-
-	potential = { has_menace_perk = menp_AIO_buildings_4 }
 
 	prerequisites = { "tech_AIO_fe_administration_1" }
 
@@ -539,17 +625,27 @@ tech_AIO_fe_lab_1 = {
 	tier = @fallentechtier
 	category = { computing }
 	ai_update_type = all
-	weight = 1
+	weight = @tier5weight3
 	is_rare = yes
 
-	potential = { has_menace_perk = menp_AIO_buildings_4 }
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_4
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_4 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -567,8 +663,6 @@ tech_AIO_fe_lab_2 = {
 	ai_update_type = all
 	weight = @tier5weight3
 	is_rare = yes
-
-	potential = { has_menace_perk = menp_AIO_buildings_4 }
 
 	prerequisites = { "tech_AIO_fe_lab_1" }
 
@@ -588,17 +682,27 @@ tech_AIO_fe_fortress_1 = {
 	tier = @fallentechtier
 	category = { military_theory }
 	ai_update_type = all
-	weight = 1
+	weight = @tier5weight3
 	is_rare = yes
 
-	potential = { has_menace_perk = menp_AIO_buildings_4 }
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_4
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_4 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -616,8 +720,6 @@ tech_AIO_fe_fortress_2 = {
 	ai_update_type = all
 	weight = @tier5weight3
 	is_rare = yes
-
-	potential = { has_menace_perk = menp_AIO_buildings_4 }
 
 	prerequisites = { "tech_AIO_fe_fortress_1" }
 
@@ -637,17 +739,27 @@ tech_AIO_fe_dome_1 = {
 	tier = @fallentechtier
 	category = { statecraft }
 	ai_update_type = all
-	weight = 1
+	weight = @tier5weight3
 	is_rare = yes
 
-	potential = { has_menace_perk = menp_AIO_buildings_5 }
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_5
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_5 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -665,8 +777,6 @@ tech_AIO_fe_dome_2 = {
 	ai_update_type = all
 	weight = @tier5weight3
 	is_rare = yes
-
-	potential = { has_menace_perk = menp_AIO_buildings_5 }
 
 	prerequisites = { "tech_AIO_fe_dome_1" }
 
@@ -686,20 +796,37 @@ tech_AIO_fe_assembly_1 = { #Not for Hives
 	tier = @fallentechtier
 	category = { industry }
 	ai_update_type = all
-	weight = 1
+	weight = @tier5weight3
 	is_rare = yes
 
-	potential = {
-		is_machine_empire = yes
-		has_menace_perk = menp_AIO_buildings_5
-	}
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			OR = {
+				AND = {
+					is_gestalt = no
+					has_policy_flag = robots_outlawed
+				}
+				is_hive_empire = yes
+			}
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_5
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_5 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -717,11 +844,6 @@ tech_AIO_fe_assembly_2 = { #Not for Hives
 	ai_update_type = all
 	weight = @tier5weight3
 	is_rare = yes
-
-	potential = {
-		is_machine_empire = yes
-		has_menace_perk = menp_AIO_buildings_5
-	}
 
 	prerequisites = { "tech_AIO_fe_assembly_1" }
 
@@ -744,17 +866,28 @@ tech_AIO_fe_clinic_1 = { #Not for Machines
 	weight = @tier5weight3
 	is_rare = yes
 
-	potential = {
-		is_hive_empire = yes
-		has_menace_perk = menp_AIO_buildings_5
-	}
+	potential = { has_ascension_perk = ap_AIO_allinone }
 
 	weight_modifier = {
+		modifier = {
+			factor = 0
+			is_synthetic_empire = yes
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_menace_perk = menp_AIO_buildings_5
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = @EnigmaticEngineeringDraw
+			NOT = { has_menace_perk = menp_AIO_buildings_5 }
+		}
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-
 		modifier = {
 			factor = 2
 			capital_scope = { num_assigned_jobs = { job = AIO_recursive_node value > 5000 } }
@@ -773,11 +906,6 @@ tech_AIO_fe_clinic_2 = { #Not for Machines
 	weight = @tier5weight3
 	is_rare = yes
 
-	potential = {
-		is_hive_empire = yes
-		has_menace_perk = menp_AIO_buildings_5
-	}
-
 	prerequisites = { "tech_AIO_fe_clinic_1" }
 
 	weight_modifier = {
@@ -787,3 +915,5 @@ tech_AIO_fe_clinic_2 = { #Not for Machines
 		}
 	}
 }
+
+#endregion

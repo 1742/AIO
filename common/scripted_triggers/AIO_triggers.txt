@@ -13,15 +13,15 @@ AIO_can_AIT = {
 AIO_AIT_all_random = {
     optimize_memory
 
-    has_global_flag = AIO_AIT_existed_blackout
-    has_global_flag = AIO_AIT_existed_constant_round
-    has_global_flag = AIO_AIT_existed_superlight
-    has_global_flag = AIO_AIT_existed_alloy_ductility
-    has_global_flag = AIO_AIT_existed_altered_nutrition
-    has_global_flag = AIO_AIT_existed_mass_shift
-    has_global_flag = AIO_AIT_existed_shroud_tear
-    has_global_flag = AIO_AIT_existed_time_ruin
-    has_global_flag = AIO_AIT_existed_gravity_swell
+    has_global_flag = AIO_RAIT_existed_blackout
+    has_global_flag = AIO_RAIT_existed_constant_round
+    has_global_flag = AIO_RAIT_existed_superlight
+    has_global_flag = AIO_RAIT_existed_alloy_ductility
+    has_global_flag = AIO_RAIT_existed_altered_nutrition
+    has_global_flag = AIO_RAIT_existed_mass_shift
+    has_global_flag = AIO_RAIT_existed_shroud_tear
+    has_global_flag = AIO_RAIT_existed_time_ruin
+    has_global_flag = AIO_RAIT_existed_gravity_swell
 }
 
 # 在AIO帝国范围使用

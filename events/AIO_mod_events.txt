@@ -2,10 +2,7 @@
 namespace = AIO_mod_events
 
 
-# ---------------------------------- #
 # 更新提醒
-# ---------------------------------- #
-
 country_event = {
     id = AIO_mod_events.201
     title = AIO_Tawi_full_name
@@ -21,7 +18,9 @@ country_event = {
 
     is_triggered_only = yes
 
-    immediate = { set_global_flag = AIO_mod_active }
+    immediate = {
+        set_global_flag = AIO_mod_active
+    }
 
     option = {
         name = AIO_mod_events.201.option_1
@@ -31,30 +30,6 @@ country_event = {
     option = {
         name = AIO_mod_events.201.option_2
         response_text = AIO_mod_events.201.option_2.response
-        is_dialog_only = yes
-    }
-
-    option = {
-        name = AIO_mod_events.201.option_3
-        response_text = AIO_mod_events.201.option_3.response
-        is_dialog_only = yes
-    }
-
-    option = {
-        name = AIO_mod_events.201.option_4
-        response_text = AIO_mod_events.201.option_4.response
-        is_dialog_only = yes
-    }
-
-    option = {
-        name = AIO_mod_events.201.option_5
-        response_text = AIO_mod_events.201.option_5.response
-        is_dialog_only = yes
-    }
-
-    option = {
-        name = AIO_mod_events.201.option_6
-        response_text = AIO_mod_events.201.option_6.response
         is_dialog_only = yes
     }
 }

@@ -1,0 +1,2005 @@
+guiTypes = {
+
+    ### FACTION OVERVIEW GUI ###
+
+    containerWindowType = {
+        name = "AIO_DAIT"
+        orientation = "center"
+        origo = "center"
+        moveable = yes
+        size = { width = 1058 height = 593 }
+
+        background = {
+            name = "background"
+            quadTextureSprite = "GFX_AIO_DAIT_Bg"
+        }
+
+        buttonType = {
+            name = "close"
+            quadTextureSprite = "GFX_AIO_DAIT_Exit_Button"
+            orientation = "upper_left"
+            position = { x = 905 y = 19 }
+            size = { x = 135 y = 40 }
+            shortcut = "ESCAPE"
+            clicksound = "back_click"
+        }
+
+
+        #region Sidebar
+
+        containerWindowType = {
+            name = "sidebar"
+            orientation = "upper_left"
+            position = { x = 0 y = 80 }
+
+            effectButtonType = {
+                name = "sidebar_material_deactive"
+                orientation = "upper_left"
+                position = { x = 15 y = 5 }
+                quadTextureSprite = "GFX_AIO_DAIT_Sidebar_Button"
+                buttonFont = "cg_16b"
+                buttonText = "AIO_DAIT_sidebar_material"
+                effect = "AIO_DAIT_Sidebar_Material_Button_Deactive"
+                multiline = yes
+            }
+            effectButtonType = {
+                name = "sidebar_material_active"
+                orientation = "upper_left"
+                position = { x = 15 y = 5 }
+                quadTextureSprite = "GFX_AIO_DAIT_Sidebar_Button_Active"
+                buttonFont = "cg_16b"
+                buttonText = "AIO_DAIT_sidebar_material"
+                effect = "AIO_DAIT_Sidebar_Material_Button_Active"
+                alwaysTransparent = yes
+                multiline = yes
+            }
+
+            effectButtonType = {
+                name = "sidebar_energy_deactive"
+                orientation = "upper_left"
+                position = { x = 15 y = 58 }
+                quadTextureSprite = "GFX_AIO_DAIT_Sidebar_Button"
+                buttonFont = "cg_16b"
+                buttonText = "AIO_DAIT_sidebar_energy"
+                effect = "AIO_DAIT_Sidebar_Energy_Button_Deactive"
+                multiline = yes
+            }
+            effectButtonType = {
+                name = "sidebar_energy_active"
+                orientation = "upper_left"
+                position = { x = 15 y = 58 }
+                quadTextureSprite = "GFX_AIO_DAIT_Sidebar_Button_Active"
+                buttonFont = "cg_16b"
+                buttonText = "AIO_DAIT_sidebar_energy"
+                effect = "AIO_DAIT_Sidebar_Energy_Button_Active"
+                alwaysTransparent = yes
+                multiline = yes
+            }
+
+            effectButtonType = {
+                name = "sidebar_metric_deactive"
+                orientation = "upper_left"
+                position = { x = 15 y = 111 }
+                quadTextureSprite = "GFX_AIO_DAIT_Sidebar_Button"
+                buttonFont = "cg_16b"
+                buttonText = "AIO_DAIT_sidebar_metric"
+                effect = "AIO_DAIT_Sidebar_Metric_Button_Deactive"
+                multiline = yes
+            }
+            effectButtonType = {
+                name = "sidebar_metric_active"
+                orientation = "upper_left"
+                position = { x = 15 y = 111 }
+                quadTextureSprite = "GFX_AIO_DAIT_Sidebar_Button_Active"
+                buttonFont = "cg_16b"
+                buttonText = "AIO_DAIT_sidebar_metric"
+                effect = "AIO_DAIT_Sidebar_Metric_Button_Active"
+                alwaysTransparent = yes
+                multiline = yes
+            }
+        }
+
+        #endregion
+
+
+        #region Menu
+
+        #region Material
+
+        containerWindowType = {
+            name = "material_view"
+            orientation = upper_left
+            position = { x = 220 y = 110 }
+            size = { x = 820 y = 400 }
+
+            # 第一页
+            containerWindowType = {
+                name = "AIO_DAIT_material_option.1"
+                orientation = upper_left
+                position = { x = 0 y = 0 }
+                size = { width = 100% height = 120 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.1.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_1_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.1.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_1_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.1.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_1_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_1_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.1.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_1_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_1_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = upper_left
+                    position = { x = 10 y = 110 }
+                    effect = AIO_DAIT_material_option_1_separate_line
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "AIO_DAIT_material_option.2"
+                orientation = upper_left
+                position = { x = 0 y = 120 }
+                size = { width = 100% height = 140 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.2.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_2_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.2.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_2_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_material_option.2.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = no
+                    effect = AIO_DAIT_material_option_2_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_2_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.2.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_2_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_2_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = upper_left
+                    position = { x = 10 y = 130 }
+                    effect = AIO_DAIT_material_option_2_separate_line
+                    alwaysTransparent = yes
+                }
+            }
+
+            # 第二页
+            containerWindowType = {
+                name = "AIO_DAIT_material_option.3"
+                orientation = upper_left
+                position = { x = 0 y = 0 }
+                size = { width = 100% height = 120 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.3.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_3_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.3.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_3_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.3.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_3_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_3_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.3.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_3_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_3_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "AIO_DAIT_material_option_3_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "AIO_DAIT_material_option.4"
+                orientation = upper_left
+                position = { x = 0 y = 120 }
+                size = { width = 100% height = 120 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.4.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_4_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.4.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_4_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.4.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_4_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_4_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.4.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_4_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_4_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "AIO_DAIT_material_option_4_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            # 第三页
+            containerWindowType = {
+                name = "AIO_DAIT_material_option.5"
+                orientation = upper_left
+                position = { x = 0 y = 0 }
+                size = { width = 100% height = 140 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.5.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_5_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.5.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_5_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_material_option.5.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_5_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_5_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.5.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_5_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_5_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "AIO_DAIT_material_option_5_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "AIO_DAIT_material_option.6"
+                orientation = upper_left
+                position = { x = 0 y = 140 }
+                size = { width = 100% height = 120 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.6.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_6_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.6.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_6_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.6.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_6_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_6_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.6.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_6_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_6_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "AIO_DAIT_material_option_6_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            # 第四页
+            containerWindowType = {
+                name = "AIO_DAIT_material_option.7"
+                orientation = upper_left
+                position = { x = 0 y = 0 }
+                size = { width = 100% height = 140 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_material_option.7.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_material_option_7_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_material_option.7.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_7_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_material_option.7.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_material_option_7_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_7_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_material_option.7.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_material_option_7_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_material_option_7_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "AIO_DAIT_material_option_7_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            # 切页
+            containerWindowType = {
+                name = "page_change"
+                orientation = upper_left
+                position = { x = 670 y = 360 }
+                size = { width = 150 height = 30 }
+                
+                effectButtonType = { 
+                    name = "last_page"
+                    orientation = upper_left
+                    position = { x = 0 y = 0 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Last_Page_Button"
+                    effect = AIO_DAIT_material_view_last_page_button
+                }
+                
+                effectButtonType = { 
+                    name = "page"
+                    orientation = upper_left
+                    position = { x = 30 y = 5 }
+                    size = { x = 80 y = 20 }
+                    buttonText = AIO_DAIT_material_current_page
+                    buttonFont = cg_16b
+                    format = center
+                    multiline = no
+                    effect = AIO_DAIT_material_view_current_page
+                    alwaysTransparent = yes
+                }
+                
+                effectButtonType = { 
+                    name = "next_page"
+                    orientation = upper_left
+                    position = { x = 112 y = 0 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Next_Page_Button"
+                    effect = AIO_DAIT_material_view_next_page_button
+                }
+            }
+        }
+
+        #endregion
+
+
+        #region Energy and Interactions
+
+        containerWindowType = {
+            name = "energy_view"
+            orientation = upper_left
+            position = { x = 220 y = 110 }
+            size = { x = 820 y = 400 }
+
+            # 第一页
+            containerWindowType = {
+                name = "AIO_DAIT_energy_option.1"
+                orientation = upper_left
+                position = { x = 0 y = 0 }
+                size = { width = 100% height = 140 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_energy_option.1.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_energy_option_1_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.1.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_1_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_energy_option.1.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_1_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_energy_option_1_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.1.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_energy_option_1_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_energy_option_1_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = upper_left
+                    position = { x = 10 y = 130 }
+                    effect = AIO_DAIT_energy_option_1_separate_line
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "AIO_DAIT_energy_option.2"
+                orientation = upper_left
+                position = { x = 0 y = 140 }
+                size = { width = 100% height = 120 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_energy_option.2.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_energy_option_2_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.2.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_2_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.2.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = no
+                    effect = AIO_DAIT_energy_option_2_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_energy_option_2_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.2.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_energy_option_2_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_energy_option_2_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = upper_left
+                    position = { x = 10 y = 110 }
+                    effect = AIO_DAIT_energy_option_2_separate_line
+                    alwaysTransparent = yes
+                }
+            }
+
+            # 第二页
+            containerWindowType = {
+                name = "AIO_DAIT_energy_option.3"
+                orientation = upper_left
+                position = { x = 0 y = 0 }
+                size = { width = 100% height = 140 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_energy_option.3.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_energy_option_3_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.3.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_3_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_energy_option.3.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_3_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_energy_option_3_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.3.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_energy_option_3_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_energy_option_3_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "AIO_DAIT_energy_option_3_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "AIO_DAIT_energy_option.4"
+                orientation = upper_left
+                position = { x = 0 y = 140 }
+                size = { width = 100% height = 120 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_energy_option.4.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_energy_option_4_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.4.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_4_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.4.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_4_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_energy_option_4_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.4.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_energy_option_4_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_energy_option_4_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "AIO_DAIT_energy_option_4_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            # 第三页
+            containerWindowType = {
+                name = "AIO_DAIT_energy_option.5"
+                orientation = upper_left
+                position = { x = 0 y = 0 }
+                size = { width = 100% height = 180 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_energy_option.5.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_energy_option_5_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.5.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_5_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 80 }
+                    buttonText = AIO_DAIT_energy_option.5.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_5_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 125 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_energy_option_5_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 131 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.5.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_energy_option_5_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 125 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_energy_option_5_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 170 }
+                    effect = "AIO_DAIT_energy_option_5_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "AIO_DAIT_energy_option.6"
+                orientation = upper_left
+                position = { x = 0 y = 180 }
+                size = { width = 100% height = 120 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_energy_option.6.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_energy_option_6_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.6.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_6_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.6.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_energy_option_6_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_energy_option_6_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_energy_option.6.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_energy_option_6_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_energy_option_6_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 110 }
+                    effect = "AIO_DAIT_energy_option_6_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            # 切页
+            containerWindowType = {
+                name = "page_change"
+                orientation = upper_left
+                position = { x = 670 y = 360 }
+                size = { width = 150 height = 30 }
+
+                effectButtonType = {
+                    name = "last_page"
+                    orientation = upper_left
+                    position = { x = 0 y = 0 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Last_Page_Button"
+                    effect = AIO_DAIT_energy_view_last_page_button
+                }
+
+                effectButtonType = {
+                    name = "page"
+                    orientation = upper_left
+                    position = { x = 30 y = 5 }
+                    size = { x = 80 y = 20 }
+                    buttonText = AIO_DAIT_energy_current_page
+                    buttonFont = cg_16b
+                    format = center
+                    multiline = no
+                    effect = AIO_DAIT_energy_view_current_page
+                    alwaysTransparent = yes
+                }
+
+                effectButtonType = {
+                    name = "next_page"
+                    orientation = upper_left
+                    position = { x = 112 y = 0 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Next_Page_Button"
+                    effect = AIO_DAIT_energy_view_next_page_button
+                }
+            }
+        }
+
+        #endregion
+
+
+        #region Time-Space Metric
+
+        containerWindowType = {
+            name = "metric_view"
+            orientation = upper_left
+            position = { x = 220 y = 110 }
+            size = { x = 820 y = 400 }
+
+            # 第一页
+            containerWindowType = {
+                name = "AIO_DAIT_metric_option.1"
+                orientation = upper_left
+                position = { x = 0 y = 0 }
+                size = { width = 100% height = 120 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_metric_option.1.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_metric_option_1_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.1.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_1_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.1.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_1_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_metric_option_1_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 71 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.1.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_metric_option_1_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 65 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_metric_option_1_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = upper_left
+                    position = { x = 10 y = 110 }
+                    effect = AIO_DAIT_metric_option_1_separate_line
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "AIO_DAIT_metric_option.2"
+                orientation = upper_left
+                position = { x = 0 y = 120 }
+                size = { width = 100% height = 140 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_metric_option.2.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_metric_option_2_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.2.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_2_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_metric_option.2.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_2_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_metric_option_2_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.2.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_metric_option_2_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_metric_option_2_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = upper_left
+                    position = { x = 10 y = 130 }
+                    effect = AIO_DAIT_metric_option_2_separate_line
+                    alwaysTransparent = yes
+                }
+            }
+
+            # 第二页
+            containerWindowType = {
+                name = "AIO_DAIT_metric_option.3"
+                orientation = upper_left
+                position = { x = 0 y = 0 }
+                size = { width = 100% height = 140 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_metric_option.3.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_metric_option_3_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.3.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_3_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_metric_option.3.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_3_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_metric_option_3_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.3.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_metric_option_3_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_metric_option_3_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "AIO_DAIT_metric_option_3_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "AIO_DAIT_metric_option.4"
+                orientation = upper_left
+                position = { x = 0 y = 140 }
+                size = { width = 100% height = 160 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_metric_option.4.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_metric_option_4_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.4.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_4_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 60 }
+                    buttonText = AIO_DAIT_metric_option.4.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_4_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 105 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_metric_option_4_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 111 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.4.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_metric_option_4_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 105 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_metric_option_4_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 150 }
+                    effect = "AIO_DAIT_metric_option_4_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            # 第三页
+            containerWindowType = {
+                name = "AIO_DAIT_metric_option.5"
+                orientation = upper_left
+                position = { x = 0 y = 0 }
+                size = { width = 100% height = 160 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_metric_option.5.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_metric_option_5_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.5.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_5_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 60 }
+                    buttonText = AIO_DAIT_metric_option.5.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_5_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 105 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_metric_option_5_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 111 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.5.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_metric_option_5_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 105 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_metric_option_5_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 150 }
+                    effect = "AIO_DAIT_metric_option_5_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            containerWindowType = {
+                name = "AIO_DAIT_metric_option.6"
+                orientation = upper_left
+                position = { x = 0 y = 160 }
+                size = { width = 100% height = 140 }
+
+                # 标题
+                effectButtonType = {
+                    name = "title"
+                    orientation = upper_left
+                    position = { x = 15 y = 5 }
+                    size = { x = 790 y = 30 }
+                    buttonText = AIO_DAIT_metric_option.6.title
+                    buttonFont = malgun_goth_24
+                    format = left
+                    effect = AIO_DAIT_metric_option_6_title
+                    alwaysTransparent = yes
+                }
+
+                # 描述
+                effectButtonType = {
+                    name = "desc"
+                    orientation = upper_left
+                    position = { x = 15 y = 45 }
+                    size = { x = 790 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.6.desc
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_6_desc
+                    alwaysTransparent = yes
+                }
+
+                # 效果
+                effectButtonType = {
+                    name = "effect"
+                    orientation = upper_left
+                    position = { x = 15 y = 75 }
+                    size = { x = 790 y = 40 }
+                    buttonText = AIO_DAIT_metric_option.6.effect
+                    buttonFont = cg_16b
+                    format = left
+                    multiline = yes
+                    effect = AIO_DAIT_metric_option_6_effect
+                    alwaysTransparent = yes
+                }
+
+                # 调整数值按钮
+                effectButtonType = {
+                    name = "add"
+                    orientation = upper_left
+                    position = { x = 615 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Add_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_metric_option_6_add
+                }
+                effectButtonType = {
+                    name = "alloc_value"
+                    orientation = upper_left
+                    position = { x = 650 y = 91 }
+                    size = { x = 50 y = 20 }
+                    buttonText = AIO_DAIT_metric_option.6.effect.allocate.value
+                    buttonFont = cg_16b
+                    format = center
+                    effect = AIO_DAIT_metric_option_6_alloc_value
+                    alwaysTransparent = yes
+                }
+                effectButtonType = {
+                    name = "subtract"
+                    orientation = upper_left
+                    position = { x = 700 y = 85 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Subtract_Button"
+                    scale = 0.6
+                    effect = AIO_DAIT_metric_option_6_subtract
+                }
+
+                # 分割线
+                effectButtonType = {
+                    name = "separate_line"
+                    quadTextureSprite = "GFX_AIO_DAIT_Separate_Line"
+                    orientation = "upper_left"
+                    position = { x = 10 y = 130 }
+                    effect = "AIO_DAIT_metric_option_6_separate_line"
+                    alwaysTransparent = yes
+                }
+            }
+
+            # 切页
+            containerWindowType = {
+                name = "page_change"
+                orientation = upper_left
+                position = { x = 670 y = 360 }
+                size = { width = 150 height = 30 }
+
+                effectButtonType = {
+                    name = "last_page"
+                    orientation = upper_left
+                    position = { x = 0 y = 0 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Last_Page_Button"
+                    effect = AIO_DAIT_metric_view_last_page_button
+                }
+
+                effectButtonType = {
+                    name = "page"
+                    orientation = upper_left
+                    position = { x = 30 y = 5 }
+                    size = { x = 80 y = 20 }
+                    buttonText = AIO_DAIT_metric_current_page
+                    buttonFont = cg_16b
+                    format = center
+                    multiline = no
+                    effect = AIO_DAIT_metric_view_current_page
+                    alwaysTransparent = yes
+                }
+
+                effectButtonType = {
+                    name = "next_page"
+                    orientation = upper_left
+                    position = { x = 112 y = 0 }
+                    quadTextureSprite = "GFX_AIO_DAIT_Next_Page_Button"
+                    effect = AIO_DAIT_metric_view_next_page_button
+                }
+            }
+        }
+
+        #endregion
+
+        #endregion
+
+
+        #region ALL OF THIS IS HIDDEN OR DISPLACED !
+
+        buttonType = { name = "focus_button" position = { x = -1180 y = -1112 } spriteType = "GFX_fleetview_focus" } # hidden
+        instantTextBoxType = { name = "heading" font = "malgun_goth_24" position = { x = -1120 y = -115 } } # hidden
+        buttonType = { name = "alien_message_background" size = { x = 0 y = 0 } position = { x = -1110 y = -11430 } spriteType = "GFX_tiles_dark_area_cut_8" } # hidden
+        buttonType = { name = "confirm_button" quadTextureSprite = "GFX_standard_button_142_34_button" } # hidden
+        containerWindowType = {
+            name = "portrait_background"
+            position = { x = -1117 y = -1145 }
+            size = { width = 0 height = 0 } 	# hide portrait window
+            iconType = { name = "event_picture" spriteType = "GFX_diplomacy_portrait_frame" } # hidden
+            iconType = { name = "portrait" spriteType = "GFX_portrait_character" } # hidden
+        }
+        containerWindowType = {
+            name = "portrait"
+            position = { x = -1117 y = -1145 }
+            size = { width = 0 height = 0 } # hide portrait window
+            iconType = { name = "portrait" spriteType = "GFX_portrait_gamesetup_mask" } # hidden
+            iconType = { name = "black_frame" spriteType = "GFX_diplomacy_portrait_shadow_frame" } # hidden
+            iconType = { name = "stripes_1" spriteType = "GFX_diplomacy_stripes_2" } # hidden
+            iconType = { name = "city_frame" spriteType = "GFX_diplomacy_portrait_frame" } # hidden
+        }
+        iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" } # hidden
+        instantTextBoxType = { name = "empire_name" font = "malgun_goth_24" } # hidden
+        instantTextBoxType = { name = "empire_government_type" font = "cg_16b" } # hidden
+        instantTextBoxType = { name = "empire_personality_type" font = "cg_16b" } # hidden
+        overlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -1145 y = -11138 } } # hidden
+        iconType = { name = "empire_flag" spriteType = "GFX_empire_flag_128" position = { x = -1125 y = -11235 } } # hidden
+        containerWindowType = {
+            name = "leader_details"
+            position = { x = -1125 y = -1175 }
+            containerWindowType = { name = "empire_traits_box" } # hidden
+            instantTextBoxType = { name = "empire_traits_label" font = "cg_16b" } # hidden
+            overlappingElementsBoxType = { name = "leader_traits" } # hidden
+            instantTextBoxType = { name = "leader_name" font = "cg_16b" } # hidden
+            instantTextBoxType = { name = "leader_species" font = "cg_16b" } # hidden
+        }
+        containerWindowType = {
+            name = "opinion_window"
+            position = { x = -1127 y = -11110 }
+            size = { width = 94 height = 30 }
+            iconType = { name = "their_opinion_icon" spriteType = "GFX_diplomacy_opinion" } # hidden
+            instantTextBoxType = { name = "their_opinion" font = "cg_16b" }
+        }
+
+        ### EVENT DIPLO ###
+
+        containerWindowType = {
+            name = "EVENT_DIPLO"
+            position = { x = 2 y = 50 }
+            #size = { width = 563 height = 220 }
+            moveable = no
+
+            instantTextBoxType = {
+                name = "action_title"
+                font = "malgun_goth_24"
+                position = { x = 20 y = 0 }
+                maxWidth = 200
+                alwaysTransparent = yes
+            }
+            instantTextBoxType = {
+                name = "action_desc"
+                font = "malgun_goth_24"
+                position = { x = 490 y = 0 }
+                maxWidth = 500
+                maxHeight = 180
+                orientation = "UPPER_LEFT"
+                format = center
+                alwaysTransparent = yes
+                text_color_code = "H"
+            }
+            listboxType = { name = "option_list" position = { x = -11500 y = -1130 } } # hidden option list
+        }
+        # Description Section
+        instantTextBoxType = {
+            name = "alien_message"
+            font = "cg_16b"
+            position = { x = 20 y = 100 }
+            maxWidth = 465
+            maxHeight = 220
+            format = left
+            scrollbartype = "standardtext_slider"
+        }
+
+        #endregion
+    }
+}

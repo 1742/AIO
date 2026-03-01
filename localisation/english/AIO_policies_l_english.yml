@@ -1,8 +1,0 @@
-﻿l_english:
- policy_AIO_DAIT_policy: "Apply Infinity Thesis"
- policy_AIO_DAIT_policy_desc: "We can do everything ourselves, actively choose the direction of $AIO_AIT_events.401.title$, or we can leave it to the complex drones to decide."
- AIO_DAIT_policy_default: "Active Selection"
- AIO_DAIT_policy_balance: "Balance Adjustment"
- AIO_DAIT_policy_produce: "$AIO_AIT_events.401.option_10$"
- AIO_DAIT_policy_military: "$AIO_AIT_events.401.option_12$"
- AIO_DAIT_policy_stop: "停止$AIO_AIT_events.401.title$"

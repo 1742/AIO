@@ -1,0 +1,59 @@
+AIO_DAIT_Sidebar_Material_Button_Deactive = {
+    potential = { always = yes }
+    allow = {
+        custom_tooltip = {
+            fail_text = "AIO_DAIT_sidebar_change_faile_text"
+            NOT = { check_variable = { which = AIO_DAIT_tab value = 1 } }
+        }
+    }
+    effect = {
+        hidden_effect = {
+            set_variable = { which = AIO_DAIT_tab value = 1 }
+            set_variable = { which = AIO_DAIT_page value = 1 }
+        }
+    }
+}
+AIO_DAIT_Sidebar_Material_Button_Active = {
+    potential = { check_variable = { which = AIO_DAIT_tab value = 1 } }
+    allow = { always = no }
+}
+
+AIO_DAIT_Sidebar_Energy_Button_Deactive = {
+    potential = { always = yes }
+    allow = {
+        custom_tooltip = {
+            fail_text = "AIO_DAIT_sidebar_change_faile_text"
+            NOT = { check_variable = { which = AIO_DAIT_tab value = 2 } }
+        }
+    }
+    effect = {
+        hidden_effect = {
+            set_variable = { which = AIO_DAIT_tab value = 2 }
+            set_variable = { which = AIO_DAIT_page value = 1 }
+        }
+    }
+}
+AIO_DAIT_Sidebar_Energy_Button_Active = {
+    potential = { check_variable = { which = AIO_DAIT_tab value = 2 } }
+    allow = { always = no }
+}
+
+AIO_DAIT_Sidebar_Metric_Button_Deactive = {
+    potential = { always = yes }
+    allow = {
+        custom_tooltip = {
+            fail_text = "AIO_DAIT_sidebar_change_faile_text"
+            NOT = { check_variable = { which = AIO_DAIT_tab value = 3 } }
+        }
+    }
+    effect = {
+        hidden_effect = {
+            set_variable = { which = AIO_DAIT_tab value = 3 }
+            set_variable = { which = AIO_DAIT_page value = 1 }
+        }
+    }
+}
+AIO_DAIT_Sidebar_Metric_Button_Active = {
+    potential = { check_variable = { which = AIO_DAIT_tab value = 3 } }
+    allow = { always = no }
+}

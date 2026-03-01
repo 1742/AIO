@@ -10,87 +10,81 @@ AIO_mega_country_locator = {
 
 	potential = {
 		OR = {
-			has_country_flag = AIO_ctrl_AIT_ASLT_locating
-			has_country_flag = AIO_ctrl_AIT_uncausality_locating
-			has_country_flag = AIO_ctrl_AIT_design_requirement_locating
-			has_country_flag = AIO_ctrl_AIT_superlight_locating
-			has_country_flag = AIO_ctrl_AIT_change_government_locating
+			has_country_flag = AIO_RE_ASLT_locating
+			has_country_flag = AIO_RE_uncausality_locating
+			has_country_flag = AIO_RE_design_requirement_locating
+			has_country_flag = AIO_RE_superlight_locating
+			has_country_flag = AIO_RE_change_government_locating
 
-			has_country_flag = AIO_ctrl_AIT_demilitarization_locating
-			has_country_flag = AIO_ctrl_AIT_erase_country_locating
+			has_country_flag = AIO_RE_demilitarization_locating
+			has_country_flag = AIO_RE_erase_country_locating
 		}
 	}
 	possible = { exists = owner }
 	dismantle_potential = { always = no }
 
-	build_time = 0
+	build_time = 1
 
-	on_build_complete = {
-		fromfrom = { save_global_event_target_as = AIO_locator_target }
-
+	on_build_start = {
 		event_target:AIO_locator_builder = { delete_fleet = this }
 		clear_global_event_target = AIO_locator_builder
 
 		from = {
 			switch = {
 				trigger = has_country_flag
-				AIO_ctrl_AIT_ASLT_locating = {
-					remove_country_flag = AIO_ctrl_AIT_ASLT_locating
-					set_country_flag = AIO_ctrl_AIT_ASLT_finish_locate
-					root.owner = { save_global_event_target_as = AIO_ctrl_AIT_ASLT_target }
+				AIO_RE_ASLT_locating = {
+					remove_country_flag = AIO_RE_ASLT_locating
+					set_country_flag = AIO_RE_ASLT_located
 				}
-				AIO_ctrl_AIT_uncausality_locating = {
-					remove_country_flag = AIO_ctrl_AIT_uncausality_locating
-					set_country_flag = AIO_ctrl_AIT_uncausality_finish_locate
-					root.owner = { save_global_event_target_as = AIO_ctrl_AIT_uncausality_target }
+				AIO_RE_uncausality_locating = {
+					remove_country_flag = AIO_RE_uncausality_locating
+					set_country_flag = AIO_RE_uncausality_located
 				}
-				AIO_ctrl_AIT_design_requirement_locating = {
-					remove_country_flag = AIO_ctrl_AIT_design_requirement_locating
-					set_country_flag = AIO_ctrl_AIT_design_requirement_finish_locate
-					root.owner = { save_global_event_target_as = AIO_ctrl_AIT_design_requirement_target }
+				AIO_RE_design_requirement_locating = {
+					remove_country_flag = AIO_RE_design_requirement_locating
+					set_country_flag = AIO_RE_design_requirement_located
 				}
-				AIO_ctrl_AIT_superlight_locating = {
-					remove_country_flag = AIO_ctrl_AIT_superlight_locating
-					set_country_flag = AIO_ctrl_AIT_superlight_finish_locate
-					root.owner = { save_global_event_target_as = AIO_ctrl_AIT_superlight_target }
+				AIO_RE_superlight_locating = {
+					remove_country_flag = AIO_RE_superlight_locating
+					set_country_flag = AIO_RE_superlight_located
 				}
-				AIO_ctrl_AIT_change_government_locating = {
-					remove_country_flag = AIO_ctrl_AIT_change_government_locating
-					set_country_flag = AIO_ctrl_AIT_change_government_finish_locate
-					root.owner = { save_global_event_target_as = AIO_ctrl_AIT_change_government_target }
+				AIO_RE_change_government_locating = {
+					remove_country_flag = AIO_RE_change_government_locating
+					set_country_flag = AIO_RE_change_government_located
 				}
 
-				AIO_ctrl_AIT_demilitarization_locating = {
-					remove_country_flag = AIO_ctrl_AIT_demilitarization_locating
-					set_country_flag = AIO_ctrl_AIT_demilitarization_finish_locate
+				AIO_RE_demilitarization_locating = {
+					remove_country_flag = AIO_RE_demilitarization_locating
+					set_country_flag = AIO_RE_demilitarization_located
 
 					# 记录信息
 					root.owner = {
-						set_variable = { which = AIO_ctrl_AIT_demilitarization_num value = trigger:count_used_naval_cap }
-						save_global_event_target_as = AIO_ctrl_AIT_demilitarization_target
+						set_variable = { which = AIO_RE_demilitarization_num value = trigger:count_used_naval_cap }
 					}
 				}
-				AIO_ctrl_AIT_erase_country_locating = {
-					remove_country_flag = AIO_ctrl_AIT_erase_country_locating
-					set_country_flag = AIO_ctrl_AIT_erase_country_finish_locate
+				AIO_RE_erase_country_locating = {
+					remove_country_flag = AIO_RE_erase_country_locating
+					set_country_flag = AIO_RE_erase_country_located
 
 					# 记录信息
 					root.owner = {
-						set_variable = { which = AIO_ctrl_AIT_erase_country_system_num value = trigger:count_system_within_border }
-						set_variable = { which = AIO_ctrl_AIT_erase_country_colony_num value = trigger:count_owned_planet }
-						set_variable = { which = AIO_ctrl_AIT_erase_country_species_num value = trigger:count_owned_species }
-						set_variable = { which = AIO_ctrl_AIT_erase_country_pop_num value = trigger:count_owned_pop_amount }
-						divide_variable = { which = AIO_ctrl_AIT_erase_country_pop_num value = 1000 }
-						floor_variable = AIO_ctrl_AIT_erase_country_pop_num
-						set_variable = { which = AIO_ctrl_AIT_erase_country_navy_num value = trigger:count_used_naval_cap }
-						save_global_event_target_as = AIO_ctrl_AIT_erase_country_target
+						set_variable = { which = AIO_RE_erase_country_system_num value = trigger:count_system_within_border }
+						set_variable = { which = AIO_RE_erase_country_colony_num value = trigger:count_owned_planet }
+						set_variable = { which = AIO_RE_erase_country_species_num value = trigger:count_owned_species }
+						set_variable = { which = AIO_RE_erase_country_pop_num value = trigger:count_owned_pop_amount }
+						divide_variable = { which = AIO_RE_erase_country_pop_num value = 1000 }
+						floor_variable = AIO_RE_erase_country_pop_num
+						set_variable = { which = AIO_RE_erase_country_navy_num value = trigger:count_used_naval_cap }
 					}
 				}
 			}
 
-			country_event = { id = AIO_ctrl_events.201 }
+			root.owner = { save_global_event_target_as = AIO_RE_target }
+			country_event = { id = AIO_RE_events.201 }
 		}
 	}
+
+	on_build_complete = { remove_megastructure = fromfrom }
 }
 
 AIO_mega_system_locator = {
@@ -103,12 +97,12 @@ AIO_mega_system_locator = {
 
 	potential = {
 		OR = {
-			has_country_flag = AIO_ctrl_AIT_enrich_system_deposits_locating
-			has_country_flag = AIO_ctrl_AIT_create_storm_locating
+			has_country_flag = AIO_RE_enrich_system_deposits_locating
+			has_country_flag = AIO_RE_create_storm_locating
 
-			has_country_flag = AIO_ctrl_AIT_strike_system_locating
-			has_country_flag = AIO_ctrl_AIT_erase_system_locating
-			has_country_flag = AIO_ctrl_AIT_erase_star_cluster_locating
+			has_country_flag = AIO_RE_strike_system_locating
+			has_country_flag = AIO_RE_erase_system_locating
+			has_country_flag = AIO_RE_erase_star_cluster_locating
 		}
 	}
 	dismantle_potential = { always = no }
@@ -116,20 +110,18 @@ AIO_mega_system_locator = {
 	placement_rules = {
 		solar_system = {
 			custom_tooltip = {
-				text = AIO_requires_system_not_existed_storm
+				fail_text = AIO_requires_system_not_existed_storm
 				NAND = {
-					event_target:AIO_empire_country = { has_country_flag = AIO_ctrl_AIT_create_storm_locating }
+					event_target:AIO_empire_country = { has_country_flag = AIO_RE_create_storm_locating }
 					is_inside_storm = yes
 				}
 			}
 		}
 	}
 
-	build_time = 0
+	build_time = 1
 
-	on_build_complete = {
-		fromfrom = { save_global_event_target_as = AIO_locator_target }
-
+	on_build_start = {
 		event_target:AIO_locator_builder = { delete_fleet = this }
 		clear_global_event_target = AIO_locator_builder
 
@@ -137,44 +129,42 @@ AIO_mega_system_locator = {
 			switch = {
 				trigger = has_country_flag
 
-				AIO_ctrl_AIT_enrich_system_deposits_locating = {
-					remove_country_flag = AIO_ctrl_AIT_enrich_system_deposits_locating
-					set_country_flag = AIO_ctrl_AIT_enrich_system_deposits_finish_locate
-					root = { save_global_event_target_as = AIO_ctrl_AIT_enrich_system_deposits_target }
+				AIO_RE_enrich_system_deposits_locating = {
+					remove_country_flag = AIO_RE_enrich_system_deposits_locating
+					set_country_flag = AIO_RE_enrich_system_deposits_located
 				}
-				AIO_ctrl_AIT_create_storm_locating = {
-					remove_country_flag = AIO_ctrl_AIT_create_storm_locating
-					set_country_flag = AIO_ctrl_AIT_create_storm_finish_locate
-					root = { save_global_event_target_as = AIO_ctrl_AIT_create_storm_target }
+				AIO_RE_create_storm_locating = {
+					remove_country_flag = AIO_RE_create_storm_locating
+					set_country_flag = AIO_RE_create_storm_located
 				}
 
-				AIO_ctrl_AIT_strike_system_locating = {
-					remove_country_flag = AIO_ctrl_AIT_strike_system_locating
-					set_country_flag = AIO_ctrl_AIT_strike_system_finish_locate
-					root = { save_global_event_target_as = AIO_ctrl_AIT_strike_system_target }
+				AIO_RE_strike_system_locating = {
+					remove_country_flag = AIO_RE_strike_system_locating
+					set_country_flag = AIO_RE_strike_system_located
 				}
-				AIO_ctrl_AIT_erase_system_locating = {
-					remove_country_flag = AIO_ctrl_AIT_erase_system_locating
-					set_country_flag = AIO_ctrl_AIT_erase_system_finish_locate
+				AIO_RE_erase_system_locating = {
+					remove_country_flag = AIO_RE_erase_system_locating
+					set_country_flag = AIO_RE_erase_system_located
 
 					# 记录信息
 					root = {
-						set_variable = { which = AIO_ctrl_AIT_erase_system_planet_num value = trigger:count_system_planet }
-						set_variable = { which = AIO_ctrl_AIT_erase_system_colony_num value = trigger:count_system_colony }
-						set_variable = { which = AIO_ctrl_AIT_erase_system_mega_num value = trigger:count_system_megastructure }
-						save_global_event_target_as = AIO_ctrl_AIT_erase_system_target
+						set_variable = { which = AIO_RE_erase_system_planet_num value = trigger:count_system_planet }
+						set_variable = { which = AIO_RE_erase_system_colony_num value = trigger:count_system_colony }
+						set_variable = { which = AIO_RE_erase_system_mega_num value = trigger:count_system_megastructure }
 					}
 				}
-				AIO_ctrl_AIT_erase_star_cluster_locating = {
-					remove_country_flag = AIO_ctrl_AIT_erase_star_cluster_locating
-					set_country_flag = AIO_ctrl_AIT_erase_star_cluster_finish_locate
-					root = { save_global_event_target_as = AIO_ctrl_AIT_erase_star_cluster_target }
+				AIO_RE_erase_star_cluster_locating = {
+					remove_country_flag = AIO_RE_erase_star_cluster_locating
+					set_country_flag = AIO_RE_erase_star_cluster_located
 				}
 			}
 
-			country_event = { id = AIO_ctrl_events.201 }
+			root = { save_global_event_target_as = AIO_RE_target }
+			country_event = { id = AIO_RE_events.201 }
 		}
 	}
+
+	on_build_complete = { remove_megastructure = fromfrom }
 }
 
 AIO_mega_planet_locator = {
@@ -186,9 +176,9 @@ AIO_mega_planet_locator = {
 
 	potential = {
 		OR = {
-			has_country_flag = AIO_ctrl_AIT_change_pc_locating
+			has_country_flag = AIO_RE_change_pc_locating
 
-			has_country_flag = AIO_ctrl_AIT_erase_planet_locating
+			has_country_flag = AIO_RE_erase_planet_locating
 		}
 	}
 	placement_rules = {
@@ -204,29 +194,28 @@ AIO_mega_planet_locator = {
 	build_time = 0
 
 	on_build_complete = {
-		fromfrom = { save_global_event_target_as = AIO_locator_target }
-
 		event_target:AIO_locator_builder = { delete_fleet = this }
 		clear_global_event_target = AIO_locator_builder
 
 		from = {
 			switch = {
 				trigger = has_country_flag
-				AIO_ctrl_AIT_change_pc_locating = {
-					remove_country_flag = AIO_ctrl_AIT_change_pc_locating
-					set_country_flag = AIO_ctrl_AIT_change_pc_finish_locate
-					root.fromfrom.planet = { save_global_event_target_as = AIO_ctrl_AIT_change_pc_target }
+				AIO_RE_change_pc_locating = {
+					remove_country_flag = AIO_RE_change_pc_locating
+					set_country_flag = AIO_RE_change_pc_located
 				}
 
-				AIO_ctrl_AIT_erase_planet_locating = {
-					remove_country_flag = AIO_ctrl_AIT_erase_planet_locating
-					set_country_flag = AIO_ctrl_AIT_erase_planet_finish_locate
-					root.fromfrom.planet = { save_global_event_target_as = AIO_ctrl_AIT_erase_planet_target }
+				AIO_RE_erase_planet_locating = {
+					remove_country_flag = AIO_RE_erase_planet_locating
+					set_country_flag = AIO_RE_erase_planet_located
 				}
 			}
 
-			country_event = { id = AIO_ctrl_events.201 }
+			root.fromfrom.planet = { save_global_event_target_as = AIO_RE_target }
+			country_event = { id = AIO_RE_events.201 }
 		}
+
+		fromfrom = { remove_megastructure = this }
 	}
 }
 
@@ -239,11 +228,11 @@ AIO_mega_colony_locator = {
 
 	potential = {
 		OR = {
-			has_country_flag = AIO_ctrl_AIT_degenerate_locating
-			has_country_flag = AIO_ctrl_AIT_enlighten_locating
-			has_country_flag = AIO_ctrl_AIT_turn_back_time_locating
+			has_country_flag = AIO_RE_degenerate_locating
+			has_country_flag = AIO_RE_enlighten_locating
+			has_country_flag = AIO_RE_turn_back_time_locating
 
-			has_country_flag = AIO_ctrl_AIT_destroy_planet_army_locating
+			has_country_flag = AIO_RE_destroy_planet_army_locating
 		}
 	}
 	dismantle_potential = { always = no }
@@ -251,7 +240,7 @@ AIO_mega_colony_locator = {
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
-				text = AIO_requires_is_colony
+				fail_text = AIO_requires_is_colony
 				is_colony = yes
 			}
 			custom_tooltip = {
@@ -264,51 +253,40 @@ AIO_mega_colony_locator = {
 	build_time = 0
 
 	on_build_complete = {
-		fromfrom = {
-			save_global_event_target_as = AIO_locator_target
-			planet = {
-				if = {
-					limit = { exists = owner }
-					set_controller = owner
-				}
-			}
-		}
-
 		event_target:AIO_locator_builder = { delete_fleet = this }
 		clear_global_event_target = AIO_locator_builder
 
 		from = {
 			switch = {
 				trigger = has_country_flag
-				AIO_ctrl_AIT_degenerate_locating = {
-					remove_country_flag = AIO_ctrl_AIT_degenerate_locating
-					set_country_flag = AIO_ctrl_AIT_degenerate_finish_locate
-					root.fromfrom.planet = { save_global_event_target_as = AIO_ctrl_AIT_degenerate_target }
+				AIO_RE_degenerate_locating = {
+					remove_country_flag = AIO_RE_degenerate_locating
+					set_country_flag = AIO_RE_degenerate_located
 				}
-				AIO_ctrl_AIT_enlighten_locating = {
-					remove_country_flag = AIO_ctrl_AIT_enlighten_locating
-					set_country_flag = AIO_ctrl_AIT_enlighten_finish_locate
-					root.fromfrom.planet = { save_global_event_target_as = AIO_ctrl_AIT_enlighten_target }
+				AIO_RE_enlighten_locating = {
+					remove_country_flag = AIO_RE_enlighten_locating
+					set_country_flag = AIO_RE_enlighten_located
 				}
-				AIO_ctrl_AIT_turn_back_time_locating = {
-					remove_country_flag = AIO_ctrl_AIT_turn_back_time_locating
-					set_country_flag = AIO_ctrl_AIT_turn_back_time_finish_locate
-					root.fromfrom.planet = { save_global_event_target_as = AIO_ctrl_AIT_turn_back_time_target }
+				AIO_RE_turn_back_time_locating = {
+					remove_country_flag = AIO_RE_turn_back_time_locating
+					set_country_flag = AIO_RE_turn_back_time_located
 				}
 
-				AIO_ctrl_AIT_destroy_planet_army_locating = {
-					remove_country_flag = AIO_ctrl_AIT_destroy_planet_army_locating
-					set_country_flag = AIO_ctrl_AIT_destroy_planet_army_finish_locate
+				AIO_RE_destroy_planet_army_locating = {
+					remove_country_flag = AIO_RE_destroy_planet_army_locating
+					set_country_flag = AIO_RE_destroy_planet_army_located
 
 					# 记录信息
 					root.fromfrom.planet = {
-						set_variable = { which = AIO_ctrl_AIT_destroy_planet_army_num value = trigger:count_planet_army }
-						save_global_event_target_as = AIO_ctrl_AIT_destroy_planet_army_target
+						set_variable = { which = AIO_RE_destroy_planet_army_num value = trigger:count_planet_army }
 					}
 				}
 			}
 
-			country_event = { id = AIO_ctrl_events.201 }
+			root.fromfrom.planet = { save_global_event_target_as = AIO_RE_target }
+			country_event = { id = AIO_RE_events.201 }
 		}
+
+		fromfrom = { remove_megastructure = this }
 	}
 }

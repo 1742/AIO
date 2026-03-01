@@ -112,3 +112,26 @@ edict_AIO_nanite_farming = {
         planet_farmers_nanites_upkeep_add = 1
     }
 }
+
+# 打开 Reality Editor
+edict_AIO_invoke_DAIT_menu = {
+    icon = "GFX_edict_type_policy"
+
+    length = 1
+
+    resources = { category = edicts }
+
+    potential = {
+        OR = {
+            has_country_flag = AIO_built_AIO_mega_01
+            has_country_flag = AIO_built_AIO_mega_02
+            has_country_flag = AIO_built_AIO_mega_03
+            has_country_flag = AIO_built_AIO_mega_04
+        }
+        NOT = { is_country_type = AIO_empire }
+    }
+
+    allow = { has_country_resource = { type = AIO_advanced_logic amount > 45000 } }
+
+    effect = { country_event = { id = AIO_AIT_events.401 } }
+}
