@@ -44,7 +44,6 @@ Unlocked after completing the <i><b>Horizon Engine</b></i>:
 </ul>
 
 <h4>Merge Cosmos Situation</h4>
-<br>
 You need to spend massive amounts of Energy Credits and Dark Matter to advance the Situation. While the Situation is progressing, you can use **DAIT** to gain various benefits.
 <ul>
 <li><b>Stage 1 Complete:</b> Unlocks the <b>Ultimate Gate Node</b>. A Gateway that can be built anywhere, ignoring borders. (However, Paradox may have changed the megastructure mechanics so you cannot build megastructures in unreachable systems. Currently, this function only works where your Construction Ships can physically reach... or you can use a Quantum Catapult to yeet your ships there...)</li>
