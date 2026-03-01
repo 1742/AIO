@@ -36,11 +36,12 @@ Unlocked after completing the [i][b]Horizon Engine[/b][/i]:
 [*][b]Strategy:[/b] Stockpile Energy before upgrading. Once the Situation starts, select [b]Vacuum Zero-Point Level[/b] in DAIT to prevent an economic crash.
 [/list]
 
-[b]Fusion Universe Situation[/b]
+[b]Merge Cosmos Situation[/b]
 Spend massive Energy and Dark Matter to advance.
+Complete Stage 1:
 [list]
-[*]Stage 1: Unlocks [b]Gate of All Gates Node[/b] (Gateway).
-[*]Stage 2: Unlocks special system [i][b]The Nameless Mist[/b][/i].
+[*]Unlocks [b]Gate of All Gates Node[/b], a instant build Gateway.[i](Note: Due to changes to the original mechanic, it is not possible to build Megastructures in unreachable systems, which are limited to the range of the Engineer ship (or shoot the ship with a slingshot).)[/i]
+[*]Unlocks special system [i][b]The Nameless Mist[/b][/i].
 [/list]
 
 [h3]Crisis Level 3-5[/h3]
