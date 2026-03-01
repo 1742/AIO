@@ -1,91 +1,56 @@
-[h2][b]Overview[/b][/h2]
+[h1]All-in-One[/h1]
+[b]Gestalt Crisis Ascension Mod[/b]
 
-This mod introduces a new crisis ascension path for [b]Gestalt Empires[/b] — [i][b]All-in-One[/b][/i], a path to transcendence through reality editing and the apply infinity thesis.
-Ascend by completing the [i][b]Horizon Engine[/b][/i], progressing through its stages, and constructing the unique megastructure [i][b]Yog-Sothoth[/b][/i] to dominate the laws of reality.  
-Though you'll see many echoes of the original Crisis Ascension paths (what a patchwork disaster), this journey will offer you a different experience.
+[hr]
 
-[h2][b]Content[/b][/h2]
+[h1]Overview[/h1]
+This mod provides a brand new Crisis Ascension path for [b]Gestalt Empires[/b] — [i][b]All-in-One[/b][/i]. It is a path of ascension achieved through Reality Editing and Applied Infinity. By completing the [i][b]Horizon Engine[/b][/i], surviving the Situation, and constructing the exclusive megastructure [i][b]Yog-Sothoth[/b][/i], you will ascend to master the laws of reality.
 
+Although you will see many shadows of the vanilla ascension paths on this route [strike](What a cobbled-together crisis)[/strike], it now introduces a brand new [b]Directional Applied Infinity Thesis (DAIT)[/b] system. It is no longer just boring stat padding, but directly modifying the underlying code of the universe! [strike](Isn't that just a fancy way of saying buffs?...)[/strike]
+
+[h2]Features[/h2]
 [list]
-[*] New ascension path [b]All-in-One[/b] and Crisis Transformation
-[*] New origin: [b]All-in-One[/b]
-[*] New megastructure: [b]Yog-Sothoth[/b]
+[*]New Ascension Perk: [b]All-in-One[/b] and a Become the Crisis path.
+[*]New [b]DAIT[/b] (Directional Applied Infinity Thesis) buff system.
+[*]New Origin: All-in-One.
+[*]New Megastructure: Yog-Sothoth.
 [/list]
 
-[h2][b]Gameplay[/b][/h2]
+[h2]Core Gameplay: Law Editing (DAIT)[/h2]
+Just like the three vanilla Crisis paths, you need to adopt three Ascension Perks before you can select [b]All-in-One[/b]. By accumulating [b]Transcendental Logic[/b], you are no longer simply researching technologies, but directly converting logic into empire modifiers.
+The current Crisis Buffs are divided into three categories. You can switch between them at any time.
 
-Like the three original crisis paths, you must adopt three ascension perks to select the [b]All-in-One[/b].  
-Then, accumulate [b]Advanced Logic[/b] and complete the required stages to unlock crisis rewards, including fallen empire ships, the buildings of fallen empire and rare resources(dark matter, living metal and nanites) production specialization, which will be needed for constructing megastructures or edicts.
+[h2]Walkthrough[/h2]
 
-[h3][b]Crisis Level 1[/b][/h3]
-
-After adoption, you’ll immediately unlock Level 1 crisis reward and gain the following benefits:
+[h3]Crisis Level 1[/h3]
+Unlocked upon adoption:
 [list]
-[*] [b]Exponential Learning Theory[/b]: Unlocks the [b]Matryoshka Brain District[/b] on your capital. These are infinitely constructible districts that provide [b]Recursive Node[/b] jobs (robots or hive pop only) producing research and unity. With more nodes, production increases, but upkeep also rises (what a "Synaptic Lathe").
-[*] [b]Hypothesis of Dimensionality[/b]: Unlocks a 3-stages megastructure [i][b]Horizon Engine[/b][/i], which generates energy and dark matter, preparing for your ascension. (This also counts as completing a megastructure to unlock the [b]Galactic Wonders[/b] ascension).  (what a "Aetherophasic Engine")
-[*] Specialization [b]Dark Matter Synthesis Complex[/b]: Reduces the energy output of technicians and increases dark matter output.
-[*] Edict [b]Dark Matter Drive Protocol[/b]: Consume dark matter to improve the efficiency of jobs across the country. (Small dark matter engine)
+[*][b]Exponential Learning Theory:[/b] Unlocks the Recursive Node District. Infinite build limit, produces Research and Unity.
+[*][b]Horizon Engine:[/b] Produces Energy and Dark Matter.
 [/list]
 
-[h3][b]Crisis Level 2[/b][/h3]
-
-After completing the [i][b]Horizon Engine[/b][/i], you unlock Level 2 crisis reward:
+[h3]Crisis Level 2[/h3]
+Unlocked after completing the [i][b]Horizon Engine[/b][/i]:
 [list]
-[*] Specialization [b]Nano Mining[/b]: Reduce the alloy output of metallurgists and increase the output of nanites.
-[*] Edict [b]Nanites Construction[/b]: Consume nanites to increase planet building speed and mega building speed.
+[*]Upgrade to the [i][b]Gate of All Gates[/b][/i]. Note: High Energy upkeep, especially during the [b]Fusion Universe[/b] Situation.
+[*][b]Strategy:[/b] Stockpile Energy before upgrading. Once the Situation starts, select [b]Vacuum Zero-Point Level[/b] in DAIT to prevent an economic crash.
 [/list]
 
-In this phase, you need to upgrade the [i][b]Horizon Engine[/b][/i] into the [i][b]Ultimate Gate[/b][/i].
-[i]Note: Upgrading the Horizon Engine into the Ultimate Gate will stop energy production, and the Ultimate Gate will require high energy upkeep. Upon completing the Ultimate Gate, the situation [b]Merge Cosmos[/b] will begin, requiring significant amounts of energy and Dark Matter to progress.[/i]
-
-After completing the [i][b]Ultimate Gate[/b][/i], the situation [i][b]Merge Cosmos[/b][/i] is triggered. We need to spend large amounts of energy and dark matter to push the situation forward (what a "Growing Pains").
-
-During the [b]situation progress[/b], every 6 months, a random [b]Infinity Thesis[/b] effect will trigger.  
-[i](Don't worry! This mod’s "Superlight" won’t turn Machine Worlds, Hive Worlds, or City Worlds into desert planets!)[/i]
-
-But don't panic, not all [b]Infinity Thesis[/b] effects are bad — as the situation progresses, you will gain various benefits:
+[b]Fusion Universe Situation[/b]
+Spend massive Energy and Dark Matter to advance.
 [list]
-[*] When you have more than [i]50,000[/i] advanced logic, you can consume [i]5,000[/i] advanced logic to obtain a chance of [b]Directional Apply Infinity Thesis[/b], allowing you to customize powerful production or military modifiers for your empire.
-[*] Stage 1 Complete: Unlocks [b]Gate Nodes[/b], which are instant-build gateway that can be constructed in any system (your construction ships don't need to reach the target system, even if the empire has closed its borders). These are connected to the [i][b]Ultimate Gate[/b][/i] and can travel to any system.
-[*] Stage 2 Complete: A special system called [i][b]Nameless Mist[/b][/i] will appear in the upper-left corner of the galaxy, containing another megastructure with the same appearance as the [i][b]Ultimate Gate[/b][/i]. This acts as a special gateway connected to both the [i][b]Ultimate Gate[/b][/i] and all Gate Nodes.  
+[*]Stage 1: Unlocks [b]Gate of All Gates Node[/b] (Gateway).
+[*]Stage 2: Unlocks special system [i][b]The Nameless Mist[/b][/i].
 [/list]
 
-[h3][b]Crisis Level 3[/b][/h3]
+[h3]Crisis Level 3-5[/h3]
+Upgrade to [i][b]Silver Key[/b][/i] -> [i][b]Eternal Throne[/b][/i] -> [i][b]Yog-Sothoth[/b][/i].
+Completing Stage 7 grants victory. You can continue playing to edit reality (delete stars, etc.) using Yog-Sothoth.
 
-When the situation progresses to Stage 3, level 3 reward unlock. The situation will pause and inform you that you need to upgrade the [i][b]Ultimate Gate[/b][/i] in [i][b]Nameless Mist[/b][/i] to the [i][b]Silver Key[/b][/i] before further progress can occur.
-
-[h3][b]Crisis Level 4[/b][/h3]
-
-Upon reaching Stage 5 of the situation, level 4 reward will unlock. Then, you need to upgrade the [i][b]Silver Key[/b][/i] in [i][b]Nameless Mist[/b][/i] to the [i][b]Eternal Throne[/b][/i] in order to continue progressing.
-
-[h3][b]Crisis Level 5[/b][/h3]
-
-Once you enter Stage 7, you unlock crisis level 5 reward. You must upgrade the [i][b]Eternal Throne[/b][/i] in [i][b]Nameless Mist[/b][/i] to [i][b]Yog-Sothoth[/b][/i] to continue.  
-At this stage, the [b]Galactic Community[/b] will designate you as a crisis, but even with all their fleets combined, they won’t stand a chance against you.
-
-After completing Stage 7, you have achieved ascension and won the game. If you continue playing, your empire will transform into a special empire type, allowing you to edit reality through [i][b]Yog-Sothoth[/b][/i]:
+[h2]Compatibility & Warning[/h2]
 [list]
-[*] Change planetary types
-[*] Alter other empires' governments
-[*] Erase planets
-[*] Systems or galaxies
-[*] …  
+[*]Modified Automated Buildings logic.
 [/list]
+[b]CRITICAL WARNING:[/b] Do NOT use modded Map Types! This will prevent [i][b]The Nameless Mist[/b][/i] system from spawning, blocking the Situation progress!
 
-[h2][b]Compatibility[/b][/h2]
-
-[list]
-[*] Modifies Gestalt Logistics Policies.
-[*] Modifies Automation Building.
-[/list]
-
-If you have other mods that modify these features, please ensure this mod is loaded first, and avoid adopting multiple Crisis Ascension paths.
-Using a mod map will cause the [i][b]Nameless Mist[/b][/i] to fail to generate.
-This mod will remove planets, ships and other actions, which may cause the special planets, systems and ships of other mods to be wrongly removed, resulting in the event chain getting stuck.
-
-
-[h2][b]Source of materials[/b][/h2]
-
-The source_of_materials.txt file is recorded in the mod folder.
-
-Enjoy reshaping the universe — and the game.
+Finally, enjoy the game!

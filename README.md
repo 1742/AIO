@@ -1,77 +1,80 @@
-<h1>万物归一</h1>
+<div>
 
+# All-in-One
+**A Gestalt Crisis Ascension Mod for Stellaris**
 
-<h2>概述</h2>
-这个mod提供了一条<b>格式塔帝国</b>的全新的化身天灾路线——<i><b>万物归一</i></b>，一个通过现实编辑和应用无限的技术飞升路径。通过完成<i><b>视界引擎</i></b>，完成局势并建造专属巨构<i><b>犹格索托斯</i></b>实现飞升，主宰现实法则。尽管在这条飞升路径上你会看到许多原版飞升的一些影子<del>（什么拼好灾）</del>，但这仍会给你带来不一样的体验。
+[🇨🇳 中文](README-zh.md) | [🇺🇸 English](README.md)
 
+</div>
 
-<h2>内容</h2>
-<ul>
-<li>新增飞升万物归一与化身天灾路径</li>
-<li>新增一个起源万物归一</li>
-<li>新增巨构犹格索托斯</li>
-</ul>
+---
 
-
-<h2>玩法</h2>
-和原版的3条灾飞路径一样，你需要先采纳三个飞升才能选择<b>万物归一</b>飞升，并通过积累<b>超然逻辑</b>并完成要求解锁各阶段天灾奖励，其中包括宇宙创生的堕落帝国舰船、老登建筑以及稀有资源生产的区划（暗物质、活体金属和纳米机器人），在后续建造巨构或使用该mod新增的法令时会需要这些。
-
-<h3>天灾1级</h3>
-采纳后立刻解锁天灾1级增益：
-<ul>
-<li><b>指数级学习理论：</b>研究后在母星解锁套娃脑区划，一个可无限建造的区划，提供递归节点岗位（仅机器人或蜂巢人口可上岗），产出科研点和凝聚力，并随着数量的增多提高产出和维护费。<del>（什么突触凝炼机）</del></li>
-<li><b>升维假设：</b>解锁一个3阶段巨构<i><b>视界引擎</b></i>，产出能量币和暗物质，完成该巨构为后续飞升准备（完成该巨构也视为完成一项巨型结构，星河奇迹的前置条件）<del>（什么以太相引擎）</del>></li>
-<li>区划特化<b>暗物质合成复合体：</b>减少技工子个体的能量产出，增加暗物质产出。</li>
-<li>法令<b>暗物质驱动协议：</b>消耗暗物质提高全国岗位效率。（小暗物质引擎）</li>
-</ul>
-
-<h3>天灾2级</h3>
-在完成<i><b>视界引擎</b></i>后会解锁天灾2级增益：
-<ul>
-<li>区划特化<b>纳米组装：</b>减少铸造子个体的合金产出，增加纳米机器人产出。</li>
-<li>法令<b>纳米构型：</b>消耗纳米机器人提高行星建造速度和巨构建造速度。</li>
-</ul>
-在这一阶段你需要将<i><b>视界引擎</b></i>升级为<i><b>万门之门</b></i>。
+<h2>Overview</h2>
+This mod provides a brand new Crisis Ascension path for **Gestalt Empires** — <i><b>All-in-One</b></i>. It is a path of ascension achieved through Reality Editing and Applied Infinity. By completing the <i><b>Horizon Engine</b></i>, surviving the Situation, and constructing the exclusive megastructure <i><b>Yog-Sothoth</b></i>, you will ascend to master the laws of reality.
 <br>
-<i>注意：将视相引擎升级为万门之门后会失去能量币产出，万门之门还需要较高的能量币维护费，同时在完成万门之门时会开始局势<b>融合宇宙</b>，要推进该局势还需要大量的能量币和暗物质。</i>
+Although you will see many shadows of the vanilla ascension paths on this route <del>(What a cobbled-together crisis)</del>, after repeated torment by the author (and AI), it now introduces a brand new **Directional Applied Infinity Thesis** system (DAIT). It is no longer just boring stat padding, but directly modifying the underlying code of the universe! <del>(Isn't that just a fancy way of saying buffs?...)</del>
 
-完成万门之门后会开启局势<i><b>融合宇宙</b></i>，为了实现宇宙创生所没有实现的目标，我们需要花费大量的能量币和暗物质推进局势。<del>（什么生长痛）</del>
+<h2>Features</h2>
+<ul>
+<li>New Ascension Perk: <b>All-in-One</b> and a Become the Crisis path.</li>
+<li>New <b>DAIT</b> (Directional Applied Infinity Thesis) buff system.</li>
+<li>New Origin: All-in-One.</li>
+<li>New Megastructure: Yog-Sothoth.</li>
+</ul>
+
+<h2>Core Gameplay: Law Editing</h2>
+Just like the three vanilla Crisis paths, you need to adopt three Ascension Perks before you can select <b>All-in-One</b>. By accumulating <b>Transcendental Logic</b>, you are no longer simply researching technologies, but directly converting **Transcendental Logic** into empire modifiers.
 <br>
-在局势<b>推进时</b>，每6个月触发1次随机的应用无限效果（超光你不要过来啊！——这个mod的超光不会再把人工星球和机械、蜂巢和理想城变成沙漠星球了）。
+The current Crisis Buffs are divided into three categories. You can switch between them at any time, and their power scales linearly (at lower values) based on your **Transcendental Logic** output.
 
-不过不用担心，应用无限并不全是坏事，随着局势推进，你可以获得各种好处：
+<h2>Walkthrough</h2>
+
+<h3>Crisis Level 1</h3>
+Unlocked upon adoption:
 <ul>
-<li>当你拥有超过50,000超然逻辑时，可以消耗5,000超然逻辑进行一次定向应用无限，你可以自主选择应用无限的方式来为自己的帝国提供强力的生产或军事修正。</li>
-<li>完成局势1阶段：解锁<b>万门之门节点</b>，一个可以建造在任何星系并可以瞬间建造的星门（你的工程船不必到达目标星系，即使对方对你关闭了边境），它与<i><b>万门之门</b></i>相连，你可以通过建造万门之门节点从万门之门到达任意星系。</li>
-<li>完成局势2阶段：会在银河的左上角生成一个特殊星系<i><b>无名之雾</b></i>，在里面生成一个与<i><b>万门之门</b></i>一样造型的巨构，它同样也是个特殊星门，与<i><b>万门之门</b></i>和所有<i><b>万门之门节点</b></i>相连。</li>
+<li><b>Exponential Learning Theory:</b> Unlocks the Matryoshka Brain District (Recursive Node). Infinite build limit, produces Research and Unity.</li>
+<li><b>Horizon Engine:</b> Produces Energy and Dark Matter to prepare for what comes next. <del>(Yes, it's still the Aetherophasic Engine's cousin)</del>.</li>
 </ul>
 
-<h3>天灾3级</h3>
-当局势进入3阶段解锁天灾3级增益，这时候局势会暂停并提示你需要将<i><b>无名之雾</b></i>里的<i><b>万门之门</b></i>升级到<i><b>银时之匙</b></i>局势才会继续推进。
+<h3>Crisis Level 2</h3>
+Unlocked after completing the <i><b>Horizon Engine</b></i>:
+<ul>
+<li>Upgrade to the <i><b>Ultimate Gate</b></i>. Note: The <i><b>Ultimate Gate</b></i> has a high Energy upkeep, and starting the <b>Merge Cosmos</b> Situation adds a dynamic Energy upkeep on top of that.</li>
+<li><b>Strategy:</b> Before upgrading, build several silos to stockpile the Energy and Dark Matter produced by the <i>Horizon Engine</i>. Once the Situation starts, select <b>Vacuum Zero-Point Level</b> (Boosts job Energy output) in the **DAIT** menu to prevent an economic crash.</li>
+</ul>
 
-<h3>天灾4级</h3>
-当局势进入5阶段时会解锁天灾4级增益，然后，你需要将<i><b>无名之雾</b></i>中的<i><b>银时之匙</b></i>升级为<i><b>永恒王座</b></i>才能继续推进局势。
-
-<h3>天灾5级</h3>
-进入局势7阶段时会解锁天灾的5级增益，你需要将<i><b>无名之雾</b></i>中的<i><b>永恒王座</b></i>升级为<i><b>犹格索托斯</b></i>才能继续推进局势。
-此时星海共同体会指定你为天灾，不过这时候全银河的舰队绑一起应该都不够你打的。
+<h4>Merge Cosmos Situation</h4>
 <br>
-完成7阶段后即完成飞升，并获得游戏胜利，如果继续游戏，你的帝国将转换为一个特殊类型，此时可以通过犹格索托斯任意编辑现实：
+You need to spend massive amounts of Energy Credits and Dark Matter to advance the Situation. While the Situation is progressing, you can use **DAIT** to gain various benefits.
 <ul>
-<li>改变天体类型</li>
-<li>改变其他帝国政府</li>
-<li>或者抹除天体</li>
-<li>星系或银河</li>
-<li>……</li>
+<li><b>Stage 1 Complete:</b> Unlocks the <b>Ultimate Gate Node</b>. A Gateway that can be built anywhere, ignoring borders. (However, Paradox may have changed the megastructure mechanics so you cannot build megastructures in unreachable systems. Currently, this function only works where your Construction Ships can physically reach... or you can use a Quantum Catapult to yeet your ships there...)</li>
+<li><b>Stage 2 Complete:</b> Unlocks the special system <i><b>The Nameless Mist</b></i>.</li>
 </ul>
 
-
-<h3>兼容性</h3>
+<h3>Crisis Level 3-5</h3>
+Continue upgrading your megastructure: <i><b>Silver Key</b></i> -> <i><b>Eternal Throne</b></i> -> <i><b>Yog-Sothoth</b></i>.
+<br>
+Each level increases the base amount of <b>Transcendental Logic</b> provided by the megastructure, raising the floor of your **DAIT** values. By the final stage, the fleets of the entire galaxy combined won't be enough to fight you—after all, you are fighting them with a cheat engine.
+<br>
+Completing Stage 7 finishes the Ascension and grants victory. If you choose to continue playing, you can use Yog-Sothoth to edit reality at will:
 <ul>
-<li>修改了格式塔后勤政策</li>
-<li>修改了自动化建筑</li>
+<li>Change celestial body types</li>
+<li>Change other empires' governments</li>
+<li>Delete celestial bodies</li>
+<li>Delete the Galaxy</li>
+<li>...</li>
 </ul>
-如果你有其他修改了这些内容的mod，请将此mod排在前边，游玩时不要采纳两个化身天灾的飞升。
-该mod存在移除天体、舰船等行为，可能会导致其他mod的特殊天体、星系、舰船被错误的移除导致事件链卡住。
+<i>Note: Due to the inability to build megastructures in unreachable systems, some post-victory functions may be buggy.</i>
 
-最后，享受游戏吧！
+<h2>Compatibility</h2>
+<ul>
+<li>Modified Automated Buildings logic.</li>
+</ul>
+If you have other mods that modify these contents, please place this mod <b>above</b> them (load earlier) or check for conflicts.
+<br>
+This mod involves removing celestial bodies and ships, which may cause event chains in other mods to get stuck if their target planets/ships are erroneously removed.
+<br>
+<b>CRITICAL WARNING:</b> Do NOT use modded Map Types! This will prevent <i><b>The Nameless Mist</b></i> system from spawning, blocking the Situation progress!
+<br>
+
+Finally, enjoy the game!

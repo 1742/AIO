@@ -40,7 +40,7 @@ situation_AIO_merge_cosmos = {
     # 每月局势变化
     monthly_progress = {
         # 如果是双向事件则可以填负数
-        base = 1
+        base = 10
 
         # 行动方案修正
         modifier = {

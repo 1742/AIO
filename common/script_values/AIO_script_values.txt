@@ -73,7 +73,7 @@ AIO_merge_cosmos_advanced_logic_modifier = {
         parameters = { resource = AIO_advanced_logic }
         mode = add
     }
-    mult = 0.00005
+    mult = 0.001
 
     min = 1
 	max = 2
