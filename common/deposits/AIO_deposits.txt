@@ -77,4 +77,3 @@ d_AIO_GS_deposit = {
 
 	drop_weight = { weight = 0 }
 }
-

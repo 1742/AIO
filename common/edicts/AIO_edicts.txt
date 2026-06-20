@@ -30,18 +30,18 @@ edict_AIO_nanite_construction = {
     icon = "GFX_edict_type_policy"
 
     potential = { has_menace_perk = menp_AIO_fleet_component_2 }
-    allow = { has_country_resource = { type = nanites amount > 10 } }
+    allow = { has_country_resource = { type = nanites amount > 100 } }
 
     resources = {
 		category = edicts
 
         cost = {
-            nanites = 100
+            nanites = 5
             mult = value:edict_size_effect
         }
 
 		upkeep = {
-            nanites = 10
+            nanites = 5
             mult = value:edict_size_effect
         }
 	}
@@ -59,25 +59,25 @@ edict_AIO_living_metal_construction = {
     icon = "GFX_edict_type_policy"
 
     potential = { has_ascension_perk = ap_AIO_allinone }
-    allow = { has_country_resource = { type = sr_living_metal amount > 5 } }
+    allow = { has_country_resource = { type = sr_living_metal amount > 2 } }
 
     resources = {
 		category = edicts
 
         cost = {
-            sr_living_metal = 50
+            sr_living_metal = 2
             mult = value:edict_size_effect
         }
 
 		upkeep = {
-            sr_living_metal = 5
+            sr_living_metal = 2
             mult = value:edict_size_effect
         }
 	}
 
     modifier = {
         planet_metallurgists_alloys_produces_add = 1
-        planet_metallurgists_sr_living_metal_upkeep_add = 0.5
+        planet_metallurgists_sr_living_metal_upkeep_add = 0.01
         megastructure_build_speed_mult = 1
     }
 }
@@ -91,25 +91,25 @@ edict_AIO_nanite_farming = {
         has_menace_perk = menp_AIO_fleet_component_2
         country_uses_bio_ships = yes
     }
-    allow = { has_country_resource = { type = nanites amount > 10 } }
+    allow = { has_country_resource = { type = nanites amount > 2 } }
 
     resources = {
 		category = edicts
 
         cost = {
-            nanites = 100
+            nanites = 2
             mult = value:edict_size_effect
         }
 
 		upkeep = {
-            nanites = 10
+            nanites = 2
             mult = value:edict_size_effect
         }
 	}
 
     modifier = {
         planet_farmers_food_produces_add = 2
-        planet_farmers_nanites_upkeep_add = 1
+        planet_farmers_nanites_upkeep_add = 0.01
     }
 }
 
