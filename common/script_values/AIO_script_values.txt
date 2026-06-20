@@ -1,7 +1,5 @@
 # AIO 动态数值
 
-#region 融合宇宙局势
-
 # AIO暗物质驱动协议维护费
 AIO_edict_dm_engine_dm_upkeep = {
     base = 0
@@ -15,6 +13,9 @@ AIO_edict_dm_engine_dm_upkeep = {
 
     min = 0
 }
+
+
+#region 融合宇宙局势
 
 # AIO融合宇宙局势解决方案能量消耗, scope: situation
 AIO_merge_cosmos_solution_energy_upkeep_value = {
@@ -37,7 +38,7 @@ AIO_merge_cosmos_solution_energy_upkeep_value = {
 
     [[SCALE] mult = $SCALE$ ]
 
-    min = 5000
+    min = 2000
 }
 
 # AIO融合宇宙局势解决方案暗物质消耗, scope: situation
@@ -61,7 +62,7 @@ AIO_merge_cosmos_solution_dm_upkeep_value = {
 
     [[SCALE] mult = $SCALE$ ]
 
-    min = 1000
+    min = 10
 }
 
 # AIO融合宇宙局势超然逻辑产出修正, scope: situation
