@@ -57,7 +57,6 @@ on_ship_destroyed_perp = {
 on_fleet_destroyed_perp = {
     events = {
         AIO_Aforgomom_events.202 # 亚弗戈蒙之怒被摧毁
-        AIO_RE_events.1001 # 定位舰被摧毁
         AIO_RE_events.1003 # 异界行者被摧毁
     }
 }
@@ -67,7 +66,6 @@ on_fleet_destroyed_perp = {
 # From = disbanded fleet
 on_fleet_disbanded = {
     events = {
-        AIO_RE_events.1002  # 定位舰被解散
         AIO_RE_events.1004  # 异界行者被解散
     }
 }

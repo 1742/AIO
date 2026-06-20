@@ -18,6 +18,7 @@ AIO_recursive_node = {
 		has_planet = yes
 		is_sapient = yes
 	}
+
 	possible = {
 		planet = { has_district = district_AIO_lathe }
 		OR = {
@@ -61,24 +62,8 @@ AIO_recursive_node = {
 	}
 
 	weight = {
-		weight = @complex_drone_job_weight
-		mult = value:job_weights_modifier|JOB|calculator_physicist|RESOURCE|physics_research|
-
-		modifier = {
-			factor = 0.2
-			planet = { free_jobs > 0 }
-		}
+		base = @complex_drone_job_weight
 	}
 
 	inline_script = "jobs/automodding_priority_research"
-
-	promotion = {
-		time = @standard_promotion_time
-		effect = {
-			pop_amount_change_category = {
-				CATEGORY = complex_drone
-				AMOUNT = local_pop_amount
-			}
-		}
-	}
 }
