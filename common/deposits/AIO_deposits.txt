@@ -71,7 +71,9 @@ d_AIO_GS_deposit = {
 
 	potential = { always = no }
 
-	habitat_modifier = { district_hab_science_max = 5 }
+	habitat_modifier = {
+		district_hab_science_max_add = 5
+	}
 
 	drop_weight = { weight = 0 }
 }

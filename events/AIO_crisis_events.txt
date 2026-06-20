@@ -552,7 +552,7 @@ event = {
     hide_window = yes
 
     is_triggered_only = yes
-    trigger = { any_country = { capital_scope = { has_district = district_AIO_matryoshka_brain } } }
+    trigger = { any_country = { capital_scope = { has_district = district_AIO_lathe } } }
 
     immediate = {
         random_country = {

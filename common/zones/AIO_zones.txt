@@ -1,22 +1,26 @@
 # AIO区域特化
 
 # 套娃脑特化
-zone_AIO_matryoshka_brain = {
+zone_AIO_lathe = {
 	icon = "GFX_colony_type_synaptic_lathe_colony"
 
-    zone_sets = { AIO_matryoshka_brain_zone_set }
+    swap_type = district_AIO_lathe
+    swap_type_weight = 5
 
-	base_buildtime = @zone_buildtime
+    zone_sets = { AIO_lathe }
 
-	potential = { has_district = district_AIO_matryoshka_brain }
+    included_building_sets = { AIO_lathe_buildings }
 
-    included_building_sets = { AIO_matryoshka_brain_buildings }
+    base_buildtime = @zone_buildtime
+
+	potential = {
+        has_district = district_AIO_lathe
+    }
 
 	resources = {
 		category = planet_zones
 		cost = {
             energy = 1500
-			minerals = 1000
             alloys = 500
 		}
 	}
@@ -30,11 +34,132 @@ zone_AIO_matryoshka_brain = {
     }
 
 	district_planet_modifier  = {
-        pop_bonus_workforce_mult = 0.02
-        job_AIO_recursive_node_add = 500
-        district_AIO_matryoshka_brain_max_add = 1
+        zone_building_slots_add = 3
+        pop_bonus_workforce_mult = 0.01
+        bonus_automated_workforce_mult = 0.01
+        job_AIO_recursive_node_add = 200
+        district_AIO_lathe_max_add = 1
         planet_max_districts_add = 1
+        planet_housing_add = @zone_urban_housing_negative
     }
+}
+
+# 塔械组装及活体金属生产
+zone_AIO_lm_production_machine_empire = {
+	icon = GFX_resource_sr_living_metal_large
+
+    zone_sets = {
+		urban
+	}
+
+	included_building_sets = {
+		urban
+	}
+
+    base_buildtime = @zone_buildtime
+
+	potential = { # planet scope
+		is_planet_class = pc_machine
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			has_ascension_perk = ap_machine_worlds
+            has_ascension_perk = ap_AIO_allinone
+		}
+	}
+
+	resources = {
+		category = planet_zones
+		inline_script = {
+			script = buildings/nomadic_cost_switcher
+			REGULAR_RESOURCE = minerals
+			NOMADIC_RESOURCE = alloys
+			COST = @zone_cost
+			NOMADIC_COST_MULT = 0.5
+		}
+	}
+
+    max_buildings = 1
+
+    planet_modifier = {
+		zone_building_slots_add = 1
+        planet_pop_assemblers_sr_living_metal_produces_add = 0.2
+        planet_pop_assemblers_alloys_upkeep_add = 2
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+                OR = {
+                    is_machine_empire = yes
+                    is_individual_machine = yes
+                }
+            }
+		}
+		job_replicator_add = 50
+	}
+
+	inline_script = {
+		script = zones/shared_city_non_urban_zone_modifiers
+	}
+}
+
+# 蜂巢组装及活体金属生产
+zone_AIO_lm_production_hive_empire = {
+    icon = GFX_job_overlord_breeder
+
+    zone_sets = {
+		urban
+	}
+
+    included_building_sets = {
+        urban
+        urban_automation
+    }
+
+    base_buildtime = @zone_buildtime
+
+    potential = { # planet scope
+        is_planet_class = pc_hive
+        exists = owner
+        owner = {
+            is_hive_empire = yes
+            has_ascension_perk = ap_hive_worlds
+            has_ascension_perk = ap_AIO_allinone
+        }
+    }
+
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+
+    max_buildings = 1
+
+    planet_modifier = {
+        zone_building_slots_add = 1
+        planet_pop_assemblers_sr_living_metal_produces_add = 0.2
+        planet_pop_assemblers_food_upkeep_add = 3
+    }
+
+    triggered_district_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_hive_empire = yes }
+        }
+        job_spawning_drone_add = 50
+    }
+
+	inline_script = {
+		script = zones/shared_city_non_urban_zone_modifiers
+	}
 }
 
 # 暗物质生产特化
@@ -45,172 +170,65 @@ zone_AIO_dm_production ={
     swap_type_weight = 5
 
     zone_sets = {
+        urban
+        energy
+		habitat_energy
         nexus
         hive
-        ring_world
-
-		energy
-		habitat_energy
+		ark_reactor
 	}
-
-    base_buildtime = @zone_buildtime
-
-    potential = { # planet scope
-        num_zones = { type = zone_AIO_dm_production value < 1 }
-
-        exists = owner
-        owner = { has_menace_perk = menp_AIO_fleet_component_1_2 }
-    }
 
     included_building_sets = {
         generator
         fallen_empire_generator
-        automation
+        generator_automation
+    }
+
+    base_buildtime = @zone_buildtime
+
+    potential = { # planet scope
+        exists = owner
+        owner = { has_menace_perk = menp_AIO_fleet_component_1_2 }
+    }
+
+    convert_to = {
+        zone_energy
+        zone_energy_nexus
+        zone_energy_hive
     }
 
     resources = {
         category = planet_zones
-        cost = {
-            minerals = 500
-            alloys = 250
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
         }
     }
 
-    planet_modifier = {
+     planet_modifier = {
         zone_building_slots_add = 3
-        planet_technician_sr_dark_matter_produces_add = 0.3
-        planet_technician_energy_produces_add = -3
     }
 
     inline_script = {
         script = jobs/zone_technicians_add
         AMOUNT = @scaling_district_1_job
     }
-}
 
-# 塔械组装及活体金属生产
-zone_AIO_lm_production_machine_empire = {
-	icon = GFX_resource_sr_living_metal_large
-
-    zone_sets = { urban }
-
-	base_buildtime = @zone_buildtime
-
-	potential = { # planet scope
-		exists = owner
-		owner = {
-			is_machine_empire = yes
-            has_ascension_perk = ap_AIO_allinone
-		}
-	}
-
-    included_building_sets = {
-		urban
-		automation
-	}
-
-	resources = {
-		category = planet_zones
-		cost = {
-            minerals = 500
-            alloys = 250
+    triggered_district_planet_modifier = {
+        potential = {
+            uses_district_set = city_world
+            uses_district_set = machine_world
+            uses_district_set = hive_world
         }
-	}
-
-	planet_modifier = {
-		zone_building_slots_add = 3
-        planet_pop_assemblers_sr_living_metal_produces_add = 0.2
-        planet_pop_assemblers_alloys_upkeep_add = 2
-	}
-
-    district_planet_modifier = { job_replicator_add = 30 }
-
-	inline_script = { script = zones/shared_city_non_urban_zone_modifiers }
-}
-
-# 蜂巢组装及活体金属生产
-zone_AIO_lm_production_hive_empire = {
-    icon = GFX_job_overlord_breeder
-
-    zone_sets = { urban }
-
-	base_buildtime = @zone_buildtime
-
-    potential = { # planet scope
-        exists = owner
-        owner = {
-            is_hive_empire = yes
-            has_ascension_perk = ap_AIO_allinone
-        }
+        planet_housing_add = @zone_arcology_housing_negative
     }
 
-    included_building_sets = {
-        urban
-        automation
-    }
-
-    resources = {
-        category = planet_zones
-        cost = {
-            minerals = 500
-            alloys = 250
-        }
-    }
-
-    planet_modifier = {
-        zone_building_slots_add = 3
-        planet_pop_assemblers_sr_living_metal_produces_add = 0.2
-        planet_pop_assemblers_food_upkeep_add = 3
-    }
-
-    district_planet_modifier = { job_spawning_drone_add = 30 }
-
-    inline_script = { script = zones/shared_city_non_urban_zone_modifiers }
-}
-
-# 矿工岗纳米机器人生产特化，纳米飞专属
-zone_AIO_nanites_production_minerals ={
-    icon = GFX_AIO_resource_nanites_large
-
-    swap_type = district_AIO_nanites_production_miners
-    swap_type_weight = 5
-
-    zone_sets = { nexus }
-
-    base_buildtime = @zone_buildtime
-
-    potential = { # planet scope
-        is_planet_class = pc_nanotech
-
-        exists = owner
-        owner = {
-            has_menace_perk = menp_AIO_fleet_component_2
-            has_tradition = tr_nanotech_3
-        }
-    }
-
-    included_building_sets = {
-        mining
-        fallen_empire_mining
-        automation
-    }
-
-    resources = {
-        category = planet_zones
-        cost = {
-            minerals = 500
-            alloys = 250
-        }
-    }
-
-    planet_modifier = {
-        zone_building_slots_add = 3
-        planet_miners_nanites_produces_add = 0.2
-    }
-
-    inline_script = {
-        script = jobs/zone_miner_add
-        AMOUNT = @doubled_scaling_district_1_job
+    triggered_district_planet_modifier = {
+        potential = { uses_district_set = ring_world }
+        planet_housing_add = @zone_ring_world_housing_negative
     }
 }
 
@@ -222,41 +240,53 @@ zone_AIO_nanites_production_metallurgists ={
     swap_type_weight = 5
 
     zone_sets = {
+		urban
+		habitat_urban
+        arcology
         nexus
         hive
         ring_world
-
-		urban
-		habitat_urban
+        ark_urban
+        ark_military
 	}
+
+    included_building_sets = {
+        foundry
+        urban_automation
+        origin
+    }
 
     base_buildtime = @zone_buildtime
 
     potential = { # planet scope
-        num_zones = { type = zone_AIO_nanites_production_metallurgists value < 1 }
-
-        exists = owner
-        owner = {
-            has_menace_perk = menp_AIO_fleet_component_2
-            country_uses_bio_ships = no
+        hidden_trigger = {
+            exists = owner
+            owner = {
+                has_menace_perk = menp_AIO_fleet_component_2
+            }
         }
-    }
-
-    included_building_sets = {
-        foundry
-        automation
-        origin
     }
 
     resources = {
         category = planet_zones
-        cost = {
-            minerals = 500
-            alloys = 250
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
         }
     }
 
-    planet_modifier = { zone_building_slots_add = 3 }
+    planet_modifier = {
+        zone_building_slots_add = 3
+    }
+
+    inline_script = {
+        script = jobs/zone_foundry_add
+        AMOUNT = @doubled_scaling_district_1_job
+        AMOUNT2 = @doubled_scaling_district_1_job
+    }
 
     triggered_planet_modifier = {
         potential = { NOT = { is_planet_class = pc_nanotech } }
@@ -269,9 +299,29 @@ zone_AIO_nanites_production_metallurgists ={
         planet_metallurgists_alloys_produces_add = -1
     }
 
-    inline_script = {
-        script = jobs/zone_foundry_add
-        AMOUNT = @scaling_district_1_job
+    triggered_district_planet_modifier = {
+        potential = {
+            OR = {
+                uses_district_set = standard
+                uses_district_set = nomad
+            }
+        }
+        planet_housing_add = @zone_urban_housing_negative
+    }
+
+    triggered_district_planet_modifier = {
+        potential = {
+            OR = {
+                uses_district_set = machine_world
+                uses_district_set = hive_world
+            }
+        }
+        planet_housing_add = @zone_arcology_housing_negative
+    }
+
+    triggered_district_planet_modifier = {
+        potential = { uses_district_set = ring_world }
+        planet_housing_add = @zone_ring_world_housing_negative
     }
 }
 
@@ -283,38 +333,46 @@ zone_AIO_nanites_production_farmers ={
     swap_type_weight = 5
 
     zone_sets = {
+		food
+        habitat_energy
         hive
         ring_world
-
-		food
-        nanites
 	}
-
-    base_buildtime = @zone_buildtime
-
-    potential = { # planet scope
-        num_zones = { type = zone_AIO_nanites_production_farmers value < 1 }
-
-        exists = owner
-        owner = {
-            has_menace_perk = menp_AIO_fleet_component_2
-            country_uses_bio_ships = yes
-        }
-    }
 
     included_building_sets = {
         farming
         hydroponics
-        automation
+        farming_automation
         fallen_empire_farming
+    }
+
+    base_buildtime = @zone_buildtime
+
+    potential = { # planet scope
+        exists = owner
+        owner = { has_menace_perk = menp_AIO_fleet_component_2 }
+    }
+
+    convert_to = {
+        zone_food
+        zone_food_ring_world
+        zone_food_hive
     }
 
     resources = {
         category = planet_zones
-        cost = {
-            minerals = 500
-            alloys = 250
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
         }
+    }
+
+    inline_script = {
+        script = jobs/zone_farmers_add
+        AMOUNT = @scaling_district_1_job
     }
 
     planet_modifier = {
@@ -323,8 +381,77 @@ zone_AIO_nanites_production_farmers ={
         planet_farmers_food_produces_add = -2
     }
 
-    inline_script = {
-        script = jobs/zone_farmers_add
-        AMOUNT = @scaling_district_1_job
+    triggered_district_planet_modifier = {
+        potential = { uses_district_set = hive_world }
+        planet_housing_add = @zone_arcology_housing_negative
     }
+
+    triggered_district_planet_modifier = {
+        potential = { uses_district_set = ring_world }
+        planet_housing_add = @zone_ring_world_housing_negative
+    }
+}
+
+# 矿工岗纳米机器人生产特化，纳米飞专属
+zone_AIO_nanites_production_minerals ={
+    icon = GFX_AIO_resource_nanites_large
+
+    swap_type = district_AIO_nanites_production_miners
+	swap_type_weight = 5
+
+    zone_sets = {
+		nexus
+	}
+
+    included_building_sets = {
+        mining
+        fallen_empire_mining
+        mining_automation
+    }
+
+    base_buildtime = @zone_buildtime
+
+    potential = { # planet scope
+        exists = owner
+        owner = {
+            has_menace_perk = menp_AIO_fleet_component_2
+            has_tradition = tr_nanotech_3
+        }
+    }
+
+    convert_to = {
+        zone_minerals
+        zone_minerals_nexus
+        zone_minerals_hive
+    }
+
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+
+    planet_modifier = {
+        zone_building_slots_add = 3
+        planet_miners_nanites_produces_add = 0.2
+    }
+
+    inline_script = {
+        script = jobs/zone_miner_add
+        AMOUNT = @doubled_scaling_district_1_job
+    }
+
+    triggered_district_planet_modifier = {
+		planet_housing_add = 1
+		mult = modifier:mining_district_housing_add
+	}
+
+	inline_script = {
+		script = zones/shared_arcology_zone_modifiers
+	}
 }

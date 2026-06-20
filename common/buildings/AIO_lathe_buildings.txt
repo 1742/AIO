@@ -5,10 +5,10 @@ building_AIO_lathe_resonator = {
 
 	base_buildtime = @b2_time
 	planet_limit = 1
-	building_sets = { AIO_matryoshka_brain_buildings }
+	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_matryoshka_brain
+		has_district = district_AIO_lathe
 	}
 
 	prerequisites = { tech_AIO_lathe_resonator }
@@ -48,10 +48,10 @@ building_AIO_lathe_stabilisator = {
 
 	base_buildtime = @b2_time
 	planet_limit = 1
-	building_sets = { AIO_matryoshka_brain_buildings }
+	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_matryoshka_brain
+		has_district = district_AIO_lathe
 	}
 
 	category = government
@@ -77,10 +77,10 @@ building_AIO_lathe_overclocker = {
 
 	base_buildtime = @b2_time
 	planet_limit = 1
-	building_sets = { AIO_matryoshka_brain_buildings }
+	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_matryoshka_brain
+		has_district = district_AIO_lathe
 	}
 
 	prerequisites = { tech_AIO_lathe_overclocker }
@@ -117,11 +117,11 @@ building_AIO_lathe_preserver = {
 
 	base_buildtime = @b2_time
 	planet_limit = 1
-	building_sets = { AIO_matryoshka_brain_buildings }
+	building_sets = { AIO_lathe_buildings }
 	exempt_from_ai_planet_specialization = yes
 
 	potential = {
-		has_district = district_AIO_matryoshka_brain
+		has_district = district_AIO_lathe
 	}
 
 	prerequisites = { tech_AIO_lathe_preserver }
@@ -149,10 +149,10 @@ building_AIO_lathe_reactor = {
 
 	base_buildtime = @b2_time
 	planet_limit = 1
-	building_sets = { AIO_matryoshka_brain_buildings }
+	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_matryoshka_brain
+		has_district = district_AIO_lathe
 	}
 
 	category = resource
@@ -181,10 +181,10 @@ building_AIO_lathe_life_support = {
 
 	base_buildtime = @b2_time
 	planet_limit = 1
-	building_sets = { AIO_matryoshka_brain_buildings }
+	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_matryoshka_brain
+		has_district = district_AIO_lathe
 	}
 
 	prerequisites = { tech_AIO_lathe_life_support }
@@ -215,10 +215,10 @@ building_AIO_lathe_cogitator = {
 
 	base_buildtime = @b2_time
 	planet_limit = 1
-	building_sets = { AIO_matryoshka_brain_buildings }
+	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_matryoshka_brain
+		has_district = district_AIO_lathe
 	}
 
 	prerequisites = { tech_AIO_lathe_cogitator }
@@ -259,10 +259,10 @@ building_AIO_lathe_validator = {
 	icon = building_lathe_validator
 	base_buildtime = @b2_time
 	planet_limit = 1
-	building_sets = { AIO_matryoshka_brain_buildings }
+	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_matryoshka_brain
+		has_district = district_AIO_lathe
 	}
 
 	prerequisites = { tech_AIO_lathe_validator }

@@ -51,7 +51,7 @@
  #region 天灾目标
 
  crisobj_AIO_neural_chips_name: "部署递归节点"
- crisobj_AIO_neural_chips_desc: "我们必须做出一点牺牲才能够适应如此宏大的研究规模。\n\n将机器人口作为§Y$job_AIO_recursive_node$§!装入§Y$district_AIO_matryoshka_brain$§!以获得$AIO_advanced_logic$。\n\n§Y$job_AIO_recursive_node$§!的产出随其数量增加，并可以区划和建筑物进一步提高。\n\n持续增加§Y递归节点§!的数量以获得这项§Y年度§!$AIO_advanced_logic$奖励"
+ crisobj_AIO_neural_chips_desc: "我们必须做出一点牺牲才能够适应如此宏大的研究规模。\n\n将机器人口作为§Y$job_AIO_recursive_node$§!装入§Y$district_AIO_lathe$§!以获得$AIO_advanced_logic$。\n\n§Y$job_AIO_recursive_node$§!的产出随其数量增加，并可以区划和建筑物进一步提高。\n\n持续增加§Y递归节点§!的数量以获得这项§Y年度§!$AIO_advanced_logic$奖励"
  crisobj_AIO_research_tech_name: "$crisobj_research_tech_name$"
  crisobj_AIO_research_tech_desc: "$crisobj_research_tech_desc$"
  crisobj_AIO_research_thesis_name: "$crisobj_research_thesis_name$"

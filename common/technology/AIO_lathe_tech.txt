@@ -18,7 +18,7 @@ tech_AIO_lathe_resonator = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_owned_planet = { has_district = district_AIO_matryoshka_brain } }
+			NOT = { any_owned_planet = { has_district = district_AIO_lathe } }
 		}
 		modifier = {
 			factor = 2
@@ -53,7 +53,7 @@ tech_AIO_lathe_overclocker = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_owned_planet = { has_district = district_AIO_matryoshka_brain } }
+			NOT = { any_owned_planet = { has_district = district_AIO_lathe } }
 		}
 		modifier = {
 			factor = 2
@@ -88,7 +88,7 @@ tech_AIO_lathe_preserver = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_owned_planet = { has_district = district_AIO_matryoshka_brain } }
+			NOT = { any_owned_planet = { has_district = district_AIO_lathe } }
 		}
 		modifier = {
 			factor = 2
@@ -123,7 +123,7 @@ tech_AIO_lathe_life_support = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_owned_planet = { has_district = district_AIO_matryoshka_brain } }
+			NOT = { any_owned_planet = { has_district = district_AIO_lathe } }
 		}
 		modifier = {
 			factor = 2
@@ -158,7 +158,7 @@ tech_AIO_lathe_cogitator = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_owned_planet = { has_district = district_AIO_matryoshka_brain } }
+			NOT = { any_owned_planet = { has_district = district_AIO_lathe } }
 		}
 		modifier = {
 			factor = 2
@@ -193,7 +193,7 @@ tech_AIO_lathe_validator = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_owned_planet = { has_district = district_AIO_matryoshka_brain } }
+			NOT = { any_owned_planet = { has_district = district_AIO_lathe } }
 		}
 		modifier = {
 			factor = 2

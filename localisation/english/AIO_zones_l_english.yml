@@ -1,7 +1,7 @@
 ﻿l_english:
  # matryoshka brain specialization
- zone_AIO_matryoshka_brain: "Matryoshka Brain Specialization"
- zone_AIO_matryoshka_brain_desc: "$district_AIO_matryoshka_brain_desc$"
+ zone_AIO_lathe: "Matryoshka Brain Specialization"
+ zone_AIO_lathe_desc: "$district_AIO_lathe_desc$"
  # dark matter production
  zone_AIO_dm_production: "Dark Matter Synthesis Complex"
  zone_AIO_dm_production_desc: "The flow of conventional energy is only a cosmic appearance. By tuning the labor patterns of drones, deeper matter - dark matter is produced."

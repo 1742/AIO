@@ -19,7 +19,7 @@ AIO_recursive_node = {
 		is_sapient = yes
 	}
 	possible = {
-		planet = { has_district = district_AIO_matryoshka_brain }
+		planet = { has_district = district_AIO_lathe }
 		OR = {
 			is_robot_pop_group = yes
 			is_hive_species = yes
