@@ -1,0 +1,1663 @@
+# AIO fallen empire building technologies derived from Stellaris 4.4.
+# Researching one mirrors the corresponding vanilla technology via AIO_fe_events.201.
+@AIOEnigmaticEngineeringDraw = 0.025
+
+
+#region 1级
+
+tech_AIO_fe_forge_1 = {
+	icon = tech_fe_forge_1
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { industry }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_forge_1 }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_1
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_1 }
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_forge_2 = {
+	icon = tech_fe_forge_2
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { industry }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_forge_2 }
+	}
+
+	prerequisites = { "tech_AIO_fe_forge_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_forge_2
+		}
+	}
+}
+
+tech_AIO_fe_fabricator_1 = {
+	icon = tech_fe_fabricator_1
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { materials }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_fabricator_1 }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_1
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_1 }
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_fabricator_2 = {
+	icon = tech_fe_fabricator_2
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { materials }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_fabricator_2 }
+	}
+
+	prerequisites = { "tech_AIO_fe_fabricator_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_fabricator_2
+		}
+	}
+}
+
+#endregion
+
+
+#region 2级
+
+tech_AIO_fe_singularity_1 = {
+	icon = tech_fe_singularity_1
+
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { particles }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_singularity_1 }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_2
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_2 }
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_singularity_2 = {
+	icon = tech_fe_singularity_2
+
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { particles }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_singularity_2 }
+	}
+
+	prerequisites = { "tech_AIO_fe_singularity_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_singularity_2
+		}
+	}
+}
+
+tech_AIO_fe_mine_1 = {
+	icon = tech_fe_mine_1
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { materials }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_mine_1 }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_2
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_2 }
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_mine_2 = {
+	icon = tech_fe_mine_2
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { materials }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_mine_2 }
+	}
+
+	prerequisites = { "tech_AIO_fe_mine_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_mine_2
+		}
+	}
+}
+
+tech_AIO_nourishment_complex = {
+	icon = tech_fe_nourishment_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { biology }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_nourishment_1 }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_2
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_2 }
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			country_uses_bio_ships = yes
+		}
+	}
+}
+
+tech_AIO_nourishment_center = {
+	icon = tech_fe_nourishment_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { biology }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_nourishment_2 }
+	}
+
+	prerequisites = { tech_AIO_nourishment_complex }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		modifier = {
+			factor = 0
+			country_uses_food = no
+		}
+		modifier = {
+			factor = 2
+			country_uses_bio_ships = yes
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_nourishment_center
+		}
+	}
+}
+
+#endregion
+
+
+#region 3级
+
+tech_AIO_fe_affluence_1 = {
+	icon = tech_fe_affluence_1
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { industry }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_affluence_1 }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_3
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_3 }
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_affluence_2 = {
+	icon = tech_fe_affluence_2
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { industry }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_affluence_2 }
+	}
+
+	prerequisites = { "tech_AIO_fe_affluence_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		modifier = {
+			factor = 0
+			country_uses_consumer_goods = no
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_affluence_2
+		}
+	}
+}
+
+tech_AIO_fe_silo_1 = {
+	icon = tech_fe_silo_1
+
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_silo_1 }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_3
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_3 }
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_silo_2 = {
+	icon = tech_fe_silo_2
+
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { field_manipulation }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_silo_2 }
+	}
+
+	prerequisites = { "tech_AIO_fe_silo_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_silo_2
+		}
+	}
+}
+
+tech_AIO_fe_market_1 = {
+	icon = tech_fe_market_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_market_1 }
+	} # Not for gestalt
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_3
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_3 }
+		}
+		modifier = {
+			factor = 0
+			is_gestalt = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_market_2 = {
+	icon = tech_fe_market_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_market_2 }
+	}
+
+	prerequisites = { "tech_AIO_fe_market_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_market_2
+		}
+	}
+}
+
+#endregion
+
+
+#region 4级
+
+tech_AIO_fe_administration_1 = {
+	icon = tech_fe_administration_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_administration_1 }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_4
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_4 }
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_administration_2 = {
+	icon = tech_fe_administration_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_administration_2 }
+	}
+
+	prerequisites = { "tech_AIO_fe_administration_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_administration_2
+		}
+	}
+}
+
+tech_AIO_fe_security_1 = {
+	icon = tech_fe_security_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_security_1 }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_4
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_4 }
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_security_2 = {
+	icon = tech_fe_security_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_security_2 }
+	}
+
+	prerequisites = { "tech_AIO_fe_security_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_security_2
+		}
+	}
+}
+
+tech_AIO_fe_lab_1 = {
+	icon = tech_fe_lab_1
+
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { computing }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_lab_1 }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_4
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_4 }
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_lab_2 = {
+	icon = tech_fe_lab_2
+
+	area = physics
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { computing }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_lab_2 }
+	}
+
+	prerequisites = { "tech_AIO_fe_lab_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_lab_2
+		}
+	}
+}
+
+tech_AIO_fe_fortress_1 = {
+	icon = tech_fe_fortress_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { military_theory }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_fortress_1 }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_4
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_4 }
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_fortress_2 = {
+	icon = tech_fe_fortress_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { military_theory }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_fortress_2 }
+	}
+
+	prerequisites = { "tech_AIO_fe_fortress_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_fortress_2
+		}
+	}
+}
+
+#endregion
+
+
+#region 5级
+
+tech_AIO_fe_dome_1 = {
+	icon = tech_fe_dome_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_dome_1 }
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_5
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_5 }
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_dome_2 = {
+	icon = tech_fe_dome_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_dome_2 }
+	}
+
+	prerequisites = { "tech_AIO_fe_dome_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_dome_2
+		}
+	}
+}
+
+tech_AIO_fe_entertainment_1 = {
+	icon = tech_fe_entertainment_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_entertainment_1 }
+	} # Not for gestalt
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_5
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_5 }
+		}
+		modifier = {
+			factor = 0
+			is_gestalt = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_entertainment_2 = {
+	icon = tech_fe_entertainment_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { statecraft }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_entertainment_2 }
+	} # Not for gestalt
+
+	prerequisites = { "tech_AIO_fe_entertainment_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_entertainment_2
+		}
+	}
+}
+
+tech_AIO_fe_assembly_1 = {
+	icon = tech_fe_assembly_1
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { industry }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_assembly_1 }
+	} #Not for Hives
+
+	prerequisites = {
+		OR = {
+			tech_robomodding
+			tech_robomodding_m
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			has_policy_flag = robots_outlawed
+		}
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_5
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_5 }
+		}
+		modifier = {
+			factor = 0
+			is_hive_empire = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_assembly_1
+		}
+	}
+}
+
+tech_AIO_fe_assembly_2 = {
+	icon = tech_fe_assembly_2
+
+	area = engineering
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { industry }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_assembly_2 }
+	} #Not for Hives
+
+	prerequisites = { "tech_AIO_fe_assembly_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			has_policy_flag = robots_outlawed
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_assembly_2
+		}
+	}
+}
+
+tech_AIO_fe_clinic_1 = {
+	icon = tech_fe_clinic_1
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { biology }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_clinic_1 }
+	} #Not for Machines
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOR = {
+				has_crisis_level = crisis_AIO_level_5
+				has_ascension_perk = ap_enigmatic_engineering
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+			calc_true_if = {
+				amount >= 4
+				has_technology = tech_AIO_fe_affluence_1
+				has_technology = tech_AIO_nourishment_complex
+				has_technology = tech_AIO_fe_fabricator_1
+				has_technology = tech_AIO_fe_singularity_1
+				has_technology = tech_AIO_fe_forge_1
+				has_technology = tech_AIO_fe_dome_1
+				has_technology = tech_AIO_fe_fortress_1
+				has_technology = tech_AIO_fe_administration_1
+				has_technology = tech_AIO_fe_assembly_1
+				has_technology = tech_AIO_fe_clinic_1
+				has_technology = tech_AIO_fe_security_1
+				has_technology = tech_AIO_fe_market_1
+				has_technology = tech_AIO_fe_silo_1
+				has_technology = tech_AIO_fe_entertainment_1
+				has_technology = tech_AIO_fe_lab_1
+				has_technology = tech_AIO_fe_mine_1
+			}
+		}
+		modifier = {
+			factor = @AIOEnigmaticEngineeringDraw
+			NOT = { has_crisis_level = crisis_AIO_level_5 }
+		}
+		modifier = {
+			factor = 0
+			is_machine_empire = yes
+		}
+		modifier = {
+			factor = 1.5
+			has_ascension_perk = ap_enigmatic_engineering
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = {
+					job = AIO_recursive_node
+					value > 5000
+				}
+			}
+		}
+	}
+}
+
+tech_AIO_fe_clinic_2 = {
+	icon = tech_fe_clinic_2
+
+	area = society
+	cost = @fallentechcost
+	tier = @fallentechtier
+	category = { biology }
+	ai_update_type = all
+	weight = @tier5weight3
+	is_rare = yes
+	is_dangerous = yes
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+		NOT = { has_technology = tech_fe_clinic_2 }
+	} #Not for Machines
+
+	prerequisites = { "tech_AIO_fe_clinic_1" }
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { has_ascension_perk = ap_AIO_allinone }
+		}
+		inline_script = {
+			script = technologies/rare_technologies_weight_modifiers
+			TECHNOLOGY = tech_AIO_fe_clinic_1
+		}
+	}
+}
+
+#endregion

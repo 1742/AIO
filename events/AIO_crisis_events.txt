@@ -568,7 +568,10 @@ country_event = {
     hide_window = yes
 
     is_triggered_only = yes
-    trigger = { has_ascension_perk = ap_AIO_allinone }
+    trigger = {
+        has_ascension_perk = ap_AIO_allinone
+        NOT = { has_country_flag = AIO_granting_vanilla_fe_technology }
+    }
 
     immediate = { complete_crisis_objective = crisobj_AIO_research_tech }
 }

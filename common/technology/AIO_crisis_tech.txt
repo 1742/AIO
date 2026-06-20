@@ -1,0 +1,52 @@
+tech_AIO_exponential_learning_theory = {
+	icon = tech_cosmogenesis_crisis_1
+	area = physics
+    cost = 10000
+    tier = 5
+    category = { computing }
+    ai_update_type = all
+    is_rare = yes
+    weight = 0
+
+    potential = {
+        has_ascension_perk = ap_AIO_allinone
+    }
+
+	modifier = {
+        all_technology_research_speed = 0.1
+    }
+
+    prereqfor_desc = {
+        custom = {
+            title = AIO_level_1_tech_title
+            desc = AIO_exponential_learning_theory_tech_desc
+        }
+    }
+}
+
+tech_AIO_ascending_dimensionality_theory = {
+	icon = tech_cosmogenesis_crisis_2
+	area = physics
+    cost = 10000
+    tier = 5
+    category = { particles }
+    ai_update_type = all
+    is_rare = yes
+    weight = 0
+
+    potential = {
+        has_ascension_perk = ap_AIO_allinone
+    }
+
+	modifier = {
+		planet_building_build_speed_mult = 0.2
+		megastructure_build_speed_mult = 0.1
+	}
+
+    prereqfor_desc = {
+        custom = {
+            title = AIO_level_1_tech_title
+            desc = AIO_ascending_dimensionality_theory_tech_desc
+        }
+    }
+}

@@ -1,3 +1,13 @@
+#region AIO 老登建筑数值
+
+@fe_automation_worker_1 = 0.75
+@fe_automation_worker_2 = 1.00
+@fe_automation_specialist_1 = 0.25
+@fe_automation_specialist_2 = 0.50
+
+#endregion
+
+
 #region DAIT 页码
 
 @AIO_DAIT_material_tab_name = "material"

@@ -20,7 +20,7 @@ menp_AIO_buildings_1 = {
 
 	on_unlock = {
 		custom_tooltip = unlocks_buildings_1
-		# 有AIO的整合建筑、超级铸造厂/纳米熔炉、次元复制机/次元制造机
+		# 超级铸造厂/纳米熔炉、次元复制机/次元制造机
 	}
 }
 # 舰船组件
@@ -61,7 +61,7 @@ menp_AIO_buildings_2 = {
 
 	on_unlock = {
 		custom_tooltip = unlocks_buildings_2
-		# 有AIO的三级奇点/四级奇点、量子钻穿工厂/量子钻穿中心、营养复合体/营养中心
+		# 三级奇点/四级奇点、量子钻穿工厂/量子钻穿中心、营养复合体/营养中心
 	}
 }
 # 舰船组件
@@ -138,7 +138,7 @@ menp_AIO_buildings_3 = {
 
 	on_unlock = {
 		custom_tooltip = unlocks_buildings_3
-		# 有AIO的皱缩空间仓库/高维度仓库、星系贸易中心/星际贸易枢纽、司法复合体/司法殿堂
+		# 皱缩空间仓库/高维度仓库、星系贸易中心/星际贸易枢纽、富足商埠/财富中心、司法复合体/司法殿堂
 	}
 }
 # 舰船组件
@@ -185,7 +185,7 @@ menp_AIO_buildings_4 = {
 
 	on_unlock = {
 		custom_tooltip = unlocks_buildings_4
-		# 有AIO的分型行政流程/量子行政流程/假突触簇集/假突触轴突、量子创新枢纽/超然创新部、重盾垣壁/神盾基地
+		# 分型行政流程/量子行政流程/假突触簇集/假突触轴突、量子创新枢纽/超然创新部、重盾垣壁/神盾基地
 	}
 }
 # 舰船
@@ -222,7 +222,7 @@ menp_AIO_buildings_5 = {
 
 	on_unlock = {
 		custom_tooltip = unlocks_buildings_5
-		# 有AIO的天空穹顶/九天穹顶、机器人生产节点/机器人生产中心/分子焕活所/生物再生所
+		# 天空穹顶/九天穹顶、虚拟极乐广场/无尽极乐枢纽、机器人生产节点/机器人生产中心/分子焕活所/生物再生所
 	}
 }
 # 局势加速

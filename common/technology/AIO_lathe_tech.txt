@@ -1,0 +1,213 @@
+#region 突触凝练机建筑
+
+tech_AIO_lathe_resonator = {
+	icon = tech_lathe_resonator
+	area = physics
+	cost = 30000
+	tier = 5
+	category = { computing }
+	ai_update_type = all
+	is_rare = yes
+	weight = @tier5weight1
+
+	potential = {
+		has_machine_age_dlc = yes
+		has_ascension_perk = ap_AIO_allinone
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_owned_planet = { has_district = district_AIO_matryoshka_brain } }
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = { job = AIO_recursive_node value >= 5000 }
+			}
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = { job = AIO_recursive_node value >= 10000 }
+			}
+		}
+	}
+}
+
+tech_AIO_lathe_overclocker = {
+	icon = tech_lathe_overclocker
+	area = physics
+	cost = 30000
+	tier = 5
+	category = { computing }
+	ai_update_type = all
+	is_rare = yes
+	weight = @tier5weight1
+
+	potential = {
+		has_machine_age_dlc = yes
+		has_ascension_perk = ap_AIO_allinone
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_owned_planet = { has_district = district_AIO_matryoshka_brain } }
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = { job = AIO_recursive_node value >= 5000 }
+			}
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = { job = AIO_recursive_node value >= 10000 }
+			}
+		}
+	}
+}
+
+tech_AIO_lathe_preserver = {
+	icon = tech_lathe_preserver
+	area = society
+	cost = 30000
+	tier = 5
+	category = { biology }
+	ai_update_type = all
+	is_rare = yes
+	weight = @tier5weight1
+
+	potential = {
+		has_machine_age_dlc = yes
+		has_ascension_perk = ap_AIO_allinone
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_owned_planet = { has_district = district_AIO_matryoshka_brain } }
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = { job = AIO_recursive_node value >= 5000 }
+			}
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = { job = AIO_recursive_node value >= 10000 }
+			}
+		}
+	}
+}
+
+tech_AIO_lathe_life_support = {
+	icon = tech_lathe_life_support
+	area = society
+	cost = 30000
+	tier = 5
+	category = { biology }
+	ai_update_type = all
+	is_rare = yes
+	weight = @tier5weight1
+
+	potential = {
+		has_machine_age_dlc = yes
+		has_ascension_perk = ap_AIO_allinone
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_owned_planet = { has_district = district_AIO_matryoshka_brain } }
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = { job = AIO_recursive_node value >= 5000 }
+			}
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = { job = AIO_recursive_node value >= 10000 }
+			}
+		}
+	}
+}
+
+tech_AIO_lathe_cogitator = {
+	icon = tech_lathe_cogitator
+	area = society
+	cost = 30000
+	tier = 5
+	category = { military_theory }
+	ai_update_type = all
+	is_rare = yes
+	weight = @tier5weight1
+
+	potential = {
+		has_machine_age_dlc = yes
+		has_ascension_perk = ap_AIO_allinone
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_owned_planet = { has_district = district_AIO_matryoshka_brain } }
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = { job = AIO_recursive_node value >= 5000 }
+			}
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = { job = AIO_recursive_node value >= 10000 }
+			}
+		}
+	}
+}
+
+tech_AIO_lathe_validator = {
+	icon = tech_lathe_validator
+	area = physics
+	cost = 30000
+	tier = 5
+	category = { computing }
+	ai_update_type = all
+	is_rare = yes
+	weight = @tier5weight1
+
+	potential = {
+		has_machine_age_dlc = yes
+		has_ascension_perk = ap_AIO_allinone
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = 0
+			NOT = { any_owned_planet = { has_district = district_AIO_matryoshka_brain } }
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = { job = AIO_recursive_node value >= 5000 }
+			}
+		}
+		modifier = {
+			factor = 2
+			any_owned_planet = {
+				num_assigned_jobs = { job = AIO_recursive_node value >= 10000 }
+			}
+		}
+	}
+}
+
+#endregion

@@ -2,27 +2,26 @@
 
 ap_AIO_allinone = {
 	potential = {
-        is_ai = no
+		has_machine_age_dlc = yes
 		NOR = {
 			is_player_crisis = yes
 			has_ascension_perk = ap_defender_of_the_galaxy
+			has_ascension_perk = ap_defender_of_the_galaxy_nomads
 			has_origin = origin_slavers # No crisis for MSI
 			has_origin = origin_endbringers # No additional crisis for Endbringers
 
-            is_country_type = AIO_empire
+			is_country_type = AIO_empire
             is_country_type = AIO_Aforgomom
 		}
+		is_wilderness_empire = no
 	}
 
 	possible = {
 		custom_tooltip = {
 			fail_text = "requires_ascension_perks_3"
-			OR = {
-				num_ascension_perks > 2
-				has_country_flag = AIO_empire_country
-			}
+			num_ascension_perks > 2
 		}
-        custom_tooltip = {
+		custom_tooltip = {
             fail_text = AIO_requires_gestalt
             has_ethic = ethic_gestalt_consciousness
         }
