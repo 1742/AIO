@@ -2,8 +2,8 @@
  #region 视界引擎
 
  AIO_horizon_engine: "视界引擎"
- AIO_horizon_engine_DESC: "用于抽取现实与虚境的能量。"
- AIO_horizon_engine_MEGASTRUCTURE_DETAILS: "我们不是唯一拥有此技术的文明，已经有其他帝国选择了这条道路。我们对其进行了改良，它缓慢而无声地将现实与虚境剥离、侵蚀，将我们这个维度最深处的结构性意义化为供能。"
+ AIO_horizon_engine_DESC: "我们不是唯一拥有此技术的文明，已经有其他帝国选择了这条道路。我们对其进行了改良，它缓慢而无声地将现实与虚境剥离、侵蚀，将我们这个维度最深处的结构性意义化为供能。"
+ AIO_horizon_engine_MEGASTRUCTURE_DETAILS: "用于抽取现实与虚境的能量。"
 
  #endregion
 

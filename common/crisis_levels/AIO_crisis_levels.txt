@@ -6,8 +6,8 @@ crisis_AIO_level_1 = {
 	perks = {
 		menp_AIO_al_research
 		menp_AIO_buildings_1
-		menp_AIO_fleet_component_1_1
-		menp_AIO_fleet_component_1_2
+        menp_AIO_fleet_component_1
+		menp_AIO_fleet_dark_matter
 	}
 
 	on_unlock = {

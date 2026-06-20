@@ -2,9 +2,8 @@
  #region Horizon Engine
 
  AIO_horizon_engine: "Horizon Engine"
- AIO_horizon_engine_DESC: "Used to extract energy from reality and shroud."
- AIO_horizon_engine_MEGASTRUCTURE_DETAILS: "We are not the only civilization with this technology, there are already other empires that have chosen this path. We have improved it, slowly and silently stripping and eroding reality from the shroud, turning the deepest structural meaning of our dimension into energy."
-
+ AIO_horizon_engine_DESC: "We are not the only civilization with this technology, there are already other empires that have chosen this path. We have improved it, slowly and silently stripping and eroding reality from the shroud, turning the deepest structural meaning of our dimension into energy."
+ AIO_horizon_engine_MEGASTRUCTURE_DETAILS: "Used to extract energy from reality and shroud."
 
  #endregion
 

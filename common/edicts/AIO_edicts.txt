@@ -5,7 +5,7 @@ edict_AIO_dm_engine = {
     length = -1
     icon = "GFX_edict_type_policy"
 
-    potential = { has_menace_perk = menp_AIO_fleet_component_1_2 }
+    potential = { has_menace_perk = menp_AIO_fleet_dark_matter }
 
     resources = {
 		category = edicts

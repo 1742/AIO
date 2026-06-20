@@ -24,22 +24,21 @@ menp_AIO_buildings_1 = {
 	}
 }
 # 舰船组件
-menp_AIO_fleet_component_1_1 = {
+menp_AIO_fleet_component_1 = {
 	portrait = "GFX_menp_AIO_fleet_component_1_1_icon"
 
 	on_unlock = {
 		custom_tooltip = unlocks_AIO_allinone_fleet_component_1
-
 		add_research_option = tech_arc_emitter_2
 		add_research_option = tech_dragon_armor
 	}
 }
-menp_AIO_fleet_component_1_2 = {
+# 暗物质科技
+menp_AIO_fleet_dark_matter = {
 	portrait = "GFX_menp_AIO_fleet_component_2_icon"
 
 	on_unlock = {
 		custom_tooltip = menp_AIO_fleet_component_1_2_tt
-
 		add_research_option = tech_enigmatic_decoder
 		add_research_option = tech_dark_matter_propulsion
 	}
@@ -70,32 +69,11 @@ menp_AIO_fleet_component_2 = {
 
 	on_unlock = {
         if = {
-            limit = {
-                is_machine_empire = yes
-                country_uses_bio_ships = no
-            }
-            custom_tooltip = menp_AIO_ship_2_tt.machine.alloys
+            limit = { country_uses_bio_ships = no }
+            custom_tooltip = menp_AIO_ship_2_tt.alloys
         }
-        else_if = {
-            limit = {
-                is_machine_empire = yes
-                country_uses_bio_ships = yes
-            }
-            custom_tooltip = menp_AIO_ship_2_tt.machine.food
-        }
-        else_if = {
-            limit = {
-                is_hive_empire = yes
-                country_uses_bio_ships = no
-            }
-            custom_tooltip = menp_AIO_ship_2_tt.hive.alloys
-        }
-        else_if = {
-            limit = {
-                is_hive_empire = yes
-                country_uses_bio_ships = yes
-            }
-            custom_tooltip = menp_AIO_ship_2_tt.machine.food
+        else = {
+            custom_tooltip = menp_AIO_ship_2_tt.food
         }
 
 		add_research_option = tech_nanite_transmutation
@@ -147,7 +125,6 @@ menp_AIO_fleet_component_3 = {
 
 	on_unlock = {
 		custom_tooltip = unlocks_techs_3
-
 		add_research_option = tech_enigmatic_encoder
 		add_research_option = tech_dark_matter_deflector
 	}
