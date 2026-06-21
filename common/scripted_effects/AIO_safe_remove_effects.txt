@@ -30,12 +30,7 @@ AIO_safe_remove_megastructure = {
             }
         }
         else_if = {
-            limit = {
-                OR = {
-                    AIO_is_orbital_arc_furnace = yes
-                    is_megastructure_type = orbital_arc_furnace_restored
-                }
-            }
+            limit = { AIO_is_orbital_arc_furnace = yes }
             solar_system = {
                 every_system_planet = {
                     limit = {
@@ -73,21 +68,13 @@ AIO_safe_remove_megastructure = {
         if = {
             limit = {
                 exists = owner
-                OR = {
-                    AIO_is_dyson_sphere = yes
-                    is_megastructure_type = dyson_sphere_0
-                }
+                AIO_is_dyson_sphere = yes
             }
             owner = {
                 if = {
                     limit = {
                         count_owned_megastructure = {
-                            limit = {
-                                OR = {
-                                    AIO_is_dyson_sphere = yes
-                                    is_megastructure_type = dyson_sphere_0
-                                }
-                            }
+                            limit = { AIO_is_dyson_sphere = yes }
                             count <= 1
                         }
                     }
@@ -99,80 +86,144 @@ AIO_safe_remove_megastructure = {
             }
         }
         else_if = {
-            limit = { exists = owner AIO_is_matter_decompressor = yes }
+            limit = {
+                exists = owner
+                AIO_is_matter_decompressor = yes
+            }
             owner = {
                 if = {
-                    limit = { count_owned_megastructure = { limit = { AIO_is_matter_decompressor = yes } count <= 1 } }
+                    limit = {
+                        count_owned_megastructure = {
+                            limit = { AIO_is_matter_decompressor = yes }
+                            count <= 1
+                        }
+                    }
                     remove_country_flag = built_matter_decompressor_site
                     remove_country_flag = built_matter_decompressor_site_contingency
                 }
             }
         }
         else_if = {
-            limit = { exists = owner AIO_is_mega_shipyard = yes }
+            limit = {
+                exists = owner
+                AIO_is_mega_shipyard = yes
+            }
             owner = {
                 if = {
-                    limit = { count_owned_megastructure = { limit = { AIO_is_mega_shipyard = yes } count <= 1 } }
+                    limit = {
+                        count_owned_megastructure = {
+                            limit = { AIO_is_mega_shipyard = yes }
+                            count <= 1
+                        }
+                    }
                     remove_country_flag = built_mega_shipyard_site
                     remove_country_flag = built_mega_shipyard_site_contingency
                 }
             }
         }
         else_if = {
-            limit = { exists = owner AIO_is_quantum_catapult = yes }
+            limit = {
+                exists = owner
+                AIO_is_quantum_catapult = yes
+            }
             owner = {
                 if = {
-                    limit = { count_owned_megastructure = { limit = { AIO_is_quantum_catapult = yes } count <= 1 } }
+                    limit = {
+                        count_owned_megastructure = {
+                            limit = { AIO_is_quantum_catapult = yes }
+                            count <= 1
+                        }
+                    }
                     remove_country_flag = built_quantum_catapult_site
                     remove_country_flag = built_quantum_catapult_site_contingency
                 }
             }
         }
         else_if = {
-            limit = { exists = owner AIO_is_spy_orb = yes }
+            limit = {
+                exists = owner
+                AIO_is_spy_orb = yes
+            }
             owner = {
                 if = {
-                    limit = { count_owned_megastructure = { limit = { AIO_is_spy_orb = yes } count <= 1 } }
+                    limit = {
+                        count_owned_megastructure = {
+                            limit = { AIO_is_spy_orb = yes }
+                            count <= 1
+                        }
+                    }
                     remove_country_flag = built_spyorb
                     remove_country_flag = built_spyorb_contingency
                 }
             }
         }
         else_if = {
-            limit = { exists = owner AIO_is_think_tank = yes }
+            limit = {
+                exists = owner
+                AIO_is_think_tank = yes
+            }
             owner = {
                 if = {
-                    limit = { count_owned_megastructure = { limit = { AIO_is_think_tank = yes } count <= 1 } }
+                    limit = {
+                        count_owned_megastructure = {
+                            limit = { AIO_is_think_tank = yes }
+                            count <= 1
+                        }
+                    }
                     remove_country_flag = built_think_tank
                     remove_country_flag = built_think_tank_contingency
                 }
             }
         }
         else_if = {
-            limit = { exists = owner AIO_is_strategic_coordination_center = yes }
+            limit = {
+                exists = owner
+                AIO_is_strategic_coordination_center = yes
+            }
             owner = {
                 if = {
-                    limit = { count_owned_megastructure = { limit = { AIO_is_strategic_coordination_center = yes } count <= 1 } }
+                    limit = {
+                        count_owned_megastructure = {
+                            limit = { AIO_is_strategic_coordination_center = yes }
+                            count <= 1
+                        }
+                    }
                     remove_country_flag = built_strategic_coordination_center_site
                     remove_country_flag = built_strategic_coordination_center_site_contingency
                 }
             }
         }
         else_if = {
-            limit = { exists = owner AIO_is_mega_art_installation = yes }
+            limit = {
+                exists = owner
+                AIO_is_mega_art_installation = yes
+            }
             owner = {
                 if = {
-                    limit = { count_owned_megastructure = { limit = { AIO_is_mega_art_installation = yes } count <= 1 } }
+                    limit = {
+                        count_owned_megastructure = {
+                            limit = { AIO_is_mega_art_installation = yes }
+                            count <= 1
+                        }
+                    }
                     remove_country_flag = built_mega_art_installation
                     remove_country_flag = built_mega_art_installation_contingency
                 }
             }
         }
         else_if = {
-            limit = { exists = owner AIO_is_interstellar_assembly = yes }
+            limit = {
+                exists = owner
+                AIO_is_interstellar_assembly = yes
+            }
             owner = {
                 if = {
-                    limit = { count_owned_megastructure = { limit = { AIO_is_interstellar_assembly = yes } count <= 1 } }
+                    limit = {
+                        count_owned_megastructure = {
+                            limit = { AIO_is_interstellar_assembly = yes }
+                            count <= 1
+                        }
+                    }
                     remove_country_flag = built_interstellar_assembly_site
                     remove_country_flag = built_interstellar_assembly_site_contingency
                 }
@@ -208,56 +259,11 @@ AIO_safe_remove_megastructure = {
         else_if = {
             limit = {
                 exists = owner
-                OR = {
-                    is_megastructure_type = galactic_crucible_0
-                    is_megastructure_type = galactic_crucible_1
-                    is_megastructure_type = galactic_crucible_2
-                    is_megastructure_type = galactic_crucible_3
-                    is_megastructure_type = galactic_crucible_4
-                    is_megastructure_type = galactic_crucible_5
-                    is_megastructure_type = galactic_crucible_ruined
-                }
-            }
-            owner = {
-                if = {
-                    limit = {
-                        count_owned_megastructure = {
-                            limit = {
-                                OR = {
-                                    has_megastructure_flag = galactic_crucible
-                                    is_megastructure_type = galactic_crucible_ruined
-                                }
-                            }
-                            count <= 1
-                        }
-                    }
-                    remove_country_flag = built_galactic_crucible
-                }
-            }
-        }
-        else_if = {
-            limit = {
-                exists = owner
-                OR = {
-                    is_megastructure_type = behemoth_egg
-                    is_megastructure_type = behemoth_egg_hatch
-                    is_megastructure_type = behemoth_fleet_egg
-                    is_megastructure_type = behemoth_fast_egg_hatch
-                    is_megastructure_type = behemoth_slow_egg_hatch
-                    is_megastructure_type = behemoth_strong_egg_hatch
-                    is_megastructure_type = behemoth_chrysalis
-                    is_megastructure_type = behemoth_chrysalis_hatch
-                    is_megastructure_type = behemoth_chrysalis_big
-                    is_megastructure_type = behemoth_chrysalis_big_hatch
-                }
+                AIO_is_behemoth_mega = yes
             }
             owner = {
                 remove_country_flag = behemoth_egg_built
             }
-        }
-        else_if = {
-            limit = { exists = owner is_megastructure_type = cosmogenesis_needle }
-            owner = { remove_country_flag = cosmogenesis_needle_built }
         }
 
         if = {
@@ -277,6 +283,7 @@ AIO_safe_remove_megastructure = {
                 remove_carrier_flag = megastructure
             }
         }
+
         remove_megastructure = this
     }
 }
@@ -559,7 +566,8 @@ AIO_safe_remove_planet = {
                 is_planet_class = pc_ai
                 NOT = { has_planet_flag = machine_lair }
             }
-            planet_event = { id = AIO_ctrl_events.1007 }
+            # TODO: 处理肃正球被移除
+            # planet_event = { id = AIO_ctrl_events.1007 }
             remove_planet = yes
         }
         else_if = {
@@ -569,7 +577,7 @@ AIO_safe_remove_planet = {
             }
             root = { save_event_target_as = final_machine_world_destroyer }
             stop_crisis_sound = yes
-            planet_event = { id = crisis.2046 }
+            carrier_event = { id = crisis.2046 }
             remove_planet = yes
         }
         else_if = {

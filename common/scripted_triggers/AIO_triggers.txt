@@ -59,6 +59,7 @@ AIO_planet_has_oribital_ring = {
 
 AIO_is_dyson_sphere = {
     OR = {
+        is_megastructure_type = dyson_sphere_0
         is_megastructure_type = dyson_sphere_1
         is_megastructure_type = dyson_sphere_2
         is_megastructure_type = dyson_sphere_3
@@ -175,6 +176,22 @@ AIO_is_orbital_arc_furnace = {
         is_megastructure_type = orbital_arc_furnace_2
         is_megastructure_type = orbital_arc_furnace_3
         is_megastructure_type = orbital_arc_furnace_4
+        is_megastructure_type = orbital_arc_furnace_restored
+    }
+}
+
+AIO_is_behemoth_mega = {
+    OR = {
+        is_megastructure_type = behemoth_egg
+        is_megastructure_type = behemoth_egg_hatch
+        is_megastructure_type = behemoth_fleet_egg
+        is_megastructure_type = behemoth_fast_egg_hatch
+        is_megastructure_type = behemoth_slow_egg_hatch
+        is_megastructure_type = behemoth_strong_egg_hatch
+        is_megastructure_type = behemoth_chrysalis
+        is_megastructure_type = behemoth_chrysalis_hatch
+        is_megastructure_type = behemoth_chrysalis_big
+        is_megastructure_type = behemoth_chrysalis_big_hatch
     }
 }
 
