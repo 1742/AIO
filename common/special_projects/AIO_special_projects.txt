@@ -16,7 +16,7 @@ special_project = {
 
 	event_scope = ship_event
 
-	requirements = { shipclass_transport = 1000 }
+	requirements = { shipclass_transport = 400 }
 
 	on_success = { # this - ship, from - planet(location)
 		from = { planet_event = { id = AIO_AIT_events.31012 } }

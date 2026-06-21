@@ -31,7 +31,7 @@ tech_AIO_ascending_dimensionality_theory = {
     tier = 5
     category = { particles }
     ai_update_type = all
-    is_rare = yes
+    is_dangerous = yes
     weight = 0
 
     potential = {
@@ -39,8 +39,7 @@ tech_AIO_ascending_dimensionality_theory = {
     }
 
 	modifier = {
-		planet_building_build_speed_mult = 0.2
-		megastructure_build_speed_mult = 0.1
+		megastructure_build_speed_mult = 0.2
 	}
 
     prereqfor_desc = {

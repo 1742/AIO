@@ -92,7 +92,7 @@ situation_AIO_merge_cosmos = {
         modifier = {
             owner = { has_country_flag = AIO_built_AIO_mega_01 }
             desc = AIO_mega_01
-            mult = 1.1
+            mult = 1.05
         }
         modifier = {
             owner = { has_country_flag = AIO_built_AIO_mega_02 }
@@ -102,12 +102,12 @@ situation_AIO_merge_cosmos = {
         modifier = {
             owner = { has_country_flag = AIO_built_AIO_mega_03 }
             desc = AIO_mega_03
-            mult = 1.1
+            mult = 1.15
         }
         modifier = {
             owner = { has_country_flag = AIO_built_AIO_mega_04 }
             desc = AIO_mega_04
-            mult = 1.1
+            mult = 1.2
         }
 
         # 帝国规模修正
@@ -201,7 +201,7 @@ situation_AIO_merge_cosmos = {
 
             # 1阶段
             upkeep = {
-                trigger = {current_stage = stage_1}
+                trigger = { current_stage = stage_1}
                 energy = 1
                 mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value|SCALE|0.25|
             }
@@ -235,29 +235,18 @@ situation_AIO_merge_cosmos = {
                 mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value|SCALE|0.75|
             }
 
-            # 4、5阶段
+            # 4阶段
             upkeep = {
-                trigger = {
-                    OR = {
-                        current_stage = stage_4
-                        current_stage = stage_5
-                    }
-                }
+                trigger = { current_stage = stage_4 }
                 energy = 1
                 mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value
             }
             upkeep = {
-                trigger = {
-                    OR = {
-                        current_stage = stage_4
-                        current_stage = stage_5
-                    }
-                }
+                trigger = { current_stage = stage_4 }
                 sr_dark_matter = 1
                 mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value
             }
         }
-
 
         # 选择事件，也可以在这里写限制条件
         on_select = {
@@ -274,6 +263,7 @@ situation_AIO_merge_cosmos = {
             }
         }
     }
+
     approach = {
         # 名称
         name = AIO_merge_cosmos_pause_solution
@@ -326,11 +316,10 @@ situation_AIO_erase_galaxy = {
             limit = { has_global_flag = AIO_RE_erase_galaxy }
             remove_global_flag = AIO_RE_erase_galaxy
         }
+        clear_variable = AIO_situation_AIO_erase_galaxy_speed
         # 局势到达最右端时触发，也要写摧毁局势
         destroy_situation = this
     }
-
-    on_fail = { destroy_situation = this }
 
     # 每月局势变化
     monthly_progress = {
@@ -367,6 +356,7 @@ situation_AIO_erase_galaxy = {
 
         default = yes
     }
+
     approach = {
         # 名称
         name = AIO_erase_galaxy_stop_solution
@@ -377,9 +367,12 @@ situation_AIO_erase_galaxy = {
 
         # 选择事件，也可以在这里写限制条件
         on_select = {
-            if = {
-                limit = { has_global_flag = AIO_RE_erase_galaxy }
-                remove_global_flag = AIO_RE_erase_galaxy
+            hidden_effect = {
+                if = {
+                    limit = { has_global_flag = AIO_RE_erase_galaxy }
+                    remove_global_flag = AIO_RE_erase_galaxy
+                }
+                clear_variable = AIO_situation_AIO_erase_galaxy_speed
             }
             destroy_situation = this
         }

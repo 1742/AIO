@@ -38,6 +38,7 @@ AIO_RAIT_TR_stage_1_modifier = {
     planet_building_build_speed_mult = -1
     planet_orbital_bombardment_damage = -100
 }
+
 # 时间之墟二阶段修正
 AIO_RAIT_TR_stage_2_opt_1_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
@@ -101,6 +102,7 @@ AIO_RAIT_TR_stage_2_opt_2_modifier = {
     planet_building_build_speed_mult = -1
     planet_orbital_bombardment_damage = -100
 }
+
 # 时间之墟三阶段修正
 AIO_RAIT_TR_stage_3_liquidation_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
@@ -139,6 +141,9 @@ AIO_RAIT_TR_stage_3_liquidation_modifier = {
 AIO_RAIT_TR_stage_3_unliquidation_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
 
+    planet_stability_add = -0.2
+    planet_crime_mult = 0.5
+
     logistic_growth_mult = -10
     planet_pop_assembly_mult = -10
     planet_pops_upkeep_mult = -10
@@ -170,16 +175,12 @@ AIO_RAIT_TR_stage_3_unliquidation_modifier = {
     planet_building_build_speed_mult = -1
     planet_orbital_bombardment_damage = -100
 }
+
 # 时间之墟四阶段修正
 AIO_RAIT_TR_stage_4_liquidation_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult.dds
 
     planet_stability_mult = 0.2
-    planet_crime_mult = -0.2
-    logistic_growth_mult = 0.2
-    planet_pop_assembly_mult = 0.2
-
-    planet_amenities_mult = 0.2
     planet_jobs_unity_produces_mult = 0.5
     planet_jobs_trade_produces_mult = 0.2
 }
@@ -187,7 +188,7 @@ AIO_RAIT_TR_stage_4_unliquidation_modifier = {
     icon = gfx/interface/icons/modifiers/mod_planet_stability_mult_negative.dds
 
     planet_stability_mult = -0.2
-    planet_crime_mult = 0.3
+    planet_crime_mult = 0.2
     planet_amenities_mult = -0.2
 }
 
@@ -524,7 +525,7 @@ AIO_the_craving_of_stellaris_modifier = {
 
     bonus_pop_growth = 1
     planet_jobs_unity_produces_mult = 1
-    planet_building_build_speed_mult = 0.3
+    planet_building_build_speed_mult = 0.5
     planet_amenities_add = 1000
 }
 
