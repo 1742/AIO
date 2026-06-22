@@ -180,6 +180,16 @@ AIO_is_orbital_arc_furnace = {
     }
 }
 
+AIO_is_crisis_sphere = {
+    OR = {
+        is_megastructure_type = crisis_sphere_0
+        is_megastructure_type = crisis_sphere_1
+        is_megastructure_type = crisis_sphere_2
+        is_megastructure_type = crisis_sphere_3
+        is_megastructure_type = crisis_sphere_4
+    }
+}
+
 AIO_is_behemoth_mega = {
     OR = {
         is_megastructure_type = behemoth_egg
@@ -192,6 +202,17 @@ AIO_is_behemoth_mega = {
         is_megastructure_type = behemoth_chrysalis_hatch
         is_megastructure_type = behemoth_chrysalis_big
         is_megastructure_type = behemoth_chrysalis_big_hatch
+    }
+}
+
+AIO_is_galactic_crucible = {
+    OR = {
+        is_megastructure_type = galactic_crucible_0
+        is_megastructure_type = galactic_crucible_1
+        is_megastructure_type = galactic_crucible_2
+        is_megastructure_type = galactic_crucible_3
+        is_megastructure_type = galactic_crucible_4
+        is_megastructure_type = galactic_crucible_5
     }
 }
 
@@ -233,6 +254,9 @@ AIO_is_ruined_mega = {
         is_megastructure_type = gateway_ruined
         is_megastructure_type = hyper_relay_ruined
         is_megastructure_type = orbital_ring_ruined
+        is_megastructure_type = crisis_sphere_ruined
+        is_megastructure_type = cosmogenesis_world_ruined
+        is_megastructure_type = galactic_crucible_ruined
     }
 }
 
@@ -273,11 +297,36 @@ AIO_is_single_star_class = {
 # 是否被选定为肃正球，scope: planet
 AIO_is_ai_planet = {
     OR = {
-        has_planet_flag = machine_world_1
-        has_planet_flag = machine_world_2
-        has_planet_flag = machine_world_3
-        has_planet_flag = machine_world_4
-        has_planet_flag = machine_lair
+        has_carrier_flag = machine_world_1
+        has_carrier_flag = machine_world_2
+        has_carrier_flag = machine_world_3
+        has_carrier_flag = machine_world_4
+        has_carrier_flag = machine_lair
+    }
+}
+
+AIO_is_crisis_mega_system = {
+    solar_system = {
+        any_system_megastructure = {
+            OR = {
+                AIO_is_crisis_sphere = yes
+                AIO_is_galactic_crucible = yes
+            }
+        }
+    }
+}
+
+# scope: planet
+AIO_is_crisis_mega_planet = {
+    solar_system = {
+        any_system_megastructure = {
+            OR = {
+                AIO_is_crisis_sphere = yes
+                AIO_is_galactic_crucible = yes
+            }
+            exists = planet
+            planet = { is_same_value = prevprevprev }
+        }
     }
 }
 

@@ -419,7 +419,11 @@ AIO_safe_remove_planet = {
     optimize_memory
 
     if = {
-        limit = { AIO_safe_remove_planet_exclude_API = no }
+        limit = {
+            AIO_safe_remove_planet_exclude_API = no
+            # 以太相引擎和星系熔炉星系内的天体不受影响
+            AIO_is_crisis_mega_system = no
+        }
 
         if = {
             limit = {
@@ -433,17 +437,10 @@ AIO_safe_remove_planet = {
         else_if = {
             limit = {
                 is_colony = yes
+                is_artificial = no
                 NOR = {
-                    is_planet_class = pc_habitat
-                    is_planet_class = pc_ringworld_habitable
-                    is_planet_class = pc_shattered_ring_habitable
-                    is_planet_class = pc_cosmogenesis_world
-
-                    AND = {
-                        has_global_flag = ai_invasion_happened
-                        AIO_is_ai_planet = yes
-                    }
-                    has_planet_flag = synth_queen_bastille
+                    is_planet_class = pc_ai
+                    has_carrier_flag = synth_queen_bastille
                 }
             }
             destroy_colony = yes
@@ -564,7 +561,7 @@ AIO_safe_remove_planet = {
         else_if = {
             limit = {
                 is_planet_class = pc_ai
-                NOT = { has_planet_flag = machine_lair }
+                NOT = { has_carrier_flag = machine_lair }
             }
             # TODO: 处理肃正球被移除
             # planet_event = { id = AIO_ctrl_events.1007 }
@@ -573,7 +570,7 @@ AIO_safe_remove_planet = {
         else_if = {
             limit = {
                 is_planet_class = pc_ai
-                has_planet_flag = machine_lair
+                has_carrier_flag = machine_lair
             }
             root = { save_event_target_as = final_machine_world_destroyer }
             stop_crisis_sound = yes
@@ -581,7 +578,7 @@ AIO_safe_remove_planet = {
             remove_planet = yes
         }
         else_if = {
-            limit = { NOT = { has_planet_flag = synth_queen_bastille } }
+            limit = { NOT = { has_carrier_flag = synth_queen_bastille } }
             AIO_safe_remove_planet_megastructures = yes
             remove_planet = yes
         }

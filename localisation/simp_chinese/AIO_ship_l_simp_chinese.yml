@@ -1,8 +1,4 @@
 ﻿l_simp_chinese:
- AIO_locator_builder: "定位舰"
- AIO_locator_builder_plural: "$AIO_locator_builder$"
- NAME_AIO_locator_builder: "$AIO_locator_builder$"
-
  AIO_otherworld_walker: "异界行者"
  AIO_otherworld_walker_plural: "$AIO_otherworld_walker$"
  NAME_AIO_otherworld_walker: "$AIO_otherworld_walker$"

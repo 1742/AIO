@@ -71,11 +71,7 @@ AIO_mega_01_fact = {
 	bypass_type = bypass_AIO_ultimate_gate
 
 	on_build_complete = {
-		# 清除视界引擎特效
-		event_target:AIO_horizon_engine_effect = { destroy_ambient_object = this }
-		clear_global_event_target = AIO_horizon_engine_effect
-
-		AIO_crisis_effects_manager = { CREATE_TUG_SYSTEM = 1 }
+		AIO_create_TUG_system_effect = yes
 
 		from = {
 			set_country_flag = AIO_built_AIO_mega_01

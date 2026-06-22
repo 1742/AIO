@@ -1,3 +1,25 @@
+AIO_safe_change_pc = {
+    if = {
+        limit = {
+            NOR = {
+                is_artificial = yes
+                is_planet_class = $NEW_PC$
+                is_planet_class = pc_ai
+                has_carrier_flag = synth_queen_bastille
+                AIO_is_crisis_mega_planet = yes
+            }
+        }
+        change_pc = $NEW_PC$
+        if = {
+            limit = {
+                is_colony = yes
+                is_colonizable = no
+            }
+            destroy_colony = yes
+        }
+    }
+}
+
 # 星系内行星变为冰封星球
 AIO_change_system_planet_in_frozen = {
     every_system_planet = {
@@ -9,7 +31,7 @@ AIO_change_system_planet_in_frozen = {
                     habitable_planet = yes
                 }
             }
-            change_pc = pc_frozen
+            AIO_safe_change_pc = { NEW_PC = pc_frozen }
         }
         else_if = {
             limit = { is_planet_class = pc_barren }
@@ -66,6 +88,98 @@ AIO_change_star_class = {
                 pc_pulsar = { solar_system = { set_star_class = sc_pulsar } }
                 pc_rift_star = { solar_system = { set_star_class = sc_rift_star } }
             }
+        }
+    }
+}
+
+# 随机改变天体类型
+AIO_change_random_pc = {
+    optimize_memory
+
+    [[STAR]
+        random_list = {
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_black_hole } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_a_star } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_b_star } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_f_star } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_g_star } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_k_star } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_m_giant_star } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_m_star } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_neutron_star } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_pulsar } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_rift_star } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_t_star } }
+        }
+    ]
+    [[PLANET]
+        random_list = {
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_frozen } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_hive } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_machine } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_city } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_shrouded } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_broken } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_alpine } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_arctic } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_arid } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_asteroid } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_barren } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_barren_cold } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_continental } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_crystal_asteroid } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_desert } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_egg_cracked } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_gaia } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_gas_giant } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_gray_goo } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_junk } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_molten } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_nuked } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_ocean } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_relic } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_savannah } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_shattered } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_shielded } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_toxic } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_tropical } }
+            1 = { AIO_safe_change_pc = { NEW_PC = pc_tundra } }
+        }
+    ]
+}
+
+# 安全的随机改变天体类型，scope: planet, root: AIO_empire
+AIO_safe_change_random_pc = {
+    optimize_memory
+
+    if = {
+        limit = { AIO_safe_remove_planet_exclude_API = no }
+
+        if = {
+            # 恒星
+            limit = { is_star = yes }
+            AIO_change_random_pc = { STAR = 1 }
+            solar_system = {
+                AIO_change_star_class = yes
+                every_system_colony = {
+                    limit = {
+                        is_artificial = no
+                        AIO_planet_has_oribital_ring = no
+
+                        NOR = {
+                            is_planet_class = pc_ai
+                            has_carrier_flag = synth_queen_bastille
+                            AIO_is_crisis_mega_planet = yes
+                        }
+                    }
+                    destroy_colony = yes
+                    reset_planet = yes
+                }
+            }
+        }
+        else = {
+            # 行星
+            AIO_change_random_pc = { PLANET = 1 }
         }
     }
 }
