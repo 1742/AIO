@@ -8,7 +8,7 @@ AIO_can_AIT = {
     }
 }
 
-AIO_AIT_all_random = {
+AIO_RAIT_all = {
     has_global_flag = AIO_RAIT_existed_blackout
     has_global_flag = AIO_RAIT_existed_constant_round
     has_global_flag = AIO_RAIT_existed_superlight

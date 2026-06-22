@@ -1,375 +1,8 @@
-# AIO应用无限事件
-namespace = AIO_AIT_events
-
-
-# 融合宇宙局势月度触发事件
-situation_event = {
-    id = AIO_AIT_events.201
-    hide_window = yes
-
-    is_triggered_only = yes
-    trigger = { is_situation_type = situation_AIO_merge_cosmos }
-
-	immediate = {
-		# 检查资源够不够不然换方案
-		if = {
-			limit = {
-				current_situation_approach = AIO_merge_cosmos_solution
-				OR = {
-					# 检查资源够不够不然换方案
-					owner = {
-						OR = {
-							has_country_resource = { type = energy amount = 0 }
-							has_country_resource = { type = sr_dark_matter amount = 0 }
-						}
-					}
-					# 等待巨构完成时自动切换方案省资源
-					situation_monthly_progress = 0
-				}
-			}
-			set_situation_approach = AIO_merge_cosmos_pause_solution
-		}
-
-		# 随机应用无限
-		if = {
-			limit = {
-				situation_monthly_progress > 0
-				NOT = { has_situation_flag = AIO_merge_cosmos_has_AIT }
-				owner = {
-					NOR = {
-						has_country_flag = AIO_RAIT_all_random
-						has_country_flag = AIO_built_AIO_mega_04
-					}
-				}
-			}
-			random_list = {
-				2 = {  }
-				1 = {
-					modifier = {
-						factor = 0.5
-						owner = { has_country_flag = AIO_built_AIO_mega_02 }
-					}
-					modifier = {
-						factor = 0.5
-						owner = { has_country_flag = AIO_built_AIO_mega_03 }
-					}
-					owner = {
-						AIO_RAIT_effects_manager = { RANDOM_EVENTS = 1 }
-						change_variable = { which = AIO_situation_AIT_time value = 1 }
-					}
-					set_timed_situation_flag = { flag = AIO_merge_cosmos_has_AIT months = 6 }
-				}
-			}
-
-			# 河系影响
-			owner = { country_event = { id = AIO_AIT_events.202 } }
-		}
-	}
-
-    after = {
-		owner = { AIO_add_random_tech = yes }
-		if = {
-			limit = { AIO_AIT_all_random = yes }
-			owner = {
-				AIO_RAIT_effects_manager = { CLEAR_RANDOM_AIT_FLAG = 1 }
-				set_country_flag = AIO_RAIT_all_random
-			}
-		}
-    }
-}
-
-
-#region 融合宇宙过程中河系影响
-
-country_event = {
-	id = AIO_AIT_events.202
-	hide_window = yes
-
-	is_triggered_only = yes
-	trigger = {
-		any_situation = {
-			is_situation_type = situation_AIO_merge_cosmos
-			NOT = { has_situation_flag = AIO_merge_cosmos_has_AIT }
-		}
-	}
-
-	immediate = {
-		# 随机影响星系
-		no_scope = {
-			while = {
-				count = root.AIO_situation_RAIT_affect_system_num
-				random_system = {
-					limit = {
-						any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
-						NOR = {
-							is_star_class = sc_AIO_void
-
-							has_star_flag = AIO_HS_system
-							has_star_flag = AIO_TUG_system
-
-							has_star_flag = synth_queen_capital
-						}
-					}
-					weights = {
-						base = 1
-						modifier = {
-							factor = 0.01
-							is_capital_system = yes
-						}
-						modifier = {
-							factor = 0
-							exists = owner
-							owner = {
-								OR = {
-									has_country_flag = AIO_built_AIO_mega_02
-									has_country_flag = AIO_built_AIO_mega_03
-									has_country_flag = AIO_built_AIO_mega_04
-								}
-							}
-						}
-					}
-
-					random_list = {
-						1 = { # 随机丰富星系矿藏
-							save_event_target_as = AIO_situation_RAIT_target
-							AIO_RE_effects_manager = { ENRICH_SYSTEM_DEPOSITS = 1 TIME = 2 }
-							if = {
-								limit = { exists = owner }
-								owner = { country_event = { id = AIO_AIT_events.203 } }
-							}
-						}
-						1 = { # 随机改变天体类型
-							random_system_planet = {
-								limit = {
-                                    AIO_safe_remove_planet_exclude_API = no
-
-									is_artificial = no
-									is_star = no
-								}
-								AIO_safe_change_random_pc = yes
-								save_event_target_as = AIO_situation_RAIT_target
-								if = {
-									limit = { exists = controller }
-									controller = { country_event = { id = AIO_AIT_events.204 } }
-								}
-							}
-						}
-						1 = { # 随机退化殖民地
-							modifier = {
-								factor = 0
-								any_system_planet = { is_colony = no }
-							}
-							random_system_planet = {
-								limit = { is_colony = yes }
-								weights = {
-									base = 1
-									modifier = {
-										factor = 0.01
-										is_capital = yes
-									}
-								}
-								AIO_RE_effects_manager = { DEGENERATE = 1 }
-								save_event_target_as = AIO_situation_RAIT_target
-								if = {
-									limit = { exists = owner }
-									owner = { country_event = { id = AIO_AIT_events.205 } }
-								}
-							}
-						}
-						1 = { # 随机倒流殖民地
-							modifier = {
-								factor = 0
-								any_system_planet = { is_colony = no }
-							}
-							random_system_planet = {
-								limit = { is_colony = yes }
-								weights = {
-									base = 1
-									modifier = {
-										factor = 0.01
-										is_capital = yes
-									}
-								}
-								AIO_RE_effects_manager = { TURN_BACK_TIME = 1 }
-								save_event_target_as = AIO_situation_RAIT_target
-								if = {
-									limit = { exists = owner }
-									owner = { country_event = { id = AIO_AIT_events.206 } }
-								}
-							}
-						}
-						1 = { # 随机抹除天体
-							random_system_planet = {
-								limit = {
-                                    AIO_safe_remove_planet_exclude_API = no
-                                    NOT = { is_planet_class = pc_AIO_empty_space }
-                                }
-								save_event_target_as = AIO_situation_RAIT_target
-								AIO_RE_effects_manager = { ERASE_PLANET = 1 }
-								if = {
-									limit = { exists = controller }
-									controller = { country_event = { id = AIO_AIT_events.207 } }
-								}
-							}
-						}
-						1 = { # 抹除星系
-                            modifier = {
-                                factor = 0
-                                AIO_safe_remove_system_exclude_API = yes
-                            }
-							save_event_target_as = AIO_situation_RAIT_target
-							AIO_RE_effects_manager = { ERASE_SYSTEM = 1 }
-							if = {
-								limit = { exists = owner }
-								owner = { country_event = { id = AIO_AIT_events.208 } }
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-}
-
-country_event = {
-	id = AIO_AIT_events.203
-	title = AIO_AIT_events.situation_effect.title
-	desc = AIO_AIT_events.203.desc
-	picture = GFX_evt_asteroid_field
-
-	is_triggered_only = yes
-
-	location = event_target:AIO_situation_RAIT_target
-
-	option = {
-		name = AIO_AIT_events.203.opinion_1
-		ai_chance = { base = 1000 }
-	}
-}
-
-country_event = {
-	id = AIO_AIT_events.204
-	title = AIO_AIT_events.situation_effect.title
-	desc = AIO_AIT_events.204.desc
-	picture = GFX_evt_arid
-
-	is_triggered_only = yes
-
-	location = event_target:AIO_situation_RAIT_target
-
-	option = {
-		name = AIO_AIT_events.204.opinion_1
-		if = {
-			limit = { NOT = { has_ascension_perk = ap_AIO_allinone } }
-			add_opinion_modifier = {
-				who = from.owner
-				modifier = opinion_cosmogenesis_thesis
-			}
-		}
-		ai_chance = { base = 1000 }
-	}
-}
-
-country_event = {
-	id = AIO_AIT_events.205
-	title = AIO_AIT_events.situation_effect.title
-	desc = AIO_AIT_events.205.desc
-	picture = GFX_evt_alien_hieroglyphics
-
-	is_triggered_only = yes
-
-	location = event_target:AIO_situation_RAIT_target
-
-	option = {
-		name = AIO_AIT_events.205.opinion_1
-		if = {
-			limit = { NOT = { has_ascension_perk = ap_AIO_allinone } }
-			add_opinion_modifier = {
-				who = from.owner
-				modifier = opinion_cosmogenesis_thesis
-			}
-		}
-		ai_chance = { base = 1000 }
-	}
-}
-
-country_event = {
-	id = AIO_AIT_events.206
-	title = AIO_AIT_events.situation_effect.title
-	desc = AIO_AIT_events.206.desc
-	picture = GFX_evt_clocks
-
-	is_triggered_only = yes
-
-	location = event_target:AIO_situation_RAIT_target
-
-	option = {
-		name = AIO_AIT_events.206.opinion_1
-		if = {
-			limit = { NOT = { has_ascension_perk = ap_AIO_allinone } }
-			add_opinion_modifier = {
-				who = from.owner
-				modifier = opinion_cosmogenesis_thesis
-			}
-		}
-		ai_chance = { base = 1000 }
-	}
-}
-
-country_event = {
-	id = AIO_AIT_events.207
-	title = AIO_AIT_events.situation_effect.title
-	desc = AIO_AIT_events.207.desc
-	picture = GFX_evt_shattered_planet
-
-	is_triggered_only = yes
-
-	location = event_target:AIO_situation_RAIT_target
-
-	option = {
-		name = AIO_AIT_events.207.opinion_1
-		if = {
-			limit = { NOT = { has_ascension_perk = ap_AIO_allinone } }
-			add_opinion_modifier = {
-				who = from.owner
-				modifier = opinion_cosmogenesis_thesis
-			}
-		}
-		ai_chance = { base = 1000 }
-	}
-}
-
-country_event = {
-	id = AIO_AIT_events.208
-	title = AIO_AIT_events.situation_effect.title
-	desc = AIO_AIT_events.208.desc
-	picture = GFX_evt_astral_rift_microverse
-
-	is_triggered_only = yes
-
-	location = event_target:AIO_situation_RAIT_target
-
-	option = {
-		name = AIO_AIT_events.208.opinion_1
-		if = {
-			limit = { NOT = { has_ascension_perk = ap_AIO_allinone } }
-			add_opinion_modifier = {
-				who = from.owner
-				modifier = opinion_cosmogenesis_thesis
-			}
-		}
-		ai_chance = { base = 1000 }
-	}
-}
-
-#endregion
-
-
-#region 随机应用无限
+namespace = AIO_RAIT_events
 
 # 陷入黑暗-触发
 country_event = { # this - maker
-	id = AIO_AIT_events.3010
+	id = AIO_RAIT_events.3010
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -402,7 +35,7 @@ country_event = { # this - maker
 }
 # 陷入黑暗-玩家
 country_event = { # from - maker
-    id = AIO_AIT_events.3011
+    id = AIO_RAIT_events.3011
     title = crisis.7205.name
 
     desc = {
@@ -467,7 +100,7 @@ country_event = { # from - maker
 
 # 常数取整-触发
 country_event = {  # this - maker
-	id = AIO_AIT_events.3020
+	id = AIO_RAIT_events.3020
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -500,7 +133,7 @@ country_event = {  # this - maker
 }
 # 常数取整-玩家
 country_event = { # Thesis: Constant FROM = crisis country
-	id = AIO_AIT_events.3021
+	id = AIO_RAIT_events.3021
 	title = "crisis.7210.name"
 
 	desc = {
@@ -565,7 +198,7 @@ country_event = { # Thesis: Constant FROM = crisis country
 
 # 超光-触发
 country_event = {
-	id = AIO_AIT_events.3030
+	id = AIO_RAIT_events.3030
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -590,7 +223,7 @@ country_event = {
 
 # 超光-玩家-一阶段
 country_event = { # Thesis: Superlight FROM = crisis country
-	id = AIO_AIT_events.30311
+	id = AIO_RAIT_events.30311
 	title = "crisis.7215.name"
 
 	desc = {
@@ -656,7 +289,7 @@ country_event = { # Thesis: Superlight FROM = crisis country
 }
 # 超光-ai-一阶段
 country_event = { # Thesis: Superlight FROM = crisis country
-	id = AIO_AIT_events.30321
+	id = AIO_RAIT_events.30321
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -668,7 +301,7 @@ country_event = { # Thesis: Superlight FROM = crisis country
 
 # 超光-玩家-二阶段
 country_event = { # Thesis: Superlight FROMFROM = crisis country
-	id = AIO_AIT_events.30312
+	id = AIO_RAIT_events.30312
 	title = "crisis.7220.name"
 	desc = crisis.7220.desc
 
@@ -686,7 +319,7 @@ country_event = { # Thesis: Superlight FROMFROM = crisis country
 }
 # 超光-ai-二阶段
 country_event = { # Thesis: Superlight FROMFROM = crisis country
-	id = AIO_AIT_events.30322
+	id = AIO_RAIT_events.30322
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -698,7 +331,7 @@ country_event = { # Thesis: Superlight FROMFROM = crisis country
 
 # 超光-玩家-三阶段
 country_event = { # Thesis: Superlight FROOMFROMFROM = crisis country
-	id = AIO_AIT_events.30313
+	id = AIO_RAIT_events.30313
 	title = "crisis.7225.name"
 	desc = crisis.7225.desc
 	picture = GFX_evt_warm_barren
@@ -715,7 +348,7 @@ country_event = { # Thesis: Superlight FROOMFROMFROM = crisis country
 }
 # 超光-ai-三阶段
 country_event = { # Thesis: Superlight FROOMFROMFROM = crisis country
-	id = AIO_AIT_events.30323
+	id = AIO_RAIT_events.30323
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -727,7 +360,7 @@ country_event = { # Thesis: Superlight FROOMFROMFROM = crisis country
 
 # 超光-玩家-四阶段
 country_event = { # Thesis: Superlight FROOMFROMFROMFROM = crisis country
-	id = AIO_AIT_events.30314
+	id = AIO_RAIT_events.30314
 	title = "crisis.7230.name"
 	desc = crisis.7230.desc
 	picture = GFX_evt_relic_world_street
@@ -742,7 +375,7 @@ country_event = { # Thesis: Superlight FROOMFROMFROMFROM = crisis country
 }
 # 超光-ai-四阶段
 country_event = { # Thesis: Superlight FROOMFROMFROMFROM = crisis country
-	id = AIO_AIT_events.30324
+	id = AIO_RAIT_events.30324
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -752,7 +385,7 @@ country_event = { # Thesis: Superlight FROOMFROMFROMFROM = crisis country
 
 # 合金延展性良性-触发
 country_event = {
-	id = AIO_AIT_events.3040
+	id = AIO_RAIT_events.3040
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -785,7 +418,7 @@ country_event = {
 }
 # 合金延展性良性-玩家
 country_event = { # Thesis: Alloy Ductility - Good FROM = crisis country
-	id = AIO_AIT_events.3041
+	id = AIO_RAIT_events.3041
 	title = "crisis.7235.name"
 	desc = {
 		trigger = {
@@ -849,7 +482,7 @@ country_event = { # Thesis: Alloy Ductility - Good FROM = crisis country
 
 # 合金延展性劣性-触发
 country_event = {
-	id = AIO_AIT_events.3050
+	id = AIO_RAIT_events.3050
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -880,7 +513,7 @@ country_event = {
 }
 # 合金延展性劣性，玩家帝国
 country_event = { # Thesis: Alloy Ductility - Bad FROM = crisis country
-	id = AIO_AIT_events.3051
+	id = AIO_RAIT_events.3051
 	title = "crisis.7240.name"
 	desc = {
 		trigger = {
@@ -944,7 +577,7 @@ country_event = { # Thesis: Alloy Ductility - Bad FROM = crisis country
 
 # 营养调节良性-触发
 country_event = {
-	id = AIO_AIT_events.3060
+	id = AIO_RAIT_events.3060
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -980,7 +613,7 @@ country_event = {
 }
 # 营养调节良性-玩家
 country_event = { # Thesis: Altered Nutrition - Good FROM = crisis country
-	id = AIO_AIT_events.3061
+	id = AIO_RAIT_events.3061
 	title = "crisis.7245.name"
 	desc = {
 		trigger = {
@@ -1044,7 +677,7 @@ country_event = { # Thesis: Altered Nutrition - Good FROM = crisis country
 
 # 营养调节劣性-触发
 country_event = {
-	id = AIO_AIT_events.3070
+	id = AIO_RAIT_events.3070
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -1144,7 +777,7 @@ country_event = { # Thesis: Altered Nutrition - Bad FROM = crisis country
 
 # 质量偏移-触发
 country_event = { # this - maker
-	id = AIO_AIT_events.3080
+	id = AIO_RAIT_events.3080
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -1177,7 +810,7 @@ country_event = { # this - maker
 }
 # 质量偏移-玩家
 country_event = { # Thesis: Mass Shift FROM = crisis country
-	id = AIO_AIT_events.3081
+	id = AIO_RAIT_events.3081
 	title = "crisis.7255.name"
 	desc = {
 		trigger = {
@@ -1243,7 +876,7 @@ country_event = { # Thesis: Mass Shift FROM = crisis country
 
 # 虚境撕裂-触发
 country_event = { # this - maker
-	id = AIO_AIT_events.3090
+	id = AIO_RAIT_events.3090
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -1278,7 +911,7 @@ country_event = { # this - maker
 }
 # 虚境撕裂-玩家
 country_event = { # FROM = maker
-	id = AIO_AIT_events.3091
+	id = AIO_RAIT_events.3091
     title = "crisis.7260.name"
 	desc = {
 		trigger = {
@@ -1342,7 +975,7 @@ country_event = { # FROM = maker
 
 # 时间之墟触发事件
 country_event = { # this - maker
-    id = AIO_AIT_events.3100
+    id = AIO_RAIT_events.3100
     hide_window = yes
 
     is_triggered_only = yes
@@ -1378,7 +1011,7 @@ country_event = { # this - maker
 
 # 时间之墟-玩家-一阶段
 planet_event = {
-    id = AIO_AIT_events.31011
+    id = AIO_RAIT_events.31011
 	title = AIO_AIT_events.3100.title
 
     # 普政
@@ -1539,7 +1172,7 @@ planet_event = {
 }
 # 时间之墟-ai-一阶段
 planet_event = {
-    id = AIO_AIT_events.31021
+    id = AIO_RAIT_events.31021
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -1559,7 +1192,7 @@ planet_event = {
 # 时间之墟-玩家-二阶段
 # call by AIO_AIT_TIME_RUIN_STAGE_1, from - ship, fromfrom - planet
 planet_event = {
-    id = AIO_AIT_events.31012
+    id = AIO_RAIT_events.31012
 	title = AIO_AIT_events.3100.title
     desc = AIO_AIT_events.31012.desc.normal
 
@@ -1604,7 +1237,7 @@ planet_event = {
 }
 # 时间之墟-ai-二阶段
 planet_event = {
-    id = AIO_AIT_events.31022
+    id = AIO_RAIT_events.31022
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -1632,7 +1265,7 @@ planet_event = {
 # 时间之墟-玩家-三阶段
 # call by AIO_AIT_TIME_RUIN_STAGE_2, from - ship, fromfrom - planet
 planet_event = {
-    id = AIO_AIT_events.31013
+    id = AIO_RAIT_events.31013
 	title = AIO_AIT_events.3100.title
     desc = {
         trigger = { owner = { AIO_can_AIT = no } }
@@ -1673,7 +1306,7 @@ planet_event = {
 }
 # 时间之墟-ai-三阶段
 planet_event = {
-    id = AIO_AIT_events.31023
+    id = AIO_RAIT_events.31023
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -1685,7 +1318,7 @@ planet_event = {
 # 时间之墟-玩家-四阶段
 # call by AIO_AIT_events.31013 or AIO_AIT_TIME_RUIN_STAGE_3
 planet_event = {
-    id = AIO_AIT_events.31014
+    id = AIO_RAIT_events.31014
 	title = AIO_AIT_events.3100.title
 	# 普政，清算
     desc = {
@@ -2374,104 +2007,3 @@ planet_event = { # prev - planet
 		controller = { end_event_chain = AIO_RAIT_GS_events_chain }
 	}
 }
-
-#endregion
-
-
-#region 定向应用无限选择界面
-
-country_event = {
-    id = AIO_AIT_events.401
-    title = AIO_AIT_events.401.title
-    location = root
-
-	diplomatic = yes
-	custom_gui = "AIO_DAIT"
-
-    is_triggered_only = yes
-    trigger = {
-        OR = {
-			has_country_flag = AIO_built_AIO_mega_01
-			has_country_flag = AIO_built_AIO_mega_02
-			has_country_flag = AIO_built_AIO_mega_03
-			has_country_flag = AIO_built_AIO_mega_04
-		}
-		NOT = { has_active_event = { AIO_AIT_events.401 } }
-	}
-
-    option = {
-        name = OK
-		default_hide_option = yes
-    }
-}
-
-# 每季度更新 DAIT buff
-country_event = {
-	id = AIO_AIT_events.402
-	hide_window = yes
-
-	is_triggered_only = yes
-	trigger = {
-		OR = {
-			has_country_flag = AIO_built_AIO_mega_01
-			has_country_flag = AIO_built_AIO_mega_02
-			has_country_flag = AIO_built_AIO_mega_03
-			has_country_flag = AIO_built_AIO_mega_04
-		}
-		NOT = { is_country_type = AIO_empire }
-	}
-
-	immediate = {
-		AIO_DAIT_add_buffs = yes
-
-		# 给科技
-		export_resource_income_to_variable = { resource = AIO_advanced_logic variable = AIO_DAIT_temp_give_tech }
-		divide_variable = { which = AIO_DAIT_temp_give_tech value = 10000 }
-		floor_variable = AIO_DAIT_temp_give_tech
-
-		while = {
-			count = AIO_DAIT_temp_give_tech
-			AIO_add_random_tech = yes
-		}
-
-		clear_variable = AIO_DAIT_temp_give_tech
-	}
-
-	after = { country_event = { id = AIO_AIT_events.402 months = 3 } }
-}
-
-
-# 摧毁舰船回复装甲/护盾
-# This = owner of ship 1 (combatant)
-# From = owner of ship 2 (destroyed)
-# FromFrom = ship 1
-# FromFromFrom = ship 2
-country_event = {
-	id = AIO_AIT_events.403
-	hide_window = yes
-
-	is_triggered_only = yes
-	trigger = {
-		OR = {
-			check_variable = { which = AIO_DAIT_material_option_6_effect_1_value value > 0 }
-			check_variable = { which = AIO_DAIT_energy_option_6_effect_1_value value > 0 }
-		}
-	}
-
-	immediate = {
-		fleet = {
-			random_controlled_ship = {
-				if = {
-					limit = { check_variable = { which = AIO_DAIT_material_option_6_effect_1_value value > 0 } }
-					repair_armor_amount = owner.AIO_DAIT_material_option_6_effect_1_value
-				}
-				else_if = {
-					limit = { check_variable = { which = AIO_DAIT_energy_option_6_effect_1_value value > 0 } }
-					repair_shield_amount = owner.AIO_DAIT_energy_option_6_effect_1_value
-				}
-			}
-		}
-	}
-}
-
-#endregion

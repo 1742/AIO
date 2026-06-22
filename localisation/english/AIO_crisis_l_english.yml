@@ -176,25 +176,5 @@
  #endregion
 
 
- #region merge cosmos situation
-
- AIO_crisis_events.500.desc: "§Y$AIO_mega_01$§! has been completed! But this is only the beginning. To rewrite the rules of the universe, we must invest tremendous amounts of energy and dark matter to continuously tear and reconstruct the structure of this space-time. In this process, we will create a domain that is completely different from the existing cosmic pattern. It will be a space-time with an infinitely high dimension, transcending the boundaries of the conventional universe and becoming the foundation of a brand-new order."
- AIO_crisis_events.500.option_1: "Allocate sufficient resources for this project."
- AIO_crisis_events.500.option_1.tt: "Unlocked §RDirectional Apply Infinity Thesis§!(DAIT).\nThe DAIT interface can be opened in ['concept_edicts']."
- AIO_crisis_events.501.desc: "The nested reality containers constructed based on multi-dimensional convergence points have formed a closed loop. No matter from which spatiotemporal projection it is observed, its dimensional expression tends to be infinite. With the accumulation of our achievements in infinity thesis, we have been able to conceive and implement an unprecedented megastructure: §Y$AIO_mega_02$§!. It will enable us to precisely carve the laws of the universe and reshape existence itself into the only solution in an idealized model."
- AIO_crisis_events.501.option_1: "The key to unlocking the existence of endless time and space..."
- AIO_crisis_events.501.tt: "Unlocked megastructure: §Y$AIO_mega_01_node$§! Node, §Y$AIO_mega_02$§!\nGenerated system: ['concept_AIO_HS_system']."
- AIO_crisis_events.502.desc: "The second stage of Merge Cosmos has been completed."
- AIO_crisis_events.502.option_1: "REPLACE_ME"
- AIO_crisis_events.503.desc: "The third stage of Merge Cosmos has been completed."
- AIO_crisis_events.503.option_1: "REPLACE_ME"
- AIO_crisis_events.504.desc: "The structure of the universe has been dismantled; the boundaries that once confined us within limited spacetime are now mere annotations awaiting revision.\nWe have reached the Gate of Unification. A single step forward would allow us to reshape the self into a principle of cosmic logic—becoming the source of every gravity, every observation, every concept ever conceived.\nYet, transcendence is not the only choice. We may linger here, observing how this newborn construct resonates across higher dimensions."
- AIO_crisis_events.504.option_1: "Step through the gate."
- AIO_crisis_events.504.option_2: "Remain and observe."
- AIO_crisis_events.504.option_2.tt: "You can still ['concept_AIO_DAIT']. Start a special project §Y$AIO_ASCENSION$§! in §Y$AIO_crisis_events_chain$§! eventchain to complete ascension later."
-
- #endregion
-
-
  # opinion modifier
  triggered_opinion_AIO_crisis_empire: "$triggered_opinion_crisis_empire$"
