@@ -190,11 +190,17 @@ AIO_auto_merge_cosmos_effect = {
             any_situation = {
                 is_situation_type = situation_AIO_merge_cosmos
                 current_situation_approach = AIO_merge_cosmos_pause_solution
+                situation_monthly_progress != 0
             }
         }
         random_situation = {
             limit = { is_situation_type = situation_AIO_merge_cosmos }
             set_situation_approach = AIO_merge_cosmos_solution
+        }
+    }
+    else = {
+        random_situation = {
+            set_situation_approach = AIO_merge_cosmos_pause_solution
         }
     }
 }

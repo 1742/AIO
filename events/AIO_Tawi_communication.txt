@@ -61,7 +61,7 @@ country_event = {
 
     option = {
         name = GOOD
-        country_event = { id = AIO_RE_events.201 }
+        # country_event = { id = AIO_RE_events.201 }
         default_hide_option = yes
     }
 }
@@ -117,7 +117,7 @@ country_event = {
 
     option = {
         name = AIO_return
-        country_event = { id = AIO_RE_events.202 days = 1 }
+        # country_event = { id = AIO_RE_events.202 days = 1 }
         default_hide_option = yes
     }
 }

@@ -192,23 +192,7 @@ situation_event = {
 
 	immediate = {
 		# 检查资源够不够不然换方案
-		if = {
-			limit = {
-				current_situation_approach = AIO_merge_cosmos_solution
-				OR = {
-					# 检查资源够不够不然换方案
-					owner = {
-						OR = {
-							has_country_resource = { type = energy amount = 0 }
-							has_country_resource = { type = sr_dark_matter amount = 0 }
-						}
-					}
-					# 等待巨构完成时自动切换方案省资源
-					situation_monthly_progress = 0
-				}
-			}
-			set_situation_approach = AIO_merge_cosmos_pause_solution
-		}
+		AIO_auto_merge_cosmos_effect = yes
 
 		# 随机应用无限
 		if = {

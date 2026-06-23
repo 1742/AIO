@@ -29,6 +29,6 @@
 
  origin_AIO_YogSothoth: "$ap_AIO_allinone$"
  origin_AIO_YogSothoth_desc: "我们已是宇宙的真理。\n\n§R警告：非平衡起源，类似于观测者模式§!"
- origin_AIO_YogSothoth_tt_effects: " - 以$AIO_empire$类型帝国开始游戏\n - 移除所拥有的['concept_colonies']、['concept_system']与['concept_fleet']\n - 生成['concept_AIO_HS_system']、['concept_AIO_TDTE_system']\n - 游戏开始时拥有§Y$AIO_mega_04$§!与§Y$AIO_mega_01_fact$§!"
+ origin_AIO_YogSothoth_tt_effects: " - 以$AIO_empire$类型帝国开始游戏\n - 移除所拥有的['concept_colonies']、['concept_system']与['concept_fleet']\n - 生成['concept_AIO_HS_system']、['concept_AIO_TUG_system']\n - 游戏开始时拥有§Y$AIO_mega_04$§!与§Y$AIO_mega_01_fact$§!"
 
  #endregion

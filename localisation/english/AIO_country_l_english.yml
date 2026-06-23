@@ -29,6 +29,6 @@
 
  origin_AIO_YogSothoth: "$ap_AIO_allinone$"
  origin_AIO_YogSothoth_desc: "We are already the truth of the universe.\n\n§RWarning: Unbalanced origin, similar to the observer pattern.§!"
- origin_AIO_YogSothoth_tt_effects: " - Start the game as $AIO_empire$\n - remove all ['concept_colonies'], ['concept_system'] and ['concept_fleet']\n - generate ['concept_AIO_HS_system'] and ['concept_AIO_TDTE_system']\n - §Y$AIO_mega_04$§! and §Y$AIO_mega_01_fact$§! is available at the beginning of game"
+ origin_AIO_YogSothoth_tt_effects: " - Start the game as $AIO_empire$\n - remove all ['concept_colonies'], ['concept_system'] and ['concept_fleet']\n - generate ['concept_AIO_HS_system'] and ['concept_AIO_TUG_system']\n - §Y$AIO_mega_04$§! and §Y$AIO_mega_01_fact$§! is available at the beginning of game"
 
  #endregion

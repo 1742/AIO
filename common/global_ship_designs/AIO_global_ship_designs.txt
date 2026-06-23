@@ -4,7 +4,7 @@ ship_design = {
     country_type = AIO_empire
 
 	section = {
-		template = "AIO_locator_builder_template"
+		template = "DEFAULT_SCIENCESHIP_SECTION"
 		slot = "mid"
 
         component = {
@@ -17,23 +17,7 @@ ship_design = {
         }
         component = {
             slot = "SMALL_UTILITY_3"
-            template = SMALL_DRAGON_ARMOR
-        }
-        component = {
-            slot = "SMALL_UTILITY_4"
             template = SMALL_DARK_MATTER_DEFLECTOR
-        }
-        component = {
-            slot = "MEDIUM_UTILITY_1"
-            template = MEDIUM_DARK_MATTER_DEFLECTOR
-        }
-		component = {
-			slot = "AUX_UTILITY_1"
-			template = "AUTO_REPAIR"
-		}
-        component = {
-            slot = "AUX_UTILITY_2"
-            template = "CORVETTE_CLOAKING_DARK_MATTER"
         }
 	}
 
@@ -41,6 +25,7 @@ ship_design = {
 	required_component="JUMP_DRIVE_1"
 	required_component="DESTROYER_SHIP_THRUSTER_5"
 	required_component="SENSOR_4"
+    required_component = "SCIENCE_CLOAKING_DARK_MATTER"
 }
 
 ship_design = {

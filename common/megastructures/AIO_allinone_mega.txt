@@ -116,7 +116,7 @@ AIO_mega_01_node = {
 	# bypass类型
 	bypass_type = bypass_AIO_ultimate_gate
 
-	on_build_complete = { system_event = { id = AIO_crisis_events.904 days = 100 } }
+	on_build_complete = { system_event = { id = AIO_crisis_events.804 days = 100 } }
 }
 
 # 无名之雾中的万门之门
@@ -209,9 +209,9 @@ AIO_mega_02 = {
 
 		cost = {
 			energy = 30000
-			sr_dark_matter = 2000
-			nanites = 2000
-			sr_living_metal = 2000
+			sr_dark_matter = 3000
+			nanites = 3000
+			sr_living_metal = 3000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
@@ -246,7 +246,7 @@ AIO_mega_02 = {
 			set_country_flag = AIO_built_AIO_mega_02
 			country_event = { id = AIO_crisis_events.402 }
 			# 重新启动局势方案
-			AIO_crisis_effects_manager = { CHANGE_SITUATION_AIO_MERGE_COSMOS_APPROACH = 1 }
+			AIO_auto_merge_cosmos_effect = yes
 		}
 	}
 }
@@ -277,9 +277,9 @@ AIO_mega_03 = {
 
 		cost = {
 			energy = 40000
-			sr_dark_matter = 3000
-			nanites = 3000
-			sr_living_metal = 3000
+			sr_dark_matter = 5000
+			nanites = 5000
+			sr_living_metal = 5000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
@@ -316,7 +316,7 @@ AIO_mega_03 = {
 			country_event = { id = AIO_crisis_events.403 }
 
 			# 重新启动局势方案
-			AIO_crisis_effects_manager = { CHANGE_SITUATION_AIO_MERGE_COSMOS_APPROACH = 1 }
+			AIO_auto_merge_cosmos_effect = yes
 		}
 	}
 }
@@ -340,7 +340,6 @@ AIO_mega_04 = {
 
 	upgrade_from = {
 		AIO_mega_03
-		AIO_mega_04_activate
 	}
 
 	build_time = 3600
@@ -350,9 +349,9 @@ AIO_mega_04 = {
 
 		cost = {
 			energy = 50000
-			sr_dark_matter = 5000
-			nanites = 5000
-			sr_living_metal = 5000
+			sr_dark_matter = 10000
+			nanites = 10000
+			sr_living_metal = 10000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
@@ -388,35 +387,7 @@ AIO_mega_04 = {
 			set_country_flag = AIO_built_AIO_mega_04
 			country_event = { id = AIO_crisis_events.404 }
 			# 重新启动局势方案
-			AIO_crisis_effects_manager = { CHANGE_SITUATION_AIO_MERGE_COSMOS_APPROACH = 1 }
+			AIO_auto_merge_cosmos_effect = yes
 		}
-	}
-}
-
-AIO_mega_04_activate = {
-	entity = "AIO_mega_4_entity"
-	construction_entity = "AIO_mega_4_entity"
-	scales_with_planet = no
-
-	portrait = "GFX_megastructure_dyson_sphere_background"
-
-	potential = {
-		is_country_type = AIO_empire
-		NOR = {
-            has_active_event = { AIO_RE_events.201 }
-            has_active_event = { AIO_RE_events.202 }
-        }
-	}
-
-	dismantle_potential = { always = no }
-
-	upgrade_from = { AIO_mega_04 }
-
-	on_build_complete = {
-		fromfrom = {
-			upgrade_megastructure_to = AIO_mega_04
-			finish_upgrade = yes
-		}
-		from = { country_event = { id = AIO_RE_events.201 } }
 	}
 }
