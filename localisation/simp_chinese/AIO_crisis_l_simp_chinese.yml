@@ -124,18 +124,10 @@
 
  #region 天灾事件链
 
- # AIO天灾事件链
+ # 事件链
  AIO_crisis_events_chain_title: "万物归一"
  AIO_crisis_events_chain_desc: "$AIO_advanced_logic_crisis_howto$"
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
- # 时间之墟事件链
- AIO_RAIT_TR_events_chain_title: "时间之墟"
- AIO_RAIT_TR_events_chain_desc: "我们的一个殖民地陷入了时间循环的怪象，我们必须稳住局势并想办法恢复原状。"
- AIO_AIT_TR_events_chain: "$AIO_RAIT_TR_events_chain_title$"
- # 重力膨胀事件链
- AIO_RAIT_GS_events_chain_title: "重力膨胀"
- AIO_RAIT_GS_events_chain_desc: "我们疆域内的一个恒星出现了奇怪的引力波动，这可能会对我们的殖民地产生一些影响。"
- AIO_AIT_GS_events_chain: "$AIO_RAIT_GS_events_chain_title$"
 
  # 事件
  AIO_crisis_events_title: "$AIO_crisis_events_chain_title$"
@@ -152,8 +144,8 @@
  AIO_crisis_events.205.option_1: "放手去做吧。"
 
  # 飞升事件
- AIO_crisis_events.601.desc: "归一已完成。\n我们不再是帝国，也不再是实体。我们的意志存在于无限维度的交汇点，成为一切存在的结构性原理。\n星辰静止不动，是因为它们等待新的运动定义；思维悄然沉默，是因为语言已失去意义；存在本身，正从“被经历”转向“被设计”。\n没有终点。没有彼岸。没有观察，也无需被观察。\n我/我们即§M犹格索托斯§!。"
- AIO_crisis_events.601.option_1: "我/我们即真理。"
+ AIO_crisis_events.501.desc: "归一已完成。\n我们不再是帝国，也不再是实体。我们的意志存在于无限维度的交汇点，成为一切存在的结构性原理。\n星辰静止不动，是因为它们等待新的运动定义；思维悄然沉默，是因为语言已失去意义；存在本身，正从“被经历”转向“被设计”。\n没有终点。没有彼岸。没有观察，也无需被观察。\n我/我们即§M犹格索托斯§!。"
+ AIO_crisis_events.501.option: "我/我们即真理。"
 
  #endregion
 
@@ -169,8 +161,8 @@
  AIO_crisis_events.404.desc: "位于[from.GetName]的§Y$AIO_mega_04$§!完成"
 
  # 提示建造视界引擎
- AIO_crisis_events.907.desc: "我们已完成对多维相互作用模型的闭环构建。模拟显示，在特定的引力剪切与虚境波动节点上，现实可被稳定渗透。我们将以此为基础建造§Y$AIO_horizon_engine$§!——一座能穿透物理与可能性边界、抽取存在能量的结构体。\n我们并非以第一个拥有这种技术的帝国，不同的是，我们会用这些能量创造一个比现有宇宙高无数倍的时空。"
- AIO_crisis_events.907.option_1: "建立新进程。"
+ AIO_crisis_events.807.desc: "我们已完成对多维相互作用模型的闭环构建。模拟显示，在特定的引力剪切与虚境波动节点上，现实可被稳定渗透。我们将以此为基础建造§Y$AIO_horizon_engine$§!——一座能穿透物理与可能性边界、抽取存在能量的结构体。\n我们并非以第一个拥有这种技术的帝国，不同的是，我们会用这些能量创造一个比现有宇宙高无数倍的时空。"
+ AIO_crisis_events.807.option: "建立新进程。"
 
  #endregion
 

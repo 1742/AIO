@@ -32,12 +32,8 @@ AIO_system_existed_colony = {
 
 # 星系内有自然殖民地
 AIO_system_existed_natural_colony = {
-    any_system_planet = {
+    any_system_colony = {
         is_artificial = no
-        OR = {
-            is_colony = yes
-            is_under_colonization = yes
-        }
     }
 }
 
@@ -52,6 +48,14 @@ AIO_planet_has_oribital_ring = {
                 has_starbase_size = orbital_ring_tier_3
             }
         }
+    }
+}
+
+# 星系内是否有无星环基地的天然殖民地, scope: system
+AIO_natural_colony_without_ring = {
+    any_system_colony = {
+        is_artificial = no
+        AIO_planet_has_oribital_ring = no
     }
 }
 

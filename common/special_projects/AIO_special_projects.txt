@@ -1,6 +1,8 @@
 # AIO特殊项目
 
-# 时间之墟一阶段
+#region 时间之墟
+
+# 一阶段
 special_project = {
 	icon = gfx/interface/icons/situation_log/situation_log_alert.dds
 
@@ -19,15 +21,23 @@ special_project = {
 	requirements = { shipclass_transport = 400 }
 
 	on_success = { # this - ship, from - planet(location)
-		from = { planet_event = { id = AIO_AIT_events.31012 } }
+		from = { planet_event = { id = AIO_RAIT_events.1103 } }
 	}
 
 	on_fail = { # this - country, from - planet(location)
-		from = { planet_event = { id = AIO_AIT_events.31014 } }
+		from = { planet_event = { id = AIO_RAIT_events.1105 } }
+	}
+
+	inline_script = {
+		script = AIO/ai_research_sp_wait_days
+		SHIP_CLASS = shipclass_transport
+		SHIP_NUM = 10
+		RESEARCH = physics_research
+		RESEARCH_VALUE = 0
 	}
 }
 
-# 时间之墟二阶段
+# 二阶段
 special_project = {
 	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
 
@@ -49,15 +59,23 @@ special_project = {
 	}
 
 	on_success = { # this - ship, from - planet(location)
-		from = { planet_event = { id = AIO_AIT_events.31013 } }
+		from = { planet_event = { id = AIO_RAIT_events.1104 } }
 	}
 
 	on_fail = { # this - country, from - planet(location)
-		from = { planet_event = { id = AIO_AIT_events.31014 } }
+		from = { planet_event = { id = AIO_RAIT_events.1105 } }
+	}
+
+	inline_script = {
+		script = AIO/ai_research_sp_wait_days
+		SHIP_CLASS = shipclass_science_ship
+		SHIP_NUM = 3
+		RESEARCH = physics_research
+		RESEARCH_VALUE = 5000
 	}
 }
 
-# 时间之墟三阶段
+# 三阶段
 special_project = {
 	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
 
@@ -79,17 +97,30 @@ special_project = {
 
 	on_success = { # this - ship, from - planet(location)
 		from = {
-			set_timed_planet_flag = { flag = AIO_finish_TR_special_project_release days = 5 }
-			planet_event = { id = AIO_AIT_events.31014 }
+			set_planet_flag = AIO_finish_TR_special_project_release
+			planet_event = { id = AIO_RAIT_events.1105 }
 		}
 	}
 
 	on_fail = { # this - country, from - planet(location)
-		from = { planet_event = { id = AIO_AIT_events.31014 } }
+		from = { planet_event = { id = AIO_RAIT_events.1105 } }
+	}
+
+	inline_script = {
+		script = AIO/ai_research_sp_wait_days
+		SHIP_CLASS = shipclass_science_ship
+		SHIP_NUM = 3
+		RESEARCH = physics_research
+		RESEARCH_VALUE = 5000
 	}
 }
 
-# 重力膨胀一阶段
+#endregion
+
+
+#region 重力膨胀
+
+# 一阶段
 special_project = {
 	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
 
@@ -111,11 +142,19 @@ special_project = {
 	}
 
 	on_success = { # this - ship, from - planet(location)
-		from.solar_system = { system_event = { id = AIO_AIT_events.31112 } }
+		from.solar_system = { system_event = { id = AIO_RAIT_events.1202 } }
 	}
 
 	on_fail = { # this - country, from - planet(location)
-		from.solar_system = { system_event = { id = AIO_AIT_events.31113 } }
+		from.solar_system = { system_event = { id = AIO_RAIT_events.1204 } }
+	}
+
+	inline_script = {
+		script = AIO/ai_research_sp_wait_days
+		SHIP_CLASS = shipclass_science_ship
+		SHIP_NUM = 3
+		RESEARCH = physics_research
+		RESEARCH_VALUE = 0
 	}
 }
 
@@ -161,7 +200,7 @@ special_project = {
 	requirements = { handled_by_event_tooltip = AIO_AIT_GS_STAGE_tt }
 
 	on_fail = { # this - country, from - planet(location)
-		from.solar_system = { system_event = { id = AIO_AIT_events.31113 } }
+		from.solar_system = { system_event = { id = AIO_RAIT_events.1204 } }
 	}
 }
 
@@ -187,8 +226,8 @@ special_project = {
 	}
 
 	on_success = { # this - ship, from - planet(location)
-		from = { set_timed_planet_flag = { flag = AIO_RAIT_GS_finish_reverse days = 5 } }
-		solar_system = { system_event = { id = AIO_AIT_events.31113 } }
+		from = { set_planet_flag = AIO_RAIT_GS_finish_reverse }
+		solar_system = { system_event = { id = AIO_RAIT_events.1204 } }
 	}
 }
 
@@ -208,9 +247,11 @@ special_project = {
 	requirements = { handled_by_event_tooltip = AIO_AIT_GS_STAGE_tt }
 
 	on_fail = { # this - country, from - planet(location)
-		from.solar_system = { system_event = { id = AIO_AIT_events.31113 } }
+		from.solar_system = { system_event = { id = AIO_RAIT_events.1204 } }
 	}
 }
+
+#endregion
 
 # 晋升，触发胜利
 special_project = {
@@ -226,5 +267,5 @@ special_project = {
 
 	event_scope = country_event
 
-	on_success = { country_event = { id = AIO_crisis_events.601 } }
+	on_success = { country_event = { id = AIO_crisis_events.501 } }
 }

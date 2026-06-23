@@ -79,6 +79,7 @@
  AIO_RAIT_TR_stage_3_unliquidation_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
  AIO_RAIT_TR_stage_4_liquidation_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
  AIO_RAIT_TR_stage_4_unliquidation_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
+ AIO_RAIT_GS_fail_modifier: "$AIO_RAIT_GS_events_chain_title$"
 
  #endregion
 

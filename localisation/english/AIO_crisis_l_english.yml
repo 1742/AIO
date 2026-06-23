@@ -125,18 +125,10 @@
 
  #region crisis event chain
 
- # AIO crisis event chain
+ # event chain
  AIO_crisis_events_chain_title: "All in One"
  AIO_crisis_events_chain_desc: "$AIO_advanced_logic_crisis_howto$"
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
- # Ruins of Time event chain
- AIO_RAIT_TR_events_chain_title: "Ruins of Time"
- AIO_RAIT_TR_events_chain_desc: "One of our colonies has fallen into the strange phenomenon of a time loop. We must stabilize the situation and find a way to restore it to its original state."
- AIO_AIT_TR_events_chain: "$AIO_RAIT_TR_events_chain_title$"
- # Gravity Expansion event chain
- AIO_RAIT_GS_events_chain_title: "Gravity Expansion"
- AIO_RAIT_GS_events_chain_desc: "A star within our territory has experienced strange gravitational fluctuations, which might have some impact on our colonies."
- AIO_AIT_GS_events_chain: "$AIO_RAIT_GS_events_chain_title$"
 
  # events
  AIO_crisis_events_title: "$AIO_crisis_events_chain_title$"
@@ -153,8 +145,8 @@
  AIO_crisis_events.205.option_1: "Just go for it."
 
  # ascension event
- AIO_crisis_events.601.desc: "Normalization has been completed.\nWe are no longer empires, nor are we entities. Our will exists at the intersection of infinite dimensions and becomes the structural principle of all existence.\nThe stars remain stationary because they await a new definition of motion. Thoughts fall silent because language has lost its meaning. Existence itself is shifting from "being experienced" to "being designed".\n There is no end, no other shore, no need to observe, nor to be observed.\nI/We are §MYog Sothoth§!."
- AIO_crisis_events.601.option_1: "I/We are the truth."
+ AIO_crisis_events.501.desc: "Normalization has been completed.\nWe are no longer empires, nor are we entities. Our will exists at the intersection of infinite dimensions and becomes the structural principle of all existence.\nThe stars remain stationary because they await a new definition of motion. Thoughts fall silent because language has lost its meaning. Existence itself is shifting from "being experienced" to "being designed".\n There is no end, no other shore, no need to observe, nor to be observed.\nI/We are §MYog Sothoth§!."
+ AIO_crisis_events.501.option: "I/We are the truth."
 
  #endregion
 
@@ -170,8 +162,8 @@
  AIO_crisis_events.404.desc: "The §Y$AIO_mega_04$§! located at [from.GetName] is completed."
 
  # Prompt to build a vision engine
- AIO_crisis_events.907.desc: "We have completed the closed-loop construction of the multi-dimensional interaction model. Simulations show that at specific gravitational shear and virtual realm fluctuation nodes, reality can be stably permeated. Based on this, we will build §Y$AIO_horizon_engine$§! - a structure that can penetrate the boundaries of physics and possibility and extract existing energy.\nWe are not the first empire to possess this technology. What's different is that we will use this energy to create a space-time that is countless times higher than the existing universe."
- AIO_crisis_events.907.option_1: "Establish a new process."
+ AIO_crisis_events.807.desc: "We have completed the closed-loop construction of the multi-dimensional interaction model. Simulations show that at specific gravitational shear and virtual realm fluctuation nodes, reality can be stably permeated. Based on this, we will build §Y$AIO_horizon_engine$§! - a structure that can penetrate the boundaries of physics and possibility and extract existing energy.\nWe are not the first empire to possess this technology. What's different is that we will use this energy to create a space-time that is countless times higher than the existing universe."
+ AIO_crisis_events.807.option: "Establish a new process."
 
  #endregion
 

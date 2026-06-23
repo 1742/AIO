@@ -194,6 +194,18 @@ AIO_RAIT_TR_stage_4_unliquidation_modifier = {
 
 #endregion
 
+
+#region gravity swell
+
+AIO_RAIT_GS_fail_modifier = {
+    icon = gfx/interface/icons/modifiers/mod_biological_pop_happiness.dds
+
+    pop_happiness = -0.3
+    planet_jobs_unity_produces_mult = -0.2
+}
+
+#endregion
+
 #endregion
 
 

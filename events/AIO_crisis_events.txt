@@ -214,9 +214,9 @@ country_event = {
 #region 飞升事件
 
 country_event = {
-    id = AIO_crisis_events.601
+    id = AIO_crisis_events.501
     title = AIO_crisis_events_title
-    desc = AIO_crisis_events.601.desc
+    desc = AIO_crisis_events.501.desc
     picture = GFX_evt_vortex
 	show_sound = event_mystic_reveal
 	location = FROM
@@ -226,13 +226,13 @@ country_event = {
     is_triggered_only = yes
 
     option = {
-        name = AIO_crisis_events.601.option_1
+        name = AIO_crisis_events.501.option
         hidden_effect = {
             # 移除标志位及变量
             clear_variable = AIO_situation_AIT_time
             clear_variable = AIO_situation_RAIT_affect_system_num
             # 清除随机应用无限标志位
-            AIO_RAIT_effects_manager = { CLEAR_RANDOM_AIT_FLAG = 1 }
+            AIO_RAIT_claer_flags = yes
             # 清除定向应用无限变量
             AIO_DAIT_remove_buffs = yes
             AIO_DAIT_clear_values = yes
@@ -243,9 +243,8 @@ country_event = {
             # 结束所有战争
             every_war = { end_war_effect = yes }
 
-            AIO_crisis_effects_manager = { ASCENSION_EFFECT = 1 }
-
-            AIO_crisis_effects_manager = { ASCENSION_GALAXY_EFFECT = 1 }
+            AIO_ascension_effect = yes
+            AIO_ascension_galaxy_effect = yes
         }
         win = yes
         default_hide_option = yes
@@ -259,7 +258,7 @@ country_event = {
 
 # 被灭亡
 country_event = {
-    id = AIO_crisis_events.701
+    id = AIO_crisis_events.601
     hide_window = yes
 
     is_triggered_only = yes
@@ -282,14 +281,14 @@ country_event = {
         }
 
         # 移除 RAIT 标志位
-        AIO_RAIT_effects_manager = { CLEAR_RANDOM_AIT_FLAG = 1 }
+        AIO_RAIT_claer_flags = yes
 
         # 摧毁无名之雾
         event_target:AIO_HS_system = {
             # 移除特效
             if = {
                 limit = { any_system_ambient_object = { is_same_value = event_target:AIO_HS_system_effect } }
-                event_target:AIO_HS_system_effect = { destroy_ambient_object = this }
+                destroy_ambient_object = event_target:AIO_HS_system_effect
                 clear_global_event_target = AIO_HS_system_effect
             }
             # 移除巨构
@@ -330,7 +329,7 @@ country_event = {
             AIO_safe_remove_system_megastructures = yes
             if = {
                 limit = { any_system_ambient_object = { is_same_value = event_target:AIO_TUG_system_effect } }
-                event_target:AIO_TUG_system_effect = { destroy_ambient_object = this }
+                destroy_ambient_object = event_target:AIO_TUG_system_effect
                 clear_global_event_target = AIO_TUG_system_effect
             }
             star = { change_pc = pc_black_hole }
@@ -340,8 +339,8 @@ country_event = {
             }
             set_name = AIO_abyss_edge
             remove_star_flag = AIO_TUG_system
-            clear_global_event_target = AIO_TUG_system
         }
+        clear_global_event_target = AIO_TUG_system
 
         # 清除标志位
         clear_global_event_target = AIO_crisis_country
@@ -355,7 +354,7 @@ country_event = {
 
 # 部署递归节点
 event = {
-    id = AIO_crisis_events.801
+    id = AIO_crisis_events.701
     hide_window = yes
 
     is_triggered_only = yes
@@ -371,7 +370,7 @@ event = {
 
 # 研究科技
 country_event = {
-    id = AIO_crisis_events.802
+    id = AIO_crisis_events.702
     hide_window = yes
 
     is_triggered_only = yes
@@ -385,7 +384,7 @@ country_event = {
 
 # 控有科学枢纽
 event = {
-	id = AIO_crisis_events.803
+	id = AIO_crisis_events.703
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -411,7 +410,7 @@ event = {
 
 # 禁止AIO飞升帝国造船
 ship_event = {
-    id = AIO_crisis_events.901
+    id = AIO_crisis_events.801
     hide_window = yes
 
     is_triggered_only = yes
@@ -422,16 +421,16 @@ ship_event = {
 
 # 禁止AIO飞升帝国造恒星基地
 ship_event = {
-    id = AIO_crisis_events.902
+    id = AIO_crisis_events.802
     hide_window = yes
 
     is_triggered_only = yes
     trigger = { owner = { is_country_type = AIO_empire } }
 
-    immediate = { solar_system = { system_event = { id = AIO_crisis_events.903 days = 1 } } }
+    immediate = { solar_system = { system_event = { id = AIO_crisis_events.803 days = 1 } } }
 }
 system_event = {
-    id = AIO_crisis_events.903
+    id = AIO_crisis_events.803
     hide_window = yes
 
     is_triggered_only = yes
@@ -450,7 +449,7 @@ system_event = {
 
 # 删除万门之门节点
 system_event = {
-    id = AIO_crisis_events.904
+    id = AIO_crisis_events.804
     hide_window = yes
 
     is_triggered_only = yes
@@ -465,7 +464,7 @@ system_event = {
 
 # 驱逐其他进入主神空间的舰船
 fleet_event = {
-    id = AIO_crisis_events.905
+    id = AIO_crisis_events.805
     hide_window = yes
 
     is_triggered_only = yes
@@ -484,39 +483,24 @@ fleet_event = {
     }
 }
 
-# 未使用
-# country_event = {
-#     id = AIO_crisis_events.906
-#     hide_window = yes
-#
-#     is_triggered_only = yes
-#     trigger = {
-#
-#     }
-#
-#     immediate = {
-#
-#     }
-# }
-
 # 提示建造视界引擎
 country_event = {
-    id = AIO_crisis_events.907
+    id = AIO_crisis_events.807
     title = AIO_crisis_events_title
-    desc = AIO_crisis_events.907.desc
+    desc = AIO_crisis_events.807.desc
     picture = GFX_evt_cosmogenesis_crisis
 
     is_triggered_only = yes
     trigger = { last_increased_tech = tech_AIO_ascending_dimensionality_theory }
 
     option = {
-        name = AIO_crisis_events.907.option_1
+        name = AIO_crisis_events.807.option
     }
 }
 
 # 起源
 country_event = {
-    id = AIO_crisis_events.908
+    id = AIO_crisis_events.808
     hide_window = yes
 
     is_triggered_only = yes
@@ -564,7 +548,7 @@ country_event = {
             }
         }
         # 创建无名之雾
-        AIO_crisis_effects_manager = { CREATE_HS_SYSTEM = 1 }
+        AIO_create_HS_system_effect = yes
         # 创建犹格索托斯
         event_target:AIO_HS_system = {
             random_system_megastructure = {
@@ -578,7 +562,7 @@ country_event = {
             }
         }
 
-        AIO_crisis_effects_manager = { ASCENSION_EFFECT = 1 }
+        AIO_ascension_effect = yes
     }
 }
 

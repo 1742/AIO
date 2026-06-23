@@ -40,7 +40,7 @@ country_event = {
 
             # 开启 DAIT 季度事件，直到完成飞升或灭绝
             AIO_DAIT_init_values = yes
-            country_event = { id = AIO_AIT_events.402 }
+            country_event = { id = AIO_DAIT_events.401 }
         }
     }
 
@@ -163,7 +163,7 @@ country_event = {
 
     option = {
         name = AIO_merge_cosmos_events.205.option_1
-        country_event = { id = AIO_crisis_events.601 days = 30 }
+        country_event = { id = AIO_crisis_events.501 days = 30 }
         default_hide_option = yes
     }
 
@@ -233,7 +233,7 @@ situation_event = {
 						AIO_RAIT_random_trigger = yes
 						change_variable = { which = AIO_situation_AIT_time value = 1 }
 					}
-					set_timed_situation_flag = { flag = AIO_merge_cosmos_RAIT months = 6 }
+					set_timed_situation_flag = { flag = AIO_merge_cosmos_RAIT years = 2 }
 				}
 			}
 
@@ -311,7 +311,7 @@ country_event = {
 							AIO_RE_enrich_deposits_effect = { TIME = 2 }
 							if = {
 								limit = { exists = owner }
-								owner = { country_event = { id = AIO_AIT_events.203 } }
+								owner = { country_event = { id = AIO_merge_cosmos_events.402 } }
 							}
 						}
 						1 = { # 随机改变天体类型
@@ -326,7 +326,7 @@ country_event = {
 								save_event_target_as = AIO_situation_RAIT_target
 								if = {
 									limit = { exists = controller }
-									controller = { country_event = { id = AIO_AIT_events.204 } }
+									controller = { country_event = { id = AIO_merge_cosmos_events.403 } }
 								}
 							}
 						}
@@ -344,11 +344,11 @@ country_event = {
 										is_capital = yes
 									}
 								}
-								AIO_RE_effects_manager = { DEGENERATE = 1 }
+								AIO_RE_degenerate_effect = yes
 								save_event_target_as = AIO_situation_RAIT_target
 								if = {
 									limit = { exists = owner }
-									owner = { country_event = { id = AIO_AIT_events.205 } }
+									owner = { country_event = { id = AIO_merge_cosmos_events.404 } }
 								}
 							}
 						}
@@ -366,11 +366,11 @@ country_event = {
 										is_capital = yes
 									}
 								}
-								AIO_RE_effects_manager = { TURN_BACK_TIME = 1 }
+								AIO_RE_turn_back_time_effect = yes
 								save_event_target_as = AIO_situation_RAIT_target
 								if = {
 									limit = { exists = owner }
-									owner = { country_event = { id = AIO_AIT_events.206 } }
+									owner = { country_event = { id = AIO_merge_cosmos_events.405 } }
 								}
 							}
 						}
@@ -381,10 +381,10 @@ country_event = {
                                     NOT = { is_planet_class = pc_AIO_empty_space }
                                 }
 								save_event_target_as = AIO_situation_RAIT_target
-								AIO_RE_effects_manager = { ERASE_PLANET = 1 }
+								AIO_safe_remove_planet = yes
 								if = {
 									limit = { exists = controller }
-									controller = { country_event = { id = AIO_AIT_events.207 } }
+									controller = { country_event = { id = AIO_merge_cosmos_events.406 } }
 								}
 							}
 						}
@@ -394,10 +394,10 @@ country_event = {
                                 AIO_safe_remove_system_exclude_API = yes
                             }
 							save_event_target_as = AIO_situation_RAIT_target
-							AIO_RE_effects_manager = { ERASE_SYSTEM = 1 }
+							AIO_RE_erase_system_effect = yes
 							if = {
 								limit = { exists = owner }
-								owner = { country_event = { id = AIO_AIT_events.208 } }
+								owner = { country_event = { id = AIO_merge_cosmos_events.407 } }
 							}
 						}
 					}
