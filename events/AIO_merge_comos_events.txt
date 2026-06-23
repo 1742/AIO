@@ -49,7 +49,6 @@ country_event = {
 		hidden_effect = {
 			# 开启 DAIT 季度事件，直到完成飞升或灭绝
 			AIO_DAIT_init_values = yes
-			country_event = { id = AIO_DAIT_events.201 }
 		}
 	}
 }
@@ -309,6 +308,7 @@ country_event = {
 
 									is_artificial = no
 									is_star = no
+									NOT = { is_planet_class = pc_ark }
 								}
 								AIO_safe_change_random_pc = yes
 								save_event_target_as = AIO_situation_RAIT_target

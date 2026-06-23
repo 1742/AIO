@@ -1,10 +1,12 @@
 district_AIO_lathe_frame = {
+	icon = district_AIO_lathe
+
 	base_buildtime = 600
 
 	show_on_uncolonized = { always = no }
 
 	zone_slots = {
-		slot_empty
+		slot_AIO_lathe
 	}
 
 	resources = {

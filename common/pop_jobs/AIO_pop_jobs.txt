@@ -15,7 +15,7 @@ AIO_recursive_node = {
 
 	possible_pre_triggers = {
 		has_owner = yes
-		has_planet = yes
+		is_being_assimilated = no
 		is_sapient = yes
 	}
 

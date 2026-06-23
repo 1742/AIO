@@ -448,6 +448,12 @@ AIO_safe_remove_planet = {
             remove_planet = yes
         }
         else_if = {
+            limit = { is_planet_class = pc_ark }
+            ship = {
+                fleet = { destroy_fleet = this }
+            }
+        }
+        else_if = {
             limit = { is_planet_class = pc_habitat }
             AIO_safe_remove_habitat = yes
         }

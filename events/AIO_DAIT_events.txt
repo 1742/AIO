@@ -23,6 +23,13 @@ country_event = {
         name = OK
 		default_hide_option = yes
     }
+
+	after = {
+		if = {
+			limit = { NOT = { has_active_event = { AIO_DAIT_events.202 } } }
+			country_event = { id = AIO_DAIT_events.202 }
+		}
+	}
 }
 
 # 每季度更新 DAIT buff

@@ -14,7 +14,10 @@ zone_AIO_lathe = {
     base_buildtime = @zone_buildtime
 
 	potential = {
-        has_district = district_AIO_lathe
+        OR = {
+            has_district = district_AIO_lathe_frame
+            has_district = district_AIO_lathe
+        }
     }
 
 	resources = {
