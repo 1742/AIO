@@ -1,9 +1,8 @@
-# AIO应用无限事件
 namespace = AIO_DAIT_events
 
 country_event = {
-    id = AIO_DAIT_events.401
-    title = AIO_DAIT_events.401.title
+    id = AIO_DAIT_events.201
+    title = AIO_DAIT_events.201.title
     location = root
 
 	diplomatic = yes
@@ -17,7 +16,7 @@ country_event = {
 			has_country_flag = AIO_built_AIO_mega_03
 			has_country_flag = AIO_built_AIO_mega_04
 		}
-		NOT = { has_active_event = { AIO_DAIT_events.401 } }
+		NOT = { has_active_event = { AIO_DAIT_events.201 } }
 	}
 
     option = {
@@ -28,7 +27,7 @@ country_event = {
 
 # 每季度更新 DAIT buff
 country_event = {
-	id = AIO_DAIT_events.402
+	id = AIO_DAIT_events.202
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -59,7 +58,7 @@ country_event = {
 		clear_variable = AIO_DAIT_temp_give_tech
 	}
 
-	after = { country_event = { id = AIO_DAIT_events.402 months = 3 } }
+	after = { country_event = { id = AIO_DAIT_events.202 months = 3 } }
 }
 
 
@@ -69,7 +68,7 @@ country_event = {
 # FromFrom = ship 1
 # FromFromFrom = ship 2
 country_event = {
-	id = AIO_DAIT_events.403
+	id = AIO_DAIT_events.203
 	hide_window = yes
 
 	is_triggered_only = yes

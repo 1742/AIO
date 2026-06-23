@@ -26,13 +26,13 @@ situation_AIO_merge_cosmos = {
 
     # 开始事件
     on_start = {
-        owner = { country_event = { id = AIO_crisis_events.500 } }
+        owner = { country_event = { id = AIO_merge_cosmos_events.201 } }
     }
 
-    on_monthly = { events = { AIO_AIT_events.201 } }
+    on_monthly = { events = { AIO_merge_cosmos_events.301 } }
 
     on_progress_complete = {
-        owner = { country_event = { id = AIO_crisis_events.504 } }
+        owner = { country_event = { id = AIO_merge_cosmos_events.205 } }
         # 局势到达最右端时触发，要写摧毁局势
         destroy_situation = this
     }
@@ -154,7 +154,7 @@ situation_AIO_merge_cosmos = {
             # 到哪个值时结束该阶段
             end = 300
 
-            on_first_enter = { owner = { country_event = { id = AIO_crisis_events.501 } } }
+            on_first_enter = { owner = { country_event = { id = AIO_merge_cosmos_events.202 } } }
         }
         stage_3 = {
             # 进度条下的图标
@@ -164,7 +164,7 @@ situation_AIO_merge_cosmos = {
             # 到哪个值时结束该阶段
             end = 600
 
-            on_first_enter = { owner = { country_event = { id = AIO_crisis_events.502 } } }
+            on_first_enter = { owner = { country_event = { id = AIO_merge_cosmos_events.203 } } }
         }
         stage_4 = {
             # 进度条下的图标
@@ -174,7 +174,7 @@ situation_AIO_merge_cosmos = {
             # 到哪个值时结束该阶段
             end = 1000
 
-            on_first_enter = { owner = { country_event = { id = AIO_crisis_events.503 } } }
+            on_first_enter = { owner = { country_event = { id = AIO_merge_cosmos_events.204 } } }
         }
     }
 
@@ -309,7 +309,7 @@ situation_AIO_erase_galaxy = {
         ceiling_variable = AIO_situation_AIO_erase_galaxy_speed
     }
 
-    on_monthly = { events = { AIO_RE_events.1006 } }
+    on_monthly = { events = {  } }
 
     on_progress_complete = {
         if = {

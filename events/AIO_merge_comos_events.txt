@@ -37,10 +37,6 @@ country_event = {
                     mult = 0.25
                 }
             }
-
-            # 开启 DAIT 季度事件，直到完成飞升或灭绝
-            AIO_DAIT_init_values = yes
-            country_event = { id = AIO_DAIT_events.401 }
         }
     }
 
@@ -48,6 +44,14 @@ country_event = {
         name = AIO_merge_cosmos_events.201.option_1
         custom_tooltip = AIO_merge_cosmos_events.201.option_1.tt
     }
+
+	after = {
+		hidden_effect = {
+			# 开启 DAIT 季度事件，直到完成飞升或灭绝
+			AIO_DAIT_init_values = yes
+			country_event = { id = AIO_DAIT_events.201 }
+		}
+	}
 }
 
 # 融合宇宙一阶段完成
