@@ -90,24 +90,24 @@ situation_AIO_merge_cosmos = {
 
         # 巨构修正
         modifier = {
-            owner = { has_country_flag = AIO_built_AIO_mega_01 }
+            owner = { has_megastructure = AIO_mega_01 }
             desc = AIO_mega_01
             add = 0.5
         }
         modifier = {
-            owner = { has_country_flag = AIO_built_AIO_mega_02 }
+            owner = { has_megastructure = AIO_mega_02 }
             desc = AIO_mega_02
             add = 1
         }
         modifier = {
-            owner = { has_country_flag = AIO_built_AIO_mega_03 }
+            owner = { has_megastructure = AIO_mega_03 }
             desc = AIO_mega_03
-            mult = 1.5
+            add = 1.5
         }
         modifier = {
-            owner = { has_country_flag = AIO_built_AIO_mega_04 }
+            owner = { has_megastructure = AIO_mega_04 }
             desc = AIO_mega_04
-            mult = 2
+            add = 2
         }
 
         # 帝国规模修正
