@@ -161,7 +161,7 @@ AIO_safe_change_random_pc = {
             AIO_change_random_pc = { STAR = 1 }
             solar_system = {
                 AIO_change_star_class = yes
-                every_system_colony = {
+                every_system_planet_colony = {
                     limit = {
                         is_artificial = no
                         AIO_planet_has_oribital_ring = no
@@ -169,7 +169,6 @@ AIO_safe_change_random_pc = {
                         NOR = {
                             is_planet_class = pc_ai
                             has_carrier_flag = synth_queen_bastille
-                            AIO_is_crisis_mega_planet = yes
                         }
                     }
                     destroy_colony = yes

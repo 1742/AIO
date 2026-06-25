@@ -191,7 +191,7 @@ situation_event = {
 
 	immediate = {
 		# 检查资源够不够不然换方案
-		AIO_auto_merge_cosmos_effect = yes
+		owner = { AIO_auto_merge_cosmos_effect = yes }
 
 		# 随机应用无限
 		if = {

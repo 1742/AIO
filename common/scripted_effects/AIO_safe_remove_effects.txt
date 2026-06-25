@@ -58,11 +58,6 @@ AIO_safe_remove_megastructure = {
                 }
             }
         }
-        else_if = {
-            limit = { is_megastructure_type = shroud_seal }
-            solar_system = { on_shroud_seal_destroyed = yes }
-        }
-
         # Clear per-country build limits only when this is the country's last
         # megastructure in that family. The current structure is still counted.
         if = {

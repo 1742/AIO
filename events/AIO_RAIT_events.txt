@@ -841,13 +841,12 @@ country_event = { # FROM = maker
 	is_triggered_only = yes
 
 	immediate = {
-		AIO_shroud_tear_effect = yes
+		AIO_shroud_tear_effect = { MODIFIER = 1 }
 	}
 
 	option = { #Non-Crisis option
 		name = crisis.7260.a
 		trigger = { AIO_can_AIT = no }
-		AIO_shroud_tear_effect = { OPTION = 1 }
 
 		ai_chance = { base = 1 }
 	}
@@ -899,8 +898,10 @@ country_event = { # this - maker
 							is_capital = yes
 						}
 					}
-                    set_planet_flag = AIO_RAIT_time_ruin_planet
-					planet_event = { id = AIO_RAIT_events.1102 }
+					planet = {
+						set_planet_flag = AIO_RAIT_time_ruin_planet
+						planet_event = { id = AIO_RAIT_events.1102 }
+					}
                 }
             }
         }
@@ -1023,7 +1024,7 @@ planet_event = {
                 NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
             }
 		}
-		AIO_RAIT_crisis_tooltips = { COSMOGENESIS = 1 }
+		owner = { AIO_RAIT_crisis_tooltips = { COSMOGENESIS = 1 } }
 
 		ai_chance = { base = 2 }
 	}
@@ -1031,7 +1032,7 @@ planet_event = {
 	option = { #Crisis option
 		name = AIO_RAIT_events.1102.crisis.maker
 		trigger = { owner = { has_country_flag = AIO_RAIT_time_ruin_maker } }
-		AIO_RAIT_crisis_tooltips = { AIO = 1 }
+		owner = { AIO_RAIT_crisis_tooltips = { AIO = 1 } }
 	}
 
     after = {
@@ -1370,7 +1371,7 @@ system_event = { # from - maker
 	}
 
 	option = {
-		trigger = { AIO_can_AIT = no }
+		trigger = { owner = { AIO_can_AIT = no } }
 		name = AIO_RAIT_events.1202.not_crisis
 
 		ai_chance = { base = 1 }
@@ -1379,7 +1380,7 @@ system_event = { # from - maker
 	option = {
 		trigger = {
 			owner = { NOT = { has_country_flag = AIO_RAIT_gravity_swell_maker } }
-			AIO_can_AIT = yes
+			owner = { AIO_can_AIT = yes }
 		}
 		name = AIO_RAIT_events.1202.crisis.not_maker
 
@@ -1389,7 +1390,7 @@ system_event = { # from - maker
 	option = {
 		trigger = { owner = { has_country_flag = AIO_RAIT_gravity_swell_maker } }
 		name = AIO_RAIT_events.1202.crisis.marker
-		AIO_RAIT_crisis_tooltips = { AIO = 1 }
+		owner = { AIO_RAIT_crisis_tooltips = { AIO = 1 } }
 	}
 
 	after = {
@@ -1407,7 +1408,7 @@ system_event = {
 	# 不能编辑现实的国家
 	desc = {
 		trigger = {
-			AIO_can_AIT = no
+			owner = { AIO_can_AIT = no }
 			AIO_system_existed_natural_colony = yes
 		}
 		text = AIO_RAIT_events.1203.desc.not_crisis.has_colony
@@ -1415,7 +1416,7 @@ system_event = {
 	# 能编辑现实的国家
 	desc = {
 		trigger = {
-			AIO_can_AIT = yes
+			owner = { AIO_can_AIT = yes }
 			AIO_system_existed_natural_colony = yes
 		}
 		text = AIO_RAIT_events.1203.desc.crisis.has_colony
@@ -1473,7 +1474,7 @@ system_event = {
 		trigger = {
 			star = { NOT = { has_planet_flag = AIO_RAIT_GS_finish_reverse } }
 			NOT = {
-				any_system_colony = {
+				any_system_planet_colony = {
 					is_artificial = no
 					AIO_planet_has_oribital_ring = no
 				}
@@ -1485,7 +1486,7 @@ system_event = {
 	desc = {
 		trigger = {
 			star = { NOT = { has_planet_flag = AIO_RAIT_GS_finish_reverse } }
-			any_system_colony = {
+			any_system_planet_colony = {
 				is_artificial = no
 				AIO_planet_has_oribital_ring = no
 			}
@@ -1555,9 +1556,9 @@ system_event = {
 		trigger = { star = { has_planet_flag = AIO_RAIT_GS_finish_reverse } }
 		if = {
 			limit = { owner = { has_ascension_perk = ap_cosmogenesis } }
-			AIO_RAIT_crisis_tooltips = { COSMOGENESIS = 1 }
+			owner = { AIO_RAIT_crisis_tooltips = { COSMOGENESIS = 1 } }
 		}
-		else = { AIO_RAIT_crisis_tooltips = { AIO = 1 } }
+		else = { owner = { AIO_RAIT_crisis_tooltips = { AIO = 1 } } }
 
 		ai_chance = { base = 3 }
 	}

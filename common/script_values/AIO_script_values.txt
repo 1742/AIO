@@ -23,6 +23,7 @@ AIO_merge_cosmos_solution_energy_upkeep_value = {
     # 能量币库存修正，扣除能量币库存的1%
     complex_trigger_modifier = {
         trigger = has_country_resource
+        trigger_scope = owner
         parameters = { type = energy }
         mode = add
         mult = 0.01
@@ -30,6 +31,7 @@ AIO_merge_cosmos_solution_energy_upkeep_value = {
     # 能量币收入修正，扣除能量币收入的20%
     complex_trigger_modifier = {
         trigger = resource_revenue_compare
+        trigger_scope = owner
         parameters = { resource = energy }
         mode = add
         mult = 0.2
@@ -47,6 +49,7 @@ AIO_merge_cosmos_solution_dm_upkeep_value = {
     # 暗物质库存修正，扣除暗物质库存的1%
     complex_trigger_modifier = {
         trigger = has_country_resource
+        trigger_scope = owner
         parameters = { type = sr_dark_matter }
         mode = add
         mult = 0.01
@@ -54,6 +57,7 @@ AIO_merge_cosmos_solution_dm_upkeep_value = {
     # 暗物质收入修正，扣除暗物质收入的10%
     complex_trigger_modifier = {
         trigger = resource_revenue_compare
+        trigger_scope = owner
         parameters = { resource = sr_dark_matter }
         mode = add
         mult = 0.1
@@ -71,6 +75,7 @@ AIO_merge_cosmos_advanced_logic_modifier = {
 
     complex_trigger_modifier = {
         trigger = resource_income_compare
+        trigger_scope = owner
         parameters = { resource = AIO_advanced_logic }
         mode = add
     }

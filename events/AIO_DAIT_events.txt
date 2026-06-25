@@ -87,7 +87,7 @@ country_event = {
 	}
 
 	immediate = {
-		fleet = {
+		fromfrom = {
 			random_controlled_ship = {
 				if = {
 					limit = { check_variable = { which = AIO_DAIT_material_option_6_effect_1_value value > 0 } }

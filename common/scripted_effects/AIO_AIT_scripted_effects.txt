@@ -347,7 +347,7 @@ AIO_mass_shift_effect = {
                 }
                 add_modifier = { modifier = leaking_atmosphere days = -1 }
                 enable_special_project = { name = COSMOGENESIS_LEAKING_ATMOSPHERE }
-                set_timed_planet_flag = { flag = mass_shift_affected days = 5 }
+                planet = { set_timed_planet_flag = { flag = mass_shift_affected days = 5 } }
             }
         }
     }
@@ -379,7 +379,7 @@ AIO_mass_shift_effect = {
                     planet_size < 12
                 }
                 add_modifier = { modifier = low_gravity days = -1 }
-                set_timed_planet_flag = { flag = mass_shift_affected days = 5 }
+                planet = { set_timed_planet_flag = { flag = mass_shift_affected days = 5 } }
             }
         }
     }
@@ -392,84 +392,88 @@ AIO_mass_shift_effect = {
             40 = {  }
             60 = {
                 remove_modifier = high_gravity
-                set_timed_planet_flag = { flag = mass_shift_affected days = 5 }
+                planet = { set_timed_planet_flag = { flag = mass_shift_affected days = 5 } }
             }
         }
     }
 
     if = {
-        limit = { any_owned_planet = { has_planet_flag = mass_shift_affected } }
+        limit = { any_owned_planet = { planet = { has_planet_flag = mass_shift_affected } } }
         custom_tooltip = mass_shift_tooltip
-        owned_planet_list_tooltip = { limit = { has_planet_flag = mass_shift_affected } }
+        owned_planet_list_tooltip = { limit = { planet = { has_planet_flag = mass_shift_affected } } }
     }
     AIO_RAIT_opinion_modifier = yes
 }
 
 AIO_shroud_tear_effect = {
-    no_scope = {
-        if = {
-            limit = { NOT = { any_country = { has_country_flag = AIO_shroud_country } } }
-            create_country = {
-                name = "NAME_Creatures_of_the_Shroud"
-                type = shroud_spirits
-                flag = {
-                    icon = {
-                        category = "special"
-                        file = "the_shroud.dds"
+    [[EFFECT]
+        no_scope = {
+            if = {
+                limit = { NOT = { any_country = { has_country_flag = AIO_shroud_country } } }
+                create_country = {
+                    name = "NAME_Creatures_of_the_Shroud"
+                    type = shroud_spirits
+                    flag = {
+                        icon = {
+                            category = "special"
+                            file = "the_shroud.dds"
+                        }
+                        background = {
+                            category = "backgrounds"
+                            file = "00_solid.dds"
+                        }
+                        colors = {
+                            "dark_purple"
+                            "black"
+                            "null"
+                            "null"
+                        }
                     }
-                    background = {
-                        category = "backgrounds"
-                        file = "00_solid.dds"
-                    }
-                    colors = {
-                        "dark_purple"
-                        "black"
-                        "null"
-                        "null"
+                }
+                last_created_country = {
+                    set_country_flag = AIO_shroud_country
+                    save_event_target_as = AIO_shroud_country
+                    add_modifier = { modifier = supercharged_shroud_country years = 3 }
+                }
+                every_playable_country = { establish_communications_no_message = event_target:AIO_shroud_country }
+            }
+
+            while = {
+                count = 30
+                random_system = {
+                    limit = { NOT = { any_fleet_in_system = { has_fleet_flag = AIO_crisis_shroud_entity } } }
+                    create_fleet = {
+                        name = "NAME_Psionic_Entity"
+                        settings = {
+                            spawn_debris = no
+                            is_boss = yes
+                        }
+                        effect = {
+                            set_owner = event_target:AIO_shroud_country
+                            set_fleet_flag = AIO_crisis_shroud_entity
+                            create_ship = {
+                                name = "NAME_Psionic_Entity"
+                                design = "NAME_Corrupted_Avatar"
+                            }
+                            set_location = {
+                                target = prev.star
+                                distance = 100
+                                angle = random
+                            }
+                            set_fleet_stance = aggressive
+                            set_aggro_range_measure_from = return_point
+                            set_aggro_range = 2000
+                        }
                     }
                 }
             }
-            last_created_country = {
-                set_country_flag = AIO_shroud_country
-                save_event_target_as = AIO_shroud_country
-                add_modifier = { modifier = supercharged_shroud_country years = 3 }
-            }
-            every_playable_country = { establish_communications_no_message = event_target:AIO_shroud_country }
         }
+    ]
 
-        while = {
-            count = 30
-            random_system = {
-                limit = { NOT = { any_fleet_in_system = { has_fleet_flag = AIO_crisis_shroud_entity } } }
-                create_fleet = {
-                    name = "NAME_Psionic_Entity"
-                    settings = {
-                        spawn_debris = no
-                        is_boss = yes
-                    }
-                    effect = {
-                        set_owner = event_target:AIO_shroud_country
-                        set_fleet_flag = AIO_crisis_shroud_entity
-                        create_ship = {
-                            name = "NAME_Psionic_Entity"
-                            design = "NAME_Corrupted_Avatar"
-                        }
-                        set_location = {
-                            target = prev.star
-                            distance = 100
-                            angle = random
-                        }
-                        set_fleet_stance = aggressive
-                        set_aggro_range_measure_from = return_point
-                        set_aggro_range = 2000
-                    }
-                }
-            }
-        }
-    }
-
-    add_modifier = { modifier = cosmogenesis_shroud_tear years = 7 }
-    AIO_RAIT_opinion_modifier = yes
+    [[MODIFIER]
+        add_modifier = { modifier = cosmogenesis_shroud_tear years = 7 }
+        AIO_RAIT_opinion_modifier = yes
+    ]
 }
 
 AIO_time_ruin_effect = {
@@ -482,12 +486,12 @@ AIO_time_ruin_effect = {
             add_modifier = { modifier = AIO_RAIT_TR_stage_1_modifier days = -1 }
             add_deposit = d_AIO_TR_stage_1
         }
-        AIO_RAIT_opinion_modifier = yes
+        owner = { AIO_RAIT_opinion_modifier = yes }
     ]
     [[STAGE_2_OPT1]
         remove_modifier = AIO_RAIT_TR_stage_1_modifier
         add_modifier = { modifier = AIO_RAIT_TR_stage_2_opt_1_modifier days = -1 }
-        add_resource = { energy = -2000 }
+        owner = { add_resource = { energy = -2000 } }
         owner = {
             add_monthly_resource_mult = {
                 resource = unity
@@ -731,7 +735,7 @@ AIO_gravity_swell_effect = {
 
         if = {
 			limit = { star = { NOT = { has_planet_flag = AIO_RAIT_GS_finish_reverse } } }
-			every_system_colony = {
+			every_system_planet_colony = {
 				limit = {
 					is_artificial = no
 					AIO_planet_has_oribital_ring = no
@@ -1814,7 +1818,7 @@ AIO_RE_change_pc_effect = {
     [[STAR]
         change_pc = $NEW_PC$
         solar_system = {
-            every_system_colony = {
+            every_system_planet_colony = {
                 limit = {
                     is_artificial = no
                     AIO_planet_has_oribital_ring = no
@@ -2089,7 +2093,7 @@ AIO_RE_turn_back_time_effect = {
     if = {
         limit = { num_districts = { type = any value > 3 } }
         # 建筑降级
-        downgrade_all_buildings = yes
+        planet = { downgrade_all_buildings = yes }
         # 减少30%的人口
         every_owned_pop_group = {
             kill_pop_group = {

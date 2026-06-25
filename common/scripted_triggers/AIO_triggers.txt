@@ -32,7 +32,7 @@ AIO_system_existed_colony = {
 
 # 星系内有自然殖民地
 AIO_system_existed_natural_colony = {
-    any_system_colony = {
+    any_system_planet_colony = {
         is_artificial = no
     }
 }
@@ -53,7 +53,7 @@ AIO_planet_has_oribital_ring = {
 
 # 星系内是否有无星环基地的天然殖民地, scope: system
 AIO_natural_colony_without_ring = {
-    any_system_colony = {
+    any_system_planet_colony = {
         is_artificial = no
         AIO_planet_has_oribital_ring = no
     }
@@ -271,7 +271,6 @@ AIO_is_AIO_mega = {
         is_megastructure_type = AIO_mega_02
         is_megastructure_type = AIO_mega_03
         is_megastructure_type = AIO_mega_04
-        is_megastructure_type = AIO_mega_04_activate
     }
 }
 
@@ -348,7 +347,7 @@ AIO_safe_remove_system_exclude_API = {
 
 # 禁止AIO模组移除特定巨构的API，scope: megastructure
 AIO_safe_remove_megastructure_exclude_API = {
-    always = no
+    is_megastructure_type = shroud_seal
 }
 
 # 禁止AIO模组移除特定舰队的API，scope: fleet
