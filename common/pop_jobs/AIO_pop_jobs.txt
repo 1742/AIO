@@ -2,7 +2,6 @@
 AIO_recursive_node = {
 	category = AIO_recursive_node
 	purge = purge_AIO_matryoshka_brain
-	is_capped_by_modifier = yes
 
 	swappable_data = {
 		default = {
@@ -15,17 +14,15 @@ AIO_recursive_node = {
 
 	possible_pre_triggers = {
 		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
 		is_being_assimilated = no
 		is_sapient = yes
 	}
 
-	possible = {
-		planet = { has_district = district_AIO_lathe }
-		OR = {
-			is_robot_pop_group = yes
-			is_hive_species = yes
-		}
-	}
+	possible_precalc = can_fill_drone_job
+
+	possible = { can_think = yes }
 
 	resources = {
 		category = planet_AIO_recursive_node
@@ -62,7 +59,7 @@ AIO_recursive_node = {
 	}
 
 	weight = {
-		base = @complex_drone_job_weight
+		weight = @complex_drone_job_weight
 	}
 
 	inline_script = "jobs/automodding_priority_research"

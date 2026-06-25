@@ -166,6 +166,7 @@ AIO_recursive_node_produce_factor = {
 
 	add = value:AIO_num_recursive_node_per_100
 	divide = 20
+    min = 1
 }
 
 # AIO递归节点维护费修正
