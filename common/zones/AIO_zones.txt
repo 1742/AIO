@@ -30,10 +30,6 @@ zone_AIO_lathe = {
 
 	planet_modifier = {
         zone_building_slots_add = 3
-        planet_AIO_recursive_node_physics_research_produces_add = 1
-        planet_AIO_recursive_node_society_research_produces_add = 1
-        planet_AIO_recursive_node_engineering_research_produces_add = 1
-        planet_AIO_recursive_node_AIO_advanced_logic_produces_add = 0.025
     }
 
 	district_planet_modifier  = {

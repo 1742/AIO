@@ -1,7 +1,7 @@
 # AIO转换区划类型
 
 district_AIO_lathe = {
-	base_buildtime = 300
+	base_buildtime = 250
 
 	zone_slots = { slot_empty }
 

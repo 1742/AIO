@@ -8,10 +8,20 @@ building_AIO_lathe_resonator = {
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_lathe
+		OR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
 	}
 
 	prerequisites = { tech_AIO_lathe_resonator }
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
+	}
 
 	category = resource
 
@@ -51,7 +61,17 @@ building_AIO_lathe_stabilisator = {
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_lathe
+		OR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
+	}
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
 	}
 
 	category = government
@@ -80,10 +100,20 @@ building_AIO_lathe_overclocker = {
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_lathe
+		OR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
 	}
 
 	prerequisites = { tech_AIO_lathe_overclocker }
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
+	}
 
 	category = resource
 
@@ -121,10 +151,20 @@ building_AIO_lathe_preserver = {
 	exempt_from_ai_planet_specialization = yes
 
 	potential = {
-		has_district = district_AIO_lathe
+		OR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
 	}
 
 	prerequisites = { tech_AIO_lathe_preserver }
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
+	}
 
 	category = amenity
 
@@ -152,7 +192,17 @@ building_AIO_lathe_reactor = {
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_lathe
+		OR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
+	}
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
 	}
 
 	category = resource
@@ -184,10 +234,20 @@ building_AIO_lathe_life_support = {
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_lathe
+		OR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
 	}
 
 	prerequisites = { tech_AIO_lathe_life_support }
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
+	}
 
 	category = amenity
 
@@ -218,10 +278,20 @@ building_AIO_lathe_cogitator = {
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_lathe
+		OR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
 	}
 
 	prerequisites = { tech_AIO_lathe_cogitator }
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
+	}
 
 	category = army
 
@@ -262,10 +332,20 @@ building_AIO_lathe_validator = {
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		has_district = district_AIO_lathe
+		OR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
 	}
 
 	prerequisites = { tech_AIO_lathe_validator }
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe_frame
+			has_district = district_AIO_lathe
+		}
+	}
 
 	category = research
 
