@@ -42,9 +42,8 @@ d_AIO_TR_monument = {
 	icon = "d_monument"
 
 	is_for_colonizable = yes
-	potential = { colony? = { has_carrier_flag = AIO_RAIT_time_ruin_colony } }
 
-	resources = { category = hab_deposits }
+	resources = { category = planet_buildings }
 
 	planet_modifier = { planet_jobs_unity_produces_mult = 0.2 }
 
