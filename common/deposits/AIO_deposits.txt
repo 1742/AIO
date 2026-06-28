@@ -3,17 +3,17 @@
 # 时间之墟一阶段轨道矿藏
 d_AIO_TR_stage_1 = {
 	icon = "unused/d_atmospheric_entry"
+
+	is_for_colonizable = yes
+	potential = { colony? = { has_carrier_flag = AIO_RAIT_time_ruin_colony } }
+
 	resources = {
-		category = orbital_research_deposits
+		category = planet_research_buildings
 		produces = {
 			physics_research = 15
 			society_research = 15
 		}
 	}
-	station = shipclass_research_station
-	is_for_colonizable = yes
-
-	potential = { has_planet_flag = AIO_RAIT_time_ruin_planet }
 
 	drop_weight = { weight = 0 }
 }
@@ -21,10 +21,12 @@ d_AIO_TR_stage_1 = {
 # 时间之墟三阶段行星矿藏
 d_AIO_TR_stage_3 = {
 	icon = "d_engineering_research"
+
 	is_for_colonizable = yes
+	potential = { colony? = { has_carrier_flag = AIO_RAIT_time_ruin_colony } }
 
 	resources = {
-		category = hab_research_deposits
+		category = planet_research_buildings
 		produces = {
 			physics_research = 30
 			society_research = 30
@@ -32,25 +34,19 @@ d_AIO_TR_stage_3 = {
 		}
 	}
 
-	potential = { has_planet_flag = AIO_RAIT_time_ruin_planet }
-
 	drop_weight = { weight = 0 }
 }
 
 # 时间之墟纪念碑
 d_AIO_TR_monument = {
 	icon = "d_monument"
+
 	is_for_colonizable = yes
+	potential = { colony? = { has_carrier_flag = AIO_RAIT_time_ruin_colony } }
 
-	resources = {
-		category = hab_deposits
-		produces = {
-			unity = 50
-		}
-	}
+	resources = { category = hab_deposits }
+
 	planet_modifier = { planet_jobs_unity_produces_mult = 0.2 }
-
-	potential = { has_planet_flag = AIO_RAIT_time_ruin_planet }
 
 	drop_weight = { weight = 0 }
 }
@@ -59,6 +55,11 @@ d_AIO_TR_monument = {
 d_AIO_GS_deposit = {
 	icon = "unused/d_atmospheric_entry"
 
+	is_for_colonizable = no
+	potential = { always = no }
+
+	station = shipclass_research_station
+
 	resources = {
 		category = orbital_research_deposits
 		produces = {
@@ -66,10 +67,6 @@ d_AIO_GS_deposit = {
 			sr_dark_matter = 2
 		}
 	}
-	station = shipclass_research_station
-	is_for_colonizable = no
-
-	potential = { always = no }
 
 	habitat_modifier = {
 		district_hab_science_max_add = 5

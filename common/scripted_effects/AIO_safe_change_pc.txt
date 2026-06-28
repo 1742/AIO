@@ -164,7 +164,7 @@ AIO_safe_change_random_pc = {
                 every_system_planet_colony = {
                     limit = {
                         is_artificial = no
-                        AIO_planet_has_oribital_ring = no
+                        AIO_colony_has_ring = no
 
                         NOR = {
                             is_planet_class = pc_ai

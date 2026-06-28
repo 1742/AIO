@@ -185,6 +185,7 @@ AIO_RAIT_claer_flags = {
     }
 }
 
+# scope: country
 AIO_RAIT_crisis_tooltips = {
     [[AIO]
         custom_tooltip = add_crisis_currency_tt
@@ -476,11 +477,12 @@ AIO_shroud_tear_effect = {
     ]
 }
 
+# scope: colony
 AIO_time_ruin_effect = {
     [[STAGE_1]
         if = {
             limit = {
-                has_planet_flag = AIO_RAIT_time_ruin_planet
+                has_carrier_flag = AIO_RAIT_time_ruin_colony
                 NOT = { has_modifier = AIO_RAIT_TR_stage_1_modifier }
             }
             add_modifier = { modifier = AIO_RAIT_TR_stage_1_modifier days = -1 }
@@ -534,7 +536,7 @@ AIO_time_ruin_effect = {
 			location = this
 		}
 
-        hidden_effect = { planet_event = { id = AIO_RAIT_events.1105 days = 360 random = 90 } }
+        hidden_effect = { carrier_event = { id = AIO_RAIT_events.1105 days = 360 random = 90 } }
     ]
     [[STAGE_4]
         if = {
@@ -572,7 +574,7 @@ AIO_time_ruin_effect = {
             owner = { add_modifier = { modifier = AIO_RAIT_TR_stage_4_unliquidation_modifier years = 3 } }
         }
         else_if = {
-            limit = { has_planet_flag = AIO_finish_TR_special_project_release }
+            limit = { has_carrier_flag = AIO_finish_TR_special_project_release }
             owner = {
                 add_monthly_resource_mult = {
                     resource = physics_research
@@ -585,7 +587,7 @@ AIO_time_ruin_effect = {
     ]
     [[CLEAR]
         if = {
-            limit = { has_planet_flag = AIO_RAIT_time_ruin_planet }
+            limit = { has_carrier_flag = AIO_RAIT_time_ruin_colony }
 
             owner = {
                 if = {
@@ -624,11 +626,11 @@ AIO_time_ruin_effect = {
             }
 
             if = {
-                limit = { has_planet_flag = AIO_finish_TR_special_project_release }
-                remove_planet_flag = AIO_finish_TR_special_project_release
+                limit = { has_carrier_flag = AIO_finish_TR_special_project_release }
+                remove_carrier_flag = AIO_finish_TR_special_project_release
             }
 
-            remove_planet_flag = AIO_RAIT_time_ruin_planet
+            remove_carrier_flag = AIO_RAIT_time_ruin_colony
         }
     ]
 }
@@ -738,7 +740,7 @@ AIO_gravity_swell_effect = {
 			every_system_planet_colony = {
 				limit = {
 					is_artificial = no
-					AIO_planet_has_oribital_ring = no
+					AIO_colony_has_ring = no
 				}
 				destroy_colony = yes
 			}
@@ -1821,7 +1823,7 @@ AIO_RE_change_pc_effect = {
             every_system_planet_colony = {
                 limit = {
                     is_artificial = no
-                    AIO_planet_has_oribital_ring = no
+                    AIO_colony_has_ring = no
                     NOR = {
                         is_planet_class = pc_ai
                         has_carrier_flag = synth_queen_bastille

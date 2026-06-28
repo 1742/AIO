@@ -20,16 +20,6 @@ AIO_RAIT_all = {
     has_global_flag = AIO_RAIT_existed_gravity_swell
 }
 
-# 星系内有殖民地
-AIO_system_existed_colony = {
-    any_system_planet = {
-        OR = {
-            is_colony = yes
-            is_under_colonization = yes
-        }
-    }
-}
-
 # 星系内有自然殖民地
 AIO_system_existed_natural_colony = {
     any_system_planet_colony = {
@@ -37,25 +27,19 @@ AIO_system_existed_natural_colony = {
     }
 }
 
-# 判断行星是否有星环基地，在planet下使用
-AIO_planet_has_oribital_ring = {
-    solar_system = {
-        any_starbase_in_system = {
-            planet = { is_same_value = prevprevprev }
-            OR = {
-                has_starbase_size = orbital_ring_tier_1
-                has_starbase_size = orbital_ring_tier_2
-                has_starbase_size = orbital_ring_tier_3
-            }
-        }
+# 判断行星是否有星环基地，scope: planet
+AIO_colony_has_ring = {
+    orbital_defence? = {
+        starbase = { is_orbital_ring = yes }
     }
 }
 
 # 星系内是否有无星环基地的天然殖民地, scope: system
 AIO_natural_colony_without_ring = {
-    any_system_planet_colony = {
+    any_system_planet = {
         is_artificial = no
-        AIO_planet_has_oribital_ring = no
+        is_colony = yes
+        AIO_colony_has_ring = no
     }
 }
 
@@ -327,8 +311,7 @@ AIO_is_crisis_mega_planet = {
                 AIO_is_crisis_sphere = yes
                 AIO_is_galactic_crucible = yes
             }
-            exists = planet
-            planet = { is_same_value = prevprevprev }
+            planet? = { is_same_value = root }
         }
     }
 }

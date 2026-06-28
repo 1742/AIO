@@ -290,7 +290,7 @@ AIO_safe_remove_planet_megastructures = {
     if = {
         limit = {
             is_colony = yes
-            AIO_planet_has_oribital_ring = yes
+            AIO_colony_has_ring = yes
         }
         solar_system = {
             random_starbase_in_system = {

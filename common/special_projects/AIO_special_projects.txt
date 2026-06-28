@@ -21,11 +21,11 @@ special_project = {
 	requirements = { shipclass_transport = 400 }
 
 	on_success = { # this - ship, from - planet(location)
-		from = { planet_event = { id = AIO_RAIT_events.1103 } }
+		from = { carrier_event = { id = AIO_RAIT_events.1103 } }
 	}
 
 	on_fail = { # this - country, from - planet(location)
-		from = { planet_event = { id = AIO_RAIT_events.1105 } }
+		from = { carrier_event = { id = AIO_RAIT_events.1105 } }
 	}
 
 	inline_script = {
@@ -59,11 +59,11 @@ special_project = {
 	}
 
 	on_success = { # this - ship, from - planet(location)
-		from = { planet_event = { id = AIO_RAIT_events.1104 } }
+		from = { carrier_event = { id = AIO_RAIT_events.1104 } }
 	}
 
 	on_fail = { # this - country, from - planet(location)
-		from = { planet_event = { id = AIO_RAIT_events.1105 } }
+		from = { carrier_event = { id = AIO_RAIT_events.1105 } }
 	}
 
 	inline_script = {
@@ -97,13 +97,13 @@ special_project = {
 
 	on_success = { # this - ship, from - planet(location)
 		from = {
-			set_planet_flag = AIO_finish_TR_special_project_release
-			planet_event = { id = AIO_RAIT_events.1105 }
+			set_carrier_flag = AIO_finish_TR_special_project_release
+			carrier_event = { id = AIO_RAIT_events.1105 }
 		}
 	}
 
 	on_fail = { # this - country, from - planet(location)
-		from = { planet_event = { id = AIO_RAIT_events.1105 } }
+		from = { carrier_event = { id = AIO_RAIT_events.1105 } }
 	}
 
 	inline_script = {
