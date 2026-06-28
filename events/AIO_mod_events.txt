@@ -12,8 +12,7 @@ country_event = {
     diplomatic = yes
     diplomatic_title = ap_AIO_allinone
     picture_event_data = {
-        room = AIO_library_room
-        portrait = AIO_TAWI_PORTRAITS_2
+        room = AIO_mod_announcement_room
     }
 
     is_triggered_only = yes
