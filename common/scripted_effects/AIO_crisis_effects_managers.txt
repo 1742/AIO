@@ -182,30 +182,6 @@ AIO_create_HS_system_effect = {
     }
 }
 
-AIO_auto_merge_cosmos_effect = {
-    if = {
-        limit = {
-            has_country_resource = { type = energy amount > 0 }
-            has_country_resource = { type = sr_dark_matter amount > 0 }
-            any_situation = {
-                is_situation_type = situation_AIO_merge_cosmos
-                current_situation_approach = AIO_merge_cosmos_pause_solution
-                situation_monthly_progress != 0
-            }
-        }
-        random_situation = {
-            limit = { is_situation_type = situation_AIO_merge_cosmos }
-            set_situation_approach = AIO_merge_cosmos_solution
-        }
-    }
-    else = {
-        random_situation = {
-            limit = { is_situation_type = situation_AIO_merge_cosmos }
-            set_situation_approach = AIO_merge_cosmos_pause_solution
-        }
-    }
-}
-
 AIO_create_Aforgomom_effect = {
     create_country = {
         name = "AIO_Aforgomom"
@@ -305,7 +281,7 @@ AIO_ascension_effect = {
             kill_leader = { show_notification = no fire = yes }
         }
         # 摧毁殖民地
-        every_owned_planet = { destroy_colony = yes }
+        every_owned_colony = { destroy_colony = yes }
         # 转移首都
         event_target:AIO_HS_system = {
             star = {

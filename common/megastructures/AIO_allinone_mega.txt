@@ -245,8 +245,6 @@ AIO_mega_02 = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_02
 			country_event = { id = AIO_crisis_events.402 }
-			# 重新启动局势方案
-			AIO_auto_merge_cosmos_effect = yes
 		}
 	}
 }
@@ -312,11 +310,7 @@ AIO_mega_03 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_03
-
 			country_event = { id = AIO_crisis_events.403 }
-
-			# 重新启动局势方案
-			AIO_auto_merge_cosmos_effect = yes
 		}
 	}
 }
@@ -386,8 +380,6 @@ AIO_mega_04 = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_04
 			country_event = { id = AIO_crisis_events.404 }
-			# 重新启动局势方案
-			AIO_auto_merge_cosmos_effect = yes
 		}
 	}
 }

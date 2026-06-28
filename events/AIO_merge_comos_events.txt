@@ -53,7 +53,7 @@ country_event = {
 	}
 }
 
-# 融合宇宙一阶段完成
+# 一阶段完成
 country_event = {
     id = AIO_merge_cosmos_events.202
     title = situation_AIO_merge_cosmos
@@ -89,7 +89,7 @@ country_event = {
     }
 }
 
-# 融合宇宙二阶段完成
+# 二阶段完成
 country_event = {
     id = AIO_merge_cosmos_events.203
     hide_window = yes
@@ -113,7 +113,7 @@ country_event = {
     }
 }
 
-# 融合宇宙三阶段完成
+# 三阶段完成
 country_event = {
     id = AIO_merge_cosmos_events.204
     hide_window = yes
@@ -134,7 +134,7 @@ country_event = {
     }
 }
 
-# 融合宇宙四阶段完成
+# 四阶段完成
 country_event = {
     id = AIO_merge_cosmos_events.205
     title = AIO_crisis_events_title
@@ -160,7 +160,10 @@ country_event = {
         set_country_flag = AIO_finish_merge_cosmos
 
         hidden_effect = {
-            remove_modifier = AIO_merge_cosmos_modifier
+			every_country = {
+				limit = { has_modifier = AIO_merge_cosmos_modifier }
+				remove_modifier = AIO_merge_cosmos_modifier
+			}
         }
     }
 
@@ -190,9 +193,6 @@ situation_event = {
     trigger = { is_situation_type = situation_AIO_merge_cosmos }
 
 	immediate = {
-		# 检查资源够不够不然换方案
-		owner = { AIO_auto_merge_cosmos_effect = yes }
-
 		# 随机应用无限
 		if = {
 			limit = {
