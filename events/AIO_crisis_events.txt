@@ -24,7 +24,7 @@ country_event = {
     }
 
     option = {
-        name = AIO_crisis_events.201.option_1
+        name = AIO_crisis_events.201.option
     }
 }
 
@@ -43,7 +43,7 @@ country_event = {
     trigger = { NOT = { has_country_flag = AIO_empire_country } }
 
     option = {
-        name = AIO_crisis_events.202.option_1
+        name = AIO_crisis_events.202.option
     }
 }
 
@@ -62,7 +62,7 @@ country_event = {
     trigger = { NOT = { has_country_flag = AIO_empire_country } }
 
     option = {
-        name = AIO_crisis_events.203.option_1
+        name = AIO_crisis_events.203.option
     }
 }
 
@@ -81,7 +81,7 @@ country_event = {
     trigger = { NOT = { has_country_flag = AIO_empire_country } }
 
     option = {
-        name = AIO_crisis_events.204.option_1
+        name = AIO_crisis_events.204.option
     }
 }
 
@@ -100,7 +100,7 @@ country_event = {
     trigger = { NOT = { has_country_flag = AIO_empire_country } }
 
     option = {
-        name = AIO_crisis_events.205.option_1
+        name = AIO_crisis_events.205.option
     }
 }
 
@@ -232,7 +232,7 @@ country_event = {
             clear_variable = AIO_situation_AIT_time
             clear_variable = AIO_situation_RAIT_affect_system_num
             # 清除随机应用无限标志位
-            AIO_RAIT_claer_flags = yes
+            AIO_RAIT_clear_flags = yes
             # 清除定向应用无限变量
             AIO_DAIT_remove_buffs = yes
             AIO_DAIT_clear_values = yes
@@ -281,7 +281,7 @@ country_event = {
         }
 
         # 移除 RAIT 标志位
-        AIO_RAIT_claer_flags = yes
+        AIO_RAIT_clear_flags = yes
 
         # 摧毁无名之雾
         event_target:AIO_HS_system = {

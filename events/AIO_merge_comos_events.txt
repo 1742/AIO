@@ -49,6 +49,7 @@ country_event = {
 		hidden_effect = {
 			# 开启 DAIT 季度事件，直到完成飞升或灭绝
 			AIO_DAIT_init_values = yes
+			country_event = { id = AIO_DAIT_events.201 days = 5 }
 		}
 	}
 }
@@ -84,7 +85,7 @@ country_event = {
     }
 
     option = {
-        name = AIO_merge_cosmos_events.202.option_1
+        name = AIO_merge_cosmos_events.202.option
         custom_tooltip = AIO_merge_cosmos_events.202.tt
     }
 }
@@ -234,7 +235,7 @@ situation_event = {
 		if = {
 			limit = { AIO_RAIT_all = yes }
 			owner = {
-				AIO_RAIT_claer_flags = yes
+				AIO_RAIT_clear_flags = yes
 				set_global_flag = AIO_RAIT_all
 			}
 		}

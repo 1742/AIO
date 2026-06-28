@@ -134,15 +134,15 @@
  AIO_crisis_events_title: "$AIO_crisis_events_chain_title$"
  # unlock crisis level
  AIO_crisis_events.201.desc: "Physical constants, particle masses, gravity and the expansion of entropy are not immutable - they are merely parameters of the initial version, the original drafts awaiting revision. We haven't become the norm yet, but we have already started to hold the pen.\n\nTo reconstruct the universe, we must first have a sufficient understanding of it. We need more advanced computers to help us understand the operational logic of real laws."
- AIO_crisis_events.201.option_1: "We want more powerful computers!"
+ AIO_crisis_events.201.option: "We want more powerful computers!"
  AIO_crisis_events.202.desc: "The energy density of §Y$AIO_horizon_engine$§! is about to break through the boundaries of reality. Next, we need to use this energy to open a gate - it leading to countless times and spaces. Once activated, we will be able to change the rules in an infinite dimension."
- AIO_crisis_events.202.option_1: "We are Gate Builder."
+ AIO_crisis_events.202.option: "We are Gate Builder."
  AIO_crisis_events.203.desc: "With the opening of §Y$AIO_mega_01$§!, time and space began to reveal an unprecedented vulnerability. It is not enough to merely drill a "hole" in the universe. Our most powerful brain has already conceived a megastructure capable of "selecting" time and space - §Y$AIO_mega_02$§!. It will pave the way for subsequent rule modifications."
- AIO_crisis_events.203.option_1: "$EXCELLENT$"
+ AIO_crisis_events.203.option: "$EXCELLENT$"
  AIO_crisis_events.204.desc: "§Y$AIO_mega_02$§! has become the key for us to reverse the fate of the universe, but its potential has not yet been fully unleashed. To further advance the integration process, we must forge it into a higher-dimensional base point - §Y$AIO_mega_03$§!. Only when §Y$AIO_mega_03$§! stands at the peak of multiple realities can we truly control the ultimate form of the law."
- AIO_crisis_events.204.option_1: "$menp_AIO_mega_04_desc$"
+ AIO_crisis_events.204.option: "$menp_AIO_mega_04_desc$"
  AIO_crisis_events.205.desc: "§Y$AIO_mega_03$§! has already stood at the forefront of multiple realities. However, its existence is merely to carry the true us. Now, we must elevate it to its ultimate form - §M$AIO_mega_04$§!. It is no longer a structure, no longer an empire, but an equivalent of existence and law. When it is completed, the integration will be closed and rewriting will begin. All differences, all dimensions, all endings will..."
- AIO_crisis_events.205.option_1: "Just go for it."
+ AIO_crisis_events.205.option: "Just go for it."
 
  # ascension event
  AIO_crisis_events.501.desc: "Normalization has been completed.\nWe are no longer empires, nor are we entities. Our will exists at the intersection of infinite dimensions and becomes the structural principle of all existence.\nThe stars remain stationary because they await a new definition of motion. Thoughts fall silent because language has lost its meaning. Existence itself is shifting from "being experienced" to "being designed".\n There is no end, no other shore, no need to observe, nor to be observed.\nI/We are §MYog Sothoth§!."

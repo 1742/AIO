@@ -101,7 +101,7 @@ AIO_RAIT_random_trigger = {
 }
 
 # 移除 RAIT 标志位
-AIO_RAIT_claer_flags = {
+AIO_RAIT_clear_flags = {
     if = {
         limit = { has_global_flag = AIO_RAIT_existed_blackout }
         remove_global_flag = AIO_RAIT_existed_blackout

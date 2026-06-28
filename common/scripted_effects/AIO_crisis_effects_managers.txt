@@ -160,9 +160,9 @@ AIO_create_HS_system_effect = {
                     }
                 }
                 else = {
-                    create_starbase = {
-                        size = starbase_waystation_2
-                        owner = root
+                    create_waystation_effect = {
+                        OWNER = root
+                        ANGLE = 0
                     }
                 }
             }

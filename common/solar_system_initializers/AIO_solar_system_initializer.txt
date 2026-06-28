@@ -29,9 +29,9 @@ AIO_hyperdimensional_space_initializer = {
             }
         }
         else = {
-            create_starbase = {
-                size = starbase_waystation_2
-                owner = root
+            create_waystation_effect = {
+                OWNER = root
+                ANGLE = 0
             }
         }
 

@@ -20,7 +20,7 @@
  AIO_merge_cosmos_events.201.option_1: "为此项目调度足够的资源"
  AIO_merge_cosmos_events.201.option_1.tt: "解锁§R定向应用无限§!\n可在['concept_edicts']界面打开定向应用无限(Directional Apply Infinity Thesis, DAIT)界面。"
  AIO_merge_cosmos_events.202.desc: "基于多维收敛点构建的嵌套现实容器已构成闭环。无论从何种时空投影观察，其维度表达皆趋于无限。借助我们在§R应用无限§!中的积累成果，我们已能构思并实施一座前所未有的巨型结构：§Y$AIO_mega_02$§!。它将使我们得以精确地雕刻宇宙规律，将存在本身重塑为理想化模型中的唯一解。"
- AIO_merge_cosmos_events.202.option_1: "解锁无尽时空存在的钥匙……"
+ AIO_merge_cosmos_events.202.option: "解锁无尽时空存在的钥匙……"
  AIO_merge_cosmos_events.202.tt: "解锁巨型结构：§Y$AIO_mega_01_node$§!节点、§Y$AIO_mega_02$§!\n生成星系：['concept_AIO_HS_system']"
  AIO_merge_cosmos_events.203.desc: "融合宇宙二阶段完成"
  AIO_merge_cosmos_events.203.option_1: "REPLACE_ME"

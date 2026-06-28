@@ -133,15 +133,15 @@
  AIO_crisis_events_title: "$AIO_crisis_events_chain_title$"
  # 天灾等级
  AIO_crisis_events.201.desc: "物理常数，粒子质量，引力与熵的扩张皆非不可变——它们只是初始版本的参数，是等待修订的原始草稿。我们尚未成为规律，但我们已开始握笔。\n\n为了重构宇宙，我们必须先对它有足够的理解。我们需要更先进的计算机帮助我们理解现实规律的运行逻辑。"
- AIO_crisis_events.201.option_1: "我们要更强的计算机！"
+ AIO_crisis_events.201.option: "我们要更强的计算机！"
  AIO_crisis_events.202.desc: "§Y$AIO_horizon_engine$§!的能量密度即将突破现实的边界。下一步，我们需要用这些能量打开一扇门——一扇通往无数时空的“门”。一旦开启，我们将可以在无限的维度之上改变法则。"
- AIO_crisis_events.202.option_1: "我们是铸门者。"
+ AIO_crisis_events.202.option: "我们是铸门者。"
  AIO_crisis_events.203.desc: "随着§Y$AIO_mega_01$§!的启用，时空开始暴露出前所未见的脆弱之处。仅是在宇宙打一个“洞”是不够的，我们最强的大脑已经构思出了一种能够“选择”时空的巨型结构——§Y$AIO_mega_02$§!，它将为后续的规则修改铺平道路。"
- AIO_crisis_events.203.option_1: "$EXCELLENT$"
+ AIO_crisis_events.203.option: "$EXCELLENT$"
  AIO_crisis_events.204.desc: "§Y$AIO_mega_02$§!已成为我们扭转宇宙命运的钥匙，但其潜力尚未完全释放。为继续推进融合进程，我们必须将其锻造为更高维度的基点——§Y$AIO_mega_03$§!。只有当§Y$AIO_mega_03$§!屹立于多重现实的顶点，我们才能真正掌控规律的终极形态。"
- AIO_crisis_events.204.option_1: "$menp_AIO_mega_04_desc$"
+ AIO_crisis_events.204.option: "$menp_AIO_mega_04_desc$"
  AIO_crisis_events.205.desc: "§Y$AIO_mega_03$§!已屹立于多重现实的最尖端。然其存在，仅为承载真正的我们而设。现在，我们必须将其升华为终极形态——§M$AIO_mega_04$§!。不再是结构，不再是帝国，而是存在与规律的等价物。当其完成，融合将封闭，重写将开始。所有分歧、所有维度、所有终局，都将……"
- AIO_crisis_events.205.option_1: "放手去做吧。"
+ AIO_crisis_events.205.option: "放手去做吧。"
 
  # 飞升事件
  AIO_crisis_events.501.desc: "归一已完成。\n我们不再是帝国，也不再是实体。我们的意志存在于无限维度的交汇点，成为一切存在的结构性原理。\n星辰静止不动，是因为它们等待新的运动定义；思维悄然沉默，是因为语言已失去意义；存在本身，正从“被经历”转向“被设计”。\n没有终点。没有彼岸。没有观察，也无需被观察。\n我/我们即§M犹格索托斯§!。"
