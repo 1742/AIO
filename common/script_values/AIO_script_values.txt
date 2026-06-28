@@ -143,7 +143,7 @@ AIO_num_recursive_node_per_200 = {
 	base = 0
 	complex_trigger_modifier = {
 		trigger = num_assigned_jobs
-        trigger_scope = planet
+        trigger_scope = colony
 		parameters = { job = AIO_recursive_node }
 		mode = add
         mult = 0.01
@@ -158,7 +158,7 @@ AIO_num_recursive_node_per_1000 = {
 
 	complex_trigger_modifier = {
 		trigger = num_assigned_jobs
-		trigger_scope = planet
+		trigger_scope = colony
         parameters = { job = AIO_recursive_node }
 		mode = add
 		mult = 0.001
@@ -171,7 +171,6 @@ AIO_recursive_node_produce_factor = {
 
 	add = value:AIO_num_recursive_node_per_100
 	divide = 20
-    min = 1
 }
 
 # AIO递归节点维护费修正
@@ -206,7 +205,7 @@ AIO_recursive_node_purge_factor = {
 
     complex_trigger_modifier = {
 		trigger = count_owned_pop_group
-        trigger_scope = planet
+        trigger_scope = colony
         parameters = { limit = { is_job_of_pop_category = { category = AIO_recursive_node } } }
 		mode = divide
 	}
