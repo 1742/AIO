@@ -1,6 +1,6 @@
 # 虚空
 pc_AIO_empty_space = {
-	entity = "black_hole_entity"
+	entity = "AIO_empty_space_entity"
 	icon = GFX_planet_type_black_hole
     icon_large = GFX_planet_type_black_hole_big
 	picture = none
