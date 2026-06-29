@@ -91,9 +91,9 @@ AIO_horizon_engine = {
 
 		upkeep = {
 			alloys = 50
-			physics_research = 100
-			society_research = 100
-			engineering_research = 100
+			physics_research = 25
+			society_research = 25
+			engineering_research = 25
 		}
 	}
 

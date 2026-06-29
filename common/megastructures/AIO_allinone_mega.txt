@@ -139,9 +139,9 @@ AIO_mega_01 = {
 
 		upkeep = {
 			energy = 500
-			physics_research = 200
-			society_research = 200
-			engineering_research = 200
+			physics_research = 100
+			society_research = 100
+			engineering_research = 100
 		}
 	}
 

@@ -40,7 +40,7 @@ situation_AIO_merge_cosmos = {
     # 每月局势变化
     monthly_progress = {
         # 如果是双向事件则可以填负数
-        base = 10
+        base = 1
 
         # 行动方案修正
         modifier = {
@@ -191,8 +191,14 @@ situation_AIO_merge_cosmos = {
 
         allow = {
             owner = {
-                has_country_resource = { type = energy amount > 0 }
-                has_country_resource = { type = sr_dark_matter amount > 0 }
+                NOR = {
+                    has_country_resource = { type = energy amount < 0 }
+                    has_country_resource = { type = sr_dark_matter amount < 0 }
+                    any_situation = {
+                        is_situation_type = situation_nomad_economy
+                        situation_progress <= 0
+                    }
+                }
             }
         }
 

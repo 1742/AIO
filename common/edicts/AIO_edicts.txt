@@ -131,7 +131,5 @@ edict_AIO_invoke_DAIT_menu = {
         NOT = { is_country_type = AIO_empire }
     }
 
-    allow = { has_country_resource = { type = AIO_advanced_logic amount > 45000 } }
-
     effect = { country_event = { id = AIO_DAIT_events.201 } }
 }

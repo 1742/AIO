@@ -19,6 +19,7 @@ on_tech_increased = {
         AIO_crisis_events.702  # 天灾目标，研究科技
         AIO_crisis_events.807 # 完成科技升维假设，提示建造视相引擎
 		AIO_fe_events.201 # 授予 AIO 堕落帝国建筑科技对应的原版科技
+        AIO_test_events.202
     }
 }
 

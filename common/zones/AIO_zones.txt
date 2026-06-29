@@ -33,9 +33,9 @@ zone_AIO_lathe = {
     }
 
 	district_planet_modifier  = {
-        job_AIO_recursive_node_add = 200
+        job_AIO_recursive_node_add = 600
         planet_max_districts_add = 1
-        planet_housing_add = @zone_urban_housing_negative
+        planet_housing_add = @zone_arcology_housing_negative
     }
 }
 

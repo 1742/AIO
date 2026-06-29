@@ -29,26 +29,34 @@ AIO_recursive_node = {
 		produces = {
 			trigger = {
 				owner = {
-					NOT = {
+					NOR = {
 						any_situation = {
 							is_situation_type = situation_energy_deficit
+						}
+						any_situation = {
+							is_situation_type = situation_nomad_economy
+							situation_progress <= 0
 						}
 					}
 				}
 			}
-			physics_research = 1
-			society_research = 1
-			engineering_research = 1
-			unity = 0.5
-			AIO_advanced_logic = 0.025
+			physics_research = 3
+			society_research = 3
+			engineering_research = 3
+			unity = 0.05
+			AIO_advanced_logic = 0.1
 			mult = value:AIO_recursive_node_produce_factor
 		}
 		upkeep = {
 			trigger = {
 				owner = {
-					NOT = {
+					NOR = {
 						any_situation = {
 							is_situation_type = situation_energy_deficit
+						}
+						any_situation = {
+							is_situation_type = situation_nomad_economy
+							situation_progress <= 0
 						}
 					}
 				}

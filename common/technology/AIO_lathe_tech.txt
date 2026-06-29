@@ -18,17 +18,17 @@ tech_AIO_lathe_resonator = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_owned_planet = { has_district = district_AIO_lathe } }
+			NOT = { any_owned_colony = { has_district = district_AIO_lathe } }
 		}
 		modifier = {
 			factor = 2
-			any_owned_planet = {
+			any_owned_colony = {
 				num_assigned_jobs = { job = AIO_recursive_node value >= 5000 }
 			}
 		}
 		modifier = {
 			factor = 2
-			any_owned_planet = {
+			any_owned_colony = {
 				num_assigned_jobs = { job = AIO_recursive_node value >= 10000 }
 			}
 		}
@@ -53,17 +53,17 @@ tech_AIO_lathe_overclocker = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_owned_planet = { has_district = district_AIO_lathe } }
+			NOT = { any_owned_colony = { has_district = district_AIO_lathe } }
 		}
 		modifier = {
 			factor = 2
-			any_owned_planet = {
+			any_owned_colony = {
 				num_assigned_jobs = { job = AIO_recursive_node value >= 5000 }
 			}
 		}
 		modifier = {
 			factor = 2
-			any_owned_planet = {
+			any_owned_colony = {
 				num_assigned_jobs = { job = AIO_recursive_node value >= 10000 }
 			}
 		}
@@ -88,17 +88,17 @@ tech_AIO_lathe_preserver = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_owned_planet = { has_district = district_AIO_lathe } }
+			NOT = { any_owned_colony = { has_district = district_AIO_lathe } }
 		}
 		modifier = {
 			factor = 2
-			any_owned_planet = {
+			any_owned_colony = {
 				num_assigned_jobs = { job = AIO_recursive_node value >= 5000 }
 			}
 		}
 		modifier = {
 			factor = 2
-			any_owned_planet = {
+			any_owned_colony = {
 				num_assigned_jobs = { job = AIO_recursive_node value >= 10000 }
 			}
 		}
@@ -123,17 +123,17 @@ tech_AIO_lathe_life_support = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_owned_planet = { has_district = district_AIO_lathe } }
+			NOT = { any_owned_colony = { has_district = district_AIO_lathe } }
 		}
 		modifier = {
 			factor = 2
-			any_owned_planet = {
+			any_owned_colony = {
 				num_assigned_jobs = { job = AIO_recursive_node value >= 5000 }
 			}
 		}
 		modifier = {
 			factor = 2
-			any_owned_planet = {
+			any_owned_colony = {
 				num_assigned_jobs = { job = AIO_recursive_node value >= 10000 }
 			}
 		}
@@ -158,17 +158,17 @@ tech_AIO_lathe_cogitator = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_owned_planet = { has_district = district_AIO_lathe } }
+			NOT = { any_owned_colony = { has_district = district_AIO_lathe } }
 		}
 		modifier = {
 			factor = 2
-			any_owned_planet = {
+			any_owned_colony = {
 				num_assigned_jobs = { job = AIO_recursive_node value >= 5000 }
 			}
 		}
 		modifier = {
 			factor = 2
-			any_owned_planet = {
+			any_owned_colony = {
 				num_assigned_jobs = { job = AIO_recursive_node value >= 10000 }
 			}
 		}
@@ -193,17 +193,17 @@ tech_AIO_lathe_validator = {
 	weight_modifier = {
 		modifier = {
 			factor = 0
-			NOT = { any_owned_planet = { has_district = district_AIO_lathe } }
+			NOT = { any_owned_colony = { has_district = district_AIO_lathe } }
 		}
 		modifier = {
 			factor = 2
-			any_owned_planet = {
+			any_owned_colony = {
 				num_assigned_jobs = { job = AIO_recursive_node value >= 5000 }
 			}
 		}
 		modifier = {
 			factor = 2
-			any_owned_planet = {
+			any_owned_colony = {
 				num_assigned_jobs = { job = AIO_recursive_node value >= 10000 }
 			}
 		}

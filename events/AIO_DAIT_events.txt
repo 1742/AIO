@@ -27,7 +27,7 @@ country_event = {
 	after = {
 		if = {
 			limit = { NOT = { has_active_event = { AIO_DAIT_events.202 } } }
-			country_event = { id = AIO_DAIT_events.202 }
+			country_event = { id = AIO_DAIT_events.202 days = 5 }
 		}
 	}
 }
@@ -65,7 +65,7 @@ country_event = {
 		clear_variable = AIO_DAIT_temp_give_tech
 	}
 
-	after = { country_event = { id = AIO_DAIT_events.202 years = 1 } }
+	after = { country_event = { id = AIO_DAIT_events.202 months = 3 } }
 }
 
 
