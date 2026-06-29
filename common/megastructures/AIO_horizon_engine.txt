@@ -86,11 +86,11 @@ AIO_horizon_engine = {
 		}
 
         produces = {
-			energy = 3000
+			energy = 1000
 		}
 
 		upkeep = {
-			alloys = 50
+			alloys = 25
 			physics_research = 25
 			society_research = 25
 			engineering_research = 25
