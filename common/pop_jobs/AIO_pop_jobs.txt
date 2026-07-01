@@ -40,11 +40,11 @@ AIO_recursive_node = {
 					}
 				}
 			}
-			physics_research = 3
-			society_research = 3
-			engineering_research = 3
-			unity = 0.05
-			AIO_advanced_logic = 0.1
+			physics_research = 0.375
+			society_research = 0.375
+			engineering_research = 0.375
+			unity = 0.375
+			AIO_advanced_logic = 0.15
 			mult = value:AIO_recursive_node_produce_factor
 		}
 		upkeep = {
