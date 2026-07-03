@@ -3,131 +3,131 @@ AIO_grant_vanilla_fe_building_technology = {
 	set_country_flag = AIO_granting_vanilla_fe_technology
 
 	if = {
-		limit = { last_increased_tech = tech_AIO_fe_forge_1 }
-		give_technology = { tech = tech_fe_forge_1 message = no }
+		limit = { has_technology = tech_AIO_fe_forge_1 NOT = { has_technology = tech_fe_forge_1 } }
+		give_technology = { tech = tech_fe_forge_1 }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_forge_2 }
-		give_technology = { tech = tech_fe_forge_2 message = no }
+	if = {
+		limit = { has_technology = tech_AIO_fe_forge_2 NOT = { has_technology = tech_fe_forge_2 } }
+		give_technology = { tech = tech_fe_forge_2 }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_fabricator_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_fabricator_1 NOT = { has_technology = tech_fe_fabricator_1 } }
 		give_technology = { tech = tech_fe_fabricator_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_fabricator_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_fabricator_2 NOT = { has_technology = tech_fe_fabricator_2 } }
 		give_technology = { tech = tech_fe_fabricator_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_singularity_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_singularity_1 NOT = { has_technology = tech_fe_singularity_1 } }
 		give_technology = { tech = tech_fe_singularity_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_singularity_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_singularity_2 NOT = { has_technology = tech_fe_singularity_2 } }
 		give_technology = { tech = tech_fe_singularity_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_mine_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_mine_1 NOT = { has_technology = tech_fe_mine_1 } }
 		give_technology = { tech = tech_fe_mine_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_mine_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_mine_2 NOT = { has_technology = tech_fe_mine_2 } }
 		give_technology = { tech = tech_fe_mine_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_nourishment_complex }
+	if = {
+		limit = { has_technology = tech_AIO_nourishment_complex NOT = { has_technology = tech_fe_nourishment_1 } }
 		give_technology = { tech = tech_fe_nourishment_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_nourishment_center }
+	if = {
+		limit = { has_technology = tech_AIO_nourishment_center NOT = { has_technology = tech_fe_nourishment_2 } }
 		give_technology = { tech = tech_fe_nourishment_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_affluence_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_affluence_1 NOT = { has_technology = tech_fe_affluence_1 } }
 		give_technology = { tech = tech_fe_affluence_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_affluence_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_affluence_2 NOT = { has_technology = tech_fe_affluence_2 } }
 		give_technology = { tech = tech_fe_affluence_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_silo_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_silo_1 NOT = { has_technology = tech_fe_silo_1 } }
 		give_technology = { tech = tech_fe_silo_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_silo_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_silo_2 NOT = { has_technology = tech_fe_silo_2 } }
 		give_technology = { tech = tech_fe_silo_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_market_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_market_1 NOT = { has_technology = tech_fe_market_1 } }
 		give_technology = { tech = tech_fe_market_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_market_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_market_2 NOT = { has_technology = tech_fe_market_2 } }
 		give_technology = { tech = tech_fe_market_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_administration_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_administration_1 NOT = { has_technology = tech_fe_administration_1 } }
 		give_technology = { tech = tech_fe_administration_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_administration_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_administration_2 NOT = { has_technology = tech_fe_administration_2 } }
 		give_technology = { tech = tech_fe_administration_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_security_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_security_1 NOT = { has_technology = tech_fe_security_1 } }
 		give_technology = { tech = tech_fe_security_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_security_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_security_2 NOT = { has_technology = tech_fe_security_2 } }
 		give_technology = { tech = tech_fe_security_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_lab_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_lab_1 NOT = { has_technology = tech_fe_lab_1 } }
 		give_technology = { tech = tech_fe_lab_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_lab_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_lab_2 NOT = { has_technology = tech_fe_lab_2 } }
 		give_technology = { tech = tech_fe_lab_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_fortress_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_fortress_1 NOT = { has_technology = tech_fe_fortress_1 } }
 		give_technology = { tech = tech_fe_fortress_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_fortress_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_fortress_2 NOT = { has_technology = tech_fe_fortress_2 } }
 		give_technology = { tech = tech_fe_fortress_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_dome_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_dome_1 NOT = { has_technology = tech_fe_dome_1 } }
 		give_technology = { tech = tech_fe_dome_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_dome_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_dome_2 NOT = { has_technology = tech_fe_dome_2 } }
 		give_technology = { tech = tech_fe_dome_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_entertainment_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_entertainment_1 NOT = { has_technology = tech_fe_entertainment_1 } }
 		give_technology = { tech = tech_fe_entertainment_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_entertainment_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_entertainment_2 NOT = { has_technology = tech_fe_entertainment_2 } }
 		give_technology = { tech = tech_fe_entertainment_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_assembly_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_assembly_1 NOT = { has_technology = tech_fe_assembly_1 } }
 		give_technology = { tech = tech_fe_assembly_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_assembly_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_assembly_2 NOT = { has_technology = tech_fe_assembly_2 } }
 		give_technology = { tech = tech_fe_assembly_2 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_clinic_1 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_clinic_1 NOT = { has_technology = tech_fe_clinic_1 } }
 		give_technology = { tech = tech_fe_clinic_1 message = no }
 	}
-	else_if = {
-		limit = { last_increased_tech = tech_AIO_fe_clinic_2 }
+	if = {
+		limit = { has_technology = tech_AIO_fe_clinic_2 NOT = { has_technology = tech_fe_clinic_2 } }
 		give_technology = { tech = tech_fe_clinic_2 message = no }
 	}
 	remove_country_flag = AIO_granting_vanilla_fe_technology

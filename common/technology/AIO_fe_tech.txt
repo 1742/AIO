@@ -19,7 +19,10 @@ tech_AIO_fe_forge_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_forge_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_forge_1 }
+			has_technology = tech_AIO_fe_forge_1
+		}
 	}
 
 	weight_modifier = {
@@ -87,7 +90,10 @@ tech_AIO_fe_forge_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_forge_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_forge_2 }
+			has_technology = tech_AIO_fe_forge_2
+		}
 	}
 
 	prerequisites = { "tech_AIO_fe_forge_1" }
@@ -118,7 +124,10 @@ tech_AIO_fe_fabricator_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_fabricator_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_fabricator_1 }
+			has_technology = tech_AIO_fe_fabricator_1
+		}
 	}
 
 	weight_modifier = {
@@ -186,7 +195,10 @@ tech_AIO_fe_fabricator_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_fabricator_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_fabricator_2 }
+			has_technology = tech_AIO_fe_fabricator_2
+		}
 	}
 
 	prerequisites = { "tech_AIO_fe_fabricator_1" }
@@ -222,7 +234,10 @@ tech_AIO_fe_singularity_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_singularity_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_singularity_1 }
+			has_technology = tech_AIO_fe_singularity_1
+		}
 	}
 
 	weight_modifier = {
@@ -290,7 +305,10 @@ tech_AIO_fe_singularity_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_singularity_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_singularity_2 }
+			has_technology = tech_AIO_fe_singularity_2
+		}
 	}
 
 	prerequisites = { "tech_AIO_fe_singularity_1" }
@@ -321,7 +339,10 @@ tech_AIO_fe_mine_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_mine_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_mine_1 }
+			has_technology = tech_AIO_fe_mine_1
+		}
 	}
 
 	weight_modifier = {
@@ -389,7 +410,10 @@ tech_AIO_fe_mine_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_mine_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_mine_2 }
+			has_technology = tech_AIO_fe_mine_2
+		}
 	}
 
 	prerequisites = { "tech_AIO_fe_mine_1" }
@@ -420,7 +444,10 @@ tech_AIO_nourishment_complex = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_nourishment_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_nourishment_1 }
+			has_technology = tech_AIO_nourishment_complex
+		}
 	}
 
 	weight_modifier = {
@@ -492,7 +519,10 @@ tech_AIO_nourishment_center = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_nourishment_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_nourishment_2 }
+			has_technology = tech_AIO_nourishment_center
+		}
 	}
 
 	prerequisites = { tech_AIO_nourishment_complex }
@@ -536,7 +566,10 @@ tech_AIO_fe_affluence_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_affluence_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_affluence_1 }
+			has_technology = tech_AIO_fe_affluence_1
+		}
 	}
 
 	weight_modifier = {
@@ -604,7 +637,10 @@ tech_AIO_fe_affluence_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_affluence_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_affluence_2 }
+			has_technology = tech_AIO_fe_affluence_2
+		}
 	}
 
 	prerequisites = { "tech_AIO_fe_affluence_1" }
@@ -639,7 +675,10 @@ tech_AIO_fe_silo_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_silo_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_silo_1 }
+			has_technology = tech_AIO_fe_silo_1
+		}
 	}
 
 	weight_modifier = {
@@ -707,7 +746,10 @@ tech_AIO_fe_silo_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_silo_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_silo_2 }
+			has_technology = tech_AIO_fe_silo_2
+		}
 	}
 
 	prerequisites = { "tech_AIO_fe_silo_1" }
@@ -738,7 +780,10 @@ tech_AIO_fe_market_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_market_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_market_1 }
+			has_technology = tech_AIO_fe_market_1
+		}
 	} # Not for gestalt
 
 	weight_modifier = {
@@ -810,7 +855,10 @@ tech_AIO_fe_market_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_market_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_market_2 }
+			has_technology = tech_AIO_fe_market_2
+		}
 	}
 
 	prerequisites = { "tech_AIO_fe_market_1" }
@@ -846,7 +894,10 @@ tech_AIO_fe_administration_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_administration_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_administration_1 }
+			has_technology = tech_AIO_fe_administration_1
+		}
 	}
 
 	weight_modifier = {
@@ -914,7 +965,10 @@ tech_AIO_fe_administration_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_administration_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_administration_2 }
+			has_technology = tech_AIO_fe_administration_2
+		}
 	}
 
 	prerequisites = { "tech_AIO_fe_administration_1" }
@@ -945,7 +999,10 @@ tech_AIO_fe_security_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_security_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_security_1 }
+			has_technology = tech_AIO_fe_security_1
+		}
 	}
 
 	weight_modifier = {
@@ -1013,7 +1070,10 @@ tech_AIO_fe_security_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_security_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_security_2 }
+			has_technology = tech_AIO_fe_security_2
+		}
 	}
 
 	prerequisites = { "tech_AIO_fe_security_1" }
@@ -1044,7 +1104,10 @@ tech_AIO_fe_lab_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_lab_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_lab_1 }
+			has_technology = tech_AIO_fe_lab_1
+		}
 	}
 
 	weight_modifier = {
@@ -1112,7 +1175,10 @@ tech_AIO_fe_lab_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_lab_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_lab_2 }
+			has_technology = tech_AIO_fe_lab_2
+		}
 	}
 
 	prerequisites = { "tech_AIO_fe_lab_1" }
@@ -1143,7 +1209,10 @@ tech_AIO_fe_fortress_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_fortress_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_fortress_1 }
+			has_technology = tech_AIO_fe_fortress_1
+		}
 	}
 
 	weight_modifier = {
@@ -1211,7 +1280,10 @@ tech_AIO_fe_fortress_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_fortress_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_fortress_2 }
+			has_technology = tech_AIO_fe_fortress_2
+		}
 	}
 
 	prerequisites = { "tech_AIO_fe_fortress_1" }
@@ -1247,7 +1319,10 @@ tech_AIO_fe_dome_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_dome_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_dome_1 }
+			has_technology = tech_AIO_fe_dome_1
+		}
 	}
 
 	weight_modifier = {
@@ -1315,7 +1390,10 @@ tech_AIO_fe_dome_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_dome_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_dome_2 }
+			has_technology = tech_AIO_fe_dome_2
+		}
 	}
 
 	prerequisites = { "tech_AIO_fe_dome_1" }
@@ -1346,7 +1424,10 @@ tech_AIO_fe_entertainment_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_entertainment_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_entertainment_1 }
+			has_technology = tech_AIO_fe_entertainment_1
+		}
 	} # Not for gestalt
 
 	weight_modifier = {
@@ -1418,7 +1499,10 @@ tech_AIO_fe_entertainment_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_entertainment_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_entertainment_2 }
+			has_technology = tech_AIO_fe_entertainment_2
+		}
 	} # Not for gestalt
 
 	prerequisites = { "tech_AIO_fe_entertainment_1" }
@@ -1449,7 +1533,10 @@ tech_AIO_fe_assembly_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_assembly_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_assembly_1 }
+			has_technology = tech_AIO_fe_assembly_1
+		}
 	} #Not for Hives
 
 	prerequisites = {
@@ -1536,7 +1623,10 @@ tech_AIO_fe_assembly_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_assembly_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_assembly_2 }
+			has_technology = tech_AIO_fe_assembly_2
+		}
 	} #Not for Hives
 
 	prerequisites = { "tech_AIO_fe_assembly_1" }
@@ -1571,7 +1661,10 @@ tech_AIO_fe_clinic_1 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_clinic_1 }
+		OR = {
+			NOT = { has_technology = tech_fe_clinic_1 }
+			has_technology = tech_AIO_fe_clinic_1
+		}
 	} #Not for Machines
 
 	weight_modifier = {
@@ -1643,7 +1736,10 @@ tech_AIO_fe_clinic_2 = {
 
 	potential = {
 		has_ascension_perk = ap_AIO_allinone
-		NOT = { has_technology = tech_fe_clinic_2 }
+		OR = {
+			NOT = { has_technology = tech_fe_clinic_2 }
+			has_technology = tech_AIO_fe_clinic_2
+		}
 	} #Not for Machines
 
 	prerequisites = { "tech_AIO_fe_clinic_1" }
@@ -1655,7 +1751,7 @@ tech_AIO_fe_clinic_2 = {
 		}
 		inline_script = {
 			script = technologies/rare_technologies_weight_modifiers
-			TECHNOLOGY = tech_AIO_fe_clinic_1
+			TECHNOLOGY = tech_AIO_fe_clinic_2
 		}
 	}
 }
