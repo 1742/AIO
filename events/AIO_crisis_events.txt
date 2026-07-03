@@ -358,11 +358,19 @@ event = {
     hide_window = yes
 
     is_triggered_only = yes
-    trigger = { any_country = { capital_scope = { has_district = district_AIO_lathe } } }
+    trigger = {
+        any_country = {
+            has_ascension_perk = ap_AIO_allinone
+            capital_scope? = { has_district = district_AIO_lathe }
+        }
+    }
 
     immediate = {
         random_country = {
-            limit = { has_ascension_perk = ap_AIO_allinone }
+            limit = {
+                has_ascension_perk = ap_AIO_allinone
+                capital_scope? = { has_district = district_AIO_lathe }
+            }
             complete_crisis_objective = crisobj_AIO_neural_chips
         }
     }

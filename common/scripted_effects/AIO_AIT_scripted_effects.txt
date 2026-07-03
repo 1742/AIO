@@ -950,30 +950,6 @@ AIO_DAIT_base_calculate_buff_values = {
             set_variable = { which = AIO_DAIT_temp_calc_input value = 0 }
         }
 
-        # 库存按 240 个月折算，且最多提供相当于月产 50% 的有效逻辑
-        export_resource_stockpile_to_variable = {
-            resource = AIO_advanced_logic
-            variable = AIO_DAIT_temp_calc_stockpile
-        }
-        divide_variable = { which = AIO_DAIT_temp_calc_stockpile value = 240 }
-        set_variable = { which = AIO_DAIT_temp_calc_stockpile_cap value = AIO_DAIT_temp_calc_input }
-        multiply_variable = { which = AIO_DAIT_temp_calc_stockpile_cap value = 0.5 }
-        if = {
-            limit = {
-                check_variable = {
-                    which = AIO_DAIT_temp_calc_stockpile
-                    value > AIO_DAIT_temp_calc_stockpile_cap
-                }
-            }
-            set_variable = {
-                which = AIO_DAIT_temp_calc_stockpile
-                value = AIO_DAIT_temp_calc_stockpile_cap
-            }
-        }
-        change_variable = {
-            which = AIO_DAIT_temp_calc_input
-            value = AIO_DAIT_temp_calc_stockpile
-        }
         multiply_variable = { which = AIO_DAIT_temp_calc_input value = AIO_DAIT_temp_alloc_value }
     }
     else = {
@@ -1019,8 +995,6 @@ AIO_DAIT_base_calculate_buff_values = {
     # 清除临时变量
     clear_variable = AIO_DAIT_temp_alloc_value
     clear_variable = AIO_DAIT_temp_calc_input
-    clear_variable = AIO_DAIT_temp_calc_stockpile
-    clear_variable = AIO_DAIT_temp_calc_stockpile_cap
     clear_variable = AIO_DAIT_temp_calc_denom
     clear_variable = AIO_DAIT_temp_calc_result
 }
