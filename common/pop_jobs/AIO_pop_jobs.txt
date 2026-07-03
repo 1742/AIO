@@ -44,7 +44,7 @@ AIO_recursive_node = {
 			society_research = 0.375
 			engineering_research = 0.375
 			unity = 0.375
-			AIO_advanced_logic = 0.15
+			AIO_advanced_logic = 0.175
 			mult = value:AIO_recursive_node_produce_factor
 		}
 		upkeep = {
