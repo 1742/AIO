@@ -14,9 +14,7 @@ system_event = {
 		save_event_target_as = AIO_DAIT_target_system
 		from = {
 			save_event_target_as = AIO_DAIT_source_megastructure
-			owner = {
-				country_event = { id = AIO_DAIT_events.202 }
-			}
+			owner = { country_event = { id = AIO_DAIT_events.202 } }
 		}
 	}
 }
@@ -85,9 +83,14 @@ country_event = {
 				}
 			}
 		}
-		event_target:AIO_DAIT_target_system = {
-			AIO_DAIT_create_life_effect = yes
-		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_create_life_effect = yes }
+		country_event = { id = AIO_DAIT_events.202 }
+	}
+
+	option = {
+		name = AIO_DAIT_events.203.create_storm
+		trigger = { event_target:AIO_DAIT_target_system = { is_inside_storm = no } }
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_create_storm_effect = yes }
 		country_event = { id = AIO_DAIT_events.202 }
 	}
 
@@ -106,7 +109,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = AIO_DAIT_events.204.hexagonal_array
+		name = AIO_DAIT_events.204.reshape_system
 		trigger = {
 			event_target:AIO_DAIT_target_system = {
 				NOR = {
@@ -125,6 +128,44 @@ country_event = {
 	}
 
 	option = {
+		name = AIO_DAIT_events.204.degenerate
+		trigger = {
+			event_target:AIO_DAIT_target_system = {
+				any_system_planet_colony = {
+					NOR = {
+						is_planet_class = pc_ai
+						has_carrier_flag = synth_queen_bastille
+						owner = { is_country_type = primitive }
+						AIO_safe_remove_planet_exclude_API = yes
+					}
+				}
+			}
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_degenerate_effect = yes }
+		country_event = { id = AIO_DAIT_events.202 }
+	}
+
+	option = {
+		name = AIO_DAIT_events.204.enlighten
+		trigger = {
+			event_target:AIO_DAIT_target_system = {
+				any_system_planet_colony = {
+					any_owned_pop_group = { is_sapient = no }
+				}
+			}
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_enlighted_effect = yes }
+		country_event = { id = AIO_DAIT_events.202 }
+	}
+
+	option = {
+		name = AIO_DAIT_events.204.change_ethic
+		trigger = { event_target:AIO_DAIT_target_system = { exists = owner } }
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_change_ethic_effect = yes }
+		country_event = { id = AIO_DAIT_events.202 }
+	}
+
+	option = {
 		name = AIO_DAIT_events.back
 		country_event = { id = AIO_DAIT_events.202 }
 		default_hide_option = yes
@@ -137,6 +178,17 @@ country_event = {
 	desc = AIO_DAIT_events.205.desc
 
 	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.205.Aformom
+		trigger = {
+			event_target:AIO_DAIT_target_system = {
+				NOT = { any_fleet_in_system = { has_fleet_flag = AIO_Aforgomom_fleet } }
+			}
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_Aforgomom_effect = yes }
+		country_event = { id = AIO_DAIT_events.202 }
+	}
 
 	option = {
 		name = AIO_DAIT_events.205.harvest_system
@@ -155,6 +207,40 @@ country_event = {
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_harvest_system_effect = yes }
+		country_event = { id = AIO_DAIT_events.202 }
+	}
+
+	option = {
+		name = AIO_DAIT_events.205.erase_system
+		trigger = {
+			event_target:AIO_DAIT_target_system = {
+				NOR = {
+					has_star_flag = AIO_HS_system
+					has_star_flag = AIO_TUG_system
+					has_star_flag = synth_queen_capital
+					AIO_is_crisis_mega_system = yes
+					AIO_safe_remove_system_exclude_API = yes
+				}
+			}
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_system_effect = yes }
+		country_event = { id = AIO_DAIT_events.202 }
+	}
+
+	option = {
+		name = AIO_DAIT_events.205.erase_cluster
+		trigger = {
+			event_target:AIO_DAIT_target_system = {
+				NOR = {
+					has_star_flag = AIO_HS_system
+					has_star_flag = AIO_TUG_system
+					has_star_flag = synth_queen_capital
+					AIO_is_crisis_mega_system = yes
+					AIO_safe_remove_system_exclude_API = yes
+				}
+			}
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_cluster_effect = yes }
 		country_event = { id = AIO_DAIT_events.202 }
 	}
 

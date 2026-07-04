@@ -72,56 +72,183 @@ AIO_DAIT_create_life_effect = {
     }
 }
 
-# 退化星系内所有智慧物种
-AIO_DAIT_degenerate_effect = {
-    every_system_planet_colony = {
-        limit = { owner = { NOT = { is_country_type = primitive } } }
-        every_owned_pop_group = {
-            limit = {
-                OR = {
-                    has_trait = trait_mechanical
-                    has_trait = trait_machine_unit
-                }
-            }
-            kill_all_pop = yes
-        }
-        every_planet_army = { remove_army = yes }
-        while = {
-            limit = { any_owned_pop_group = { is_sapient = yes } }
-            weighted_random_owned_pop_group = {
-                limit = { is_sapient = yes }
-                species = { save_event_target_as = species_target }
-                create_devolved_species = yes
-            }
-            every_owned_pop_group = {
+# 创建宇宙风暴
+AIO_DAIT_create_storm_effect = {
+    if = {
+        limit = { is_inside_storm = no }
+        no_scope = {
+            random_system = {
                 limit = {
-                    is_same_species = event_target:species_target
-                    is_sapient = yes
+                    is_inside_storm = no
+                    distance = { min_jumps = 5 max_jumps = 25 source = prevprev }
                 }
-                change_species = event_target:devolved_species_target
+                save_event_target_as = AIO_DAIT_storm_endpoint
             }
         }
         if = {
-            limit = { owner = { count_owned_planet = { count = 1 } } }
-            owner = {
-                every_owned_fleet = { destroy_fleet = this }
-                set_country_type = primitive
-            }
-        }
-        else = {
-            create_country = {
-                type = primitive
-                name = random
-                flag = random
-                effect = {
-                    prev = {
-                        set_owner = prev
-                        set_capital = yes
+            limit = { exists = event_target:AIO_DAIT_storm_endpoint }
+            random_list = {
+                1 = {
+                    create_cosmic_storm = {
+                        type = solar_storm
+                        immediate = yes
+                        cosmic_storm_start_position = this
+                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                    }
+                }
+                1 = {
+                    create_cosmic_storm = {
+                        type = electric_storm
+                        immediate = yes
+                        cosmic_storm_start_position = this
+                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                    }
+                }
+                1 = {
+                    create_cosmic_storm = {
+                        type = gravity_storm
+                        immediate = yes
+                        cosmic_storm_start_position = this
+                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                    }
+                }
+                1 = {
+                    create_cosmic_storm = {
+                        type = magnetic_storm
+                        immediate = yes
+                        cosmic_storm_start_position = this
+                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                    }
+                }
+                1 = {
+                    create_cosmic_storm = {
+                        type = particle_storm
+                        immediate = yes
+                        cosmic_storm_start_position = this
+                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                    }
+                }
+                1 = {
+                    create_cosmic_storm = {
+                        type = celestial_storm
+                        immediate = yes
+                        cosmic_storm_start_position = this
+                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                    }
+                }
+                1 = {
+                    create_cosmic_storm = {
+                        type = shroud_storm
+                        immediate = yes
+                        cosmic_storm_start_position = this
+                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                    }
+                }
+                1 = {
+                    create_cosmic_storm = {
+                        type = nexus_storm
+                        immediate = yes
+                        cosmic_storm_start_position = this
+                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
                     }
                 }
             }
         }
-        check_planet_employment = yes
+    }
+}
+
+#endregion
+
+
+#region 重定义
+
+# 随机改变星系形状
+AIO_DAIT_make_special_system_effect = {
+    if = {
+        limit = {
+            NOR = {
+                has_star_flag = AIO_HS_system
+                has_star_flag = AIO_TUG_system
+                is_star_class = sc_AIO_void
+                any_system_planet = { is_planet_class = pc_ai }
+                any_system_planet_colony = { has_carrier_flag = synth_queen_bastille }
+                AIO_is_crisis_mega_system = yes
+                AIO_safe_remove_system_exclude_API = yes
+            }
+        }
+        every_system_planet = { AIO_safe_remove_planet = yes }
+        AIO_safe_remove_system_megastructures = yes
+        every_ambient_object = { destroy_ambient_object = this }
+        set_star_class = sc_AIO_void
+        random_list = {
+            1 = { AIO_create_hexagonal_orbital_array = yes }
+        }
+    }
+}
+
+# 退化星系内所有智慧物种
+AIO_DAIT_degenerate_effect = {
+    every_system_planet_colony = {
+        limit = {
+            NOR = {
+                is_planet_class = pc_ai
+                has_carrier_flag = synth_queen_bastille
+                owner = { is_country_type = primitive }
+                AIO_safe_remove_planet_exclude_API = yes
+            }
+        }
+        if = {
+            limit = { is_planet_class = pc_ark }
+            ship = { fleet = { destroy_fleet = this } }
+        }
+        else = {
+            every_owned_pop_group = {
+                limit = {
+                    OR = {
+                        has_trait = trait_mechanical
+                        has_trait = trait_machine_unit
+                    }
+                }
+                kill_all_pop = yes
+            }
+            every_planet_army = { remove_army = yes }
+            while = {
+                limit = { any_owned_pop_group = { is_sapient = yes } }
+                weighted_random_owned_pop_group = {
+                    limit = { is_sapient = yes }
+                    species = { save_event_target_as = species_target }
+                    create_devolved_species = yes
+                }
+                every_owned_pop_group = {
+                    limit = {
+                        is_same_species = event_target:species_target
+                        is_sapient = yes
+                    }
+                    change_species = event_target:devolved_species_target
+                }
+            }
+            if = {
+                limit = { owner = { count_owned_planet = { count = 1 } } }
+                owner = {
+                    every_owned_fleet = { destroy_fleet = this }
+                    set_country_type = primitive
+                }
+            }
+            else = {
+                create_country = {
+                    type = primitive
+                    name = random
+                    flag = random
+                    effect = {
+                        prev = {
+                            set_owner = prev
+                            set_capital = yes
+                        }
+                    }
+                }
+            }
+            check_planet_employment = yes
+        }
     }
 }
 
@@ -141,11 +268,7 @@ AIO_DAIT_enlighted_effect = {
                 set_origin = origin_shroudwalker_apprentice
                 change_country_flag = random
                 shift_ethic = ethic_spiritualist
-                change_government = {
-                    authority = random
-                    civics = random
-                    remove_invalid_civics = yes
-                }
+                change_government = random
                 # 创建统治者
                 create_leader = { class = random_ruler }
                 # 解锁3个内阁席位
@@ -313,117 +436,6 @@ AIO_DAIT_enlighted_effect = {
     }
 }
 
-# 创建宇宙风暴
-AIO_DAIT_create_storm_effect = {
-    no_scope = {
-        random_system = {
-            limit = {
-                is_inside_storm = no
-                distance = { min_jumps = 5 max_jumps = 25 source = prevprev }
-            }
-            save_event_target_as = AIO_DAIT_storm_endpoint
-        }
-    }
-    if = {
-        limit = { exists = event_target:AIO_DAIT_storm_endpoint }
-        random_list = {
-            1 = {
-                create_cosmic_storm = {
-                    type = solar_storm
-                    immediate = yes
-                    cosmic_storm_start_position = this
-                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                }
-            }
-            1 = {
-                create_cosmic_storm = {
-                    type = electric_storm
-                    immediate = yes
-                    cosmic_storm_start_position = this
-                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                }
-            }
-            1 = {
-                create_cosmic_storm = {
-                    type = gravity_storm
-                    immediate = yes
-                    cosmic_storm_start_position = this
-                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                }
-            }
-            1 = {
-                create_cosmic_storm = {
-                    type = magnetic_storm
-                    immediate = yes
-                    cosmic_storm_start_position = this
-                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                }
-            }
-            1 = {
-                create_cosmic_storm = {
-                    type = particle_storm
-                    immediate = yes
-                    cosmic_storm_start_position = this
-                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                }
-            }
-            1 = {
-                create_cosmic_storm = {
-                    type = celestial_storm
-                    immediate = yes
-                    cosmic_storm_start_position = this
-                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                }
-            }
-            1 = {
-                create_cosmic_storm = {
-                    type = shroud_storm
-                    immediate = yes
-                    cosmic_storm_start_position = this
-                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                }
-            }
-            1 = {
-                create_cosmic_storm = {
-                    type = nexus_storm
-                    immediate = yes
-                    cosmic_storm_start_position = this
-                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                }
-            }
-        }
-    }
-}
-
-#endregion
-
-
-#region 重定义
-
-# 随机改变星系形状
-AIO_DAIT_make_special_system_effect = {
-    if = {
-        limit = {
-            NOR = {
-                has_star_flag = AIO_HS_system
-                has_star_flag = AIO_TUG_system
-                is_star_class = sc_AIO_void
-                any_system_planet = { is_planet_class = pc_ai }
-                any_system_planet_colony = { has_carrier_flag = synth_queen_bastille }
-                AIO_is_crisis_mega_system = yes
-                AIO_safe_remove_system_exclude_API = yes
-            }
-        }
-        every_system_planet = { AIO_safe_remove_planet = yes }
-        AIO_safe_remove_system_megastructures = yes
-        every_ambient_object = { destroy_ambient_object = this }
-        set_star_class = sc_AIO_void
-        random_list = {
-            1 = { AIO_create_hexagonal_orbital_array = yes }
-        }
-    }
-}
-
 # 随机改变帝国思潮
 AIO_DAIT_change_ethic_effect = {
     owner? = { change_government = random }
@@ -438,42 +450,45 @@ AIO_DAIT_change_ethic_effect = {
 AIO_DAIT_Aforgomom_effect = {
     if = {
         limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
-        # 创建亚弗戈蒙帝国
         AIO_create_Aforgomom_effect = yes
     }
-    create_fleet = {
-        effect = {
-            set_name = AIO_Aforgomom_Wrath
-            set_owner = event_target:AIO_Aforgomom_country
-            create_ship = {
-                name = AIO_Aforgomom_Wrath
-                design = NAME_AIO_Aforgomom_Wrath
-                graphical_culture = event_target:AIO_Aforgomom_country
-            }
-            set_location = {
-                target = prev.star
-                distance = 0
-                angle = random
-            }
-            # 加buff
-            if = {
-                limit = { # 检查数值是否溢出
-                    event_target:AIO_Aforgomom_country = {
-                        check_variable = { which = AIO_Aforgomom_Wrath value > 0 }
-                        check_variable = { which = AIO_Aforgomom_Wrath value < 10 }
+    if = {
+        limit = { NOT = { any_fleet_in_system = { has_fleet_flag = AIO_Aforgomom_fleet } } }
+        create_fleet = {
+            effect = {
+                set_name = AIO_Aforgomom_Wrath
+                set_owner = event_target:AIO_Aforgomom_country
+                create_ship = {
+                    name = AIO_Aforgomom_Wrath
+                    design = NAME_AIO_Aforgomom_Wrath
+                    graphical_culture = event_target:AIO_Aforgomom_country
+                }
+                set_location = {
+                    target = prev.star
+                    distance = 0
+                    angle = random
+                }
+                # 加buff
+                if = {
+                    limit = {
+                        # 检查数值是否溢出
+                        event_target:AIO_Aforgomom_country = {
+                            check_variable = { which = AIO_Aforgomom_Wrath value > 0 }
+                            check_variable = { which = AIO_Aforgomom_Wrath value < 10 }
+                        }
+                    }
+                    add_modifier = {
+                        modifier = AIO_Aforgomom_Wrath_modifier
+                        mult = value:AIO_Aforgomom_Wrath_factor
+                        days = -1
                     }
                 }
-                add_modifier = {
-                    modifier = AIO_Aforgomom_Wrath_modifier
-                    mult = value:AIO_Aforgomom_Wrath_factor
-                    days = -1
-                }
-            }
-            set_fleet_stance = aggressive
-            set_aggro_range = 10000
-            set_fleet_flag = AIO_Aforgomom_fleet
+                set_fleet_stance = aggressive
+                set_aggro_range = 10000
+                set_fleet_flag = AIO_Aforgomom_fleet
 
-            fleet_event = { id = AIO_Aforgomom_events.201 days = 100 }
+                fleet_event = { id = AIO_Aforgomom_events.201 days = 100 }
+            }
         }
     }
 }
@@ -579,7 +594,7 @@ AIO_DAIT_erase_system_effect = {
 }
 
 # 抹除星团
-AIO_RE_erase_star_cluster_effect = {
+AIO_DAIT_erase_cluster_effect = {
     every_system = {
         limit = {
             NOR = {
