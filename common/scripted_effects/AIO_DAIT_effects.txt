@@ -436,6 +436,11 @@ AIO_DAIT_change_ethic_effect = {
 
 # 召唤亚弗戈蒙
 AIO_DAIT_Aforgomom_effect = {
+    if = {
+        limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
+        # 创建亚弗戈蒙帝国
+        AIO_create_Aforgomom_effect = yes
+    }
     create_fleet = {
         effect = {
             set_name = AIO_Aforgomom_Wrath

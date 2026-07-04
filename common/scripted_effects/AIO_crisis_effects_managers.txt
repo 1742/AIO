@@ -323,9 +323,6 @@ AIO_ascension_effect = {
         save_global_event_target_as = AIO_empire_country
         # 允许进入牢塞星系
         set_country_flag = protected_from_queen_storm
-
-        # 创建亚弗戈蒙帝国
-        AIO_create_Aforgomom_effect = yes
     }
 }
 

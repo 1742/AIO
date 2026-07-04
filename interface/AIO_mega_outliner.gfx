@@ -44,22 +44,4 @@ spriteTypes = {
 		name = "GFX_AIO_mega_04_activate_outliner_icon"
 		textureFile = gfx/interface/icons/megastructures/AIO_mega_04.dds
 	}
-
-	# 定位器
-	spriteType = {
-		name = "GFX_AIO_mega_country_locator_outliner_icon"
-		textureFile = gfx/interface/icons/megastructures/AIO_locator.dds
-	}
-	spriteType = {
-		name = "GFX_AIO_mega_system_locator_outliner_icon"
-		textureFile = gfx/interface/icons/megastructures/AIO_locator.dds
-	}
-	spriteType = {
-		name = "GFX_AIO_mega_planet_locator_outliner_icon"
-		textureFile = gfx/interface/icons/megastructures/AIO_locator.dds
-	}
-	spriteType = {
-		name = "GFX_AIO_mega_colony_locator_outliner_icon"
-		textureFile = gfx/interface/icons/megastructures/AIO_locator.dds
-	}
 }

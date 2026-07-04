@@ -1,4 +1,8 @@
 ﻿l_english:
+ AIO_Tawi: "Tawi"
+ AIO_Tawi_full: "Tawil-at-U'mr"
+ AIO_Aforgomom: "Aforgomom"
+
  # common sentences
  AIO_confirm: "Confirm."
  AIO_cancel: "Cancel."
