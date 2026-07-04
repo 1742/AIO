@@ -149,9 +149,7 @@ country_event = {
 		name = AIO_DAIT_events.204.enlighten
 		trigger = {
 			event_target:AIO_DAIT_target_system = {
-				any_system_planet_colony = {
-					any_owned_pop_group = { is_sapient = no }
-				}
+				any_system_planet = { any_owned_pop_group = {  } }
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_enlighted_effect = yes }

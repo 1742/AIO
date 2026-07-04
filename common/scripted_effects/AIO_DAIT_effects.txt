@@ -52,7 +52,7 @@ AIO_DAIT_create_habitable_world_effect = {
     }
 }
 
-# 在星系内随机一颗宜居星球上创造未开智生命。
+# 在星系内随机一颗宜居星球上创造未开智生命
 AIO_DAIT_create_life_effect = {
     random_system_planet = {
         limit = {
@@ -69,6 +69,7 @@ AIO_DAIT_create_life_effect = {
             effect = { save_event_target_as = AIO_DAIT_created_life_species }
         }
         create_pop_group = { species = event_target:AIO_DAIT_created_life_species }
+        check_planet_employment = yes
     }
 }
 
@@ -254,115 +255,89 @@ AIO_DAIT_degenerate_effect = {
 
 # 提升星系内所有未开化物种
 AIO_DAIT_enlighted_effect = {
-    random_system_colony = {
-        limit = { owner = { is_country_type = default } }
-        save_event_target_as = AIO_DAIT_enlighten_country
+    every_system_planet = {
+        weighted_random_owned_pop_group = {
+            if = {
+                limit = {
+                    is_robot_pop = no
+                    NOT = { has_trait = trait_presapient_forcefully_devolved }
+                }
+                modify_species = {
+                    species = this.species
+                    sapient = yes
+                    add_trait = trait_latent_psionic
+                    effect = { save_event_target_as = AIO_DAIT_enlighten_species }
+                }
+            }
+            else_if = {
+                limit = { has_trait = trait_presapient_forcefully_devolved }
+                modify_species = {
+                    species = this.species
+                    sapient = yes
+                    add_trait = trait_latent_psionic
+                    remove_trait = trait_presapient_forcefully_devolved
+                    effect = { save_event_target_as = AIO_DAIT_enlighten_species }
+                }
+            }
+            else_if = {
+                limit = { is_robot_pop = yes }
+                modify_species = {
+                    species = this.species
+                    sapient = yes
+                    add_trait = trait_robot_latent_psionic
+                    effect = { save_event_target_as = AIO_DAIT_enlighten_species }
+                }
+            }
+            else = {
+                modify_species = {
+                    species = this.species
+                    add_trait = trait_latent_psionic
+                    effect = { save_event_target_as = AIO_DAIT_enlighten_species }
+                }
+            }
+            change_species = event_target:AIO_DAIT_enlighten_species
+        }
+        check_planet_employment = yes
     }
     if = {
-        limit = { NOT = { exists = event_target:AIO_DAIT_enlighten_country } }
-        random_system_colony = {
-            owner = {
-                set_name = random
-                set_country_type = default
-                prev = { set_capital = yes }
-                set_origin = origin_shroudwalker_apprentice
-                change_country_flag = random
+        limit = {
+            OR = {
+                NOT = { exists = owner }
+                owner? = { is_nomadic = yes }
+            }
+        }
+        create_country = {
+            type = default
+            origin = origin_default
+            effect = {
                 shift_ethic = ethic_spiritualist
                 change_government = random
-                # 创建统治者
                 create_leader = { class = random_ruler }
-                # 解锁3个内阁席位
-                unlock_council_slots = 3
-                # 添加随机科技
-                add_tech_progress = { tech = tech_epigenetic_triggers progress = 1 }
-                while = {
-                    count = 30
-                    AIO_add_random_tech = yes
-                }
-                # 起始资源
-                add_resource = {
-                    energy = 1000
-                    minerals = 1000
-                    food = 1000
-                    consumer_goods = 200
-                    alloys = 400
-                    unity = 3000
-                }
-                # 添加buff
-                add_modifier = { modifier = AIO_the_craving_of_stellaris_modifier years = 10 }
-                # 添加总督
                 create_leader = { class = official }
-                # 添加区划
-                capital_scope = {
-                    clear_blockers = yes
-                    if = {
-                        limit = { uses_district_set = standard }
+                create_leader = { class = scientist }
+                create_leader = { class = commander }
+                prev = {
+                    create_starbase = {
+                        size = starbase_outpost
+                        owner = prev
+                        module = shipyard
+                        module = shipyard
+                    }
+                    every_system_planet = {
+                        limit = { pop_amount > 1 }
+                        set_owner = prevprev
+                    }
+                    random_system_planet_colony = { set_capital = yes }
+                    every_system_planet_colony = {
                         while = {
-                            count < 3
+                            count = 4
                             add_district = district_city
                         }
-                        while = {
-                            count < 2
-                            add_district = district_generator
-                        }
-                        while = {
-                            count < 2
-                            add_district = district_mining
-                        }
-                        while = {
-                            count < 3
-                            add_district = district_farming
-                        }
-                    }
-                    else_if = {
-                        limit = { uses_district_set = ring_world }
-                        while = {
-                            count < 4
-                            add_district = district_rw_city
-                        }
-                    }
-                    else_if = {
-                        limit = { uses_district_set = city_world }
-                        while = {
-                            count < 4
-                            add_district = district_arcology_housing
-                        }
-                    }
-                    else_if = {
-                        limit = { uses_district_set = habitat }
-                        while = {
-                            count < 3
-                            add_district = district_hab_housing
-                        }
-                    }
-                    check_planet_employment = yes
-                }
-                capital_scope.solar_system = {
-                    # 创建恒星基地
-                    if = {
-                        limit = { exists = starbase }
-                        starbase = { set_owner = prevprev }
-                    }
-                    else = {
-                        create_starbase = {
-                            size = starbase_starport
-                            owner = prev
-                            effect = {
-                                set_starbase_module = { slot = 2 module = shipyard }
-                            }
-                        }
-                    }
-                    # 创建科研船
-                    prev = {
-                        create_leader = {
-                            class = scientist
-                            effect = { save_event_target_as = AIO_RE_enlight_scientist }
-                        }
+                        check_planet_employment = yes
                     }
                     create_fleet = {
                         effect = {
                             set_owner = prevprev
-                            set_leader = event_target:AIO_RE_enlight_scientist
                             create_ship = {
                                 name = random
                                 design = NAME_Scholarium_Science
@@ -374,7 +349,6 @@ AIO_DAIT_enlighted_effect = {
                             }
                         }
                     }
-                    # 创建工程船
                     create_fleet = {
                         effect = {
                             set_owner = prevprev
@@ -390,48 +364,23 @@ AIO_DAIT_enlighted_effect = {
                         }
                     }
                 }
-                save_event_target_as = AIO_DAIT_enlighten_country
+                add_resource = {
+                    energy = 1000
+                    minerals = 1000
+                    food = 1000
+                    consumer_goods = 500
+                    alloys = 500
+                    unity = 1000
+                }
+                add_modifier = { modifier = AIO_the_craving_of_stellaris_modifier years = 10 }
             }
         }
     }
-    every_system_planet_colony = {
-        limit = { NOT = { is_planet_class = pc_ark } }
-        if = {
-            limit = { owner = { is_country_type = primitive } }
-            set_owner = event_target:AIO_DAIT_enlighten_country
-        }
-        weighted_random_owned_pop_group = {
-            limit = { is_sapient = no }
-            if = {
-                limit = { NOT = { has_trait = trait_presapient_forcefully_devolved } }
-                modify_species = {
-                    species = this.species
-                    sapient = yes
-                    add_trait = trait_latent_psionic
-                    effect = { save_event_target_as = AIO_DAIT_enlighten_species }
-                }
-            }
-            else_if = {
-                limit = {
-                    is_sapient = no
-                    has_trait = trait_presapient_forcefully_devolved
-                }
-                modify_species = {
-                    species = this.species
-                    sapient = yes
-                    add_trait = trait_latent_psionic
-                    remove_trait = trait_presapient_forcefully_devolved
-                    effect = { save_event_target_as = AIO_DAIT_enlighten_species }
-                }
-            }
-            else = {
-                modify_species = {
-                    species = this.species
-                    add_trait = trait_latent_psionic
-                    effect = { save_event_target_as = AIO_DAIT_enlighten_species }
-                }
-            }
-            change_species = event_target:AIO_DAIT_enlighten_species
+    else_if = {
+        limit = { owner = { is_nomadic = no } }
+        every_system_planet = {
+            limit = { pop_amount > 1 }
+            set_owner = owner
         }
     }
 }
