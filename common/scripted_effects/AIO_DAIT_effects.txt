@@ -618,7 +618,7 @@ AIO_DAIT_erase_cluster_effect = {
                 is_same_value = prev
                 distance = {
                     source = prev
-                    max_jumps = $MAX_JUMPS|5$
+                    max_jumps = $MAX_JUMPS|1$
                     use_bypasses = no
                 }
             }

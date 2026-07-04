@@ -267,7 +267,9 @@ country_event = {
 				}
 			}
 		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_cluster_effect = yes }
+		event_target:AIO_DAIT_target_system = {
+			AIO_DAIT_erase_cluster_effect = { MAX_JUMPS = 5 }
+		}
 		country_event = { id = AIO_DAIT_events.202 }
 	}
 
