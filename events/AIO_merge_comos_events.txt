@@ -44,14 +44,6 @@ country_event = {
         name = AIO_merge_cosmos_events.201.option_1
         custom_tooltip = AIO_merge_cosmos_events.201.option_1.tt
     }
-
-	after = {
-		hidden_effect = {
-			# 开启 DAIT 季度事件，直到完成飞升或灭绝
-			AIO_DAIT_init_values = yes
-			country_event = { id = AIO_DAIT_events.201 days = 5 }
-		}
-	}
 }
 
 # 一阶段完成
@@ -296,7 +288,7 @@ country_event = {
 					random_list = {
 						1 = { # 随机丰富星系矿藏
 							save_event_target_as = AIO_situation_RAIT_target
-							AIO_RE_enrich_deposits_effect = { TIME = 2 }
+							AIO_DAIT_add_deposits_effect = { TIME = 2 }
 							if = {
 								limit = { exists = owner }
 								owner = { country_event = { id = AIO_merge_cosmos_events.402 } }
@@ -338,28 +330,6 @@ country_event = {
 								if = {
 									limit = { exists = owner }
 									owner = { country_event = { id = AIO_merge_cosmos_events.404 } }
-								}
-							}
-						}
-						1 = { # 随机倒流殖民地
-							modifier = {
-								factor = 0
-								any_system_planet = { is_colony = no }
-							}
-							random_system_planet = {
-								limit = { is_colony = yes }
-								weights = {
-									base = 1
-									modifier = {
-										factor = 0.01
-										is_capital = yes
-									}
-								}
-								AIO_RE_turn_back_time_effect = yes
-								save_event_target_as = AIO_situation_RAIT_target
-								if = {
-									limit = { exists = owner }
-									owner = { country_event = { id = AIO_merge_cosmos_events.405 } }
 								}
 							}
 						}

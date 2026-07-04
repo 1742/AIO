@@ -12,6 +12,7 @@
  AIO_DAIT_events.202.cancel: "Release coordinate lock"
  AIO_DAIT_events.203.title: "Creation"
  AIO_DAIT_events.203.desc: "Create new worlds and life. Current planet: §Y[event_target:AIO_DAIT_target_planet.GetName]§!."
+ AIO_DAIT_events.203.add_deposits: "§GEnrich deposits§!"
  AIO_DAIT_events.203.create_habitable_world: "§GShape a Habitable World§!"
  AIO_DAIT_events.203.create_life: "§GSeed Presapient Life§!"
  AIO_DAIT_events.203.create_storm: "§GCreate storm§!"

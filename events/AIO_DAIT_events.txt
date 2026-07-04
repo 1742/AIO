@@ -58,6 +58,17 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
+		name = AIO_DAIT_events.203.add_deposits
+		trigger = {
+			event_target:AIO_DAIT_target_system = {
+				any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
+			}
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_create_habitable_world_effect = yes }
+		country_event = { id = AIO_DAIT_events.202 }
+	}
+
+	option = {
 		name = AIO_DAIT_events.203.create_habitable_world
 		trigger = {
 			event_target:AIO_DAIT_target_planet = {

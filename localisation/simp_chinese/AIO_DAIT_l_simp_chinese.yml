@@ -12,6 +12,7 @@
  AIO_DAIT_events.202.cancel: "解除坐标锁定"
  AIO_DAIT_events.203.title: "创造"
  AIO_DAIT_events.203.desc: "创造新的世界与生命。当前行星：§Y[event_target:AIO_DAIT_target_planet.GetName]§!。"
+ AIO_DAIT_events.203.add_deposits: "§G丰富星系矿藏§!"
  AIO_DAIT_events.203.create_habitable_world: "§G塑造宜居星球§!"
  AIO_DAIT_events.203.create_life: "§G播种未开智生命§!"
  AIO_DAIT_events.203.create_storm: "§G创造宇宙风暴§!"
