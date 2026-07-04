@@ -63,7 +63,7 @@ country_event = {
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_add_deposits_effect = { TIMES = 5 } }
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.203 }
 	}
 
 	option = {
@@ -79,7 +79,7 @@ country_event = {
 			}
 		}
 		event_target:AIO_DAIT_target_planet = { AIO_DAIT_create_habitable_world_effect = yes }
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.203 }
 	}
 
 	option = {
@@ -91,7 +91,7 @@ country_event = {
 			}
 		}
 		event_target:AIO_DAIT_target_planet = { AIO_DAIT_create_life_effect = yes }
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.203 }
 	}
 
 	option = {
@@ -102,7 +102,7 @@ country_event = {
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_build_bypass_effect = yes }
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.203 }
 	}
 
 	option = {
@@ -116,7 +116,7 @@ country_event = {
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_create_storm_effect = yes }
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.203 }
 	}
 
 	option = {
@@ -148,7 +148,7 @@ country_event = {
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_make_special_system_effect = yes }
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.204 }
 	}
 
 	option = {
@@ -162,21 +162,21 @@ country_event = {
 			}
 		}
 		event_target:AIO_DAIT_target_planet = { AIO_DAIT_degenerate_effect = yes }
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.204 }
 	}
 
 	option = {
 		name = AIO_DAIT_events.204.enlighten
 		trigger = { event_target:AIO_DAIT_target_planet = { pop_amount > 1 } }
 		event_target:AIO_DAIT_target_planet = { AIO_DAIT_enlighted_effect = yes }
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.204 }
 	}
 
 	option = {
 		name = AIO_DAIT_events.204.change_ethic
 		trigger = { event_target:AIO_DAIT_target_system = { exists = owner } }
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_change_ethic_effect = yes }
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.204 }
 	}
 
 	option = {
@@ -201,13 +201,13 @@ country_event = {
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_Aforgomom_effect = yes }
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.205 }
 	}
 
 	option = {
 		name = AIO_DAIT_events.205.harvest_planet
 		trigger = {
-			event_target:AIO_DAIT_target_planet = {
+			event_target:AIO_DAIT_target_planet? = {
 				is_star = no
 				NOR = {
 					is_artificial = yes
@@ -218,8 +218,8 @@ country_event = {
 				}
 			}
 		}
-		event_target:AIO_DAIT_target_planet = { AIO_DAIT_harvest_planet_effect = yes }
-		country_event = { id = AIO_DAIT_events.202 }
+		event_target:AIO_DAIT_target_planet? = { AIO_DAIT_harvest_planet_effect = yes }
+		country_event = { id = AIO_DAIT_events.205 }
 	}
 
 	option = {
@@ -245,7 +245,7 @@ country_event = {
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_harvest_system_effect = yes }
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.205 }
 	}
 
 	option = {
@@ -262,7 +262,7 @@ country_event = {
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_system_effect = yes }
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.205 }
 	}
 
 	option = {
@@ -281,7 +281,7 @@ country_event = {
 		event_target:AIO_DAIT_target_system = {
 			AIO_DAIT_erase_cluster_effect = { MAX_JUMPS = 5 }
 		}
-		country_event = { id = AIO_DAIT_events.202 }
+		country_event = { id = AIO_DAIT_events.205 }
 	}
 
 	option = {
