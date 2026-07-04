@@ -37,61 +37,30 @@ AIO_DAIT_add_deposits_effect = {
                     1 = { add_deposit = d_rare_crystals_3 }
                 }
             }
-            else_if = {
-                limit = { has_deposit_for = shipclass_research_station }
-                random_list = {
-                    1 = { add_deposit = d_physics_3 }
-                    1 = { add_deposit = d_physics_5 }
-                    1 = { add_deposit = d_physics_10 }
-                    1 = { add_deposit = d_society_3 }
-                    1 = { add_deposit = d_society_5 }
-                    1 = { add_deposit = d_society_10 }
-                    1 = { add_deposit = d_engineering_3 }
-                    1 = { add_deposit = d_engineering_5 }
-                    1 = { add_deposit = d_engineering_10 }
-                }
-            }
             else = {
                 # 无轨道矿藏的天体随机确定类别；下一轮会沿用本轮添加的类别。
                 random_list = {
-                    22 = {
-                        random_list = {
-                            1 = { add_deposit = d_energy_3 }
-                            1 = { add_deposit = d_energy_5 }
-                            1 = { add_deposit = d_energy_10 }
-                            1 = { add_deposit = d_minerals_3 }
-                            1 = { add_deposit = d_minerals_5 }
-                            1 = { add_deposit = d_minerals_10 }
-                            1 = { add_deposit = d_food_3 }
-                            1 = { add_deposit = d_food_5 }
-                            1 = { add_deposit = d_food_10 }
-                            1 = { add_deposit = d_alloys_2 }
-                            1 = { add_deposit = d_alloys_4 }
-                            1 = { add_deposit = d_alloys_5 }
-                            1 = { add_deposit = d_volatile_motes_1 }
-                            1 = { add_deposit = d_volatile_motes_2 }
-                            1 = { add_deposit = d_volatile_motes_3 }
-                            1 = { add_deposit = d_exotic_gases_1 }
-                            1 = { add_deposit = d_exotic_gases_2 }
-                            1 = { add_deposit = d_exotic_gases_3 }
-                            1 = { add_deposit = d_rare_crystals_1 }
-                            1 = { add_deposit = d_rare_crystals_2 }
-                            1 = { add_deposit = d_rare_crystals_3 }
-                        }
-                    }
-                    5 = {
-                        random_list = {
-                            1 = { add_deposit = d_physics_3 }
-                            1 = { add_deposit = d_physics_5 }
-                            1 = { add_deposit = d_physics_10 }
-                            1 = { add_deposit = d_society_3 }
-                            1 = { add_deposit = d_society_5 }
-                            1 = { add_deposit = d_society_10 }
-                            1 = { add_deposit = d_engineering_3 }
-                            1 = { add_deposit = d_engineering_5 }
-                            1 = { add_deposit = d_engineering_10 }
-                        }
-                    }
+                    1 = { add_deposit = d_energy_3 }
+                    1 = { add_deposit = d_energy_5 }
+                    1 = { add_deposit = d_energy_10 }
+                    1 = { add_deposit = d_minerals_3 }
+                    1 = { add_deposit = d_minerals_5 }
+                    1 = { add_deposit = d_minerals_10 }
+                    1 = { add_deposit = d_food_3 }
+                    1 = { add_deposit = d_food_5 }
+                    1 = { add_deposit = d_food_10 }
+                    1 = { add_deposit = d_alloys_2 }
+                    1 = { add_deposit = d_alloys_4 }
+                    1 = { add_deposit = d_alloys_5 }
+                    1 = { add_deposit = d_volatile_motes_1 }
+                    1 = { add_deposit = d_volatile_motes_2 }
+                    1 = { add_deposit = d_volatile_motes_3 }
+                    1 = { add_deposit = d_exotic_gases_1 }
+                    1 = { add_deposit = d_exotic_gases_2 }
+                    1 = { add_deposit = d_exotic_gases_3 }
+                    1 = { add_deposit = d_rare_crystals_1 }
+                    1 = { add_deposit = d_rare_crystals_2 }
+                    1 = { add_deposit = d_rare_crystals_3 }
                 }
             }
         }
