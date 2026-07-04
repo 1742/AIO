@@ -3,6 +3,7 @@ AIO_create_hexagonal_orbital_array = {
         limit = { NOT = { has_star_flag = AIO_DAIT_hexagonal_orbital_array } }
         set_star_flag = AIO_DAIT_hexagonal_orbital_array
         star = { AIO_change_random_pc = { STAR = 1 } }
+        AIO_change_star_class = yes
         spawn_planet = {
             class = pc_asteroid
             location = star

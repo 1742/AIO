@@ -1,7 +1,7 @@
 # 当前由测试巨构挂载；功能完成后改由 AIO 正式巨构挂载。
-AIO_DAIT_lock_system = {
+AIO_DAIT_lock_target = {
 	user_scope = megastructure
-	scope = galactic_object
+	scope = planet
 
 	possible = {
 		always = yes
@@ -19,9 +19,9 @@ AIO_DAIT_lock_system = {
 	icon_selected = GFX_ship_class_conduit
 
 	# 目标被玩家选中后立即进入定向应用无限菜单。
-	on_started = on_AIO_DAIT_lock_system_started
-	context_menu_name = AIO_DAIT_lock_system_action
-	activity_key = AIO_DAIT_lock_system_activity
-	tooltip = AIO_DAIT_lock_system_tooltip
+	on_started = on_AIO_DAIT_lock_target_started
+	context_menu_name = AIO_DAIT_lock_target_action
+	activity_key = AIO_DAIT_lock_target_activity
+	tooltip = AIO_DAIT_lock_target_tooltip
 	cooldown = 1
 }

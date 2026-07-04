@@ -1,9 +1,9 @@
 # AIO on_action触发事件
 
 # 定向应用无限入口
-# THIS = 目标星系
+# THIS = 目标行星
 # FROM = 发起动作的巨构
-on_AIO_DAIT_lock_system_started = {
+on_AIO_DAIT_lock_target_started = {
 	events = {
 		AIO_DAIT_events.201
 	}
@@ -55,7 +55,6 @@ on_ship_built = {
 # FromFromFrom = ship 2
 on_ship_destroyed_perp = {
     events = {
-        AIO_DAIT_events.203 # DAIT 摧毁舰船回复装甲/护盾
     }
 }
 
