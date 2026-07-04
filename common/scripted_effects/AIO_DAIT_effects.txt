@@ -1,8 +1,9 @@
+# scope: system
+# root: 使用者 country
+
 #region 创造
 
 # 自动选择最接近理想宜居轨道的普通天体，并按实际轨道距离赋予气候。
-# scope: system
-# root: 使用者 country
 AIO_DAIT_create_habitable_world_effect = {
 	ordered_system_planet = {
 		limit = {
@@ -52,8 +53,6 @@ AIO_DAIT_create_habitable_world_effect = {
 }
 
 # 在星系内随机一颗宜居星球上创造未开智生命。
-# scope: system
-# root: 使用者 country
 AIO_DAIT_create_life_effect = {
     random_system_planet = {
         limit = {
@@ -74,8 +73,6 @@ AIO_DAIT_create_life_effect = {
 }
 
 # 退化星系内所有智慧物种
-# scope: system
-# root: 使用者 country
 AIO_DAIT_degenerate_effect = {
     every_system_planet_colony = {
         limit = { owner = { NOT = { is_country_type = primitive } } }
@@ -129,8 +126,6 @@ AIO_DAIT_degenerate_effect = {
 }
 
 # 提升星系内所有未开化物种
-# scope: system
-# root: 使用者 country
 AIO_DAIT_enlighted_effect = {
     random_system_colony = {
         limit = { owner = { is_country_type = default } }
@@ -319,8 +314,6 @@ AIO_DAIT_enlighted_effect = {
 }
 
 # 创建宇宙风暴
-# scope: system
-# root: 使用者 country
 AIO_DAIT_create_storm_effect = {
     no_scope = {
         random_system = {
@@ -408,8 +401,6 @@ AIO_DAIT_create_storm_effect = {
 #region 重定义
 
 # 随机改变星系形状
-# scope: system
-# root: 使用者 country
 AIO_DAIT_make_special_system_effect = {
     if = {
         limit = {
@@ -434,12 +425,8 @@ AIO_DAIT_make_special_system_effect = {
 }
 
 # 随机改变帝国思潮
-# scope: system
-# root: 使用者 country
 AIO_DAIT_change_ethic_effect = {
-    owner? = {
-        change_government = random
-    }
+    owner? = { change_government = random }
 }
 
 #endregion
@@ -448,8 +435,6 @@ AIO_DAIT_change_ethic_effect = {
 #region 抹除
 
 # 召唤亚弗戈蒙
-# scope: system
-# root: 使用者 country
 AIO_DAIT_Aforgomom_effect = {
     create_fleet = {
         effect = {
@@ -488,9 +473,7 @@ AIO_DAIT_Aforgomom_effect = {
     }
 }
 
-# 按天体类型和行星规模结算资源，然后将普通天体收割为破碎世界。
-# scope: system
-# root: 使用者 country
+# 按天体类型和行星规模结算资源，然后将普通天体收割为破碎世界
 AIO_DAIT_harvest_system_effect = {
 	every_system_planet = {
 		limit = {
@@ -568,8 +551,6 @@ AIO_DAIT_harvest_system_effect = {
 }
 
 # 抹除星系
-# scope: system
-# root: 使用者 country
 AIO_DAIT_erase_system_effect = {
     if = {
         limit = {
@@ -593,8 +574,6 @@ AIO_DAIT_erase_system_effect = {
 }
 
 # 抹除星团
-# scope: system
-# root: 使用者 country
 AIO_RE_erase_star_cluster_effect = {
     every_system = {
         limit = {
