@@ -133,6 +133,18 @@ AIO_DAIT_create_life_effect = {
     }
 }
 
+# 建立连接
+# scope: system
+AIO_DAIT_build_bypass_effect = {
+    if = {
+        limit = { NOT = { any_system_megastructure = { is_megastructure_type = AIO_mega_01_node } } }
+        spawn_megastructure = {
+            type = AIO_mega_01_node
+            random_pos = yes
+        }
+    }
+}
+
 # 创建宇宙风暴
 #scope: system
 AIO_DAIT_create_storm_effect = {

@@ -95,7 +95,7 @@ AIO_mega_01_node = {
 	portrait = "GFX_megastructure_construction_background"
 
 	potential = {
-		has_country_flag = AIO_built_AIO_mega_01
+		always = no
 	}
 
 	possible = {
@@ -111,7 +111,7 @@ AIO_mega_01_node = {
 
 	dismantle_potential = { always = no }
 
-	build_time = 0
+	build_time = 1
 
 	# bypass类型
 	bypass_type = bypass_AIO_ultimate_gate

@@ -95,6 +95,17 @@ country_event = {
 	}
 
 	option = {
+		name = AIO_DAIT_events.203.build_bypass
+		trigger = {
+			event_target:AIO_DAIT_target_system = {
+				NOT = { any_system_megastructure = { is_megastructure_type = AIO_mega_01_node } }
+			}
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_build_bypass_effect = yes }
+		country_event = { id = AIO_DAIT_events.202 }
+	}
+
+	option = {
 		name = AIO_DAIT_events.203.create_storm
 		trigger = {
 			event_target:AIO_DAIT_target_system = {

@@ -15,6 +15,7 @@
  AIO_DAIT_events.203.add_deposits: "§GEnrich deposits§!"
  AIO_DAIT_events.203.create_habitable_world: "§GShape a Habitable World§!"
  AIO_DAIT_events.203.create_life: "§GSeed Presapient Life§!"
+ AIO_DAIT_events.203.build_bypass: "§GBuild connection§!"
  AIO_DAIT_events.203.create_storm: "§GCreate storm§!"
  AIO_DAIT_events.204.title: "Redefinition"
  AIO_DAIT_events.204.desc: "Rearrange the celestial structure of a system. Current target: §Y[event_target:AIO_DAIT_target_system.GetName]§!."
