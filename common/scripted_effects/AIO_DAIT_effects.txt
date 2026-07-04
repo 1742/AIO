@@ -51,7 +51,6 @@ AIO_DAIT_create_habitable_world_effect = {
             is_star = no
             is_artificial = no
             is_colony = no
-            is_under_colonization = no
             habitable_planet = no
             planet_size > 5
             AIO_safe_remove_planet_exclude_API = no
