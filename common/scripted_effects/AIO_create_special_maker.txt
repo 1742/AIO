@@ -11,7 +11,7 @@ AIO_create_hexagonal_orbital_array = {
             orbit_distance_offset = 80
             orbit_angle_offset = 0
             size = 5
-            init_effect = { set_planet_flag = AIO_DAIT_orbital_array_body }
+            init_effect = { set_name = random }
         }
         spawn_planet = {
             class = pc_asteroid
@@ -20,7 +20,7 @@ AIO_create_hexagonal_orbital_array = {
             orbit_distance_offset = 80
             orbit_angle_offset = 60
             size = 5
-            init_effect = { set_planet_flag = AIO_DAIT_orbital_array_body }
+            init_effect = { set_name = random }
         }
         spawn_planet = {
             class = pc_asteroid
@@ -29,7 +29,7 @@ AIO_create_hexagonal_orbital_array = {
             orbit_distance_offset = 80
             orbit_angle_offset = 120
             size = 5
-            init_effect = { set_planet_flag = AIO_DAIT_orbital_array_body }
+            init_effect = { set_name = random }
         }
         spawn_planet = {
             class = pc_asteroid
@@ -38,7 +38,7 @@ AIO_create_hexagonal_orbital_array = {
             orbit_distance_offset = 80
             orbit_angle_offset = 180
             size = 5
-            init_effect = { set_planet_flag = AIO_DAIT_orbital_array_body }
+            init_effect = { set_name = random }
         }
         spawn_planet = {
             class = pc_asteroid
@@ -47,7 +47,7 @@ AIO_create_hexagonal_orbital_array = {
             orbit_distance_offset = 80
             orbit_angle_offset = 240
             size = 5
-            init_effect = { set_planet_flag = AIO_DAIT_orbital_array_body }
+            init_effect = { set_name = random }
         }
         spawn_planet = {
             class = pc_asteroid
@@ -56,7 +56,7 @@ AIO_create_hexagonal_orbital_array = {
             orbit_distance_offset = 80
             orbit_angle_offset = 300
             size = 5
-            init_effect = { set_planet_flag = AIO_DAIT_orbital_array_body }
+            init_effect = { set_name = random }
         }
     }
 }
