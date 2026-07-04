@@ -2,5 +2,7 @@
  AIO_test_events.201.title: "测试201"
  AIO_test_events.201.desc: "给予科技"
 
-
+ AIO_test_scripted_action_megastructure: "AIO坐标锁定测试台"
+ AIO_test_scripted_action_megastructure_DESC: "用于验证巨型结构脚本动作按钮与银河地图星系选择的测试设施。"
+ AIO_test_scripted_action_megastructure_MEGASTRUCTURE_DETAILS: "§R测试内容§!：建造后可从巨型结构面板锁定一个星系。"
 

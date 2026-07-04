@@ -1,5 +1,13 @@
 # AIO 动态数值
 
+# 定向应用无限：天体与理想宜居轨道（100）的距离差。
+# scope: planet
+AIO_DAIT_habitable_zone_distance_score = {
+	base = -100
+	add = value:distance_to_system_star
+	abs = yes
+}
+
 # AIO暗物质驱动协议维护费
 AIO_edict_dm_engine_dm_upkeep = {
     base = 0

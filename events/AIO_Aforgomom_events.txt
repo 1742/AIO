@@ -8,7 +8,7 @@ fleet_event = {
     hide_window =yes
 
     is_triggered_only = yes
-    trigger = { has_fleet_flag = AIO_Aforgomom_Wrath_fleet }
+    trigger = { has_fleet_flag = AIO_Aforgomom_fleet }
 
     immediate = {
         # 时间到了没打完，且数值没有溢出
@@ -53,7 +53,7 @@ country_event = { # this - owner of combatant from - owner of destroyed
     hide_window = yes
 
     is_triggered_only = yes
-    trigger = { fromfromfrom = { has_fleet_flag = AIO_Aforgomom_Wrath_fleet } }
+    trigger = { fromfromfrom = { has_fleet_flag = AIO_Aforgomom_fleet } }
 
     immediate = {
         # 打不过，加buff
@@ -63,7 +63,7 @@ country_event = { # this - owner of combatant from - owner of destroyed
                 change_variable = { which = AIO_Aforgomom_Wrath value = 1 }
             }
         }
-        fromfrom.solar_system = { AIO_RE_Aforgomom_wrath_effect = yes }
+        fromfrom.solar_system = { AIO_DAIT_Aforgomom_effect = yes }
     }
 }
 

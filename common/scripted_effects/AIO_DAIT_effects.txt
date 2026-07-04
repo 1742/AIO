@@ -1,0 +1,629 @@
+#region 创造
+
+# 自动选择最接近理想宜居轨道的普通天体，并按实际轨道距离赋予气候。
+# scope: system
+# root: 使用者 country
+AIO_DAIT_create_habitable_world_effect = {
+	ordered_system_planet = {
+		limit = {
+			is_star = no
+			is_artificial = no
+			is_colony = no
+			is_under_colonization = no
+			habitable_planet = no
+			planet_size > 5
+			AIO_safe_remove_planet_exclude_API = no
+		}
+		position = 0
+		order_by = value:AIO_DAIT_habitable_zone_distance_score
+		save_event_target_as = AIO_DAIT_created_habitable_world
+	}
+    event_target:AIO_DAIT_created_habitable_world? = {
+        set_variable = {
+            which = AIO_DAIT_distance_to_star
+            value = value:distance_to_system_star
+        }
+        if = {
+            limit = { check_variable = { which = AIO_DAIT_distance_to_star value < 75 } }
+            random_list = {
+                1 = { AIO_safe_change_pc = { NEW_PC = pc_desert } }
+                1 = { AIO_safe_change_pc = { NEW_PC = pc_arid } }
+                1 = { AIO_safe_change_pc = { NEW_PC = pc_savannah } }
+            }
+        }
+        else_if = {
+            limit = { check_variable = { which = AIO_DAIT_distance_to_star value <= 125 } }
+            random_list = {
+                1 = { AIO_safe_change_pc = { NEW_PC = pc_continental } }
+                1 = { AIO_safe_change_pc = { NEW_PC = pc_ocean } }
+                1 = { AIO_safe_change_pc = { NEW_PC = pc_tropical } }
+            }
+        }
+        else = {
+            random_list = {
+                1 = { AIO_safe_change_pc = { NEW_PC = pc_alpine } }
+                1 = { AIO_safe_change_pc = { NEW_PC = pc_arctic } }
+                1 = { AIO_safe_change_pc = { NEW_PC = pc_tundra } }
+            }
+        }
+        clear_variable = AIO_DAIT_distance_to_star
+        set_planet_flag = AIO_DAIT_created_habitable_world
+    }
+}
+
+# 在星系内随机一颗宜居星球上创造未开智生命。
+# scope: system
+# root: 使用者 country
+AIO_DAIT_create_life_effect = {
+    random_system_planet = {
+        limit = {
+            habitable_planet = yes
+            NOT = { any_owned_pop_group = { is_sapient = no } }
+        }
+        create_species = {
+            name = random
+            class = random_pre_ftl
+            portrait = random
+            traits = random
+            sapient = no
+            homeworld = this
+            effect = { save_event_target_as = AIO_DAIT_created_life_species }
+        }
+        create_pop_group = { species = event_target:AIO_DAIT_created_life_species }
+    }
+}
+
+# 退化星系内所有智慧物种
+# scope: system
+# root: 使用者 country
+AIO_DAIT_degenerate_effect = {
+    every_system_planet_colony = {
+        limit = { owner = { NOT = { is_country_type = primitive } } }
+        every_owned_pop_group = {
+            limit = {
+                OR = {
+                    has_trait = trait_mechanical
+                    has_trait = trait_machine_unit
+                }
+            }
+            kill_all_pop = yes
+        }
+        every_planet_army = { remove_army = yes }
+        while = {
+            limit = { any_owned_pop_group = { is_sapient = yes } }
+            weighted_random_owned_pop_group = {
+                limit = { is_sapient = yes }
+                species = { save_event_target_as = species_target }
+                create_devolved_species = yes
+            }
+            every_owned_pop_group = {
+                limit = {
+                    is_same_species = event_target:species_target
+                    is_sapient = yes
+                }
+                change_species = event_target:devolved_species_target
+            }
+        }
+        if = {
+            limit = { owner = { count_owned_planet = { count = 1 } } }
+            owner = {
+                every_owned_fleet = { destroy_fleet = this }
+                set_country_type = primitive
+            }
+        }
+        else = {
+            create_country = {
+                type = primitive
+                name = random
+                flag = random
+                effect = {
+                    prev = {
+                        set_owner = prev
+                        set_capital = yes
+                    }
+                }
+            }
+        }
+        check_planet_employment = yes
+    }
+}
+
+# 提升星系内所有未开化物种
+# scope: system
+# root: 使用者 country
+AIO_DAIT_enlighted_effect = {
+    random_system_colony = {
+        limit = { owner = { is_country_type = default } }
+        save_event_target_as = AIO_DAIT_enlighten_country
+    }
+    if = {
+        limit = { NOT = { exists = event_target:AIO_DAIT_enlighten_country } }
+        random_system_colony = {
+            owner = {
+                set_name = random
+                set_country_type = default
+                prev = { set_capital = yes }
+                set_origin = origin_shroudwalker_apprentice
+                change_country_flag = random
+                shift_ethic = ethic_spiritualist
+                change_government = {
+                    authority = random
+                    civics = random
+                    remove_invalid_civics = yes
+                }
+                # 创建统治者
+                create_leader = { class = random_ruler }
+                # 解锁3个内阁席位
+                unlock_council_slots = 3
+                # 添加随机科技
+                add_tech_progress = { tech = tech_epigenetic_triggers progress = 1 }
+                while = {
+                    count = 30
+                    AIO_add_random_tech = yes
+                }
+                # 起始资源
+                add_resource = {
+                    energy = 1000
+                    minerals = 1000
+                    food = 1000
+                    consumer_goods = 200
+                    alloys = 400
+                    unity = 3000
+                }
+                # 添加buff
+                add_modifier = { modifier = AIO_the_craving_of_stellaris_modifier years = 10 }
+                # 添加总督
+                create_leader = { class = official }
+                # 添加区划
+                capital_scope = {
+                    clear_blockers = yes
+                    if = {
+                        limit = { uses_district_set = standard }
+                        while = {
+                            count < 3
+                            add_district = district_city
+                        }
+                        while = {
+                            count < 2
+                            add_district = district_generator
+                        }
+                        while = {
+                            count < 2
+                            add_district = district_mining
+                        }
+                        while = {
+                            count < 3
+                            add_district = district_farming
+                        }
+                    }
+                    else_if = {
+                        limit = { uses_district_set = ring_world }
+                        while = {
+                            count < 4
+                            add_district = district_rw_city
+                        }
+                    }
+                    else_if = {
+                        limit = { uses_district_set = city_world }
+                        while = {
+                            count < 4
+                            add_district = district_arcology_housing
+                        }
+                    }
+                    else_if = {
+                        limit = { uses_district_set = habitat }
+                        while = {
+                            count < 3
+                            add_district = district_hab_housing
+                        }
+                    }
+                    check_planet_employment = yes
+                }
+                capital_scope.solar_system = {
+                    # 创建恒星基地
+                    if = {
+                        limit = { exists = starbase }
+                        starbase = { set_owner = prevprev }
+                    }
+                    else = {
+                        create_starbase = {
+                            size = starbase_starport
+                            owner = prev
+                            effect = {
+                                set_starbase_module = { slot = 2 module = shipyard }
+                            }
+                        }
+                    }
+                    # 创建科研船
+                    prev = {
+                        create_leader = {
+                            class = scientist
+                            effect = { save_event_target_as = AIO_RE_enlight_scientist }
+                        }
+                    }
+                    create_fleet = {
+                        effect = {
+                            set_owner = prevprev
+                            set_leader = event_target:AIO_RE_enlight_scientist
+                            create_ship = {
+                                name = random
+                                design = NAME_Scholarium_Science
+                            }
+                            set_location = {
+                                target = prev
+                                angle = random
+                                direction = in_system
+                            }
+                        }
+                    }
+                    # 创建工程船
+                    create_fleet = {
+                        effect = {
+                            set_owner = prevprev
+                            create_ship = {
+                                name = random
+                                design = NAME_Prospectorium_Constructor
+                            }
+                            set_location = {
+                                target = prev
+                                angle = random
+                                direction = in_system
+                            }
+                        }
+                    }
+                }
+                save_event_target_as = AIO_DAIT_enlighten_country
+            }
+        }
+    }
+    every_system_planet_colony = {
+        limit = { NOT = { is_planet_class = pc_ark } }
+        if = {
+            limit = { owner = { is_country_type = primitive } }
+            set_owner = event_target:AIO_DAIT_enlighten_country
+        }
+        weighted_random_owned_pop_group = {
+            limit = { is_sapient = no }
+            if = {
+                limit = { NOT = { has_trait = trait_presapient_forcefully_devolved } }
+                modify_species = {
+                    species = this.species
+                    sapient = yes
+                    add_trait = trait_latent_psionic
+                    effect = { save_event_target_as = AIO_DAIT_enlighten_species }
+                }
+            }
+            else_if = {
+                limit = {
+                    is_sapient = no
+                    has_trait = trait_presapient_forcefully_devolved
+                }
+                modify_species = {
+                    species = this.species
+                    sapient = yes
+                    add_trait = trait_latent_psionic
+                    remove_trait = trait_presapient_forcefully_devolved
+                    effect = { save_event_target_as = AIO_DAIT_enlighten_species }
+                }
+            }
+            else = {
+                modify_species = {
+                    species = this.species
+                    add_trait = trait_latent_psionic
+                    effect = { save_event_target_as = AIO_DAIT_enlighten_species }
+                }
+            }
+            change_species = event_target:AIO_DAIT_enlighten_species
+        }
+    }
+}
+
+# 创建宇宙风暴
+# scope: system
+# root: 使用者 country
+AIO_DAIT_create_storm_effect = {
+    no_scope = {
+        random_system = {
+            limit = {
+                is_inside_storm = no
+                distance = { min_jumps = 5 max_jumps = 25 source = prevprev }
+            }
+            save_event_target_as = AIO_DAIT_storm_endpoint
+        }
+    }
+    if = {
+        limit = { exists = event_target:AIO_DAIT_storm_endpoint }
+        random_list = {
+            1 = {
+                create_cosmic_storm = {
+                    type = solar_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                }
+            }
+            1 = {
+                create_cosmic_storm = {
+                    type = electric_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                }
+            }
+            1 = {
+                create_cosmic_storm = {
+                    type = gravity_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                }
+            }
+            1 = {
+                create_cosmic_storm = {
+                    type = magnetic_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                }
+            }
+            1 = {
+                create_cosmic_storm = {
+                    type = particle_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                }
+            }
+            1 = {
+                create_cosmic_storm = {
+                    type = celestial_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                }
+            }
+            1 = {
+                create_cosmic_storm = {
+                    type = shroud_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                }
+            }
+            1 = {
+                create_cosmic_storm = {
+                    type = nexus_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                    storm_end_position = event_target:AIO_DAIT_storm_endpoint
+                }
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region 重定义
+
+# 随机改变星系形状
+# scope: system
+# root: 使用者 country
+AIO_DAIT_make_special_system_effect = {
+    if = {
+        limit = {
+            NOR = {
+                has_star_flag = AIO_HS_system
+                has_star_flag = AIO_TUG_system
+                is_star_class = sc_AIO_void
+                any_system_planet = { is_planet_class = pc_ai }
+                any_system_planet_colony = { has_carrier_flag = synth_queen_bastille }
+                AIO_is_crisis_mega_system = yes
+                AIO_safe_remove_system_exclude_API = yes
+            }
+        }
+        every_system_planet = { AIO_safe_remove_planet = yes }
+        AIO_safe_remove_system_megastructures = yes
+        every_ambient_object = { destroy_ambient_object = this }
+        set_star_class = sc_AIO_void
+        random_list = {
+            1 = { AIO_create_hexagonal_orbital_array = yes }
+        }
+    }
+}
+
+# 随机改变帝国思潮
+# scope: system
+# root: 使用者 country
+AIO_DAIT_change_ethic_effect = {
+    owner? = {
+        change_government = random
+    }
+}
+
+#endregion
+
+
+#region 抹除
+
+# 召唤亚弗戈蒙
+# scope: system
+# root: 使用者 country
+AIO_DAIT_Aforgomom_effect = {
+    create_fleet = {
+        effect = {
+            set_name = AIO_Aforgomom_Wrath
+            set_owner = event_target:AIO_Aforgomom_country
+            create_ship = {
+                name = AIO_Aforgomom_Wrath
+                design = NAME_AIO_Aforgomom_Wrath
+                graphical_culture = event_target:AIO_Aforgomom_country
+            }
+            set_location = {
+                target = prev.star
+                distance = 0
+                angle = random
+            }
+            # 加buff
+            if = {
+                limit = { # 检查数值是否溢出
+                    event_target:AIO_Aforgomom_country = {
+                        check_variable = { which = AIO_Aforgomom_Wrath value > 0 }
+                        check_variable = { which = AIO_Aforgomom_Wrath value < 10 }
+                    }
+                }
+                add_modifier = {
+                    modifier = AIO_Aforgomom_Wrath_modifier
+                    mult = value:AIO_Aforgomom_Wrath_factor
+                    days = -1
+                }
+            }
+            set_fleet_stance = aggressive
+            set_aggro_range = 10000
+            set_fleet_flag = AIO_Aforgomom_fleet
+
+            fleet_event = { id = AIO_Aforgomom_events.201 days = 100 }
+        }
+    }
+}
+
+# 按天体类型和行星规模结算资源，然后将普通天体收割为破碎世界。
+# scope: system
+# root: 使用者 country
+AIO_DAIT_harvest_system_effect = {
+	every_system_planet = {
+		limit = {
+			is_star = no
+            NOR = {
+                is_artificial = yes
+                is_planet_class = pc_ai
+                colony? = { has_carrier_flag = synth_queen_bastille }
+                AIO_safe_remove_planet_exclude_API = yes
+                has_planet_flag = AIO_DAIT_harvested_body
+            }
+		}
+		if = {
+			limit = {
+				OR = {
+					is_planet_class = pc_barren
+					is_planet_class = pc_barren_cold
+					is_planet_class = pc_asteroid
+					is_planet_class = pc_crystal_asteroid
+					is_planet_class = pc_shattered
+				}
+			}
+			root = { add_resource = { minerals = 200 mult = prev.trigger:planet_size } }
+		}
+		else_if = {
+			limit = {
+                OR= {
+                    is_planet_class = pc_gas_giant
+                    is_planet_class = pc_toxic
+                }
+            }
+			root = {
+				add_resource = { energy = 100 mult = prev.trigger:planet_size }
+				add_resource = { exotic_gases = 20 mult = prev.trigger:planet_size }
+			}
+		}
+		else_if = {
+			limit = {
+                OR = {
+                    is_planet_class = pc_molten
+                    is_planet_class = pc_volcanic
+                }
+            }
+			root = {
+				add_resource = { energy = 100 mult = prev.trigger:planet_size }
+				add_resource = { volatile_motes = 20 mult = prev.trigger:planet_size }
+			}
+		}
+		else_if = {
+			limit = { is_planet_class = pc_frozen }
+			root = {
+				add_resource = { minerals = 100 mult = prev.trigger:planet_size }
+				add_resource = { rare_crystals = 20 mult = prev.trigger:planet_size }
+			}
+		}
+        else_if = {
+            limit = { is_planet_class = pc_nanotech }
+            root = { add_resource = { nanites = 10 mult = prev.trigger:planet_size } }
+        }
+		else_if = {
+			limit = { habitable_planet = yes }
+			root = {
+				add_resource = { food = 100 mult = prev.trigger:planet_size }
+				add_resource = { society_research = 5 mult = prev.trigger:planet_size }
+			}
+		}
+		else = {
+			root = { add_resource = { minerals = 100 mult = prev.trigger:planet_size } }
+		}
+
+		clear_deposits = yes
+		AIO_safe_change_pc = { NEW_PC = pc_shattered }
+		set_planet_flag = AIO_DAIT_harvested_body
+	}
+}
+
+# 抹除星系
+# scope: system
+# root: 使用者 country
+AIO_DAIT_erase_system_effect = {
+    if = {
+        limit = {
+            NOR = {
+                has_star_flag = AIO_HS_system
+                has_star_flag = AIO_TUG_system
+                has_star_flag = synth_queen_capital
+                AIO_is_crisis_mega_system = yes
+                AIO_safe_remove_system_exclude_API = yes
+            }
+        }
+        every_system_planet = { AIO_safe_remove_planet = yes }
+        AIO_safe_remove_system_megastructures = yes
+        every_fleet_in_system = {
+            limit = { AIO_safe_remove_fleet_exclude_API = no }
+            destroy_fleet = this
+        }
+        every_ambient_object = { destroy_ambient_object = this }
+        set_star_class = sc_AIO_void
+    }
+}
+
+# 抹除星团
+# scope: system
+# root: 使用者 country
+AIO_RE_erase_star_cluster_effect = {
+    every_system = {
+        limit = {
+            NOR = {
+                has_star_flag = AIO_HS_system
+                has_star_flag = AIO_TUG_system
+                has_star_flag = synth_queen_capital
+                AIO_is_crisis_mega_system = yes
+                AIO_safe_remove_system_exclude_API = yes
+            }
+            any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
+            OR = {
+                is_same_value = prev
+                distance = {
+                    source = prev
+                    max_jumps = 5
+                    use_bypasses = no
+                }
+            }
+        }
+        every_system_planet = { AIO_safe_remove_planet = yes }
+        AIO_safe_remove_system_megastructures = yes
+        every_fleet_in_system = {
+            limit = { AIO_safe_remove_fleet_exclude_API = no }
+            destroy_fleet = this
+        }
+        every_ambient_object = { destroy_ambient_object = this }
+        set_star_class = sc_AIO_void
+    }
+}
+
+#endregion

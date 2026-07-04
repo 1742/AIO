@@ -2,5 +2,7 @@
  AIO_test_events.202.title: "Test Event"
  AIO_test_events.202.desc: "Children, I'm fine!"
 
-
+ AIO_test_scripted_action_megastructure: "AIO Coordinate Lock Test Rig"
+ AIO_test_scripted_action_megastructure_DESC: "A test installation for verifying megastructure scripted-action buttons and galaxy-map system targeting."
+ AIO_test_scripted_action_megastructure_MEGASTRUCTURE_DETAILS: "§RTest content§!: Once built, this megastructure can lock a system from its panel."
 

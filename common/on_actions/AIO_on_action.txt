@@ -1,5 +1,14 @@
 # AIO on_action触发事件
 
+# 定向应用无限入口
+# THIS = 目标星系
+# FROM = 发起动作的巨构
+on_AIO_DAIT_lock_system_started = {
+	events = {
+		AIO_DAIT_events.201
+	}
+}
+
 on_game_start_country = {
     events = {
         AIO_mod_events.201 # 更新提醒

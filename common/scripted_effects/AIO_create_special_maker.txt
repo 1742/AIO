@@ -1,0 +1,61 @@
+AIO_create_hexagonal_orbital_array = {
+    if = {
+        limit = { NOT = { has_star_flag = AIO_DAIT_hexagonal_orbital_array } }
+        set_star_flag = AIO_DAIT_hexagonal_orbital_array
+        star = { AIO_change_random_pc = { STAR = 1 } }
+        spawn_planet = {
+            class = pc_asteroid
+            location = star
+            orbit_location = yes
+            orbit_distance_offset = 80
+            orbit_angle_offset = 0
+            size = 5
+            init_effect = { set_planet_flag = AIO_DAIT_orbital_array_body }
+        }
+        spawn_planet = {
+            class = pc_asteroid
+            location = star
+            orbit_location = yes
+            orbit_distance_offset = 80
+            orbit_angle_offset = 60
+            size = 5
+            init_effect = { set_planet_flag = AIO_DAIT_orbital_array_body }
+        }
+        spawn_planet = {
+            class = pc_asteroid
+            location = star
+            orbit_location = yes
+            orbit_distance_offset = 80
+            orbit_angle_offset = 120
+            size = 5
+            init_effect = { set_planet_flag = AIO_DAIT_orbital_array_body }
+        }
+        spawn_planet = {
+            class = pc_asteroid
+            location = star
+            orbit_location = yes
+            orbit_distance_offset = 80
+            orbit_angle_offset = 180
+            size = 5
+            init_effect = { set_planet_flag = AIO_DAIT_orbital_array_body }
+        }
+        spawn_planet = {
+            class = pc_asteroid
+            location = star
+            orbit_location = yes
+            orbit_distance_offset = 80
+            orbit_angle_offset = 240
+            size = 5
+            init_effect = { set_planet_flag = AIO_DAIT_orbital_array_body }
+        }
+        spawn_planet = {
+            class = pc_asteroid
+            location = star
+            orbit_location = yes
+            orbit_distance_offset = 80
+            orbit_angle_offset = 300
+            size = 5
+            init_effect = { set_planet_flag = AIO_DAIT_orbital_array_body }
+        }
+    }
+}

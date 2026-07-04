@@ -415,16 +415,17 @@ AIO_safe_remove_planet = {
 
     if = {
         limit = {
-            AIO_safe_remove_planet_exclude_API = no
-            # 以太相引擎和星系熔炉星系内的天体不受影响
-            AIO_is_crisis_mega_system = no
+            NOR = {
+                is_planet_class = pc_AIO_empty_space
+                colony? = { has_carrier_flag = synth_queen_bastille }
+                # 以太相引擎和星系熔炉星系内的天体不受影响
+                AIO_is_crisis_mega_planet = yes
+                AIO_safe_remove_planet_exclude_API = yes
+            }
         }
 
         if = {
-            limit = {
-                is_star = yes
-                NOT = { is_planet_class = pc_AIO_empty_space }
-            }
+            limit = { is_star = yes }
             change_pc = pc_AIO_empty_space
             clear_deposits = yes
             AIO_safe_remove_planet_megastructures = yes
@@ -433,10 +434,6 @@ AIO_safe_remove_planet = {
             limit = {
                 is_colony = yes
                 is_artificial = no
-                NOR = {
-                    is_planet_class = pc_ai
-                    has_carrier_flag = synth_queen_bastille
-                }
             }
             destroy_colony = yes
             AIO_safe_remove_planet_megastructures = yes
@@ -562,7 +559,7 @@ AIO_safe_remove_planet = {
         else_if = {
             limit = {
                 is_planet_class = pc_ai
-                NOT = { has_carrier_flag = machine_lair }
+                colony? = { NOT = { has_carrier_flag = machine_lair } }
             }
             # TODO: 处理肃正球被移除
             # planet_event = { id = AIO_ctrl_events.1007 }
@@ -571,15 +568,14 @@ AIO_safe_remove_planet = {
         else_if = {
             limit = {
                 is_planet_class = pc_ai
-                has_carrier_flag = machine_lair
+                colony? = { has_carrier_flag = machine_lair }
             }
             root = { save_event_target_as = final_machine_world_destroyer }
             stop_crisis_sound = yes
             carrier_event = { id = crisis.2046 }
             remove_planet = yes
         }
-        else_if = {
-            limit = { NOT = { has_carrier_flag = synth_queen_bastille } }
+        else = {
             AIO_safe_remove_planet_megastructures = yes
             remove_planet = yes
         }

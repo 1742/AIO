@@ -374,7 +374,7 @@ AIO_ascension_galaxy_effect = {
                             AIO_safe_remove_system_exclude_API = yes
                         }
                         # 抹除星系
-                        AIO_RE_erase_system_effect = yes
+                        AIO_DAIT_erase_system_effect = yes
                     }
                 }
             }
@@ -413,11 +413,11 @@ AIO_ascension_galaxy_effect = {
                     }
                     2 = {
                         # 随机退化星球
-                        random_owned_planet = { AIO_RE_degenerate_effect = yes }
+                        random_owned_planet = { AIO_DAIT_degenerate_effect = yes }
                     }
                     2 = {
                         # 随机启蒙物种
-                        random_owned_planet = { AIO_RE_enlighted_effect = yes }
+                        random_owned_planet = { AIO_DAIT_enlighted_effect = yes }
                     }
                     2 = {
                         # 随机倒流星球
@@ -527,7 +527,7 @@ AIO_create_random_cosmic_storm = {
     no_scope = {
         random_system = {
             limit = { distance = { min_jumps = 5 max_jumps = 10 source = prevprev } }
-            save_event_target_as = AIO_RE_create_storm_endpoint
+            save_event_target_as = AIO_DAIT_storm_endpoint
         }
     }
 
@@ -537,7 +537,7 @@ AIO_create_random_cosmic_storm = {
                 type = electric_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_RE_create_storm_endpoint
+                storm_end_position = event_target:AIO_DAIT_storm_endpoint
             }
         }
         4 = {
@@ -545,7 +545,7 @@ AIO_create_random_cosmic_storm = {
                 type = particle_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_RE_create_storm_endpoint
+                storm_end_position = event_target:AIO_DAIT_storm_endpoint
             }
         }
         4 = {
@@ -553,7 +553,7 @@ AIO_create_random_cosmic_storm = {
                 type = gravity_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_RE_create_storm_endpoint
+                storm_end_position = event_target:AIO_DAIT_storm_endpoint
             }
         }
         4 = {
@@ -561,7 +561,7 @@ AIO_create_random_cosmic_storm = {
                 type = magnetic_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_RE_create_storm_endpoint
+                storm_end_position = event_target:AIO_DAIT_storm_endpoint
             }
         }
         4 = {
@@ -569,7 +569,7 @@ AIO_create_random_cosmic_storm = {
                 type = solar_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_RE_create_storm_endpoint
+                storm_end_position = event_target:AIO_DAIT_storm_endpoint
             }
         }
         4 = {
@@ -577,7 +577,7 @@ AIO_create_random_cosmic_storm = {
                 type = celestial_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_RE_create_storm_endpoint
+                storm_end_position = event_target:AIO_DAIT_storm_endpoint
             }
         }
         4 = {
@@ -585,7 +585,7 @@ AIO_create_random_cosmic_storm = {
                 type = shroud_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_RE_create_storm_endpoint
+                storm_end_position = event_target:AIO_DAIT_storm_endpoint
             }
         }
         5 = {
@@ -593,7 +593,7 @@ AIO_create_random_cosmic_storm = {
                 type = nexus_storm
                 immediate = yes
                 cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_RE_create_storm_endpoint
+                storm_end_position = event_target:AIO_DAIT_storm_endpoint
             }
         }
     }

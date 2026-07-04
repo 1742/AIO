@@ -333,7 +333,7 @@ country_event = {
 										is_capital = yes
 									}
 								}
-								AIO_RE_degenerate_effect = yes
+								AIO_DAIT_degenerate_effect = yes
 								save_event_target_as = AIO_situation_RAIT_target
 								if = {
 									limit = { exists = owner }
@@ -383,7 +383,7 @@ country_event = {
                                 AIO_safe_remove_system_exclude_API = yes
                             }
 							save_event_target_as = AIO_situation_RAIT_target
-							AIO_RE_erase_system_effect = yes
+							AIO_DAIT_erase_system_effect = yes
 							if = {
 								limit = { exists = owner }
 								owner = { country_event = { id = AIO_merge_cosmos_events.407 } }
