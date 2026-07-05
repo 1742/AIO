@@ -8,6 +8,11 @@
 AIO_DAIT_add_deposits_effect = {
     every_system_planet = {
         limit = { NOT = { is_planet_class = pc_AIO_empty_space } }
+        if = {
+            limit = { has_research_station = yes }
+            research_station = { destroy_fleet = this }
+            clear_deposits = yes
+        }
         while = {
             count = $TIMES|1$
             if = {
