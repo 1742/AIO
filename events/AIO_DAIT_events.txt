@@ -62,7 +62,7 @@ country_event = {
 				any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
 			}
 		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_add_deposits_effect = { TIMES = 5 } }
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_add_deposits_effect = { TIMES = 10 } }
 		country_event = { id = AIO_DAIT_events.203 }
 	}
 
