@@ -155,81 +155,61 @@ AIO_DAIT_create_storm_effect = {
                 has_star_flag = AIO_HS_system
             }
         }
-        no_scope = {
-            random_system = {
-                limit = {
-                    is_inside_storm = no
-                    distance = { min_jumps = 5 max_jumps = 25 source = prevprev }
+        random_list = {
+            1 = {
+                spawn_random_storm = {
+                    type = solar_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
                 }
-                save_event_target_as = AIO_DAIT_storm_endpoint
             }
-        }
-        if = {
-            limit = { exists = event_target:AIO_DAIT_storm_endpoint }
-            random_list = {
-                1 = {
-                    create_cosmic_storm = {
-                        type = solar_storm
-                        immediate = yes
-                        cosmic_storm_start_position = this
-                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                    }
+            1 = {
+                spawn_random_storm = {
+                    type = electric_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
                 }
-                1 = {
-                    create_cosmic_storm = {
-                        type = electric_storm
-                        immediate = yes
-                        cosmic_storm_start_position = this
-                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                    }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = gravity_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
                 }
-                1 = {
-                    create_cosmic_storm = {
-                        type = gravity_storm
-                        immediate = yes
-                        cosmic_storm_start_position = this
-                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                    }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = magnetic_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
                 }
-                1 = {
-                    create_cosmic_storm = {
-                        type = magnetic_storm
-                        immediate = yes
-                        cosmic_storm_start_position = this
-                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                    }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = particle_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
                 }
-                1 = {
-                    create_cosmic_storm = {
-                        type = particle_storm
-                        immediate = yes
-                        cosmic_storm_start_position = this
-                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                    }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = celestial_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
                 }
-                1 = {
-                    create_cosmic_storm = {
-                        type = celestial_storm
-                        immediate = yes
-                        cosmic_storm_start_position = this
-                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                    }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = shroud_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
                 }
-                1 = {
-                    create_cosmic_storm = {
-                        type = shroud_storm
-                        immediate = yes
-                        cosmic_storm_start_position = this
-                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                    }
-                }
-                1 = {
-                    create_cosmic_storm = {
-                        type = nexus_storm
-                        immediate = yes
-                        cosmic_storm_start_position = this
-                        storm_end_position = event_target:AIO_DAIT_storm_endpoint
-                    }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = nexus_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
                 }
             }
         }
