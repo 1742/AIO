@@ -241,6 +241,12 @@ AIO_DAIT_make_special_system_effect = {
         set_star_class = sc_AIO_void
         random_list = {
             1 = { AIO_create_hexagonal_orbital_array = yes }
+            1 = { AIO_create_ringworld_array = yes }
+            1 = { AIO_create_triangular_planet_array = yes }
+            1 = { AIO_create_black_hole_cluster = yes }
+            1 = { AIO_create_concentric_orbital_array = yes }
+            1 = { AIO_create_recursive_satellite_tree = yes }
+            1 = { AIO_create_black_hole_flower = yes }
         }
     }
 }
