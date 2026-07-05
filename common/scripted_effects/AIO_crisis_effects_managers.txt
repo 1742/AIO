@@ -224,11 +224,18 @@ AIO_create_Aforgomom_effect = {
 
             room_name_override = crisis_room
 
-            every_country = {
+            random_country = {
+                limit = {
+                    OR = {
+                        has_country_flag = AIO_crisis_country
+                        has_country_flag = AIO_empire_country
+                    }
+                }
                 if = {
                     limit = { NOT = { has_communications = prev } }
                     establish_communications_no_message = prev
                 }
+                add_intel = { who = prev amount = 100 }
                 prev = { add_intel = { who = prev amount = 100 } }
             }
 
