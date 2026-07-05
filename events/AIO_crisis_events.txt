@@ -204,13 +204,6 @@ country_event = {
 #endregion
 
 
-#region 融合宇宙局势事件
-
-
-
-#endregion
-
-
 #region 飞升事件
 
 country_event = {
