@@ -1,10 +1,9 @@
-# 默认 scope: planet；星系级效果会单独注明 scope: system
+# scope: system
 # root: 使用者 country
 
 #region 创造
 
 # 为星系内天体添加矿藏
-#scope: system
 AIO_DAIT_add_deposits_effect = {
     every_system_planet = {
         limit = { NOT = { is_planet_class = pc_AIO_empty_space } }
@@ -72,10 +71,9 @@ AIO_DAIT_add_deposits_effect = {
     }
 }
 
-# 按所选天体的实际轨道距离赋予气候。
-# scope: planet
-AIO_DAIT_create_habitable_world_effect = {
-    if = {
+# 按最适合的天体的实际轨道距离赋予气候
+AIO_DAIT_reshape_habitable_planet_effect = {
+    ordered_system_planet = {
         limit = {
             is_star = no
             is_artificial = no
@@ -84,6 +82,11 @@ AIO_DAIT_create_habitable_world_effect = {
             planet_size > 5
             AIO_safe_remove_planet_exclude_API = no
         }
+        order_by = value:AIO_DAIT_habitable_zone_distance_score
+        save_event_target_as = AIO_DAIT_reshape_habitable_planet
+    }
+
+    event_target:AIO_DAIT_reshape_habitable_planet? = {
         set_variable = {
             which = AIO_DAIT_distance_to_star
             value = value:distance_to_system_star
@@ -112,14 +115,12 @@ AIO_DAIT_create_habitable_world_effect = {
             }
         }
         clear_variable = AIO_DAIT_distance_to_star
-        set_planet_flag = AIO_DAIT_created_habitable_world
     }
 }
 
-# 在所选宜居行星上创造未开智生命。
-# scope: planet
+# 在星系内随机宜居行星上创造未开智生命
 AIO_DAIT_create_life_effect = {
-    if = {
+    random_system_planet = {
         limit = {
             habitable_planet = yes
             pop_amount = 0
@@ -227,7 +228,6 @@ AIO_DAIT_create_storm_effect = {
 #region 重定义
 
 # 随机改变星系形状
-# scope: system
 AIO_DAIT_make_special_system_effect = {
     if = {
         limit = {
@@ -256,18 +256,31 @@ AIO_DAIT_make_special_system_effect = {
     }
 }
 
-# 退化所选殖民地内所有智慧物种。
-# scope: planet
+# 退化星系内所有殖民地的所有智慧物种。
 AIO_DAIT_degenerate_effect = {
-    colony? = {
-        if = {
-            limit = {
-                owner = { is_country_type = default }
-                planet = { AIO_safe_remove_planet_exclude_API = no }
+    every_system_planet_colony = {
+        limit = {
+            owner = {
+                OR = {
+                    is_country_type = default
+                    is_country_type = fallen_empire
+                    is_country_type = awakened_fallen_empire
+                }
             }
+            NOR = {
+                is_planet_class = pc_ai
+                has_carrier_flag = synth_queen_bastille
+            }
+        }
+        if = {
+            limit = { planet = { AIO_safe_remove_planet_exclude_API = no } }
             if = {
                 limit = { is_planet_class = pc_ark }
                 fleet? = { destroy_fleet = this }
+            }
+            else_if = {
+                limit = { NOT = { any_owned_pop_group = { is_robot_pop = no } } }
+                destroy_colony = yes
             }
             else = {
                 every_owned_pop_group = {
@@ -321,10 +334,9 @@ AIO_DAIT_degenerate_effect = {
     }
 }
 
-# 提升所选行星上的未开智物种。
-# scope: planet
+# 提升星系内未开智物种。
 AIO_DAIT_enlighted_effect = {
-    if = {
+    every_system_planet = {
         limit = { pop_amount > 1 }
         weighted_random_owned_pop_group = {
             if = {
@@ -369,89 +381,94 @@ AIO_DAIT_enlighted_effect = {
         }
         check_planet_employment = yes
         if = {
-            limit = {
-                OR = {
-                    solar_system = {
-                        NOT = { exists = owner }
-                        owner? = { is_nomadic = yes }
-                    }
-                }
+            limit = { NOT = { exists = owner } }
+            set_planet_flag = AIO_DAIT_enlighten_no_along
+        }
+    }
+    if = {
+        limit = {
+            OR = {
+                NOT = { exists = owner }
+                owner? = { is_nomadic = yes }
             }
-            create_country = {
-                type = default
-                origin = origin_default
-                effect = {
-                    shift_ethic = ethic_spiritualist
-                    change_government = random
-                    create_leader = { class = random_ruler }
-                    create_leader = { class = official }
-                    create_leader = { class = scientist }
-                    create_leader = { class = commander }
-                    prev = {
-                        solar_system = {
-                            create_starbase = {
-                                size = starbase_outpost
-                                owner = prev
-                                module = shipyard
-                                module = shipyard
+        }
+        create_country = {
+            type = default
+            origin = origin_default
+            effect = {
+                shift_ethic = ethic_spiritualist
+                change_government = random
+                create_leader = { class = random_ruler }
+                create_leader = { class = official }
+                create_leader = { class = scientist }
+                create_leader = { class = commander }
+                prev = {
+                    create_starbase = {
+                        size = starbase_outpost
+                        owner = prev
+                        module = shipyard
+                        module = shipyard
+                    }
+                    create_fleet = {
+                        effect = {
+                            set_owner = prevprev
+                            create_ship = {
+                                name = random
+                                design = NAME_Scholarium_Science
                             }
-                            create_fleet = {
-                                effect = {
-                                    set_owner = prevprev
-                                    create_ship = {
-                                        name = random
-                                        design = NAME_Scholarium_Science
-                                    }
-                                    set_location = {
-                                        target = prev
-                                        angle = random
-                                        direction = in_system
-                                    }
-                                }
-                            }
-                            create_fleet = {
-                                effect = {
-                                    set_owner = prevprev
-                                    create_ship = {
-                                        name = random
-                                        design = NAME_Prospectorium_Constructor
-                                    }
-                                    set_location = {
-                                        target = prev
-                                        angle = random
-                                        direction = in_system
-                                    }
-                                }
+                            set_location = {
+                                target = prev
+                                angle = random
+                                direction = in_system
                             }
                         }
+                    }
+                    create_fleet = {
+                        effect = {
+                            set_owner = prevprev
+                            create_ship = {
+                                name = random
+                                design = NAME_Prospectorium_Constructor
+                            }
+                            set_location = {
+                                target = prev
+                                angle = random
+                                direction = in_system
+                            }
+                        }
+                    }
+                    random_system_planet = {
+                        limit = { has_planet_flag = AIO_DAIT_enlighten_no_along }
+                        set_owner = prevprev
                         set_capital = yes
-                        while = {
-                            count = 4
-                            add_district = district_city
-                        }
-                        check_planet_employment = yes
+                        remove_planet_flag = AIO_DAIT_enlighten_no_along
                     }
-                    add_resource = {
-                        energy = 1000
-                        minerals = 1000
-                        food = 1000
-                        consumer_goods = 500
-                        alloys = 500
-                        unity = 1000
-                    }
-                    add_modifier = { modifier = AIO_the_craving_of_stellaris_modifier years = 10 }
                 }
+                add_resource = {
+                    energy = 1000
+                    minerals = 1000
+                    food = 1000
+                    consumer_goods = 500
+                    alloys = 500
+                    unity = 1000
+                }
+                add_modifier = { modifier = AIO_the_craving_of_stellaris_modifier years = 10 }
+                save_event_target_as = AIO_DAIT_enlighten_country
             }
         }
-        else_if = {
-            limit = { solar_system.owner? = { is_nomadic = no } }
-            set_owner = solar_system.owner
-        }
+    }
+    else = {
+        owner = { save_event_target_as = AIO_DAIT_enlighten_country }
+    }
+    every_system_planet = {
+        limit = { has_planet_flag = AIO_DAIT_enlighten_no_along }
+        set_owner = event_target:AIO_DAIT_enlighten_country
+        check_planet_employment = yes
+        remove_planet_flag = AIO_DAIT_enlighten_no_along
     }
 }
 
 # 随机改变帝国思潮
-# scope: system
 AIO_DAIT_change_ethic_effect = {
     owner? = {
         if = {
@@ -469,7 +486,6 @@ AIO_DAIT_change_ethic_effect = {
 #region 抹除
 
 # 召唤亚弗戈蒙
-# scope: system
 AIO_DAIT_Aforgomom_effect = {
     if = {
         limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
@@ -596,7 +612,6 @@ AIO_DAIT_harvest_planet_effect = {
 }
 
 # 按天体类型和行星规模结算资源，然后将星系内普通天体收割为破碎世界。
-# scope: system
 AIO_DAIT_harvest_system_effect = {
     if = {
         limit = {
@@ -612,7 +627,6 @@ AIO_DAIT_harvest_system_effect = {
 }
 
 # 抹除星系
-# scope: system
 AIO_DAIT_erase_system_effect = {
     if = {
         limit = {
@@ -636,7 +650,6 @@ AIO_DAIT_erase_system_effect = {
 }
 
 # 抹除星团
-# scope: system
 AIO_DAIT_erase_cluster_effect = {
     every_system = {
         limit = {

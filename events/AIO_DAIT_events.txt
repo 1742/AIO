@@ -3,15 +3,13 @@ namespace = AIO_DAIT_events
 # scripted_action 的行星作用域桥接事件。
 # THIS = 目标行星（planet/carrier）
 # FROM = 发起动作的巨构
-planet_event = {
+system_event = {
 	id = AIO_DAIT_events.201
 	hide_window = yes
 
 	is_triggered_only = yes
 
 	immediate = {
-		# 行星操作使用 target_planet；星系操作使用 target_system。
-		save_event_target_as = AIO_DAIT_target_planet
 		solar_system = { save_event_target_as = AIO_DAIT_target_system }
 		from = {
 			save_event_target_as = AIO_DAIT_source_megastructure
@@ -67,30 +65,34 @@ country_event = {
 	}
 
 	option = {
-		name = AIO_DAIT_events.203.create_habitable_world
+		name = AIO_DAIT_events.203.reshape_habitable_planet
 		trigger = {
-			event_target:AIO_DAIT_target_planet = {
-				is_star = no
-				is_artificial = no
-				is_colony = no
-				habitable_planet = no
-				planet_size > 5
-				AIO_safe_remove_planet_exclude_API = no
+			event_target:AIO_DAIT_target_system = {
+				AIO_safe_remove_system_exclude_API = no
+				any_system_planet = {
+					is_star = no
+					is_artificial = no
+					is_colony = no
+					habitable_planet = no
+					AIO_safe_remove_planet_exclude_API = no
+				}
 			}
 		}
-		event_target:AIO_DAIT_target_planet = { AIO_DAIT_create_habitable_world_effect = yes }
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_reshape_habitable_planet_effect = yes }
 		country_event = { id = AIO_DAIT_events.203 }
 	}
 
 	option = {
 		name = AIO_DAIT_events.203.create_life
 		trigger = {
-			event_target:AIO_DAIT_target_planet = {
-				habitable_planet = yes
-				pop_amount = 0
+			event_target:AIO_DAIT_target_system = {
+				any_system_planet = {
+					habitable_planet = yes
+					pop_amount = 0
+				}
 			}
 		}
-		event_target:AIO_DAIT_target_planet = { AIO_DAIT_create_life_effect = yes }
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_create_life_effect = yes }
 		country_event = { id = AIO_DAIT_events.203 }
 	}
 
@@ -154,21 +156,27 @@ country_event = {
 	option = {
 		name = AIO_DAIT_events.204.degenerate
 		trigger = {
-			event_target:AIO_DAIT_target_planet = {
-				colony? = {
-					owner = { is_country_type = default }
+			event_target:AIO_DAIT_target_system = {
+				any_system_planet_colony = {
+					owner = {
+						OR = {
+							is_country_type = default
+							is_country_type = fallen_empire
+							is_country_type = awakened_fallen_empire
+						}
+					}
 					planet = { AIO_safe_remove_planet_exclude_API = no }
 				}
 			}
 		}
-		event_target:AIO_DAIT_target_planet = { AIO_DAIT_degenerate_effect = yes }
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_degenerate_effect = yes }
 		country_event = { id = AIO_DAIT_events.204 }
 	}
 
 	option = {
 		name = AIO_DAIT_events.204.enlighten
-		trigger = { event_target:AIO_DAIT_target_planet = { pop_amount > 1 } }
-		event_target:AIO_DAIT_target_planet = { AIO_DAIT_enlighted_effect = yes }
+		trigger = { event_target:AIO_DAIT_target_system = { any_system_planet = { pop_amount > 1 } } }
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_enlighted_effect = yes }
 		country_event = { id = AIO_DAIT_events.204 }
 	}
 
@@ -201,24 +209,6 @@ country_event = {
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_Aforgomom_effect = yes }
-		country_event = { id = AIO_DAIT_events.205 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.205.harvest_planet
-		trigger = {
-			event_target:AIO_DAIT_target_planet? = {
-				is_star = no
-				NOR = {
-					is_artificial = yes
-					is_planet_class = pc_ai
-					colony? = { has_carrier_flag = synth_queen_bastille }
-					AIO_safe_remove_planet_exclude_API = yes
-					has_planet_flag = AIO_DAIT_harvested_body
-				}
-			}
-		}
-		event_target:AIO_DAIT_target_planet? = { AIO_DAIT_harvest_planet_effect = yes }
 		country_event = { id = AIO_DAIT_events.205 }
 	}
 

@@ -1,10 +1,23 @@
 # 当前由测试巨构挂载；功能完成后改由 AIO 正式巨构挂载。
 AIO_DAIT_lock_target = {
 	user_scope = megastructure
-	scope = planet
+	scope = galactic_object
 
 	possible = {
-		always = yes
+		custom_tooltip = {
+			fail_text = AIO_DAIT_locak_target.fail_crisis
+			OR = {
+				from = { owner = { is_country_type = AIO_empire } }
+				NOT = {
+					any_system_megastructure = {
+						OR = {
+							AIO_is_crisis_sphere = yes
+							AIO_is_galactic_crucible = yes
+						}
+					}
+				}
+			}
+		}
 	}
 
 	button_visible = {
