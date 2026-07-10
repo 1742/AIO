@@ -87,53 +87,8 @@
 
  #region DAIT
 
- AIO_DAIT_material_option_1_modifier_1: "$AIO_DAIT_material_option.1.title$"
- AIO_DAIT_material_option_2_modifier_1: "$AIO_DAIT_material_option.2.title$-I"
- AIO_DAIT_material_option_2_modifier_2: "$AIO_DAIT_material_option.2.title$-II"
- AIO_DAIT_material_option_3_modifier_1: "$AIO_DAIT_material_option.3.title$"
- AIO_DAIT_material_option_4_modifier_1: "$AIO_DAIT_material_option.4.title$"
- AIO_DAIT_material_option_5_modifier_1: "$AIO_DAIT_material_option.5.title$-I"
- AIO_DAIT_material_option_5_modifier_2: "$AIO_DAIT_material_option.5.title$-II"
- AIO_DAIT_material_option_7_modifier_1: "$AIO_DAIT_material_option.7.title$-I"
- AIO_DAIT_material_option_7_modifier_2: "$AIO_DAIT_material_option.7.title$-II"
- AIO_DAIT_energy_option_1_modifier_1: "$AIO_DAIT_energy_option.1.title$-I"
- AIO_DAIT_energy_option_1_modifier_2: "$AIO_DAIT_energy_option.1.title$-II"
- AIO_DAIT_energy_option_2_modifier_1: "$AIO_DAIT_energy_option.2.title$"
- AIO_DAIT_energy_option_3_modifier_1: "$AIO_DAIT_energy_option.3.title$-I"
- AIO_DAIT_energy_option_3_modifier_2: "$AIO_DAIT_energy_option.3.title$-II"
- AIO_DAIT_energy_option_4_modifier_1: "$AIO_DAIT_energy_option.4.title$"
- AIO_DAIT_energy_option_5_modifier_1: "$AIO_DAIT_energy_option.5.title$-I"
- AIO_DAIT_energy_option_5_modifier_2: "$AIO_DAIT_energy_option.5.title$-II"
- AIO_DAIT_energy_option_5_modifier_3: "$AIO_DAIT_energy_option.5.title$-III"
- AIO_DAIT_energy_option_5_modifier_4: "$AIO_DAIT_energy_option.5.title$-IV"
- AIO_DAIT_metric_option_1_modifier_1: "$AIO_DAIT_metric_option.1.title$"
- AIO_DAIT_metric_option_2_modifier_1: "$AIO_DAIT_metric_option.2.title$-I"
- AIO_DAIT_metric_option_2_modifier_2: "$AIO_DAIT_metric_option.2.title$-II"
- AIO_DAIT_metric_option_3_modifier_1: "$AIO_DAIT_metric_option.3.title$-I"
- AIO_DAIT_metric_option_3_modifier_2: "$AIO_DAIT_metric_option.3.title$-II"
- AIO_DAIT_metric_option_4_modifier_1: "$AIO_DAIT_metric_option.4.title$-I"
- AIO_DAIT_metric_option_4_modifier_2: "$AIO_DAIT_metric_option.4.title$-II"
- AIO_DAIT_metric_option_4_modifier_3: "$AIO_DAIT_metric_option.4.title$-III"
- AIO_DAIT_metric_option_5_modifier_1: "$AIO_DAIT_metric_option.5.title$-I"
- AIO_DAIT_metric_option_5_modifier_2: "$AIO_DAIT_metric_option.5.title$-II"
- AIO_DAIT_metric_option_5_modifier_3: "$AIO_DAIT_metric_option.5.title$-III"
- AIO_DAIT_metric_option_6_modifier_1: "$AIO_DAIT_metric_option.6.title$-I"
- AIO_DAIT_metric_option_6_modifier_2: "$AIO_DAIT_metric_option.6.title$-II"
-
- #endregion
-
-
- #region reality edit
-
+ AIO_DAIT_spawn_modifier: "Spawn"
  AIO_Aforgomom_Wrath_modifier: "$AIO_Aforgomom_Wrath$"
-
- AIO_RE_ASLT_modifier: "Anti-the second law of thermodynamics$"
- AIO_RE_ASLT_modifier_effects: "§Y$AIO_RE_ASLT_modifier$§!：\n - £mod_planet_stability_mult£$MOD_PLANET_STABILITY_MULT$§G+20%§!\n - £mod_energy_upkeep_mult£$mod_planet_jobs_energy_upkeep_mult$§G-50%§!\n - £mod_energy_upkeep_mult£$mod_planet_buildings_energy_upkeep_mult$§G-50%§!\n - £mod_energy_upkeep_mult£$mod_megastructures_energy_upkeep_mult$§G-50%§!\n - £mod_energy_upkeep_mult£$mod_ships_energy_upkeep_mult$§G-50%§!\n - £mod_energy_upkeep_mult£$mod_starbases_energy_upkeep_mult$§G-50%§!\n - £mod_empire_size_mult£$MOD_EMPIRE_SIZE_MULT$§R+20%§!\n - $MOD_PHYSICS_TECH_COST_MULT$§R+30%§!\n - $MOD_SOCIETY_TECH_COST_MULT$§R+30%§!\n - $MOD_ENGINEERING_TECH_COST_MULT$§R+30%§!"
- AIO_RE_design_requirement_modifier: "Design Requirement"
- AIO_RE_design_requirement_modifier_effects: "§Y$AIO_RE_design_requirement_modifier$§!：\n - $mod_planet_jobs_trade_produces_mult$§G+30%§!\n - £mod_country_resource_max_add£$MOD_COUNTRY_RESOURCE_MAX_ADD$§G+1000000§!\n - £mod_produces_mult£$mod_planet_jobs_produces_mult$§R-20%§!"
- AIO_RE_superlight_modifier: "Superlight"
- AIO_RE_superlight_modifier_effects: "§Y$AIO_RE_superlight_modifier$§!：\n - £mod_empire_size_mult£$MOD_EMPIRE_SIZE_MULT$§G-30%§!\n - £mod_energy_produces_mult£$mod_planet_jobs_energy_produces_mult$§G+50%§!\n - £mod_ship_speed_mult£$MOD_SHIP_SPEED_MULT$§G+20%§!\n - £mod_weapon_type_energy_weapon_damage_mult£$mod_weapon_type_energy_weapon_damage_mult$§G+20%§!\nThe empire's all §Ynatural colonies§!：\n - $planet_devastation$§R+60%§!\n - remove 1 random district\n - remove 1 random building"
-
  AIO_the_craving_of_stellaris_modifier: "The Craving of Stellaris"
 
  #endregion

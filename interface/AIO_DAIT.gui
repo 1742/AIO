@@ -24,29 +24,20 @@ guiTypes = {
         #region three DAIT class
 
         effectButtonType = {
-            name = "AIO_DAIT_Creation"
+            name = "AIO_DAIT_Tawi"
             orientation = "upper_left"
             position = { x = 15 y = 5 }
             quadTextureSprite = "GFX_AIO_DAIT_transparent_button"
-            effect = "AIO_DAIT_open_creation"
+            effect = AIO_DAIT_Tawi
             multiline = no
         }
 
         effectButtonType = {
-            name = "AIO_DAIT_Redefinition"
+            name = "AIO_DAIT_Aformom"
             orientation = "upper_left"
             position = { x = 15 y = 5 }
             quadTextureSprite = "GFX_AIO_DAIT_transparent_button"
-            effect = "AIO_DAIT_open_redefinition"
-            multiline = no
-        }
-
-        effectButtonType = {
-            name = "AIO_DAIT_Erasure"
-            orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_transparent_button"
-            effect = "AIO_DAIT_open_erasure"
+            effect = AIO_DAIT_Aformom
             multiline = no
         }
 
@@ -200,56 +191,6 @@ guiTypes = {
         }
 
         effectButtonType = {
-            name = "AIO_DAIT_Connect"
-            orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Connect"
-            effect = "AIO_DAIT_connect"
-            multiline = no
-        }
-
-        effectButtonType = {
-            name = "AIO_DAIT_Storm"
-            orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Storm"
-            effect = "AIO_DAIT_storm"
-            multiline = no
-        }
-
-        #endregion
-
-
-        #region Redefinition
-
-        effectButtonType = {
-            name = "AIO_DAIT_Reshape"
-            orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Reshape"
-            effect = "AIO_DAIT_reshape"
-            multiline = no
-        }
-
-        effectButtonType = {
-            name = "AIO_DAIT_Degenerate"
-            orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Degenerate"
-            effect = "AIO_DAIT_degenerate"
-            multiline = no
-        }
-
-        effectButtonType = {
-            name = "AIO_DAIT_Enlighten"
-            orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Enlighten"
-            effect = "AIO_DAIT_enlighten"
-            multiline = no
-        }
-
-        effectButtonType = {
             name = "AIO_DAIT_Ethic"
             orientation = "upper_left"
             position = { x = 15 y = 5 }
@@ -261,14 +202,23 @@ guiTypes = {
         #endregion
 
 
-        #region Erasure
+        #region Aformom
 
         effectButtonType = {
-            name = "AIO_DAIT_Aformom"
+            name = "AIO_DAIT_Storm"
             orientation = "upper_left"
             position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Aformom"
-            effect = "AIO_DAIT_Aformom"
+            quadTextureSprite = "GFX_AIO_DAIT_Storm"
+            effect = "AIO_DAIT_storm"
+            multiline = no
+        }
+
+        effectButtonType = {
+            name = "AIO_DAIT_Strike"
+            orientation = "upper_left"
+            position = { x = 15 y = 5 }
+            quadTextureSprite = "GFX_AIO_DAIT_Strike"
+            effect = AIO_DAIT_strike
             multiline = no
         }
 
@@ -287,15 +237,6 @@ guiTypes = {
             position = { x = 15 y = 5 }
             quadTextureSprite = "GFX_AIO_DAIT_Erase"
             effect = "AIO_DAIT_erase"
-            multiline = no
-        }
-
-        effectButtonType = {
-            name = "AIO_DAIT_Erase_Cluster"
-            orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Erase_Cluster"
-            effect = "AIO_DAIT_erase_cluster"
             multiline = no
         }
 

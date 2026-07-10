@@ -44,12 +44,3 @@ country_event = {
 
 	is_triggered_only = yes
 }
-
-country_event = {
-	id = AIO_DAIT_events.205
-
-	diplomatic = yes
-	custom_gui = AIO_DAIT_Second
-
-	is_triggered_only = yes
-}

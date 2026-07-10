@@ -288,7 +288,7 @@ country_event = {
 					random_list = {
 						1 = { # 随机丰富星系矿藏
 							save_event_target_as = AIO_situation_RAIT_target
-							AIO_DAIT_add_deposits_effect = { TIME = 2 }
+							AIO_DAIT_enrich_effect = { TIME = 2 }
 							if = {
 								limit = { exists = owner }
 								owner = { country_event = { id = AIO_merge_cosmos_events.402 } }
