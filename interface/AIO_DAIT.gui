@@ -21,7 +21,7 @@ guiTypes = {
             clicksound = "back_click"
         }
 
-        #region three DAIT class
+        #region DAIT class
 
         effectButtonType = {
             name = "AIO_DAIT_Tawi"
