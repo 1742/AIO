@@ -193,7 +193,10 @@ AIO_DAIT_create_storm_effect = {
 
 # 随机改变星系形状
 AIO_DAIT_make_special_system_effect = {
-    AIO_DAIT_erase_system_effect = yes
+    every_system_planet = { AIO_safe_remove_planet = yes }
+    AIO_safe_remove_system_megastructures = yes
+    every_ambient_object = { destroy_ambient_object = this }
+    set_star_class = sc_AIO_void
     random_list = {
         1 = { AIO_create_hexagonal_orbital_array = yes }
         1 = { AIO_create_ringworld_array = yes }
