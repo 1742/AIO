@@ -1,0 +1,77 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_AIO_DAIT_Main_bg
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Main_exit
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Second_bg
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Second_back
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Second_exit
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_transparent_button
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Enrich
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Spawn
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Seed
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Connect
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Storm
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Reshape
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Degenerate
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Enlighten
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Ethic
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Aformom
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Harvest
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Erase
+    }
+
+    spriteType = {
+        name = GFX_AIO_DAIT_Erase_Cluster
+    }
+}

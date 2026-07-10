@@ -7,7 +7,7 @@ AIO_DAIT_lock_target = {
 		custom_tooltip = {
 			fail_text = AIO_DAIT_locak_target.fail.crisis_path
 			OR = {
-				from = { owner = { is_country_type = AIO_empire } }
+				from.owner = { is_country_type = AIO_empire }
 				NOR = {
 					has_star_flag = AIO_HS_system
 					AIO_is_crisis_mega_system = yes
@@ -21,7 +21,17 @@ AIO_DAIT_lock_target = {
 	}
 
 	button_visible = {
-		always = yes
+		from.owner = {
+			NOT = {
+				has_active_event = {
+					AIO_DAIT_events.201
+					AIO_DAIT_events.202
+					AIO_DAIT_events.203
+					AIO_DAIT_events.204
+					AIO_DAIT_events.205
+				}
+			}
+		}
 	}
 
 	button_clickable = {

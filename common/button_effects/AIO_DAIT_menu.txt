@@ -1,0 +1,250 @@
+AIO_DAIT_open_creation = {
+    potential = { NOT = { has_active_event = { AIO_DAIT_events.203 } } }
+    allow = { always = yes }
+    effect = { country_event = { id = AIO_DAIT_events.203 } }
+}
+
+AIO_DAIT_open_redefinition = {
+    potential = { NOT = { has_active_event = { AIO_DAIT_events.204 } } }
+    allow = { always = yes }
+    effect = { country_event = { id = AIO_DAIT_events.204 } }
+}
+
+AIO_DAIT_open_erasure = {
+    potential = { NOT = { has_active_event = { AIO_DAIT_events.205 } } }
+    allow = { always = yes }
+    effect = { country_event = { id = AIO_DAIT_events.205 } }
+}
+
+AIO_DAIT_back = {
+    potential = { NOT = { has_active_event = { AIO_DAIT_events.202 } } }
+    allow = { always = yes }
+    effect = { country_event = { id = AIO_DAIT_events.202 } }
+}
+
+AIO_DAIT_enrich = {
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
+    allow = {
+        event_target:AIO_DAIT_target_system = {
+            any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
+        }
+    }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_add_deposits_effect = { TIMES = 10 } }
+    }
+}
+
+AIO_DAIT_spawn = {
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
+    allow = {
+        event_target:AIO_DAIT_target_system = {
+            any_system_planet = {
+                is_star = no
+                is_artificial = no
+                is_colony = no
+                habitable_planet = no
+                AIO_safe_remove_planet_exclude_API = no
+            }
+        }
+    }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_reshape_habitable_planet_effect = yes }
+    }
+}
+
+AIO_DAIT_seed = {
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
+    allow = {
+        event_target:AIO_DAIT_target_system = {
+            any_system_planet = {
+                habitable_planet = yes
+                pop_amount = 0
+            }
+        }
+    }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_seed_effect = yes }
+    }
+}
+
+AIO_DAIT_connect = {
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.build_bypass
+            event_target:AIO_DAIT_target_system = {
+                NOT = { any_bypass = { is_bypass_type = bypass_AIO_ultimate_gate } }
+            }
+        }
+    }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_connect_effect = yes }
+    }
+}
+
+AIO_DAIT_storm = {
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
+    allow = { event_target:AIO_DAIT_target_system = { is_inside_storm = no } }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_create_storm_effect = yes }
+    }
+}
+
+AIO_DAIT_reshape = {
+    potential = { has_active_event = { AIO_DAIT_events.204 } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.colony
+            event_target:AIO_DAIT_target_system = {
+                any_system_colony = {
+                    NOT = { owner? = { is_same_empire = root } }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.crisis_path
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.synth_queen
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
+        }
+    }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_make_special_system_effect = yes }
+    }
+}
+
+AIO_DAIT_degenerate = {
+    potential = { has_active_event = { AIO_DAIT_events.204 } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.colony
+            event_target:AIO_DAIT_target_system = {
+                any_system_colony = {
+                    NOT = { owner? = { is_same_empire = root } }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.degenerate
+            event_target:AIO_DAIT_target_system = {
+                any_system_colony = {
+                    owner? = {
+                        OR = {
+                            is_country_type = default
+                            is_country_type = fallen_empire
+                            is_country_type = awakened_fallen_empire
+                        }
+                    }
+                }
+            }
+        }
+    }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_degenerate_effect = yes }
+    }
+}
+
+AIO_DAIT_enlighten = {
+    potential = { has_active_event = { AIO_DAIT_events.204 } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.synth_queen
+            event_target:AIO_DAIT_target_system = {
+                any_system_colony = {
+                    NOT = { has_carrier_flag = synth_queen_bastille }
+                }
+            }
+        }
+        event_target:AIO_DAIT_target_system = {
+            any_system_planet = {
+                pop_amount > 1
+                NOT = { is_planet_class = pc_ai }
+            }
+        }
+    }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_enlighted_effect = yes }
+    }
+}
+
+AIO_DAIT_ethic = {
+    potential = { has_active_event = { AIO_DAIT_events.204 } }
+    allow = { event_target:AIO_DAIT_target_system = { exists = owner } }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_change_ethic_effect = yes }
+    }
+}
+
+AIO_DAIT_Aformom = {
+    potential = { has_active_event = { AIO_DAIT_events.205 } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.Aformom
+            event_target:AIO_DAIT_target_system = {
+                NOT = { any_fleet_in_system = { has_fleet_flag = AIO_Aforgomom_fleet } }
+            }
+        }
+    }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_Aforgomom_effect = yes }
+    }
+}
+
+AIO_DAIT_harvest = {
+    potential = { has_active_event = { AIO_DAIT_events.205 } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.crisis_path
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.harvest
+            event_target:AIO_DAIT_target_system = {
+                any_system_planet = { NOT = { has_planet_flag = AIO_DAIT_harvested_body } }
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.synth_queen
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
+        }
+    }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_harvest_system_effect = yes }
+    }
+}
+
+AIO_DAIT_erase = {
+    potential = { has_active_event = { AIO_DAIT_events.205 } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.crisis_path
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.synth_queen
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
+        }
+    }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_system_effect = yes }
+    }
+}
+
+AIO_DAIT_erase_cluster = {
+    potential = { has_active_event = { AIO_DAIT_events.205 } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.crisis_path
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_locak_target.fail.synth_queen
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
+        }
+    }
+    effect = {
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_cluster_effect = { MAX_JUMPS = 5 } }
+    }
+}

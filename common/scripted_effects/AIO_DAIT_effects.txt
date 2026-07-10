@@ -89,7 +89,7 @@ AIO_DAIT_reshape_habitable_planet_effect = {
 }
 
 # 在星系内随机宜居行星上创造未开智生命
-AIO_DAIT_create_life_effect = {
+AIO_DAIT_seed_effect = {
     random_system_planet = {
         limit = {
             habitable_planet = yes
@@ -110,7 +110,7 @@ AIO_DAIT_create_life_effect = {
 }
 
 # 建立连接
-AIO_DAIT_build_bypass_effect = {
+AIO_DAIT_connect_effect = {
     if = {
         limit = { NOT = { any_bypass = { is_bypass_type = bypass_AIO_ultimate_gate } } }
         spawn_megastructure = {

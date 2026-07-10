@@ -20,292 +20,36 @@ system_event = {
 
 country_event = {
 	id = AIO_DAIT_events.202
-	title = AIO_DAIT_events.202.title
-	desc = AIO_DAIT_events.202.desc
+
+	diplomatic = yes
+	custom_gui = AIO_DAIT_Main
 
 	is_triggered_only = yes
-
-	option = {
-		name = AIO_DAIT_events.202.creation
-		country_event = { id = AIO_DAIT_events.203 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.202.redefinition
-		country_event = { id = AIO_DAIT_events.204 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.202.erasure
-		country_event = { id = AIO_DAIT_events.205 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.202.cancel
-		default_hide_option = yes
-	}
 }
 
 country_event = {
 	id = AIO_DAIT_events.203
-	title = AIO_DAIT_events.203.title
-	desc = AIO_DAIT_events.203.desc
+
+	diplomatic = yes
+	custom_gui = AIO_DAIT_Second
 
 	is_triggered_only = yes
-
-	option = {
-		name = AIO_DAIT_events.203.add_deposits
-		allow = {
-			event_target:AIO_DAIT_target_system = {
-				any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
-			}
-		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_add_deposits_effect = { TIMES = 10 } }
-		country_event = { id = AIO_DAIT_events.203 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.203.reshape_habitable_planet
-		allow = {
-			event_target:AIO_DAIT_target_system = {
-				any_system_planet = {
-					is_star = no
-					is_artificial = no
-					is_colony = no
-					habitable_planet = no
-					AIO_safe_remove_planet_exclude_API = no
-				}
-			}
-		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_reshape_habitable_planet_effect = yes }
-		country_event = { id = AIO_DAIT_events.203 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.203.create_life
-		allow = {
-			event_target:AIO_DAIT_target_system = {
-				any_system_planet = {
-					habitable_planet = yes
-					pop_amount = 0
-				}
-			}
-		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_create_life_effect = yes }
-		country_event = { id = AIO_DAIT_events.203 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.203.build_bypass
-		allow = {
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.build_bypass
-				event_target:AIO_DAIT_target_system = {
-					NOT = { any_bypass = { is_bypass_type = bypass_AIO_ultimate_gate } }
-				}
-			}
-		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_build_bypass_effect = yes }
-		country_event = { id = AIO_DAIT_events.203 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.203.create_storm
-		allow = { event_target:AIO_DAIT_target_system = { is_inside_storm = no } }
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_create_storm_effect = yes }
-		country_event = { id = AIO_DAIT_events.203 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.back
-		country_event = { id = AIO_DAIT_events.202 }
-		default_hide_option = yes
-	}
 }
 
 country_event = {
 	id = AIO_DAIT_events.204
-	title = AIO_DAIT_events.204.title
-	desc = AIO_DAIT_events.204.desc
+
+	diplomatic = yes
+	custom_gui = AIO_DAIT_Second
 
 	is_triggered_only = yes
-
-	option = {
-		name = AIO_DAIT_events.204.reshape_system
-		allow = {
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.colony
-				event_target:AIO_DAIT_target_system = {
-					any_system_colony = {
-						NOT = { owner? = { is_same_empire = root } }
-					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.crisis_path
-				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
-			}
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.synth_queen
-				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
-			}
-		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_make_special_system_effect = yes }
-		country_event = { id = AIO_DAIT_events.204 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.204.degenerate
-		allow = {
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.colony
-				event_target:AIO_DAIT_target_system = {
-					any_system_colony = {
-						NOT = { owner? = { is_same_empire = root } }
-					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.degenerate
-				event_target:AIO_DAIT_target_system = {
-					any_system_colony = {
-						owner? = {
-							OR = {
-								is_country_type = default
-								is_country_type = fallen_empire
-								is_country_type = awakened_fallen_empire
-							}
-						}
-					}
-				}
-			}
-		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_degenerate_effect = yes }
-		country_event = { id = AIO_DAIT_events.204 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.204.enlighten
-		allow = {
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.synth_queen
-				event_target:AIO_DAIT_target_system = {
-					any_system_colony = {
-						NOT = { has_carrier_flag = synth_queen_bastille }
-					}
-				}
-			}
-			event_target:AIO_DAIT_target_system = {
-				any_system_planet = {
-					pop_amount > 1
-					NOT = { is_planet_class = pc_ai }
-				}
-			}
-		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_enlighted_effect = yes }
-		country_event = { id = AIO_DAIT_events.204 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.204.change_ethic
-		allow = { event_target:AIO_DAIT_target_system = { exists = owner } }
-		event_target:AIO_DAIT_target_system = { owner = { AIO_DAIT_change_ethic_effect = yes } }
-		country_event = { id = AIO_DAIT_events.204 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.back
-		country_event = { id = AIO_DAIT_events.202 }
-		default_hide_option = yes
-	}
 }
 
 country_event = {
 	id = AIO_DAIT_events.205
-	title = AIO_DAIT_events.205.title
-	desc = AIO_DAIT_events.205.desc
+
+	diplomatic = yes
+	custom_gui = AIO_DAIT_Second
 
 	is_triggered_only = yes
-
-	option = {
-		name = AIO_DAIT_events.205.Aformom
-		allow = {
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.Aformom
-				event_target:AIO_DAIT_target_system = {
-					NOT = { any_fleet_in_system = { has_fleet_flag = AIO_Aforgomom_fleet } }
-				}
-			}
-		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_Aforgomom_effect = yes }
-		country_event = { id = AIO_DAIT_events.205 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.205.harvest_system
-		allow = {
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.crisis_path
-				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
-			}
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.harvest
-				event_target:AIO_DAIT_target_system = {
-					any_system_planet = { NOT = { has_planet_flag = AIO_DAIT_harvested_body } }
-				}
-			}
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.synth_queen
-				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
-			}
-			event_target:AIO_DAIT_target_system = {
-				any_system_planet = {
-					NOR = {
-						is_star = yes
-						is_artificial = yes
-					}
-				}
-			}
-		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_harvest_system_effect = yes }
-		country_event = { id = AIO_DAIT_events.205 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.205.erase_system
-		allow = {
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.crisis_path
-				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
-			}
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.synth_queen
-				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
-			}
-		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_system_effect = yes }
-		country_event = { id = AIO_DAIT_events.205 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.205.erase_cluster
-		allow = {
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.crisis_path
-				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
-			}
-			custom_tooltip = {
-				fail_text = AIO_DAIT_locak_target.fail.synth_queen
-				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
-			}
-		}
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_cluster_effect = { MAX_JUMPS = 5 } }
-		country_event = { id = AIO_DAIT_events.205 }
-	}
-
-	option = {
-		name = AIO_DAIT_events.back
-		country_event = { id = AIO_DAIT_events.202 }
-		default_hide_option = yes
-	}
 }
