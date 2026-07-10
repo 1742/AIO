@@ -5,18 +5,18 @@ AIO_DAIT_lock_target = {
 
 	possible = {
 		custom_tooltip = {
-			fail_text = AIO_DAIT_locak_target.fail_crisis
+			fail_text = AIO_DAIT_locak_target.fail.crisis_path
 			OR = {
 				from = { owner = { is_country_type = AIO_empire } }
-				NOT = {
-					any_system_megastructure = {
-						OR = {
-							AIO_is_crisis_sphere = yes
-							AIO_is_galactic_crucible = yes
-						}
-					}
+				NOR = {
+					has_star_flag = AIO_HS_system
+					AIO_is_crisis_mega_system = yes
 				}
 			}
+		}
+		custom_tooltip = {
+			fail_text = AIO_DAIT_locak_target.fail.api
+			AIO_safe_remove_system_exclude_API = no
 		}
 	}
 

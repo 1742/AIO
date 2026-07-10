@@ -55,7 +55,7 @@ country_event = {
 
 	option = {
 		name = AIO_DAIT_events.203.add_deposits
-		trigger = {
+		allow = {
 			event_target:AIO_DAIT_target_system = {
 				any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
 			}
@@ -66,9 +66,8 @@ country_event = {
 
 	option = {
 		name = AIO_DAIT_events.203.reshape_habitable_planet
-		trigger = {
+		allow = {
 			event_target:AIO_DAIT_target_system = {
-				AIO_safe_remove_system_exclude_API = no
 				any_system_planet = {
 					is_star = no
 					is_artificial = no
@@ -84,7 +83,7 @@ country_event = {
 
 	option = {
 		name = AIO_DAIT_events.203.create_life
-		trigger = {
+		allow = {
 			event_target:AIO_DAIT_target_system = {
 				any_system_planet = {
 					habitable_planet = yes
@@ -98,9 +97,12 @@ country_event = {
 
 	option = {
 		name = AIO_DAIT_events.203.build_bypass
-		trigger = {
-			event_target:AIO_DAIT_target_system = {
-				NOT = { any_system_megastructure = { is_megastructure_type = AIO_mega_01_node } }
+		allow = {
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.build_bypass
+				event_target:AIO_DAIT_target_system = {
+					NOT = { any_bypass = { is_bypass_type = bypass_AIO_ultimate_gate } }
+				}
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_build_bypass_effect = yes }
@@ -109,14 +111,7 @@ country_event = {
 
 	option = {
 		name = AIO_DAIT_events.203.create_storm
-		trigger = {
-			event_target:AIO_DAIT_target_system = {
-				NOR = {
-					is_inside_storm = yes
-					has_star_flag = AIO_HS_system
-				}
-			}
-		}
+		allow = { event_target:AIO_DAIT_target_system = { is_inside_storm = no } }
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_create_storm_effect = yes }
 		country_event = { id = AIO_DAIT_events.203 }
 	}
@@ -137,16 +132,22 @@ country_event = {
 
 	option = {
 		name = AIO_DAIT_events.204.reshape_system
-		trigger = {
-			event_target:AIO_DAIT_target_system = {
-				NOR = {
-					has_star_flag = AIO_HS_system
-					has_star_flag = AIO_TUG_system
-					any_system_planet = { is_planet_class = pc_ai }
-					has_star_flag = synth_queen_capital
-					AIO_is_crisis_mega_system = yes
-					AIO_safe_remove_system_exclude_API = yes
+		allow = {
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.colony
+				event_target:AIO_DAIT_target_system = {
+					any_system_colony = {
+						NOT = { owner? = { is_same_empire = root } }
+					}
 				}
+			}
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.crisis_path
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
+			}
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.synth_queen
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_make_special_system_effect = yes }
@@ -155,17 +156,27 @@ country_event = {
 
 	option = {
 		name = AIO_DAIT_events.204.degenerate
-		trigger = {
-			event_target:AIO_DAIT_target_system = {
-				any_system_planet_colony = {
-					owner = {
-						OR = {
-							is_country_type = default
-							is_country_type = fallen_empire
-							is_country_type = awakened_fallen_empire
+		allow = {
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.colony
+				event_target:AIO_DAIT_target_system = {
+					any_system_colony = {
+						NOT = { owner? = { is_same_empire = root } }
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.degenerate
+				event_target:AIO_DAIT_target_system = {
+					any_system_colony = {
+						owner? = {
+							OR = {
+								is_country_type = default
+								is_country_type = fallen_empire
+								is_country_type = awakened_fallen_empire
+							}
 						}
 					}
-					planet = { AIO_safe_remove_planet_exclude_API = no }
 				}
 			}
 		}
@@ -175,15 +186,30 @@ country_event = {
 
 	option = {
 		name = AIO_DAIT_events.204.enlighten
-		trigger = { event_target:AIO_DAIT_target_system = { any_system_planet = { pop_amount > 1 } } }
+		allow = {
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.synth_queen
+				event_target:AIO_DAIT_target_system = {
+					any_system_colony = {
+						NOT = { has_carrier_flag = synth_queen_bastille }
+					}
+				}
+			}
+			event_target:AIO_DAIT_target_system = {
+				any_system_planet = {
+					pop_amount > 1
+					NOT = { is_planet_class = pc_ai }
+				}
+			}
+		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_enlighted_effect = yes }
 		country_event = { id = AIO_DAIT_events.204 }
 	}
 
 	option = {
 		name = AIO_DAIT_events.204.change_ethic
-		trigger = { event_target:AIO_DAIT_target_system = { exists = owner } }
-		event_target:AIO_DAIT_target_system = { AIO_DAIT_change_ethic_effect = yes }
+		allow = { event_target:AIO_DAIT_target_system = { exists = owner } }
+		event_target:AIO_DAIT_target_system = { owner = { AIO_DAIT_change_ethic_effect = yes } }
 		country_event = { id = AIO_DAIT_events.204 }
 	}
 
@@ -203,9 +229,12 @@ country_event = {
 
 	option = {
 		name = AIO_DAIT_events.205.Aformom
-		trigger = {
-			event_target:AIO_DAIT_target_system = {
-				NOT = { any_fleet_in_system = { has_fleet_flag = AIO_Aforgomom_fleet } }
+		allow = {
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.Aformom
+				event_target:AIO_DAIT_target_system = {
+					NOT = { any_fleet_in_system = { has_fleet_flag = AIO_Aforgomom_fleet } }
+				}
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_Aforgomom_effect = yes }
@@ -214,22 +243,26 @@ country_event = {
 
 	option = {
 		name = AIO_DAIT_events.205.harvest_system
-		trigger = {
-			event_target:AIO_DAIT_target_system = {
-				NOR = {
-					has_star_flag = AIO_HS_system
-					has_star_flag = AIO_TUG_system
-					AIO_is_crisis_mega_system = yes
-					AIO_safe_remove_system_exclude_API = yes
+		allow = {
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.crisis_path
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
+			}
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.harvest
+				event_target:AIO_DAIT_target_system = {
+					any_system_planet = { NOT = { has_planet_flag = AIO_DAIT_harvested_body } }
 				}
+			}
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.synth_queen
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
+			}
+			event_target:AIO_DAIT_target_system = {
 				any_system_planet = {
-					is_star = no
 					NOR = {
+						is_star = yes
 						is_artificial = yes
-						is_planet_class = pc_ai
-						colony? = { has_carrier_flag = synth_queen_bastille }
-						AIO_is_crisis_mega_system = yes
-						has_planet_flag = AIO_DAIT_harvested_body
 					}
 				}
 			}
@@ -240,15 +273,14 @@ country_event = {
 
 	option = {
 		name = AIO_DAIT_events.205.erase_system
-		trigger = {
-			event_target:AIO_DAIT_target_system = {
-				NOR = {
-					has_star_flag = AIO_HS_system
-					has_star_flag = AIO_TUG_system
-					has_star_flag = synth_queen_capital
-					AIO_is_crisis_mega_system = yes
-					AIO_safe_remove_system_exclude_API = yes
-				}
+		allow = {
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.crisis_path
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
+			}
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.synth_queen
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
 			}
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_system_effect = yes }
@@ -257,20 +289,17 @@ country_event = {
 
 	option = {
 		name = AIO_DAIT_events.205.erase_cluster
-		trigger = {
-			event_target:AIO_DAIT_target_system = {
-				NOR = {
-					has_star_flag = AIO_HS_system
-					has_star_flag = AIO_TUG_system
-					has_star_flag = synth_queen_capital
-					AIO_is_crisis_mega_system = yes
-					AIO_safe_remove_system_exclude_API = yes
-				}
+		allow = {
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.crisis_path
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
+			}
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.synth_queen
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
 			}
 		}
-		event_target:AIO_DAIT_target_system = {
-			AIO_DAIT_erase_cluster_effect = { MAX_JUMPS = 5 }
-		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_cluster_effect = { MAX_JUMPS = 5 } }
 		country_event = { id = AIO_DAIT_events.205 }
 	}
 

@@ -9,8 +9,6 @@ AIO_safe_remove_megastructure = {
         limit = {
             NOR = {
                 AIO_is_AIO_mega = yes
-                AIO_is_crisis_sphere = yes
-                AIO_is_galactic_crucible = yes
                 AIO_safe_remove_megastructure_exclude_API = yes
             }
         }
@@ -261,6 +259,10 @@ AIO_safe_remove_megastructure = {
                 solar_system = { remove_star_flag = dyson_gun_built }
             }
             else_if = {
+                limit = { AIO_is_crisis_sphere = yes }
+                # TODO
+            }
+            else_if = {
                 limit = {
                     exists = owner
                     AIO_is_behemoth_mega = yes
@@ -268,6 +270,10 @@ AIO_safe_remove_megastructure = {
                 owner = {
                     remove_country_flag = behemoth_egg_built
                 }
+            }
+            else_if = {
+                limit = { AIO_is_galactic_crucible = yes }
+                # TODO
             }
 
             if = {
@@ -420,8 +426,6 @@ AIO_safe_remove_planet = {
             NOR = {
                 is_planet_class = pc_AIO_empty_space
                 colony? = { has_carrier_flag = synth_queen_bastille }
-                # 以太相引擎和星系熔炉星系内的天体不受影响
-                AIO_is_crisis_mega_planet = yes
                 AIO_safe_remove_planet_exclude_API = yes
             }
         }

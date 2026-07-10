@@ -316,21 +316,15 @@ country_event = {
 								factor = 0
 								any_system_planet = { is_colony = no }
 							}
-							random_system_planet = {
-								limit = { is_colony = yes }
-								weights = {
-									base = 1
-									modifier = {
-										factor = 0.01
-										is_capital = yes
-									}
-								}
-								AIO_DAIT_degenerate_effect = yes
-								save_event_target_as = AIO_situation_RAIT_target
-								if = {
-									limit = { exists = owner }
-									owner = { country_event = { id = AIO_merge_cosmos_events.404 } }
-								}
+							modifier = {
+								factor = 0.01
+								is_capital_system = yes
+							}
+							AIO_DAIT_degenerate_effect = yes
+							save_event_target_as = AIO_situation_RAIT_target
+							if = {
+								limit = { exists = owner }
+								owner = { country_event = { id = AIO_merge_cosmos_events.404 } }
 							}
 						}
 						1 = { # 随机抹除天体
@@ -352,6 +346,10 @@ country_event = {
                                 factor = 0
                                 AIO_safe_remove_system_exclude_API = yes
                             }
+							modifier = {
+								factor = 0.01
+								is_capital_system = yes
+							}
 							save_event_target_as = AIO_situation_RAIT_target
 							AIO_DAIT_erase_system_effect = yes
 							if = {

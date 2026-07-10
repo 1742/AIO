@@ -6,7 +6,6 @@ AIO_safe_change_pc = {
                 is_planet_class = $NEW_PC$
                 is_planet_class = pc_ai
                 colony? = { has_carrier_flag = synth_queen_bastille }
-                AIO_is_crisis_mega_planet = yes
             }
         }
         change_pc = $NEW_PC$
