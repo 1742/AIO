@@ -418,11 +418,7 @@ AIO_DAIT_change_ethic_effect = {
 #region 抹除
 
 # 召唤亚弗戈蒙
-AIO_DAIT_Aforgomom_effect = {
-    if = {
-        limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
-        AIO_create_Aforgomom_effect = yes
-    }
+AIO_create_Aformom_fleet = {
     create_fleet = {
         effect = {
             set_name = AIO_Aforgomom_Wrath
@@ -437,27 +433,41 @@ AIO_DAIT_Aforgomom_effect = {
                 distance = 0
                 angle = random
             }
-            # 加buff
             if = {
                 limit = {
-                    # 检查数值是否溢出
-                    event_target:AIO_Aforgomom_country = {
+                    owner = {
                         check_variable = { which = AIO_Aforgomom_Wrath value > 0 }
                         check_variable = { which = AIO_Aforgomom_Wrath value < 10 }
                     }
                 }
-                add_modifier = {
-                    modifier = AIO_Aforgomom_Wrath_modifier
-                    mult = value:AIO_Aforgomom_Wrath_factor
-                    days = -1
-                }
+                add_modifier = { modifier = AIO_Aforgomom_Wrath_modifier mult = value:AIO_Aforgomom_Wrath_factor }
             }
             set_fleet_stance = aggressive
             set_aggro_range = 10000
             set_fleet_flag = AIO_Aforgomom_fleet
-
             fleet_event = { id = AIO_Aforgomom_events.201 days = 100 }
         }
+    }
+}
+
+AIO_DAIT_Aforgomom_effect = {
+    if = {
+        limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
+        AIO_create_Aforgomom_effect = yes
+    }
+    if = {
+        limit = { exists = owner }
+        owner = {
+            every_system_within_border = {
+                limit = { NOT = { has_star_flag = AIO_Aformom_exist } }
+                AIO_create_Aformom_fleet = yes
+                set_star_flag = AIO_Aformom_exist
+            }
+        }
+    }
+    else = {
+        AIO_create_Aformom_fleet = yes
+        set_star_flag = AIO_Aformom_exist
     }
 }
 

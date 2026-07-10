@@ -417,15 +417,22 @@ AIO_ascension_galaxy_effect = {
                     }
                     2 = {
                         # 随机退化星球
-                        random_owned_planet = { AIO_DAIT_degenerate_effect = yes }
+                        random_system_within_border = {
+                            limit = { any_system_planet = { is_colony = yes } }
+                            AIO_DAIT_degenerate_effect = yes
+                        }
                     }
                     2 = {
                         # 随机启蒙物种
-                        random_owned_planet = { AIO_DAIT_enlighted_effect = yes }
-                    }
-                    2 = {
-                        # 随机倒流星球
-                        random_owned_planet = { AIO_RE_turn_back_time_effect = yes }
+                        random_system_within_border = {
+                            limit = {
+                                any_system_planet = {
+                                    pop_amount > 1
+                                    NOT = { is_planet_class = pc_ai }
+                                }
+                            }
+                            AIO_DAIT_enlighted_effect = yes
+                        }
                     }
                     1 = {
                         # 随机抹除国家
@@ -433,45 +440,6 @@ AIO_ascension_galaxy_effect = {
                     }
                 }
             }
-        }
-    }
-}
-
-# 随机添加星系矿藏，scope: planet
-AIO_add_random_planet_deposit = {
-    optimize_memory
-
-    random_list = {
-        10 = { add_deposit = d_energy_10 }
-        10 = { add_deposit = d_minerals_10 }
-        10 = { add_deposit = d_food_10 }
-        10 = { add_deposit = d_alloys_10 }
-        10 = { add_deposit = d_alloys_25 }
-        10 = { add_deposit = d_consumer_goods_obsessional_directive }
-        10 = { add_deposit = d_volatile_motes_2 }
-        10 = { add_deposit = d_exotic_gases_2 }
-        10 = { add_deposit = d_rare_crystals_2 }
-        10 = { add_deposit = d_volatile_motes_5 }
-        10 = { add_deposit = d_exotic_gases_5 }
-        10 = { add_deposit = d_rare_crystals_5 }
-        10 = { add_deposit = d_physics_5 }
-        10 = { add_deposit = d_society_5 }
-        10 = { add_deposit = d_engineering_5 }
-        10 = { add_deposit = d_physics_25 }
-        10 = { add_deposit = d_society_25 }
-        10 = { add_deposit = d_engineering_25 }
-        10 = { add_deposit = d_trade_value_10 }
-
-        1 = { add_deposit = d_dark_matter_deposit_1 }
-        1 = { add_deposit = d_living_metal_deposit }
-        1 = { add_deposit = d_zro_deposit_1 }
-        1 = {
-            modifier = {
-                factor = 20
-                exists = owner
-                owner = { has_tradition = tr_nanotech_adopt }
-            }
-            add_deposit = d_nanites_deposit
         }
     }
 }
@@ -521,83 +489,6 @@ AIO_add_random_tech = {
                         max = @tier3researchmax
                     }
                 }
-            }
-        }
-    }
-}
-
-# 随机创造宇宙风暴, scope: system
-AIO_create_random_cosmic_storm = {
-    no_scope = {
-        random_system = {
-            limit = { distance = { min_jumps = 5 max_jumps = 10 source = prevprev } }
-            save_event_target_as = AIO_DAIT_storm_endpoint
-        }
-    }
-
-    random_list = {
-        4 = {
-            create_cosmic_storm = {
-                type = electric_storm
-                immediate = yes
-                cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_DAIT_storm_endpoint
-            }
-        }
-        4 = {
-            create_cosmic_storm = {
-                type = particle_storm
-                immediate = yes
-                cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_DAIT_storm_endpoint
-            }
-        }
-        4 = {
-            create_cosmic_storm = {
-                type = gravity_storm
-                immediate = yes
-                cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_DAIT_storm_endpoint
-            }
-        }
-        4 = {
-            create_cosmic_storm = {
-                type = magnetic_storm
-                immediate = yes
-                cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_DAIT_storm_endpoint
-            }
-        }
-        4 = {
-            create_cosmic_storm = {
-                type = solar_storm
-                immediate = yes
-                cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_DAIT_storm_endpoint
-            }
-        }
-        4 = {
-            create_cosmic_storm = {
-                type = celestial_storm
-                immediate = yes
-                cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_DAIT_storm_endpoint
-            }
-        }
-        4 = {
-            create_cosmic_storm = {
-                type = shroud_storm
-                immediate = yes
-                cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_DAIT_storm_endpoint
-            }
-        }
-        5 = {
-            create_cosmic_storm = {
-                type = nexus_storm
-                immediate = yes
-                cosmic_storm_start_position = this
-                storm_end_position = event_target:AIO_DAIT_storm_endpoint
             }
         }
     }

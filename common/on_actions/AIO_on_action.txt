@@ -102,10 +102,3 @@ on_custom_diplomacy = {
         AIO_Tawi_communication_events.301  # 打开外交界面
     }
 }
-
-# this: country
-on_relic_received = {
-    events = {
-        AIO_Aforgomom_events.301  # 亚弗戈蒙获得遗珍并转交给犹格索托斯
-    }
-}
