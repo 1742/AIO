@@ -477,6 +477,8 @@ AIO_shroud_tear_effect = {
 
 # scope: colony
 AIO_time_ruin_effect = {
+    optimize_memory
+
     [[STAGE_1]
         if = {
             limit = {
@@ -634,6 +636,8 @@ AIO_time_ruin_effect = {
 }
 
 AIO_gravity_swell_effect = {
+    optimize_memory
+
     [[STAGE_1]
         owner = {
             begin_event_chain = { event_chain = AIO_RAIT_GS_events_chain target = this }

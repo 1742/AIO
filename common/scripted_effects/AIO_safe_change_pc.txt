@@ -1,4 +1,6 @@
 AIO_safe_change_pc = {
+    optimize_memory
+
     if = {
         limit = {
             NOR = {
