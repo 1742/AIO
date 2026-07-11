@@ -475,22 +475,23 @@ AIO_safe_remove_planet = {
                 NOT = { is_planet_class = pc_ai }
             }
             switch = {
-                trigger = has_planet_flag
+                trigger = has_carrier_flag
                 machine_world_1 = {
-                    remove_planet_flag = machine_world_1
-                    remove_planet_flag = crisis_vital_planet
+                    remove_carrier_flag = machine_world_1
+                    remove_carrier_flag = crisis_vital_planet
                     solar_system = {
                         remove_star_flag = AI_hub
                         remove_star_flag = AI_system_1
                     }
                     random_galaxy_planet = {
                         limit = {
-                            is_star = no
-                            is_artificial = no
-                            AIO_is_ai_planet = no
+                            is_planet_class = pc_barren
+                            solar_system = {
+                                NOT = { any_system_planet = { AIO_is_ai_planet = yes } }
+                            }
                         }
-                        set_planet_flag = machine_world_1
-                        set_planet_flag = crisis_vital_planet
+                        set_carrier_flag = machine_world_1
+                        set_carrier_flag = crisis_vital_planet
                         solar_system = {
                             set_star_flag = AI_hub
                             set_star_flag = AI_system_1
@@ -498,20 +499,21 @@ AIO_safe_remove_planet = {
                     }
                 }
                 machine_world_2 = {
-                    remove_planet_flag = machine_world_2
-                    remove_planet_flag = crisis_vital_planet
+                    remove_carrier_flag = machine_world_2
+                    remove_carrier_flag = crisis_vital_planet
                     solar_system = {
                         remove_star_flag = AI_hub
                         remove_star_flag = AI_system_2
                     }
                     random_galaxy_planet = {
                         limit = {
-                            is_star = no
-                            is_artificial = no
-                            AIO_is_ai_planet = no
+                            is_planet_class = pc_barren
+                            solar_system = {
+                                NOT = { any_system_planet = { AIO_is_ai_planet = yes } }
+                            }
                         }
-                        set_planet_flag = machine_world_2
-                        set_planet_flag = crisis_vital_planet
+                        set_carrier_flag = machine_world_2
+                        set_carrier_flag = crisis_vital_planet
                         solar_system = {
                             set_star_flag = AI_hub
                             set_star_flag = AI_system_2
@@ -519,20 +521,21 @@ AIO_safe_remove_planet = {
                     }
                 }
                 machine_world_3 = {
-                    remove_planet_flag = machine_world_3
-                    remove_planet_flag = crisis_vital_planet
+                    remove_carrier_flag = machine_world_3
+                    remove_carrier_flag = crisis_vital_planet
                     solar_system = {
                         remove_star_flag = AI_hub
                         remove_star_flag = AI_system_3
                     }
                     random_galaxy_planet = {
                         limit = {
-                            is_star = no
-                            is_artificial = no
-                            AIO_is_ai_planet = no
+                            is_planet_class = pc_barren
+                            solar_system = {
+                                NOT = { any_system_planet = { AIO_is_ai_planet = yes } }
+                            }
                         }
-                        set_planet_flag = machine_world_3
-                        set_planet_flag = crisis_vital_planet
+                        set_carrier_flag = machine_world_3
+                        set_carrier_flag = crisis_vital_planet
                         solar_system = {
                             set_star_flag = AI_hub
                             set_star_flag = AI_system_3
@@ -540,20 +543,21 @@ AIO_safe_remove_planet = {
                     }
                 }
                 machine_world_4 = {
-                    remove_planet_flag = machine_world_4
-                    remove_planet_flag = crisis_vital_planet
+                    remove_carrier_flag = machine_world_4
+                    remove_carrier_flag = crisis_vital_planet
                     solar_system = {
                         remove_star_flag = AI_hub
                         remove_star_flag = AI_system_4
                     }
                     random_galaxy_planet = {
                         limit = {
-                            is_star = no
-                            is_artificial = no
-                            AIO_is_ai_planet = no
+                            is_planet_class = pc_barren
+                            solar_system = {
+                                NOT = { any_system_planet = { AIO_is_ai_planet = yes } }
+                            }
                         }
-                        set_planet_flag = machine_world_4
-                        set_planet_flag = crisis_vital_planet
+                        set_carrier_flag = machine_world_4
+                        set_carrier_flag = crisis_vital_planet
                         solar_system = {
                             set_star_flag = AI_hub
                             set_star_flag = AI_system_4
@@ -567,8 +571,14 @@ AIO_safe_remove_planet = {
                 is_planet_class = pc_ai
                 colony? = { NOT = { has_carrier_flag = machine_lair } }
             }
-            # TODO: 处理肃正球被移除
-            # planet_event = { id = AIO_ctrl_events.1007 }
+            # 先让原版结算肃正协议的普通机械星球，否则天灾进度会卡住。
+            # scopes 显式传入 from = root，以满足 crisis.2040 的触发条件。
+            set_carrier_flag = destroyed_by_colossus
+            set_carrier_flag = planet_cracked
+            carrier_event = {
+                id = crisis.2040
+                scopes = { from = root }
+            }
             remove_planet = yes
         }
         else_if = {
