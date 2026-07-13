@@ -1,23 +1,5 @@
-AIO_DAIT_Tawi = {
-    potential = { NOT = { has_active_event = { AIO_DAIT_events.203 } } }
-    allow = { always = yes }
-    effect = { country_event = { id = AIO_DAIT_events.203 } }
-}
-
-AIO_DAIT_Aformom = {
-    potential = { NOT = { has_active_event = { AIO_DAIT_events.204 } } }
-    allow = { always = yes }
-    effect = { country_event = { id = AIO_DAIT_events.204 } }
-}
-
-AIO_DAIT_back = {
-    potential = { NOT = { has_active_event = { AIO_DAIT_events.202 } } }
-    allow = { always = yes }
-    effect = { country_event = { id = AIO_DAIT_events.202 } }
-}
-
 AIO_DAIT_enrich = {
-    potential = { has_active_event = { AIO_DAIT_events.203 } }
+    potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         event_target:AIO_DAIT_target_system = {
             any_system_planet = { NOT = { is_star_class = sc_AIO_void } }
@@ -29,7 +11,7 @@ AIO_DAIT_enrich = {
 }
 
 AIO_DAIT_spawn = {
-    potential = { has_active_event = { AIO_DAIT_events.203 } }
+    potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT_locak_target.fail.crisis_path
@@ -46,7 +28,7 @@ AIO_DAIT_spawn = {
 }
 
 AIO_DAIT_seed = {
-    potential = { has_active_event = { AIO_DAIT_events.203 } }
+    potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         event_target:AIO_DAIT_target_system = {
             any_system_planet = {
@@ -61,7 +43,7 @@ AIO_DAIT_seed = {
 }
 
 AIO_DAIT_ethic = {
-    potential = { has_active_event = { AIO_DAIT_events.204 } }
+    potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = { event_target:AIO_DAIT_target_system = { exists = owner } }
     effect = {
         event_target:AIO_DAIT_target_system = {
@@ -71,7 +53,7 @@ AIO_DAIT_ethic = {
 }
 
 AIO_DAIT_storm = {
-    potential = { has_active_event = { AIO_DAIT_events.203 } }
+    potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = { event_target:AIO_DAIT_target_system = { is_inside_storm = no } }
     effect = {
         event_target:AIO_DAIT_target_system = { AIO_DAIT_storm_effect = yes }
@@ -79,7 +61,7 @@ AIO_DAIT_storm = {
 }
 
 AIO_DAIT_strike = {
-    potential = { has_active_event = { AIO_DAIT_events.203 } }
+    potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT_locak_target.fail.strike
@@ -94,7 +76,7 @@ AIO_DAIT_strike = {
 }
 
 AIO_DAIT_harvest = {
-    potential = { has_active_event = { AIO_DAIT_events.203 } }
+    potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT_locak_target.fail.crisis_path
@@ -117,7 +99,7 @@ AIO_DAIT_harvest = {
 }
 
 AIO_DAIT_erase = {
-    potential = { has_active_event = { AIO_DAIT_events.203 } }
+    potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT_locak_target.fail.synth_queen

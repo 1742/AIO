@@ -1,22 +1,10 @@
 spriteTypes = {
     spriteType = {
-        name = GFX_AIO_DAIT_Main_bg
+        name = GFX_AIO_DAIT_bg
     }
 
     spriteType = {
-        name = GFX_AIO_DAIT_Main_exit
-    }
-
-    spriteType = {
-        name = GFX_AIO_DAIT_Second_bg
-    }
-
-    spriteType = {
-        name = GFX_AIO_DAIT_Second_back
-    }
-
-    spriteType = {
-        name = GFX_AIO_DAIT_Second_exit
+        name = GFX_AIO_DAIT_exit
     }
 
     spriteType = {
@@ -35,28 +23,13 @@ spriteTypes = {
         name = GFX_AIO_DAIT_Seed
     }
 
+
     spriteType = {
-        name = GFX_AIO_DAIT_Connect
+        name = GFX_AIO_DAIT_Ethic
     }
 
     spriteType = {
         name = GFX_AIO_DAIT_Storm
-    }
-
-    spriteType = {
-        name = GFX_AIO_DAIT_Reshape
-    }
-
-    spriteType = {
-        name = GFX_AIO_DAIT_Degenerate
-    }
-
-    spriteType = {
-        name = GFX_AIO_DAIT_Enlighten
-    }
-
-    spriteType = {
-        name = GFX_AIO_DAIT_Ethic
     }
 
     spriteType = {
@@ -69,9 +42,5 @@ spriteTypes = {
 
     spriteType = {
         name = GFX_AIO_DAIT_Erase
-    }
-
-    spriteType = {
-        name = GFX_AIO_DAIT_Erase_Cluster
     }
 }

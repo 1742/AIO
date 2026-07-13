@@ -1,7 +1,6 @@
-version="1.0"
+version="2.0"
 tags={
 	"Gameplay"
 }
 name="All in One"
-supported_version="v4.2.4"
-remote_file_id="3535863410"
+supported_version="v4.4.6"

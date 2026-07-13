@@ -22,25 +22,7 @@ country_event = {
 	id = AIO_DAIT_events.202
 
 	diplomatic = yes
-	custom_gui = AIO_DAIT_Main
-
-	is_triggered_only = yes
-}
-
-country_event = {
-	id = AIO_DAIT_events.203
-
-	diplomatic = yes
-	custom_gui = AIO_DAIT_Second
-
-	is_triggered_only = yes
-}
-
-country_event = {
-	id = AIO_DAIT_events.204
-
-	diplomatic = yes
-	custom_gui = AIO_DAIT_Second
+	custom_gui = AIO_DAIT
 
 	is_triggered_only = yes
 }
