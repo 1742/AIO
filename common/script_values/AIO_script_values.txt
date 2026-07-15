@@ -28,7 +28,7 @@ AIO_edict_dm_engine_dm_upkeep = {
 # AIO融合宇宙局势解决方案能量消耗, scope: situation
 AIO_merge_cosmos_solution_energy_upkeep_value = {
     base = 0
-    # 能量币库存修正，扣除能量币库存的1%
+    # 能量币库存修正，扣除能量币库存的5%
     complex_trigger_modifier = {
         trigger = has_country_resource
         trigger_scope = owner
@@ -36,23 +36,15 @@ AIO_merge_cosmos_solution_energy_upkeep_value = {
         mode = add
         mult = 0.01
     }
-    # 能量币收入修正，扣除能量币收入的20%
-    complex_trigger_modifier = {
-        trigger = resource_revenue_compare
-        trigger_scope = owner
-        parameters = { resource = energy }
-        mode = add
-        mult = 0.2
-    }
     floor = yes
 
-    min = 50
+    min = 100
 }
 
 # AIO融合宇宙局势解决方案暗物质消耗, scope: situation
 AIO_merge_cosmos_solution_dm_upkeep_value = {
     base = 0
-    # 暗物质库存修正，扣除暗物质库存的1%
+    # 暗物质库存修正，扣除暗物质库存的5%
     complex_trigger_modifier = {
         trigger = has_country_resource
         trigger_scope = owner
@@ -60,17 +52,9 @@ AIO_merge_cosmos_solution_dm_upkeep_value = {
         mode = add
         mult = 0.01
     }
-    # 暗物质收入修正，扣除暗物质收入的10%
-    complex_trigger_modifier = {
-        trigger = resource_revenue_compare
-        trigger_scope = owner
-        parameters = { resource = sr_dark_matter }
-        mode = add
-        mult = 0.1
-    }
     floor = yes
 
-    min = 2
+    min = 5
 }
 
 # AIO融合宇宙局势应用无限修正, scope: situation

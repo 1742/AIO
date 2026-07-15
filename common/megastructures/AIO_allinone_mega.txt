@@ -137,6 +137,8 @@ AIO_mega_01 = {
 			}
 		}
 	}
+
+	scripted_action = { AIO_DAIT_lock_target }
 }
 
 AIO_mega_02 = {
@@ -203,6 +205,8 @@ AIO_mega_02 = {
 			country_event = { id = AIO_crisis_events.402 }
 		}
 	}
+
+	scripted_action = { AIO_DAIT_lock_target }
 }
 
 AIO_mega_03 = {
@@ -269,6 +273,8 @@ AIO_mega_03 = {
 			country_event = { id = AIO_crisis_events.403 }
 		}
 	}
+
+	scripted_action = { AIO_DAIT_lock_target }
 }
 
 AIO_mega_04 = {
@@ -338,4 +344,6 @@ AIO_mega_04 = {
 			country_event = { id = AIO_crisis_events.404 }
 		}
 	}
+
+	scripted_action = { AIO_DAIT_lock_target }
 }
