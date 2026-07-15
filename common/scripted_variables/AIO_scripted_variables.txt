@@ -1,0 +1,1 @@
+@AIO_DAIT_cost = 100000

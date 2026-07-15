@@ -21,8 +21,153 @@ system_event = {
 country_event = {
 	id = AIO_DAIT_events.202
 
+	title = AIO_DAIT_events.202.title
+	desc = AIO_DAIT_events.202.desc
+
+	diplomatic = yes
+	diplomatic_title = AIO_DAIT_events.202.title
+	picture_event_data = {
+		room = crisis_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.202.enrich
+		allow = {
+			event_target:AIO_DAIT_target_system = {
+				any_system_planet = {
+					NOT = {
+						is_planet_class = pc_shattered
+						is_planet_class = pc_AIO_empty_space
+						has_planet_flag = AIO_DAIT_harvested_body
+					}
+				}
+			}
+			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+		}
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_enrich_effect = { TIMES = 10 } }
+	}
+
+	option = {
+		name = AIO_DAIT_events.202.spawn
+		allow = {
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.crisis_path
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
+			}
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.synth_queen
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
+			}
+			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_spawn_effect = yes }
+	}
+
+	option = {
+		name = AIO_DAIT_events.202.seed
+		allow = {
+			event_target:AIO_DAIT_target_system = {
+				any_system_planet = {
+					habitable_planet = yes
+					pop_amount = 0
+				}
+			}
+			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_seed_effect = yes }
+	}
+
+	option = {
+		name = AIO_DAIT_events.202.ethic
+		allow = {
+			event_target:AIO_DAIT_target_system = { exists = owner }
+			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+		}
+		event_target:AIO_DAIT_target_system = { owner = { AIO_DAIT_ethic_effect = yes } }
+	}
+
+	option = {
+		name = AIO_DAIT_events.202.storm
+		allow = {
+			event_target:AIO_DAIT_target_system = { is_inside_storm = no }
+			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_storm_effect = yes }
+	}
+
+	option = {
+		name = AIO_DAIT_events.202.strike
+		allow = {
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.strike
+				event_target:AIO_DAIT_target_system = {
+					NOT = { has_star_flag = AIO_Aformom_exist }
+				}
+			}
+			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_strike_effect = yes }
+	}
+
+	option = {
+		name = AIO_DAIT_events.202.harvest
+		allow = {
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.crisis_path
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
+			}
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.harvest
+				event_target:AIO_DAIT_target_system = {
+					any_system_planet = { NOT = { has_planet_flag = AIO_DAIT_harvested_body } }
+				}
+			}
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.synth_queen
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
+			}
+			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_harvest_effect = yes }
+	}
+
+	option = {
+		name = AIO_DAIT_events.202.erase
+		allow = {
+			custom_tooltip = {
+				fail_text = AIO_DAIT_locak_target.fail.synth_queen
+				event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
+			}
+			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+		}
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_effect = yes }
+	}
+
+	option = {
+		name = AIO_exit
+		default_hide_option = yes
+		hidden_effect = { set_country_flag = AIO_DAIT_exit }
+	}
+
+	after = {
+		if = {
+			limit = { NOT = { has_country_flag = AIO_DAIT_exit } }
+			country_event = { id = AIO_DAIT_events.202 }
+		}
+		else = {
+			hidden_effect = { remove_country_flag = AIO_DAIT_exit }
+		}
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.203
+
 	diplomatic = yes
 	custom_gui = AIO_DAIT
 
 	is_triggered_only = yes
+	trigger = { always = no }
 }

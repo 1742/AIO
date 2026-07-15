@@ -12,3 +12,19 @@
  AIO_DAIT_locak_target.fail.harvest: "This system is no longer worth harvesting."
 
  #endregion
+
+
+ #region DAIT menu
+
+ AIO_DAIT_events.202.title: "Directional Apply Infinity Thesis"
+ AIO_DAIT_events.202.desc: "Current target: [event_target:AIO_DAIT_lock_system.GetName]\n\nNew UI is making ..."
+ AIO_DAIT_events.202.enrich: "Enrich"
+ AIO_DAIT_events.202.spawn: "Spawn"
+ AIO_DAIT_events.202.seed: "Seed"
+ AIO_DAIT_events.202.ethic: "Ethic"
+ AIO_DAIT_events.202.storm: "Storm"
+ AIO_DAIT_events.202.strike: "Strike"
+ AIO_DAIT_events.202.harvest: "Harvest"
+ AIO_DAIT_events.202.erase: "Erase"
+
+ #endregion

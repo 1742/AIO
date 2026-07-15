@@ -5,7 +5,13 @@
 
 AIO_DAIT_enrich_effect = {
     every_system_planet = {
-        limit = { NOT = { is_planet_class = pc_AIO_empty_space } }
+        limit = {
+            NOT = {
+                is_planet_class = pc_shattered
+                is_planet_class = pc_AIO_empty_space
+                has_planet_flag = AIO_DAIT_harvested_body
+            }
+        }
         if = {
             limit = { has_research_station = yes }
             research_station = { destroy_fleet = this }
@@ -319,9 +325,9 @@ AIO_DAIT_strike_effect = {
         limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
         AIO_create_Aforgomom_effect = yes
     }
-    if = {
-        limit = { exists = owner }
-        owner = {
+    every_fleet_in_system = {
+        limit = { NOT = { has_fleet_flag = AIO_Aforgomom_fleet } }
+        owner? = {
             every_system_within_border = {
                 limit = { NOT = { has_star_flag = AIO_Aformom_exist } }
                 AIO_create_Aformom_fleet = yes
@@ -335,10 +341,6 @@ AIO_DAIT_strike_effect = {
                 }
             }
         }
-    }
-    else = {
-        AIO_create_Aformom_fleet = yes
-        set_star_flag = AIO_Aformom_exist
     }
 }
 
@@ -453,7 +455,7 @@ AIO_DAIT_harvest_effect = {
                 }
                 pc_ark = {
                     root = { add_resource = { alloys = 5000 } }
-                    fleet? = { destroy_fleet = this }
+                    ship = { fleet = { destroy_fleet = this } }
                 }
             }
         }

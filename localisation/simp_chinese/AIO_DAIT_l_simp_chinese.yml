@@ -12,3 +12,18 @@
  AIO_DAIT_locak_target.fail.harvest: "该星系已经没有收割的价值了"
 
  #endregion
+
+ #region DAIT menu
+
+ AIO_DAIT_events.202.title: "定向应用无限"
+ AIO_DAIT_events.202.desc: "当前锁定星系：[event_target:AIO_DAIT_lock_system.GetName]\n\n新 UI 施工中……"
+ AIO_DAIT_events.202.enrich: "丰饶"
+ AIO_DAIT_events.202.spawn: "生成"
+ AIO_DAIT_events.202.seed: "播种"
+ AIO_DAIT_events.202.ethic: "思潮"
+ AIO_DAIT_events.202.storm: "风暴"
+ AIO_DAIT_events.202.strike: "打击"
+ AIO_DAIT_events.202.harvest: "收割"
+ AIO_DAIT_events.202.erase: "擦除"
+
+ #endregion
