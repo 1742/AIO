@@ -27,7 +27,7 @@ AIO_mega_01_fact = {
 	resources = {
 		category = megastructures
 		cost = {
-			energy = 20000
+			energy = 5000
 			sr_dark_matter = 1000
 			nanites = 1000
 			sr_living_metal = 1000
@@ -58,12 +58,7 @@ AIO_mega_01_fact = {
 					}
 				}
 			}
-			AIO_advanced_logic = 500
-		}
-
-		upkeep = {
-			trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
-			energy = 100
+			AIO_advanced_logic = 100
 		}
 	}
 
@@ -78,45 +73,6 @@ AIO_mega_01_fact = {
 			country_event = { id = AIO_crisis_events.401 }
 		}
 	}
-}
-
-# 万门之门节点传送门
-AIO_mega_01_node = {
-    entity = "astral_scar_entity"
-	construction_entity = "astral_scar_entity"
-	place_entity_on_planet_plane = yes
-	scales_with_planet = no
-	build_type = outside_gravity_well
-
-	hide_name = yes
-	show_galactic_map_icon = no
-	show_in_outliner = no
-
-	portrait = "GFX_megastructure_construction_background"
-
-	potential = {
-		always = no
-	}
-
-	possible = {
-		custom_tooltip = {
-			text = AIO_existed_TDTE
-			NOT = {
-				any_bypass = {
-					is_bypass_type = bypass_AIO_ultimate_gate
-				}
-			}
-		}
-	}
-
-	dismantle_potential = { always = no }
-
-	build_time = 1
-
-	# bypass类型
-	bypass_type = bypass_AIO_ultimate_gate
-
-	on_build_complete = { system_event = { id = AIO_crisis_events.804 days = 100 } }
 }
 
 # 无名之雾中的万门之门
@@ -135,13 +91,13 @@ AIO_mega_01 = {
 
 	resources = {
 		category = megastructures
-		produces = { AIO_advanced_logic = 1000 }
+		produces = { AIO_advanced_logic = 500 }
 
 		upkeep = {
-			energy = 500
-			physics_research = 100
-			society_research = 100
-			engineering_research = 100
+			energy = 100
+			physics_research = 50
+			society_research = 50
+			engineering_research = 50
 		}
 	}
 
@@ -208,30 +164,30 @@ AIO_mega_02 = {
 		category = megastructures
 
 		cost = {
-			energy = 30000
-			sr_dark_matter = 3000
-			nanites = 3000
-			sr_living_metal = 3000
+			energy = 10000
+			sr_dark_matter = 300
+			nanites = 300
+			sr_living_metal = 300
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 15000
+			alloys = 10000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 15000
+			alloys = 10000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 15000
+			food = 10000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
 		produces = { AIO_advanced_logic = 3000 }
 
 		upkeep = {
-			energy = 1000
+			energy = 200
 			physics_research = 300
 			society_research = 300
 			engineering_research = 300
@@ -274,30 +230,30 @@ AIO_mega_03 = {
 		category = megastructures
 
 		cost = {
-			energy = 40000
-			sr_dark_matter = 5000
-			nanites = 5000
-			sr_living_metal = 5000
+			energy = 20000
+			sr_dark_matter = 500
+			nanites = 500
+			sr_living_metal = 500
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 20000
+			alloys = 10000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 20000
+			alloys = 10000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 20000
+			food = 10000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
 		produces = { AIO_advanced_logic = 5000 }
 
 		upkeep = {
-			energy = 1500
+			energy = 500
 			physics_research = 500
 			society_research = 500
 			engineering_research = 500
@@ -343,22 +299,22 @@ AIO_mega_04 = {
 
 		cost = {
 			energy = 50000
-			sr_dark_matter = 10000
-			nanites = 10000
-			sr_living_metal = 10000
+			sr_dark_matter = 1000
+			nanites = 1000
+			sr_living_metal = 1000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 25000
+			alloys = 20000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 25000
+			alloys = 20000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 25000
+			food = 20000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
@@ -366,7 +322,7 @@ AIO_mega_04 = {
 
         upkeep = {
             trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
-            energy = 2000
+            energy = 1000
 			physics_research = 1000
 			society_research = 1000
 			engineering_research = 1000

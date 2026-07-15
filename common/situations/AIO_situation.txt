@@ -40,74 +40,57 @@ situation_AIO_merge_cosmos = {
     # 每月局势变化
     monthly_progress = {
         # 如果是双向事件则可以填负数
-        base = 1
+        base = 0
 
         # 行动方案修正
         modifier = {
-            current_situation_approach = AIO_merge_cosmos_solution
-            desc = AIO_merge_cosmos_solution
-            mult = 1.2
+            current_situation_approach = AIO_merge_cosmos.solution.merge
+            desc = AIO_merge_cosmos.solution.merge
+            mult = 1
         }
         modifier = {
-            current_situation_approach = AIO_merge_cosmos_pause_solution
+            current_situation_approach = AIO_merge_cosmos.solution.pause
             situation_progress > trigger:situation_monthly_progress
-            desc = AIO_merge_cosmos_pause_solution
+            desc = AIO_merge_cosmos.solution.pause
             mult = -1
         }
         # 调到0
         modifier = {
-            current_situation_approach = AIO_merge_cosmos_pause_solution
-            situation_progress < 1
-            desc = AIO_merge_cosmos_pause_solution
-            mult = 0
-        }
-
-        # 巨构限制
-        modifier = {
-            current_stage = stage_1
-            owner = { NOT = { has_country_flag = AIO_built_AIO_mega_01 } }
-            desc = AIO_merge_cosmos_requires_AIO_mega_01
-            mult = 0
-        }
-        modifier = {
-            current_stage = stage_2
-            owner = { NOT = { has_country_flag = AIO_built_AIO_mega_02 } }
-            desc = AIO_merge_cosmos_requires_AIO_mega_02
-            mult = 0
-        }
-        modifier = {
-            current_stage = stage_3
-            owner = { NOT = { has_country_flag = AIO_built_AIO_mega_03 } }
-            desc = AIO_merge_cosmos_requires_AIO_mega_03
-            mult = 0
-        }
-        modifier = {
-            current_stage = stage_4
-            owner = { NOT = { has_country_flag = AIO_built_AIO_mega_04 } }
-            desc = AIO_merge_cosmos_requires_AIO_mega_04
+            current_situation_approach = AIO_merge_cosmos.solution.pause
+            situation_progress < 2
+            desc = AIO_merge_cosmos.solution.pause
             mult = 0
         }
 
         # 巨构修正
         modifier = {
-            owner = { has_megastructure = AIO_mega_01 }
+            current_stage <= stage_1
+            owner = {
+                OR = {
+                    has_megastructure = AIO_mega_01_fact
+                    has_megastructure = AIO_mega_01
+                }
+            }
             desc = AIO_mega_01
-            add = 0.5
-        }
-        modifier = {
-            owner = { has_megastructure = AIO_mega_02 }
-            desc = AIO_mega_02
             add = 1
         }
         modifier = {
-            owner = { has_megastructure = AIO_mega_03 }
-            desc = AIO_mega_03
+            current_stage <= stage_2
+            owner = { has_megastructure = AIO_mega_02 }
+            desc = AIO_mega_02
             add = 1.5
         }
         modifier = {
+            current_stage <= stage_3
+            owner = { has_megastructure = AIO_mega_03 }
+            desc = AIO_mega_03
+            add = 2
+        }
+        modifier = {
+            current_stage <= stage_4
             owner = { has_megastructure = AIO_mega_04 }
             desc = AIO_mega_04
-            add = 2
+            add = 2.5
         }
 
         # 帝国规模修正
@@ -115,21 +98,15 @@ situation_AIO_merge_cosmos = {
             desc = empire_size
             mult = owner.value:negative_empire_size_percent
         }
-        # 超然逻辑库存修正
-        modifier = {
-            NOT = { current_situation_approach = AIO_merge_cosmos_pause_solution }
-            desc = AIO_merge_cosmos_advanced_logic_modifier
-            mult = value:AIO_merge_cosmos_advanced_logic_modifier
-        }
         # 应用无限修正
         modifier = {
-            NOT = { current_situation_approach = AIO_merge_cosmos_pause_solution }
-            desc = AIO_merge_cosmos_apply_infinite_thesis_modifier
+            NOT = { current_situation_approach = AIO_merge_cosmos.solution.pause }
+            desc = AIO_merge_cosmos.progress.AIT
             mult = value:AIO_merge_cosmos_AIT_modifier
         }
         # 天灾奖励修正
         modifier = {
-            NOT = { current_situation_approach = AIO_merge_cosmos_pause_solution }
+            NOT = { current_situation_approach = AIO_merge_cosmos.solution.pause }
             owner = { has_menace_perk = menp_AIO_ascension_accelerate_5 }
             desc = menp_AIO_ascension_accelerate_5
             mult = 1.2
@@ -181,7 +158,7 @@ situation_AIO_merge_cosmos = {
     # 应对方案，可以在monthly_progress中设置modifier根据应对方案添加进度
     approach = {
         # 名称
-        name = AIO_merge_cosmos_solution
+        name = AIO_merge_cosmos.solution.merge
         # 图片
         icon = GFX_situation_approach_astral
         # 按钮背景
@@ -204,75 +181,25 @@ situation_AIO_merge_cosmos = {
 
         resources = {
             category = situations
-
-            # 1阶段
             upkeep = {
                 trigger = { current_stage = stage_1}
-                energy = 1
-                mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value|SCALE|0.25|
-            }
-            upkeep = {
-                trigger = { current_stage = stage_1}
-                sr_dark_matter = 1
-                mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value|SCALE|0.25|
-            }
-
-            # 2阶段
-            upkeep = {
-                trigger = { current_stage = stage_2 }
-                energy = 1
-                mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value|SCALE|0.5|
-            }
-            upkeep = {
-                trigger = { current_stage = stage_2 }
-                sr_dark_matter = 1
-                mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value|SCALE|0.5|
-            }
-
-            # 3阶段
-            upkeep = {
-                trigger = { current_stage = stage_3 }
-                energy = 1
-                mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value|SCALE|0.75|
-            }
-            upkeep = {
-                trigger = { current_stage = stage_3 }
-                sr_dark_matter = 1
-                mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value|SCALE|0.75|
-            }
-
-            # 4阶段
-            upkeep = {
-                trigger = { current_stage = stage_4 }
                 energy = 1
                 mult = owner.value:AIO_merge_cosmos_solution_energy_upkeep_value
             }
             upkeep = {
-                trigger = { current_stage = stage_4 }
+                trigger = { current_stage = stage_1}
                 sr_dark_matter = 1
                 mult = owner.value:AIO_merge_cosmos_solution_dm_upkeep_value
             }
         }
 
         # 选择事件，也可以在这里写限制条件
-        on_select = {
-            if = {
-                limit = {
-                    owner = {
-                        OR = {
-                            has_country_resource = { type = energy amount <= 0 }
-                            has_country_resource = { type = sr_dark_matter amount <= 0 }
-                        }
-                    }
-                }
-                set_situation_approach = AIO_merge_cosmos_pause_solution
-            }
-        }
+        # on_select = {  }
     }
 
     approach = {
         # 名称
-        name = AIO_merge_cosmos_pause_solution
+        name = AIO_merge_cosmos.solution.pause
         # 图片
         icon = GFX_situation_approach_dark_matter
         # 按钮背景
@@ -280,107 +207,5 @@ situation_AIO_merge_cosmos = {
 
         # 选择事件，也可以在这里写限制条件
         # on_select = {  }
-    }
-}
-
-
-# 抹除银河
-situation_AIO_erase_galaxy = {
-    # 局势背景图，放在 gfx/event_pictures 中
-    # 在 interface 中注册
-    picture = GFX_evt_vortex
-    # 完成图标，就是进度条末端的图标
-    complete_icon = GFX_situation_outcome_negative
-    # 完成图标的边框，用默认的就红、绿、蓝就好
-    complete_icon_frame = GFX_situation_outcome_frame_red
-
-    # 起始值，如果是双向局势，一般是从50开始，从左到右从0开始，右到左从120开始
-    start_value = 0
-    # 发展方向
-    # bidirectional - 双向 monodirectional- 单向
-    progress_direction = monodirectional
-
-    # 局势是有利的还是负面的，只影响提示框
-    # positive - 正面的 neutral - 中立的 negative - 负面的
-    category = negative
-
-    # 成功和失败的类型，要求progress_direction = bidirectional
-    # complete_category = {  }
-    # fail_category = {  }
-
-    # 开始事件
-    on_start = {
-        set_variable = { which = AIO_situation_AIO_erase_galaxy_speed value = value:AIO_galaxy_size }
-        divide_variable = { which = AIO_situation_AIO_erase_galaxy_speed value = 12 }
-        ceiling_variable = AIO_situation_AIO_erase_galaxy_speed
-    }
-
-    on_monthly = { events = {  } }
-
-    on_progress_complete = {
-        if = {
-            limit = { has_global_flag = AIO_RE_erase_galaxy }
-            remove_global_flag = AIO_RE_erase_galaxy
-        }
-        clear_variable = AIO_situation_AIO_erase_galaxy_speed
-        # 局势到达最右端时触发，也要写摧毁局势
-        destroy_situation = this
-    }
-
-    # 每月局势变化
-    monthly_progress = {
-        # 如果是双向事件则可以填负数
-        base = 1
-
-        modifier = {
-            desc = AIO_situation_AIO_erase_galaxy_galaxy_size_modifier
-            has_situation_flag = AIO_RE_situation_erase_galaxy_pause
-            factor = 0
-        }
-    }
-
-    # 局势阶段
-    stages = {
-        stage_1 = {
-            # 进度条下的图标
-            icon = GFX_situation_stage_1
-            # 进度条下图标的背景，就是哪个棱形
-            icon_background = GFX_situation_stage_frame_red
-            # 到哪个值时结束该阶段
-            end = 13
-        }
-    }
-
-    # 应对方案，可以在monthly_progress中设置modifier根据应对方案添加进度
-    approach = {
-        # 名称
-        name = AIO_erase_galaxy_solution
-        # 图片
-        icon = GFX_situation_approach_flight
-        # 按钮背景
-        icon_background = GFX_situation_approach_bg_red
-
-        default = yes
-    }
-
-    approach = {
-        # 名称
-        name = AIO_erase_galaxy_stop_solution
-        # 图片
-        icon = GFX_situation_approach_scales
-        # 按钮背景
-        icon_background = GFX_situation_approach_bg_green
-
-        # 选择事件，也可以在这里写限制条件
-        on_select = {
-            hidden_effect = {
-                if = {
-                    limit = { has_global_flag = AIO_RE_erase_galaxy }
-                    remove_global_flag = AIO_RE_erase_galaxy
-                }
-                clear_variable = AIO_situation_AIO_erase_galaxy_speed
-            }
-            destroy_situation = this
-        }
     }
 }

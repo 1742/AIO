@@ -12,9 +12,6 @@
 
  AIO_mega_01_fact: "$AIO_mega_01$"
  AIO_mega_01_fact_DESC: "$AIO_mega_01_DESC$"
- AIO_mega_01_node: "$AIO_mega_01$"
- AIO_mega_01_node_DESC: "$AIO_mega_01_DESC$"
- AIO_mega_01_node_MEGASTRUCTURE_DETAILS: "与§Y$AIO_mega_01$§!相连"
  AIO_mega_01: "万门之门"
  AIO_mega_01_DESC: "前往无尽维度的“门关”"
  AIO_mega_01_MEGASTRUCTURE_DETAILS: "前往无尽维度的“门关”"

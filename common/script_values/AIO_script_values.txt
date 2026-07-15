@@ -46,9 +46,7 @@ AIO_merge_cosmos_solution_energy_upkeep_value = {
     }
     floor = yes
 
-    [[SCALE] mult = $SCALE$ ]
-
-    min = 2000
+    min = 50
 }
 
 # AIO融合宇宙局势解决方案暗物质消耗, scope: situation
@@ -72,25 +70,7 @@ AIO_merge_cosmos_solution_dm_upkeep_value = {
     }
     floor = yes
 
-    [[SCALE] mult = $SCALE$ ]
-
-    min = 20
-}
-
-# AIO融合宇宙局势超然逻辑产出修正, scope: situation
-AIO_merge_cosmos_advanced_logic_modifier = {
-    base = 0
-
-    complex_trigger_modifier = {
-        trigger = resource_income_compare
-        trigger_scope = owner
-        parameters = { resource = AIO_advanced_logic }
-        mode = add
-    }
-    mult = 0.001
-
-    min = 1
-	max = 2
+    min = 2
 }
 
 # AIO融合宇宙局势应用无限修正, scope: situation
@@ -101,7 +81,7 @@ AIO_merge_cosmos_AIT_modifier = {
     add = 1
 
     min = 1
-	max = 2
+	max = 10
 }
 
 #endregion

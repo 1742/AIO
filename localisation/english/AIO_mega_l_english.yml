@@ -12,9 +12,6 @@
 
  AIO_mega_01_fact: "$AIO_mega_01$"
  AIO_mega_01_fact_DESC: "$AIO_mega_01_DESC$"
- AIO_mega_01_node: "$AIO_mega_01$"
- AIO_mega_01_node_DESC: "$AIO_mega_01_DESC$"
- AIO_mega_01_node_MEGASTRUCTURE_DETAILS: "Connect with §Y$AIO_mega_01$§!."
  AIO_mega_01: "Ultimate Gate"
  AIO_mega_01_DESC: "Go to the "gate" of the endless dimension."
  AIO_mega_01_MEGASTRUCTURE_DETAILS: "$AIO_mega_01_DESC$"

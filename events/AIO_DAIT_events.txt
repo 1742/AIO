@@ -47,6 +47,12 @@ country_event = {
 			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
 		}
         event_target:AIO_DAIT_target_system = { AIO_DAIT_enrich_effect = { TIMES = 10 } }
+		hidden_effect = {
+			if = {
+				limit = { is_variable_set = AIO_situation_AIT_time }
+				change_variable = { which = AIO_situation_AIT_time value = 1 }
+			}
+		}
 	}
 
 	option = {
@@ -63,6 +69,12 @@ country_event = {
 			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_spawn_effect = yes }
+		hidden_effect = {
+			if = {
+				limit = { is_variable_set = AIO_situation_AIT_time }
+				change_variable = { which = AIO_situation_AIT_time value = 1 }
+			}
+		}
 	}
 
 	option = {
@@ -77,6 +89,12 @@ country_event = {
 			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_seed_effect = yes }
+		hidden_effect = {
+			if = {
+				limit = { is_variable_set = AIO_situation_AIT_time }
+				change_variable = { which = AIO_situation_AIT_time value = 1 }
+			}
+		}
 	}
 
 	option = {
@@ -86,6 +104,12 @@ country_event = {
 			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
 		}
 		event_target:AIO_DAIT_target_system = { owner = { AIO_DAIT_ethic_effect = yes } }
+		hidden_effect = {
+			if = {
+				limit = { is_variable_set = AIO_situation_AIT_time }
+				change_variable = { which = AIO_situation_AIT_time value = 1 }
+			}
+		}
 	}
 
 	option = {
@@ -95,6 +119,12 @@ country_event = {
 			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_storm_effect = yes }
+		hidden_effect = {
+			if = {
+				limit = { is_variable_set = AIO_situation_AIT_time }
+				change_variable = { which = AIO_situation_AIT_time value = 1 }
+			}
+		}
 	}
 
 	option = {
@@ -109,6 +139,12 @@ country_event = {
 			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_strike_effect = yes }
+		hidden_effect = {
+			if = {
+				limit = { is_variable_set = AIO_situation_AIT_time }
+				change_variable = { which = AIO_situation_AIT_time value = 1 }
+			}
+		}
 	}
 
 	option = {
@@ -131,6 +167,12 @@ country_event = {
 			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_harvest_effect = yes }
+		hidden_effect = {
+			if = {
+				limit = { is_variable_set = AIO_situation_AIT_time }
+				change_variable = { which = AIO_situation_AIT_time value = 1 }
+			}
+		}
 	}
 
 	option = {
@@ -143,6 +185,12 @@ country_event = {
 			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
 		}
 		event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_effect = yes }
+		hidden_effect = {
+			if = {
+				limit = { is_variable_set = AIO_situation_AIT_time }
+				change_variable = { which = AIO_situation_AIT_time value = 1 }
+			}
+		}
 	}
 
 	option = {

@@ -186,6 +186,18 @@ situation_event = {
     trigger = { is_situation_type = situation_AIO_merge_cosmos }
 
 	immediate = {
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_country_resource = { type = energy amount <= 0 }
+						has_country_resource = { type = sr_dark_matter amount <= 0 }
+					}
+				}
+			}
+			set_situation_approach = AIO_merge_cosmos.solution.pause
+		}
+
 		# 随机应用无限
 		if = {
 			limit = {
@@ -198,27 +210,19 @@ situation_event = {
 					}
 				}
 			}
-			random_list = {
-				2 = {  }
-				1 = {
-					modifier = {
-						factor = 0.5
-						owner = { has_country_flag = AIO_built_AIO_mega_02 }
-					}
-					modifier = {
-						factor = 0.5
-						owner = { has_country_flag = AIO_built_AIO_mega_03 }
-					}
-					owner = {
-						AIO_RAIT_random_trigger = yes
-						change_variable = { which = AIO_situation_AIT_time value = 1 }
-					}
-					set_timed_situation_flag = { flag = AIO_merge_cosmos_RAIT years = 2 }
-				}
+			owner = {
+				AIO_RAIT_random_trigger = yes
+				change_variable = { which = AIO_situation_AIT_time value = 1 }
 			}
+			set_timed_situation_flag = { flag = AIO_merge_cosmos_RAIT years = 1 }
 
 			# 河系影响
-			owner = { country_event = { id = AIO_merge_cosmos_events.401 } }
+			random_list = {
+				1 = {}
+				1 = {
+					owner = { country_event = { id = AIO_merge_cosmos_events.401 } }
+				}
+			}
 		}
 	}
 
@@ -242,12 +246,7 @@ country_event = {
 	hide_window = yes
 
 	is_triggered_only = yes
-	trigger = {
-		any_situation = {
-			is_situation_type = situation_AIO_merge_cosmos
-			NOT = { has_situation_flag = AIO_merge_cosmos_RAIT }
-		}
-	}
+	trigger = { any_situation = { is_situation_type = situation_AIO_merge_cosmos } }
 
 	immediate = {
 		# 随机影响星系
@@ -309,22 +308,6 @@ country_event = {
 									limit = { exists = controller }
 									controller = { country_event = { id = AIO_merge_cosmos_events.403 } }
 								}
-							}
-						}
-						1 = { # 随机退化殖民地
-							modifier = {
-								factor = 0
-								any_system_planet = { is_colony = no }
-							}
-							modifier = {
-								factor = 0.01
-								is_capital_system = yes
-							}
-							AIO_DAIT_degenerate_effect = yes
-							save_event_target_as = AIO_situation_RAIT_target
-							if = {
-								limit = { exists = owner }
-								owner = { country_event = { id = AIO_merge_cosmos_events.404 } }
 							}
 						}
 						1 = { # 随机抹除天体

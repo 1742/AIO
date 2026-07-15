@@ -302,14 +302,6 @@ country_event = {
             set_name = AIO_Abyss
         }
 
-        # 移除所有万门之门节点
-        no_scope = {
-            every_megastructure = {
-                limit = { is_megastructure_type = AIO_mega_01_node }
-                remove_megastructure = this
-            }
-        }
-
         # 摧毁现实的万门之门
         event_target:AIO_TUG_system = {
             random_system_megastructure = {
@@ -441,21 +433,6 @@ system_event = {
             }
             delete_fleet = this
             break = yes
-        }
-    }
-}
-
-# 删除万门之门节点
-system_event = {
-    id = AIO_crisis_events.804
-    hide_window = yes
-
-    is_triggered_only = yes
-
-    immediate = {
-        random_system_megastructure = {
-            limit = { is_megastructure_type = AIO_mega_01_node }
-            remove_megastructure = this
         }
     }
 }

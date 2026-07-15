@@ -196,7 +196,10 @@ country_event = {
 
 		no_scope = {
 			every_country = {
-				limit = { is_country_type = default }
+				limit = {
+					is_country_type = default
+					is_nomadic = no
+				}
 				country_event = { id = AIO_RAIT_events.402 }
 			}
 		}
@@ -888,9 +891,11 @@ country_event = { # this - maker
 
         no_scope = {
             every_country = {
-				limit = { is_country_type = default }
+				limit = {
+					is_country_type = default
+					is_nomadic = no
+				}
                 random_owned_colony = {
-					limit = { NOT = { is_planet_class = pc_ark } }
 					weights = {
 						base = 1
 						modifier = {
@@ -1295,10 +1300,7 @@ country_event = { # this - maker
 
         no_scope = {
             every_country = {
-				limit = {
-					is_country_type = default
-					is_nomadic = no
-				}
+				limit = { is_country_type = default }
                 random_system_within_border = {
 					limit = {
 						star = {
