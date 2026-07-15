@@ -4,7 +4,9 @@ guiTypes = {
         orientation = "center"
         origo = "center"
         moveable = yes
-        size = { width = 1058 height = 593 }
+        # AIO_DAIT_UI.dds is authored at 1920x1080.  Keep the window at the
+        # source resolution so the background is not cropped to the old size.
+        size = { width = 1920 height = 1080 }
 
         background = {
             name = "background"
@@ -15,7 +17,7 @@ guiTypes = {
             name = "close"
             quadTextureSprite = "GFX_AIO_DAIT_exit"
             orientation = "upper_left"
-            position = { x = 905 y = 19 }
+            position = { x = 1740 y = 20 }
             size = { x = 135 y = 40 }
             shortcut = "ESCAPE"
             clicksound = "back_click"
@@ -26,7 +28,8 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Enrich"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
+            position = { x = 1357 y = 209 }
+            size = { x = 226 y = 122 }
             quadTextureSprite = "GFX_AIO_DAIT_Enrich"
             effect = "AIO_DAIT_enrich"
             multiline = no
@@ -35,7 +38,8 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Spawn"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
+            position = { x = 1389 y = 352 }
+            size = { x = 225 y = 126 }
             quadTextureSprite = "GFX_AIO_DAIT_Spawn"
             effect = "AIO_DAIT_spawn"
             multiline = no
@@ -44,7 +48,8 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Seed"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
+            position = { x = 1348 y = 495 }
+            size = { x = 217 y = 129 }
             quadTextureSprite = "GFX_AIO_DAIT_Seed"
             effect = "AIO_DAIT_seed"
             multiline = no
@@ -53,7 +58,8 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Ethic"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
+            position = { x = 1400 y = 644 }
+            size = { x = 217 y = 133 }
             quadTextureSprite = "GFX_AIO_DAIT_Ethic"
             effect = "AIO_DAIT_ethic"
             multiline = no
@@ -67,7 +73,8 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Storm"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
+            position = { x = 253 y = 199 }
+            size = { x = 130 y = 220 }
             quadTextureSprite = "GFX_AIO_DAIT_Storm"
             effect = "AIO_DAIT_storm"
             multiline = no
@@ -76,7 +83,8 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Strike"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
+            position = { x = 267 y = 463 }
+            size = { x = 125 y = 216 }
             quadTextureSprite = "GFX_AIO_DAIT_Strike"
             effect = AIO_DAIT_strike
             multiline = no
@@ -85,7 +93,8 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Harvest"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
+            position = { x = 417 y = 197 }
+            size = { x = 126 y = 224 }
             quadTextureSprite = "GFX_AIO_DAIT_Harvest"
             effect = "AIO_DAIT_harvest"
             multiline = no
@@ -94,7 +103,8 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Erase"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
+            position = { x = 425 y = 462 }
+            size = { x = 122 y = 216 }
             quadTextureSprite = "GFX_AIO_DAIT_Erase"
             effect = "AIO_DAIT_erase"
             multiline = no

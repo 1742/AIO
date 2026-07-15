@@ -19,14 +19,11 @@ AIO_DAIT_lock_target = {
 	}
 
 	button_visible = {
-		from.owner = {
+		owner = {
 			NOT = {
 				has_active_event = {
 					AIO_DAIT_events.201
 					AIO_DAIT_events.202
-					AIO_DAIT_events.203
-					AIO_DAIT_events.204
-					AIO_DAIT_events.205
 				}
 			}
 		}

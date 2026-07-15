@@ -1,6 +1,7 @@
 spriteTypes = {
     spriteType = {
         name = GFX_AIO_DAIT_bg
+        textureFile = gfx/interface/AIO_DAIT/AIO_DAIT_UI.dds
     }
 
     spriteType = {
