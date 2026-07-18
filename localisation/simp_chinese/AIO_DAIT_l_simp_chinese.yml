@@ -27,3 +27,34 @@
  AIO_DAIT_events.202.erase: "擦除"
 
  #endregion
+
+ #region 受影响帝国提醒
+
+ AIO_DAIT_events.affected.option: "我们不会忘记这次干涉。"
+ AIO_DAIT_events.230.title: "现实丰饶化"
+ AIO_DAIT_events.230.desc: "§Y[From.GetName]§!使用某种超越常理的技术改写了§Y[FromFrom.GetName]§!。星系内的天体正在凭空涌现出大量资源，但对方能够随意干涉现实本身的事实令人不安。"
+ AIO_DAIT_events.231.title: "现实结构遭到改写"
+ AIO_DAIT_events.231.desc: "§Y[From.GetName]§!锁定了§Y[FromFrom.GetName]§!的现实坐标，并强行改变了当地的天体结构。我们对于星系的控制在其技术面前形同虚设。"
+ AIO_DAIT_events.232.title: "生命遭到播种"
+ AIO_DAIT_events.232.desc: "§Y[From.GetName]§!在§Y[FromFrom.GetName]§!擅自创造并播种了新的生命。整个文明的诞生，如今似乎不过是对方的一次实验。"
+ AIO_DAIT_events.233.title: "思维重构"
+ AIO_DAIT_events.233.desc: "我们的价值体系曾存在严重而荒谬的偏差。§Y[From.GetName]§!对§Y[FromFrom.GetName]§!的干预令我们终于看清了正确的道路。"
+ AIO_DAIT_events.233.option: "这才是唯一正确的道路。"
+ AIO_DAIT_events.234.title: "人为宇宙风暴"
+ AIO_DAIT_events.234.desc: "§Y[From.GetName]§!在§Y[FromFrom.GetName]§!撕裂了稳定的宇宙环境，一场人为制造的宇宙风暴正在成形。"
+ AIO_DAIT_events.235.title: "超常规打击"
+ AIO_DAIT_events.235.desc: "§Y[From.GetName]§!以§Y[FromFrom.GetName]§!为坐标发动了超常规打击。敌对实体正借由被扭曲的现实侵入我们的领土。"
+ AIO_DAIT_events.236.title: "星系遭到收割"
+ AIO_DAIT_events.236.desc: "§Y[From.GetName]§!正在收割§Y[FromFrom.GetName]§!。恒星、行星乃至殖民地都被拆解为供其利用的原始资源。"
+ AIO_DAIT_events.237.title: "现实擦除"
+ AIO_DAIT_events.237.desc: "§Y[From.GetName]§!以§Y[FromFrom.GetName]§!为中心抹除了大片现实。我们的星系、舰队和亿万生命在一瞬间消失，留下的只有无法被填补的虚无。"
+
+ opinion_AIO_DAIT_enriched_our_system: "干涉了我们的星系"
+ opinion_AIO_DAIT_spawned_in_our_system: "改写了我们的星系"
+ opinion_AIO_DAIT_seeded_our_system: "在我们的星系播种生命"
+ opinion_AIO_DAIT_spawned_storm: "在我们的领地制造宇宙风暴"
+ opinion_AIO_DAIT_struck_us: "对我们发动超常规打击"
+ opinion_AIO_DAIT_harvested_our_system: "收割了我们的星系"
+ opinion_AIO_DAIT_erased_our_systems: "抹除了我们的现实"
+
+ #endregion

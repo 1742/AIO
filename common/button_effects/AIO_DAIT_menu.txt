@@ -58,9 +58,7 @@ AIO_DAIT_ethic = {
         resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
     }
     effect = {
-        event_target:AIO_DAIT_target_system = {
-            owner = { AIO_DAIT_ethic_effect = yes }
-        }
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_ethic_effect = yes }
     }
 }
 

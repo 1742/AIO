@@ -4,6 +4,8 @@
 #region 塔维尔
 
 AIO_DAIT_enrich_effect = {
+    owner? = { AIO_DAIT_mark_affected_country_effect = yes }
+
     every_system_planet = {
         limit = {
             NOT = {
@@ -30,9 +32,14 @@ AIO_DAIT_enrich_effect = {
             }
         }
     }
+
+    AIO_DAIT_notify_enrich_effect = yes
 }
 
 AIO_DAIT_spawn_effect = {
+    owner? = { AIO_DAIT_mark_affected_country_effect = yes }
+    every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
+
     if = {
         limit = {
             OR = {
@@ -110,9 +117,13 @@ AIO_DAIT_spawn_effect = {
             }
         }
     }
+
+    AIO_DAIT_notify_spawn_effect = yes
 }
 
 AIO_DAIT_seed_effect = {
+    owner? = { AIO_DAIT_mark_affected_country_effect = yes }
+
     random_system_planet = {
         limit = {
             habitable_planet = yes
@@ -196,78 +207,104 @@ AIO_DAIT_seed_effect = {
             }
         }
     }
+
+    AIO_DAIT_notify_seed_effect = yes
 }
 
-# scope: country
+# scope: system
 AIO_DAIT_ethic_effect = {
-    if = {
-        limit = { has_ethic = ethic_fanatic_authoritarian }
-        shift_ethic = ethic_fanatic_egalitarian
-    }
-    else_if = {
-        limit = { has_ethic = ethic_fanatic_egalitarian }
-        shift_ethic = ethic_fanatic_authoritarian
-    }
-    else_if = {
-        limit = { has_ethic = ethic_fanatic_materialist }
-        shift_ethic = ethic_fanatic_spiritualist
-    }
-    else_if = {
-        limit = { has_ethic = ethic_fanatic_spiritualist }
-        shift_ethic = ethic_fanatic_materialist
-    }
-    else_if = {
-        limit = { has_ethic = ethic_fanatic_militarist }
-        shift_ethic = ethic_fanatic_pacifist
-    }
-    else_if = {
-        limit = { has_ethic = ethic_fanatic_pacifist }
-        shift_ethic = ethic_fanatic_militarist
-    }
-    else_if = {
-        limit = { has_ethic = ethic_fanatic_xenophile }
-        shift_ethic = ethic_fanatic_xenophobe
-    }
-    else_if = {
-        limit = { has_ethic = ethic_fanatic_xenophobe }
-        shift_ethic = ethic_fanatic_xenophile
-    }
+    owner? = {
+        if = {
+            limit = { has_ethic = ethic_fanatic_authoritarian }
+            shift_ethic = ethic_fanatic_egalitarian
+        }
+        else_if = {
+            limit = { has_ethic = ethic_fanatic_egalitarian }
+            shift_ethic = ethic_fanatic_authoritarian
+        }
+        else_if = {
+            limit = { has_ethic = ethic_fanatic_materialist }
+            shift_ethic = ethic_fanatic_spiritualist
+        }
+        else_if = {
+            limit = { has_ethic = ethic_fanatic_spiritualist }
+            shift_ethic = ethic_fanatic_materialist
+        }
+        else_if = {
+            limit = { has_ethic = ethic_fanatic_militarist }
+            shift_ethic = ethic_fanatic_pacifist
+        }
+        else_if = {
+            limit = { has_ethic = ethic_fanatic_pacifist }
+            shift_ethic = ethic_fanatic_militarist
+        }
+        else_if = {
+            limit = { has_ethic = ethic_fanatic_xenophile }
+            shift_ethic = ethic_fanatic_xenophobe
+        }
+        else_if = {
+            limit = { has_ethic = ethic_fanatic_xenophobe }
+            shift_ethic = ethic_fanatic_xenophile
+        }
 
-    if = {
-        limit = { has_ethic = ethic_authoritarian }
-        shift_ethic = ethic_egalitarian
-    }
-    else_if = {
-        limit = { has_ethic = ethic_egalitarian }
-        shift_ethic = ethic_authoritarian
-    }
-    if = {
-        limit = { has_ethic = ethic_materialist }
-        shift_ethic = ethic_spiritualist
-    }
-    else_if = {
-        limit = { has_ethic = ethic_spiritualist }
-        shift_ethic = ethic_materialist
-    }
-    if = {
-        limit = { has_ethic = ethic_militarist }
-        shift_ethic = ethic_pacifist
-    }
-    else_if = {
-        limit = { has_ethic = ethic_pacifist }
-        shift_ethic = ethic_militarist
-    }
-    if = {
-        limit = { has_ethic = ethic_xenophile }
-        shift_ethic = ethic_xenophobe
-    }
-    else_if = {
-        limit = { has_ethic = ethic_xenophobe }
-        shift_ethic = ethic_xenophile
-    }
+        if = {
+            limit = { has_ethic = ethic_authoritarian }
+            shift_ethic = ethic_egalitarian
+        }
+        else_if = {
+            limit = { has_ethic = ethic_egalitarian }
+            shift_ethic = ethic_authoritarian
+        }
+        if = {
+            limit = { has_ethic = ethic_materialist }
+            shift_ethic = ethic_spiritualist
+        }
+        else_if = {
+            limit = { has_ethic = ethic_spiritualist }
+            shift_ethic = ethic_materialist
+        }
+        if = {
+            limit = { has_ethic = ethic_militarist }
+            shift_ethic = ethic_pacifist
+        }
+        else_if = {
+            limit = { has_ethic = ethic_pacifist }
+            shift_ethic = ethic_militarist
+        }
+        if = {
+            limit = { has_ethic = ethic_xenophile }
+            shift_ethic = ethic_xenophobe
+        }
+        else_if = {
+            limit = { has_ethic = ethic_xenophobe }
+            shift_ethic = ethic_xenophile
+        }
 
-    change_government = random
-    set_government_cooldown = default
+        change_government = random
+        set_government_cooldown = default
+
+        # 意识被改写后，不再保留此前因 DAIT 干涉产生的敌意。
+        remove_opinion_modifier = { modifier = opinion_AIO_DAIT_enriched_our_system who = root }
+        remove_opinion_modifier = { modifier = opinion_AIO_DAIT_spawned_in_our_system who = root }
+        remove_opinion_modifier = { modifier = opinion_AIO_DAIT_seeded_our_system who = root }
+        remove_opinion_modifier = { modifier = opinion_AIO_DAIT_spawned_storm who = root }
+        remove_opinion_modifier = { modifier = opinion_AIO_DAIT_struck_us who = root }
+        remove_opinion_modifier = { modifier = opinion_AIO_DAIT_harvested_our_system who = root }
+        remove_opinion_modifier = { modifier = opinion_AIO_DAIT_erased_our_systems who = root }
+        if = {
+            limit = {
+                is_country_type = default
+                NOT = { is_same_value = root }
+            }
+            country_event = {
+                id = AIO_DAIT_events.233
+                scopes = {
+                    from = root
+                    fromfrom = event_target:AIO_DAIT_lock_system
+                }
+            }
+        }
+    }
 }
 
 #endregion
@@ -276,6 +313,9 @@ AIO_DAIT_ethic_effect = {
 #region 亚弗戈蒙
 
 AIO_DAIT_storm_effect = {
+    owner? = { AIO_DAIT_mark_affected_country_effect = yes }
+    every_fleet_in_system = { owner? = { AIO_DAIT_mark_affected_country_effect = yes } }
+
     if = {
         limit = { NOT = { is_inside_storm = yes } }
         random_list = {
@@ -337,9 +377,16 @@ AIO_DAIT_storm_effect = {
             }
         }
     }
+
+    AIO_DAIT_notify_storm_effect = yes
 }
 
 AIO_DAIT_strike_effect = {
+    every_fleet_in_system = {
+        limit = { NOT = { has_fleet_flag = AIO_Aforgomom_fleet } }
+        owner? = { AIO_DAIT_mark_affected_country_effect = yes }
+    }
+
     if = {
         limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
         AIO_create_Aforgomom_effect = yes
@@ -361,14 +408,20 @@ AIO_DAIT_strike_effect = {
             }
         }
     }
+
+    AIO_DAIT_notify_strike_effect = yes
 }
 
 AIO_DAIT_harvest_effect = {
+    owner? = { AIO_DAIT_mark_affected_country_effect = yes }
+    every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
+
     every_system_planet = {
         limit = {
             NOR = {
-                is_planet_class = pc_AIO_empty_space
                 is_planet_class = pc_shattered
+                is_planet_class = pc_black_hole
+                is_planet_class = pc_AIO_empty_space
                 has_carrier_flag = synth_queen_bastille
                 AIO_safe_remove_planet_exclude_API = yes
                 has_planet_flag = AIO_DAIT_harvested_body
@@ -479,6 +532,8 @@ AIO_DAIT_harvest_effect = {
             }
         }
     }
+
+    AIO_DAIT_notify_harvest_effect = yes
 }
 
 AIO_DAIT_erase_effect = {
@@ -504,6 +559,11 @@ AIO_DAIT_erase_effect = {
                 }
             }
         }
+
+        owner? = { AIO_DAIT_mark_affected_country_effect = yes }
+        every_system_planet = { owner? = { AIO_DAIT_mark_affected_country_effect = yes } }
+        every_fleet_in_system = { owner? = { AIO_DAIT_mark_affected_country_effect = yes } }
+
         every_system_planet = { AIO_safe_remove_planet = yes }
         AIO_safe_remove_system_megastructures = yes
         every_fleet_in_system = {
@@ -513,12 +573,130 @@ AIO_DAIT_erase_effect = {
         every_ambient_object = { destroy_ambient_object = this }
         set_star_class = sc_AIO_void
     }
+    AIO_DAIT_notify_erase_effect = yes
 }
 
 #endregion
 
 
 #region helper
+
+# 将本次 DAIT 的受影响帝国加入临时集合；结算 helper 会清除该标记。
+# scope: country; root: 使用 DAIT 的国家
+AIO_DAIT_mark_affected_country_effect = {
+    if = {
+        limit = {
+            is_country_type = default
+            NOT = { is_same_value = root }
+        }
+        set_country_flag = AIO_DAIT_affected_country
+    }
+}
+
+AIO_DAIT_notify_enrich_effect = {
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_affected_country }
+        remove_country_flag = AIO_DAIT_affected_country
+        add_opinion_modifier = { modifier = opinion_AIO_DAIT_enriched_our_system who = root }
+        country_event = {
+            id = AIO_DAIT_events.230
+            scopes = {
+                from = root
+                fromfrom = event_target:AIO_DAIT_lock_system
+            }
+        }
+    }
+}
+
+AIO_DAIT_notify_spawn_effect = {
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_affected_country }
+        remove_country_flag = AIO_DAIT_affected_country
+        add_opinion_modifier = { modifier = opinion_AIO_DAIT_spawned_in_our_system who = root }
+        country_event = {
+            id = AIO_DAIT_events.231
+            scopes = {
+                from = root
+                fromfrom = event_target:AIO_DAIT_lock_system
+            }
+        }
+    }
+}
+
+AIO_DAIT_notify_seed_effect = {
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_affected_country }
+        remove_country_flag = AIO_DAIT_affected_country
+        add_opinion_modifier = { modifier = opinion_AIO_DAIT_seeded_our_system who = root }
+        country_event = {
+            id = AIO_DAIT_events.232
+            scopes = {
+                from = root
+                fromfrom = event_target:AIO_DAIT_lock_system
+            }
+        }
+    }
+}
+
+AIO_DAIT_notify_storm_effect = {
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_affected_country }
+        remove_country_flag = AIO_DAIT_affected_country
+        add_opinion_modifier = { modifier = opinion_AIO_DAIT_spawned_storm who = root }
+        country_event = {
+            id = AIO_DAIT_events.234
+            scopes = {
+                from = root
+                fromfrom = event_target:AIO_DAIT_lock_system
+            }
+        }
+    }
+}
+
+AIO_DAIT_notify_strike_effect = {
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_affected_country }
+        remove_country_flag = AIO_DAIT_affected_country
+        add_opinion_modifier = { modifier = opinion_AIO_DAIT_struck_us who = root }
+        country_event = {
+            id = AIO_DAIT_events.235
+            scopes = {
+                from = root
+                fromfrom = event_target:AIO_DAIT_lock_system
+            }
+        }
+    }
+}
+
+AIO_DAIT_notify_harvest_effect = {
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_affected_country }
+        remove_country_flag = AIO_DAIT_affected_country
+        add_opinion_modifier = { modifier = opinion_AIO_DAIT_harvested_our_system who = root }
+        country_event = {
+            id = AIO_DAIT_events.236
+            scopes = {
+                from = root
+                fromfrom = event_target:AIO_DAIT_lock_system
+            }
+        }
+    }
+}
+
+AIO_DAIT_notify_erase_effect = {
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_affected_country }
+        remove_country_flag = AIO_DAIT_affected_country
+        add_opinion_modifier = { modifier = opinion_AIO_DAIT_erased_our_systems who = root }
+        country_event = {
+            id = AIO_DAIT_events.237
+            scopes = {
+                from = root
+                fromfrom = event_target:AIO_DAIT_lock_system
+            }
+        }
+    }
+}
 
 # 召唤亚弗戈蒙
 # scope: system

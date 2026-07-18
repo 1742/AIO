@@ -103,7 +103,7 @@ country_event = {
 			event_target:AIO_DAIT_target_system = { exists = owner }
 			resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
 		}
-		event_target:AIO_DAIT_target_system = { owner = { AIO_DAIT_ethic_effect = yes } }
+		event_target:AIO_DAIT_target_system = { AIO_DAIT_ethic_effect = yes }
 		hidden_effect = {
 			if = {
 				limit = { is_variable_set = AIO_situation_AIT_time }
@@ -218,4 +218,133 @@ country_event = {
 
 	is_triggered_only = yes
 	trigger = { always = no }
+}
+
+# 被定向应用无限影响的帝国提醒事件。
+country_event = {
+	id = AIO_DAIT_events.230
+	title = AIO_DAIT_events.230.title
+	desc = AIO_DAIT_events.230.desc
+	picture = GFX_evt_galactic_senate
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.affected.option
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.231
+	title = AIO_DAIT_events.231.title
+	desc = AIO_DAIT_events.231.desc
+	picture = GFX_evt_galactic_senate
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.affected.option
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.232
+	title = AIO_DAIT_events.232.title
+	desc = AIO_DAIT_events.232.desc
+	picture = GFX_evt_galactic_senate
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.affected.option
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.233
+	title = AIO_DAIT_events.233.title
+	desc = AIO_DAIT_events.233.desc
+	picture = GFX_evt_galactic_senate
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.233.option
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.234
+	title = AIO_DAIT_events.234.title
+	desc = AIO_DAIT_events.234.desc
+	picture = GFX_evt_galactic_senate
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.affected.option
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.235
+	title = AIO_DAIT_events.235.title
+	desc = AIO_DAIT_events.235.desc
+	picture = GFX_evt_galactic_senate
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.affected.option
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.236
+	title = AIO_DAIT_events.236.title
+	desc = AIO_DAIT_events.236.desc
+	picture = GFX_evt_galactic_senate
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.affected.option
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.237
+	title = AIO_DAIT_events.237.title
+	desc = AIO_DAIT_events.237.desc
+	picture = GFX_evt_galactic_senate
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.affected.option
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
 }

@@ -28,3 +28,40 @@ triggered_opinion_AIO_crisis_empire = { # this - country from - target country
 		}
 	}
 }
+
+# 定向应用无限造成的外交影响。
+# 同一修正可以因重复干涉而叠加；思潮改写会清除下列全部修正。
+opinion_AIO_DAIT_enriched_our_system = {
+	opinion = { base = -10 }
+	decay = { base = 1 }
+}
+
+opinion_AIO_DAIT_spawned_in_our_system = {
+	opinion = { base = -30 }
+	decay = { base = 1 }
+}
+
+opinion_AIO_DAIT_seeded_our_system = {
+	opinion = { base = -15 }
+	decay = { base = 1 }
+}
+
+opinion_AIO_DAIT_spawned_storm = {
+	opinion = { base = -40 }
+	decay = { base = 1 }
+}
+
+opinion_AIO_DAIT_struck_us = {
+	opinion = { base = -150 }
+	decay = { base = 2 }
+}
+
+opinion_AIO_DAIT_harvested_our_system = {
+	opinion = { base = -250 }
+	decay = { base = 2 }
+}
+
+opinion_AIO_DAIT_erased_our_systems = {
+	opinion = { base = -400 }
+	decay = { base = 2 }
+}

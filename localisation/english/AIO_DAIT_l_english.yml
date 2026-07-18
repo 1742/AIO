@@ -28,3 +28,34 @@
  AIO_DAIT_events.202.erase: "Erase"
 
  #endregion
+
+ #region Affected empire notifications
+
+ AIO_DAIT_events.affected.option: "We will not forget this interference."
+ AIO_DAIT_events.230.title: "Reality Enriched"
+ AIO_DAIT_events.230.desc: "§Y[From.GetName]§! has used technology beyond conventional understanding to rewrite §Y[FromFrom.GetName]§!. Celestial bodies throughout the system are producing vast resources from nothing, but their ability to interfere with reality itself is deeply troubling."
+ AIO_DAIT_events.231.title: "Reality Structure Rewritten"
+ AIO_DAIT_events.231.desc: "§Y[From.GetName]§! locked onto the reality coordinates of §Y[FromFrom.GetName]§! and forcibly altered its celestial structure. Our control of the system means nothing before their technology."
+ AIO_DAIT_events.232.title: "Life Seeded"
+ AIO_DAIT_events.232.desc: "§Y[From.GetName]§! has created and seeded new life in §Y[FromFrom.GetName]§! without our consent. The birth of an entire civilization appears to be little more than an experiment to them."
+ AIO_DAIT_events.233.title: "Cognitive Reconstruction"
+ AIO_DAIT_events.233.desc: "Our former values contained grave and absurd errors. The intervention of §Y[From.GetName]§! in §Y[FromFrom.GetName]§! has finally shown us the correct path. Our past hostility over their so-called Directed Applied Infinity is no longer meaningful."
+ AIO_DAIT_events.233.option: "This is the only correct path."
+ AIO_DAIT_events.234.title: "Artificial Cosmic Storm"
+ AIO_DAIT_events.234.desc: "§Y[From.GetName]§! has ruptured the stable cosmic environment of §Y[FromFrom.GetName]§!. An artificially generated cosmic storm is now taking shape."
+ AIO_DAIT_events.235.title: "Reality-Bending Strike"
+ AIO_DAIT_events.235.desc: "§Y[From.GetName]§! has launched an anomalous strike using §Y[FromFrom.GetName]§! as its coordinates. Hostile entities are entering our territory through distorted reality."
+ AIO_DAIT_events.236.title: "System Harvested"
+ AIO_DAIT_events.236.desc: "§Y[From.GetName]§! is harvesting §Y[FromFrom.GetName]§!. Stars, planets, and even colonies are being dismantled into raw resources for their use."
+ AIO_DAIT_events.237.title: "Reality Erased"
+ AIO_DAIT_events.237.desc: "§Y[From.GetName]§! has erased a vast region of reality centered on §Y[FromFrom.GetName]§!. Our systems, fleets, and billions of lives vanished in an instant, leaving behind an emptiness that can never be filled."
+
+ opinion_AIO_DAIT_enriched_our_system: "Interfered with Our System"
+ opinion_AIO_DAIT_spawned_in_our_system: "Rewrote Our System"
+ opinion_AIO_DAIT_seeded_our_system: "Seeded Life in Our System"
+ opinion_AIO_DAIT_spawned_storm: "Created a Cosmic Storm in Our Territory"
+ opinion_AIO_DAIT_struck_us: "Launched a Reality-Bending Strike Against Us"
+ opinion_AIO_DAIT_harvested_our_system: "Harvested Our System"
+ opinion_AIO_DAIT_erased_our_systems: "Erased Our Reality"
+
+ #endregion
