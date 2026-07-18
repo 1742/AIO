@@ -55,11 +55,30 @@ AIO_DAIT_spawn_effect = {
         }
     }
     else_if = {
-        limit = { owner? = {
-            is_country_type = default
-            NOT = { has_modifier = AIO_DAIT_spawn_modifier } }
+        limit = {
+            OR= {
+                owner? = {
+                    is_country_type = default
+                    NOT = { has_modifier = AIO_DAIT_spawn_modifier }
+                }
+                any_system_ship_colony = {
+                    owner = {
+                        is_country_type = default
+                        NOT = { has_modifier = AIO_DAIT_spawn_modifier }
+                    }
+                }
+            }
         }
-        owner = { add_modifier = { modifier = AIO_DAIT_spawn_modifier } }
+        owner? = { add_modifier = { modifier = AIO_DAIT_spawn_modifier } }
+        every_system_ship_colony = {
+            limit = { owner = { is_country_type = default } }
+            owner = {
+                if = {
+                    limit = { NOT = { has_modifier = AIO_DAIT_spawn_modifier } }
+                    add_modifier = { modifier = AIO_DAIT_spawn_modifier }
+                }
+            }
+        }
     }
     else = {
         every_system_planet = {
