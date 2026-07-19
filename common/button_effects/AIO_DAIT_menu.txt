@@ -162,7 +162,15 @@ AIO_DAIT_erase = {
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
-        event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_effect = yes }
+        if = {
+            limit = { is_country_type = AIO_empire }
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_erase_effect = { MAX_JUMPS = 5 }
+            }
+        }
+        else = {
+            event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_effect = yes }
+        }
         AIO_DAIT_notify_erase_effect = yes
         AIO_DAIT_clear_affected_countries_effect = yes
     }
