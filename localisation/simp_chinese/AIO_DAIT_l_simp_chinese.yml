@@ -18,7 +18,7 @@
  #region DAIT menu
 
  AIO_DAIT_events.202.title: "定向应用无限"
- AIO_DAIT_events.202.desc: "当前锁定星系：[event_target:AIO_DAIT_lock_system.GetName]\n\n新 UI 施工中……"
+ AIO_DAIT_events.202.desc: "当前锁定星系：[event_target:AIO_DAIT_target_system.GetName]\n\n新 UI 施工中……"
  AIO_DAIT_events.202.enrich: "丰饶"
  AIO_DAIT_events.202.spawn: "生成"
  AIO_DAIT_events.202.seed: "播种"

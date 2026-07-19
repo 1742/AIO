@@ -81,7 +81,8 @@ AIO_DAIT_ethic = {
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
-        AIO_DAIT_ethic_effect = yes
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_ethic_effect = yes }
+        AIO_DAIT_notify_ethic_effect = yes
         AIO_DAIT_clear_affected_countries_effect = yes
     }
 }

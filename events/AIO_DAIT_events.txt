@@ -101,7 +101,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = AIO_DAIT_events.affected.option
+		name = AIO_dawn_it
 		default_hide_option = yes
 
 		ai_chance = { base = 1 }
@@ -117,7 +117,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = AIO_DAIT_events.affected.option
+		name = AIO_dawn_it
 		default_hide_option = yes
 
 		ai_chance = { base = 1 }
@@ -133,7 +133,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = AIO_DAIT_events.affected.option
+		name = AIO_dawn_it
 		default_hide_option = yes
 
 		ai_chance = { base = 1 }
@@ -149,7 +149,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = AIO_DAIT_events.affected.option
+		name = AIO_dawn_it
 		default_hide_option = yes
 
 		ai_chance = { base = 1 }
