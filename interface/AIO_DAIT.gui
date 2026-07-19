@@ -1,14 +1,19 @@
 guiTypes = {
     containerWindowType = {
         name = "AIO_DAIT"
-        orientation = "center"
-        origo = "center"
+        orientation = center
+        origo = center
+        position = { x = 400 y = 350 }
+        size = { width = 1000 height = 550 }
         moveable = yes
-        size = { width = 1058 height = 593 }
 
-        background = {
+        # v1-bg.dds is 1920x1080. At 0.55 scale it renders as 1056x594.
+        iconType = {
             name = "background"
-            quadTextureSprite = "GFX_AIO_DAIT_bg"
+            spriteType = "GFX_AIO_DAIT_bg"
+            position = { x = 0 y = 0 }
+            scale = 0.4
+            alwaysTransparent = no
         }
 
         buttonType = {
@@ -26,8 +31,9 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Enrich"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Enrich"
+            position = { x = 341 y = 48 }
+            size = { x = 132 y = 64 }
+            quadTextureSprite = "GFX_AIO_DAIT_transparent_button"
             effect = "AIO_DAIT_enrich"
             multiline = no
         }
@@ -35,8 +41,9 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Spawn"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Spawn"
+            position = { x = 422 y = 126 }
+            size = { x = 132 y = 64 }
+            quadTextureSprite = "GFX_AIO_DAIT_transparent_button"
             effect = "AIO_DAIT_spawn"
             multiline = no
         }
@@ -44,8 +51,9 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Seed"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Seed"
+            position = { x = 431 y = 209 }
+            size = { x = 132 y = 64 }
+            quadTextureSprite = "GFX_AIO_DAIT_transparent_button"
             effect = "AIO_DAIT_seed"
             multiline = no
         }
@@ -53,8 +61,9 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Ethic"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Ethic"
+            position = { x = 388 y = 303 }
+            size = { x = 132 y = 64 }
+            quadTextureSprite = "GFX_AIO_DAIT_transparent_button"
             effect = "AIO_DAIT_ethic"
             multiline = no
         }
@@ -67,8 +76,9 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Storm"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Storm"
+            position = { x = 494 y = 48 }
+            size = { x = 132 y = 64 }
+            quadTextureSprite = "GFX_AIO_DAIT_transparent_button"
             effect = "AIO_DAIT_storm"
             multiline = no
         }
@@ -76,17 +86,19 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Strike"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Strike"
-            effect = AIO_DAIT_strike
+            position = { x = 582 y = 209 }
+            size = { x = 132 y = 64 }
+            quadTextureSprite = "GFX_AIO_DAIT_transparent_button"
+            effect = "AIO_DAIT_strike"
             multiline = no
         }
 
         effectButtonType = {
             name = "AIO_DAIT_Harvest"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Harvest"
+            position = { x = 572 y = 126 }
+            size = { x = 132 y = 64 }
+            quadTextureSprite = "GFX_AIO_DAIT_transparent_button"
             effect = "AIO_DAIT_harvest"
             multiline = no
         }
@@ -94,8 +106,9 @@ guiTypes = {
         effectButtonType = {
             name = "AIO_DAIT_Erase"
             orientation = "upper_left"
-            position = { x = 15 y = 5 }
-            quadTextureSprite = "GFX_AIO_DAIT_Erase"
+            position = { x = 542 y = 303 }
+            size = { x = 132 y = 64 }
+            quadTextureSprite = "GFX_AIO_DAIT_transparent_button"
             effect = "AIO_DAIT_erase"
             multiline = no
         }

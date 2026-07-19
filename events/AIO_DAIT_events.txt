@@ -217,7 +217,6 @@ country_event = {
 	custom_gui = AIO_DAIT
 
 	is_triggered_only = yes
-	trigger = { always = no }
 }
 
 # 被定向应用无限影响的帝国提醒事件。

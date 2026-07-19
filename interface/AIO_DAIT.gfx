@@ -1,14 +1,19 @@
 spriteTypes = {
     spriteType = {
         name = GFX_AIO_DAIT_bg
+        textureFile = "gfx/interface/AIO_DAIT/v2-bg.dds"
     }
 
     spriteType = {
         name = GFX_AIO_DAIT_exit
     }
 
-    spriteType = {
+    corneredTileSpriteType = {
         name = GFX_AIO_DAIT_transparent_button
+        size = { x = 32 y = 32 }
+        textureFile = "gfx/interface/tiles/invisible.dds"
+        borderSize = { x = 16 y = 16 }
+        effectFile = "gfx/FX/buttonstate_onlydisable.shader"
     }
 
     spriteType = {

@@ -1,5 +1,5 @@
 AIO_DAIT_enrich = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
     allow = {
         event_target:AIO_DAIT_target_system = {
             any_system_planet = {
@@ -18,7 +18,7 @@ AIO_DAIT_enrich = {
 }
 
 AIO_DAIT_spawn = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT_locak_target.fail.crisis_path
@@ -36,7 +36,7 @@ AIO_DAIT_spawn = {
 }
 
 AIO_DAIT_seed = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
     allow = {
         event_target:AIO_DAIT_target_system = {
             any_system_planet = {
@@ -52,7 +52,7 @@ AIO_DAIT_seed = {
 }
 
 AIO_DAIT_ethic = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
     allow = {
         event_target:AIO_DAIT_target_system = { exists = owner }
         resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
@@ -63,7 +63,7 @@ AIO_DAIT_ethic = {
 }
 
 AIO_DAIT_storm = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
     allow = {
         event_target:AIO_DAIT_target_system = { is_inside_storm = no }
         resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
@@ -74,7 +74,7 @@ AIO_DAIT_storm = {
 }
 
 AIO_DAIT_strike = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT_locak_target.fail.strike
@@ -90,7 +90,7 @@ AIO_DAIT_strike = {
 }
 
 AIO_DAIT_harvest = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT_locak_target.fail.crisis_path
@@ -114,7 +114,7 @@ AIO_DAIT_harvest = {
 }
 
 AIO_DAIT_erase = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { has_active_event = { AIO_DAIT_events.203 } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT_locak_target.fail.synth_queen
