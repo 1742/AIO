@@ -143,10 +143,10 @@ country_event = {
     }
 
     after = {
-        if = {
-            limit = { NOT = { any_situation = { is_situation_type = situation_AIO_merge_cosmos } } }
-            start_situation = { type = situation_AIO_merge_cosmos target = this }
-        }
+        AIO_create_HS_system_effect = yes
+
+        set_variable = { which = AIO_RAIT_count value = 0 }
+        AIO_trigger_RAIT_effect = yes
     }
 }
 
@@ -165,6 +165,8 @@ country_event = {
             days = 30
         }
     }
+
+    after = { AIO_trigger_RAIT_effect = yes }
 }
 
 # 永恒王座建造完成
@@ -182,6 +184,8 @@ country_event = {
             days = 30
         }
     }
+
+    after = { AIO_trigger_RAIT_effect = yes }
 }
 
 # 犹格索托斯建造完成
@@ -198,6 +202,11 @@ country_event = {
             localization = AIO_crisis_events.404.desc
             days = 30
         }
+    }
+
+    after = {
+        AIO_trigger_RAIT_effect = yes
+        country_event = { id = AIO_crisis_events.501 }
     }
 }
 
@@ -222,8 +231,8 @@ country_event = {
         name = AIO_crisis_events.501.option
         hidden_effect = {
             # 移除标志位及变量
-            clear_variable = AIO_situation_AIT_time
-            clear_variable = AIO_situation_RAIT_affect_system_num
+            clear_variable = AIO_RAIT_count
+            clear_variable = AIO_DAIT_count
             # 清除随机应用无限标志位
             AIO_RAIT_clear_flags = yes
 
@@ -255,21 +264,6 @@ country_event = {
     trigger = { has_ascension_perk = ap_AIO_allinone }
 
     immediate = {
-        # 摧毁局势
-        random_situation = {
-            limit = { is_situation_type = situation_AIO_merge_cosmos }
-            destroy_situation = this
-        }
-
-        # 移除 debuff
-        if = {
-            limit = { NOT = { any_country = { any_situation = { is_situation_type = situation_AIO_merge_cosmos } } } }
-            every_country = {
-                limit = { has_modifier = AIO_merge_cosmos_modifier }
-                remove_modifier = AIO_merge_cosmos_modifier
-            }
-        }
-
         # 移除 RAIT 标志位
         AIO_RAIT_clear_flags = yes
 
@@ -398,48 +392,9 @@ event = {
 
 #region 其他效果实现
 
-# 禁止AIO飞升帝国造船
-ship_event = {
-    id = AIO_crisis_events.801
-    hide_window = yes
-
-    is_triggered_only = yes
-    trigger = { owner = { is_country_type = AIO_empire } }
-
-    immediate = { destroy_ship = this }
-}
-
-# 禁止AIO飞升帝国造恒星基地
-ship_event = {
-    id = AIO_crisis_events.802
-    hide_window = yes
-
-    is_triggered_only = yes
-    trigger = { owner = { is_country_type = AIO_empire } }
-
-    immediate = { solar_system = { system_event = { id = AIO_crisis_events.803 days = 1 } } }
-}
-system_event = {
-    id = AIO_crisis_events.803
-    hide_window = yes
-
-    is_triggered_only = yes
-
-    immediate = {
-        every_fleet_in_system = {
-            limit = {
-                owner = { is_country_type = AIO_empire }
-                is_ship_class = shipclass_starbase
-            }
-            delete_fleet = this
-            break = yes
-        }
-    }
-}
-
 # 驱逐其他进入主神空间的舰船
 fleet_event = {
-    id = AIO_crisis_events.805
+    id = AIO_crisis_events.801
     hide_window = yes
 
     is_triggered_only = yes
@@ -460,7 +415,7 @@ fleet_event = {
 
 # 提示建造视界引擎
 country_event = {
-    id = AIO_crisis_events.807
+    id = AIO_crisis_events.802
     title = AIO_crisis_events_title
     desc = AIO_crisis_events.807.desc
     picture = GFX_evt_cosmogenesis_crisis
@@ -475,7 +430,7 @@ country_event = {
 
 # 起源
 country_event = {
-    id = AIO_crisis_events.808
+    id = AIO_crisis_events.803
     hide_window = yes
 
     is_triggered_only = yes
@@ -491,12 +446,6 @@ country_event = {
         set_country_flag = AIO_built_AIO_mega_02
         set_country_flag = AIO_built_AIO_mega_03
         set_country_flag = AIO_built_AIO_mega_04
-        set_country_flag = AIO_finish_merge_cosmos_stage_1
-        set_country_flag = AIO_finish_merge_cosmos_stage_2
-        set_country_flag = AIO_finish_merge_cosmos_stage_3
-        set_country_flag = AIO_finish_merge_cosmos_stage_4
-        set_country_flag = AIO_finish_merge_cosmos
-
         set_country_flag = AIO_empire_country
         save_global_event_target_as = AIO_empire_country
         # 允许进入牢塞星系

@@ -415,25 +415,6 @@ AIO_ascension_galaxy_effect = {
                             destroy_fleet = this
                         }
                     }
-                    2 = {
-                        # 随机退化星球
-                        random_system_within_border = {
-                            limit = { any_system_planet = { is_colony = yes } }
-                            AIO_DAIT_degenerate_effect = yes
-                        }
-                    }
-                    2 = {
-                        # 随机启蒙物种
-                        random_system_within_border = {
-                            limit = {
-                                any_system_planet = {
-                                    pop_amount > 1
-                                    NOT = { is_planet_class = pc_ai }
-                                }
-                            }
-                            AIO_DAIT_enlighted_effect = yes
-                        }
-                    }
                     1 = {
                         # 随机抹除国家
                         destroy_country = yes

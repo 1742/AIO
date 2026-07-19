@@ -30,21 +30,21 @@ country_event = { # from - maker
     desc = {
         trigger = {
             NOT = { has_country_flag = AIO_RAIT_blackout_maker }
-            from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+            from = { check_variable = { which = AIO_RAIT_count value = 1 } }
         }
         text = crisis.7205.desc.unknown
     }
     desc = {
         trigger = {
             NOT = { has_country_flag = AIO_RAIT_blackout_maker }
-            from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+            from = { check_variable = { which = AIO_RAIT_count value = 2 } }
         }
         text = crisis.7205.desc.known
     }
     desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_blackout_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value > 2 } }
 		}
 		text = crisis.7205.desc.again
 	}
@@ -120,21 +120,21 @@ country_event = { # Thesis: Constant FROM = crisis country
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_constant_round_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = crisis.7210.desc.unknown
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_constant_round_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 2 } }
 		}
 		text = crisis.7210.desc.known
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_constant_round_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value > 3 } }
+			from = { check_variable = { which = AIO_RAIT_count value > 3 } }
 		}
 		text = crisis.7210.desc.again
 	}
@@ -214,21 +214,21 @@ country_event = { # Thesis: Superlight FROM = crisis country
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_superlight_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = crisis.7215.desc.unknown
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_superlight_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 2 } }
 		}
 		text = crisis.7215.desc.known
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_superlight_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value > 2 } }
 		}
 		text = crisis.7215.desc.again
 	}
@@ -370,21 +370,21 @@ country_event = { # Thesis: Alloy Ductility - Good FROM = crisis country
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = crisis.7235.desc.unknown
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 2 } }
 		}
 		text = crisis.7235.desc.known
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value > 2 } }
 		}
 		text = crisis.7235.desc.again
 	}
@@ -457,21 +457,21 @@ country_event = { # Thesis: Alloy Ductility - Bad FROM = crisis country
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = crisis.7240.desc.unknown
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = crisis.7240.desc.known
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_alloy_ductility_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = crisis.7240.desc.again
 	}
@@ -546,21 +546,21 @@ country_event = { # Thesis: Altered Nutrition - Good FROM = crisis country
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = crisis.7245.desc.unknown
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 2 } }
 		}
 		text = crisis.7245.desc.known
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value > 2 } }
 		}
 		text = crisis.7245.desc.again
 	}
@@ -635,21 +635,21 @@ country_event = { # Thesis: Altered Nutrition - Bad FROM = crisis country
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = crisis.7250.desc.unknown
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 2 } }
 		}
 		text = crisis.7250.desc.known
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_altered_nutrition_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value > 2 } }
 		}
 		text = crisis.7250.desc.again
 	}
@@ -724,21 +724,21 @@ country_event = { # Thesis: Mass Shift FROM = crisis country
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_mass_shift_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = crisis.7255.desc.unknown
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_mass_shift_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 2 } }
 		}
 		text = crisis.7255.desc.known
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_mass_shift_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value > 2 } }
 		}
 		text = crisis.7255.desc.again
 	}
@@ -815,21 +815,21 @@ country_event = { # FROM = maker
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_shroud_tear_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = crisis.7260.desc.unknown
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_shroud_tear_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 2 } }
 		}
 		text = crisis.7260.desc.known
 	}
 	desc = {
 		trigger = {
 			NOT = { has_country_flag = AIO_RAIT_shroud_tear_maker }
-			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value > 2 } }
 		}
 		text = crisis.7260.desc.again
 	}
@@ -925,7 +925,7 @@ carrier_event = {
 				NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
 				is_gestalt = no
 			}
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = AIO_RAIT_events.1102.desc.normal.unknown
 	}
@@ -935,7 +935,7 @@ carrier_event = {
 				NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
 				is_gestalt = no
 			}
-			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 2 } }
 		}
 		text = AIO_RAIT_events.1102.desc.normal.known
 	}
@@ -945,7 +945,7 @@ carrier_event = {
 				NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
 				is_gestalt = no
 			}
-			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value > 2 } }
 		}
 		text = AIO_RAIT_events.1102.desc.normal.again
 	}
@@ -956,7 +956,7 @@ carrier_event = {
 				NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
 				is_gestalt = yes
 			}
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = AIO_RAIT_events.1102.desc.gestalt.unknown
 	}
@@ -966,7 +966,7 @@ carrier_event = {
 				NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
 				is_gestalt = yes
 			}
-			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 2 } }
 		}
 		text = AIO_RAIT_events.1102.desc.gestalt.known
 	}
@@ -976,7 +976,7 @@ carrier_event = {
 				NOT = { has_country_flag = AIO_RAIT_time_ruin_maker }
 				is_gestalt = yes
 			}
-			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value > 2 } }
 		}
 		text = AIO_RAIT_events.1102.desc.gestalt.again
 	}
@@ -1334,21 +1334,21 @@ system_event = { # from - maker
 	desc = {
 		trigger = {
 			owner = { NOT = { has_country_flag = AIO_RAIT_gravity_swell_maker } }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 1 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 1 } }
 		}
 		text = AIO_RAIT_events.1202.desc.unknown
 	}
 	desc = {
 		trigger = {
 			owner = { NOT = { has_country_flag = AIO_RAIT_gravity_swell_maker } }
-			from = { check_variable = { which = AIO_situation_AIT_time value = 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value = 2 } }
 		}
 		text = AIO_RAIT_events.1202.desc.known
 	}
 	desc = {
 		trigger = {
 			owner = { NOT = { has_country_flag = AIO_RAIT_gravity_swell_maker } }
-			from = { check_variable = { which = AIO_situation_AIT_time value > 2 } }
+			from = { check_variable = { which = AIO_RAIT_count value > 2 } }
 		}
 		text = AIO_RAIT_events.1202.desc.again
 	}

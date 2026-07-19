@@ -50,6 +50,7 @@ crisis_AIO_level_2 = {
 
 	on_unlock = {
 		hidden_effect = {
+			set_variable = { which = AIO_DAIT_count value = 0 }
 			add_event_chain_counter = {
 				event_chain = "AIO_crisis_events_chain"
 				counter = "AIO_crisis_events_chain"
@@ -67,7 +68,10 @@ crisis_AIO_level_3 = {
 			success_text = AIO_allinone_level_3_req_success_tooltip
 			fail_text = AIO_allinone_level_3_req_fail_tooltip
 			OR = {
-				has_country_flag = AIO_finish_merge_cosmos_stage_1
+				AND = {
+					has_country_flag = AIO_built_AIO_mega_01
+					check_variable = { which = AIO_DAIT_count value >= 2 }
+				}
 				has_country_flag = AIO_empire_country
 			}
 		}
@@ -101,7 +105,10 @@ crisis_AIO_level_4 = {
 			success_text = AIO_allinone_level_4_req_success_tooltip
 			fail_text = AIO_allinone_level_4_req_fail_tooltip
 			OR = {
-				has_country_flag = AIO_finish_merge_cosmos_stage_2
+				AND = {
+					has_country_flag = AIO_built_AIO_mega_02
+					check_variable = { which = AIO_DAIT_count value >= 4 }
+				}
 				has_country_flag = AIO_empire_country
 			}
 		}
@@ -134,7 +141,10 @@ crisis_AIO_level_5 = {
 			success_text = AIO_allinone_level_5_req_success_tooltip
 			fail_text = AIO_allinone_level_5_req_fail_tooltip
 			OR = {
-				has_country_flag = AIO_finish_merge_cosmos_stage_3
+				AND = {
+					has_country_flag = AIO_built_AIO_mega_03
+					check_variable = { which = AIO_DAIT_count value >= 8 }
+				}
 				has_country_flag = AIO_empire_country
 			}
 		}
@@ -145,7 +155,6 @@ crisis_AIO_level_5 = {
 	perks = {
 		menp_AIO_mega_05
 		menp_AIO_buildings_5
-		menp_AIO_ascension_accelerate_5
 	}
 
 	on_unlock = {

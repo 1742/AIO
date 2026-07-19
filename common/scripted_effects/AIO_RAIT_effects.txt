@@ -1,3 +1,10 @@
+# 巨构升级完成时触发一次随机应用无限。
+# scope: country
+AIO_trigger_RAIT_effect = {
+    change_variable = { which = AIO_RAIT_count value = 1 }
+    AIO_RAIT_random_trigger = yes
+}
+
 # 随机触发 RAIT 事件
 AIO_RAIT_random_trigger = {
     random_country = {
@@ -749,6 +756,8 @@ AIO_gravity_swell_effect = {
             star = {
                 AIO_safe_remove_planet_megastructures = yes
                 change_pc = pc_black_hole
+                orbital_station? = { destroy_fleet = this }
+                clear_deposits = yes
                 add_deposit = d_dark_matter_deposit_3
             }
             AIO_change_system_planet_in_frozen = yes

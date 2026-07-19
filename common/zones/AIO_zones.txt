@@ -54,11 +54,13 @@ zone_AIO_lm_production_machine_empire = {
     base_buildtime = @zone_buildtime
 
 	potential = { # planet scope
-		is_planet_class = pc_machine
+        OR = {
+            is_planet_class = pc_machine
+            is_artificial = yes
+        }
 		exists = owner
 		owner = {
-			is_machine_empire = yes
-			has_ascension_perk = ap_machine_worlds
+            is_machine_empire = yes
             has_ascension_perk = ap_AIO_allinone
 		}
 	}
@@ -116,11 +118,13 @@ zone_AIO_lm_production_hive_empire = {
     base_buildtime = @zone_buildtime
 
     potential = { # planet scope
-        is_planet_class = pc_hive
+        OR = {
+            is_planet_class = pc_hive
+            is_artificial = yes
+        }
         exists = owner
         owner = {
             is_hive_empire = yes
-            has_ascension_perk = ap_hive_worlds
             has_ascension_perk = ap_AIO_allinone
         }
     }
@@ -165,7 +169,6 @@ zone_AIO_dm_production ={
     swap_type_weight = 5
 
     zone_sets = {
-        urban
         energy
 		habitat_energy
         nexus
@@ -256,12 +259,8 @@ zone_AIO_nanites_production_metallurgists ={
     base_buildtime = @zone_buildtime
 
     potential = { # planet scope
-        hidden_trigger = {
-            exists = owner
-            owner = {
-                has_menace_perk = menp_AIO_fleet_component_2
-            }
-        }
+        exists = owner
+        owner = { has_menace_perk = menp_AIO_fleet_component_2 }
     }
 
     resources = {

@@ -600,10 +600,13 @@ AIO_DAIT_erase_effect = {
 
 # scope: country（使用 DAIT 的国家）
 AIO_DAIT_pay_cost_effect = {
-    add_resource = { AIO_advanced_logic = @AIO_DAIT_cost_negative }
     if = {
-        limit = { is_variable_set = AIO_situation_AIT_time }
-        change_variable = { which = AIO_situation_AIT_time value = 1 }
+        limit = { NOT = { is_country_type = AIO_empire } }
+        add_resource = { AIO_advanced_logic = @AIO_DAIT_cost_negative }
+    }
+    if = {
+        limit = { is_variable_set = AIO_DAIT_count }
+        change_variable = { which = AIO_DAIT_count value = 1 }
     }
 }
 

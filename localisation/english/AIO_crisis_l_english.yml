@@ -39,12 +39,12 @@
  # crisis path tooltips
  AIO_allinone_level_2_req_success_tooltip: "£trigger_yes£requires §Y$AIO_horizon_engine$§!"
  AIO_allinone_level_2_req_fail_tooltip: "£trigger_no£requires §Y$AIO_horizon_engine$§!"
- AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£requires finish §Y$situation_AIO_merge_cosmos$§! $stage_1$"
- AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£requires finish §Y$situation_AIO_merge_cosmos$§!$stage_1$"
- AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£requires §Y$situation_AIO_merge_cosmos$§!$stage_2$"
- AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£requires §Y$situation_AIO_merge_cosmos$§!$stage_2$"
- AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£requires §Y$situation_AIO_merge_cosmos$§!$stage_3$"
- AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£requires §Y$situation_AIO_merge_cosmos$§!$stage_3$"
+ AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£Complete §Y$AIO_mega_01$§! and use ['concept_AIO_DAIT'] §Y2§! time"
+ AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£Complete §Y$AIO_mega_01$§! and use ['concept_AIO_DAIT'] §Y2§! time"
+ AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£Complete §Y$AIO_mega_02$§! and use ['concept_AIO_DAIT'] §Y4§! times in total"
+ AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£Complete §Y$AIO_mega_02$§! and use ['concept_AIO_DAIT'] §Y4§! times in total"
+ AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£Complete §Y$AIO_mega_03$§! and use ['concept_AIO_DAIT'] §Y8§! times in total"
+ AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£Complete §Y$AIO_mega_03$§! and use ['concept_AIO_DAIT'] §Y8§! times in total"
 
  #endregion
 
@@ -80,7 +80,7 @@
  # second stage
  menp_AIO_mega_02: "Gate Builder"
  menp_AIO_mega_02_desc: "We will build the "gate" leading to the infinite dimensions with our own hands."
- unlocks_AIO_allinone_mega_01: "Unlocked megastructure: §Y$AIO_mega_01$§!\n"
+ unlocks_AIO_allinone_mega_01: "Unlocks Megastructure: §Y$AIO_mega_01$§!\nUnlocks DAIT operations: §YEnrich§! and §YStorm§!\n"
  menp_AIO_buildings_2: "$menp_cosmo_buildings_2$"
  menp_AIO_buildings_2_desc: "$menp_cosmo_buildings_2_desc$"
  menp_AIO_fleet_component_2: "Nanometer Process"
@@ -92,7 +92,7 @@
  # third stage
  menp_AIO_mega_03: "Space-Time Engineering"
  menp_AIO_mega_03_desc: "We can see the fork before the event occurs and even choose its direction."
- unlocks_AIO_allinone_mega_02: "Unlocked megastructure: §Y$AIO_mega_02$§!\n"
+ unlocks_AIO_allinone_mega_02: "Unlocks Megastructure: §Y$AIO_mega_02$§!\nUnlocks DAIT operations: §YSpawn§! and §YHarvest§!\n"
  menp_AIO_buildings_3: "$menp_cosmo_buildings_3$"
  menp_AIO_buildings_3_desc: "$menp_cosmo_buildings_3_desc$"
  menp_AIO_fleet_component_3: "$menp_cosmo_techs_3$"
@@ -102,7 +102,7 @@
  # fourth stage
  menp_AIO_mega_04: "The Lord of Constant Vision"
  menp_AIO_mega_04_desc: "We don't need to conquer; everything is already within our sight."
- unlocks_AIO_allinone_mega_03: "Unlocked megastructure: §Y$AIO_mega_03$§!\n"
+ unlocks_AIO_allinone_mega_03: "Unlocks Megastructure: §Y$AIO_mega_03$§!\nUnlocks DAIT operations: §YSeed§! and §YStrike§!\n"
  menp_AIO_buildings_4: "$menp_cosmo_buildings_4$"
  menp_AIO_buildings_4_desc: "$menp_cosmo_buildings_4_desc$"
  menp_AIO_ship_4: "$menp_cosmo_ship_4$"
@@ -110,13 +110,9 @@
  # fifth stage
  menp_AIO_mega_05: "Dimension Embedding"
  menp_AIO_mega_05_desc: "I/We are the truth."
- unlocks_AIO_allinone_mega_04: "Unlocked megastructure: §Y$AIO_mega_04$§!\n"
+ unlocks_AIO_allinone_mega_04: "Unlocks Megastructure: §Y$AIO_mega_04$§!\nUnlocks DAIT operations: §YEthics§! and §YErase§!\n"
  menp_AIO_buildings_5: "$menp_cosmo_buildings_5$"
  menp_AIO_buildings_5_desc: "$menp_cosmo_buildings_5_desc$"
- menp_AIO_ascension_accelerate_5: "Reality Collapses"
- menp_AIO_ascension_accelerate_5_desc: "Under long-term interference, reality has inevitably fallen into self-disintegration."
- unlocks_ascension_accelerate_5: "Accelerate §Y$situation_AIO_merge_cosmos$§! situation."
-
  # tooltips
  AIO_unlock_AIO_TDTE_node: "Unlocked §Y$AIO_mega_01_node$§! Node."
 

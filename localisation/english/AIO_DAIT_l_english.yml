@@ -28,6 +28,10 @@
  AIO_DAIT_events.202.strike: "Strike"
  AIO_DAIT_events.202.harvest: "Harvest"
  AIO_DAIT_events.202.erase: "Erase"
+ AIO_DAIT.fail.mega_1: "£trigger_no£Requires §YCrisis Level 2§!"
+ AIO_DAIT.fail.mega_2: "£trigger_no£Requires §YCrisis Level 3§!"
+ AIO_DAIT.fail.mega_3: "£trigger_no£Requires §YCrisis Level 4§!"
+ AIO_DAIT.fail.mega_4: "£trigger_no£Requires §YCrisis Level 5§!"
 
  #endregion
 

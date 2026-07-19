@@ -1,5 +1,5 @@
 ﻿l_simp_chinese:
- AIO_mod_events.201.desc: "模组：万物归一\n\n这是一个mod菜单，用于查看更新内容。\n\n§R注意：使用mod的地图类型会导致$AIO_HYPER_DIMENSIONAL_SPACE$无法生成，无法推进灾飞进度！！！§!\n\n最近一次更新时间：北京时间 2026/3/1\n\n- 重做['concept_AIO_DAIT']\n- §Y$AIO_horizon_engine$§!改为一阶巨构\n- §Y$AIO_mega_01$§!、§Y$AIO_mega_02$§!、§Y$AIO_mega_03$§!、§Y$AIO_mega_04$§!产出调整\n- §Y$situation_AIO_merge_cosmos$§!改为四个阶段"
+ AIO_mod_events.201.desc: "模组：万物归一\n\n这是一个mod菜单，用于查看更新内容。\n\n§R注意：使用mod的地图类型可能导致$AIO_HYPER_DIMENSIONAL_SPACE$无法生成，进而阻断巨构升级！！！§!\n\n最近一次更新时间：北京时间 2026/7/19\n\n- 移除融合宇宙局势，以完成§Y$AIO_mega_04$§!作为胜利条件\n- 每次升级专属巨构都会触发一次随机应用无限\n- 天灾等级逐级解锁['concept_AIO_DAIT']操作，并要求累计使用次数"
  AIO_mod_events.201.option_1: "知道了"
  AIO_mod_events.201.option_2: "推荐怎么玩？"
  AIO_mod_events.201.option_2.response: "emmmm我也只测试过1种玩法（铁球纪念虚拟），\n\n前三十年速物种飞不用说，点灾飞前搞点物理学尽快把§Y$tech_AIO_exponential_learning_theory$§!点出来，§Y$AIO_horizon_engine$§!也尽量早点造，靠着能量币产出铺§Y$district_AIO_lathe$§!爆科研，挖几个坟搞个§Y$tech_archaeo_refinery$§!产够战略资源，造点仓库存$energy$和$sr_dark_matter$。\n\n升级完进局势后DAIT点$AIO_DAIT_energy_option.1.title$加$energy$产出，苟到局势二阶段出§Y$AIO_mega_02$§!，§Y$AIO_advanced_logic$§!产能上来后就起飞了。"

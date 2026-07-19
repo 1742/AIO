@@ -4,7 +4,7 @@
 [hr]
 
 [h1]Overview[/h1]
-This mod provides a brand new Crisis Ascension path for [b]Gestalt Empires[/b] — [i][b]All-in-One[/b][/i]. It is a path of ascension achieved through Reality Editing and Applied Infinity. By completing the [i][b]Horizon Engine[/b][/i], surviving the Situation, and constructing the exclusive megastructure [i][b]Yog-Sothoth[/b][/i], you will ascend to master the laws of reality.
+This mod provides a brand new Crisis Ascension path for [b]Gestalt Empires[/b] — [i][b]All-in-One[/b][/i]. Advance through Crisis Levels, apply DAIT operations, and complete [i][b]Yog-Sothoth[/b][/i] to ascend and master the laws of reality.
 
 Although you will see many shadows of the vanilla ascension paths on this route [strike](What a cobbled-together crisis)[/strike], it now introduces a brand new [b]Directional Applied Infinity Thesis (DAIT)[/b] system. It is no longer just boring stat padding, but directly modifying the underlying code of the universe! [strike](Isn't that just a fancy way of saying buffs?...)[/strike]
 
@@ -32,26 +32,18 @@ Unlocked upon adoption:
 [h3]Crisis Level 2[/h3]
 Unlocked after completing the [i][b]Horizon Engine[/b][/i]:
 [list]
-[*]Upgrade to the [i][b]Gate of All Gates[/b][/i]. Note: High Energy upkeep, especially during the [b]Fusion Universe[/b] Situation.
-[*][b]Strategy:[/b] Stockpile Energy before upgrading. Once the Situation starts, select [b]Vacuum Zero-Point Level[/b] in DAIT to prevent an economic crash.
-[/list]
-
-[b]Merge Cosmos Situation[/b]
-Spend massive Energy and Dark Matter to advance.
-Complete Stage 1:
-[list]
-[*]Unlocks [b]Gate of All Gates Node[/b], a instant build Gateway.[i](Note: Due to changes to the original mechanic, it is not possible to build Megastructures in unreachable systems, which are limited to the range of the Engineer ship (or shoot the ship with a slingshot).)[/i]
-[*]Unlocks special system [i][b]The Nameless Mist[/b][/i].
+[*]Upgrade to the [i][b]Gate of All Gates[/b][/i]. Completing it creates [i][b]The Nameless Mist[/b][/i] and triggers one Random Applied Infinity Thesis.
+[*]Unlock [b]Enrich[/b] and [b]Storm[/b] DAIT operations.
 [/list]
 
 [h3]Crisis Level 3-5[/h3]
 Upgrade to [i][b]Silver Key[/b][/i] -> [i][b]Eternal Throne[/b][/i] -> [i][b]Yog-Sothoth[/b][/i].
-Completing Stage 7 grants victory. You can continue playing to edit reality (delete stars, etc.) using Yog-Sothoth.
+Every upgrade triggers one Random Applied Infinity Thesis. Crisis Levels 3/4/5 require 1/3/6 cumulative DAIT uses and unlock the next operation pair. Completing Yog-Sothoth grants victory.
 
 [h2]Compatibility & Warning[/h2]
 [list]
 [*]Modified Automated Buildings logic.
 [/list]
-[b]CRITICAL WARNING:[/b] Do NOT use modded Map Types! This will prevent [i][b]The Nameless Mist[/b][/i] system from spawning, blocking the Situation progress!
+[b]CRITICAL WARNING:[/b] Do NOT use modded Map Types! This may prevent [i][b]The Nameless Mist[/b][/i] system from spawning and block megastructure progression!
 
 Finally, enjoy the game!

@@ -116,8 +116,6 @@ special_project = {
 }
 
 #endregion
-
-
 #region 重力膨胀
 
 # 一阶段
@@ -252,20 +250,3 @@ special_project = {
 }
 
 #endregion
-
-# 晋升，触发胜利
-special_project = {
-	icon = gfx/interface/icons/situation_log/situation_log_physics.dds
-
-	key = "AIO_ASCENSION"
-	event_chain = AIO_crisis_events_chain
-	location = yes
-
-	picture = GFX_evt_vortex
-
-	days_to_research = 30
-
-	event_scope = country_event
-
-	on_success = { country_event = { id = AIO_crisis_events.501 } }
-}

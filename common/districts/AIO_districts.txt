@@ -22,7 +22,7 @@ district_AIO_lathe_frame = {
 
 	potential = {
 		exists = owner
-		owner = { has_ascension_perk = ap_AIO_allinone }
+		owner = { has_technology = tech_AIO_exponential_learning_theory }
 		is_capital = yes
 	}
 

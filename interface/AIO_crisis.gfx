@@ -174,10 +174,4 @@ spriteTypes = {
 		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_5.dds
 		noOfFrames = 2
 	}
-	# 雪崩效应
-	spriteType = {
-		name = "GFX_menp_AIO_ascension_accelerate_5_icon"
-		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_ascension_accelerate_5.dds
-		noOfFrames = 2
-	}
 }

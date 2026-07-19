@@ -1,13 +1,5 @@
 # AIO 动态数值
 
-# 定向应用无限：天体与理想宜居轨道（100）的距离差。
-# scope: planet
-AIO_DAIT_habitable_zone_distance_score = {
-	base = -100
-	add = value:distance_to_system_star
-	abs = yes
-}
-
 # AIO暗物质驱动协议维护费
 AIO_edict_dm_engine_dm_upkeep = {
     base = 0
@@ -21,55 +13,6 @@ AIO_edict_dm_engine_dm_upkeep = {
 
     min = 0
 }
-
-
-#region 融合宇宙局势
-
-# AIO融合宇宙局势解决方案能量消耗, scope: situation
-AIO_merge_cosmos_solution_energy_upkeep_value = {
-    base = 0
-    # 能量币库存修正，扣除能量币库存的5%
-    complex_trigger_modifier = {
-        trigger = has_country_resource
-        trigger_scope = owner
-        parameters = { type = energy }
-        mode = add
-        mult = 0.01
-    }
-    floor = yes
-
-    min = 100
-}
-
-# AIO融合宇宙局势解决方案暗物质消耗, scope: situation
-AIO_merge_cosmos_solution_dm_upkeep_value = {
-    base = 0
-    # 暗物质库存修正，扣除暗物质库存的5%
-    complex_trigger_modifier = {
-        trigger = has_country_resource
-        trigger_scope = owner
-        parameters = { type = sr_dark_matter }
-        mode = add
-        mult = 0.01
-    }
-    floor = yes
-
-    min = 5
-}
-
-# AIO融合宇宙局势应用无限修正, scope: situation
-AIO_merge_cosmos_AIT_modifier = {
-    base = 0
-    add = owner.AIO_situation_AIT_time
-    mult = 0.1
-    add = 1
-
-    min = 1
-	max = 10
-}
-
-#endregion
-
 
 #region 递归节点计数
 
@@ -194,19 +137,6 @@ AIO_resonator_factor_display = {
 #endregion
 
 
-#region DAIT
-
-# buff 数值百分比
-AIO_DAIT_option_effect_value_perc = {
-    base = 0
-
-    set = this.AIO_DAIT_$TAB$_option_$OPTION$_effect_$EFFECT$_value
-    mult = 100
-}
-
-#endregion
-
-
 #region 现实编辑
 
 # 亚弗戈蒙之怒修正
@@ -228,7 +158,6 @@ AIO_galaxy_size = {
         parameters = { limit = { NOT = { is_star_class = sc_AIO_void } } }
         mode = add
     }
-    subtract = 3
 
     min = 10
 }

@@ -9,8 +9,6 @@
  AIO_AIT_TIME_RUIN_STAGE_3_DESC: "[from.GetName]上的时间循环是现实规律变动的结果，我们可以尝试使用§R应用无限§!的方法将其恢复。"
 
  #endregion
-
-
  #region 重力膨胀
 
  AIO_AIT_GRAVITY_SWELL_STAGE_1: "重力之下"
@@ -24,13 +22,5 @@
  AIO_AIT_GS_STAGE_tt: "£trigger_no£仅作提醒相关操作，结束时会根据星系内情况结算，无需研究该项目。"
  AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_4: "静观其变"
  AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_4_DESC: "[from.GetName]的加速坍缩并未影响我们的殖民地，我们可以研究这一过程。"
-
- #endregion
-
-
- #region 晋升特殊项目，触发胜利
-
- AIO_ASCENSION: "晋升"
- AIO_ASCENSION_DESC: "现实的法则等待重新定义。"
 
  #endregion

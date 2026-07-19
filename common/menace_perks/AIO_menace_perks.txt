@@ -202,9 +202,3 @@ menp_AIO_buildings_5 = {
 		# 天空穹顶/九天穹顶、虚拟极乐广场/无尽极乐枢纽、机器人生产节点/机器人生产中心/分子焕活所/生物再生所
 	}
 }
-# 局势加速
-menp_AIO_ascension_accelerate_5 = {
-	portrait = "GFX_menp_AIO_ascension_accelerate_5_icon"
-
-	on_unlock = { custom_tooltip = unlocks_ascension_accelerate_5 }
-}

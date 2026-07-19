@@ -2,6 +2,13 @@ AIO_DAIT_enrich = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
+            fail_text = AIO_DAIT.fail.mega_1
+            OR = {
+                has_menace_perk = menp_AIO_mega_02
+                is_country_type = AIO_empire
+            }
+        }
+        custom_tooltip = {
             fail_text = AIO_DAIT_lock_target.fail.enrich
             event_target:AIO_DAIT_target_system = {
                 any_system_planet = {
@@ -13,7 +20,10 @@ AIO_DAIT_enrich = {
                 }
             }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        }
     }
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -28,6 +38,13 @@ AIO_DAIT_spawn = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
+            fail_text = AIO_DAIT.fail.mega_2
+            OR = {
+                has_menace_perk = menp_AIO_mega_03
+                is_country_type = AIO_empire
+            }
+        }
+        custom_tooltip = {
             fail_text = AIO_DAIT_lock_target.fail.crisis_path
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
         }
@@ -35,7 +52,10 @@ AIO_DAIT_spawn = {
             fail_text = AIO_DAIT_lock_target.fail.synth_queen
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        }
     }
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -50,6 +70,13 @@ AIO_DAIT_seed = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
+            fail_text = AIO_DAIT.fail.mega_3
+            OR = {
+                has_menace_perk = menp_AIO_mega_04
+                is_country_type = AIO_empire
+            }
+        }
+        custom_tooltip = {
             fail_text = AIO_DAIT_lock_target.fail.seed
             event_target:AIO_DAIT_target_system = {
                 any_system_planet = {
@@ -58,7 +85,10 @@ AIO_DAIT_seed = {
                 }
             }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        }
     }
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -73,10 +103,20 @@ AIO_DAIT_ethic = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
+            fail_text = AIO_DAIT.fail.mega_4
+            OR = {
+                has_menace_perk = menp_AIO_mega_05
+                is_country_type = AIO_empire
+            }
+        }
+        custom_tooltip = {
             fail_text = AIO_DAIT_lock_target.fail.ethic
             event_target:AIO_DAIT_target_system = { exists = owner }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        }
     }
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -90,8 +130,18 @@ AIO_DAIT_ethic = {
 AIO_DAIT_storm = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT.fail.mega_1
+            OR = {
+                has_menace_perk = menp_AIO_mega_02
+                is_country_type = AIO_empire
+            }
+        }
         event_target:AIO_DAIT_target_system = { is_inside_storm = no }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        }
     }
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -106,12 +156,22 @@ AIO_DAIT_strike = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
+            fail_text = AIO_DAIT.fail.mega_3
+            OR = {
+                has_menace_perk = menp_AIO_mega_04
+                is_country_type = AIO_empire
+            }
+        }
+        custom_tooltip = {
             fail_text = AIO_DAIT_lock_target.fail.strike
             event_target:AIO_DAIT_target_system = {
                 NOT = { has_star_flag = AIO_Aformom_exist }
             }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        }
     }
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -126,6 +186,13 @@ AIO_DAIT_harvest = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
+            fail_text = AIO_DAIT.fail.mega_2
+            OR = {
+                has_menace_perk = menp_AIO_mega_03
+                is_country_type = AIO_empire
+            }
+        }
+        custom_tooltip = {
             fail_text = AIO_DAIT_lock_target.fail.crisis_path
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
         }
@@ -139,7 +206,10 @@ AIO_DAIT_harvest = {
             fail_text = AIO_DAIT_lock_target.fail.synth_queen
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        }
     }
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -154,10 +224,20 @@ AIO_DAIT_erase = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
+            fail_text = AIO_DAIT.fail.mega_4
+            OR = {
+                has_menace_perk = menp_AIO_mega_05
+                is_country_type = AIO_empire
+            }
+        }
+        custom_tooltip = {
             fail_text = AIO_DAIT_lock_target.fail.synth_queen
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        }
     }
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes

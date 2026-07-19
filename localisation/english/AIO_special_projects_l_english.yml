@@ -9,8 +9,6 @@
  AIO_AIT_TIME_RUIN_STAGE_3_DESC: "[from.GetName] is the result of a change in the laws of reality, and we can try to restore it using the method of §RApplying Infinite Thesis§!"
 
  #endregion
-
-
  #region Gravity Expansion
 
  AIO_AIT_GRAVITY_SWELL_STAGE_1: "Under Gravity"
@@ -24,13 +22,5 @@
  AIO_AIT_GS_STAGE_tt: "£trigger_no£This is only for reminding of relevant operations. At the end, the settlement will be made based on the situation within the galaxy. There is no need to study this project."
  AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_4: "Wait and Watch"
  AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_4_DESC: "The accelerated collapse of [from.GetName] did not affect our colony, and we can study this process."
-
- #endregion
-
-
- #region ascension special project, toggle win
-
- AIO_ASCENSION: "Ascension"
- AIO_ASCENSION_DESC: "he laws of reality are waiting to be redefined."
 
  #endregion
