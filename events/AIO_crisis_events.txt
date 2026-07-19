@@ -217,33 +217,82 @@ country_event = {
 
 country_event = {
     id = AIO_crisis_events.501
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        AIO_DAIT_refresh_tendency_effect = yes
+        if = {
+            limit = { has_country_flag = AIO_DAIT_tendency_construct }
+            country_event = { id = AIO_crisis_events.511 }
+        }
+        else_if = {
+            limit = { has_country_flag = AIO_DAIT_tendency_negate }
+            country_event = { id = AIO_crisis_events.512 }
+        }
+        else = { country_event = { id = AIO_crisis_events.513 } }
+    }
+}
+
+country_event = {
+    id = AIO_crisis_events.511
     title = AIO_crisis_events_title
-    desc = AIO_crisis_events.501.desc
+    desc = AIO_crisis_events.511.desc
     picture = GFX_evt_vortex
 	show_sound = event_mystic_reveal
-	location = FROM
+	location = event_target:AIO_HS_system
 
     event_chain = AIO_crisis_events_chain
 
     is_triggered_only = yes
 
     option = {
-        name = AIO_crisis_events.501.option
+        name = AIO_crisis_events.511.option
         hidden_effect = {
-            # 移除标志位及变量
-            clear_variable = AIO_RAIT_count
-            clear_variable = AIO_DAIT_count
-            # 清除随机应用无限标志位
-            AIO_RAIT_clear_flags = yes
+            set_country_flag = AIO_ending_construct
+            AIO_crisis_finish_ascension_effect = yes
+        }
+        win = yes
+        default_hide_option = yes
+    }
+}
 
-            # 结束事件链
-            end_event_chain = AIO_crisis_events_chain
+country_event = {
+    id = AIO_crisis_events.512
+    title = AIO_crisis_events_title
+    desc = AIO_crisis_events.512.desc
+    picture = GFX_evt_vortex
+	show_sound = event_mystic_reveal
+	location = event_target:AIO_HS_system
+    event_chain = AIO_crisis_events_chain
+    is_triggered_only = yes
 
-            # 结束所有战争
-            every_war = { end_war_effect = yes }
+    option = {
+        name = AIO_crisis_events.512.option
+        hidden_effect = {
+            set_country_flag = AIO_ending_negate
+            AIO_crisis_finish_ascension_effect = yes
+        }
+        win = yes
+        default_hide_option = yes
+    }
+}
 
-            AIO_ascension_effect = yes
-            AIO_ascension_galaxy_effect = yes
+country_event = {
+    id = AIO_crisis_events.513
+    title = AIO_crisis_events_title
+    desc = AIO_crisis_events.513.desc
+    picture = GFX_evt_vortex
+	show_sound = event_mystic_reveal
+	location = event_target:AIO_HS_system
+    event_chain = AIO_crisis_events_chain
+    is_triggered_only = yes
+
+    option = {
+        name = AIO_crisis_events.513.option
+        hidden_effect = {
+            set_country_flag = AIO_ending_equilibrium
+            AIO_crisis_finish_ascension_effect = yes
         }
         win = yes
         default_hide_option = yes
@@ -450,13 +499,10 @@ country_event = {
         save_global_event_target_as = AIO_empire_country
         # 允许进入牢塞星系
         set_country_flag = protected_from_queen_storm
-        # 已经见过塔维尔，进入过图书馆
-        set_country_flag = AIO_has_meet_Tawi
-        set_country_flag = AIO_has_enter_library
 
         # 激活灾飞路径
         add_ascension_perk = ap_AIO_allinone
-        add_resource = { AIO_advanced_logic = 50000 }
+        add_resource = { AIO_advanced_logic = 45000 }
 
         # 空想要3点国民理念点，不加够会转变政体失败
         give_technology = { tech = tech_planetary_unification }

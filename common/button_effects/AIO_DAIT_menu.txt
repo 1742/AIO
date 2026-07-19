@@ -28,6 +28,7 @@ AIO_DAIT_enrich = {
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
+        AIO_DAIT_register_construct_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_enrich_effect = { TIMES = 10 } }
         AIO_DAIT_notify_enrich_effect = yes
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -60,6 +61,7 @@ AIO_DAIT_spawn = {
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
+        AIO_DAIT_register_construct_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_spawn_effect = yes }
         AIO_DAIT_notify_spawn_effect = yes
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -93,6 +95,7 @@ AIO_DAIT_seed = {
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
+        AIO_DAIT_register_construct_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_seed_effect = yes }
         AIO_DAIT_notify_seed_effect = yes
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -121,6 +124,7 @@ AIO_DAIT_ethic = {
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
+        AIO_DAIT_register_construct_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_ethic_effect = yes }
         AIO_DAIT_notify_ethic_effect = yes
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -146,6 +150,7 @@ AIO_DAIT_storm = {
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
+        AIO_DAIT_register_negate_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_storm_effect = yes }
         AIO_DAIT_notify_storm_effect = yes
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -176,6 +181,7 @@ AIO_DAIT_strike = {
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
+        AIO_DAIT_register_negate_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_strike_effect = yes }
         AIO_DAIT_notify_strike_effect = yes
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -214,6 +220,7 @@ AIO_DAIT_harvest = {
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
+        AIO_DAIT_register_negate_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_harvest_effect = yes }
         AIO_DAIT_notify_harvest_effect = yes
         AIO_DAIT_clear_affected_countries_effect = yes
@@ -242,6 +249,7 @@ AIO_DAIT_erase = {
     effect = {
         AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
+        AIO_DAIT_register_negate_effect = yes
         if = {
             limit = { is_country_type = AIO_empire }
             event_target:AIO_DAIT_target_system = {

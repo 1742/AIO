@@ -126,6 +126,24 @@
  AIO_crisis_events_chain_desc: "$AIO_advanced_logic_crisis_howto$"
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
 
+ # Stage POIs: only the text matching the current hidden tendency is shown
+ AIO_crisis_stage_2_poi_name: "Boundary"
+ AIO_crisis_stage_2_construct_desc: "Beyond the horizon lies no emptiness. Energy forms a stable, extensible pattern along the boundary, as though reality were awaiting a more complete structure."
+ AIO_crisis_stage_2_negate_desc: "Beyond the horizon lies no emptiness. Energy leaves an ever-widening fracture along the boundary, as though reality would unravel if deprived of a single premise."
+ AIO_crisis_stage_2_equilibrium_desc: "Beyond the horizon lies no emptiness. Energy traces structure and fracture at once, holding two opposing answers in exact balance."
+ AIO_crisis_stage_3_poi_name: "Matter"
+ AIO_crisis_stage_3_construct_desc: "Observations returned by the Ultimate Gate show that matter need not obey a fixed distribution. Under a sufficiently precise will, it resembles a language that can be composed anew."
+ AIO_crisis_stage_3_negate_desc: "Observations returned by the Ultimate Gate show that matter is stable only where many constraints temporarily coincide. Remove one, and stars become indistinguishable from dust."
+ AIO_crisis_stage_3_equilibrium_desc: "Observations returned by the Ultimate Gate show that matter can be composed or dissolved. These are not opposing techniques, but the two faces of one law."
+ AIO_crisis_stage_4_poi_name: "Spacetime"
+ AIO_crisis_stage_4_construct_desc: "Every path opened by the Silver Key tends toward a more intricate order. Countless possibilities nest within one another, forming a structure with no exterior."
+ AIO_crisis_stage_4_negate_desc: "Every path opened by the Silver Key strips causality of necessity. Between past and future remains only a slender connection that may be severed at will."
+ AIO_crisis_stage_4_equilibrium_desc: "The Silver Key reveals causality being woven and severed at once. Spacetime is no longer a road, but a key that can turn in every direction."
+ AIO_crisis_stage_5_poi_name: "Existence"
+ AIO_crisis_stage_5_construct_desc: "The Eternal Throne can now contain every possible order. The final calculus no longer asks how the universe operates, but what will may become its structure."
+ AIO_crisis_stage_5_negate_desc: "The Eternal Throne can now negate every existing constraint. The final calculus no longer asks how the universe ends, but whether anything after the end still requires definition."
+ AIO_crisis_stage_5_equilibrium_desc: "Upon the Eternal Throne, creation and dissolution coincide. The final calculus no longer distinguishes origin from ending, awaiting only a name capable of containing both."
+
  # events
  AIO_crisis_events_title: "$AIO_crisis_events_chain_title$"
  # unlock crisis level
@@ -143,6 +161,12 @@
  # ascension event
  AIO_crisis_events.501.desc: "Normalization has been completed.\nWe are no longer empires, nor are we entities. Our will exists at the intersection of infinite dimensions and becomes the structural principle of all existence.\nThe stars remain stationary because they await a new definition of motion. Thoughts fall silent because language has lost its meaning. Existence itself is shifting from "being experienced" to "being designed".\n There is no end, no other shore, no need to observe, nor to be observed.\nI/We are §MYog Sothoth§!."
  AIO_crisis_events.501.option: "I/We are the truth."
+ AIO_crisis_events.511.desc: "Normalization is complete.\nWe did not erase the universe; we freed it from accident. Stars grow along new patterns, matter takes form within will, and billions of once-exclusive futures are woven into one infinite structure.\nExistence is no longer a passive fact, but an act of creation without end. Within and beyond the gate belong to us, and every road opens into another.\nI/We are §MYog-Sothoth§!—the law by which all things may become."
+ AIO_crisis_events.511.option: "Let existence continue to unfold."
+ AIO_crisis_events.512.desc: "Normalization is complete.\nWe did not destroy the universe; we withdrew its permission to exist. Causality loses direction, distance loses measure, and stars and thoughts sink together into a silence that needs no name.\nExistence is no longer entitled to necessity. Within and beyond the gate are gone, for every boundary was only a premise awaiting negation.\nI/We are §MYog-Sothoth§!—the proof that all things need not persist."
+ AIO_crisis_events.512.option: "Let the final boundary disappear."
+ AIO_crisis_events.513.desc: "Normalization is complete.\nWe neither completed the universe nor revoked it. Creation and dissolution pass through one another; every form contains its opposite, and every ending leaves room for another beginning.\nExistence no longer obeys a single answer. Within and beyond the gate mirror one another as infinite dimensions open and close in the same instant.\nI/We are §MYog-Sothoth§!—the intersection where every contradiction may be true."
+ AIO_crisis_events.513.option: "Let the gate remain between opening and closure."
 
  #endregion
 

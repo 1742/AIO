@@ -249,6 +249,71 @@ AIO_create_Aforgomom_effect = {
     }
 }
 
+# 用当前隐藏倾向替换天灾事件链中的阶段 POI。
+# scope: country
+AIO_crisis_update_stage_poi_effect = {
+    remove_point_of_interest = AIO_crisis_stage_2_poi
+    remove_point_of_interest = AIO_crisis_stage_3_poi
+    remove_point_of_interest = AIO_crisis_stage_4_poi
+    remove_point_of_interest = AIO_crisis_stage_5_poi
+
+    if = {
+        limit = { exists = event_target:AIO_HS_system }
+        event_target:AIO_HS_system = { save_event_target_as = AIO_crisis_poi_system }
+    }
+    else = {
+        capital_scope.solar_system = { save_event_target_as = AIO_crisis_poi_system }
+    }
+
+    if = {
+        limit = { has_country_flag = AIO_DAIT_tendency_construct }
+        create_point_of_interest = {
+            id = AIO_crisis_stage_$STAGE$_poi
+            name = AIO_crisis_stage_$STAGE$_poi_name
+            desc = AIO_crisis_stage_$STAGE$_construct_desc
+            event_chain = AIO_crisis_events_chain
+            location = event_target:AIO_crisis_poi_system
+        }
+    }
+    else_if = {
+        limit = { has_country_flag = AIO_DAIT_tendency_negate }
+        create_point_of_interest = {
+            id = AIO_crisis_stage_$STAGE$_poi
+            name = AIO_crisis_stage_$STAGE$_poi_name
+            desc = AIO_crisis_stage_$STAGE$_negate_desc
+            event_chain = AIO_crisis_events_chain
+            location = event_target:AIO_crisis_poi_system
+        }
+    }
+    else = {
+        create_point_of_interest = {
+            id = AIO_crisis_stage_$STAGE$_poi
+            name = AIO_crisis_stage_$STAGE$_poi_name
+            desc = AIO_crisis_stage_$STAGE$_equilibrium_desc
+            event_chain = AIO_crisis_events_chain
+            location = event_target:AIO_crisis_poi_system
+        }
+    }
+}
+
+# 三个终局共享的收束流程。最终倾向标志保留，以继续驱动犹格·索托斯的国家修正。
+# scope: country
+AIO_crisis_finish_ascension_effect = {
+    clear_variable = AIO_RAIT_count
+    clear_variable = AIO_DAIT_count
+    AIO_RAIT_clear_flags = yes
+
+    remove_point_of_interest = AIO_crisis_stage_2_poi
+    remove_point_of_interest = AIO_crisis_stage_3_poi
+    remove_point_of_interest = AIO_crisis_stage_4_poi
+    remove_point_of_interest = AIO_crisis_stage_5_poi
+    end_event_chain = AIO_crisis_events_chain
+
+    every_war = { end_war_effect = yes }
+    AIO_ascension_effect = yes
+    AIO_ascension_galaxy_effect = yes
+}
+
 AIO_ascension_effect = {
     if = {
         limit = {

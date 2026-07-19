@@ -51,6 +51,10 @@ crisis_AIO_level_2 = {
 	on_unlock = {
 		hidden_effect = {
 			set_variable = { which = AIO_DAIT_count value = 0 }
+			set_variable = { which = AIO_DAIT_construct_count value = 0 }
+			set_variable = { which = AIO_DAIT_negate_count value = 0 }
+			AIO_DAIT_refresh_tendency_effect = yes
+			AIO_crisis_update_stage_poi_effect = { STAGE = 2 }
 			add_event_chain_counter = {
 				event_chain = "AIO_crisis_events_chain"
 				counter = "AIO_crisis_events_chain"
@@ -88,6 +92,8 @@ crisis_AIO_level_3 = {
 
 	on_unlock = {
 		hidden_effect = {
+			AIO_DAIT_refresh_tendency_effect = yes
+			AIO_crisis_update_stage_poi_effect = { STAGE = 3 }
 			add_event_chain_counter = {
 				event_chain = "AIO_crisis_events_chain"
 				counter = "AIO_crisis_events_chain"
@@ -124,6 +130,8 @@ crisis_AIO_level_4 = {
 
 	on_unlock = {
 		hidden_effect = {
+			AIO_DAIT_refresh_tendency_effect = yes
+			AIO_crisis_update_stage_poi_effect = { STAGE = 4 }
 			add_event_chain_counter = {
 				event_chain = "AIO_crisis_events_chain"
 				counter = "AIO_crisis_events_chain"
@@ -159,6 +167,8 @@ crisis_AIO_level_5 = {
 
 	on_unlock = {
 		hidden_effect = {
+			AIO_DAIT_refresh_tendency_effect = yes
+			AIO_crisis_update_stage_poi_effect = { STAGE = 5 }
 			declare_crisis_effect = yes
 			every_playable_country = {
 				limit = {

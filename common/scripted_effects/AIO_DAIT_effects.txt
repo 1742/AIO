@@ -610,6 +610,55 @@ AIO_DAIT_pay_cost_effect = {
     }
 }
 
+# 根据两类 DAIT 的使用次数刷新隐藏倾向。差值不足 2 时保持均衡。
+# scope: country
+AIO_DAIT_refresh_tendency_effect = {
+    remove_country_flag = AIO_DAIT_tendency_construct
+    remove_country_flag = AIO_DAIT_tendency_negate
+    remove_country_flag = AIO_DAIT_tendency_equilibrium
+
+    set_variable = { which = AIO_DAIT_tendency_delta value = AIO_DAIT_construct_count }
+    subtract_variable = { which = AIO_DAIT_tendency_delta value = AIO_DAIT_negate_count }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_tendency_delta value >= 2 } }
+        set_country_flag = AIO_DAIT_tendency_construct
+    }
+    else_if = {
+        limit = { check_variable = { which = AIO_DAIT_tendency_delta value <= -2 } }
+        set_country_flag = AIO_DAIT_tendency_negate
+    }
+    else = { set_country_flag = AIO_DAIT_tendency_equilibrium }
+    clear_variable = AIO_DAIT_tendency_delta
+}
+
+# scope: country
+AIO_DAIT_register_construct_effect = {
+    if = {
+        limit = { NOT = { is_variable_set = AIO_DAIT_construct_count } }
+        set_variable = { which = AIO_DAIT_construct_count value = 0 }
+    }
+    if = {
+        limit = { NOT = { is_variable_set = AIO_DAIT_negate_count } }
+        set_variable = { which = AIO_DAIT_negate_count value = 0 }
+    }
+    change_variable = { which = AIO_DAIT_construct_count value = 1 }
+    AIO_DAIT_refresh_tendency_effect = yes
+}
+
+# scope: country
+AIO_DAIT_register_negate_effect = {
+    if = {
+        limit = { NOT = { is_variable_set = AIO_DAIT_construct_count } }
+        set_variable = { which = AIO_DAIT_construct_count value = 0 }
+    }
+    if = {
+        limit = { NOT = { is_variable_set = AIO_DAIT_negate_count } }
+        set_variable = { which = AIO_DAIT_negate_count value = 0 }
+    }
+    change_variable = { which = AIO_DAIT_negate_count value = 1 }
+    AIO_DAIT_refresh_tendency_effect = yes
+}
+
 # 清除上一次异常中断可能遗留的临时受影响国家标记。
 # scope: 任意；root: 使用 DAIT 的国家
 AIO_DAIT_clear_affected_countries_effect = {

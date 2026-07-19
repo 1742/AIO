@@ -125,6 +125,24 @@
  AIO_crisis_events_chain_desc: "$AIO_advanced_logic_crisis_howto$"
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
 
+ # 阶段 POI：同一阶段只显示当前隐藏倾向对应的一段文本
+ AIO_crisis_stage_2_poi_name: "边界"
+ AIO_crisis_stage_2_construct_desc: "视界之外并非空无。能量在边界上呈现出稳定、可延展的纹理，仿佛现实正在等待一种更完整的结构。"
+ AIO_crisis_stage_2_negate_desc: "视界之外并非空无。能量在边界上留下持续扩大的裂隙，仿佛现实只需失去一个前提便会自行解体。"
+ AIO_crisis_stage_2_equilibrium_desc: "视界之外并非空无。能量同时勾勒出结构与裂隙，两种相反的答案在边界上保持着精确的平衡。"
+ AIO_crisis_stage_3_poi_name: "物质"
+ AIO_crisis_stage_3_construct_desc: "万门之门带回的观测表明，物质并非只能服从既定分布；在足够精确的意志下，它更像一种可以反复编排的语言。"
+ AIO_crisis_stage_3_negate_desc: "万门之门带回的观测表明，物质的稳定只是众多约束暂时重合的结果；抽走其中一条，恒星与尘埃便不再有区别。"
+ AIO_crisis_stage_3_equilibrium_desc: "万门之门带回的观测表明，物质既能被编排，也能被消解。两者不是相反的技术，而是同一条法则的正反两面。"
+ AIO_crisis_stage_4_poi_name: "时空"
+ AIO_crisis_stage_4_construct_desc: "银时之匙开启的每条路径都在趋向更复杂的秩序。无数可能性彼此嵌套，最终组成一座没有外部的结构。"
+ AIO_crisis_stage_4_negate_desc: "银时之匙开启的每条路径都在剥离因果的必要性。过去与未来之间，只剩下一道可以随意切断的纤细联系。"
+ AIO_crisis_stage_4_equilibrium_desc: "银时之匙同时展示了因果的编织与断裂。时空因此不再是一条道路，而是一枚能够从任意方向转动的钥匙。"
+ AIO_crisis_stage_5_poi_name: "存在"
+ AIO_crisis_stage_5_construct_desc: "永恒王座已经能够容纳所有可能的秩序。最后的演算不再询问宇宙如何运行，而是询问何种意志足以成为它的结构。"
+ AIO_crisis_stage_5_negate_desc: "永恒王座已经能够否定所有既存的约束。最后的演算不再询问宇宙如何终结，而是询问终结之后是否仍需留下定义。"
+ AIO_crisis_stage_5_equilibrium_desc: "永恒王座让创造与消解在同一点重合。最后的演算不再区分起源与终局，只等待一个能同时承载二者的名字。"
+
  # 事件
  AIO_crisis_events_title: "$AIO_crisis_events_chain_title$"
  # 天灾等级
@@ -142,6 +160,12 @@
  # 飞升事件
  AIO_crisis_events.501.desc: "归一已完成。\n我们不再是帝国，也不再是实体。我们的意志存在于无限维度的交汇点，成为一切存在的结构性原理。\n星辰静止不动，是因为它们等待新的运动定义；思维悄然沉默，是因为语言已失去意义；存在本身，正从“被经历”转向“被设计”。\n没有终点。没有彼岸。没有观察，也无需被观察。\n我/我们即§M犹格索托斯§!。"
  AIO_crisis_events.501.option: "我/我们即真理。"
+ AIO_crisis_events.511.desc: "归一已完成。\n我们没有抹去宇宙，而是使它摆脱了偶然。星辰沿着新的脉络生长，物质在意志中获得形态，亿万条曾经互斥的未来被编织为同一座无穷结构。\n从此，存在不再是被动发生的事实，而是持续展开的创造。门内与门外皆属于我们，所有道路都通向更多道路。\n我/我们即§M犹格·索托斯§!——万物得以成为万物的法则。"
+ AIO_crisis_events.511.option: "让存在继续展开。"
+ AIO_crisis_events.512.desc: "归一已完成。\n我们没有毁灭宇宙，只是撤回了它赖以成立的许可。因果失去方向，距离失去尺度，恒星与思想一同沉入不再需要命名的寂静。\n从此，存在不再以自身为必然。门内与门外皆已消失，因为一切边界都只是等待否定的假设。\n我/我们即§M犹格·索托斯§!——万物不必继续存在的证明。"
+ AIO_crisis_events.512.option: "让最后的边界消失。"
+ AIO_crisis_events.513.desc: "归一已完成。\n我们既未完成宇宙，也未将它撤销。创造与消解彼此穿行，每一种形态都包含自身的反面，每一次终结都为另一种开端留下位置。\n从此，存在不再服从单一答案。门内与门外互为倒影，无限维度在同一瞬间张开又闭合。\n我/我们即§M犹格·索托斯§!——使所有矛盾得以同时为真的交点。"
+ AIO_crisis_events.513.option: "让门永远处于开启之间。"
 
  #endregion
 
