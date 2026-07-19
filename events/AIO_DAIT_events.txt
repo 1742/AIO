@@ -25,6 +25,7 @@ country_event = {
 	custom_gui = AIO_DAIT
 
 	is_triggered_only = yes
+	trigger = { exists = event_target:AIO_DAIT_target_system }
 }
 
 # 被定向应用无限影响的帝国提醒事件。
