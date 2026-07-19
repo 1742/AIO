@@ -260,7 +260,29 @@ AIO_safe_remove_megastructure = {
             }
             else_if = {
                 limit = { AIO_is_crisis_sphere = yes }
-                # TODO
+                if = {
+                    limit = { exists = owner }
+                    owner = {
+                        remove_country_flag = building_crisis_sphere
+                        remove_country_flag = built_crisis_sphere
+                    }
+                }
+                solar_system = {
+                    if = {
+                        limit = { exists = root.owner }
+                        remove_star_flag = crisis_sphere_system@root.owner
+                    }
+                    every_system_ambient_object = {
+                        limit = {
+                            OR = {
+                                has_ambient_object_flag = crisis_sphere_1_system_effect
+                                has_ambient_object_flag = crisis_sphere_2_system_effect
+                                has_ambient_object_flag = crisis_sphere_3_system_effect
+                            }
+                        }
+                        destroy_ambient_object = this
+                    }
+                }
             }
             else_if = {
                 limit = {
@@ -273,7 +295,23 @@ AIO_safe_remove_megastructure = {
             }
             else_if = {
                 limit = { AIO_is_galactic_crucible = yes }
-                # TODO
+                if = {
+                    limit = {
+                        is_megastructure_type = galactic_crucible_4
+                        has_global_flag = Hyperthermia_ongoing
+                    }
+                    remove_global_flag = Hyperthermia_ongoing
+                    every_playable_country = {
+                        every_situation = {
+                            limit = { has_situation_flag = hyperthermia_counter }
+                            abort_situation = this
+                        }
+                    }
+                }
+                owner? = {
+                    remove_country_flag = built_galactic_crucible
+                    remove_modifier = crisis_conduit_stop
+                }
             }
 
             if = {
