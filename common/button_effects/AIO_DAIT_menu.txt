@@ -16,8 +16,11 @@ AIO_DAIT_enrich = {
         resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_enrich_effect = { TIMES = 10 } }
+        AIO_DAIT_notify_enrich_effect = yes
+        AIO_DAIT_clear_affected_countries_effect = yes
     }
 }
 
@@ -35,8 +38,11 @@ AIO_DAIT_spawn = {
         resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_spawn_effect = yes }
+        AIO_DAIT_notify_spawn_effect = yes
+        AIO_DAIT_clear_affected_countries_effect = yes
     }
 }
 
@@ -55,8 +61,11 @@ AIO_DAIT_seed = {
         resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_seed_effect = yes }
+        AIO_DAIT_notify_seed_effect = yes
+        AIO_DAIT_clear_affected_countries_effect = yes
     }
 }
 
@@ -70,8 +79,10 @@ AIO_DAIT_ethic = {
         resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
-        event_target:AIO_DAIT_target_system = { AIO_DAIT_ethic_effect = yes }
+        AIO_DAIT_ethic_effect = yes
+        AIO_DAIT_clear_affected_countries_effect = yes
     }
 }
 
@@ -82,8 +93,11 @@ AIO_DAIT_storm = {
         resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_storm_effect = yes }
+        AIO_DAIT_notify_storm_effect = yes
+        AIO_DAIT_clear_affected_countries_effect = yes
     }
 }
 
@@ -99,8 +113,11 @@ AIO_DAIT_strike = {
         resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_strike_effect = yes }
+        AIO_DAIT_notify_strike_effect = yes
+        AIO_DAIT_clear_affected_countries_effect = yes
     }
 }
 
@@ -124,8 +141,11 @@ AIO_DAIT_harvest = {
         resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_harvest_effect = yes }
+        AIO_DAIT_notify_harvest_effect = yes
+        AIO_DAIT_clear_affected_countries_effect = yes
     }
 }
 
@@ -139,7 +159,10 @@ AIO_DAIT_erase = {
         resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_clear_affected_countries_effect = yes
         AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_effect = yes }
+        AIO_DAIT_notify_erase_effect = yes
+        AIO_DAIT_clear_affected_countries_effect = yes
     }
 }
