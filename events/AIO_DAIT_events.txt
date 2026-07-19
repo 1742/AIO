@@ -32,7 +32,7 @@ country_event = {
 	id = AIO_DAIT_events.230
 	title = AIO_DAIT_events.230.title
 	desc = AIO_DAIT_events.230.desc
-	picture = GFX_evt_galactic_senate
+	picture = GFX_evt_drilling_for_gas
 
 	is_triggered_only = yes
 
@@ -48,7 +48,7 @@ country_event = {
 	id = AIO_DAIT_events.231
 	title = AIO_DAIT_events.231.title
 	desc = AIO_DAIT_events.231.desc
-	picture = GFX_evt_galactic_senate
+	picture = GFX_evt_nomad_contracts
 
 	is_triggered_only = yes
 
@@ -64,7 +64,7 @@ country_event = {
 	id = AIO_DAIT_events.232
 	title = AIO_DAIT_events.232.title
 	desc = AIO_DAIT_events.232.desc
-	picture = GFX_evt_galactic_senate
+	picture = GFX_evt_metropolis_nomask
 
 	is_triggered_only = yes
 
@@ -96,7 +96,7 @@ country_event = {
 	id = AIO_DAIT_events.234
 	title = AIO_DAIT_events.234.title
 	desc = AIO_DAIT_events.234.desc
-	picture = GFX_evt_galactic_senate
+	picture = GFX_evt_cosmic_storms_celestial_storm
 
 	is_triggered_only = yes
 
@@ -112,7 +112,7 @@ country_event = {
 	id = AIO_DAIT_events.235
 	title = AIO_DAIT_events.235.title
 	desc = AIO_DAIT_events.235.desc
-	picture = GFX_evt_galactic_senate
+	picture = GFX_evt_ship_under_attack
 
 	is_triggered_only = yes
 
@@ -128,7 +128,7 @@ country_event = {
 	id = AIO_DAIT_events.236
 	title = AIO_DAIT_events.236.title
 	desc = AIO_DAIT_events.236.desc
-	picture = GFX_evt_galactic_senate
+	picture = GFX_evt_shattered_planet
 
 	is_triggered_only = yes
 
@@ -144,7 +144,7 @@ country_event = {
 	id = AIO_DAIT_events.237
 	title = AIO_DAIT_events.237.title
 	desc = AIO_DAIT_events.237.desc
-	picture = GFX_evt_galactic_senate
+	picture = GFX_evt_astral_rift_microverse
 
 	is_triggered_only = yes
 
