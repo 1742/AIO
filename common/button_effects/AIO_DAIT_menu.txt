@@ -1,18 +1,22 @@
 AIO_DAIT_enrich = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
-        event_target:AIO_DAIT_target_system = {
-            any_system_planet = {
-                NOT = {
-                    is_planet_class = pc_shattered
-                    is_planet_class = pc_AIO_empty_space
-                    has_planet_flag = AIO_DAIT_harvested_body
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.enrich
+            event_target:AIO_DAIT_target_system = {
+                any_system_planet = {
+                    NOT = {
+                        is_planet_class = pc_shattered
+                        is_planet_class = pc_AIO_empty_space
+                        has_planet_flag = AIO_DAIT_harvested_body
+                    }
                 }
             }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_enrich_effect = { TIMES = 10 } }
     }
 }
@@ -21,16 +25,17 @@ AIO_DAIT_spawn = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
-            fail_text = AIO_DAIT_locak_target.fail.crisis_path
+            fail_text = AIO_DAIT_lock_target.fail.crisis_path
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
         }
         custom_tooltip = {
-            fail_text = AIO_DAIT_locak_target.fail.synth_queen
+            fail_text = AIO_DAIT_lock_target.fail.synth_queen
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_spawn_effect = yes }
     }
 }
@@ -38,15 +43,19 @@ AIO_DAIT_spawn = {
 AIO_DAIT_seed = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
-        event_target:AIO_DAIT_target_system = {
-            any_system_planet = {
-                habitable_planet = yes
-                pop_amount = 0
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.seed
+            event_target:AIO_DAIT_target_system = {
+                any_system_planet = {
+                    habitable_planet = yes
+                    pop_amount = 0
+                }
             }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_seed_effect = yes }
     }
 }
@@ -54,10 +63,14 @@ AIO_DAIT_seed = {
 AIO_DAIT_ethic = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
-        event_target:AIO_DAIT_target_system = { exists = owner }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.ethic
+            event_target:AIO_DAIT_target_system = { exists = owner }
+        }
+        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_ethic_effect = yes }
     }
 }
@@ -66,9 +79,10 @@ AIO_DAIT_storm = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         event_target:AIO_DAIT_target_system = { is_inside_storm = no }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_storm_effect = yes }
     }
 }
@@ -77,14 +91,15 @@ AIO_DAIT_strike = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
-            fail_text = AIO_DAIT_locak_target.fail.strike
+            fail_text = AIO_DAIT_lock_target.fail.strike
             event_target:AIO_DAIT_target_system = {
                 NOT = { has_star_flag = AIO_Aformom_exist }
             }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_strike_effect = yes }
     }
 }
@@ -93,22 +108,23 @@ AIO_DAIT_harvest = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
-            fail_text = AIO_DAIT_locak_target.fail.crisis_path
+            fail_text = AIO_DAIT_lock_target.fail.crisis_path
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
         }
         custom_tooltip = {
-            fail_text = AIO_DAIT_locak_target.fail.harvest
+            fail_text = AIO_DAIT_lock_target.fail.harvest
             event_target:AIO_DAIT_target_system = {
-                any_system_planet = { NOT = { has_planet_flag = AIO_DAIT_harvested_body } }
+                NOT = { has_star_flag = AIO_DAIT_harvest_system }
             }
         }
         custom_tooltip = {
-            fail_text = AIO_DAIT_locak_target.fail.synth_queen
+            fail_text = AIO_DAIT_lock_target.fail.synth_queen
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_harvest_effect = yes }
     }
 }
@@ -117,12 +133,13 @@ AIO_DAIT_erase = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
-            fail_text = AIO_DAIT_locak_target.fail.synth_queen
+            fail_text = AIO_DAIT_lock_target.fail.synth_queen
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
         }
-        resource_stockpile_compare = { resource = AIO_advanced_logic value > @AIO_DAIT_cost }
+        resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
     }
     effect = {
+        AIO_DAIT_pay_cost_effect = yes
         event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_effect = yes }
     }
 }

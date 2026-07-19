@@ -4,8 +4,6 @@
 #region 塔维尔
 
 AIO_DAIT_enrich_effect = {
-    root = { AIO_DAIT_root = yes }
-
     owner? = { AIO_DAIT_mark_affected_country_effect = yes }
     every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
 
@@ -53,8 +51,6 @@ AIO_DAIT_enrich_effect = {
 }
 
 AIO_DAIT_spawn_effect = {
-    root = { AIO_DAIT_root = yes }
-
     owner? = { AIO_DAIT_mark_affected_country_effect = yes }
     every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
 
@@ -140,8 +136,6 @@ AIO_DAIT_spawn_effect = {
 }
 
 AIO_DAIT_seed_effect = {
-    root = { AIO_DAIT_root = yes }
-
     owner? = { AIO_DAIT_mark_affected_country_effect = yes }
     every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
 
@@ -236,8 +230,6 @@ AIO_DAIT_seed_effect = {
 # scope: system
 AIO_DAIT_ethic_effect = {
     owner? = {
-        root = { AIO_DAIT_root = yes }
-
         if = {
             limit = { has_ethic = ethic_fanatic_authoritarian }
             shift_ethic = ethic_fanatic_egalitarian
@@ -337,8 +329,6 @@ AIO_DAIT_ethic_effect = {
 #region 亚弗戈蒙
 
 AIO_DAIT_storm_effect = {
-    root = { AIO_DAIT_root = yes }
-
     owner? = { AIO_DAIT_mark_affected_country_effect = yes }
     every_fleet_in_system = { owner? = { AIO_DAIT_mark_affected_country_effect = yes } }
 
@@ -408,8 +398,6 @@ AIO_DAIT_storm_effect = {
 }
 
 AIO_DAIT_strike_effect = {
-    root = { AIO_DAIT_root = yes }
-
     every_fleet_in_system = {
         limit = { NOT = { has_fleet_flag = AIO_Aforgomom_fleet } }
         owner? = { AIO_DAIT_mark_affected_country_effect = yes }
@@ -441,8 +429,6 @@ AIO_DAIT_strike_effect = {
 }
 
 AIO_DAIT_harvest_effect = {
-    root = { AIO_DAIT_root = yes }
-
     owner? = { AIO_DAIT_mark_affected_country_effect = yes }
     every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
 
@@ -568,8 +554,6 @@ AIO_DAIT_harvest_effect = {
 }
 
 AIO_DAIT_erase_effect = {
-    root = { AIO_DAIT_root = yes }
-
     every_system = {
         limit = {
             NOR = {
@@ -631,8 +615,8 @@ AIO_DAIT_erase_effect = {
 
 #region helper
 
-# scope: country root: 使用 DAIT 的国家
-AIO_DAIT_root = {
+# scope: country（使用 DAIT 的国家）
+AIO_DAIT_pay_cost_effect = {
     add_resource = { AIO_advanced_logic = @AIO_DAIT_cost_negative }
     if = {
         limit = { is_variable_set = AIO_situation_AIT_time }
@@ -646,7 +630,7 @@ AIO_DAIT_mark_affected_country_effect = {
     if = {
         limit = {
             is_country_type = default
-            NOT = {
+            NOR = {
                 is_same_value = root
                 has_country_flag = AIO_DAIT_affected_country
             }

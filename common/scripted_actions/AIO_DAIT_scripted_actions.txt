@@ -5,7 +5,7 @@ AIO_DAIT_lock_target = {
 
 	possible = {
 		custom_tooltip = {
-			fail_text = AIO_DAIT_locak_target.fail.crisis_path
+			fail_text = AIO_DAIT_lock_target.fail.crisis_path
 			OR = {
 				from.owner = { is_country_type = AIO_empire }
 				AIO_is_crisis_mega_system = no
@@ -13,7 +13,7 @@ AIO_DAIT_lock_target = {
 			NOT = { has_star_flag = AIO_HS_system }
 		}
 		custom_tooltip = {
-			fail_text = AIO_DAIT_locak_target.fail.api
+			fail_text = AIO_DAIT_lock_target.fail.api
 			AIO_safe_remove_system_exclude_API = no
 		}
 	}

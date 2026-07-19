@@ -4,12 +4,14 @@
  AIO_DAIT_lock_target_action: "Lock Reality Coordinates"
  AIO_DAIT_lock_target_activity: "Locking $NAME$"
  AIO_DAIT_lock_target_tooltip: "Select a planet and open the Directed Applied Infinity menu"
- AIO_DAIT_locak_target.fail.colony: "There are our colonies in the system."
- AIO_DAIT_locak_target.fail.crisis_path: "The current galaxy's spacetime is unstable."
- AIO_DAIT_locak_target.fail.api: "The system is locked onto by other modders."
- AIO_DAIT_locak_target.fail.synth_queen: "To prevent bugs, please do not edit and lock synth queen home."
- AIO_DAIT_locak_target.fail.strike: "§Y$AIO_Aforgomom$§! has descended here."
- AIO_DAIT_locak_target.fail.harvest: "This system is no longer worth harvesting."
+ AIO_DAIT_lock_target.fail.crisis_path: "The current galaxy's spacetime is unstable!"
+ AIO_DAIT_lock_target.fail.api: "The system is locked onto by other modders!"
+ AIO_DAIT_lock_target.fail.synth_queen: "To prevent bugs, please do not edit and lock synth queen home!"
+ AIO_DAIT_lock_target.fail.enrich: "There are no celestial bodies in this system that can add resources!"
+ AIO_DAIT_lock_target.fail.seed: "Require at least one habitable planet within the system!"
+ AIO_DAIT_lock_target.fail.ethic: "Not locked to the empire!"
+ AIO_DAIT_lock_target.fail.strike: "§Y$AIO_Aforgomom$§! has descended here!"
+ AIO_DAIT_lock_target.fail.harvest: "This system is no longer worth harvesting!"
 
  #endregion
 
