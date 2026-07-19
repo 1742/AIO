@@ -4,7 +4,10 @@
 #region 塔维尔
 
 AIO_DAIT_enrich_effect = {
+    root = { AIO_DAIT_root = yes }
+
     owner? = { AIO_DAIT_mark_affected_country_effect = yes }
+    every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
 
     every_system_planet = {
         limit = {
@@ -33,10 +36,25 @@ AIO_DAIT_enrich_effect = {
         }
     }
 
+    owner? = {
+        if = {
+            limit = { NOT = { has_modifier = AIO_DAIT_enrich_modifier } }
+            add_modifier = { modifier = AIO_DAIT_enrich_modifier }
+        }
+    }
+    every_system_ship_colony = {
+        if = {
+            limit = { NOT = { has_modifier = AIO_DAIT_enrich_modifier } }
+            add_modifier = { modifier = AIO_DAIT_enrich_modifier }
+        }
+    }
+
     AIO_DAIT_notify_enrich_effect = yes
 }
 
 AIO_DAIT_spawn_effect = {
+    root = { AIO_DAIT_root = yes }
+
     owner? = { AIO_DAIT_mark_affected_country_effect = yes }
     every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
 
@@ -44,7 +62,7 @@ AIO_DAIT_spawn_effect = {
         limit = {
             OR = {
                 is_star_class = sc_AIO_void
-                any_system_planet = { has_planet_flag = AIO_DAIT_harvested_body }
+                has_star_flag = AIO_DAIT_harvest_system
             }
         }
         every_system_planet = { AIO_safe_remove_planet = yes }
@@ -60,6 +78,7 @@ AIO_DAIT_spawn_effect = {
             1 = { AIO_create_recursive_satellite_tree = yes }
             1 = { AIO_create_black_hole_flower = yes }
         }
+        remove_star_flag = AIO_DAIT_harvest_system
     }
     else_if = {
         limit = {
@@ -98,21 +117,20 @@ AIO_DAIT_spawn_effect = {
                     is_planet_class = pc_machine
                     is_planet_class = pc_hive
                     is_planet_class = pc_nanotech
-                    is_planet_class = pc_shrouded
                     AIO_safe_remove_planet_exclude_API = yes
                 }
             }
             random_list = {
-                1 = { AIO_safe_change_pc = { NEW_PC = pc_desert } }
-                1 = { AIO_safe_change_pc = { NEW_PC = pc_arid } }
-                1 = { AIO_safe_change_pc = { NEW_PC = pc_savannah } }
-                1 = { AIO_safe_change_pc = { NEW_PC = pc_tropical } }
-                1 = { AIO_safe_change_pc = { NEW_PC = pc_continental } }
-                1 = { AIO_safe_change_pc = { NEW_PC = pc_ocean } }
-                1 = { AIO_safe_change_pc = { NEW_PC = pc_tundra } }
-                1 = { AIO_safe_change_pc = { NEW_PC = pc_arctic } }
-                1 = { AIO_safe_change_pc = { NEW_PC = pc_alpine } }
-                1 = { AIO_safe_change_pc = { NEW_PC = pc_volcanic } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_desert } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_arid } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_savannah } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_tropical } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_continental } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_ocean } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_tundra } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_arctic } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_alpine } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_volcanic } }
                 1 = { AIO_safe_change_pc = { NEW_PC = pc_gaia } }
             }
         }
@@ -122,7 +140,10 @@ AIO_DAIT_spawn_effect = {
 }
 
 AIO_DAIT_seed_effect = {
+    root = { AIO_DAIT_root = yes }
+
     owner? = { AIO_DAIT_mark_affected_country_effect = yes }
+    every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
 
     random_system_planet = {
         limit = {
@@ -131,15 +152,15 @@ AIO_DAIT_seed_effect = {
         }
         create_species = {
             name = random
-            class = random_pre_ftl
+            class = random
             portrait = random
             traits = random
             homeworld = this
-            effect = { save_event_target_as = AIO_DAIT_created_life_species }
+            effect = { save_event_target_as = AIO_DAIT_seed_species }
         }
         create_pop_group = {
-            species = event_target:AIO_DAIT_created_life_species
-            effect = { add_pop_amount = 6000 }
+            species = event_target:AIO_DAIT_seed_species
+            effect = { add_pop_amount = 4000 }
         }
         create_country = {
             type = default
@@ -151,50 +172,51 @@ AIO_DAIT_seed_effect = {
                 create_leader = { class = official }
                 create_leader = { class = scientist }
                 create_leader = { class = commander }
-                event_target:AIO_DAIT_seed = {
+                prev = {
                     set_owner = prev
                     set_capital = yes
-                }
-                prev.solar_system = {
-                    if = {
-                        limit = { star = { exists = starbase } }
-                        starbase = { destroy_fleet = this }
-                    }
-                    create_starbase = {
-                        size = starbase_outpost
-                        owner = prev
-                        module = shipyard
-                        module = shipyard
-                    }
-                    create_fleet = {
-                        effect = {
-                            set_owner = prevprev
-                            create_ship = {
-                                name = random
-                                design = NAME_Scholarium_Science
+                    solar_system = {
+                        if = {
+                            limit = { star = { exists = starbase } }
+                            starbase = { destroy_fleet = this }
+                        }
+                        create_starbase = {
+                            size = starbase_outpost
+                            owner = prev
+                            module = shipyard
+                            module = shipyard
+                        }
+                        create_fleet = {
+                            effect = {
+                                set_owner = prevprevprev
+                                create_ship = {
+                                    name = random
+                                    design = NAME_Scholarium_Science
+                                }
+                                set_location = {
+                                    target = prev
+                                    angle = random
+                                    direction = in_system
+                                }
                             }
-                            set_location = {
-                                target = prev
-                                angle = random
-                                direction = in_system
+                        }
+                        create_fleet = {
+                            effect = {
+                                set_owner = prevprevprev
+                                create_ship = {
+                                    name = random
+                                    design = NAME_Prospectorium_Constructor
+                                }
+                                set_location = {
+                                    target = prev
+                                    angle = random
+                                    direction = in_system
+                                }
                             }
                         }
                     }
-                    create_fleet = {
-                        effect = {
-                            set_owner = prevprev
-                            create_ship = {
-                                name = random
-                                design = NAME_Prospectorium_Constructor
-                            }
-                            set_location = {
-                                target = prev
-                                angle = random
-                                direction = in_system
-                            }
-                        }
-                    }
                 }
+
                 add_resource = {
                     energy = 1000
                     minerals = 1000
@@ -214,6 +236,8 @@ AIO_DAIT_seed_effect = {
 # scope: system
 AIO_DAIT_ethic_effect = {
     owner? = {
+        root = { AIO_DAIT_root = yes }
+
         if = {
             limit = { has_ethic = ethic_fanatic_authoritarian }
             shift_ethic = ethic_fanatic_egalitarian
@@ -313,6 +337,8 @@ AIO_DAIT_ethic_effect = {
 #region 亚弗戈蒙
 
 AIO_DAIT_storm_effect = {
+    root = { AIO_DAIT_root = yes }
+
     owner? = { AIO_DAIT_mark_affected_country_effect = yes }
     every_fleet_in_system = { owner? = { AIO_DAIT_mark_affected_country_effect = yes } }
 
@@ -382,6 +408,8 @@ AIO_DAIT_storm_effect = {
 }
 
 AIO_DAIT_strike_effect = {
+    root = { AIO_DAIT_root = yes }
+
     every_fleet_in_system = {
         limit = { NOT = { has_fleet_flag = AIO_Aforgomom_fleet } }
         owner? = { AIO_DAIT_mark_affected_country_effect = yes }
@@ -413,6 +441,8 @@ AIO_DAIT_strike_effect = {
 }
 
 AIO_DAIT_harvest_effect = {
+    root = { AIO_DAIT_root = yes }
+
     owner? = { AIO_DAIT_mark_affected_country_effect = yes }
     every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
 
@@ -532,11 +562,14 @@ AIO_DAIT_harvest_effect = {
             }
         }
     }
+    set_star_flag = AIO_DAIT_harvest_system
 
     AIO_DAIT_notify_harvest_effect = yes
 }
 
 AIO_DAIT_erase_effect = {
+    root = { AIO_DAIT_root = yes }
+
     every_system = {
         limit = {
             NOR = {
@@ -572,7 +605,24 @@ AIO_DAIT_erase_effect = {
         }
         every_ambient_object = { destroy_ambient_object = this }
         set_star_class = sc_AIO_void
+
+        star = {
+            create_ambient_object = {
+                type = "star_explosion"
+                play_animation_once = yes
+                location = this
+
+                effect = {
+                    set_location = {
+                        target = prev
+                        distance = 0
+                        angle = random
+                    }
+                }
+            }
+        }
     }
+
     AIO_DAIT_notify_erase_effect = yes
 }
 
@@ -581,13 +631,25 @@ AIO_DAIT_erase_effect = {
 
 #region helper
 
+# scope: country root: 使用 DAIT 的国家
+AIO_DAIT_root = {
+    add_resource = { AIO_advanced_logic = @AIO_DAIT_cost_negative }
+    if = {
+        limit = { is_variable_set = AIO_situation_AIT_time }
+        change_variable = { which = AIO_situation_AIT_time value = 1 }
+    }
+}
+
 # 将本次 DAIT 的受影响帝国加入临时集合；结算 helper 会清除该标记。
 # scope: country; root: 使用 DAIT 的国家
 AIO_DAIT_mark_affected_country_effect = {
     if = {
         limit = {
             is_country_type = default
-            NOT = { is_same_value = root }
+            NOT = {
+                is_same_value = root
+                has_country_flag = AIO_DAIT_affected_country
+            }
         }
         set_country_flag = AIO_DAIT_affected_country
     }

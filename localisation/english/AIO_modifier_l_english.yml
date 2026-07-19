@@ -87,6 +87,7 @@
 
  #region DAIT
 
+ AIO_DAIT_enrich_modifier: "Enrich"
  AIO_DAIT_spawn_modifier: "Spawn"
  AIO_Aforgomom_Wrath_modifier: "$AIO_Aforgomom_Wrath$"
  AIO_the_craving_of_stellaris_modifier: "The Craving of Stellaris"

@@ -1,1 +1,2 @@
 @AIO_DAIT_cost = 100000
+@AIO_DAIT_cost_negative = -100000

@@ -86,6 +86,7 @@
 
  #region DAIT
 
+ AIO_DAIT_enrich_modifier: "丰饶"
  AIO_DAIT_spawn_modifier: "生成"
  AIO_Aforgomom_Wrath_modifier: "$AIO_Aforgomom_Wrath$"
  AIO_the_craving_of_stellaris_modifier: "星辰大海的渴望"
