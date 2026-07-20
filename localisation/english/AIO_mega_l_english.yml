@@ -23,7 +23,7 @@
  AIO_mega_03_MEGASTRUCTURE_DETAILS: "$AIO_mega_03_DESC$"
  AIO_mega_04: "Yog Sothoth"
  AIO_mega_04_DESC: "A transcendent structure beyond the endless dimension."
- AIO_mega_04_MEGASTRUCTURE_DETAILS: "$AIO_mega_04_DESC$"
+ AIO_mega_04_MEGASTRUCTURE_DETAILS: "$AIO_mega_04_DESC$."
  AIO_mega_04_activate: "$AIO_mega_04$"
  AIO_mega_04_activate_DESC: "$AIO_mega_04_DESC$"
 

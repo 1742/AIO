@@ -1,0 +1,68 @@
+AIO_DAIT_echo_common_target = {
+    NOR = {
+        has_star_flag = AIO_DAIT_echo_cooldown
+        has_star_flag = AIO_HS_system
+        has_star_flag = AIO_TUG_system
+        has_star_flag = synth_queen_capital
+    }
+    AIO_safe_remove_system_exclude_API = no
+}
+
+AIO_DAIT_echo_enrich_target = {
+    AIO_DAIT_echo_common_target = yes
+    any_system_planet = {
+        NOR = {
+            is_planet_class = pc_shattered
+            is_planet_class = pc_AIO_empty_space
+            has_planet_flag = AIO_DAIT_harvested_body
+        }
+    }
+}
+
+AIO_DAIT_echo_storm_target = {
+    AIO_DAIT_echo_common_target = yes
+    is_inside_storm = no
+}
+
+AIO_DAIT_echo_spawn_target = {
+    AIO_DAIT_echo_common_target = yes
+}
+
+AIO_DAIT_echo_harvest_target = {
+    AIO_DAIT_echo_common_target = yes
+    NOT = { has_star_flag = AIO_DAIT_harvest_system }
+    any_system_planet = {
+        NOR = {
+            is_planet_class = pc_shattered
+            is_planet_class = pc_black_hole
+            is_planet_class = pc_AIO_empty_space
+            has_planet_flag = AIO_DAIT_harvested_body
+        }
+    }
+}
+
+AIO_DAIT_echo_seed_target = {
+    AIO_DAIT_echo_common_target = yes
+    any_system_planet = {
+        habitable_planet = yes
+        pop_amount = 0
+    }
+}
+
+AIO_DAIT_echo_strike_target = {
+    AIO_DAIT_echo_common_target = yes
+    NOT = { has_star_flag = AIO_Aformom_exist }
+    any_fleet_in_system = { always = yes }
+}
+
+AIO_DAIT_echo_ethic_target = {
+    AIO_DAIT_echo_common_target = yes
+    exists = owner
+    owner = { is_country_type = default }
+}
+
+AIO_DAIT_echo_erase_target = {
+    AIO_DAIT_echo_common_target = yes
+    AIO_is_crisis_mega_system = no
+    any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
+}

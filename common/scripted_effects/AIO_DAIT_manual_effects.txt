@@ -1,0 +1,241 @@
+# 玩家主动使用 DAIT 的外层包装。
+# 这里负责扣费、统计、倾向和外交反馈；底层法则改写仍在 AIO_DAIT_effects.txt。
+
+AIO_DAIT_manual_enrich_effect = {
+    AIO_DAIT_manual_clear_affected_flag = yes
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_manual_mark_system_country_effect = yes }
+    AIO_DAIT_pay_cost_effect = yes
+    AIO_DAIT_register_operation_effect = { COUNT = AIO_DAIT_enrich_count }
+    AIO_DAIT_register_tendency_effect = { TYPE = construct }
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_enrich_effect = { TIMES = 10 } }
+    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_enriched_our_system EVENT = 230 }
+    AIO_DAIT_manual_clear_affected_flag = yes
+}
+
+AIO_DAIT_manual_spawn_effect = {
+    AIO_DAIT_manual_clear_affected_flag = yes
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_manual_mark_system_country_effect = yes }
+    AIO_DAIT_pay_cost_effect = yes
+    AIO_DAIT_register_operation_effect = { COUNT = AIO_DAIT_spawn_count }
+    AIO_DAIT_register_tendency_effect = { TYPE = construct }
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_spawn_effect = yes }
+    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_spawned_in_our_system EVENT = 231 }
+    AIO_DAIT_manual_clear_affected_flag = yes
+}
+
+AIO_DAIT_manual_seed_effect = {
+    AIO_DAIT_manual_clear_affected_flag = yes
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_manual_mark_system_country_effect = yes }
+    AIO_DAIT_pay_cost_effect = yes
+    AIO_DAIT_register_operation_effect = { COUNT = AIO_DAIT_seed_count }
+    AIO_DAIT_register_tendency_effect = { TYPE = construct }
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_seed_effect = yes }
+    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_seeded_our_system EVENT = 232 }
+    AIO_DAIT_manual_clear_affected_flag = yes
+}
+
+AIO_DAIT_manual_ethic_effect = {
+    AIO_DAIT_manual_clear_affected_flag = yes
+    event_target:AIO_DAIT_target_system = {
+        owner? = { AIO_DAIT_manual_mark_country_effect = yes }
+    }
+    AIO_DAIT_pay_cost_effect = yes
+    AIO_DAIT_register_operation_effect = { COUNT = AIO_DAIT_ethic_count }
+    AIO_DAIT_register_tendency_effect = { TYPE = construct }
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_ethic_effect = yes }
+    AIO_DAIT_manual_notify_effect = { EVENT = 233 }
+    AIO_DAIT_manual_clear_affected_flag = yes
+}
+
+AIO_DAIT_manual_storm_effect = {
+    AIO_DAIT_manual_clear_affected_flag = yes
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_manual_mark_system_country_effect = yes }
+    AIO_DAIT_pay_cost_effect = yes
+    AIO_DAIT_register_operation_effect = { COUNT = AIO_DAIT_storm_count }
+    AIO_DAIT_register_tendency_effect = { TYPE = negate }
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_storm_effect = yes }
+    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_spawned_storm EVENT = 234 }
+    AIO_DAIT_manual_clear_affected_flag = yes
+}
+
+AIO_DAIT_manual_harvest_effect = {
+    AIO_DAIT_manual_clear_affected_flag = yes
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_manual_mark_system_country_effect = yes }
+    AIO_DAIT_pay_cost_effect = yes
+    AIO_DAIT_register_operation_effect = { COUNT = AIO_DAIT_harvest_count }
+    AIO_DAIT_register_tendency_effect = { TYPE = negate }
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_harvest_effect = yes }
+    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_harvested_our_system EVENT = 235 }
+    AIO_DAIT_manual_clear_affected_flag = yes
+}
+
+AIO_DAIT_manual_strike_effect = {
+    AIO_DAIT_manual_clear_affected_flag = yes
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_manual_mark_system_country_effect = yes }
+    AIO_DAIT_pay_cost_effect = yes
+    AIO_DAIT_register_operation_effect = { COUNT = AIO_DAIT_strike_count }
+    AIO_DAIT_register_tendency_effect = { TYPE = negate }
+    event_target:AIO_DAIT_target_system = { AIO_DAIT_strike_effect = yes }
+    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_struck_us EVENT = 236 }
+    AIO_DAIT_manual_clear_affected_flag = yes
+}
+
+AIO_DAIT_manual_erase_effect = {
+    AIO_DAIT_manual_clear_affected_flag = yes
+    if = {
+        limit = { is_country_type = AIO_empire }
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_manual_mark_erase_owners_effect = { MAX_JUMPS = 5 } }
+    }
+    else = { event_target:AIO_DAIT_target_system = { AIO_DAIT_manual_mark_erase_owners_effect = yes } }
+    AIO_DAIT_pay_cost_effect = yes
+    AIO_DAIT_register_operation_effect = { COUNT = AIO_DAIT_erase_count }
+    AIO_DAIT_register_tendency_effect = { TYPE = negate }
+    if = {
+        limit = { is_country_type = AIO_empire }
+        event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_effect = { MAX_JUMPS = 5 } }
+    }
+    else = { event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_effect = yes } }
+    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_erased_our_systems EVENT = 237 }
+    AIO_DAIT_manual_clear_affected_flag = yes
+}
+
+
+#region helper
+
+# scope: country（使用 DAIT 的国家）
+AIO_DAIT_pay_cost_effect = {
+    if = {
+        limit = { NOT = { is_country_type = AIO_empire } }
+        add_resource = { AIO_advanced_logic = @AIO_DAIT_cost_negative }
+    }
+    if = {
+        limit = { is_variable_set = AIO_DAIT_count }
+        change_variable = { which = AIO_DAIT_count value = 1 }
+    }
+}
+
+# 根据两类 DAIT 的使用次数刷新隐藏倾向。差值不足 2 时保持均衡。
+# scope: country
+AIO_DAIT_refresh_tendency_effect = {
+    remove_country_flag = AIO_DAIT_tendency_construct
+    remove_country_flag = AIO_DAIT_tendency_negate
+    remove_country_flag = AIO_DAIT_tendency_equilibrium
+
+    set_variable = { which = AIO_DAIT_tendency_delta value = AIO_DAIT_construct_count }
+    subtract_variable = { which = AIO_DAIT_tendency_delta value = AIO_DAIT_negate_count }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_tendency_delta value >= 2 } }
+        set_country_flag = AIO_DAIT_tendency_construct
+    }
+    else_if = {
+        limit = { check_variable = { which = AIO_DAIT_tendency_delta value <= -2 } }
+        set_country_flag = AIO_DAIT_tendency_negate
+    }
+    else = { set_country_flag = AIO_DAIT_tendency_equilibrium }
+    clear_variable = AIO_DAIT_tendency_delta
+}
+
+# scope: country TYPE: construct | negate
+AIO_DAIT_register_tendency_effect = {
+    if = {
+        limit = { NOT = { is_variable_set = AIO_DAIT_$TYPE$_count } }
+        set_variable = { which = AIO_DAIT_$TYPE$_count value = 0 }
+    }
+    change_variable = { which = AIO_DAIT_$TYPE$_count value = 1 }
+    AIO_DAIT_refresh_tendency_effect = yes
+}
+
+# scope: country
+AIO_DAIT_register_operation_effect = {
+    if = {
+        limit = { NOT = { is_variable_set = $COUNT$ } }
+        set_variable = { which = $COUNT$ value = 0 }
+    }
+    change_variable = { which = $COUNT$ value = 1 }
+    random_situation = {
+        limit = {
+            is_situation_type = AIO_crisis_situation
+            situation_monthly_progress > 0
+        }
+        add_situation_progress = 2
+    }
+}
+
+#endregion
+
+
+#region notify
+
+# scope: country; root: 使用 DAIT 的国家
+AIO_DAIT_manual_mark_country_effect = {
+    if = {
+        limit = {
+            is_country_type = default
+            NOR = {
+                is_same_value = root
+                has_country_flag = AIO_DAIT_affected_country
+            }
+        }
+        set_country_flag = AIO_DAIT_affected_country
+    }
+}
+
+# 清除上一次异常中断可能遗留的临时受影响国家标记。
+# scope: 任意；root: 使用 DAIT 的国家
+AIO_DAIT_manual_clear_affected_flag = {
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_affected_country }
+        remove_country_flag = AIO_DAIT_affected_country
+    }
+}
+
+# scope: system; root: 使用 DAIT 的国家
+AIO_DAIT_manual_mark_system_country_effect = {
+    every_fleet_in_system = {
+        limit = { NOT = { has_fleet_flag = AIO_Aforgomom_fleet } }
+        owner? = { AIO_DAIT_manual_mark_country_effect = yes }
+    }
+}
+
+AIO_DAIT_manual_mark_erase_owners_effect = {
+    every_system = {
+        limit = {
+            NOR = {
+                has_star_flag = AIO_HS_system
+                has_star_flag = AIO_TUG_system
+                has_star_flag = synth_queen_capital
+                AIO_safe_remove_system_exclude_API = yes
+            }
+            OR = {
+                root = { is_country_type = AIO_empire }
+                AIO_is_crisis_mega_system = no
+            }
+            any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
+            OR = {
+                is_same_value = prev
+                distance = { source = prev max_jumps = $MAX_JUMPS|1$ use_bypasses = no }
+            }
+        }
+        every_fleet_in_system = {
+            limit = { NOT = { has_fleet_flag = AIO_Aforgomom_fleet } }
+            owner? = { AIO_DAIT_manual_mark_country_effect = yes }
+        }
+    }
+}
+
+AIO_DAIT_manual_notify_effect = {
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_affected_country }
+        [[OPINION] add_opinion_modifier = { modifier = $OPINION$ who = root }]
+        country_event = {
+            id = AIO_DAIT_events.$EVENT$
+            scopes = {
+                from = root
+                fromfrom = event_target:AIO_DAIT_target_system
+            }
+        }
+        remove_country_flag = AIO_DAIT_affected_country
+    }
+}
+
+#endregion

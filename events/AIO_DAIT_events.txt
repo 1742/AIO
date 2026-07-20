@@ -28,7 +28,9 @@ country_event = {
 	trigger = { exists = event_target:AIO_DAIT_target_system }
 }
 
-# 被定向应用无限影响的帝国提醒事件。
+
+#region 被定向应用无限影响的帝国提醒事件。
+
 country_event = {
 	id = AIO_DAIT_events.230
 	title = AIO_DAIT_events.230.title
@@ -113,7 +115,7 @@ country_event = {
 	id = AIO_DAIT_events.235
 	title = AIO_DAIT_events.235.title
 	desc = AIO_DAIT_events.235.desc
-	picture = GFX_evt_ship_under_attack
+	picture = GFX_evt_shattered_planet
 
 	is_triggered_only = yes
 
@@ -129,7 +131,7 @@ country_event = {
 	id = AIO_DAIT_events.236
 	title = AIO_DAIT_events.236.title
 	desc = AIO_DAIT_events.236.desc
-	picture = GFX_evt_shattered_planet
+	picture = GFX_evt_ship_under_attack
 
 	is_triggered_only = yes
 
@@ -156,3 +158,66 @@ country_event = {
 		ai_chance = { base = 1 }
 	}
 }
+
+#endregion
+
+
+#region 局势扩散只通知实际受影响的帝国，不显示施术者，也不产生外交评价。
+
+country_event = {
+	id = AIO_DAIT_events.238
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_enrich_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.239
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_spawn_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.240
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_seed_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.241
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_ethic_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.242
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_storm_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.243
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_harvest_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.244
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_strike_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.245
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_erase_message } }
+}
+
+#endregion

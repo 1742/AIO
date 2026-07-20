@@ -28,10 +28,10 @@
  AIO_DAIT_events.202.strike: "Strike"
  AIO_DAIT_events.202.harvest: "Harvest"
  AIO_DAIT_events.202.erase: "Erase"
- AIO_DAIT.fail.mega_1: "£trigger_no£Requires §YCrisis Level 2§!"
- AIO_DAIT.fail.mega_2: "£trigger_no£Requires §YCrisis Level 3§!"
- AIO_DAIT.fail.mega_3: "£trigger_no£Requires §YCrisis Level 4§!"
- AIO_DAIT.fail.mega_4: "£trigger_no£Requires §YCrisis Level 5§!"
+ AIO_DAIT.fail.require_mega_1: "£trigger_no£Requires §Y$AIO_mega_01$§!"
+ AIO_DAIT.fail.require_mega_2: "£trigger_no£Requires §Y$AIO_mega_02$§!"
+ AIO_DAIT.fail.require_mega_3: "£trigger_no£Requires §Y$AIO_mega_03$§!"
+ AIO_DAIT.fail.require_mega_4: "£trigger_no£Requires §Y$AIO_mega_04$§!"
 
  #endregion
 
@@ -49,10 +49,10 @@
  AIO_DAIT_events.233.option: "This is the only correct path."
  AIO_DAIT_events.234.title: "Artificial Cosmic Storm"
  AIO_DAIT_events.234.desc: "§Y[From.GetName]§! has ruptured the stable cosmic environment of §Y[FromFrom.GetName]§!. An artificially generated cosmic storm is now taking shape."
- AIO_DAIT_events.235.title: "Reality-Bending Strike"
- AIO_DAIT_events.235.desc: "§Y[From.GetName]§! has launched an anomalous strike using §Y[FromFrom.GetName]§! as its coordinates. Hostile entities are entering our territory through distorted reality."
- AIO_DAIT_events.236.title: "System Harvested"
- AIO_DAIT_events.236.desc: "§Y[From.GetName]§! is harvesting §Y[FromFrom.GetName]§!. Stars, planets, and even colonies are being dismantled into raw resources for their use."
+ AIO_DAIT_events.235.title: "System Harvested"
+ AIO_DAIT_events.235.desc: "§Y[From.GetName]§! is harvesting §Y[FromFrom.GetName]§!. Stars, planets, and even colonies are being dismantled into raw resources for their use."
+ AIO_DAIT_events.236.title: "Reality-Bending Strike"
+ AIO_DAIT_events.236.desc: "§Y[From.GetName]§! has launched an anomalous strike using §Y[FromFrom.GetName]§! as its coordinates. Hostile entities are entering our territory through distorted reality."
  AIO_DAIT_events.237.title: "Reality Erased"
  AIO_DAIT_events.237.desc: "§Y[From.GetName]§! has erased a vast region of reality centered on §Y[FromFrom.GetName]§!. Our systems, fleets, and billions of lives vanished in an instant, leaving behind an emptiness that can never be filled."
 

@@ -39,12 +39,12 @@
  # 灾飞路径提示文本
  AIO_allinone_level_2_req_success_tooltip: "£trigger_yes£完成§Y$AIO_horizon_engine$§!"
  AIO_allinone_level_2_req_fail_tooltip: "£trigger_no£完成§Y$AIO_horizon_engine$§!"
- AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_01$§!并累计进行§Y2§!次['concept_AIO_DAIT']"
- AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_01$§!并累计进行§Y2§!次['concept_AIO_DAIT']"
- AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_02$§!并累计进行§Y4§!次['concept_AIO_DAIT']"
- AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_02$§!并累计进行§Y4§!次['concept_AIO_DAIT']"
- AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_03$§!并累计进行§Y8§!次['concept_AIO_DAIT']"
- AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_03$§!并累计进行§Y8§!次['concept_AIO_DAIT']"
+ AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_01$§!与§Y$AIO_crisis_situation$§!$stage_1$"
+ AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_01$§!与§Y$AIO_crisis_situation$§!$stage_1$"
+ AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_02$§!与§Y$AIO_crisis_situation$§!$stage_2$"
+ AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_02$§!与§Y$AIO_crisis_situation$§!$stage_2$"
+ AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_03$§!与§Y$AIO_crisis_situation$§!$stage_3$"
+ AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_03$§!与§Y$AIO_crisis_situation$§!$stage_3$"
 
  #endregion
 
@@ -124,6 +124,33 @@
  AIO_crisis_events_chain_title: "万物归一"
  AIO_crisis_events_chain_desc: "$AIO_advanced_logic_crisis_howto$"
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
+
+ # 法则扩散局势
+ AIO_crisis_situation: "法则扩散"
+ AIO_crisis_situation_type: "$AIO_crisis_situation$"
+ AIO_crisis_situation_desc: "我们的实验已经在现实中留下无法抹除的范式。银河各处开始自发复现我们曾经施行的法则改写；主动使用的次数越多，对应现象便越容易成为宇宙的习惯。"
+ AIO_crisis_situation_monthly_change_tooltip: "巨构将改写后的法则持续投射到银河。每次主动使用应用无限也会推动扩散。"
+ AIO_crisis_situation_monthly_active.mega_1: "§Y$AIO_mega_01$§!"
+ AIO_crisis_situation_monthly_active.mega_2: "§Y$AIO_mega_02$§!"
+ AIO_crisis_situation_monthly_active.mega_3: "§Y$AIO_mega_03$§!"
+ AIO_crisis_situation_monthly_active.mega_4: "§Y$AIO_mega_04$§!"
+ AIO_crisis_situation_stage_1: "边界扩散"
+ AIO_crisis_situation_stage_1_desc: "改写首先在现实边缘形成回响。"
+ AIO_crisis_situation_stage_2: "物质扩散"
+ AIO_crisis_situation_stage_2_desc: "物质开始自行复现已经得到证明的变化。"
+ AIO_crisis_situation_stage_3: "时空扩散"
+ AIO_crisis_situation_stage_3_desc: "法则回响正在跨越星系与因果边界。"
+ AIO_crisis_situation_stage_4: "存在扩散"
+ AIO_crisis_situation_stage_4_desc: "银河正在把我们的选择视为自身规律。"
+ MESSAGE_AIO_DAIT_ECHO_TITLE: "法则回响"
+ AIO_DAIT_echo_enrich_message: "§Y[this.GetName]§!星系的物质分布在没有外力介入的情况下自行丰饶。"
+ AIO_DAIT_echo_storm_message: "§Y[this.GetName]§!星系中自发形成了一场无法由自然模型解释的宇宙风暴。"
+ AIO_DAIT_echo_spawn_message: "§Y[this.GetName]§!星系的天体结构自行重组，复现了我们曾经施行的创造。"
+ AIO_DAIT_echo_harvest_message: "§Y[this.GetName]§!星系的天体正在失去自身的物质定义。"
+ AIO_DAIT_echo_seed_message: "§Y[this.GetName]§!星系中出现了没有演化历史的新生命。"
+ AIO_DAIT_echo_strike_message: "§Y[this.GetName]§!星系附近出现了不属于现实时序的攻击者。"
+ AIO_DAIT_echo_ethic_message: "§Y[this.GetName]§!星系中的意识结构正在向同一种答案收束。"
+ AIO_DAIT_echo_erase_message: "§Y[this.GetName]§!星系正在从可观测宇宙中消失。"
 
  # 阶段 POI：同一阶段只显示当前隐藏倾向对应的一段文本
  AIO_crisis_stage_2_poi_name: "边界"

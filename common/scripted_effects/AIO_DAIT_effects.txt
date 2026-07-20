@@ -4,9 +4,6 @@
 #region 塔维尔
 
 AIO_DAIT_enrich_effect = {
-    owner? = { AIO_DAIT_mark_affected_country_effect = yes }
-    every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
-
     every_system_planet = {
         limit = {
             NOT = {
@@ -46,12 +43,9 @@ AIO_DAIT_enrich_effect = {
             add_modifier = { modifier = AIO_DAIT_enrich_modifier }
         }
     }
-
 }
 
 AIO_DAIT_spawn_effect = {
-    owner? = { AIO_DAIT_mark_affected_country_effect = yes }
-    every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
 
     if = {
         limit = {
@@ -133,8 +127,6 @@ AIO_DAIT_spawn_effect = {
 }
 
 AIO_DAIT_seed_effect = {
-    owner? = { AIO_DAIT_mark_affected_country_effect = yes }
-    every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
 
     random_system_planet = {
         limit = {
@@ -208,12 +200,12 @@ AIO_DAIT_seed_effect = {
                     }
                 }
                 add_resource = {
-                    energy = 1000
-                    minerals = 1000
-                    food = 1000
-                    consumer_goods = 500
-                    alloys = 500
-                    unity = 1000
+                    energy = 10000
+                    minerals = 10000
+                    food = 10000
+                    consumer_goods = 5000
+                    alloys = 5000
+                    unity = 10000
                 }
                 add_modifier = { modifier = AIO_the_craving_of_stellaris_modifier years = 10 }
             }
@@ -231,8 +223,6 @@ AIO_DAIT_ethic_effect = {
                     is_country_type = awakened_fallen_empire
                 }
             }
-            set_country_flag = AIO_DAIT_affected_country
-
             if = {
                 limit = { has_ethic = ethic_fanatic_authoritarian }
                 shift_ethic = ethic_fanatic_egalitarian
@@ -320,8 +310,6 @@ AIO_DAIT_ethic_effect = {
 #region 亚弗戈蒙
 
 AIO_DAIT_storm_effect = {
-    owner? = { AIO_DAIT_mark_affected_country_effect = yes }
-    every_fleet_in_system = { owner? = { AIO_DAIT_mark_affected_country_effect = yes } }
 
     if = {
         limit = { NOT = { is_inside_storm = yes } }
@@ -387,25 +375,38 @@ AIO_DAIT_storm_effect = {
 }
 
 AIO_DAIT_strike_effect = {
-    every_fleet_in_system = {
-        limit = { NOT = { has_fleet_flag = AIO_Aforgomom_fleet } }
-        owner? = { AIO_DAIT_mark_affected_country_effect = yes }
-    }
-
     if = {
         limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
         AIO_create_Aforgomom_effect = yes
     }
     every_fleet_in_system = {
-        limit = { NOT = { has_fleet_flag = AIO_Aforgomom_fleet } }
-        owner? = {
+        limit = {
+            exists = owner
+            NOR = {
+                has_fleet_flag = AIO_Aforgomom_fleet
+                owner = { is_nomadic = yes }
+            }
+        }
+        owner = {
             every_system_within_border = {
-                limit = { NOT = { has_star_flag = AIO_Aformom_exist } }
+                limit = {
+                    NOR = {
+                        has_star_flag = AIO_HS_system
+                        has_star_flag = AIO_Aformom_exist
+                    }
+                }
                 AIO_create_Aformom_fleet = yes
                 set_star_flag = AIO_Aformom_exist
             }
             every_owned_fleet = {
-                limit = { solar_system = { NOT = { has_star_flag = AIO_Aformom_exist } } }
+                limit = {
+                    solar_system = {
+                        NOR = {
+                            has_star_flag = AIO_HS_system
+                            has_star_flag = AIO_Aformom_exist
+                        }
+                    }
+                }
                 solar_system = {
                     AIO_create_Aformom_fleet = yes
                     set_star_flag = AIO_Aformom_exist
@@ -416,8 +417,6 @@ AIO_DAIT_strike_effect = {
 }
 
 AIO_DAIT_harvest_effect = {
-    owner? = { AIO_DAIT_mark_affected_country_effect = yes }
-    every_system_ship_colony = { owner = { AIO_DAIT_mark_affected_country_effect = yes } }
 
     every_system_planet = {
         limit = {
@@ -562,10 +561,6 @@ AIO_DAIT_erase_effect = {
             }
         }
 
-        owner? = { AIO_DAIT_mark_affected_country_effect = yes }
-        every_system_planet = { owner? = { AIO_DAIT_mark_affected_country_effect = yes } }
-        every_fleet_in_system = { owner? = { AIO_DAIT_mark_affected_country_effect = yes } }
-
         every_system_planet = { AIO_safe_remove_planet = yes }
         AIO_safe_remove_system_megastructures = yes
         every_fleet_in_system = {
@@ -597,210 +592,6 @@ AIO_DAIT_erase_effect = {
 
 
 #region helper
-
-# scope: country（使用 DAIT 的国家）
-AIO_DAIT_pay_cost_effect = {
-    if = {
-        limit = { NOT = { is_country_type = AIO_empire } }
-        add_resource = { AIO_advanced_logic = @AIO_DAIT_cost_negative }
-    }
-    if = {
-        limit = { is_variable_set = AIO_DAIT_count }
-        change_variable = { which = AIO_DAIT_count value = 1 }
-    }
-}
-
-# 根据两类 DAIT 的使用次数刷新隐藏倾向。差值不足 2 时保持均衡。
-# scope: country
-AIO_DAIT_refresh_tendency_effect = {
-    remove_country_flag = AIO_DAIT_tendency_construct
-    remove_country_flag = AIO_DAIT_tendency_negate
-    remove_country_flag = AIO_DAIT_tendency_equilibrium
-
-    set_variable = { which = AIO_DAIT_tendency_delta value = AIO_DAIT_construct_count }
-    subtract_variable = { which = AIO_DAIT_tendency_delta value = AIO_DAIT_negate_count }
-    if = {
-        limit = { check_variable = { which = AIO_DAIT_tendency_delta value >= 2 } }
-        set_country_flag = AIO_DAIT_tendency_construct
-    }
-    else_if = {
-        limit = { check_variable = { which = AIO_DAIT_tendency_delta value <= -2 } }
-        set_country_flag = AIO_DAIT_tendency_negate
-    }
-    else = { set_country_flag = AIO_DAIT_tendency_equilibrium }
-    clear_variable = AIO_DAIT_tendency_delta
-}
-
-# scope: country
-AIO_DAIT_register_construct_effect = {
-    if = {
-        limit = { NOT = { is_variable_set = AIO_DAIT_construct_count } }
-        set_variable = { which = AIO_DAIT_construct_count value = 0 }
-    }
-    if = {
-        limit = { NOT = { is_variable_set = AIO_DAIT_negate_count } }
-        set_variable = { which = AIO_DAIT_negate_count value = 0 }
-    }
-    change_variable = { which = AIO_DAIT_construct_count value = 1 }
-    AIO_DAIT_refresh_tendency_effect = yes
-}
-
-# scope: country
-AIO_DAIT_register_negate_effect = {
-    if = {
-        limit = { NOT = { is_variable_set = AIO_DAIT_construct_count } }
-        set_variable = { which = AIO_DAIT_construct_count value = 0 }
-    }
-    if = {
-        limit = { NOT = { is_variable_set = AIO_DAIT_negate_count } }
-        set_variable = { which = AIO_DAIT_negate_count value = 0 }
-    }
-    change_variable = { which = AIO_DAIT_negate_count value = 1 }
-    AIO_DAIT_refresh_tendency_effect = yes
-}
-
-# 清除上一次异常中断可能遗留的临时受影响国家标记。
-# scope: 任意；root: 使用 DAIT 的国家
-AIO_DAIT_clear_affected_countries_effect = {
-    every_country = {
-        limit = { has_country_flag = AIO_DAIT_affected_country }
-        remove_country_flag = AIO_DAIT_affected_country
-    }
-}
-
-# 将本次 DAIT 的受影响帝国加入临时集合；结算 helper 会清除该标记。
-# scope: country; root: 使用 DAIT 的国家
-AIO_DAIT_mark_affected_country_effect = {
-    if = {
-        limit = {
-            is_country_type = default
-            NOR = {
-                is_same_value = root
-                has_country_flag = AIO_DAIT_affected_country
-            }
-        }
-        set_country_flag = AIO_DAIT_affected_country
-    }
-}
-
-AIO_DAIT_notify_enrich_effect = {
-    every_country = {
-        limit = { has_country_flag = AIO_DAIT_affected_country }
-        add_opinion_modifier = { modifier = opinion_AIO_DAIT_enriched_our_system who = root }
-        country_event = {
-            id = AIO_DAIT_events.230
-            scopes = {
-                from = root
-                fromfrom = event_target:AIO_DAIT_target_system
-            }
-        }
-        remove_country_flag = AIO_DAIT_affected_country
-    }
-}
-
-AIO_DAIT_notify_spawn_effect = {
-    every_country = {
-        limit = { has_country_flag = AIO_DAIT_affected_country }
-        add_opinion_modifier = { modifier = opinion_AIO_DAIT_spawned_in_our_system who = root }
-        country_event = {
-            id = AIO_DAIT_events.231
-            scopes = {
-                from = root
-                fromfrom = event_target:AIO_DAIT_target_system
-            }
-        }
-        remove_country_flag = AIO_DAIT_affected_country
-    }
-}
-
-AIO_DAIT_notify_seed_effect = {
-    every_country = {
-        limit = { has_country_flag = AIO_DAIT_affected_country }
-        add_opinion_modifier = { modifier = opinion_AIO_DAIT_seeded_our_system who = root }
-        country_event = {
-            id = AIO_DAIT_events.232
-            scopes = {
-                from = root
-                fromfrom = event_target:AIO_DAIT_target_system
-            }
-        }
-        remove_country_flag = AIO_DAIT_affected_country
-    }
-}
-
-AIO_DAIT_notify_ethic_effect = {
-    random_country = {
-        limit = { has_country_flag = AIO_DAIT_affected_country }
-        country_event = {
-            id = AIO_DAIT_events.233
-            scopes = {
-                from = root
-                fromfrom = event_target:AIO_DAIT_target_system
-            }
-        }
-        remove_country_flag = AIO_DAIT_affected_country
-    }
-}
-
-AIO_DAIT_notify_storm_effect = {
-    every_country = {
-        limit = { has_country_flag = AIO_DAIT_affected_country }
-        add_opinion_modifier = { modifier = opinion_AIO_DAIT_spawned_storm who = root }
-        country_event = {
-            id = AIO_DAIT_events.234
-            scopes = {
-                from = root
-                fromfrom = event_target:AIO_DAIT_target_system
-            }
-        }
-        remove_country_flag = AIO_DAIT_affected_country
-    }
-}
-
-AIO_DAIT_notify_strike_effect = {
-    every_country = {
-        limit = { has_country_flag = AIO_DAIT_affected_country }
-        add_opinion_modifier = { modifier = opinion_AIO_DAIT_struck_us who = root }
-        country_event = {
-            id = AIO_DAIT_events.235
-            scopes = {
-                from = root
-                fromfrom = event_target:AIO_DAIT_target_system
-            }
-        }
-        remove_country_flag = AIO_DAIT_affected_country
-    }
-}
-
-AIO_DAIT_notify_harvest_effect = {
-    every_country = {
-        limit = { has_country_flag = AIO_DAIT_affected_country }
-        add_opinion_modifier = { modifier = opinion_AIO_DAIT_harvested_our_system who = root }
-        country_event = {
-            id = AIO_DAIT_events.236
-            scopes = {
-                from = root
-                fromfrom = event_target:AIO_DAIT_target_system
-            }
-        }
-        remove_country_flag = AIO_DAIT_affected_country
-    }
-}
-
-AIO_DAIT_notify_erase_effect = {
-    every_country = {
-        limit = { has_country_flag = AIO_DAIT_affected_country }
-        add_opinion_modifier = { modifier = opinion_AIO_DAIT_erased_our_systems who = root }
-        country_event = {
-            id = AIO_DAIT_events.237
-            scopes = {
-                from = root
-                fromfrom = event_target:AIO_DAIT_target_system
-            }
-        }
-        remove_country_flag = AIO_DAIT_affected_country
-    }
-}
 
 # 召唤亚弗戈蒙
 # scope: system

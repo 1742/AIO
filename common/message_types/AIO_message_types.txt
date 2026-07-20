@@ -1,0 +1,10 @@
+message_type = {
+    key = "AIO_DAIT_ECHO"
+    icon = "GFX_message_star_destroyed"
+    icon_frame = 1
+    sound = "advisor_notification_research_complete"
+    sound_is_advisor = yes
+    ping = "ping_notification_green"
+    category = science
+    default_toast = yes
+}

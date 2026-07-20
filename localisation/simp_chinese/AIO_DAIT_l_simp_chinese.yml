@@ -27,10 +27,10 @@
  AIO_DAIT_events.202.strike: "打击"
  AIO_DAIT_events.202.harvest: "收割"
  AIO_DAIT_events.202.erase: "擦除"
- AIO_DAIT.fail.mega_1: "£trigger_no£需要拥有§Y天灾等级2§!"
- AIO_DAIT.fail.mega_2: "£trigger_no£需要拥有§Y天灾等级3§!"
- AIO_DAIT.fail.mega_3: "£trigger_no£需要拥有§Y天灾等级4§!"
- AIO_DAIT.fail.mega_4: "£trigger_no£需要拥有§Y天灾等级5§!"
+ AIO_DAIT.fail.require_mega_1: "£trigger_no£需要拥有§Y$AIO_mega_01$§!"
+ AIO_DAIT.fail.require_mega_2: "£trigger_no£需要拥有§Y$AIO_mega_02$§!"
+ AIO_DAIT.fail.require_mega_3: "£trigger_no£需要拥有§Y$AIO_mega_03$§!"
+ AIO_DAIT.fail.require_mega_4: "£trigger_no£需要拥有§Y$AIO_mega_04$§!"
 
  #endregion
 
@@ -48,10 +48,10 @@
  AIO_DAIT_events.233.option: "这才是唯一正确的道路。"
  AIO_DAIT_events.234.title: "人为宇宙风暴"
  AIO_DAIT_events.234.desc: "§Y[From.GetName]§!在§Y[FromFrom.GetName]§!撕裂了稳定的宇宙环境，一场人为制造的宇宙风暴正在成形。"
- AIO_DAIT_events.235.title: "超常规打击"
- AIO_DAIT_events.235.desc: "§Y[From.GetName]§!以§Y[FromFrom.GetName]§!为坐标发动了超常规打击。敌对实体正借由被扭曲的现实侵入我们的领土。"
- AIO_DAIT_events.236.title: "星系遭到收割"
- AIO_DAIT_events.236.desc: "§Y[From.GetName]§!正在收割§Y[FromFrom.GetName]§!。恒星、行星乃至殖民地都被拆解为供其利用的原始资源。"
+ AIO_DAIT_events.235.title: "星系遭到收割"
+ AIO_DAIT_events.235.desc: "§Y[From.GetName]§!正在收割§Y[FromFrom.GetName]§!。恒星、行星乃至殖民地都被拆解为供其利用的原始资源。"
+ AIO_DAIT_events.236.title: "超常规打击"
+ AIO_DAIT_events.236.desc: "§Y[From.GetName]§!以§Y[FromFrom.GetName]§!为坐标发动了超常规打击。敌对实体正借由被扭曲的现实侵入我们的领土。"
  AIO_DAIT_events.237.title: "现实擦除"
  AIO_DAIT_events.237.desc: "§Y[From.GetName]§!以§Y[FromFrom.GetName]§!为中心抹除了大片现实。我们的星系、舰队和亿万生命在一瞬间消失，留下的只有无法被填补的虚无。"
 

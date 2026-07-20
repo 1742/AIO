@@ -53,8 +53,20 @@ crisis_AIO_level_2 = {
 			set_variable = { which = AIO_DAIT_count value = 0 }
 			set_variable = { which = AIO_DAIT_construct_count value = 0 }
 			set_variable = { which = AIO_DAIT_negate_count value = 0 }
+			set_variable = { which = AIO_DAIT_enrich_count value = 0 }
+			set_variable = { which = AIO_DAIT_storm_count value = 0 }
+			set_variable = { which = AIO_DAIT_spawn_count value = 0 }
+			set_variable = { which = AIO_DAIT_harvest_count value = 0 }
+			set_variable = { which = AIO_DAIT_seed_count value = 0 }
+			set_variable = { which = AIO_DAIT_strike_count value = 0 }
+			set_variable = { which = AIO_DAIT_ethic_count value = 0 }
+			set_variable = { which = AIO_DAIT_erase_count value = 0 }
 			AIO_DAIT_refresh_tendency_effect = yes
 			AIO_crisis_update_stage_poi_effect = { STAGE = 2 }
+			start_situation = {
+				type = AIO_crisis_situation
+				target = root
+			}
 			add_event_chain_counter = {
 				event_chain = "AIO_crisis_events_chain"
 				counter = "AIO_crisis_events_chain"
@@ -74,7 +86,7 @@ crisis_AIO_level_3 = {
 			OR = {
 				AND = {
 					has_country_flag = AIO_built_AIO_mega_01
-					check_variable = { which = AIO_DAIT_count value >= 2 }
+					has_country_flag = AIO_crisis_situation_stage_1_complete
 				}
 				has_country_flag = AIO_empire_country
 			}
@@ -113,7 +125,7 @@ crisis_AIO_level_4 = {
 			OR = {
 				AND = {
 					has_country_flag = AIO_built_AIO_mega_02
-					check_variable = { which = AIO_DAIT_count value >= 4 }
+					has_country_flag = AIO_crisis_situation_stage_2_complete
 				}
 				has_country_flag = AIO_empire_country
 			}
@@ -151,7 +163,7 @@ crisis_AIO_level_5 = {
 			OR = {
 				AND = {
 					has_country_flag = AIO_built_AIO_mega_03
-					check_variable = { which = AIO_DAIT_count value >= 8 }
+					has_country_flag = AIO_crisis_situation_stage_3_complete
 				}
 				has_country_flag = AIO_empire_country
 			}

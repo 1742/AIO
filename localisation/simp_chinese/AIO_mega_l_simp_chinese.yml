@@ -23,7 +23,7 @@
  AIO_mega_03_MEGASTRUCTURE_DETAILS: "观测所有维度和存在的“点”"
  AIO_mega_04: "犹格索托斯"
  AIO_mega_04_DESC: "无尽维度之外的超然结构"
- AIO_mega_04_MEGASTRUCTURE_DETAILS: "无尽维度之外的超然结构"
+ AIO_mega_04_MEGASTRUCTURE_DETAILS: "无尽维度之外的超然结构。"
  AIO_mega_04_activate: "$AIO_mega_04$"
  AIO_mega_04_activate_DESC: "$AIO_mega_04_DESC$"
 

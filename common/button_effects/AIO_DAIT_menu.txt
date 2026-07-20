@@ -2,17 +2,18 @@ AIO_DAIT_enrich = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
-            fail_text = AIO_DAIT.fail.mega_1
+            fail_text = AIO_DAIT.fail.require_mega_1
             OR = {
-                has_menace_perk = menp_AIO_mega_02
+                has_country_flag = AIO_built_AIO_mega_01
                 is_country_type = AIO_empire
             }
         }
         custom_tooltip = {
             fail_text = AIO_DAIT_lock_target.fail.enrich
             event_target:AIO_DAIT_target_system = {
+                NOT = { has_star_flag = AIO_DAIT_harvest_system }
                 any_system_planet = {
-                    NOT = {
+                    NOR = {
                         is_planet_class = pc_shattered
                         is_planet_class = pc_AIO_empty_space
                         has_planet_flag = AIO_DAIT_harvested_body
@@ -26,12 +27,7 @@ AIO_DAIT_enrich = {
         }
     }
     effect = {
-        AIO_DAIT_clear_affected_countries_effect = yes
-        AIO_DAIT_pay_cost_effect = yes
-        AIO_DAIT_register_construct_effect = yes
-        event_target:AIO_DAIT_target_system = { AIO_DAIT_enrich_effect = { TIMES = 10 } }
-        AIO_DAIT_notify_enrich_effect = yes
-        AIO_DAIT_clear_affected_countries_effect = yes
+        AIO_DAIT_manual_enrich_effect = yes
     }
 }
 
@@ -39,9 +35,9 @@ AIO_DAIT_spawn = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
-            fail_text = AIO_DAIT.fail.mega_2
+            fail_text = AIO_DAIT.fail.require_mega_2
             OR = {
-                has_menace_perk = menp_AIO_mega_03
+                has_country_flag = AIO_built_AIO_mega_02
                 is_country_type = AIO_empire
             }
         }
@@ -59,12 +55,7 @@ AIO_DAIT_spawn = {
         }
     }
     effect = {
-        AIO_DAIT_clear_affected_countries_effect = yes
-        AIO_DAIT_pay_cost_effect = yes
-        AIO_DAIT_register_construct_effect = yes
-        event_target:AIO_DAIT_target_system = { AIO_DAIT_spawn_effect = yes }
-        AIO_DAIT_notify_spawn_effect = yes
-        AIO_DAIT_clear_affected_countries_effect = yes
+        AIO_DAIT_manual_spawn_effect = yes
     }
 }
 
@@ -72,9 +63,9 @@ AIO_DAIT_seed = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
-            fail_text = AIO_DAIT.fail.mega_3
+            fail_text = AIO_DAIT.fail.require_mega_3
             OR = {
-                has_menace_perk = menp_AIO_mega_04
+                has_country_flag = AIO_built_AIO_mega_03
                 is_country_type = AIO_empire
             }
         }
@@ -93,12 +84,7 @@ AIO_DAIT_seed = {
         }
     }
     effect = {
-        AIO_DAIT_clear_affected_countries_effect = yes
-        AIO_DAIT_pay_cost_effect = yes
-        AIO_DAIT_register_construct_effect = yes
-        event_target:AIO_DAIT_target_system = { AIO_DAIT_seed_effect = yes }
-        AIO_DAIT_notify_seed_effect = yes
-        AIO_DAIT_clear_affected_countries_effect = yes
+        AIO_DAIT_manual_seed_effect = yes
     }
 }
 
@@ -106,9 +92,9 @@ AIO_DAIT_ethic = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
-            fail_text = AIO_DAIT.fail.mega_4
+            fail_text = AIO_DAIT.fail.require_mega_4
             OR = {
-                has_menace_perk = menp_AIO_mega_05
+                has_country_flag = AIO_built_AIO_mega_04
                 is_country_type = AIO_empire
             }
         }
@@ -122,12 +108,7 @@ AIO_DAIT_ethic = {
         }
     }
     effect = {
-        AIO_DAIT_clear_affected_countries_effect = yes
-        AIO_DAIT_pay_cost_effect = yes
-        AIO_DAIT_register_construct_effect = yes
-        event_target:AIO_DAIT_target_system = { AIO_DAIT_ethic_effect = yes }
-        AIO_DAIT_notify_ethic_effect = yes
-        AIO_DAIT_clear_affected_countries_effect = yes
+        AIO_DAIT_manual_ethic_effect = yes
     }
 }
 
@@ -135,7 +116,7 @@ AIO_DAIT_storm = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
-            fail_text = AIO_DAIT.fail.mega_1
+            fail_text = AIO_DAIT.fail.require_mega_1
             OR = {
                 has_menace_perk = menp_AIO_mega_02
                 is_country_type = AIO_empire
@@ -148,43 +129,7 @@ AIO_DAIT_storm = {
         }
     }
     effect = {
-        AIO_DAIT_clear_affected_countries_effect = yes
-        AIO_DAIT_pay_cost_effect = yes
-        AIO_DAIT_register_negate_effect = yes
-        event_target:AIO_DAIT_target_system = { AIO_DAIT_storm_effect = yes }
-        AIO_DAIT_notify_storm_effect = yes
-        AIO_DAIT_clear_affected_countries_effect = yes
-    }
-}
-
-AIO_DAIT_strike = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
-    allow = {
-        custom_tooltip = {
-            fail_text = AIO_DAIT.fail.mega_3
-            OR = {
-                has_menace_perk = menp_AIO_mega_04
-                is_country_type = AIO_empire
-            }
-        }
-        custom_tooltip = {
-            fail_text = AIO_DAIT_lock_target.fail.strike
-            event_target:AIO_DAIT_target_system = {
-                NOT = { has_star_flag = AIO_Aformom_exist }
-            }
-        }
-        OR = {
-            is_country_type = AIO_empire
-            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
-        }
-    }
-    effect = {
-        AIO_DAIT_clear_affected_countries_effect = yes
-        AIO_DAIT_pay_cost_effect = yes
-        AIO_DAIT_register_negate_effect = yes
-        event_target:AIO_DAIT_target_system = { AIO_DAIT_strike_effect = yes }
-        AIO_DAIT_notify_strike_effect = yes
-        AIO_DAIT_clear_affected_countries_effect = yes
+        AIO_DAIT_manual_storm_effect = yes
     }
 }
 
@@ -192,9 +137,9 @@ AIO_DAIT_harvest = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
-            fail_text = AIO_DAIT.fail.mega_2
+            fail_text = AIO_DAIT.fail.require_mega_2
             OR = {
-                has_menace_perk = menp_AIO_mega_03
+                has_country_flag = AIO_built_AIO_mega_02
                 is_country_type = AIO_empire
             }
         }
@@ -218,12 +163,33 @@ AIO_DAIT_harvest = {
         }
     }
     effect = {
-        AIO_DAIT_clear_affected_countries_effect = yes
-        AIO_DAIT_pay_cost_effect = yes
-        AIO_DAIT_register_negate_effect = yes
-        event_target:AIO_DAIT_target_system = { AIO_DAIT_harvest_effect = yes }
-        AIO_DAIT_notify_harvest_effect = yes
-        AIO_DAIT_clear_affected_countries_effect = yes
+        AIO_DAIT_manual_harvest_effect = yes
+    }
+}
+
+AIO_DAIT_strike = {
+    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT.fail.require_mega_3
+            OR = {
+                has_country_flag = AIO_built_AIO_mega_03
+                is_country_type = AIO_empire
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.strike
+            event_target:AIO_DAIT_target_system = {
+                NOT = { has_star_flag = AIO_Aformom_exist }
+            }
+        }
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+        }
+    }
+    effect = {
+        AIO_DAIT_manual_strike_effect = yes
     }
 }
 
@@ -231,9 +197,9 @@ AIO_DAIT_erase = {
     potential = { has_active_event = { AIO_DAIT_events.202 } }
     allow = {
         custom_tooltip = {
-            fail_text = AIO_DAIT.fail.mega_4
+            fail_text = AIO_DAIT.fail.require_mega_4
             OR = {
-                has_menace_perk = menp_AIO_mega_05
+                has_country_flag = AIO_built_AIO_mega_04
                 is_country_type = AIO_empire
             }
         }
@@ -247,19 +213,6 @@ AIO_DAIT_erase = {
         }
     }
     effect = {
-        AIO_DAIT_clear_affected_countries_effect = yes
-        AIO_DAIT_pay_cost_effect = yes
-        AIO_DAIT_register_negate_effect = yes
-        if = {
-            limit = { is_country_type = AIO_empire }
-            event_target:AIO_DAIT_target_system = {
-                AIO_DAIT_erase_effect = { MAX_JUMPS = 5 }
-            }
-        }
-        else = {
-            event_target:AIO_DAIT_target_system = { AIO_DAIT_erase_effect = yes }
-        }
-        AIO_DAIT_notify_erase_effect = yes
-        AIO_DAIT_clear_affected_countries_effect = yes
+        AIO_DAIT_manual_erase_effect = yes
     }
 }

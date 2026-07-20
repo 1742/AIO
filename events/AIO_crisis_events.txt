@@ -206,8 +206,63 @@ country_event = {
 
     after = {
         AIO_trigger_RAIT_effect = yes
-        country_event = { id = AIO_crisis_events.501 }
     }
+}
+
+#endregion
+
+
+#region 法则扩散局势
+
+situation_event = {
+    id = AIO_crisis_events.450
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                owner = {
+                    OR = {
+                        check_variable = { which = AIO_DAIT_enrich_count value > 0 }
+                        check_variable = { which = AIO_DAIT_storm_count value > 0 }
+                        check_variable = { which = AIO_DAIT_spawn_count value > 0 }
+                        check_variable = { which = AIO_DAIT_harvest_count value > 0 }
+                        check_variable = { which = AIO_DAIT_seed_count value > 0 }
+                        check_variable = { which = AIO_DAIT_strike_count value > 0 }
+                        check_variable = { which = AIO_DAIT_ethic_count value > 0 }
+                        check_variable = { which = AIO_DAIT_erase_count value > 0 }
+                    }
+                }
+            }
+            random_list = {
+                90 = { }
+                10 = {
+                    modifier = {
+                        factor = 1.5
+                        current_stage >= stage_1
+                    }
+                    modifier = {
+                        factor = 1.5
+                        current_stage >= stage_2
+                    }
+                    modifier = {
+                        factor = 1.5
+                        current_stage >= stage_3
+                    }
+                    owner = { country_event = { id = AIO_crisis_events.451 } }
+                }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = AIO_crisis_events.451
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = { AIO_DAIT_echo_roll_effect = yes }
 }
 
 #endregion
@@ -218,6 +273,7 @@ country_event = {
 country_event = {
     id = AIO_crisis_events.501
     hide_window = yes
+
     is_triggered_only = yes
 
     immediate = {
