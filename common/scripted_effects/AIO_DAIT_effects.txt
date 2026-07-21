@@ -310,7 +310,6 @@ AIO_DAIT_ethic_effect = {
 #region 亚弗戈蒙
 
 AIO_DAIT_storm_effect = {
-
     if = {
         limit = { NOT = { is_inside_storm = yes } }
         random_list = {
