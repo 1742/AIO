@@ -127,7 +127,7 @@
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
 
  # Law Diffusion situation
- AIO_crisis_situation: "Law Diffusion"
+ AIO_crisis_situation: "Infinity Diffusion"
  AIO_crisis_situation_type: "$AIO_crisis_situation$"
  AIO_crisis_situation_desc: "Our experiments have left indelible paradigms in reality. Across the galaxy, systems now reproduce applications of infinity that we once performed. The more often an operation is demonstrated, the more readily the universe adopts it as habit."
  AIO_crisis_situation_monthly_change_tooltip: "The megastructure projects rewritten laws across the galaxy. Each manual Application of Infinity also advances diffusion."

@@ -126,7 +126,7 @@
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
 
  # 法则扩散局势
- AIO_crisis_situation: "法则扩散"
+ AIO_crisis_situation: "无限扩散"
  AIO_crisis_situation_type: "$AIO_crisis_situation$"
  AIO_crisis_situation_desc: "我们的实验已经在现实中留下无法抹除的范式。银河各处开始自发复现我们曾经施行的法则改写；主动使用的次数越多，对应现象便越容易成为宇宙的习惯。"
  AIO_crisis_situation_monthly_change_tooltip: "巨构将改写后的法则持续投射到银河。每次主动使用应用无限也会推动扩散。"

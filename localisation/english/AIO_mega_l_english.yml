@@ -30,30 +30,11 @@
  #endregion
 
 
- #region Locator
-
- AIO_locator: "Locator"
- AIO_mega_country_locator: "Empire Locator"
- AIO_mega_country_locator_DESC: "Locate empire."
- AIO_mega_country_locator_MEGASTRUCTURE_DETAILS: "$AIO_mega_country_locator_DESC$"
- AIO_mega_system_locator: "System Locator"
- AIO_mega_system_locator_DESC: "Locate system."
- AIO_mega_system_locator_MEGASTRUCTURE_DETAILS: "$AIO_mega_system_locator_DESC$"
- AIO_mega_planet_locator: "Planet Locator"
- AIO_mega_planet_locator_DESC: "Locate planet."
- AIO_mega_planet_locator_MEGASTRUCTURE_DETAILS: "$AIO_mega_planet_locator_DESC$"
- AIO_mega_colony_locator: "Colony Locator"
- AIO_mega_colony_locator_DESC: "Locate colony."
- AIO_mega_colony_locator_MEGASTRUCTURE_DETAILS: "$AIO_mega_colony_locator_DESC$"
-
- #endregion
-
-
  #region tooltips
 
- AIO_existed_TDTE: "£trigger_no£The system has existed $AIO_mega_01$ connection!"
- AIO_requires_system_not_existed_storm: "£trigger_no£The system is existed cosmic storm!"
- AIO_requires_is_colony: "£trigger_no£Target must be colony!"
- AIO_requires_not_Cetana_captial: "£trigger_no£To prevent the event chain from getting stuck, don't try to edit Cetana's stronghold."
+ AIO_mega_01.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 10000!"
+ AIO_mega_02.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 30000!"
+ AIO_mega_03.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 50000!"
+ AIO_mega_04.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 100000!"
 
  #endregion

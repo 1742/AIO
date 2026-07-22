@@ -1,4 +1,12 @@
 # AIO巨构
+@mega_01_energy_cost = 10000
+@mega_02_energy_cost = 30000
+@mega_03_energy_cost = 50000
+@mega_04_energy_cost = 100000
+@mega_01_energy_cost_negative = -10000
+@mega_02_energy_cost_negative = -30000
+@mega_03_energy_cost_negative = -50000
+@mega_04_energy_cost_negative = -100000
 
 # 现实中的万门之门
 AIO_mega_01_fact = {
@@ -18,6 +26,21 @@ AIO_mega_01_fact = {
 		}
 	}
 
+	possible = {
+		custom_tooltip = {
+			fail_text = AIO_mega_02.fail.nomadic
+			from = {
+				OR = {
+					is_nomadic = no
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						situation_progress >= @mega_01_energy_cost
+					}
+				}
+			}
+		}
+	}
+
 	dismantle_potential = { always = no }
 
 	upgrade_from = { AIO_horizon_engine }
@@ -27,23 +50,23 @@ AIO_mega_01_fact = {
 	resources = {
 		category = megastructures
 		cost = {
-			energy = 5000
-			sr_dark_matter = 1000
-			nanites = 1000
-			sr_living_metal = 1000
+			energy = @mega_01_energy_cost
+			sr_dark_matter = 2000
+			nanites = 2000
+			sr_living_metal = 2000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 10000
+			alloys = 15000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 10000
+			alloys = 15000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 10000
+			food = 15000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
@@ -69,6 +92,14 @@ AIO_mega_01_fact = {
 		AIO_create_TUG_system_effect = yes
 
 		from = {
+			if = {
+				limit = { is_nomadic = yes }
+				random_situation = {
+					limit = { is_situation_type = situation_nomad_economy }
+					add_situation_progress = @mega_01_energy_cost_negative
+				}
+			}
+
 			set_country_flag = AIO_built_AIO_mega_01
 			country_event = { id = AIO_crisis_events.401 }
 		}
@@ -94,7 +125,7 @@ AIO_mega_01 = {
 		produces = { AIO_advanced_logic = 1000 }
 
 		upkeep = {
-			energy = 100
+			energy = 200
 			physics_research = 50
 			society_research = 50
 			engineering_research = 50
@@ -156,6 +187,21 @@ AIO_mega_02 = {
 		NOT = { has_country_flag = AIO_built_AIO_mega_02 }
 	}
 
+	possible = {
+		custom_tooltip = {
+			fail_text = AIO_mega_02.fail.nomadic
+			from = {
+				OR = {
+					is_nomadic = no
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						situation_progress >= @mega_02_energy_cost
+					}
+				}
+			}
+		}
+	}
+
 	dismantle_potential = { always = no }
 
 	upgrade_from = { AIO_mega_01 }
@@ -166,30 +212,30 @@ AIO_mega_02 = {
 		category = megastructures
 
 		cost = {
-			energy = 10000
-			sr_dark_matter = 300
-			nanites = 300
-			sr_living_metal = 300
+			energy = 30000
+			sr_dark_matter = 3000
+			nanites = 3000
+			sr_living_metal = 3000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 10000
+			alloys = 20000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 10000
+			alloys = 20000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 10000
+			food = 20000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
 		produces = { AIO_advanced_logic = 3000 }
 
 		upkeep = {
-			energy = 200
+			energy = 500
 			physics_research = 300
 			society_research = 300
 			engineering_research = 300
@@ -201,6 +247,14 @@ AIO_mega_02 = {
 
 	on_build_complete = {
 		from = {
+			if = {
+				limit = { is_nomadic = yes }
+				random_situation = {
+					limit = { is_situation_type = situation_nomad_economy }
+					add_situation_progress = @mega_02_energy_cost_negative
+				}
+			}
+
 			set_country_flag = AIO_built_AIO_mega_02
 			country_event = { id = AIO_crisis_events.402 }
 		}
@@ -224,6 +278,21 @@ AIO_mega_03 = {
 		NOT = { has_megastructure = AIO_mega_03 }
 	}
 
+	possible = {
+		custom_tooltip = {
+			fail_text = AIO_mega_03.fail.nomadic
+			from = {
+				OR = {
+					is_nomadic = no
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						situation_progress >= @mega_03_energy_cost
+					}
+				}
+			}
+		}
+	}
+
 	dismantle_potential = { always = no }
 
 	upgrade_from = { AIO_mega_02 }
@@ -234,18 +303,18 @@ AIO_mega_03 = {
 		category = megastructures
 
 		cost = {
-			energy = 20000
-			sr_dark_matter = 500
-			nanites = 500
-			sr_living_metal = 500
+			energy = 50000
+			sr_dark_matter = 5000
+			nanites = 5000
+			sr_living_metal = 5000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 10000
+			alloys = 25000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 10000
+			alloys = 25000
 			mult = 0.5
 		}
 		cost = {
@@ -257,7 +326,7 @@ AIO_mega_03 = {
 		produces = { AIO_advanced_logic = 5000 }
 
 		upkeep = {
-			energy = 500
+			energy = 1000
 			physics_research = 500
 			society_research = 500
 			engineering_research = 500
@@ -269,6 +338,14 @@ AIO_mega_03 = {
 
 	on_build_complete = {
 		from = {
+			if = {
+				limit = { is_nomadic = yes }
+				random_situation = {
+					limit = { is_situation_type = situation_nomad_economy }
+					add_situation_progress = @mega_03_energy_cost_negative
+				}
+			}
+
 			set_country_flag = AIO_built_AIO_mega_03
 			country_event = { id = AIO_crisis_events.403 }
 		}
@@ -292,6 +369,21 @@ AIO_mega_04 = {
 		NOT = { has_megastructure = AIO_mega_04 }
 	}
 
+	possible = {
+		custom_tooltip = {
+			fail_text = AIO_mega_04.fail.nomadic
+			from = {
+				OR = {
+					is_nomadic = no
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						situation_progress >= @mega_04_energy_cost
+					}
+				}
+			}
+		}
+	}
+
 	dismantle_potential = { always = no }
 
 	upgrade_from = {
@@ -304,18 +396,18 @@ AIO_mega_04 = {
 		category = megastructures
 
 		cost = {
-			energy = 50000
-			sr_dark_matter = 1000
-			nanites = 1000
-			sr_living_metal = 1000
+			energy = 100000
+			sr_dark_matter = 10000
+			nanites = 10000
+			sr_living_metal = 10000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 20000
+			alloys = 50000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 20000
+			alloys = 50000
 			mult = 0.5
 		}
 		cost = {
@@ -328,7 +420,7 @@ AIO_mega_04 = {
 
         upkeep = {
             trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
-            energy = 1000
+            energy = 2000
 			physics_research = 1000
 			society_research = 1000
 			engineering_research = 1000
@@ -340,6 +432,14 @@ AIO_mega_04 = {
 
 	on_build_complete = {
 		from = {
+			if = {
+				limit = { is_nomadic = yes }
+				random_situation = {
+					limit = { is_situation_type = situation_nomad_economy }
+					add_situation_progress = @mega_04_energy_cost_negative
+				}
+			}
+
 			set_country_flag = AIO_built_AIO_mega_04
 			country_event = { id = AIO_crisis_events.404 }
 		}

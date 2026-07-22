@@ -16,24 +16,24 @@ AIO_crisis_situation = {
         stage_1 = {
             icon = GFX_situation_stage_1
             icon_background = GFX_situation_stage_frame_blue
-            end = 25
+            end = 100
         }
         stage_2 = {
             icon = GFX_situation_stage_2
             icon_background = GFX_situation_stage_frame_blue
-            end = 50
+            end = 300
             on_first_enter = { owner = { set_country_flag = AIO_crisis_situation_stage_1_complete } }
         }
         stage_3 = {
             icon = GFX_situation_stage_3
             icon_background = GFX_situation_stage_frame_blue
-            end = 75
+            end = 600
             on_first_enter = { owner = { set_country_flag = AIO_crisis_situation_stage_2_complete } }
         }
         stage_4 = {
             icon = GFX_situation_stage_4
             icon_background = GFX_situation_stage_frame_red
-            end = 100
+            end = 1000
             on_first_enter = { owner = { set_country_flag = AIO_crisis_situation_stage_3_complete } }
         }
     }
@@ -43,28 +43,28 @@ AIO_crisis_situation = {
         modifier = {
             add = 1
             desc = AIO_crisis_situation_monthly_active.mega_1
-            current_stage < stage_1
+            current_stage <= stage_1
             owner = { has_country_flag = AIO_built_AIO_mega_01 }
         }
         modifier = {
             add = 1
             desc = AIO_crisis_situation_monthly_active.mega_2
-            current_stage >= stage_1
-            current_stage < stage_2
+            current_stage > stage_1
+            current_stage <= stage_2
             owner = { has_country_flag = AIO_built_AIO_mega_02 }
         }
         modifier = {
             add = 1
             desc = AIO_crisis_situation_monthly_active.mega_3
-            current_stage >= stage_2
-            current_stage < stage_3
+            current_stage > stage_2
+            current_stage <= stage_3
             owner = { has_country_flag = AIO_built_AIO_mega_03 }
         }
         modifier = {
             add = 1
             desc = AIO_crisis_situation_monthly_active.mega_4
-            current_stage >= stage_3
-            current_stage < stage_4
+            current_stage > stage_3
+            current_stage <= stage_4
             owner = { has_country_flag = AIO_built_AIO_mega_04 }
         }
     }

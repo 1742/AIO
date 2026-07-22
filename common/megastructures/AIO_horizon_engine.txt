@@ -86,7 +86,7 @@ AIO_horizon_engine = {
 		}
 
         produces = {
-			energy = 1000
+			energy = 1500
 		}
 
 		upkeep = {
