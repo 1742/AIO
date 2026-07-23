@@ -19,7 +19,7 @@ AIO_DAIT_lock_target = {
 	}
 
 	button_visible = {
-		NOT = { exists = event_target:AIO_DAIT_target_system }
+		NOT = { has_megastructure_flag = AIO_DAIT_active }
 	}
 
 	button_clickable = {

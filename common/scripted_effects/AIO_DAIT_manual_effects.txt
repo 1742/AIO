@@ -1,5 +1,6 @@
 # 玩家主动使用 DAIT 的外层包装。
 # 这里负责扣费、统计、倾向和外交反馈；底层法则改写仍在 AIO_DAIT_effects.txt。
+# scope: DAIT country
 
 AIO_DAIT_manual_enrich_effect = {
     AIO_DAIT_manual_clear_affected_flag = yes

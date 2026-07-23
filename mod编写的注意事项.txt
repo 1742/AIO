@@ -8,3 +8,5 @@ special_project的on_success里的事件的可以用from跳转到enable_special_
 owner, fromfrom可以跳转到enable_special_project代码处的scope
 
 global_event_target对应的实例即使不存在了，exist也会返回true
+
+自定义 UI 的 this = 当前选中项，from = 一般是玩家帝国，在使用自定义 UI 时， button_effect 最好只使用 from 来进行效果和判断，this 不可靠。

@@ -1,11 +1,16 @@
+# THIS = selected object and may change; FROM = player country.
+# Keep potential anchored exclusively to the stable player-country scope.
+
 AIO_DAIT_enrich = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_1
             OR = {
-                has_country_flag = AIO_built_AIO_mega_01
-                hidden_trigger = { is_country_type = AIO_empire }
+                from = {
+                    has_country_flag = AIO_built_AIO_mega_01
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
             }
         }
         custom_tooltip = {
@@ -22,23 +27,27 @@ AIO_DAIT_enrich = {
             }
         }
         OR = {
-            hidden_trigger = { is_country_type = AIO_empire }
-            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            from = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
         }
     }
     effect = {
-        AIO_DAIT_manual_enrich_effect = yes
+        from = { AIO_DAIT_manual_enrich_effect = yes }
     }
 }
 
 AIO_DAIT_spawn = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_2
             OR = {
-                has_country_flag = AIO_built_AIO_mega_02
-                hidden_trigger = { is_country_type = AIO_empire }
+                from = {
+                    has_country_flag = AIO_built_AIO_mega_02
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
             }
         }
         custom_tooltip = {
@@ -50,23 +59,27 @@ AIO_DAIT_spawn = {
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
         }
         OR = {
-            hidden_trigger = { is_country_type = AIO_empire }
-            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            from = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
         }
     }
     effect = {
-        AIO_DAIT_manual_spawn_effect = yes
+        from = { AIO_DAIT_manual_spawn_effect = yes }
     }
 }
 
 AIO_DAIT_seed = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_3
             OR = {
-                has_country_flag = AIO_built_AIO_mega_03
-                hidden_trigger = { is_country_type = AIO_empire }
+                from = {
+                    has_country_flag = AIO_built_AIO_mega_03
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
             }
         }
         custom_tooltip = {
@@ -79,23 +92,27 @@ AIO_DAIT_seed = {
             }
         }
         OR = {
-            hidden_trigger = { is_country_type = AIO_empire }
-            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            from = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
         }
     }
     effect = {
-        AIO_DAIT_manual_seed_effect = yes
+        from = { AIO_DAIT_manual_seed_effect = yes }
     }
 }
 
 AIO_DAIT_ethic = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_4
             OR = {
-                has_country_flag = AIO_built_AIO_mega_04
-                hidden_trigger = { is_country_type = AIO_empire }
+                from = {
+                    has_country_flag = AIO_built_AIO_mega_04
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
             }
         }
         custom_tooltip = {
@@ -103,23 +120,27 @@ AIO_DAIT_ethic = {
             event_target:AIO_DAIT_target_system = { exists = owner }
         }
         OR = {
-            hidden_trigger = { is_country_type = AIO_empire }
-            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            from = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
         }
     }
     effect = {
-        AIO_DAIT_manual_ethic_effect = yes
+        from = { AIO_DAIT_manual_ethic_effect = yes }
     }
 }
 
 AIO_DAIT_storm = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_1
             OR = {
-                has_country_flag = AIO_built_AIO_mega_01
-                hidden_trigger = { is_country_type = AIO_empire }
+                from = {
+                    has_country_flag = AIO_built_AIO_mega_01
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
             }
         }
         custom_tooltip = {
@@ -127,23 +148,27 @@ AIO_DAIT_storm = {
             event_target:AIO_DAIT_target_system = { is_inside_storm = no }
         }
         OR = {
-            hidden_trigger = { is_country_type = AIO_empire }
-            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            from = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
         }
     }
     effect = {
-        AIO_DAIT_manual_storm_effect = yes
+        from = { AIO_DAIT_manual_storm_effect = yes }
     }
 }
 
 AIO_DAIT_harvest = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_2
             OR = {
-                has_country_flag = AIO_built_AIO_mega_02
-                hidden_trigger = { is_country_type = AIO_empire }
+                from = {
+                    has_country_flag = AIO_built_AIO_mega_02
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
             }
         }
         custom_tooltip = {
@@ -161,23 +186,27 @@ AIO_DAIT_harvest = {
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
         }
         OR = {
-            is_country_type = AIO_empire
-            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            from = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
         }
     }
     effect = {
-        AIO_DAIT_manual_harvest_effect = yes
+        from = { AIO_DAIT_manual_harvest_effect = yes }
     }
 }
 
 AIO_DAIT_strike = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_3
             OR = {
-                has_country_flag = AIO_built_AIO_mega_03
-                hidden_trigger = { is_country_type = AIO_empire }
+                from = {
+                    has_country_flag = AIO_built_AIO_mega_03
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
             }
         }
         custom_tooltip = {
@@ -187,23 +216,27 @@ AIO_DAIT_strike = {
             }
         }
         OR = {
-            hidden_trigger = { is_country_type = AIO_empire }
-            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            from = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
         }
     }
     effect = {
-        AIO_DAIT_manual_strike_effect = yes
+        from = { AIO_DAIT_manual_strike_effect = yes }
     }
 }
 
 AIO_DAIT_erase = {
-    potential = { has_active_event = { AIO_DAIT_events.202 } }
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_4
             OR = {
-                has_country_flag = AIO_built_AIO_mega_04
-                hidden_trigger = { is_country_type = AIO_empire }
+                from = {
+                    has_country_flag = AIO_built_AIO_mega_04
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
             }
         }
         custom_tooltip = {
@@ -211,11 +244,13 @@ AIO_DAIT_erase = {
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
         }
         OR = {
-            hidden_trigger = { is_country_type = AIO_empire }
-            resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            from = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
         }
     }
     effect = {
-        AIO_DAIT_manual_erase_effect = yes
+        from = { AIO_DAIT_manual_erase_effect = yes }
     }
 }
