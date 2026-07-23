@@ -19,14 +19,7 @@ AIO_DAIT_lock_target = {
 	}
 
 	button_visible = {
-		owner = {
-			NOT = {
-				has_active_event = {
-					AIO_DAIT_events.201
-					AIO_DAIT_events.202
-				}
-			}
-		}
+		NOT = { exists = event_target:AIO_DAIT_target_system }
 	}
 
 	button_clickable = {

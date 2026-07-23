@@ -32,9 +32,9 @@
 
  #region tooltips
 
- AIO_mega_01.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 10000!"
- AIO_mega_02.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 30000!"
- AIO_mega_03.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 50000!"
- AIO_mega_04.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 100000!"
+ AIO_mega_01.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 5000!"
+ AIO_mega_02.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 15000!"
+ AIO_mega_03.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 25000!"
+ AIO_mega_04.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 50000!"
 
  #endregion

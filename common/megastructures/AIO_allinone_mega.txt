@@ -1,12 +1,12 @@
 # AIO巨构
-@mega_01_energy_cost = 10000
-@mega_02_energy_cost = 30000
-@mega_03_energy_cost = 50000
-@mega_04_energy_cost = 100000
-@mega_01_energy_cost_negative = -10000
-@mega_02_energy_cost_negative = -30000
-@mega_03_energy_cost_negative = -50000
-@mega_04_energy_cost_negative = -100000
+@mega_01_energy_cost = 5000
+@mega_02_energy_cost = 15000
+@mega_03_energy_cost = 25000
+@mega_04_energy_cost = 50000
+@mega_01_energy_cost_negative = -5000
+@mega_02_energy_cost_negative = -15000
+@mega_03_energy_cost_negative = -25000
+@mega_04_energy_cost_negative = -50000
 
 # 现实中的万门之门
 AIO_mega_01_fact = {
@@ -28,7 +28,7 @@ AIO_mega_01_fact = {
 
 	possible = {
 		custom_tooltip = {
-			fail_text = AIO_mega_02.fail.nomadic
+			fail_text = AIO_mega_01.fail.nomadic
 			from = {
 				OR = {
 					is_nomadic = no
@@ -136,6 +136,7 @@ AIO_mega_01 = {
 	bypass_type = bypass_AIO_ultimate_gate
 
 	on_build_complete = {
+		fromfrom = { save_global_event_target_as = AIO_DAIT_source_megastructure }
 		# 加特效
 		create_ambient_object = {
 			type = "AIO_crisis_sphere_effect"
@@ -396,7 +397,7 @@ AIO_mega_04 = {
 		category = megastructures
 
 		cost = {
-			energy = 100000
+			energy = @mega_04_energy_cost
 			sr_dark_matter = 10000
 			nanites = 10000
 			sr_living_metal = 10000

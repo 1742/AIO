@@ -11,7 +11,6 @@ tech_AIO_lathe_resonator = {
 	weight = @tier5weight1
 
 	potential = {
-		has_machine_age_dlc = yes
 		has_ascension_perk = ap_AIO_allinone
 	}
 
@@ -46,7 +45,6 @@ tech_AIO_lathe_overclocker = {
 	weight = @tier5weight1
 
 	potential = {
-		has_machine_age_dlc = yes
 		has_ascension_perk = ap_AIO_allinone
 	}
 
@@ -81,7 +79,6 @@ tech_AIO_lathe_preserver = {
 	weight = @tier5weight1
 
 	potential = {
-		has_machine_age_dlc = yes
 		has_ascension_perk = ap_AIO_allinone
 	}
 
@@ -116,7 +113,6 @@ tech_AIO_lathe_life_support = {
 	weight = @tier5weight1
 
 	potential = {
-		has_machine_age_dlc = yes
 		has_ascension_perk = ap_AIO_allinone
 	}
 
@@ -151,7 +147,6 @@ tech_AIO_lathe_cogitator = {
 	weight = @tier5weight1
 
 	potential = {
-		has_machine_age_dlc = yes
 		has_ascension_perk = ap_AIO_allinone
 	}
 
@@ -186,7 +181,6 @@ tech_AIO_lathe_validator = {
 	weight = @tier5weight1
 
 	potential = {
-		has_machine_age_dlc = yes
 		has_ascension_perk = ap_AIO_allinone
 	}
 

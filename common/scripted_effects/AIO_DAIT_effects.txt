@@ -127,7 +127,6 @@ AIO_DAIT_spawn_effect = {
 }
 
 AIO_DAIT_seed_effect = {
-
     random_system_planet = {
         limit = {
             habitable_planet = yes

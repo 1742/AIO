@@ -1,7 +1,7 @@
 namespace = AIO_DAIT_events
 
-# scripted_action 的行星作用域桥接事件。
-# THIS = 目标行星（planet/carrier）
+# scripted_action 的星系作用域桥接事件。
+# THIS = 目标星系
 # FROM = 发起动作的巨构
 system_event = {
 	id = AIO_DAIT_events.201
@@ -10,11 +10,8 @@ system_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		solar_system = { save_event_target_as = AIO_DAIT_target_system }
-		from = {
-			save_event_target_as = AIO_DAIT_source_megastructure
-			owner = { country_event = { id = AIO_DAIT_events.202 } }
-		}
+		save_global_event_target_as = AIO_DAIT_target_system
+		from.owner = { country_event = { id = AIO_DAIT_events.202 } }
 	}
 }
 
@@ -26,6 +23,15 @@ country_event = {
 
 	is_triggered_only = yes
 	trigger = { exists = event_target:AIO_DAIT_target_system }
+
+	option = {
+		name = EXIT
+		default_hide_option = yes
+	}
+
+	after = {
+		clear_global_event_target = AIO_DAIT_target_system
+	}
 }
 
 
