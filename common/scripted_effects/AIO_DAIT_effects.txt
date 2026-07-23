@@ -9,6 +9,8 @@ AIO_DAIT_enrich_effect = {
             NOT = {
                 is_planet_class = pc_shattered
                 is_planet_class = pc_AIO_empty_space
+                is_planet_class = pc_astral_scar
+                is_planet_class = pc_rift_star
                 has_planet_flag = AIO_DAIT_harvested_body
             }
         }

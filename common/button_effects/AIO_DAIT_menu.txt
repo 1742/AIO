@@ -6,8 +6,8 @@ AIO_DAIT_enrich = {
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_1
-            OR = {
-                from = {
+            from = {
+                OR = {
                     has_country_flag = AIO_built_AIO_mega_01
                     hidden_trigger = { is_country_type = AIO_empire }
                 }
@@ -26,8 +26,8 @@ AIO_DAIT_enrich = {
                 }
             }
         }
-        OR = {
-            from = {
+        from = {
+            OR = {
                 hidden_trigger = { is_country_type = AIO_empire }
                 resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
             }
@@ -43,8 +43,8 @@ AIO_DAIT_spawn = {
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_2
-            OR = {
-                from = {
+            from = {
+                OR = {
                     has_country_flag = AIO_built_AIO_mega_02
                     hidden_trigger = { is_country_type = AIO_empire }
                 }
@@ -58,8 +58,8 @@ AIO_DAIT_spawn = {
             fail_text = AIO_DAIT_lock_target.fail.synth_queen
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
         }
-        OR = {
-            from = {
+        from = {
+            OR = {
                 hidden_trigger = { is_country_type = AIO_empire }
                 resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
             }
@@ -75,8 +75,8 @@ AIO_DAIT_seed = {
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_3
-            OR = {
-                from = {
+            from = {
+                OR = {
                     has_country_flag = AIO_built_AIO_mega_03
                     hidden_trigger = { is_country_type = AIO_empire }
                 }
@@ -91,8 +91,8 @@ AIO_DAIT_seed = {
                 }
             }
         }
-        OR = {
-            from = {
+        from = {
+            OR = {
                 hidden_trigger = { is_country_type = AIO_empire }
                 resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
             }
@@ -108,8 +108,8 @@ AIO_DAIT_ethic = {
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_4
-            OR = {
-                from = {
+            from = {
+                OR = {
                     has_country_flag = AIO_built_AIO_mega_04
                     hidden_trigger = { is_country_type = AIO_empire }
                 }
@@ -119,8 +119,8 @@ AIO_DAIT_ethic = {
             fail_text = AIO_DAIT_lock_target.fail.ethic
             event_target:AIO_DAIT_target_system = { exists = owner }
         }
-        OR = {
-            from = {
+        from = {
+            OR = {
                 hidden_trigger = { is_country_type = AIO_empire }
                 resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
             }
@@ -136,8 +136,8 @@ AIO_DAIT_storm = {
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_1
-            OR = {
-                from = {
+            from = {
+                OR = {
                     has_country_flag = AIO_built_AIO_mega_01
                     hidden_trigger = { is_country_type = AIO_empire }
                 }
@@ -147,8 +147,8 @@ AIO_DAIT_storm = {
             fail_text = AIO_DAIT_lock_target.fail.storm
             event_target:AIO_DAIT_target_system = { is_inside_storm = no }
         }
-        OR = {
-            from = {
+        from = {
+            OR = {
                 hidden_trigger = { is_country_type = AIO_empire }
                 resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
             }
@@ -164,8 +164,8 @@ AIO_DAIT_harvest = {
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_2
-            OR = {
-                from = {
+            from = {
+                OR = {
                     has_country_flag = AIO_built_AIO_mega_02
                     hidden_trigger = { is_country_type = AIO_empire }
                 }
@@ -185,8 +185,8 @@ AIO_DAIT_harvest = {
             fail_text = AIO_DAIT_lock_target.fail.synth_queen
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
         }
-        OR = {
-            from = {
+        from = {
+            OR = {
                 hidden_trigger = { is_country_type = AIO_empire }
                 resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
             }
@@ -202,8 +202,8 @@ AIO_DAIT_strike = {
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_3
-            OR = {
-                from = {
+            from = {
+                OR = {
                     has_country_flag = AIO_built_AIO_mega_03
                     hidden_trigger = { is_country_type = AIO_empire }
                 }
@@ -215,8 +215,8 @@ AIO_DAIT_strike = {
                 NOT = { has_star_flag = AIO_Aformom_exist }
             }
         }
-        OR = {
-            from = {
+        from = {
+            OR = {
                 hidden_trigger = { is_country_type = AIO_empire }
                 resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
             }
@@ -232,8 +232,8 @@ AIO_DAIT_erase = {
     allow = {
         custom_tooltip = {
             fail_text = AIO_DAIT.fail.require_mega_4
-            OR = {
-                from = {
+            from = {
+                OR = {
                     has_country_flag = AIO_built_AIO_mega_04
                     hidden_trigger = { is_country_type = AIO_empire }
                 }
@@ -243,8 +243,8 @@ AIO_DAIT_erase = {
             fail_text = AIO_DAIT_lock_target.fail.synth_queen
             event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
         }
-        OR = {
-            from = {
+        from = {
+            OR = {
                 hidden_trigger = { is_country_type = AIO_empire }
                 resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
             }
