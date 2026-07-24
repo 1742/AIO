@@ -162,9 +162,6 @@ country_event = {
 
     after = {
         AIO_create_HS_system_effect = yes
-
-        set_variable = { which = AIO_RAIT_count value = 0 }
-        AIO_trigger_RAIT_effect = yes
     }
 }
 
@@ -183,8 +180,6 @@ country_event = {
             days = 30
         }
     }
-
-    after = { AIO_trigger_RAIT_effect = yes }
 }
 
 # 永恒王座建造完成
@@ -202,8 +197,6 @@ country_event = {
             days = 30
         }
     }
-
-    after = { AIO_trigger_RAIT_effect = yes }
 }
 
 # 犹格索托斯建造完成
@@ -220,10 +213,6 @@ country_event = {
             localization = AIO_crisis_events.404.desc
             days = 30
         }
-    }
-
-    after = {
-        AIO_trigger_RAIT_effect = yes
     }
 }
 
@@ -387,9 +376,6 @@ country_event = {
     trigger = { has_ascension_perk = ap_AIO_allinone }
 
     immediate = {
-        # 移除 RAIT 标志位
-        AIO_RAIT_clear_flags = yes
-
         # 摧毁无名之雾
         event_target:AIO_HS_system = {
             # 移除特效

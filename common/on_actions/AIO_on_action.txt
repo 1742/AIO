@@ -43,20 +43,6 @@ on_entering_system_fleet = {
     }
 }
 
-on_ship_built = {
-    events = {
-    }
-}
-
-# This = owner of ship 1 (combatant)
-# From = owner of ship 2 (destroyed)
-# FromFrom = ship 1
-# FromFromFrom = ship 2
-on_ship_destroyed_perp = {
-    events = {
-    }
-}
-
 # This = owner of fleet 1 (combatant)
 # From = owner of fleet 2 (destroyed)
 # FromFrom = fleet 1
@@ -64,26 +50,6 @@ on_ship_destroyed_perp = {
 on_fleet_destroyed_perp = {
     events = {
         AIO_Aforgomom_events.202 # 亚弗戈蒙之怒被摧毁
-    }
-}
-
-# 舰队解散
-# This = owner of fleet
-# From = disbanded fleet
-on_fleet_disbanded = {
-    events = {
-
-    }
-}
-
-on_building_starbase_outpost = {
-    events = {
-    }
-}
-
-on_colony_destroyed = {
-    events = {
-        AIO_RAIT_events.1106  # 清除时间之墟星球相关标志位
     }
 }
 

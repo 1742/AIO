@@ -8,18 +8,6 @@ AIO_can_AIT = {
     }
 }
 
-AIO_RAIT_all = {
-    has_global_flag = AIO_RAIT_existed_blackout
-    has_global_flag = AIO_RAIT_existed_constant_round
-    has_global_flag = AIO_RAIT_existed_superlight
-    has_global_flag = AIO_RAIT_existed_alloy_ductility
-    has_global_flag = AIO_RAIT_existed_altered_nutrition
-    has_global_flag = AIO_RAIT_existed_mass_shift
-    has_global_flag = AIO_RAIT_existed_shroud_tear
-    has_global_flag = AIO_RAIT_existed_time_ruin
-    has_global_flag = AIO_RAIT_existed_gravity_swell
-}
-
 # 星系内有自然殖民地
 AIO_system_existed_natural_colony = {
     any_system_planet_colony = {

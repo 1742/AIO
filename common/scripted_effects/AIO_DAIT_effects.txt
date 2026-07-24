@@ -1,5 +1,5 @@
 # scope: system
-# root: 使用者 country
+# use event_target:AIO_DAIT_maker to locate
 
 #region 塔维尔
 
@@ -41,14 +41,18 @@ AIO_DAIT_enrich_effect = {
     }
     every_system_ship_colony = {
         if = {
-            limit = { NOT = { has_modifier = AIO_DAIT_enrich_modifier } }
-            add_modifier = { modifier = AIO_DAIT_enrich_modifier }
+            limit = {
+                owner = {
+                    is_country_type = default
+                    NOT = { has_modifier = AIO_DAIT_enrich_modifier }
+                }
+            }
+            owner = { add_modifier = { modifier = AIO_DAIT_enrich_modifier } }
         }
     }
 }
 
 AIO_DAIT_spawn_effect = {
-
     if = {
         limit = {
             OR = {
@@ -294,13 +298,34 @@ AIO_DAIT_ethic_effect = {
             set_government_cooldown = default
 
             # 意识被改写后，不再保留此前因 DAIT 干涉产生的敌意。
-            remove_opinion_modifier = { modifier = opinion_AIO_DAIT_enriched_our_system who = root }
-            remove_opinion_modifier = { modifier = opinion_AIO_DAIT_spawned_in_our_system who = root }
-            remove_opinion_modifier = { modifier = opinion_AIO_DAIT_seeded_our_system who = root }
-            remove_opinion_modifier = { modifier = opinion_AIO_DAIT_spawned_storm who = root }
-            remove_opinion_modifier = { modifier = opinion_AIO_DAIT_struck_us who = root }
-            remove_opinion_modifier = { modifier = opinion_AIO_DAIT_harvested_our_system who = root }
-            remove_opinion_modifier = { modifier = opinion_AIO_DAIT_erased_our_systems who = root }
+            remove_opinion_modifier = {
+                modifier = opinion_AIO_DAIT_enriched_our_system
+                who = event_target:AIO_DAIT_maker
+            }
+            remove_opinion_modifier = {
+                modifier = opinion_AIO_DAIT_spawned_in_our_system
+                who = event_target:AIO_DAIT_maker
+            }
+            remove_opinion_modifier = {
+                modifier = opinion_AIO_DAIT_seeded_our_system
+                who = event_target:AIO_DAIT_maker
+            }
+            remove_opinion_modifier = {
+                modifier = opinion_AIO_DAIT_spawned_storm
+                who = event_target:AIO_DAIT_maker
+            }
+            remove_opinion_modifier = {
+                modifier = opinion_AIO_DAIT_struck_us
+                who = event_target:AIO_DAIT_maker
+            }
+            remove_opinion_modifier = {
+                modifier = opinion_AIO_DAIT_harvested_our_system
+                who = event_target:AIO_DAIT_maker
+            }
+            remove_opinion_modifier = {
+                modifier = opinion_AIO_DAIT_erased_our_systems
+                who = event_target:AIO_DAIT_maker
+            }
         }
     }
 }
@@ -417,7 +442,6 @@ AIO_DAIT_strike_effect = {
 }
 
 AIO_DAIT_harvest_effect = {
-
     every_system_planet = {
         limit = {
             NOR = {
@@ -431,7 +455,9 @@ AIO_DAIT_harvest_effect = {
         }
         if = {
             limit = { is_star = yes }
-            root = { add_resource = { energy = 2000 mult = prev.trigger:planet_size } }
+            event_target:AIO_DAIT_maker = {
+                add_resource = { energy = 2000 mult = prev.trigger:planet_size }
+            }
             change_pc = pc_t_star
             solar_system = { AIO_change_star_class = yes }
             set_planet_flag = AIO_DAIT_harvested_body
@@ -448,7 +474,9 @@ AIO_DAIT_harvest_effect = {
                         is_planet_class = pc_broken
                     }
                 }
-                root = { add_resource = { minerals = 400 mult = prev.trigger:planet_size } }
+                event_target:AIO_DAIT_maker = {
+                    add_resource = { minerals = 400 mult = prev.trigger:planet_size }
+                }
             }
             else_if = {
                 limit = {
@@ -457,7 +485,7 @@ AIO_DAIT_harvest_effect = {
                         is_planet_class = pc_toxic
                     }
                 }
-                root = {
+                event_target:AIO_DAIT_maker = {
                     add_resource = { energy = 200 mult = prev.trigger:planet_size }
                     add_resource = { exotic_gases = 100 mult = prev.trigger:planet_size }
                 }
@@ -469,29 +497,29 @@ AIO_DAIT_harvest_effect = {
                         is_planet_class = pc_volcanic
                     }
                 }
-                root = {
+                event_target:AIO_DAIT_maker = {
                     add_resource = { energy = 200 mult = prev.trigger:planet_size }
                     add_resource = { volatile_motes = 50 mult = prev.trigger:planet_size }
                 }
             }
             else_if = {
                 limit = { is_planet_class = pc_frozen }
-                root = {
+                event_target:AIO_DAIT_maker = {
                     add_resource = { minerals = 200 mult = prev.trigger:planet_size }
                     add_resource = { rare_crystals = 50 mult = prev.trigger:planet_size }
                 }
             }
             else_if = {
                 limit = { is_planet_class = pc_shrouded }
-                root = { add_resource = { sr_zro = 200 mult = prev.trigger:planet_size } }
+                event_target:AIO_DAIT_maker = { add_resource = { sr_zro = 200 mult = prev.trigger:planet_size } }
             }
             else_if = {
                 limit = { is_planet_class = pc_nanotech }
-                root = { add_resource = { nanites = 200 mult = prev.trigger:planet_size } }
+                event_target:AIO_DAIT_maker = { add_resource = { nanites = 200 mult = prev.trigger:planet_size } }
             }
             else_if = {
                 limit = { is_colonizable = yes }
-                root = {
+                event_target:AIO_DAIT_maker = {
                     add_resource = { minerals = 200 mult = prev.trigger:planet_size }
                     add_resource = { food = 250 mult = prev.trigger:planet_size }
                 }
@@ -501,7 +529,9 @@ AIO_DAIT_harvest_effect = {
                 # TODO
             }
             else = {
-                root = { add_resource = { minerals = 200 mult = prev.trigger:planet_size } }
+                event_target:AIO_DAIT_maker = {
+                    add_resource = { minerals = 200 mult = prev.trigger:planet_size }
+                }
             }
             clear_deposits = yes
             clear_planet_modifiers = yes
@@ -516,19 +546,27 @@ AIO_DAIT_harvest_effect = {
             switch = {
                 trigger = is_planet_class
                 pc_habitat = {
-                    root = { add_resource = { alloys = 1000 } }
+                    event_target:AIO_DAIT_maker = {
+                        add_resource = { alloys = 1000 }
+                    }
                     AIO_safe_remove_habitat = yes
                 }
                 pc_ringworld_habitable = {
-                    root = { add_resource = { alloys = 8000 } }
+                    event_target:AIO_DAIT_maker = {
+                        add_resource = { alloys = 8000 }
+                    }
                     AIO_safe_remove_rw_section = yes
                 }
                 pc_cosmogenesis_world = {
-                    root = { add_resource = { alloys = 10000 } }
+                    event_target:AIO_DAIT_maker = {
+                        add_resource = { alloys = 10000 }
+                    }
                     AIO_safe_remove_cosmogenesis_world = yes
                 }
                 pc_ark = {
-                    root = { add_resource = { alloys = 5000 } }
+                    event_target:AIO_DAIT_maker = {
+                        add_resource = { alloys = 5000 }
+                    }
                     ship = { fleet = { destroy_fleet = this } }
                 }
             }
@@ -547,7 +585,7 @@ AIO_DAIT_erase_effect = {
                 AIO_safe_remove_system_exclude_API = yes
             }
             OR = {
-                root = { is_country_type = AIO_empire }
+                event_target:AIO_DAIT_maker = { is_country_type = AIO_empire }
                 AIO_is_crisis_mega_system = no
             }
             any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }

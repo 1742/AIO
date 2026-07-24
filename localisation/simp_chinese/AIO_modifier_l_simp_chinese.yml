@@ -63,20 +63,6 @@
  #endregion
 
 
- #region RAIT
-
- AIO_RAIT_TR_stage_1_modifier: "$AIO_RAIT_TR_events_chain_title$"
- AIO_RAIT_TR_stage_2_opt_1_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
- AIO_RAIT_TR_stage_2_opt_2_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
- AIO_RAIT_TR_stage_3_liquidation_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
- AIO_RAIT_TR_stage_3_unliquidation_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
- AIO_RAIT_TR_stage_4_liquidation_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
- AIO_RAIT_TR_stage_4_unliquidation_modifier: "$AIO_RAIT_TR_stage_1_modifier$"
- AIO_RAIT_GS_fail_modifier: "$AIO_RAIT_GS_events_chain_title$"
-
- #endregion
-
-
  #region DAIT
 
  AIO_DAIT_enrich_modifier: "丰饶"

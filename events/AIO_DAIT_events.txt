@@ -1,7 +1,7 @@
 namespace = AIO_DAIT_events
 
-# scripted_action 的目标承载行星到星系作用域桥接事件。
-# THIS = 目标承载行星
+# scripted_action
+# THIS = 目标
 # FROM = 发起动作的巨构
 system_event = {
 	id = AIO_DAIT_events.201
@@ -15,6 +15,7 @@ system_event = {
 			set_megastructure_flag = AIO_DAIT_active
 			owner = {
 				set_country_flag = AIO_DAIT_active
+				save_global_event_target_as = AIO_DAIT_maker
 				country_event = { id = AIO_DAIT_events.202 }
 			}
 		}
@@ -36,6 +37,7 @@ country_event = {
 
 	after = {
 		remove_country_flag = AIO_DAIT_active
+		clear_global_event_target = AIO_DAIT_maker
 		fromfrom = { remove_megastructure_flag = AIO_DAIT_active }
 		clear_global_event_target = AIO_DAIT_target_system
 	}
