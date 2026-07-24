@@ -399,48 +399,6 @@ AIO_DAIT_storm_effect = {
     }
 }
 
-AIO_DAIT_strike_effect = {
-    if = {
-        limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
-        AIO_create_Aforgomom_effect = yes
-    }
-    every_fleet_in_system = {
-        limit = {
-            exists = owner
-            NOR = {
-                has_fleet_flag = AIO_Aforgomom_fleet
-                owner = { is_nomadic = yes }
-            }
-        }
-        owner = {
-            every_system_within_border = {
-                limit = {
-                    NOR = {
-                        has_star_flag = AIO_HS_system
-                        has_star_flag = AIO_Aformom_exist
-                    }
-                }
-                AIO_create_Aformom_fleet = yes
-                set_star_flag = AIO_Aformom_exist
-            }
-            every_owned_fleet = {
-                limit = {
-                    solar_system = {
-                        NOR = {
-                            has_star_flag = AIO_HS_system
-                            has_star_flag = AIO_Aformom_exist
-                        }
-                    }
-                }
-                solar_system = {
-                    AIO_create_Aformom_fleet = yes
-                    set_star_flag = AIO_Aformom_exist
-                }
-            }
-        }
-    }
-}
-
 AIO_DAIT_harvest_effect = {
     every_system_planet = {
         limit = {
@@ -573,6 +531,48 @@ AIO_DAIT_harvest_effect = {
         }
     }
     set_star_flag = AIO_DAIT_harvest_system
+}
+
+AIO_DAIT_strike_effect = {
+    if = {
+        limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
+        AIO_create_Aforgomom_effect = yes
+    }
+    every_fleet_in_system = {
+        limit = {
+            exists = owner
+            NOR = {
+                has_fleet_flag = AIO_Aforgomom_fleet
+                owner = { is_nomadic = yes }
+            }
+        }
+        owner = {
+            every_system_within_border = {
+                limit = {
+                    NOR = {
+                        has_star_flag = AIO_HS_system
+                        has_star_flag = AIO_Aformom_exist
+                    }
+                }
+                AIO_create_Aformom_fleet = yes
+                set_star_flag = AIO_Aformom_exist
+            }
+            every_owned_fleet = {
+                limit = {
+                    solar_system = {
+                        NOR = {
+                            has_star_flag = AIO_HS_system
+                            has_star_flag = AIO_Aformom_exist
+                        }
+                    }
+                }
+                solar_system = {
+                    AIO_create_Aformom_fleet = yes
+                    set_star_flag = AIO_Aformom_exist
+                }
+            }
+        }
+    }
 }
 
 AIO_DAIT_erase_effect = {

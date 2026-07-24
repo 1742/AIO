@@ -301,7 +301,6 @@ AIO_crisis_update_stage_poi_effect = {
 AIO_crisis_finish_ascension_effect = {
     clear_variable = AIO_RAIT_count
     clear_variable = AIO_DAIT_count
-    AIO_RAIT_clear_flags = yes
 
     remove_point_of_interest = AIO_crisis_stage_2_poi
     remove_point_of_interest = AIO_crisis_stage_3_poi

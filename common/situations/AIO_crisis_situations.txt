@@ -32,7 +32,7 @@ AIO_crisis_situation = {
         }
         stage_4 = {
             icon = GFX_situation_stage_4
-            icon_background = GFX_situation_stage_frame_red
+            icon_background = GFX_situation_stage_frame_blue
             end = 1000
             on_first_enter = { owner = { set_country_flag = AIO_crisis_situation_stage_3_complete } }
         }
@@ -49,23 +49,25 @@ AIO_crisis_situation = {
         modifier = {
             add = 1
             desc = AIO_crisis_situation_monthly_active.mega_2
-            current_stage > stage_1
             current_stage <= stage_2
             owner = { has_country_flag = AIO_built_AIO_mega_02 }
         }
         modifier = {
             add = 1
             desc = AIO_crisis_situation_monthly_active.mega_3
-            current_stage > stage_2
             current_stage <= stage_3
             owner = { has_country_flag = AIO_built_AIO_mega_03 }
         }
         modifier = {
             add = 1
             desc = AIO_crisis_situation_monthly_active.mega_4
-            current_stage > stage_3
             current_stage <= stage_4
             owner = { has_country_flag = AIO_built_AIO_mega_04 }
+        }
+        modifier = {
+            factor = owner.value:AIO_crisis_situation_modifier
+            desc = AIO_crisis_situation_monthly_active.DAIT
+            owner = { is_variable_set = AIO_DAIT_count }
         }
     }
 

@@ -135,6 +135,7 @@
  AIO_crisis_situation_monthly_active.mega_2: "§Y$AIO_mega_02$§!"
  AIO_crisis_situation_monthly_active.mega_3: "§Y$AIO_mega_03$§!"
  AIO_crisis_situation_monthly_active.mega_4: "§Y$AIO_mega_04$§!"
+ AIO_crisis_situation_monthly_active.DAIT: "['concept_AIO_DAIT']"
  AIO_crisis_situation_stage_1: "Boundary Diffusion"
  AIO_crisis_situation_stage_1_desc: "Rewriting first echoes along the boundaries of reality."
  AIO_crisis_situation_stage_2: "Matter Diffusion"
