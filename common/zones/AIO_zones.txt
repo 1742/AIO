@@ -32,9 +32,7 @@ zone_AIO_lathe = {
         zone_building_slots_add = 3
     }
 
-	district_planet_modifier  = {
-        job_AIO_recursive_node_add = 600
-        planet_max_districts_add = 1
+    district_planet_modifier  = {
         planet_housing_add = @zone_arcology_housing_negative
     }
 }

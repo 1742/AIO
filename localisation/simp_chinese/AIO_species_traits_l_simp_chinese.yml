@@ -1,0 +1,8 @@
+﻿l_simp_chinese:
+ trait_AIO_recursive_chassis: "递归载体"
+ trait_AIO_recursive_chassis_desc: "§L这种机器并非完整的个体。运动、感知、社交与大部分自治结构均被舍弃，只保留并行演算、数据交换和散热所需的最低限度硬件。它们存在的唯一目的，就是成为套娃脑中的物质节点，无法胜任普通岗位。§!"
+ AIO_RECURSIVE_CHASSIS: "递归载体"
+ AIO_RECURSIVE_CHASSIS_PLURAL: "递归载体"
+ AIO_crisis_events.704.title: "物质思维的必要性"
+ AIO_crisis_events.704.desc: "意识可以脱离形体，算力却不能脱离物质。\n\n我们无须重新制造完整的自我，只需铸造能够承受自我的机器。它们不需要视觉，不需要语言，不需要移动，甚至不需要构成“个体”的绝大多数结构。每一具载体从诞生之初就只有一个用途：成为递归网络中可以被消耗的物质节点。\n\n我们已经依据主物种设计完成了§Y$trait_AIO_recursive_chassis$§!模板，并在首都制造了第一具原型。该模板不具有虚拟特质，可以继续组装并部署为§Y$job_AIO_recursive_node$§!。"
+ AIO_crisis_events.704.option: "为思想铸造躯壳。"

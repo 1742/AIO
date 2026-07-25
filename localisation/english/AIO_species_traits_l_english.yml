@@ -1,0 +1,8 @@
+﻿l_english:
+ trait_AIO_recursive_chassis: "Recursive Chassis"
+ trait_AIO_recursive_chassis_desc: "§LThese machines are not complete individuals. Locomotion, perception, social functions, and most autonomous systems have been discarded, leaving only the hardware required for parallel computation, data exchange, and thermal regulation. Their sole purpose is to serve as material nodes within the Matryoshka Brain; they cannot perform ordinary jobs.§!"
+ AIO_RECURSIVE_CHASSIS: "Recursive Chassis"
+ AIO_RECURSIVE_CHASSIS_PLURAL: "Recursive Chassis"
+ AIO_crisis_events.704.title: "The Necessity of Material Thought"
+ AIO_crisis_events.704.desc: "Consciousness may escape form, but computation cannot escape matter.\n\nWe need not manufacture complete selves again. We need only forge machines capable of bearing them. They require no vision, no speech, no locomotion, and almost none of the systems that constitute an individual. From the moment each chassis is assembled, it has only one purpose: to become an expendable material node in the recursive network.\n\nWe have derived a §Y$trait_AIO_recursive_chassis$§! template from our primary species and constructed the first prototype on our capital. This template is not Virtual and can be assembled and deployed as a §Y$job_AIO_recursive_node$§!."
+ AIO_crisis_events.704.option: "Forge bodies for thought."

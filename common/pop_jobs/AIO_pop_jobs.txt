@@ -1,7 +1,9 @@
 # AIO递归节点
 AIO_recursive_node = {
 	category = AIO_recursive_node
+	first_come_first_served = yes
 	purge = purge_AIO_matryoshka_brain
+	is_capped_by_modifier = no
 
 	swappable_data = {
 		default = {
@@ -22,7 +24,11 @@ AIO_recursive_node = {
 
 	possible_precalc = can_fill_drone_job
 
-	possible = { can_think = yes }
+	possible = {
+		can_think = yes
+		has_virtual_species_trait = no
+		colony? = { has_district = district_AIO_lathe }
+	}
 
 	resources = {
 		category = planet_AIO_recursive_node
@@ -68,6 +74,10 @@ AIO_recursive_node = {
 
 	weight = {
 		weight = @complex_drone_job_weight
+		modifier = {
+			factor = 1000
+			has_trait = trait_AIO_recursive_chassis
+		}
 	}
 
 	inline_script = "jobs/automodding_priority_research"

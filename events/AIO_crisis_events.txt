@@ -496,6 +496,76 @@ event = {
     }
 }
 
+# Creates a purpose-built, non-virtual machine species for the Matryoshka Brain.
+# It is a separate species identity so cybernetics.5049 cannot digitize it again.
+country_event = {
+	id = AIO_crisis_events.704
+	title = AIO_crisis_events.704.title
+	desc = AIO_crisis_events.704.desc
+	picture = GFX_evt_robot_assembly_plant
+	show_sound = event_radio_chatter
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_virtual_empire = yes
+		has_technology = tech_AIO_exponential_learning_theory
+		exists = capital_scope
+		NOT = { has_country_flag = AIO_recursive_chassis_created }
+		owner_main_species = {
+			is_robotic_species = yes
+		}
+	}
+
+	immediate = {
+		set_country_flag = AIO_recursive_chassis_created
+
+		owner_main_species = {
+			create_species = {
+				name = "AIO_RECURSIVE_CHASSIS"
+				plural = "AIO_RECURSIVE_CHASSIS_PLURAL"
+				class = this
+				portrait = this
+				traits = this
+				can_be_modified = no
+				homeworld = this
+				namelist = this
+				gender = this
+
+				effect = {
+					change_species_characteristics = {
+						remove_trait = trait_robot_digital_1
+						remove_trait = trait_robot_digital_2
+						add_trait = trait_AIO_recursive_chassis
+					}
+                    set_citizenship_type = {
+                        country = root
+                        type = citizenship_full_machine
+                        cooldown = no
+                    }
+                    set_population_controls = {
+                        country = root
+                        type = population_control_no
+                        cooldown = no
+                    }
+                    set_species_flag = AIO_recursive_chassis_species
+                    save_event_target_as = AIO_recursive_chassis_species
+				}
+			}
+		}
+		capital_scope = {
+			create_pop_group = {
+				species = event_target:AIO_recursive_chassis_species
+				size = 100
+			}
+		}
+	}
+
+	option = {
+		name = AIO_crisis_events.704.option
+	}
+}
+
 #endregion
 
 

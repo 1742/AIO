@@ -1,7 +1,8 @@
 district_AIO_lathe_frame = {
 	icon = district_AIO_lathe
+	base_cap_amount = 1
 
-	base_buildtime = 250
+	base_buildtime = 360
 
 	show_on_uncolonized = { always = no }
 
@@ -16,7 +17,7 @@ district_AIO_lathe_frame = {
 			AIO_advanced_logic = 500
 		}
 		upkeep = {
-			energy = 50
+			energy = 100
 		}
 	}
 

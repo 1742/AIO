@@ -25,7 +25,7 @@ The current Crisis Buffs are divided into three categories. You can switch betwe
 [h3]Crisis Level 1[/h3]
 Unlocked upon adoption:
 [list]
-[*][b]Exponential Learning Theory:[/b] Unlocks the Recursive Node District. Infinite build limit, produces Research and Unity.
+[*][b]Exponential Learning Theory:[/b] Unlocks the capital's Matryoshka Brain District and uncapped Recursive Node jobs; Virtual empires can assemble purpose-built Recursive Chassis as material nodes.
 [*][b]Horizon Engine:[/b] Produces Energy and Dark Matter.
 [/list]
 
