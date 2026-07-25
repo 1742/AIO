@@ -1,5 +1,7 @@
 namespace = AIO_DAIT_events
 
+#region 定向应用入口
+
 # scripted_action
 # THIS = 目标
 # FROM = 发起动作的巨构
@@ -43,8 +45,10 @@ country_event = {
 	}
 }
 
+#endregion
 
-#region 被定向应用无限影响的帝国提醒事件。
+
+#region 手动定向应用影响通知
 
 country_event = {
 	id = AIO_DAIT_events.230
@@ -177,59 +181,59 @@ country_event = {
 #endregion
 
 
-#region 局势扩散只通知实际受影响的帝国，不显示施术者，也不产生外交评价。
+#region 法则扩散影响通知
 
 country_event = {
-	id = AIO_DAIT_events.238
+	id = AIO_DAIT_events.240
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_enrich_message } }
 }
 
 country_event = {
-	id = AIO_DAIT_events.239
+	id = AIO_DAIT_events.241
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_spawn_message } }
 }
 
 country_event = {
-	id = AIO_DAIT_events.240
+	id = AIO_DAIT_events.242
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_seed_message } }
 }
 
 country_event = {
-	id = AIO_DAIT_events.241
+	id = AIO_DAIT_events.243
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_ethic_message } }
 }
 
 country_event = {
-	id = AIO_DAIT_events.242
+	id = AIO_DAIT_events.244
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_storm_message } }
 }
 
 country_event = {
-	id = AIO_DAIT_events.243
+	id = AIO_DAIT_events.245
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_harvest_message } }
 }
 
 country_event = {
-	id = AIO_DAIT_events.244
+	id = AIO_DAIT_events.246
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_strike_message } }
 }
 
 country_event = {
-	id = AIO_DAIT_events.245
+	id = AIO_DAIT_events.247
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_erase_message } }

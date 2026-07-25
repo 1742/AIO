@@ -17,7 +17,7 @@ AIO_DAIT_echo_roll_effect = {
                 save_event_target_as = AIO_DAIT_echo_system
                 AIO_DAIT_echo_mark_system_country_effect = yes
                 AIO_DAIT_enrich_effect = { TIMES = 3 }
-                AIO_DAIT_echo_finish_effect = { EVENT = 238 }
+                AIO_DAIT_echo_finish_effect = { EVENT = 240 }
             }
         }
         100 = {
@@ -31,7 +31,7 @@ AIO_DAIT_echo_roll_effect = {
                 save_event_target_as = AIO_DAIT_echo_system
                 AIO_DAIT_echo_mark_system_country_effect = yes
                 AIO_DAIT_storm_effect = yes
-                AIO_DAIT_echo_finish_effect = { EVENT = 242 }
+                AIO_DAIT_echo_finish_effect = { EVENT = 244 }
             }
         }
         40 = {
@@ -45,7 +45,7 @@ AIO_DAIT_echo_roll_effect = {
                 save_event_target_as = AIO_DAIT_echo_system
                 AIO_DAIT_echo_mark_system_country_effect = yes
                 AIO_DAIT_spawn_effect = yes
-                AIO_DAIT_echo_finish_effect = { EVENT = 239 }
+                AIO_DAIT_echo_finish_effect = { EVENT = 241 }
             }
         }
         40 = {
@@ -59,7 +59,7 @@ AIO_DAIT_echo_roll_effect = {
                 save_event_target_as = AIO_DAIT_echo_system
                 AIO_DAIT_echo_mark_system_country_effect = yes
                 AIO_DAIT_harvest_effect = yes
-                AIO_DAIT_echo_finish_effect = { EVENT = 243 }
+                AIO_DAIT_echo_finish_effect = { EVENT = 245 }
             }
         }
         15 = {
@@ -73,7 +73,7 @@ AIO_DAIT_echo_roll_effect = {
                 save_event_target_as = AIO_DAIT_echo_system
                 AIO_DAIT_echo_mark_system_country_effect = yes
                 AIO_DAIT_seed_effect = yes
-                AIO_DAIT_echo_finish_effect = { EVENT = 240 }
+                AIO_DAIT_echo_finish_effect = { EVENT = 242 }
             }
         }
         15 = {
@@ -87,7 +87,7 @@ AIO_DAIT_echo_roll_effect = {
                 save_event_target_as = AIO_DAIT_echo_system
                 AIO_DAIT_echo_mark_system_country_effect = yes
                 AIO_DAIT_strike_effect = yes
-                AIO_DAIT_echo_finish_effect = { EVENT = 244 }
+                AIO_DAIT_echo_finish_effect = { EVENT = 246 }
             }
         }
         5 = {
@@ -101,7 +101,7 @@ AIO_DAIT_echo_roll_effect = {
                 save_event_target_as = AIO_DAIT_echo_system
                 owner? = { AIO_DAIT_echo_mark_country_effect = yes }
                 AIO_DAIT_ethic_effect = yes
-                AIO_DAIT_echo_finish_effect = { EVENT = 241 }
+                AIO_DAIT_echo_finish_effect = { EVENT = 243 }
             }
         }
         5 = {
@@ -115,7 +115,7 @@ AIO_DAIT_echo_roll_effect = {
                 save_event_target_as = AIO_DAIT_echo_system
                 AIO_DAIT_echo_mark_erase_owners_effect = yes
                 AIO_DAIT_erase_effect = yes
-                AIO_DAIT_echo_finish_effect = { EVENT = 245 }
+                AIO_DAIT_echo_finish_effect = { EVENT = 247 }
             }
         }
     }
