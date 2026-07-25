@@ -80,8 +80,8 @@ zone_AIO_lm_production_machine_empire = {
 
     planet_modifier = {
 		zone_building_slots_add = 1
-        planet_pop_assemblers_sr_living_metal_produces_add = 0.2
-        planet_pop_assemblers_alloys_upkeep_add = 2
+        planet_pop_assemblers_sr_living_metal_produces_add = 0.4
+        planet_pop_assemblers_alloys_upkeep_add = 4
 	}
 
 	triggered_district_planet_modifier = {
@@ -144,8 +144,8 @@ zone_AIO_lm_production_hive_empire = {
 
     planet_modifier = {
         zone_building_slots_add = 1
-        planet_pop_assemblers_sr_living_metal_produces_add = 0.2
-        planet_pop_assemblers_food_upkeep_add = 3
+        planet_pop_assemblers_sr_living_metal_produces_add = 0.4
+        planet_pop_assemblers_food_upkeep_add = 4
     }
 
     triggered_district_planet_modifier = {
