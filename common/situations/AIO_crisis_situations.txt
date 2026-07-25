@@ -1,5 +1,5 @@
 AIO_crisis_situation = {
-    picture = GFX_evt_vortex
+    picture = GFX_evt_formless_system
     category = neutral
     complete_icon = GFX_situation_outcome_unknown
     complete_icon_frame = GFX_situation_outcome_frame_blue
@@ -11,6 +11,8 @@ AIO_crisis_situation = {
 
     start_value = 0
     progress_direction = monodirectional
+
+    on_start = { situation_event = { id = AIO_crisis_events.500 } }
 
     stages = {
         stage_1 = {
@@ -76,7 +78,7 @@ AIO_crisis_situation = {
     on_progress_complete = {
         owner = {
             set_country_flag = AIO_crisis_situation_stage_4_complete
-            country_event = { id = AIO_crisis_events.601 }
+            country_event = { id = AIO_crisis_events.503 }
         }
         destroy_situation = this
     }

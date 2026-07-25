@@ -1,26 +1,3 @@
 ﻿l_simp_chinese:
- #region 时间之墟
-
- AIO_AIT_TIME_RUIN_STAGE_1: "镇压"
- AIO_AIT_TIME_RUIN_STAGE_1_DESC: "[from.GetName]已经乱成一团，这已经不是一般的混乱了，必须要出重拳，一空输，出动！"
- AIO_AIT_TIME_RUIN_STAGE_2: "研究"
- AIO_AIT_TIME_RUIN_STAGE_2_DESC: "[from.GetName]上的时间循环现象依然存在着，我们需要派出科学家对此进行研究，以找出发生的原因和解决的方法。"
- AIO_AIT_TIME_RUIN_STAGE_3: "解除"
- AIO_AIT_TIME_RUIN_STAGE_3_DESC: "[from.GetName]上的时间循环是现实规律变动的结果，我们可以尝试使用§R应用无限§!的方法将其恢复。"
-
- #endregion
- #region 重力膨胀
-
- AIO_AIT_GRAVITY_SWELL_STAGE_1: "重力之下"
- AIO_AIT_GRAVITY_SWELL_STAGE_1_DESC: "[from.GetName]附近的引力示数和时空曲率出现异常，我们最好派科学家前往进行研究。"
- AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_1: "建造星环"
- AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_1_DESC: "星环对行星的气候和生态有着调节作用，为了应对[from.GetName]的坍缩，我们需要 为[from.system.GetName]里的所有殖民地建造星环。"
- AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_2: "紧急撤离"
- AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_2_DESC: "为了应对[from.GetName]的坍缩，我们可以重新安置[from.system.GetName]中的居民。"
- AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_3: "逆转坍缩"
- AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_3_DESC: "这是一次难得的研究时空变化的机会，我们的科学家已经迫不急的想要逆转[from.GetName]的时空异常了。"
- AIO_AIT_GS_STAGE_tt: "£trigger_no£仅作提醒相关操作，结束时会根据星系内情况结算，无需研究该项目。"
- AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_4: "静观其变"
- AIO_AIT_GRAVITY_SWELL_STAGE_2_OPT_4_DESC: "[from.GetName]的加速坍缩并未影响我们的殖民地，我们可以研究这一过程。"
-
- #endregion
+ AIO_CRISIS_CONTEMPLATE_GATE: "晋升"
+ AIO_CRISIS_CONTEMPLATE_GATE_DESC: "门后的无限不会消失，也不再需要我们等待。但在舍弃观察者与被观察之物的区别以前，我们仍可以用最后三十天记录旧宇宙的星光，并理解自己将要越过的界限。"

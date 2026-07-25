@@ -330,6 +330,19 @@ country_event = {
 #region 法则扩散局势
 
 situation_event = {
+    id = AIO_crisis_events.500
+    title = AIO_crisis_events.500.title
+    desc = AIO_crisis_events.500.desc
+    picture = GFX_evt_formless_system
+    show_sound = event_mystic_reveal
+
+    is_triggered_only = yes
+    situation = this
+
+    option = { name = AIO_crisis_events.500.option }
+}
+
+situation_event = {
     id = AIO_crisis_events.501
     hide_window = yes
     is_triggered_only = yes
@@ -367,11 +380,40 @@ country_event = {
     immediate = { AIO_DAIT_echo_roll_effect = yes }
 }
 
+country_event = {
+    id = AIO_crisis_events.503
+    title = AIO_crisis_events.503.title
+    desc = AIO_crisis_events.503.desc
+    picture = GFX_evt_formless_system
+    show_sound = event_mystic_reveal
+    location = event_target:AIO_HS_system
+
+    event_chain = AIO_crisis_events_chain
+    is_triggered_only = yes
+
+    immediate = { AIO_DAIT_refresh_tendency_effect = yes }
+
+    option = {
+        name = AIO_crisis_events.503.enter
+        country_event = { id = AIO_crisis_events.601 }
+    }
+
+    option = {
+        name = AIO_crisis_events.503.contemplate
+        enable_special_project = {
+            name = AIO_CRISIS_CONTEMPLATE_GATE
+            owner = root
+            location = capital_scope
+        }
+    }
+}
+
 #endregion
 
 
 #region 飞升事件
 
+# Route the final choice and the contemplation project to the matching ending.
 country_event = {
     id = AIO_crisis_events.601
     hide_window = yes
@@ -379,7 +421,6 @@ country_event = {
     is_triggered_only = yes
 
     immediate = {
-        AIO_DAIT_refresh_tendency_effect = yes
         if = {
             limit = { has_country_flag = AIO_DAIT_tendency_construct }
             country_event = { id = AIO_crisis_events.611 }

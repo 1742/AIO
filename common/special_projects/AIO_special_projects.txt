@@ -1,1 +1,21 @@
 # AIO特殊项目
+
+special_project = {
+    key = "AIO_CRISIS_CONTEMPLATE_GATE"
+    cost = 0
+    days_to_research = 30
+    tech_department = physics_technology
+    timelimit = -1
+    picture = GFX_evt_vortex
+    icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+    event_chain = AIO_crisis_events_chain
+    location = no
+
+    event_scope = country_event
+
+    requirements = { }
+
+    on_success = {
+        country_event = { id = AIO_crisis_events.601 }
+    }
+}
