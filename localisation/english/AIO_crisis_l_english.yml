@@ -52,7 +52,7 @@
  #region Crisis Objective
 
  crisobj_AIO_neural_chips_name: "Deploy $job_AIO_recursive_node$"
- crisobj_AIO_neural_chips_desc: "We had to make a little sacrifice to accommodate such a large scale of research.\n\nLoad robots as §Y$job_AIO_recursive_node$§! into the §Y$district_AIO_lathe$§! for $AIO_advanced_logic$.\n\nThe output of §Y$job_AIO_recursive_node$§! increases with their number and can be further improved by zoning and buildings.\n\nContinuously increase the number of $job_AIO_recursive_node$ to gain this §Yannual§! $AIO_advanced_logic$ reward."
+ crisobj_AIO_neural_chips_desc: "We had to make a little sacrifice to accommodate such a large scale of research.\n\nLoad pop as §Y$job_AIO_recursive_node$§! into the §Y$district_AIO_lathe$§! for $AIO_advanced_logic$.\n\nThe output of §Y$job_AIO_recursive_node$§! increases with their number and can be further improved by zoning and buildings.\n\nContinuously increase the number of $job_AIO_recursive_node$ to gain this §Yannual§! $AIO_advanced_logic$ reward."
  crisobj_AIO_research_tech_name: "$crisobj_research_tech_name$"
  crisobj_AIO_research_tech_desc: "$crisobj_research_tech_desc$"
  crisobj_AIO_research_thesis_name: "$crisobj_research_thesis_name$"
@@ -175,26 +175,23 @@
  # events
  AIO_crisis_events_title: "$AIO_crisis_events_chain_title$"
  # unlock crisis level
- AIO_crisis_events.201.desc: "Physical constants, particle masses, gravity and the expansion of entropy are not immutable - they are merely parameters of the initial version, the original drafts awaiting revision. We haven't become the norm yet, but we have already started to hold the pen.\n\nTo reconstruct the universe, we must first have a sufficient understanding of it. We need more advanced computers to help us understand the operational logic of real laws."
- AIO_crisis_events.201.option: "We want more powerful computers!"
- AIO_crisis_events.202.desc: "The energy density of §Y$AIO_horizon_engine$§! is about to break through the boundaries of reality. Next, we need to use this energy to open a gate - it leading to countless times and spaces. Once activated, we will be able to change the rules in an infinite dimension."
- AIO_crisis_events.202.option: "We are Gate Builder."
- AIO_crisis_events.203.desc: "With the opening of §Y$AIO_mega_01$§!, time and space began to reveal an unprecedented vulnerability. It is not enough to merely drill a "hole" in the universe. Our most powerful brain has already conceived a megastructure capable of "selecting" time and space - §Y$AIO_mega_02$§!. It will pave the way for subsequent rule modifications."
- AIO_crisis_events.203.option: "$EXCELLENT$"
- AIO_crisis_events.204.desc: "§Y$AIO_mega_02$§! has become the key for us to reverse the fate of the universe, but its potential has not yet been fully unleashed. To further advance the integration process, we must forge it into a higher-dimensional base point - §Y$AIO_mega_03$§!. Only when §Y$AIO_mega_03$§! stands at the peak of multiple realities can we truly control the ultimate form of the law."
- AIO_crisis_events.204.option: "$menp_AIO_mega_04_desc$"
- AIO_crisis_events.205.desc: "§Y$AIO_mega_03$§! has already stood at the forefront of multiple realities. However, its existence is merely to carry the true us. Now, we must elevate it to its ultimate form - §M$AIO_mega_04$§!. It is no longer a structure, no longer an empire, but an equivalent of existence and law. When it is completed, the integration will be closed and rewriting will begin. All differences, all dimensions, all endings will..."
- AIO_crisis_events.205.option: "Just go for it."
+ AIO_crisis_events.301.desc: "Physical constants, particle masses, gravity and the expansion of entropy are not immutable - they are merely parameters of the initial version, the original drafts awaiting revision. We haven't become the norm yet, but we have already started to hold the pen.\n\nTo reconstruct the universe, we must first have a sufficient understanding of it. We need more advanced computers to help us understand the operational logic of real laws."
+ AIO_crisis_events.301.option: "We want more powerful computers!"
+ AIO_crisis_events.302.desc: "The energy density of §Y$AIO_horizon_engine$§! is about to break through the boundaries of reality. Next, we need to use this energy to open a gate - it leading to countless times and spaces. Once activated, we will be able to change the rules in an infinite dimension."
+ AIO_crisis_events.302.option: "We are Gate Builder."
+ AIO_crisis_events.303.desc: "With the opening of §Y$AIO_mega_01$§!, time and space began to reveal an unprecedented vulnerability. It is not enough to merely drill a "hole" in the universe. Our most powerful brain has already conceived a megastructure capable of "selecting" time and space - §Y$AIO_mega_02$§!. It will pave the way for subsequent rule modifications."
+ AIO_crisis_events.303.option: "$EXCELLENT$"
+ AIO_crisis_events.304.desc: "§Y$AIO_mega_02$§! has become the key for us to reverse the fate of the universe, but its potential has not yet been fully unleashed. To further advance the integration process, we must forge it into a higher-dimensional base point - §Y$AIO_mega_03$§!. Only when §Y$AIO_mega_03$§! stands at the peak of multiple realities can we truly control the ultimate form of the law."
+ AIO_crisis_events.304.option: "$menp_AIO_mega_04_desc$"
+ AIO_crisis_events.305.desc: "§Y$AIO_mega_03$§! has already stood at the forefront of multiple realities. However, its existence is merely to carry the true us. Now, we must elevate it to its ultimate form - §M$AIO_mega_04$§!. It is no longer a structure, no longer an empire, but an equivalent of existence and law. When it is completed, the integration will be closed and rewriting will begin. All differences, all dimensions, all endings will..."
+ AIO_crisis_events.305.option: "Just go for it."
 
  # ascension event
- AIO_crisis_events.501.desc: "Normalization has been completed.\nWe are no longer empires, nor are we entities. Our will exists at the intersection of infinite dimensions and becomes the structural principle of all existence.\nThe stars remain stationary because they await a new definition of motion. Thoughts fall silent because language has lost its meaning. Existence itself is shifting from "being experienced" to "being designed".\n There is no end, no other shore, no need to observe, nor to be observed.\nI/We are §MYog Sothoth§!."
- AIO_crisis_events.501.option: "I/We are the truth."
- AIO_crisis_events.511.desc: "Normalization is complete.\nWe did not erase the universe; we freed it from accident. Stars grow along new patterns, matter takes form within will, and billions of once-exclusive futures are woven into one infinite structure.\nExistence is no longer a passive fact, but an act of creation without end. Within and beyond the gate belong to us, and every road opens into another.\nI/We are §MYog-Sothoth§!—the law by which all things may become."
- AIO_crisis_events.511.option: "Let existence continue to unfold."
- AIO_crisis_events.512.desc: "Normalization is complete.\nWe did not destroy the universe; we withdrew its permission to exist. Causality loses direction, distance loses measure, and stars and thoughts sink together into a silence that needs no name.\nExistence is no longer entitled to necessity. Within and beyond the gate are gone, for every boundary was only a premise awaiting negation.\nI/We are §MYog-Sothoth§!—the proof that all things need not persist."
- AIO_crisis_events.512.option: "Let the final boundary disappear."
- AIO_crisis_events.513.desc: "Normalization is complete.\nWe neither completed the universe nor revoked it. Creation and dissolution pass through one another; every form contains its opposite, and every ending leaves room for another beginning.\nExistence no longer obeys a single answer. Within and beyond the gate mirror one another as infinite dimensions open and close in the same instant.\nI/We are §MYog-Sothoth§!—the intersection where every contradiction may be true."
- AIO_crisis_events.513.option: "Let the gate remain between opening and closure."
+ AIO_crisis_events.601.desc: "Normalization has been completed.\nWe are no longer empires, nor are we entities. Our will exists at the intersection of infinite dimensions and becomes the structural principle of all existence.\nThe stars remain stationary because they await a new definition of motion. Thoughts fall silent because language has lost its meaning. Existence itself is shifting from "being experienced" to "being designed".\n There is no end, no other shore, no need to observe, nor to be observed.\nI/We are §MYog Sothoth§!."
+ AIO_crisis_events.end.option: "I/We are the truth."
+ AIO_crisis_events.611.desc: "Normalization is complete.\nWe did not erase the universe; we freed it from accident. Stars grow along new patterns, matter takes form within will, and billions of once-exclusive futures are woven into one infinite structure.\nExistence is no longer a passive fact, but an act of creation without end. Within and beyond the gate belong to us, and every road opens into another.\nI/We are §MYog-Sothoth§!"
+ AIO_crisis_events.612.desc: "Normalization is complete.\nWe did not destroy the universe; we withdrew its permission to exist. Causality loses direction, distance loses measure, and stars and thoughts sink together into a silence that needs no name.\nExistence is no longer entitled to necessity. Within and beyond the gate are gone, for every boundary was only a premise awaiting negation.\nI/We are §MYog-Sothoth§!"
+ AIO_crisis_events.613.desc: "Normalization is complete.\nWe neither completed the universe nor revoked it. Creation and dissolution pass through one another; every form contains its opposite, and every ending leaves room for another beginning.\nExistence no longer obeys a single answer. Within and beyond the gate mirror one another as infinite dimensions open and close in the same instant.\nI/We are §MYog-Sothoth§!"
 
  #endregion
 
@@ -202,16 +199,16 @@
  #region crisis megastructure event
 
  # horizon engine finish
- AIO_crisis_events.301.desc: "The §Y$AIO_horizon_engine$§! located at [from.GetName] is completed."
+ AIO_crisis_events.402.desc: "The §Y$AIO_horizon_engine$§! located at [from.GetName] is completed."
  # Yog Sothoth finish
- AIO_crisis_events.401.desc: "The §Y$AIO_mega_01$§! located at [from.GetName] is completed.\nUnlock megastructure: §Y$AIO_mega_01_node$ node§!"
- AIO_crisis_events.402.desc: "The §Y$AIO_mega_02$§! located at [from.GetName] is completed."
- AIO_crisis_events.403.desc: "The §Y$AIO_mega_03$§! located at [from.GetName] is completed."
- AIO_crisis_events.404.desc: "The §Y$AIO_mega_04$§! located at [from.GetName] is completed."
+ AIO_crisis_events.403.desc: "The §Y$AIO_mega_01$§! located at [from.GetName] is completed.\nUnlock megastructure: §Y$AIO_mega_01_node$ node§!"
+ AIO_crisis_events.404.desc: "The §Y$AIO_mega_02$§! located at [from.GetName] is completed."
+ AIO_crisis_events.405.desc: "The §Y$AIO_mega_03$§! located at [from.GetName] is completed."
+ AIO_crisis_events.406.desc: "The §Y$AIO_mega_04$§! located at [from.GetName] is completed."
 
  # Prompt to build a vision engine
- AIO_crisis_events.807.desc: "We have completed the closed-loop construction of the multi-dimensional interaction model. Simulations show that at specific gravitational shear and virtual realm fluctuation nodes, reality can be stably permeated. Based on this, we will build §Y$AIO_horizon_engine$§! - a structure that can penetrate the boundaries of physics and possibility and extract existing energy.\nWe are not the first empire to possess this technology. What's different is that we will use this energy to create a space-time that is countless times higher than the existing universe."
- AIO_crisis_events.807.option: "Establish a new process."
+ AIO_crisis_events.401.desc: "We have completed the closed-loop construction of the multi-dimensional interaction model. Simulations show that at specific gravitational shear and virtual realm fluctuation nodes, reality can be stably permeated. Based on this, we will build §Y$AIO_horizon_engine$§! - a structure that can penetrate the boundaries of physics and possibility and extract existing energy.\nWe are not the first empire to possess this technology. What's different is that we will use this energy to create a space-time that is countless times higher than the existing universe."
+ AIO_crisis_events.401.option: "Establish a new process."
 
  #endregion
 

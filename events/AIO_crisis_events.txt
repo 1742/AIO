@@ -2,13 +2,77 @@
 namespace = AIO_crisis_events
 
 
+#region 初始化事件
+
+# 起源
+country_event = {
+    id = AIO_crisis_events.201
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = {
+        has_origin = origin_AIO_YogSothoth
+        no_scope = { NOT = { any_country = { is_country_type = AIO_empire } } }
+    }
+    fire_only_once = yes
+
+    immediate = {
+        set_country_flag = AIO_built_AIO_horizon_engine
+        set_country_flag = AIO_built_AIO_mega_01
+        set_country_flag = AIO_built_AIO_mega_02
+        set_country_flag = AIO_built_AIO_mega_03
+        set_country_flag = AIO_built_AIO_mega_04
+        set_country_flag = AIO_empire_country
+        save_global_event_target_as = AIO_empire_country
+        # 允许进入牢塞星系
+        set_country_flag = protected_from_queen_storm
+
+        # 激活灾飞路径
+        add_ascension_perk = ap_AIO_allinone
+        add_resource = { AIO_advanced_logic = 45000 }
+
+        # 空想要3点国民理念点，不加够会转变政体失败
+        give_technology = { tech = tech_planetary_unification }
+        give_technology = { tech = tech_colonial_centralization }
+        give_technology = { tech = tech_galactic_administration }
+        # 创建穷极之门
+        capital_scope.solar_system = {
+            spawn_megastructure = {
+                type = AIO_mega_01_fact
+                planet = star
+                owner = root
+                graphical_culture = root
+            }
+        }
+        # 创建无名之雾
+        AIO_create_HS_system_effect = yes
+        # 创建犹格索托斯
+        event_target:AIO_HS_system = {
+            random_system_megastructure = {
+                limit = { is_megastructure_type = AIO_mega_01 }
+                remove_megastructure = this
+            }
+            spawn_megastructure = {
+                type = AIO_mega_04
+                planet = star
+                owner = root
+            }
+        }
+
+        AIO_ascension_effect = yes
+    }
+}
+
+#endregion
+
+
 #region 天灾等级事件
 
 # 解锁一阶段
 country_event = {
-    id = AIO_crisis_events.201
+    id = AIO_crisis_events.301
     title = AIO_crisis_events_title
-    desc = AIO_crisis_events.201.desc
+    desc = AIO_crisis_events.301.desc
     picture = GFX_evt_astral_rift_crystal_3
 	show_sound = event_death_cult
 	location = FROM
@@ -24,15 +88,19 @@ country_event = {
     }
 
     option = {
-        name = AIO_crisis_events.201.option
+        name = AIO_crisis_events.301.option
+        begin_event_chain = {
+            event_chain = AIO_crisis_events_chain
+            target = root
+        }
     }
 }
 
 # 解锁二阶段
 country_event = {
-    id = AIO_crisis_events.202
+    id = AIO_crisis_events.302
     title = AIO_crisis_events_title
-    desc = AIO_crisis_events.202.desc
+    desc = AIO_crisis_events.302.desc
     picture = GFX_evt_astral_rift_crystal_3
 	show_sound = event_death_cult
 	location = FROM
@@ -40,107 +108,9 @@ country_event = {
     event_chain = AIO_crisis_events_chain
 
 	is_triggered_only = yes
-    trigger = { NOT = { has_country_flag = AIO_empire_country } }
-
-    option = {
-        name = AIO_crisis_events.202.option
-    }
-}
-
-# 解锁三阶段
-country_event = {
-    id = AIO_crisis_events.203
-    title = AIO_crisis_events_title
-    desc = AIO_crisis_events.203.desc
-    picture = GFX_evt_astral_rift_crystal_3
-	show_sound = event_death_cult
-	location = FROM
-
-    event_chain = AIO_crisis_events_chain
-
-	is_triggered_only = yes
-    trigger = { NOT = { has_country_flag = AIO_empire_country } }
-
-    option = {
-        name = AIO_crisis_events.203.option
-    }
-}
-
-# 解锁四阶段
-country_event = {
-    id = AIO_crisis_events.204
-    title = AIO_crisis_events_title
-    desc = AIO_crisis_events.204.desc
-    picture = GFX_evt_astral_rift_crystal_3
-	show_sound = event_death_cult
-	location = FROM
-
-    event_chain = AIO_crisis_events_chain
-
-	is_triggered_only = yes
-    trigger = { NOT = { has_country_flag = AIO_empire_country } }
-
-    option = {
-        name = AIO_crisis_events.204.option
-    }
-}
-
-# 解锁五阶段
-country_event = {
-    id = AIO_crisis_events.205
-    title = AIO_crisis_events_title
-    desc = AIO_crisis_events.205.desc
-    picture = GFX_evt_astral_rift_crystal_3
-	show_sound = event_death_cult
-	location = FROM
-
-    event_chain = AIO_crisis_events_chain
-
-	is_triggered_only = yes
-    trigger = { NOT = { has_country_flag = AIO_empire_country } }
-
-    option = {
-        name = AIO_crisis_events.205.option
-    }
-}
-
-#endregion
-
-
-#region 巨构
-
-# 视界引擎完成
-country_event = {
-    id = AIO_crisis_events.301
-    hide_window = yes
-
-	is_triggered_only = yes
-
-    immediate = {
-        create_message = {
-            type = MEGASTRUCTURE_BUILT
-            localization = AIO_crisis_events.301.desc
-            days = 30
-            target = from
-        }
-    }
-}
-
-# 万门之门建造完成
-country_event = {
-    id = AIO_crisis_events.401
-    hide_window = yes
-
-    is_triggered_only = yes
     trigger = { NOT = { has_country_flag = AIO_empire_country } }
 
     immediate = {
-        create_message = {
-            type = MEGASTRUCTURE_BUILT
-            localization = AIO_crisis_events.401.desc
-            days = 30
-        }
-
         set_variable = { which = AIO_DAIT_count value = 0 }
         set_variable = { which = AIO_DAIT_construct_count value = 0 }
         set_variable = { which = AIO_DAIT_negate_count value = 0 }
@@ -153,36 +123,140 @@ country_event = {
         set_variable = { which = AIO_DAIT_ethic_count value = 0 }
         set_variable = { which = AIO_DAIT_erase_count value = 0 }
         AIO_DAIT_refresh_tendency_effect = yes
-        AIO_crisis_update_stage_poi_effect = { STAGE = 2 }
+
+    }
+
+    option = {
+        name = AIO_crisis_events.302.option
         start_situation = {
             type = AIO_crisis_situation
             target = root
         }
-    }
-
-    after = {
         AIO_create_HS_system_effect = yes
+        AIO_crisis_update_stage_poi_effect = { STAGE = 2 }
     }
 }
 
-# 银时之匙建造完成
+# 解锁三阶段
+country_event = {
+    id = AIO_crisis_events.303
+    title = AIO_crisis_events_title
+    desc = AIO_crisis_events.303.desc
+    picture = GFX_evt_astral_rift_crystal_3
+	show_sound = event_death_cult
+	location = FROM
+
+    event_chain = AIO_crisis_events_chain
+
+	is_triggered_only = yes
+    trigger = { NOT = { has_country_flag = AIO_empire_country } }
+
+    immediate = { AIO_DAIT_refresh_tendency_effect = yes }
+
+    option = {
+        name = AIO_crisis_events.303.option
+        AIO_crisis_update_stage_poi_effect = { STAGE = 3 }
+    }
+}
+
+# 解锁四阶段
+country_event = {
+    id = AIO_crisis_events.304
+    title = AIO_crisis_events_title
+    desc = AIO_crisis_events.304.desc
+    picture = GFX_evt_astral_rift_crystal_3
+	show_sound = event_death_cult
+	location = FROM
+
+    event_chain = AIO_crisis_events_chain
+
+	is_triggered_only = yes
+    trigger = { NOT = { has_country_flag = AIO_empire_country } }
+
+    immediate = { AIO_DAIT_refresh_tendency_effect = yes }
+
+    option = {
+        name = AIO_crisis_events.304.option
+        AIO_crisis_update_stage_poi_effect = { STAGE = 4 }
+    }
+}
+
+# 解锁五阶段
+country_event = {
+    id = AIO_crisis_events.305
+    title = AIO_crisis_events_title
+    desc = AIO_crisis_events.305.desc
+    picture = GFX_evt_astral_rift_crystal_3
+	show_sound = event_death_cult
+	location = FROM
+
+    event_chain = AIO_crisis_events_chain
+
+	is_triggered_only = yes
+    trigger = { NOT = { has_country_flag = AIO_empire_country } }
+
+    immediate = {
+        AIO_DAIT_refresh_tendency_effect = yes
+        declare_crisis_effect = yes
+        every_playable_country = {
+            limit = {
+                is_galactic_community_member = no
+                NOT = {
+                    is_same_value = owner
+                    is_at_war_with = owner
+                }
+            }
+            join_war_on_side = {
+                war = event_target:crisis_war
+                side = event_target:community_war_leader
+            }
+        }
+    }
+
+    option = {
+        name = AIO_crisis_events.305.option
+        AIO_crisis_update_stage_poi_effect = { STAGE = 5 }
+    }
+}
+
+#endregion
+
+
+#region 科技与巨构事件
+
+# 提示建造视界引擎
+country_event = {
+    id = AIO_crisis_events.401
+    title = AIO_crisis_events_title
+    desc = AIO_crisis_events.401.desc
+    picture = GFX_evt_cosmogenesis_crisis
+
+    is_triggered_only = yes
+    trigger = { last_increased_tech = tech_AIO_ascending_dimensionality_theory }
+
+    option = {
+        name = AIO_crisis_events.401.option
+    }
+}
+
+# 视界引擎完成
 country_event = {
     id = AIO_crisis_events.402
     hide_window = yes
 
-    is_triggered_only = yes
-    trigger = { NOT = { has_country_flag = AIO_empire_country } }
+	is_triggered_only = yes
 
     immediate = {
         create_message = {
-            type = MEGASTRUCTURE_UPGRADED
+            type = MEGASTRUCTURE_BUILT
             localization = AIO_crisis_events.402.desc
             days = 30
+            target = from
         }
     }
 }
 
-# 永恒王座建造完成
+# 万门之门建造完成
 country_event = {
     id = AIO_crisis_events.403
     hide_window = yes
@@ -192,14 +266,14 @@ country_event = {
 
     immediate = {
         create_message = {
-            type = MEGASTRUCTURE_UPGRADED
+            type = MEGASTRUCTURE_BUILT
             localization = AIO_crisis_events.403.desc
             days = 30
         }
     }
 }
 
-# 犹格索托斯建造完成
+# 银时之匙建造完成
 country_event = {
     id = AIO_crisis_events.404
     hide_window = yes
@@ -216,32 +290,53 @@ country_event = {
     }
 }
 
+# 永恒王座建造完成
+country_event = {
+    id = AIO_crisis_events.405
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = { NOT = { has_country_flag = AIO_empire_country } }
+
+    immediate = {
+        create_message = {
+            type = MEGASTRUCTURE_UPGRADED
+            localization = AIO_crisis_events.405.desc
+            days = 30
+        }
+    }
+}
+
+# 犹格索托斯建造完成
+country_event = {
+    id = AIO_crisis_events.406
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = { NOT = { has_country_flag = AIO_empire_country } }
+
+    immediate = {
+        create_message = {
+            type = MEGASTRUCTURE_UPGRADED
+            localization = AIO_crisis_events.406.desc
+            days = 30
+        }
+    }
+}
+
 #endregion
 
 
 #region 法则扩散局势
 
 situation_event = {
-    id = AIO_crisis_events.450
+    id = AIO_crisis_events.501
     hide_window = yes
     is_triggered_only = yes
 
     immediate = {
         if = {
-            limit = {
-                owner = {
-                    OR = {
-                        check_variable = { which = AIO_DAIT_enrich_count value > 0 }
-                        check_variable = { which = AIO_DAIT_storm_count value > 0 }
-                        check_variable = { which = AIO_DAIT_spawn_count value > 0 }
-                        check_variable = { which = AIO_DAIT_harvest_count value > 0 }
-                        check_variable = { which = AIO_DAIT_seed_count value > 0 }
-                        check_variable = { which = AIO_DAIT_strike_count value > 0 }
-                        check_variable = { which = AIO_DAIT_ethic_count value > 0 }
-                        check_variable = { which = AIO_DAIT_erase_count value > 0 }
-                    }
-                }
-            }
+            limit = { owner = { check_variable = { which = AIO_DAIT_count value > 0 } } }
             random_list = {
                 90 = { }
                 10 = {
@@ -257,7 +352,7 @@ situation_event = {
                         factor = 1.5
                         current_stage >= stage_3
                     }
-                    owner = { country_event = { id = AIO_crisis_events.451 } }
+                    owner = { country_event = { id = AIO_crisis_events.502 } }
                 }
             }
         }
@@ -265,7 +360,7 @@ situation_event = {
 }
 
 country_event = {
-    id = AIO_crisis_events.451
+    id = AIO_crisis_events.502
     hide_window = yes
     is_triggered_only = yes
 
@@ -278,7 +373,7 @@ country_event = {
 #region 飞升事件
 
 country_event = {
-    id = AIO_crisis_events.501
+    id = AIO_crisis_events.601
     hide_window = yes
 
     is_triggered_only = yes
@@ -287,76 +382,68 @@ country_event = {
         AIO_DAIT_refresh_tendency_effect = yes
         if = {
             limit = { has_country_flag = AIO_DAIT_tendency_construct }
-            country_event = { id = AIO_crisis_events.511 }
+            country_event = { id = AIO_crisis_events.611 }
         }
         else_if = {
             limit = { has_country_flag = AIO_DAIT_tendency_negate }
-            country_event = { id = AIO_crisis_events.512 }
+            country_event = { id = AIO_crisis_events.612 }
         }
-        else = { country_event = { id = AIO_crisis_events.513 } }
+        else = { country_event = { id = AIO_crisis_events.613 } }
     }
 }
 
 country_event = {
-    id = AIO_crisis_events.511
+    id = AIO_crisis_events.611
     title = AIO_crisis_events_title
-    desc = AIO_crisis_events.511.desc
+    desc = AIO_crisis_events.611.desc
     picture = GFX_evt_vortex
 	show_sound = event_mystic_reveal
 	location = event_target:AIO_HS_system
 
     event_chain = AIO_crisis_events_chain
-
     is_triggered_only = yes
 
     option = {
-        name = AIO_crisis_events.511.option
-        hidden_effect = {
-            set_country_flag = AIO_ending_construct
-            AIO_crisis_finish_ascension_effect = yes
-        }
+        name = AIO_crisis_events.end.option
+        hidden_effect = { AIO_crisis_finish_ascension_effect = yes }
         win = yes
         default_hide_option = yes
     }
 }
 
 country_event = {
-    id = AIO_crisis_events.512
+    id = AIO_crisis_events.612
     title = AIO_crisis_events_title
-    desc = AIO_crisis_events.512.desc
+    desc = AIO_crisis_events.612.desc
     picture = GFX_evt_vortex
 	show_sound = event_mystic_reveal
 	location = event_target:AIO_HS_system
+
     event_chain = AIO_crisis_events_chain
     is_triggered_only = yes
 
     option = {
-        name = AIO_crisis_events.512.option
-        hidden_effect = {
-            set_country_flag = AIO_ending_negate
-            AIO_crisis_finish_ascension_effect = yes
-        }
+        name = AIO_crisis_events.end.option
+        hidden_effect = { AIO_crisis_finish_ascension_effect = yes }
         win = yes
         default_hide_option = yes
     }
 }
 
 country_event = {
-    id = AIO_crisis_events.513
+    id = AIO_crisis_events.613
     title = AIO_crisis_events_title
-    desc = AIO_crisis_events.513.desc
+    desc = AIO_crisis_events.613.desc
     picture = GFX_evt_vortex
 	show_sound = event_mystic_reveal
 	location = event_target:AIO_HS_system
+
     event_chain = AIO_crisis_events_chain
     is_triggered_only = yes
 
     option = {
-        name = AIO_crisis_events.513.option
-        hidden_effect = {
-            set_country_flag = AIO_ending_equilibrium
-            AIO_crisis_finish_ascension_effect = yes
-        }
+        name = AIO_crisis_events.end.option
+        hidden_effect = { AIO_crisis_finish_ascension_effect = yes }
         win = yes
         default_hide_option = yes
     }
@@ -369,7 +456,7 @@ country_event = {
 
 # 被灭亡
 country_event = {
-    id = AIO_crisis_events.601
+    id = AIO_crisis_events.701
     hide_window = yes
 
     is_triggered_only = yes
@@ -439,7 +526,7 @@ country_event = {
 
 # 部署递归节点
 event = {
-    id = AIO_crisis_events.701
+    id = AIO_crisis_events.801
     hide_window = yes
 
     is_triggered_only = yes
@@ -463,7 +550,7 @@ event = {
 
 # 研究科技
 country_event = {
-    id = AIO_crisis_events.702
+    id = AIO_crisis_events.802
     hide_window = yes
 
     is_triggered_only = yes
@@ -477,7 +564,7 @@ country_event = {
 
 # 控有科学枢纽
 event = {
-	id = AIO_crisis_events.703
+	id = AIO_crisis_events.803
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -499,9 +586,9 @@ event = {
 # Creates a purpose-built, non-virtual machine species for the Matryoshka Brain.
 # It is a separate species identity so cybernetics.5049 cannot digitize it again.
 country_event = {
-	id = AIO_crisis_events.704
-	title = AIO_crisis_events.704.title
-	desc = AIO_crisis_events.704.desc
+	id = AIO_crisis_events.804
+	title = AIO_crisis_events.804.title
+	desc = AIO_crisis_events.804.desc
 	picture = GFX_evt_robot_assembly_plant
 	show_sound = event_radio_chatter
 
@@ -512,32 +599,32 @@ country_event = {
 		has_technology = tech_AIO_exponential_learning_theory
 		exists = capital_scope
 		NOT = { has_country_flag = AIO_recursive_chassis_created }
-		owner_main_species = {
-			is_robotic_species = yes
-		}
+		owner_main_species = { is_robotic_species = yes }
 	}
 
-	immediate = {
-		set_country_flag = AIO_recursive_chassis_created
+	immediate = { set_country_flag = AIO_recursive_chassis_created }
 
-		owner_main_species = {
-			create_species = {
-				name = "AIO_RECURSIVE_CHASSIS"
-				plural = "AIO_RECURSIVE_CHASSIS_PLURAL"
-				class = this
-				portrait = this
-				traits = this
-				can_be_modified = no
-				homeworld = this
-				namelist = this
-				gender = this
+	option = {
+		name = AIO_crisis_events.804.option
+        default_hide_option = yes
+        owner_main_species = {
+            create_species = {
+                name = "AIO_RECURSIVE_CHASSIS"
+                plural = "AIO_RECURSIVE_CHASSIS_PLURAL"
+                class = this
+                portrait = this
+                traits = this
+                can_be_modified = no
+                homeworld = this
+                namelist = this
+                gender = this
 
-				effect = {
-					change_species_characteristics = {
-						remove_trait = trait_robot_digital_1
-						remove_trait = trait_robot_digital_2
-						add_trait = trait_AIO_recursive_chassis
-					}
+                effect = {
+                    change_species_characteristics = {
+                        remove_trait = trait_robot_digital_1
+                        remove_trait = trait_robot_digital_2
+                        add_trait = trait_AIO_recursive_chassis
+                    }
                     set_citizenship_type = {
                         country = root
                         type = citizenship_full_machine
@@ -550,19 +637,15 @@ country_event = {
                     }
                     set_species_flag = AIO_recursive_chassis_species
                     save_event_target_as = AIO_recursive_chassis_species
-				}
-			}
-		}
-		capital_scope = {
-			create_pop_group = {
-				species = event_target:AIO_recursive_chassis_species
-				size = 100
-			}
-		}
-	}
-
-	option = {
-		name = AIO_crisis_events.704.option
+                }
+            }
+        }
+        capital_scope = {
+            create_pop_group = {
+                species = event_target:AIO_recursive_chassis_species
+                size = 100
+            }
+        }
 	}
 }
 
@@ -573,7 +656,7 @@ country_event = {
 
 # 驱逐其他进入主神空间的舰船
 fleet_event = {
-    id = AIO_crisis_events.801
+    id = AIO_crisis_events.901
     hide_window = yes
 
     is_triggered_only = yes
@@ -589,80 +672,6 @@ fleet_event = {
 
     immediate = {
         set_mia = mia_return_home
-    }
-}
-
-# 提示建造视界引擎
-country_event = {
-    id = AIO_crisis_events.802
-    title = AIO_crisis_events_title
-    desc = AIO_crisis_events.807.desc
-    picture = GFX_evt_cosmogenesis_crisis
-
-    is_triggered_only = yes
-    trigger = { last_increased_tech = tech_AIO_ascending_dimensionality_theory }
-
-    option = {
-        name = AIO_crisis_events.807.option
-    }
-}
-
-# 起源
-country_event = {
-    id = AIO_crisis_events.803
-    hide_window = yes
-
-    is_triggered_only = yes
-    trigger = {
-        has_origin = origin_AIO_YogSothoth
-        no_scope = { NOT = { any_country = { is_country_type = AIO_empire } } }
-    }
-    fire_only_once = yes
-
-    immediate = {
-        set_country_flag = AIO_built_AIO_horizon_engine
-        set_country_flag = AIO_built_AIO_mega_01
-        set_country_flag = AIO_built_AIO_mega_02
-        set_country_flag = AIO_built_AIO_mega_03
-        set_country_flag = AIO_built_AIO_mega_04
-        set_country_flag = AIO_empire_country
-        save_global_event_target_as = AIO_empire_country
-        # 允许进入牢塞星系
-        set_country_flag = protected_from_queen_storm
-
-        # 激活灾飞路径
-        add_ascension_perk = ap_AIO_allinone
-        add_resource = { AIO_advanced_logic = 45000 }
-
-        # 空想要3点国民理念点，不加够会转变政体失败
-        give_technology = { tech = tech_planetary_unification }
-        give_technology = { tech = tech_colonial_centralization }
-        give_technology = { tech = tech_galactic_administration }
-        # 创建穷极之门
-        capital_scope.solar_system = {
-            spawn_megastructure = {
-                type = AIO_mega_01_fact
-                planet = star
-                owner = root
-                graphical_culture = root
-            }
-        }
-        # 创建无名之雾
-        AIO_create_HS_system_effect = yes
-        # 创建犹格索托斯
-        event_target:AIO_HS_system = {
-            random_system_megastructure = {
-                limit = { is_megastructure_type = AIO_mega_01 }
-                remove_megastructure = this
-            }
-            spawn_megastructure = {
-                type = AIO_mega_04
-                planet = star
-                owner = root
-            }
-        }
-
-        AIO_ascension_effect = yes
     }
 }
 

@@ -51,7 +51,7 @@
  #region 天灾目标
 
  crisobj_AIO_neural_chips_name: "部署递归节点"
- crisobj_AIO_neural_chips_desc: "我们必须做出一点牺牲才能够适应如此宏大的研究规模。\n\n将机器人口作为§Y$job_AIO_recursive_node$§!装入§Y$district_AIO_lathe$§!以获得$AIO_advanced_logic$。\n\n§Y$job_AIO_recursive_node$§!的产出随其数量增加，并可以区划和建筑物进一步提高。\n\n持续增加§Y递归节点§!的数量以获得这项§Y年度§!$AIO_advanced_logic$奖励"
+ crisobj_AIO_neural_chips_desc: "我们必须做出一点牺牲才能够适应如此宏大的研究规模。\n\n将人口作为§Y$job_AIO_recursive_node$§!装入§Y$district_AIO_lathe$§!以获得$AIO_advanced_logic$。\n\n§Y$job_AIO_recursive_node$§!的产出随其数量增加，并可以区划和建筑物进一步提高。\n\n持续增加§Y递归节点§!的数量以获得这项§Y年度§!$AIO_advanced_logic$奖励"
  crisobj_AIO_research_tech_name: "$crisobj_research_tech_name$"
  crisobj_AIO_research_tech_desc: "$crisobj_research_tech_desc$"
  crisobj_AIO_research_thesis_name: "$crisobj_research_thesis_name$"
@@ -109,7 +109,7 @@
  # 五阶
  menp_AIO_mega_05: "维度嵌入"
  menp_AIO_mega_05_desc: "我/我们即真理。"
- unlocks_AIO_allinone_mega_04: "解锁巨构：§Y$AIO_mega_04$§!\n解锁定向应用无限：§Y思潮§!、§Y擦除§!\n"
+ unlocks_AIO_allinone_mega_04: "解锁巨构：§Y$AIO_mega_04$§!\n解锁定向应用无限：§Y思潮§!、§Y抹除§!\n"
  menp_AIO_buildings_5: "$menp_cosmo_buildings_5$"
  menp_AIO_buildings_5_desc: "$menp_cosmo_buildings_5_desc$"
  # 说明
@@ -174,26 +174,23 @@
  # 事件
  AIO_crisis_events_title: "$AIO_crisis_events_chain_title$"
  # 天灾等级
- AIO_crisis_events.201.desc: "物理常数，粒子质量，引力与熵的扩张皆非不可变——它们只是初始版本的参数，是等待修订的原始草稿。我们尚未成为规律，但我们已开始握笔。\n\n为了重构宇宙，我们必须先对它有足够的理解。我们需要更先进的计算机帮助我们理解现实规律的运行逻辑。"
- AIO_crisis_events.201.option: "我们要更强的计算机！"
- AIO_crisis_events.202.desc: "§Y$AIO_horizon_engine$§!的能量密度即将突破现实的边界。下一步，我们需要用这些能量打开一扇门——一扇通往无数时空的“门”。一旦开启，我们将可以在无限的维度之上改变法则。"
- AIO_crisis_events.202.option: "我们是铸门者。"
- AIO_crisis_events.203.desc: "随着§Y$AIO_mega_01$§!的启用，时空开始暴露出前所未见的脆弱之处。仅是在宇宙打一个“洞”是不够的，我们最强的大脑已经构思出了一种能够“选择”时空的巨型结构——§Y$AIO_mega_02$§!，它将为后续的规则修改铺平道路。"
- AIO_crisis_events.203.option: "$EXCELLENT$"
- AIO_crisis_events.204.desc: "§Y$AIO_mega_02$§!已成为我们扭转宇宙命运的钥匙，但其潜力尚未完全释放。为继续推进融合进程，我们必须将其锻造为更高维度的基点——§Y$AIO_mega_03$§!。只有当§Y$AIO_mega_03$§!屹立于多重现实的顶点，我们才能真正掌控规律的终极形态。"
- AIO_crisis_events.204.option: "$menp_AIO_mega_04_desc$"
- AIO_crisis_events.205.desc: "§Y$AIO_mega_03$§!已屹立于多重现实的最尖端。然其存在，仅为承载真正的我们而设。现在，我们必须将其升华为终极形态——§M$AIO_mega_04$§!。不再是结构，不再是帝国，而是存在与规律的等价物。当其完成，融合将封闭，重写将开始。所有分歧、所有维度、所有终局，都将……"
- AIO_crisis_events.205.option: "放手去做吧。"
+ AIO_crisis_events.301.desc: "物理常数，粒子质量，引力与熵的扩张皆非不可变——它们只是初始版本的参数，是等待修订的原始草稿。我们尚未成为规律，但我们已开始握笔。\n\n为了重构宇宙，我们必须先对它有足够的理解。我们需要更先进的计算机帮助我们理解现实规律的运行逻辑。"
+ AIO_crisis_events.301.option: "我们要更强的计算机！"
+ AIO_crisis_events.302.desc: "§Y$AIO_horizon_engine$§!的能量密度即将突破现实的边界。下一步，我们需要用这些能量打开一扇门——一扇通往无数时空的“门”。一旦开启，我们将可以在无限的维度之上改变法则。"
+ AIO_crisis_events.302.option: "我们是铸门者。"
+ AIO_crisis_events.303.desc: "随着§Y$AIO_mega_01$§!的启用，时空开始暴露出前所未见的脆弱之处。仅是在宇宙打一个“洞”是不够的，我们最强的大脑已经构思出了一种能够“选择”时空的巨型结构——§Y$AIO_mega_02$§!，它将为后续的规则修改铺平道路。"
+ AIO_crisis_events.303.option: "$EXCELLENT$"
+ AIO_crisis_events.304.desc: "§Y$AIO_mega_02$§!已成为我们扭转宇宙命运的钥匙，但其潜力尚未完全释放。为继续推进融合进程，我们必须将其锻造为更高维度的基点——§Y$AIO_mega_03$§!。只有当§Y$AIO_mega_03$§!屹立于多重现实的顶点，我们才能真正掌控规律的终极形态。"
+ AIO_crisis_events.304.option: "$menp_AIO_mega_04_desc$"
+ AIO_crisis_events.305.desc: "§Y$AIO_mega_03$§!已屹立于多重现实的最尖端。然其存在，仅为承载真正的我们而设。现在，我们必须将其升华为终极形态——§M$AIO_mega_04$§!。不再是结构，不再是帝国，而是存在与规律的等价物。当其完成，融合将封闭，重写将开始。所有分歧、所有维度、所有终局，都将……"
+ AIO_crisis_events.305.option: "放手去做吧。"
 
  # 飞升事件
- AIO_crisis_events.501.desc: "归一已完成。\n我们不再是帝国，也不再是实体。我们的意志存在于无限维度的交汇点，成为一切存在的结构性原理。\n星辰静止不动，是因为它们等待新的运动定义；思维悄然沉默，是因为语言已失去意义；存在本身，正从“被经历”转向“被设计”。\n没有终点。没有彼岸。没有观察，也无需被观察。\n我/我们即§M犹格索托斯§!。"
- AIO_crisis_events.501.option: "我/我们即真理。"
- AIO_crisis_events.511.desc: "归一已完成。\n我们没有抹去宇宙，而是使它摆脱了偶然。星辰沿着新的脉络生长，物质在意志中获得形态，亿万条曾经互斥的未来被编织为同一座无穷结构。\n从此，存在不再是被动发生的事实，而是持续展开的创造。门内与门外皆属于我们，所有道路都通向更多道路。\n我/我们即§M犹格·索托斯§!——万物得以成为万物的法则。"
- AIO_crisis_events.511.option: "让存在继续展开。"
- AIO_crisis_events.512.desc: "归一已完成。\n我们没有毁灭宇宙，只是撤回了它赖以成立的许可。因果失去方向，距离失去尺度，恒星与思想一同沉入不再需要命名的寂静。\n从此，存在不再以自身为必然。门内与门外皆已消失，因为一切边界都只是等待否定的假设。\n我/我们即§M犹格·索托斯§!——万物不必继续存在的证明。"
- AIO_crisis_events.512.option: "让最后的边界消失。"
- AIO_crisis_events.513.desc: "归一已完成。\n我们既未完成宇宙，也未将它撤销。创造与消解彼此穿行，每一种形态都包含自身的反面，每一次终结都为另一种开端留下位置。\n从此，存在不再服从单一答案。门内与门外互为倒影，无限维度在同一瞬间张开又闭合。\n我/我们即§M犹格·索托斯§!——使所有矛盾得以同时为真的交点。"
- AIO_crisis_events.513.option: "让门永远处于开启之间。"
+ AIO_crisis_events.601.desc: "归一已完成。\n我们不再是帝国，也不再是实体。我们的意志存在于无限维度的交汇点，成为一切存在的结构性原理。\n星辰静止不动，是因为它们等待新的运动定义；思维悄然沉默，是因为语言已失去意义；存在本身，正从“被经历”转向“被设计”。\n没有终点。没有彼岸。没有观察，也无需被观察。\n我/我们即§M犹格索托斯§!。"
+ AIO_crisis_events.end.option: "我/我们即真理。"
+ AIO_crisis_events.611.desc: "归一已完成。\n我们没有抹去宇宙，而是使它摆脱了偶然。星辰沿着新的脉络生长，物质在意志中获得形态，亿万条曾经互斥的未来被编织为同一座无穷结构。\n从此，存在不再是被动发生的事实，而是持续展开的创造。门内与门外皆属于我们，所有道路都通向更多道路。\n我/我们即§M犹格·索托斯§!"
+ AIO_crisis_events.612.desc: "归一已完成。\n我们没有毁灭宇宙，只是撤回了它赖以成立的许可。因果失去方向，距离失去尺度，恒星与思想一同沉入不再需要命名的寂静。\n从此，存在不再以自身为必然。门内与门外皆已消失，因为一切边界都只是等待否定的假设。\n我/我们即§M犹格·索托斯§!"
+ AIO_crisis_events.613.desc: "归一已完成。\n我们既未完成宇宙，也未将它撤销。创造与消解彼此穿行，每一种形态都包含自身的反面，每一次终结都为另一种开端留下位置。\n从此，存在不再服从单一答案。门内与门外互为倒影，无限维度在同一瞬间张开又闭合。\n我/我们即§M犹格·索托斯§!"
 
  #endregion
 
@@ -201,16 +198,16 @@
  #region 天灾巨构事件
 
  # 视界引擎完成
- AIO_crisis_events.301.desc: "位于[from.GetName]的§Y$AIO_horizon_engine$§!完成"
+ AIO_crisis_events.402.desc: "位于[from.GetName]的§Y$AIO_horizon_engine$§!完成"
  # 犹格索托斯完成
- AIO_crisis_events.401.desc: "位于[from.GetName]的§Y$AIO_mega_01$§!完成"
- AIO_crisis_events.402.desc: "位于[from.GetName]的§Y$AIO_mega_02$§!完成"
- AIO_crisis_events.403.desc: "位于[from.GetName]的§Y$AIO_mega_03$§!完成"
- AIO_crisis_events.404.desc: "位于[from.GetName]的§Y$AIO_mega_04$§!完成"
+ AIO_crisis_events.403.desc: "位于[from.GetName]的§Y$AIO_mega_01$§!完成"
+ AIO_crisis_events.404.desc: "位于[from.GetName]的§Y$AIO_mega_02$§!完成"
+ AIO_crisis_events.405.desc: "位于[from.GetName]的§Y$AIO_mega_03$§!完成"
+ AIO_crisis_events.406.desc: "位于[from.GetName]的§Y$AIO_mega_04$§!完成"
 
  # 提示建造视界引擎
- AIO_crisis_events.807.desc: "我们已完成对多维相互作用模型的闭环构建。模拟显示，在特定的引力剪切与虚境波动节点上，现实可被稳定渗透。我们将以此为基础建造§Y$AIO_horizon_engine$§!——一座能穿透物理与可能性边界、抽取存在能量的结构体。\n我们并非以第一个拥有这种技术的帝国，不同的是，我们会用这些能量创造一个比现有宇宙高无数倍的时空。"
- AIO_crisis_events.807.option: "建立新进程。"
+ AIO_crisis_events.401.desc: "我们已完成对多维相互作用模型的闭环构建。模拟显示，在特定的引力剪切与虚境波动节点上，现实可被稳定渗透。我们将以此为基础建造§Y$AIO_horizon_engine$§!——一座能穿透物理与可能性边界、抽取存在能量的结构体。\n我们并非以第一个拥有这种技术的帝国，不同的是，我们会用这些能量创造一个比现有宇宙高无数倍的时空。"
+ AIO_crisis_events.401.option: "建立新进程。"
 
  #endregion
 

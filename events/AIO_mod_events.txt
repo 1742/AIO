@@ -5,7 +5,7 @@ namespace = AIO_mod_events
 # 更新提醒
 country_event = {
     id = AIO_mod_events.201
-    title = AIO_Tawi_full_name
+    title = AIO_Tawi_full
 
     desc = AIO_mod_events.201.desc
 

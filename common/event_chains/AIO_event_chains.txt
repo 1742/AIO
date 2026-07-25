@@ -7,5 +7,5 @@ AIO_crisis_events_chain = {
     # 图标，要写路径，放在gfx/interface/icons/situation_log里，其实这个用原版的就好
     icon = gfx/interface/icons/situation_log/situation_log_ai.dds
 
-    counter = { AIO_crisis_events_chain = {  } }
+    counter = {  }
 }

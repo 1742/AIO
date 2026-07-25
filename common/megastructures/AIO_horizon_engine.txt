@@ -129,7 +129,7 @@ AIO_horizon_engine = {
 			# 允许点星河奇迹
 			set_country_flag = has_built_or_repaired_megastructure
 			# 通知
-			country_event = { id = AIO_crisis_events.301 }
+			country_event = { id = AIO_crisis_events.402 }
 		}
 	}
 }

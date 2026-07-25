@@ -1,3 +1,4 @@
+# scope: system
 AIO_create_TUG_system_effect = {
     if = {
         limit = { any_system_megastructure = { is_megastructure_type = AIO_mega_01_fact } }
@@ -64,6 +65,7 @@ AIO_create_TUG_system_effect = {
     }
 }
 
+# scope: country
 AIO_create_HS_system_effect = {
     if = {
         limit = { NOT = { exists = event_target:AIO_HS_system } }
@@ -182,6 +184,7 @@ AIO_create_HS_system_effect = {
     }
 }
 
+# scope: any
 AIO_create_Aforgomom_effect = {
     create_country = {
         name = "AIO_Aforgomom"
@@ -258,21 +261,13 @@ AIO_crisis_update_stage_poi_effect = {
     remove_point_of_interest = AIO_crisis_stage_5_poi
 
     if = {
-        limit = { exists = event_target:AIO_HS_system }
-        event_target:AIO_HS_system = { save_event_target_as = AIO_crisis_poi_system }
-    }
-    else = {
-        capital_scope.solar_system = { save_event_target_as = AIO_crisis_poi_system }
-    }
-
-    if = {
         limit = { has_country_flag = AIO_DAIT_tendency_construct }
         create_point_of_interest = {
             id = AIO_crisis_stage_$STAGE$_poi
             name = AIO_crisis_stage_$STAGE$_poi_name
             desc = AIO_crisis_stage_$STAGE$_construct_desc
             event_chain = AIO_crisis_events_chain
-            location = event_target:AIO_crisis_poi_system
+            location = event_target:AIO_HS_system
         }
     }
     else_if = {
@@ -282,7 +277,7 @@ AIO_crisis_update_stage_poi_effect = {
             name = AIO_crisis_stage_$STAGE$_poi_name
             desc = AIO_crisis_stage_$STAGE$_negate_desc
             event_chain = AIO_crisis_events_chain
-            location = event_target:AIO_crisis_poi_system
+            location = event_target:AIO_HS_system
         }
     }
     else = {
@@ -291,16 +286,27 @@ AIO_crisis_update_stage_poi_effect = {
             name = AIO_crisis_stage_$STAGE$_poi_name
             desc = AIO_crisis_stage_$STAGE$_equilibrium_desc
             event_chain = AIO_crisis_events_chain
-            location = event_target:AIO_crisis_poi_system
+            location = event_target:AIO_HS_system
         }
     }
 }
 
-# 三个终局共享的收束流程。最终倾向标志保留，以继续驱动犹格·索托斯的国家修正。
-# scope: country
+# 完成局势, scope: country
 AIO_crisis_finish_ascension_effect = {
-    clear_variable = AIO_RAIT_count
     clear_variable = AIO_DAIT_count
+    clear_variable = AIO_DAIT_enrich_count
+    clear_variable = AIO_DAIT_spawn_count
+    clear_variable = AIO_DAIT_seed_count
+    clear_variable = AIO_DAIT_ethic_count
+    clear_variable = AIO_DAIT_storm_count
+    clear_variable = AIO_DAIT_harvest_count
+    clear_variable = AIO_DAIT_strike_count
+    clear_variable = AIO_DAIT_erase_count
+
+    clear_variable = AIO_DAIT_construct_count
+    clear_variable = AIO_DAIT_negate_count
+    remove_country_flag = AIO_DAIT_tendency_construct
+    remove_country_flag = AIO_DAIT_tendency_negate
 
     remove_point_of_interest = AIO_crisis_stage_2_poi
     remove_point_of_interest = AIO_crisis_stage_3_poi
@@ -313,6 +319,7 @@ AIO_crisis_finish_ascension_effect = {
     AIO_ascension_galaxy_effect = yes
 }
 
+# scope: country
 AIO_ascension_effect = {
     if = {
         limit = {
@@ -397,9 +404,8 @@ AIO_ascension_effect = {
     }
 }
 
+# scope: any
 AIO_ascension_galaxy_effect = {
-    optimize_memory
-
     # 河系影响
     no_scope = {
         every_system = {
@@ -489,7 +495,7 @@ AIO_ascension_galaxy_effect = {
     }
 }
 
-# 添加随机科技
+# 添加随机科技, scope: country
 AIO_add_random_tech = {
     optimize_memory
 

@@ -71,12 +71,12 @@ AIO_crisis_situation = {
         }
     }
 
-    on_monthly = { events = { AIO_crisis_events.450 } }
+    on_monthly = { events = { AIO_crisis_events.501 } }
 
     on_progress_complete = {
         owner = {
             set_country_flag = AIO_crisis_situation_stage_4_complete
-            country_event = { id = AIO_crisis_events.501 }
+            country_event = { id = AIO_crisis_events.601 }
         }
         destroy_situation = this
     }
