@@ -6,29 +6,68 @@ namespace = AIO_mod_events
 country_event = {
     id = AIO_mod_events.201
     title = AIO_Tawi_full
-
+    diplomatic_title = ap_AIO_allinone
     desc = AIO_mod_events.201.desc
 
-    diplomatic = yes
-    diplomatic_title = ap_AIO_allinone
+    event_window_type = leader_recruit
     picture_event_data = {
-        room = AIO_mod_announcement_room
+        portrait = event_target:ethic_leader
+        room = ethic_spaceship_room
     }
 
     is_triggered_only = yes
 
     immediate = {
         set_global_flag = AIO_mod_active
+        ethic_leader_creator = {
+            SPECIES_CLASS = root.owner_main_species
+            LEADER_PORTRAIT = AIO_TAWI_PORTRAITS_CASUAL
+            CLASS = official
+            TIER = leader_tier_legendary
+            NAME = AIO_Tawi_full
+            LEVEL = 4
+            GENDER = indeterminable
+            ETHIC = gestalt_consciousness
+            DESC = AIO_mod_events.201.leader_desc
+            CATCH_PHRASE = AIO_mod_events.201.catch_phrase
+            IMMORTAL = no
+        }
     }
 
     option = {
-        name = AIO_mod_events.201.option_1
+        name = AIO_mod_events.201.know
+        tag = dismiss_leader
         default_hide_option = yes
+        hidden_effect = { ethic_leader_kill_effect = yes }
     }
 
     option = {
-        name = AIO_mod_events.201.option_2
-        response_text = AIO_mod_events.201.option_2.response
+        name = AIO_mod_events.201.know_again
+        tag = hire_leader
+        hidden_effect = { ethic_leader_kill_effect = yes }
+    }
+
+    option = {
+        name = AIO_mod_events.201.guide
         is_dialog_only = yes
+        response_text = AIO_mod_events.201.guide.response
+    }
+
+    option = {
+        name = AIO_mod_events.201.dait
+        is_dialog_only = yes
+        response_text = AIO_mod_events.201.dait.response
+    }
+
+    option = {
+        name = AIO_mod_events.201.situation
+        is_dialog_only = yes
+        response_text = AIO_mod_events.201.situation.response
+    }
+
+    option = {
+        name = AIO_mod_events.201.compatibility
+        is_dialog_only = yes
+        response_text = AIO_mod_events.201.compatibility.response
     }
 }

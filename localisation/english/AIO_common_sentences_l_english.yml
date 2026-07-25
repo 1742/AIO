@@ -4,6 +4,7 @@
  AIO_Aforgomom: "Aforgomom"
 
  # common sentences
+ AIO_hello: "Hello."
  AIO_confirm: "Confirm."
  AIO_cancel: "Cancel."
  AIO_return: "Return."

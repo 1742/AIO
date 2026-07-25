@@ -284,7 +284,7 @@ building_AIO_lathe_cogitator = {
 		}
 	}
 
-	prerequisites = { tech_AIO_lathe_cogitator }
+	prerequisites = { tech_AIO_exponential_learning_theory }
 
 	destroy_trigger = {
 		NOR = {
