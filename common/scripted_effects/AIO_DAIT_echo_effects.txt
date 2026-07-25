@@ -113,8 +113,8 @@ AIO_DAIT_echo_roll_effect = {
             random_system = {
                 limit = { AIO_DAIT_echo_erase_target = yes }
                 save_event_target_as = AIO_DAIT_echo_system
-                AIO_DAIT_echo_mark_erase_owners_effect = { MAX_JUMPS = 1 }
-                AIO_DAIT_erase_effect = { MAX_JUMPS = 1 }
+                AIO_DAIT_echo_mark_erase_owners_effect = yes
+                AIO_DAIT_erase_effect = yes
                 AIO_DAIT_echo_finish_effect = { EVENT = 245 }
             }
         }

@@ -14,7 +14,7 @@ building_AIO_lathe_resonator = {
 		}
 	}
 
-	prerequisites = { tech_AIO_lathe_resonator }
+	prerequisites = { tech_AIO_exponential_learning_theory }
 
 	destroy_trigger = {
 		NOR = {
@@ -106,7 +106,7 @@ building_AIO_lathe_overclocker = {
 		}
 	}
 
-	prerequisites = { tech_AIO_lathe_overclocker }
+	prerequisites = { tech_AIO_exponential_learning_theory }
 
 	destroy_trigger = {
 		NOR = {
@@ -157,7 +157,7 @@ building_AIO_lathe_preserver = {
 		}
 	}
 
-	prerequisites = { tech_AIO_lathe_preserver }
+	prerequisites = { tech_AIO_exponential_learning_theory }
 
 	destroy_trigger = {
 		NOR = {
@@ -240,7 +240,7 @@ building_AIO_lathe_life_support = {
 		}
 	}
 
-	prerequisites = { tech_AIO_lathe_life_support }
+	prerequisites = { tech_AIO_exponential_learning_theory }
 
 	destroy_trigger = {
 		NOR = {
@@ -338,7 +338,7 @@ building_AIO_lathe_validator = {
 		}
 	}
 
-	prerequisites = { tech_AIO_lathe_validator }
+	prerequisites = { tech_AIO_exponential_learning_theory }
 
 	destroy_trigger = {
 		NOR = {

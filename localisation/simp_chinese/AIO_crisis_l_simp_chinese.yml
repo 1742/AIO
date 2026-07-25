@@ -146,7 +146,7 @@
  MESSAGE_AIO_DAIT_ECHO_TITLE: "法则回响"
  AIO_DAIT_echo_enrich_message: "§Y[this.GetName]§!星系的物质分布在没有外力介入的情况下自行丰饶。"
  AIO_DAIT_echo_storm_message: "§Y[this.GetName]§!星系中自发形成了一场无法由自然模型解释的宇宙风暴。"
- AIO_DAIT_echo_spawn_message: "§Y[this.GetName]§!星系的天体结构自行重组，复现了我们曾经施行的创造。"
+ AIO_DAIT_echo_spawn_message: "§Y[this.GetName]§!星系的天体结构自行重组。"
  AIO_DAIT_echo_harvest_message: "§Y[this.GetName]§!星系的天体正在失去自身的物质定义。"
  AIO_DAIT_echo_seed_message: "§Y[this.GetName]§!星系中出现了没有演化历史的新生命。"
  AIO_DAIT_echo_strike_message: "§Y[this.GetName]§!星系附近出现了不属于现实时序的攻击者。"

@@ -47,19 +47,19 @@ AIO_crisis_situation = {
             owner = { has_country_flag = AIO_built_AIO_mega_01 }
         }
         modifier = {
-            add = 1
+            add = 2
             desc = AIO_crisis_situation_monthly_active.mega_2
             current_stage <= stage_2
             owner = { has_country_flag = AIO_built_AIO_mega_02 }
         }
         modifier = {
-            add = 1
+            add = 3
             desc = AIO_crisis_situation_monthly_active.mega_3
             current_stage <= stage_3
             owner = { has_country_flag = AIO_built_AIO_mega_03 }
         }
         modifier = {
-            add = 1
+            add = 4
             desc = AIO_crisis_situation_monthly_active.mega_4
             current_stage <= stage_4
             owner = { has_country_flag = AIO_built_AIO_mega_04 }

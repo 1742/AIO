@@ -80,18 +80,4 @@
  tech_AIO_fe_clinic_2: "$tech_fe_clinic_2$"
  tech_AIO_fe_clinic_2_desc: "$tech_fe_clinic_2_desc$"
 
- # Synaptic Lathe buildings
- tech_AIO_lathe_resonator: "$tech_lathe_resonator$"
- tech_AIO_lathe_resonator_desc: "$tech_lathe_resonator_desc$"
- tech_AIO_lathe_overclocker: "$tech_lathe_overclocker$"
- tech_AIO_lathe_overclocker_desc: "$tech_lathe_overclocker_desc$"
- tech_AIO_lathe_preserver: "$tech_lathe_preserver$"
- tech_AIO_lathe_preserver_desc: "$tech_lathe_preserver_desc$"
- tech_AIO_lathe_life_support: "$tech_lathe_life_support$"
- tech_AIO_lathe_life_support_desc: "$tech_lathe_life_support_desc$"
- tech_AIO_lathe_cogitator: "$tech_lathe_cogitator$"
- tech_AIO_lathe_cogitator_desc: "$tech_lathe_cogitator_desc$"
- tech_AIO_lathe_validator: "$tech_lathe_validator$"
- tech_AIO_lathe_validator_desc: "$tech_lathe_validator_desc$"
-
  #endregion
