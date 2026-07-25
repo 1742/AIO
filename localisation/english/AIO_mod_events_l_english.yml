@@ -1,6 +1,6 @@
 ﻿l_english:
  AIO_mod_events.201.desc: "Welcome to the All in One mod. Stellaris 4.4 brought major changes. The old DAIT system was retired because, for unknown reasons, it caused high memory usage(However, the original calculations were indeed complex). Redesigning the gameplay and UI took a long time."
- AIO_mod_events.201.leader_desc: "Author"
+ AIO_mod_events.201.leader_desc: "Author's comment"
  AIO_mod_events.201.catch_phrase: "This does not seem to display."
  AIO_mod_events.201.know: "I will read this later."
  AIO_mod_events.201.know_again: "OK!"

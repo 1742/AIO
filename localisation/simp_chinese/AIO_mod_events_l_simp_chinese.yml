@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
  AIO_mod_events.201.desc: "欢迎游玩万物归一模组，这次4.4改动比较大，旧的 DAIT 由于未知原因会造成较高内存占用被废弃了（不过原来的计算确实复杂），重新设计玩法、UI等花了很长时间。"
- AIO_mod_events.201.leader_desc: "作者"
+ AIO_mod_events.201.leader_desc: "作者留言"
  AIO_mod_events.201.catch_phrase: "这个好像显示不出来"
  AIO_mod_events.201.know: "稍后再看"
  AIO_mod_events.201.know_again: "知道了！"
