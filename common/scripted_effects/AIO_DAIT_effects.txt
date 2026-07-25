@@ -297,33 +297,9 @@ AIO_DAIT_ethic_effect = {
             change_government = random
             set_government_cooldown = default
 
-            # 意识被改写后，不再保留此前因 DAIT 干涉产生的敌意。
+            # 意识被改写后，清除此前因应用无限产生的敌意。
             remove_opinion_modifier = {
-                modifier = opinion_AIO_DAIT_enriched_our_system
-                who = event_target:AIO_DAIT_maker
-            }
-            remove_opinion_modifier = {
-                modifier = opinion_AIO_DAIT_spawned_in_our_system
-                who = event_target:AIO_DAIT_maker
-            }
-            remove_opinion_modifier = {
-                modifier = opinion_AIO_DAIT_seeded_our_system
-                who = event_target:AIO_DAIT_maker
-            }
-            remove_opinion_modifier = {
-                modifier = opinion_AIO_DAIT_spawned_storm
-                who = event_target:AIO_DAIT_maker
-            }
-            remove_opinion_modifier = {
-                modifier = opinion_AIO_DAIT_struck_us
-                who = event_target:AIO_DAIT_maker
-            }
-            remove_opinion_modifier = {
-                modifier = opinion_AIO_DAIT_harvested_our_system
-                who = event_target:AIO_DAIT_maker
-            }
-            remove_opinion_modifier = {
-                modifier = opinion_AIO_DAIT_erased_our_systems
+                modifier = opinion_cosmogenesis_thesis
                 who = event_target:AIO_DAIT_maker
             }
         }

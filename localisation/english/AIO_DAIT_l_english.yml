@@ -57,12 +57,5 @@
  AIO_DAIT_events.237.title: "Reality Erased"
  AIO_DAIT_events.237.desc: "§Y[From.GetName]§! has erased a vast region of reality centered on §Y[FromFrom.GetName]§!. Our systems, fleets, and billions of lives vanished in an instant, leaving behind an emptiness that can never be filled."
 
- opinion_AIO_DAIT_enriched_our_system: "Interfered with Our System"
- opinion_AIO_DAIT_spawned_in_our_system: "Rewrote Our System"
- opinion_AIO_DAIT_seeded_our_system: "Seeded Life in Our System"
- opinion_AIO_DAIT_spawned_storm: "Created a Cosmic Storm in Our Territory"
- opinion_AIO_DAIT_struck_us: "Launched a Reality-Bending Strike Against Us"
- opinion_AIO_DAIT_harvested_our_system: "Harvested Our System"
- opinion_AIO_DAIT_erased_our_systems: "Erased Our Reality"
 
  #endregion

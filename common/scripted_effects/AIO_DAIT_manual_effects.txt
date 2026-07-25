@@ -12,7 +12,7 @@ AIO_DAIT_manual_enrich_effect = {
         AIO_DAIT_update_tendency_effect = { TYPE = construct }
     }
     event_target:AIO_DAIT_target_system = { AIO_DAIT_enrich_effect = { TIMES = 10 } }
-    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_enriched_our_system EVENT = 230 }
+    AIO_DAIT_manual_notify_effect = { EVENT = 230 }
     hidden_effect = { AIO_DAIT_manual_clear_affected_flag = yes }
 }
 
@@ -25,7 +25,7 @@ AIO_DAIT_manual_spawn_effect = {
         AIO_DAIT_update_tendency_effect = { TYPE = construct }
     }
     event_target:AIO_DAIT_target_system = { AIO_DAIT_spawn_effect = yes }
-    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_spawned_in_our_system EVENT = 231 }
+    AIO_DAIT_manual_notify_effect = { EVENT = 231 }
     hidden_effect = { AIO_DAIT_manual_clear_affected_flag = yes }
 }
 
@@ -38,7 +38,7 @@ AIO_DAIT_manual_seed_effect = {
         AIO_DAIT_update_tendency_effect = { TYPE = construct }
     }
     event_target:AIO_DAIT_target_system = { AIO_DAIT_seed_effect = yes }
-    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_seeded_our_system EVENT = 232 }
+    AIO_DAIT_manual_notify_effect = { EVENT = 232 }
     hidden_effect = { AIO_DAIT_manual_clear_affected_flag = yes }
 }
 
@@ -64,7 +64,7 @@ AIO_DAIT_manual_storm_effect = {
         AIO_DAIT_update_tendency_effect = { TYPE = negate }
     }
     event_target:AIO_DAIT_target_system = { AIO_DAIT_storm_effect = yes }
-    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_spawned_storm EVENT = 234 }
+    AIO_DAIT_manual_notify_effect = { EVENT = 234 }
     hidden_effect = { AIO_DAIT_manual_clear_affected_flag = yes }
 }
 
@@ -77,7 +77,7 @@ AIO_DAIT_manual_harvest_effect = {
         AIO_DAIT_update_tendency_effect = { TYPE = negate }
     }
     event_target:AIO_DAIT_target_system = { AIO_DAIT_harvest_effect = yes }
-    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_harvested_our_system EVENT = 235 }
+    AIO_DAIT_manual_notify_effect = { EVENT = 235 }
     hidden_effect = { AIO_DAIT_manual_clear_affected_flag = yes }
 }
 
@@ -90,7 +90,7 @@ AIO_DAIT_manual_strike_effect = {
         AIO_DAIT_update_tendency_effect = { TYPE = negate }
     }
     event_target:AIO_DAIT_target_system = { AIO_DAIT_strike_effect = yes }
-    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_struck_us EVENT = 236 }
+    AIO_DAIT_manual_notify_effect = { EVENT = 236 }
     hidden_effect = { AIO_DAIT_manual_clear_affected_flag = yes }
 }
 
@@ -113,7 +113,7 @@ AIO_DAIT_manual_erase_effect = {
         }
         else = { AIO_DAIT_erase_effect = yes }
     }
-    AIO_DAIT_manual_notify_effect = { OPINION = opinion_AIO_DAIT_erased_our_systems EVENT = 237 }
+    AIO_DAIT_manual_notify_effect = { EVENT = 237 }
     hidden_effect = { AIO_DAIT_manual_clear_affected_flag = yes }
 }
 
@@ -247,7 +247,7 @@ AIO_DAIT_manual_mark_erase_owners_effect = {
 AIO_DAIT_manual_notify_effect = {
     every_country = {
         limit = { has_country_flag = AIO_DAIT_affected_country }
-        [[OPINION] add_opinion_modifier = { modifier = $OPINION$ who = root } ]
+        add_opinion_modifier = { modifier = opinion_cosmogenesis_thesis who = root }
         country_event = {
             id = AIO_DAIT_events.$EVENT$
             scopes = {

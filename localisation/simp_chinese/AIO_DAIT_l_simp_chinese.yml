@@ -56,12 +56,5 @@
  AIO_DAIT_events.237.title: "现实擦除"
  AIO_DAIT_events.237.desc: "§Y[From.GetName]§!以§Y[FromFrom.GetName]§!为中心抹除了大片现实。我们的星系、舰队和亿万生命在一瞬间消失，留下的只有无法被填补的虚无。"
 
- opinion_AIO_DAIT_enriched_our_system: "干涉了我们的星系"
- opinion_AIO_DAIT_spawned_in_our_system: "改写了我们的星系"
- opinion_AIO_DAIT_seeded_our_system: "在我们的星系播种生命"
- opinion_AIO_DAIT_spawned_storm: "在我们的领地制造宇宙风暴"
- opinion_AIO_DAIT_struck_us: "对我们发动超常规打击"
- opinion_AIO_DAIT_harvested_our_system: "收割了我们的星系"
- opinion_AIO_DAIT_erased_our_systems: "抹除了我们的现实"
 
  #endregion
