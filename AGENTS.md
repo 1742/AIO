@@ -27,3 +27,5 @@
 
 游戏本体在本机的路径：D:\ProgramFiles\Steam\steamapps\common\Stellaris
 
+日志在本机：C:\Users\13632\Documents\Paradox Interactive\Stellaris\logs
+
