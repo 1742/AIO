@@ -25,10 +25,11 @@ trait_AIO_recursive_chassis = {
 	species_possible_merge_remove = { always = no }
 
 	modifier = {
-		planet_pop_assembly_mult = 0.5
+		planet_pop_assembly_mult = 0.75
 		planet_pops_robotics_upkeep_mult = -0.5
 		pop_housing_usage_mult = -0.75
 		pop_amenities_usage_no_happiness_mult = -0.75
+		empire_size_pops_mult = -0.9
 	}
 
 	triggered_pop_group_modifier = {

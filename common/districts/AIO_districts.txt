@@ -13,7 +13,7 @@ district_AIO_lathe_frame = {
 	resources = {
 		category = planet_districts
 		cost = {
-			alloys = 1000
+			alloys = 2000
 			AIO_advanced_logic = 500
 		}
 		upkeep = {

@@ -5,7 +5,7 @@ namespace = AIO_mod_events
 # 更新提醒
 country_event = {
     id = AIO_mod_events.201
-    title = AIO_Tawi_full
+    title = AIO_Tawi
     diplomatic_title = ap_AIO_allinone
     desc = AIO_mod_events.201.desc
 
@@ -31,6 +31,10 @@ country_event = {
             DESC = AIO_mod_events.201.leader_desc
             CATCH_PHRASE = AIO_mod_events.201.catch_phrase
             IMMORTAL = no
+        }
+        last_created_leader = {
+            set_age = 24
+            add_trait = leader_trait_intemporal
         }
     }
 
