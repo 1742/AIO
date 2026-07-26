@@ -27,6 +27,7 @@
  AIO_DAIT_events.202.ethic: "Ethic"
  AIO_DAIT_events.202.storm: "Storm"
  AIO_DAIT_events.202.strike: "Strike"
+ AIO_DAIT_strike_effect_tooltip: "Invoke §Y$AIO_Aforgomom$§!.\nIts wrath shall descend here; when wielded by $AIO_empire$, countless reflections will appear across the realms of every witness."
  AIO_DAIT_events.202.harvest: "Harvest"
  AIO_DAIT_events.202.erase: "Erase"
  AIO_DAIT.fail.require_mega_1: "£trigger_no£Requires §Y$AIO_mega_01$§!"

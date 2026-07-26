@@ -26,6 +26,7 @@
  AIO_DAIT_events.202.ethic: "思潮"
  AIO_DAIT_events.202.storm: "风暴"
  AIO_DAIT_events.202.strike: "打击"
+ AIO_DAIT_strike_effect_tooltip: "唤起§Y$AIO_Aforgomom$§!。\n祂的怒火将于此降临；若由$AIO_empire$执掌，无数倒影亦将在目击者中同时显现。"
  AIO_DAIT_events.202.harvest: "收割"
  AIO_DAIT_events.202.erase: "擦除"
  AIO_DAIT.fail.require_mega_1: "£trigger_no£需要拥有§Y$AIO_mega_01$§!"
