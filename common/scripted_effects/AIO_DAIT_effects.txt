@@ -181,7 +181,7 @@ AIO_DAIT_seed_effect = {
         }
         create_species = {
             name = random
-            class = random
+            class = random_non_machine
             portrait = random
             traits = random
             homeworld = this
@@ -193,14 +193,27 @@ AIO_DAIT_seed_effect = {
         }
         create_country = {
             type = default
+            species = event_target:AIO_DAIT_seed_species
             origin = origin_default
             effect = {
                 shift_ethic = ethic_spiritualist
                 change_government = random
-                create_leader = { class = random_ruler }
-                create_leader = { class = official }
-                create_leader = { class = scientist }
-                create_leader = { class = commander }
+                create_leader = {
+                    class = random_ruler
+                    species = event_target:AIO_DAIT_seed_species
+                }
+                create_leader = {
+                    class = official
+                    species = event_target:AIO_DAIT_seed_species
+                }
+                create_leader = {
+                    class = scientist
+                    species = event_target:AIO_DAIT_seed_species
+                }
+                create_leader = {
+                    class = commander
+                    species = event_target:AIO_DAIT_seed_species
+                }
                 prev = {
                     set_owner = prev
                     set_capital = yes

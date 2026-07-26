@@ -186,40 +186,56 @@ AIO_create_HS_system_effect = {
 
 # scope: any
 AIO_create_Aforgomom_effect = {
+    event_target:AIO_DAIT_maker = {
+        ruler = { save_event_target_as = AIO_Aforgomom_source_ruler }
+        owner_main_species = { save_event_target_as = AIO_Aforgomom_source_species }
+    }
     create_country = {
         name = "AIO_Aforgomom"
         type = AIO_Aforgomom
-        flag = root
+        flag = event_target:AIO_DAIT_maker
 
         effect = {
             ruler = {
                 set_name = AIO_Aforgomom
                 if = {
-                    limit = { root.ruler = { gender = male } }
+                    limit = { event_target:AIO_Aforgomom_source_ruler = { gender = male } }
                     set_gender = female
                 }
                 else_if = {
-                    limit = { root.ruler = { gender = female } }
+                    limit = { event_target:AIO_Aforgomom_source_ruler = { gender = female } }
                     set_gender = male
                 }
                 else = { set_gender = indeterminable }
                 set_age = -1
-                change_species = root.owner_main_species
-                change_leader_portrait = root.ruler
+                change_species = event_target:AIO_Aforgomom_source_species
+                change_leader_portrait = event_target:AIO_Aforgomom_source_ruler
                 set_skill = 10
                 remove_all_traits = yes
                 if = {
-                    limit = { root = { has_authority = auth_machine_intelligence } }
+                    limit = {
+                        event_target:AIO_DAIT_maker = {
+                            has_authority = auth_machine_intelligence
+                        }
+                    }
                     add_trait = { trait = leader_trait_ruler_machine_intelligence }
                 }
                 else = { add_trait = { trait = leader_trait_ruler_hive_mind } }
                 change_background_ethic = ethic_gestalt_consciousness
                 if = {
-                    limit = { root.ruler = { leader_class = official } }
+                    limit = {
+                        event_target:AIO_Aforgomom_source_ruler = {
+                            leader_class = official
+                        }
+                    }
                     change_leader_class = official
                 }
                 else_if = {
-                    limit = { root.ruler = { leader_class = scientist } }
+                    limit = {
+                        event_target:AIO_Aforgomom_source_ruler = {
+                            leader_class = scientist
+                        }
+                    }
                     change_leader_class = scientist
                 }
                 else = { change_leader_class = commander }

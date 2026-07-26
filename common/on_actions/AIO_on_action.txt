@@ -20,6 +20,11 @@ on_yearly_pulse = {
     events = {
         AIO_crisis_events.801  # 天灾目标，征用神经芯片
         AIO_crisis_events.803  # 天灾目标，控有科学枢纽
+    }
+}
+
+on_yearly_pulse_country = {
+    events = {
         AIO_crisis_events.804 # 给予递归载体物种模板
     }
 }
