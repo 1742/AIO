@@ -137,7 +137,7 @@ AIO_recursive_node_purge_factor = {
     complex_trigger_modifier = {
 		trigger = count_owned_pop_group
         trigger_scope = colony
-        parameters = { limit = { is_job_of_pop_category = { category = AIO_recursive_node } } }
+        parameters = { limit = { is_pop_category = AIO_recursive_node } }
 		mode = divide
 	}
 }

@@ -75,32 +75,6 @@ AIO_DAIT_spawn_effect = {
         }
         remove_star_flag = AIO_DAIT_harvest_system
     }
-    else_if = {
-        limit = {
-            OR= {
-                owner? = {
-                    is_country_type = default
-                    NOT = { has_modifier = AIO_DAIT_spawn_modifier }
-                }
-                any_system_ship_colony = {
-                    owner = {
-                        is_country_type = default
-                        NOT = { has_modifier = AIO_DAIT_spawn_modifier }
-                    }
-                }
-            }
-        }
-        owner? = { add_modifier = { modifier = AIO_DAIT_spawn_modifier } }
-        every_system_ship_colony = {
-            limit = { owner = { is_country_type = default } }
-            owner = {
-                if = {
-                    limit = { NOT = { has_modifier = AIO_DAIT_spawn_modifier } }
-                    add_modifier = { modifier = AIO_DAIT_spawn_modifier }
-                }
-            }
-        }
-    }
     else = {
         every_system_planet = {
             limit = {
@@ -127,6 +101,50 @@ AIO_DAIT_spawn_effect = {
                 2 = { AIO_safe_change_pc = { NEW_PC = pc_alpine } }
                 2 = { AIO_safe_change_pc = { NEW_PC = pc_volcanic } }
                 1 = { AIO_safe_change_pc = { NEW_PC = pc_gaia } }
+            }
+            random_list = {
+                2 = { set_planet_size = 10 }
+                3 = { set_planet_size = 11 }
+                3 = { set_planet_size = 12 }
+                3 = { set_planet_size = 13 }
+                3 = { set_planet_size = 14 }
+                4 = { set_planet_size = 15 }
+                4 = { set_planet_size = 16 }
+                4 = { set_planet_size = 17 }
+                4 = { set_planet_size = 18 }
+                4 = { set_planet_size = 19 }
+                3 = { set_planet_size = 20 }
+                3 = { set_planet_size = 21 }
+                2 = { set_planet_size = 22 }
+                2 = { set_planet_size = 23 }
+                2 = { set_planet_size = 24 }
+                1 = { set_planet_size = 25 }
+            }
+        }
+    }
+    if = {
+        limit = {
+            OR= {
+                owner? = {
+                    is_country_type = default
+                    NOT = { has_modifier = AIO_DAIT_spawn_modifier }
+                }
+                any_system_ship_colony = {
+                    owner = {
+                        is_country_type = default
+                        NOT = { has_modifier = AIO_DAIT_spawn_modifier }
+                    }
+                }
+            }
+        }
+        owner? = { add_modifier = { modifier = AIO_DAIT_spawn_modifier } }
+        every_system_ship_colony = {
+            limit = { owner = { is_country_type = default } }
+            owner = {
+                if = {
+                    limit = { NOT = { has_modifier = AIO_DAIT_spawn_modifier } }
+                    add_modifier = { modifier = AIO_DAIT_spawn_modifier }
+                }
             }
         }
     }
@@ -514,37 +532,45 @@ AIO_DAIT_strike_effect = {
         limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
         AIO_create_Aforgomom_effect = yes
     }
-    every_fleet_in_system = {
-        limit = {
-            exists = owner
-            NOR = {
-                has_fleet_flag = AIO_Aforgomom_fleet
-                owner = { is_nomadic = yes }
-            }
-        }
-        owner = {
-            every_system_within_border = {
-                limit = {
-                    NOR = {
-                        has_star_flag = AIO_HS_system
-                        has_star_flag = AIO_Aformom_exist
-                    }
+    if = {
+        limit = { NOT = { has_star_flag = AIO_Aformom_exist } }
+        AIO_create_Aformom_fleet = yes
+        set_star_flag = AIO_Aformom_exist
+    }
+    if = {
+        limit = { event_target:AIO_DAIT_maker = { is_country_type = AIO_empire } }
+        every_fleet_in_system = {
+            limit = {
+                exists = owner
+                NOR = {
+                    has_fleet_flag = AIO_Aforgomom_fleet
+                    owner = { is_nomadic = yes }
                 }
-                AIO_create_Aformom_fleet = yes
-                set_star_flag = AIO_Aformom_exist
             }
-            every_owned_fleet = {
-                limit = {
-                    solar_system = {
+            owner = {
+                every_system_within_border = {
+                    limit = {
                         NOR = {
                             has_star_flag = AIO_HS_system
                             has_star_flag = AIO_Aformom_exist
                         }
                     }
-                }
-                solar_system = {
                     AIO_create_Aformom_fleet = yes
                     set_star_flag = AIO_Aformom_exist
+                }
+                every_owned_fleet = {
+                    limit = {
+                        solar_system = {
+                            NOR = {
+                                has_star_flag = AIO_HS_system
+                                has_star_flag = AIO_Aformom_exist
+                            }
+                        }
+                    }
+                    solar_system = {
+                        AIO_create_Aformom_fleet = yes
+                        set_star_flag = AIO_Aformom_exist
+                    }
                 }
             }
         }

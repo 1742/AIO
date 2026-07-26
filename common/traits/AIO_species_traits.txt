@@ -34,11 +34,7 @@ trait_AIO_recursive_chassis = {
 
 	triggered_pop_group_modifier = {
 		potential = {
-			NOT = {
-				is_job_of_pop_category = {
-					category = AIO_recursive_node
-				}
-			}
+			NOT = { is_pop_category = AIO_recursive_node }
 		}
 		pop_bonus_workforce_mult = -1
 	}

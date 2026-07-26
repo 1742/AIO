@@ -27,7 +27,12 @@ AIO_recursive_node = {
 	possible = {
 		can_think = yes
 		has_virtual_species_trait = no
-		colony? = { has_district = district_AIO_lathe }
+		colony? = {
+			OR = {
+				has_district = district_AIO_lathe
+				has_district = district_AIO_lathe_frame
+			}
+		}
 	}
 
 	resources = {

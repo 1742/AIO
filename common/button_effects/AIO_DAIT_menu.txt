@@ -179,6 +179,16 @@ AIO_DAIT_harvest = {
             fail_text = AIO_DAIT_lock_target.fail.harvest
             event_target:AIO_DAIT_target_system = {
                 NOT = { has_star_flag = AIO_DAIT_harvest_system }
+                any_system_planet = {
+                    NOR = {
+                        is_planet_class = pc_shattered
+                        is_planet_class = pc_black_hole
+                        is_planet_class = pc_AIO_empty_space
+                        has_carrier_flag = synth_queen_bastille
+                        AIO_safe_remove_planet_exclude_API = yes
+                        has_planet_flag = AIO_DAIT_harvested_body
+                    }
+                }
             }
         }
         custom_tooltip = {

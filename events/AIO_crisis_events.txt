@@ -110,30 +110,8 @@ country_event = {
 	is_triggered_only = yes
     trigger = { NOT = { has_country_flag = AIO_empire_country } }
 
-    immediate = {
-        set_variable = { which = AIO_DAIT_count value = 0 }
-        set_variable = { which = AIO_DAIT_construct_count value = 0 }
-        set_variable = { which = AIO_DAIT_negate_count value = 0 }
-        set_variable = { which = AIO_DAIT_enrich_count value = 0 }
-        set_variable = { which = AIO_DAIT_storm_count value = 0 }
-        set_variable = { which = AIO_DAIT_spawn_count value = 0 }
-        set_variable = { which = AIO_DAIT_harvest_count value = 0 }
-        set_variable = { which = AIO_DAIT_seed_count value = 0 }
-        set_variable = { which = AIO_DAIT_strike_count value = 0 }
-        set_variable = { which = AIO_DAIT_ethic_count value = 0 }
-        set_variable = { which = AIO_DAIT_erase_count value = 0 }
-        AIO_DAIT_refresh_tendency_effect = yes
-
-    }
-
     option = {
         name = AIO_crisis_events.302.option
-        start_situation = {
-            type = AIO_crisis_situation
-            target = root
-        }
-        AIO_create_HS_system_effect = yes
-        AIO_crisis_update_stage_poi_effect = { STAGE = 2 }
     }
 }
 
@@ -270,6 +248,25 @@ country_event = {
             localization = AIO_crisis_events.403.desc
             days = 30
         }
+
+        set_variable = { which = AIO_DAIT_count value = 0 }
+        set_variable = { which = AIO_DAIT_construct_count value = 0 }
+        set_variable = { which = AIO_DAIT_negate_count value = 0 }
+        set_variable = { which = AIO_DAIT_enrich_count value = 0 }
+        set_variable = { which = AIO_DAIT_storm_count value = 0 }
+        set_variable = { which = AIO_DAIT_spawn_count value = 0 }
+        set_variable = { which = AIO_DAIT_harvest_count value = 0 }
+        set_variable = { which = AIO_DAIT_seed_count value = 0 }
+        set_variable = { which = AIO_DAIT_strike_count value = 0 }
+        set_variable = { which = AIO_DAIT_ethic_count value = 0 }
+        set_variable = { which = AIO_DAIT_erase_count value = 0 }
+        AIO_DAIT_refresh_tendency_effect = yes
+        start_situation = {
+            type = AIO_crisis_situation
+            target = root
+        }
+        AIO_create_HS_system_effect = yes
+        AIO_crisis_update_stage_poi_effect = { STAGE = 2 }
     }
 }
 
@@ -684,7 +681,7 @@ country_event = {
         capital_scope = {
             create_pop_group = {
                 species = event_target:AIO_recursive_chassis_species
-                size = 100
+                size = 1000
             }
         }
 	}
