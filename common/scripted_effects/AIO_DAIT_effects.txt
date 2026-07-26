@@ -1,0 +1,720 @@
+# scope: system
+# use event_target:AIO_DAIT_maker to locate
+
+#region 塔维尔
+
+AIO_DAIT_enrich_effect = {
+    every_system_planet = {
+        limit = {
+            NOT = {
+                is_planet_class = pc_shattered
+                is_planet_class = pc_AIO_empty_space
+                is_planet_class = pc_astral_scar
+                is_planet_class = pc_rift_star
+                has_planet_flag = AIO_DAIT_harvested_body
+            }
+        }
+        if = {
+            limit = { has_research_station = yes }
+            research_station = { destroy_fleet = this }
+            clear_deposits = yes
+        }
+        while = {
+            count = $TIMES|1$
+            random_list = {
+                3 = { add_deposit = d_energy_10 }
+                3 = { add_deposit = d_minerals_10 }
+                3 = { add_deposit = d_food_10 }
+                2 = { add_deposit = d_alloys_25 }
+                1 = { add_deposit = d_volatile_motes_5 }
+                1 = { add_deposit = d_exotic_gases_5 }
+                1 = { add_deposit = d_rare_crystals_5 }
+            }
+        }
+    }
+
+    owner? = {
+        if = {
+            limit = { NOT = { has_modifier = AIO_DAIT_enrich_modifier } }
+            add_modifier = { modifier = AIO_DAIT_enrich_modifier }
+        }
+    }
+    every_system_ship_colony = {
+        if = {
+            limit = {
+                owner = {
+                    is_country_type = default
+                    NOT = { has_modifier = AIO_DAIT_enrich_modifier }
+                }
+            }
+            owner = { add_modifier = { modifier = AIO_DAIT_enrich_modifier } }
+        }
+    }
+}
+
+AIO_DAIT_spawn_effect = {
+    if = {
+        limit = {
+            OR = {
+                is_star_class = sc_AIO_void
+                has_star_flag = AIO_DAIT_harvest_system
+            }
+        }
+        every_system_planet = { AIO_safe_remove_planet = yes }
+        AIO_safe_remove_system_megastructures = yes
+        every_ambient_object = { destroy_ambient_object = this }
+        set_star_class = sc_AIO_void
+        random_list = {
+            1 = { AIO_create_hexagonal_orbital_array = yes }
+            1 = { AIO_create_ringworld_array = yes }
+            1 = { AIO_create_triangular_planet_array = yes }
+            1 = { AIO_create_black_hole_cluster = yes }
+            1 = { AIO_create_concentric_orbital_array = yes }
+            1 = { AIO_create_recursive_satellite_tree = yes }
+            1 = { AIO_create_black_hole_flower = yes }
+        }
+        remove_star_flag = AIO_DAIT_harvest_system
+    }
+    else = {
+        random_system_planet = {
+            limit = { is_star = yes }
+            if = {
+                limit = {
+                    NOR = {
+                        is_planet_class = pc_b_star
+                        is_planet_class = pc_a_star
+                        is_planet_class = pc_f_star
+                        is_planet_class = pc_g_star
+                    }
+                }
+                random_list = {
+                    1 = { change_pc = pc_b_star }
+                    1 = { change_pc = pc_a_star }
+                    2 = { change_pc = pc_f_star }
+                    4 = { change_pc = pc_g_star }
+                }
+            }
+        }
+        every_system_planet = {
+            limit = {
+                NOR = {
+                    is_star = yes
+                    is_colony = yes
+                    is_artificial = yes
+                    is_planet_class = pc_city
+                    is_planet_class = pc_machine
+                    is_planet_class = pc_hive
+                    is_planet_class = pc_nanotech
+                    AIO_safe_remove_planet_exclude_API = yes
+                }
+            }
+            random_list = {
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_desert } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_arid } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_savannah } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_tropical } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_continental } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_ocean } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_tundra } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_arctic } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_alpine } }
+                2 = { AIO_safe_change_pc = { NEW_PC = pc_volcanic } }
+                1 = { AIO_safe_change_pc = { NEW_PC = pc_gaia } }
+            }
+            random_list = {
+                2 = { set_planet_size = 10 }
+                3 = { set_planet_size = 11 }
+                3 = { set_planet_size = 12 }
+                3 = { set_planet_size = 13 }
+                3 = { set_planet_size = 14 }
+                4 = { set_planet_size = 15 }
+                4 = { set_planet_size = 16 }
+                4 = { set_planet_size = 17 }
+                4 = { set_planet_size = 18 }
+                4 = { set_planet_size = 19 }
+                3 = { set_planet_size = 20 }
+                3 = { set_planet_size = 21 }
+                2 = { set_planet_size = 22 }
+                2 = { set_planet_size = 23 }
+                2 = { set_planet_size = 24 }
+                1 = { set_planet_size = 25 }
+            }
+        }
+    }
+    if = {
+        limit = {
+            OR= {
+                owner? = {
+                    is_country_type = default
+                    NOT = { has_modifier = AIO_DAIT_spawn_modifier }
+                }
+                any_system_ship_colony = {
+                    owner = {
+                        is_country_type = default
+                        NOT = { has_modifier = AIO_DAIT_spawn_modifier }
+                    }
+                }
+            }
+        }
+        owner? = { add_modifier = { modifier = AIO_DAIT_spawn_modifier } }
+        every_system_ship_colony = {
+            limit = { owner = { is_country_type = default } }
+            owner = {
+                if = {
+                    limit = { NOT = { has_modifier = AIO_DAIT_spawn_modifier } }
+                    add_modifier = { modifier = AIO_DAIT_spawn_modifier }
+                }
+            }
+        }
+    }
+}
+
+AIO_DAIT_seed_effect = {
+    random_system_planet = {
+        limit = {
+            OR = {
+                habitable_planet = yes
+                is_planet_class = pc_habitat
+                is_planet_class = pc_ringworld_habitable
+            }
+            pop_amount = 0
+        }
+        create_species = {
+            name = random
+            class = random_non_machine
+            portrait = random
+            traits = random
+            homeworld = this
+            effect = { save_event_target_as = AIO_DAIT_seed_species }
+        }
+        create_pop_group = {
+            species = event_target:AIO_DAIT_seed_species
+            effect = { add_pop_amount = 4000 }
+        }
+        create_country = {
+            type = default
+            species = event_target:AIO_DAIT_seed_species
+            origin = origin_default
+            effect = {
+                shift_ethic = ethic_spiritualist
+                change_government = random
+                create_leader = {
+                    class = random_ruler
+                    species = event_target:AIO_DAIT_seed_species
+                }
+                create_leader = {
+                    class = official
+                    species = event_target:AIO_DAIT_seed_species
+                }
+                create_leader = {
+                    class = scientist
+                    species = event_target:AIO_DAIT_seed_species
+                }
+                create_leader = {
+                    class = commander
+                    species = event_target:AIO_DAIT_seed_species
+                }
+                prev = {
+                    set_owner = prev
+                    set_capital = yes
+                    solar_system = {
+                        if = {
+                            limit = { exists = starbase }
+                            starbase = { destroy_fleet = this }
+                        }
+                        create_starbase = {
+                            size = starbase_starport
+                            owner = prev
+                            module = shipyard
+                            module = shipyard
+                        }
+                        create_fleet = {
+                            effect = {
+                                set_owner = prevprevprev
+                                create_ship = {
+                                    name = random
+                                    design = NAME_Scholarium_Science
+                                }
+                                set_location = {
+                                    target = prev
+                                    angle = random
+                                    direction = in_system
+                                }
+                            }
+                        }
+                        create_fleet = {
+                            effect = {
+                                set_owner = prevprevprev
+                                create_ship = {
+                                    name = random
+                                    design = NAME_Prospectorium_Constructor
+                                }
+                                set_location = {
+                                    target = prev
+                                    angle = random
+                                    direction = in_system
+                                }
+                            }
+                        }
+                    }
+                }
+                add_resource = {
+                    energy = 10000
+                    minerals = 10000
+                    food = 10000
+                    consumer_goods = 5000
+                    alloys = 5000
+                    unity = 10000
+                }
+                add_modifier = { modifier = AIO_the_craving_of_stellaris_modifier years = 10 }
+            }
+        }
+    }
+}
+
+AIO_DAIT_ethic_effect = {
+    owner? = {
+        if = {
+            limit = {
+                OR = {
+                    is_country_type = default
+                    is_country_type = fallen_empire
+                    is_country_type = awakened_fallen_empire
+                }
+            }
+            if = {
+                limit = { has_ethic = ethic_fanatic_authoritarian }
+                shift_ethic = ethic_fanatic_egalitarian
+            }
+            else_if = {
+                limit = { has_ethic = ethic_fanatic_egalitarian }
+                shift_ethic = ethic_fanatic_authoritarian
+            }
+            else_if = {
+                limit = { has_ethic = ethic_fanatic_materialist }
+                shift_ethic = ethic_fanatic_spiritualist
+            }
+            else_if = {
+                limit = { has_ethic = ethic_fanatic_spiritualist }
+                shift_ethic = ethic_fanatic_materialist
+            }
+            else_if = {
+                limit = { has_ethic = ethic_fanatic_militarist }
+                shift_ethic = ethic_fanatic_pacifist
+            }
+            else_if = {
+                limit = { has_ethic = ethic_fanatic_pacifist }
+                shift_ethic = ethic_fanatic_militarist
+            }
+            else_if = {
+                limit = { has_ethic = ethic_fanatic_xenophile }
+                shift_ethic = ethic_fanatic_xenophobe
+            }
+            else_if = {
+                limit = { has_ethic = ethic_fanatic_xenophobe }
+                shift_ethic = ethic_fanatic_xenophile
+            }
+
+            if = {
+                limit = { has_ethic = ethic_authoritarian }
+                shift_ethic = ethic_egalitarian
+            }
+            else_if = {
+                limit = { has_ethic = ethic_egalitarian }
+                shift_ethic = ethic_authoritarian
+            }
+            if = {
+                limit = { has_ethic = ethic_materialist }
+                shift_ethic = ethic_spiritualist
+            }
+            else_if = {
+                limit = { has_ethic = ethic_spiritualist }
+                shift_ethic = ethic_materialist
+            }
+            if = {
+                limit = { has_ethic = ethic_militarist }
+                shift_ethic = ethic_pacifist
+            }
+            else_if = {
+                limit = { has_ethic = ethic_pacifist }
+                shift_ethic = ethic_militarist
+            }
+            if = {
+                limit = { has_ethic = ethic_xenophile }
+                shift_ethic = ethic_xenophobe
+            }
+            else_if = {
+                limit = { has_ethic = ethic_xenophobe }
+                shift_ethic = ethic_xenophile
+            }
+
+            change_government = random
+            set_government_cooldown = default
+
+            # 意识被改写后，清除此前因应用无限产生的敌意。
+            remove_opinion_modifier = {
+                modifier = opinion_cosmogenesis_thesis
+                who = event_target:AIO_DAIT_maker
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region 亚弗戈蒙
+
+AIO_DAIT_storm_effect = {
+    if = {
+        limit = { NOT = { is_inside_storm = yes } }
+        random_list = {
+            1 = {
+                spawn_random_storm = {
+                    type = solar_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = electric_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = gravity_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = magnetic_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = particle_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = celestial_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = shroud_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                }
+            }
+            1 = {
+                spawn_random_storm = {
+                    type = nexus_storm
+                    immediate = yes
+                    cosmic_storm_start_position = this
+                }
+            }
+        }
+    }
+}
+
+AIO_DAIT_harvest_effect = {
+    every_system_planet = {
+        limit = {
+            NOR = {
+                is_planet_class = pc_shattered
+                is_planet_class = pc_black_hole
+                is_planet_class = pc_AIO_empty_space
+                has_carrier_flag = synth_queen_bastille
+                AIO_safe_remove_planet_exclude_API = yes
+                has_planet_flag = AIO_DAIT_harvested_body
+            }
+        }
+        if = {
+            limit = { is_star = yes }
+            event_target:AIO_DAIT_maker = {
+                add_resource = { energy = 2000 mult = prev.trigger:planet_size }
+            }
+            change_pc = pc_t_star
+            solar_system = { AIO_change_star_class = yes }
+            set_planet_flag = AIO_DAIT_harvested_body
+        }
+        else_if = {
+            limit = { is_artificial = no }
+            if = {
+                limit = {
+                    OR = {
+                        is_planet_class = pc_barren
+                        is_planet_class = pc_barren_cold
+                        is_planet_class = pc_asteroid
+                        is_planet_class = pc_crystal_asteroid
+                        is_planet_class = pc_broken
+                    }
+                }
+                event_target:AIO_DAIT_maker = {
+                    add_resource = { minerals = 400 mult = prev.trigger:planet_size }
+                }
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        is_planet_class = pc_gas_giant
+                        is_planet_class = pc_toxic
+                    }
+                }
+                event_target:AIO_DAIT_maker = {
+                    add_resource = { energy = 200 mult = prev.trigger:planet_size }
+                    add_resource = { exotic_gases = 100 mult = prev.trigger:planet_size }
+                }
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        is_planet_class = pc_molten
+                        is_planet_class = pc_volcanic
+                    }
+                }
+                event_target:AIO_DAIT_maker = {
+                    add_resource = { energy = 200 mult = prev.trigger:planet_size }
+                    add_resource = { volatile_motes = 50 mult = prev.trigger:planet_size }
+                }
+            }
+            else_if = {
+                limit = { is_planet_class = pc_frozen }
+                event_target:AIO_DAIT_maker = {
+                    add_resource = { minerals = 200 mult = prev.trigger:planet_size }
+                    add_resource = { rare_crystals = 50 mult = prev.trigger:planet_size }
+                }
+            }
+            else_if = {
+                limit = { is_planet_class = pc_shrouded }
+                event_target:AIO_DAIT_maker = { add_resource = { sr_zro = 200 mult = prev.trigger:planet_size } }
+            }
+            else_if = {
+                limit = { is_planet_class = pc_nanotech }
+                event_target:AIO_DAIT_maker = { add_resource = { nanites = 200 mult = prev.trigger:planet_size } }
+            }
+            else_if = {
+                limit = { is_colonizable = yes }
+                event_target:AIO_DAIT_maker = {
+                    add_resource = { minerals = 200 mult = prev.trigger:planet_size }
+                    add_resource = { food = 250 mult = prev.trigger:planet_size }
+                }
+            }
+            else_if = {
+                limit = { is_planet_class = pc_ai }
+                # TODO
+            }
+            else = {
+                event_target:AIO_DAIT_maker = {
+                    add_resource = { minerals = 200 mult = prev.trigger:planet_size }
+                }
+            }
+            clear_deposits = yes
+            clear_planet_modifiers = yes
+            if = {
+                limit = { is_colony = yes }
+                destroy_colony = yes
+            }
+            AIO_safe_change_pc = { NEW_PC = pc_shattered }
+            set_planet_flag = AIO_DAIT_harvested_body
+        }
+        else = {
+            switch = {
+                trigger = is_planet_class
+                pc_habitat = {
+                    event_target:AIO_DAIT_maker = {
+                        add_resource = { alloys = 1000 }
+                    }
+                    AIO_safe_remove_habitat = yes
+                }
+                pc_ringworld_habitable = {
+                    event_target:AIO_DAIT_maker = {
+                        add_resource = { alloys = 8000 }
+                    }
+                    AIO_safe_remove_rw_section = yes
+                }
+                pc_cosmogenesis_world = {
+                    event_target:AIO_DAIT_maker = {
+                        add_resource = { alloys = 10000 }
+                    }
+                    AIO_safe_remove_cosmogenesis_world = yes
+                }
+                pc_ark = {
+                    event_target:AIO_DAIT_maker = {
+                        add_resource = { alloys = 5000 }
+                    }
+                    ship = { fleet = { destroy_fleet = this } }
+                }
+            }
+        }
+    }
+    set_star_flag = AIO_DAIT_harvest_system
+}
+
+AIO_DAIT_strike_effect = {
+    if = {
+        limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
+        AIO_create_Aforgomom_effect = yes
+    }
+    if = {
+        limit = { NOT = { has_star_flag = AIO_Aformom_exist } }
+        AIO_create_Aformom_fleet = yes
+        set_star_flag = AIO_Aformom_exist
+    }
+    if = {
+        limit = { event_target:AIO_DAIT_maker = { is_country_type = AIO_empire } }
+        every_fleet_in_system = {
+            limit = {
+                exists = owner
+                NOR = {
+                    has_fleet_flag = AIO_Aforgomom_fleet
+                    owner = { is_nomadic = yes }
+                }
+            }
+            owner = {
+                every_system_within_border = {
+                    limit = {
+                        NOR = {
+                            has_star_flag = AIO_HS_system
+                            has_star_flag = AIO_Aformom_exist
+                        }
+                    }
+                    AIO_create_Aformom_fleet = yes
+                    set_star_flag = AIO_Aformom_exist
+                }
+                every_owned_fleet = {
+                    limit = {
+                        solar_system = {
+                            NOR = {
+                                has_star_flag = AIO_HS_system
+                                has_star_flag = AIO_Aformom_exist
+                            }
+                        }
+                    }
+                    solar_system = {
+                        AIO_create_Aformom_fleet = yes
+                        set_star_flag = AIO_Aformom_exist
+                    }
+                }
+            }
+        }
+    }
+}
+
+AIO_DAIT_erase_effect = {
+    every_system = {
+        limit = {
+            NOR = {
+                has_star_flag = AIO_HS_system
+                has_star_flag = AIO_TUG_system
+                has_star_flag = synth_queen_capital
+                AIO_safe_remove_system_exclude_API = yes
+            }
+            OR = {
+                event_target:AIO_DAIT_maker = { is_country_type = AIO_empire }
+                AIO_is_crisis_mega_system = no
+            }
+            any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
+            OR = {
+                is_same_value = prev
+                distance = {
+                    source = prev
+                    max_jumps = $MAX_JUMPS|1$
+                    use_bypasses = no
+                }
+            }
+        }
+
+        every_system_planet = { AIO_safe_remove_planet = yes }
+        AIO_safe_remove_system_megastructures = yes
+        every_fleet_in_system = {
+            limit = { AIO_safe_remove_fleet_exclude_API = no }
+            destroy_fleet = this
+        }
+        every_ambient_object = { destroy_ambient_object = this }
+        set_star_class = sc_AIO_void
+
+        random_system_planet = {
+            limit = { is_star = yes }
+            create_ambient_object = {
+                type = "star_explosion"
+                play_animation_once = yes
+                location = this
+
+                effect = {
+                    set_location = {
+                        target = prev
+                        distance = 0
+                        angle = random
+                    }
+                }
+            }
+        }
+    }
+}
+
+#endregion
+
+
+#region helper
+
+# 召唤亚弗戈蒙
+# scope: system
+AIO_create_Aformom_fleet = {
+    create_fleet = {
+        effect = {
+            set_name = AIO_Aforgomom_Wrath
+            set_owner = event_target:AIO_Aforgomom_country
+            create_ship = {
+                name = AIO_Aforgomom_Wrath
+                design = NAME_AIO_Aforgomom_Wrath
+                graphical_culture = event_target:AIO_Aforgomom_country
+            }
+            set_location = {
+                target = prev.star
+                distance = 0
+                angle = random
+            }
+            if = {
+                limit = {
+                    owner = {
+                        check_variable = { which = AIO_Aforgomom_Wrath value > 0 }
+                        check_variable = { which = AIO_Aforgomom_Wrath value < 10 }
+                    }
+                }
+                add_modifier = { modifier = AIO_Aforgomom_Wrath_modifier mult = value:AIO_Aforgomom_Wrath_factor }
+            }
+            set_fleet_stance = aggressive
+            set_aggro_range = 10000
+            set_fleet_flag = AIO_Aforgomom_fleet
+            fleet_event = { id = AIO_Aforgomom_events.201 days = 100 }
+        }
+    }
+}
+
+# 抹除星系
+# scope: system
+AIO_DAIT_erase_system_effect = {
+    every_system_planet = { AIO_safe_remove_planet = yes }
+    AIO_safe_remove_system_megastructures = yes
+    every_fleet_in_system = {
+        limit = { AIO_safe_remove_fleet_exclude_API = no }
+        destroy_fleet = this
+    }
+    every_ambient_object = { destroy_ambient_object = this }
+    set_star_class = sc_AIO_void
+}
+
+#endregion

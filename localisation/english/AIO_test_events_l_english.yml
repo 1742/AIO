@@ -2,5 +2,17 @@
  AIO_test_events.202.title: "Test Event"
  AIO_test_events.202.desc: "Children, I'm fine!"
 
+ AIO_test_scripted_action_megastructure: "AIO Coordinate Lock Test Rig"
+ AIO_test_scripted_action_megastructure_DESC: "A test installation for verifying megastructure scripted-action buttons and galaxy-map system targeting."
+ AIO_test_scripted_action_megastructure_MEGASTRUCTURE_DETAILS: "§RTest content§!: Once built, this megastructure can lock a system from its panel."
 
+ AIO_test_planet_scripted_action_megastructure: "AIO Planet Lock Test Rig"
+ AIO_test_planet_scripted_action_megastructure_DESC: "A test installation for verifying direct planet targeting by a megastructure."
+ AIO_test_planet_scripted_action_megastructure_MEGASTRUCTURE_DETAILS: "§RTest content§!: Once built, this megastructure can lock a planet from its panel."
+ AIO_test_lock_planet_action: "Lock Test Planet"
+ AIO_test_lock_planet_activity: "Locking $NAME$"
+ AIO_test_lock_planet_tooltip: "Select a planet and verify the target scope"
+ AIO_test_events.204.title: "Planet Coordinates Locked"
+ AIO_test_events.204.desc: "Target planet: §Y[event_target:AIO_test_target_planet.GetName]§!\nSystem: §Y[event_target:AIO_test_target_planet_system.GetName]§!\nSource megastructure: §Y[event_target:AIO_test_source_megastructure.GetName]§!"
+ AIO_test_events.204.a: "Confirm planet scope"
 

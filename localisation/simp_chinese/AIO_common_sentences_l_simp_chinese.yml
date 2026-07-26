@@ -1,5 +1,10 @@
 ﻿l_simp_chinese:
+ AIO_Tawi: "塔维尔"
+ AIO_Tawi_full: "塔维尔·亚特·乌姆尔"
+ AIO_Aforgomom: "亚弗戈蒙"
+
  # 常用语
+ AIO_hello: "你好"
  AIO_confirm: "确认"
  AIO_cancel: "取消"
  AIO_return: "返回"

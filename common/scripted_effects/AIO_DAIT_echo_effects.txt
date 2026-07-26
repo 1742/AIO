@@ -1,0 +1,209 @@
+# 法则扩散局势产生的自动 DAIT 回响。
+# scope: country。不会扣费、计数、改变倾向或产生外交评价。
+
+
+AIO_DAIT_echo_roll_effect = {
+    AIO_DAIT_echo_clear_affected_countries_effect = yes
+
+    random_list = {
+        100 = {
+            modifier = { factor = 0 check_variable = { which = AIO_DAIT_enrich_count value < 1 } }
+            modifier = { factor = 0 NOT = { any_system = { AIO_DAIT_echo_enrich_target = yes } } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_enrich_count value >= 2 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_enrich_count value >= 4 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_enrich_count value >= 8 } }
+            random_system = {
+                limit = { AIO_DAIT_echo_enrich_target = yes }
+                save_event_target_as = AIO_DAIT_echo_system
+                AIO_DAIT_echo_mark_system_country_effect = yes
+                AIO_DAIT_enrich_effect = { TIMES = 3 }
+                AIO_DAIT_echo_finish_effect = { EVENT = 240 }
+            }
+        }
+        100 = {
+            modifier = { factor = 0 check_variable = { which = AIO_DAIT_storm_count value < 1 } }
+            modifier = { factor = 0 NOT = { any_system = { AIO_DAIT_echo_storm_target = yes } } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_storm_count value >= 2 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_storm_count value >= 4 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_storm_count value >= 8 } }
+            random_system = {
+                limit = { AIO_DAIT_echo_storm_target = yes }
+                save_event_target_as = AIO_DAIT_echo_system
+                AIO_DAIT_echo_mark_system_country_effect = yes
+                AIO_DAIT_storm_effect = yes
+                AIO_DAIT_echo_finish_effect = { EVENT = 244 }
+            }
+        }
+        40 = {
+            modifier = { factor = 0 check_variable = { which = AIO_DAIT_spawn_count value < 1 } }
+            modifier = { factor = 0 NOT = { any_system = { AIO_DAIT_echo_spawn_target = yes } } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_spawn_count value >= 2 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_spawn_count value >= 4 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_spawn_count value >= 8 } }
+            random_system = {
+                limit = { AIO_DAIT_echo_spawn_target = yes }
+                save_event_target_as = AIO_DAIT_echo_system
+                AIO_DAIT_echo_mark_system_country_effect = yes
+                AIO_DAIT_spawn_effect = yes
+                AIO_DAIT_echo_finish_effect = { EVENT = 241 }
+            }
+        }
+        40 = {
+            modifier = { factor = 0 check_variable = { which = AIO_DAIT_harvest_count value < 1 } }
+            modifier = { factor = 0 NOT = { any_system = { AIO_DAIT_echo_harvest_target = yes } } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_harvest_count value >= 2 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_harvest_count value >= 4 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_harvest_count value >= 8 } }
+            random_system = {
+                limit = { AIO_DAIT_echo_harvest_target = yes }
+                save_event_target_as = AIO_DAIT_echo_system
+                AIO_DAIT_echo_mark_system_country_effect = yes
+                AIO_DAIT_harvest_effect = yes
+                AIO_DAIT_echo_finish_effect = { EVENT = 245 }
+            }
+        }
+        15 = {
+            modifier = { factor = 0 check_variable = { which = AIO_DAIT_seed_count value < 1 } }
+            modifier = { factor = 0 NOT = { any_system = { AIO_DAIT_echo_seed_target = yes } } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_seed_count value >= 2 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_seed_count value >= 4 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_seed_count value >= 8 } }
+            random_system = {
+                limit = { AIO_DAIT_echo_seed_target = yes }
+                save_event_target_as = AIO_DAIT_echo_system
+                AIO_DAIT_echo_mark_system_country_effect = yes
+                AIO_DAIT_seed_effect = yes
+                AIO_DAIT_echo_finish_effect = { EVENT = 242 }
+            }
+        }
+        15 = {
+            modifier = { factor = 0 check_variable = { which = AIO_DAIT_strike_count value < 1 } }
+            modifier = { factor = 0 NOT = { any_system = { AIO_DAIT_echo_strike_target = yes } } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_strike_count value >= 2 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_strike_count value >= 4 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_strike_count value >= 8 } }
+            random_system = {
+                limit = { AIO_DAIT_echo_strike_target = yes }
+                save_event_target_as = AIO_DAIT_echo_system
+                AIO_DAIT_echo_mark_system_country_effect = yes
+                AIO_DAIT_strike_effect = yes
+                AIO_DAIT_echo_finish_effect = { EVENT = 246 }
+            }
+        }
+        5 = {
+            modifier = { factor = 0 check_variable = { which = AIO_DAIT_ethic_count value < 1 } }
+            modifier = { factor = 0 NOT = { any_system = { AIO_DAIT_echo_ethic_target = yes } } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_ethic_count value >= 2 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_ethic_count value >= 4 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_ethic_count value >= 8 } }
+            random_system = {
+                limit = { AIO_DAIT_echo_ethic_target = yes }
+                save_event_target_as = AIO_DAIT_echo_system
+                owner? = { AIO_DAIT_echo_mark_country_effect = yes }
+                AIO_DAIT_ethic_effect = yes
+                AIO_DAIT_echo_finish_effect = { EVENT = 243 }
+            }
+        }
+        5 = {
+            modifier = { factor = 0 check_variable = { which = AIO_DAIT_erase_count value < 1 } }
+            modifier = { factor = 0 NOT = { any_system = { AIO_DAIT_echo_erase_target = yes } } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_erase_count value >= 2 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_erase_count value >= 4 } }
+            modifier = { factor = 2 check_variable = { which = AIO_DAIT_erase_count value >= 8 } }
+            random_system = {
+                limit = { AIO_DAIT_echo_erase_target = yes }
+                save_event_target_as = AIO_DAIT_echo_system
+                AIO_DAIT_echo_mark_erase_owners_effect = yes
+                AIO_DAIT_erase_effect = yes
+                AIO_DAIT_echo_finish_effect = { EVENT = 247 }
+            }
+        }
+    }
+
+    AIO_DAIT_echo_clear_affected_countries_effect = yes
+}
+
+# scope: system; root: situation owner country
+AIO_DAIT_echo_finish_effect = {
+    set_timed_star_flag = { flag = AIO_DAIT_echo_cooldown days = 1800 }
+    root = { AIO_DAIT_echo_notify_effect = { EVENT = $EVENT$ } }
+}
+
+
+#region notify
+
+# scope: country
+AIO_DAIT_echo_mark_country_effect = {
+    if = {
+        limit = {
+            is_country_type = default
+            NOT = { has_country_flag = AIO_DAIT_echo_affected_country }
+        }
+        set_country_flag = AIO_DAIT_echo_affected_country
+    }
+}
+
+AIO_DAIT_echo_clear_affected_countries_effect = {
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_echo_affected_country }
+        remove_country_flag = AIO_DAIT_echo_affected_country
+    }
+}
+
+AIO_DAIT_echo_notify_effect = {
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_echo_affected_country }
+        country_event = {
+            id = AIO_DAIT_events.$EVENT$
+            scopes = { from = event_target:AIO_DAIT_echo_system }
+        }
+        remove_country_flag = AIO_DAIT_echo_affected_country
+    }
+}
+
+# scope: affected country; from: affected system
+AIO_DAIT_echo_create_message_effect = {
+    create_message = {
+        type = AIO_DAIT_ECHO
+        localization = $MESSAGE$
+        days = 30
+        target = from
+        variable = {
+            type = name
+            localization = SYSTEM
+            scope = from
+        }
+    }
+}
+
+# scope: system
+AIO_DAIT_echo_mark_system_country_effect = {
+    every_fleet_in_system = {
+        limit = { NOT = { has_fleet_flag = AIO_Aforgomom_fleet } }
+        owner? = { AIO_DAIT_echo_mark_country_effect = yes }
+    }
+}
+
+AIO_DAIT_echo_mark_erase_owners_effect = {
+    every_system = {
+        limit = {
+            NOR = {
+                has_star_flag = AIO_HS_system
+                has_star_flag = AIO_TUG_system
+                has_star_flag = synth_queen_capital
+                AIO_safe_remove_system_exclude_API = yes
+            }
+            AIO_is_crisis_mega_system = no
+            any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
+            OR = {
+                is_same_value = prev
+                distance = { source = prev max_jumps = $MAX_JUMPS|1$ use_bypasses = no }
+            }
+        }
+        owner? = { AIO_DAIT_echo_mark_country_effect = yes }
+        every_system_planet = { owner? = { AIO_DAIT_echo_mark_country_effect = yes } }
+        every_fleet_in_system = { owner? = { AIO_DAIT_echo_mark_country_effect = yes } }
+    }
+}
+
+#endregion

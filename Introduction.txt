@@ -1,57 +1,51 @@
 [h1]All-in-One[/h1]
-[b]Gestalt Crisis Ascension Mod[/b]
+[b]Stellaris Gestalt Crisis Ascension Mod[/b]
 
 [hr]
 
 [h1]Overview[/h1]
-This mod provides a brand new Crisis Ascension path for [b]Gestalt Empires[/b] — [i][b]All-in-One[/b][/i]. It is a path of ascension achieved through Reality Editing and Applied Infinity. By completing the [i][b]Horizon Engine[/b][/i], surviving the Situation, and constructing the exclusive megastructure [i][b]Yog-Sothoth[/b][/i], you will ascend to master the laws of reality.
+This mod adds a brand-new Become the Crisis path for [b]Gestalt Empires[/b]—[i][b]All-in-One[/b][/i]. Advance through the Crisis Levels, perform Directional Apply Infinity Thesis operations, and complete the exclusive megastructure [i][b]Yog-Sothoth[/b][/i] to ascend and master the laws of reality.
 
-Although you will see many shadows of the vanilla ascension paths on this route [strike](What a cobbled-together crisis)[/strike], it now introduces a brand new [b]Directional Applied Infinity Thesis (DAIT)[/b] system. It is no longer just boring stat padding, but directly modifying the underlying code of the universe! [strike](Isn't that just a fancy way of saying buffs?...)[/strike]
+You will still see plenty of shadows from the vanilla Ascension paths along the way [strike](what a kitbashed Crisis)[/strike], but after plenty of tinkering, the mod now features a new [b]Directional Apply Infinity Thesis[/b] system (DAIT) that lets you go wild rewriting the universe.
 
 [h2]Features[/h2]
 [list]
-[*]New Ascension Perk: [b]All-in-One[/b] and a Become the Crisis path.
-[*]New [b]DAIT[/b] (Directional Applied Infinity Thesis) buff system.
-[*]New Origin: All-in-One.
-[*]New Megastructure: Yog-Sothoth.
+[*]A new Ascension Perk, [b]All-in-One[/b], and its Become the Crisis path
+[*]A new series of [b]Directional Apply Infinity Thesis[/b] effects
+[*]A new All-in-One Origin
+[*]New Crisis megastructures
 [/list]
 
-[h2]Core Gameplay: Law Editing (DAIT)[/h2]
-Just like the three vanilla Crisis paths, you need to adopt three Ascension Perks before you can select [b]All-in-One[/b]. By accumulating [b]Transcendental Logic[/b], you are no longer simply researching technologies, but directly converting logic into empire modifiers.
-The current Crisis Buffs are divided into three categories. You can switch between them at any time.
+[h2]Core Gameplay[/h2]
+As with the three vanilla Crisis paths, you must adopt three Ascension Perks before selecting [b]All-in-One[/b]. Spend [b]Advanced Logic[/b] to edit the universe and advance your Crisis progress. As a variant of the Cosmogenesis Crisis, it includes Fallen Empire buildings and ships too, though at their current power and cost efficiency, is anyone really going to use them...? (What patch is this, and we're still spamming repeatables and ships?)
 
 [h2]Walkthrough[/h2]
 
 [h3]Crisis Level 1[/h3]
-Unlocked upon adoption:
+Adopting the perk unlocks:
 [list]
-[*][b]Exponential Learning Theory:[/b] Unlocks the Recursive Node District. Infinite build limit, produces Research and Unity.
-[*][b]Horizon Engine:[/b] Produces Energy and Dark Matter.
+[*][b]Exponential Learning Theory:[/b] Unlocks the Matryoshka Brain District on your capital and uncapped Recursive Node jobs. Virtual empires can assemble purpose-built Recursive Chassis as material nodes. [strike]Isn't this just the Synaptic Lathe?[/strike]
+[*][b]Horizon Engine:[/b] Produces Energy for burning through all those synapses. [strike]The Aetherophasic Engine sends its regards.[/strike]
 [/list]
+It is worth staying at this level for a while, using the [b]Horizon Engine[/b]'s Energy output to feed the Nodes and build up some Research.
 
 [h3]Crisis Level 2[/h3]
-Unlocked after completing the [i][b]Horizon Engine[/b][/i]:
+Complete the [i][b]Horizon Engine[/b][/i] to unlock:
 [list]
-[*]Upgrade to the [i][b]Gate of All Gates[/b][/i]. Note: High Energy upkeep, especially during the [b]Fusion Universe[/b] Situation.
-[*][b]Strategy:[/b] Stockpile Energy before upgrading. Once the Situation starts, select [b]Vacuum Zero-Point Level[/b] in DAIT to prevent an economic crash.
+[*]Its upgrade into the [i][b]Gate of All Gates[/b][/i]. Completing it immediately creates [i][b]the Nameless Mist[/b][/i].
+[*]The first pair of [b]DAIT[/b] operations: [b]Enrich[/b] and [b]Storm[/b].
 [/list]
+This also begins the [i][b]All Things Reduced to Absurdity[/b][/i] Situation. Upgrading the megastructure and applying Infinity more often accelerates its progress. While the Situation is active, there is a monthly chance for a system somewhere in the galaxy to reproduce a [i]DAIT[/i] effect you have previously used. [strike]Growth Pains all over again, apparently.[/strike]
 
-[b]Merge Cosmos Situation[/b]
-Spend massive Energy and Dark Matter to advance.
-Complete Stage 1:
-[list]
-[*]Unlocks [b]Gate of All Gates Node[/b], a instant build Gateway.[i](Note: Due to changes to the original mechanic, it is not possible to build Megastructures in unreachable systems, which are limited to the range of the Engineer ship (or shoot the ship with a slingshot).)[/i]
-[*]Unlocks special system [i][b]The Nameless Mist[/b][/i].
-[/list]
+[h3]Crisis Levels 3-5[/h3]
+Continue upgrading your megastructure: [i][b]Silver Key[/b][/i] -> [i][b]Eternal Throne[/b][/i] -> [i][b]Yog-Sothoth[/b][/i].
+Each megastructure upgrade triggers one Random Applied Infinity Thesis. Crisis Levels 3, 4, and 5 require [i][b]All Things Reduced to Absurdity[/b][/i] to reach the appropriate stage, and respectively unlock [b]Spawn/Harvest[/b], [b]Seed/Strike[/b], and [b]Ethic/Erase[/b].
 
-[h3]Crisis Level 3-5[/h3]
-Upgrade to [i][b]Silver Key[/b][/i] -> [i][b]Eternal Throne[/b][/i] -> [i][b]Yog-Sothoth[/b][/i].
-Completing Stage 7 grants victory. You can continue playing to edit reality (delete stars, etc.) using Yog-Sothoth.
+Complete the [i][b]All Things Reduced to Absurdity[/b][/i] Situation to finish the Ascension and win the game. If you continue playing, Yog-Sothoth can edit reality at will.
 
-[h2]Compatibility & Warning[/h2]
-[list]
-[*]Modified Automated Buildings logic.
-[/list]
-[b]CRITICAL WARNING:[/b] Do NOT use modded Map Types! This will prevent [i][b]The Nameless Mist[/b][/i] system from spawning, blocking the Situation progress!
+[h2]Compatibility[/h2]
+
+This mod removes celestial bodies and ships. It may accidentally remove special planets, systems, or ships belonging to other mods and cause their event chains to become stuck.
+[b]CRITICAL WARNING:[/b] Do not use modded map types! They may prevent [i][b]the Nameless Mist[/b][/i] from spawning and block Crisis progression!
 
 Finally, enjoy the game!

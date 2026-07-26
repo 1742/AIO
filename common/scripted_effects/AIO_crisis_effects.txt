@@ -1,0 +1,563 @@
+# scope: system
+AIO_create_TUG_system_effect = {
+    if = {
+        limit = { any_system_megastructure = { is_megastructure_type = AIO_mega_01_fact } }
+
+        # 清除视界引擎特效
+        if = {
+            limit = { exists = event_target:AIO_horizon_engine_effect }
+            event_target:AIO_horizon_engine_effect = { destroy_ambient_object = this }
+            clear_global_event_target = AIO_horizon_engine_effect
+        }
+
+        # 加特效
+        random_system_megastructure = {
+            limit = { is_megastructure_type = AIO_mega_01_fact }
+            planet = {
+                create_ambient_object = {
+                    type = "star_explosion"
+                    play_animation_once = yes
+                    location = this
+
+                    effect = {
+                        set_location = {
+                            target = prev
+                            distance = 0
+                            angle = random
+                        }
+                    }
+                }
+                create_ambient_object = {
+                    type = "crisis_sphere_1"
+                    play_animation_once = no
+                    location = this
+
+                    effect = {
+                        set_location = {
+                            target = prev
+                            distance = 0
+                            angle = random
+                        }
+                        save_global_event_target_as = AIO_TUG_system_effect
+                    }
+                }
+            }
+        }
+
+        # 清除星系内天体
+        every_system_planet = { AIO_safe_remove_planet = yes }
+        AIO_safe_remove_system_megastructures = yes
+        every_fleet_in_system = {
+            limit = {
+                AIO_safe_remove_fleet_exclude_API = no
+                NOT = { is_ship_class = shipclass_starbase }
+            }
+            destroy_fleet = this
+        }
+
+        # 改变星系类型
+        set_star_class = sc_black_hole
+        # 改名
+        set_name = AIO_The_Ultimate_Gate
+        # 标志位
+        set_star_flag = AIO_TUG_system
+        save_global_event_target_as = AIO_TUG_system
+    }
+}
+
+# scope: country
+AIO_create_HS_system_effect = {
+    if = {
+        limit = { NOT = { exists = event_target:AIO_HS_system } }
+        no_scope = {
+            switch = {
+                trigger = galaxy_size
+                tiny = {
+                    spawn_system = {
+                        # 设置银心坐标，是极坐标形式
+                        # 距离银心距离
+                        min_distance = 300
+                        max_distance = 350
+                        # 角度，逆时针
+                        min_orientation_angle = 100
+                        max_orientation_angle = 170
+
+                        initializer = AIO_hyperdimensional_space_initializer
+
+                        hyperlane = no
+                    }
+                }
+                small = {
+                    spawn_system = {
+                        # 设置银心坐标，是极坐标形式
+                        # 距离银心距离
+                        min_distance = 450
+                        max_distance = 500
+                        # 角度，逆时针
+                        min_orientation_angle = 100
+                        max_orientation_angle = 170
+
+                        initializer = AIO_hyperdimensional_space_initializer
+
+                        hyperlane = no
+                    }
+                }
+                medium = {
+                    spawn_system = {
+                        # 设置银心坐标，是极坐标形式
+                        # 距离银心距离
+                        min_distance = 600
+                        max_distance = 650
+                        # 角度，逆时针
+                        min_orientation_angle = 100
+                        max_orientation_angle = 170
+
+                        initializer = AIO_hyperdimensional_space_initializer
+
+                        hyperlane = no
+                    }
+                }
+                large = {
+                    spawn_system = {
+                        # 设置银心坐标，是极坐标形式
+                        # 距离银心距离
+                        min_distance = 550
+                        max_distance = 600
+                        # 角度，逆时针
+                        min_orientation_angle = 100
+                        max_orientation_angle = 170
+
+                        initializer = AIO_hyperdimensional_space_initializer
+
+                        hyperlane = no
+                    }
+                }
+                huge = {
+                    spawn_system = {
+                        # 设置银心坐标，是极坐标形式
+                        # 距离银心距离
+                        min_distance = 550
+                        max_distance = 600
+                        # 角度，逆时针
+                        min_orientation_angle = 100
+                        max_orientation_angle = 170
+
+                        initializer = AIO_hyperdimensional_space_initializer
+
+                        hyperlane = no
+                    }
+                }
+            }
+        }
+    }
+    else = {
+        event_target:AIO_HS_system = {
+            if = {
+                limit = { NOT = { exists = starbase } }
+                if = {
+                    limit = { root = { is_nomadic = no } }
+                    create_starbase = {
+                        size = starbase_outpost
+                        owner = root
+                    }
+                }
+                else = {
+                    create_waystation_effect = {
+                        OWNER = root
+                        ANGLE = 0
+                    }
+                }
+            }
+
+            if = {
+                limit = { NOT = { any_system_megastructure = { is_megastructure_type = AIO_mega_01 } } }
+                spawn_megastructure = {
+                    type = AIO_mega_01
+                    planet = star
+                    orbit_angle = 0
+                    orbit_distance = 0
+                    owner = root
+                }
+            }
+            set_name = AIO_HYPER_DIMENSIONAL_SPACE
+        }
+    }
+}
+
+# scope: any
+AIO_create_Aforgomom_effect = {
+    event_target:AIO_DAIT_maker = {
+        ruler = { save_event_target_as = AIO_Aforgomom_source_ruler }
+        owner_main_species = { save_event_target_as = AIO_Aforgomom_source_species }
+    }
+    create_country = {
+        name = "AIO_Aforgomom"
+        type = AIO_Aforgomom
+        flag = event_target:AIO_DAIT_maker
+
+        effect = {
+            ruler = {
+                set_name = AIO_Aforgomom
+                if = {
+                    limit = { event_target:AIO_Aforgomom_source_ruler = { gender = male } }
+                    set_gender = female
+                }
+                else_if = {
+                    limit = { event_target:AIO_Aforgomom_source_ruler = { gender = female } }
+                    set_gender = male
+                }
+                else = { set_gender = indeterminable }
+                set_age = -1
+                change_species = event_target:AIO_Aforgomom_source_species
+                change_leader_portrait = event_target:AIO_Aforgomom_source_ruler
+                set_skill = 10
+                remove_all_traits = yes
+                if = {
+                    limit = {
+                        event_target:AIO_DAIT_maker = {
+                            has_authority = auth_machine_intelligence
+                        }
+                    }
+                    add_trait = { trait = leader_trait_ruler_machine_intelligence }
+                }
+                else = { add_trait = { trait = leader_trait_ruler_hive_mind } }
+                change_background_ethic = ethic_gestalt_consciousness
+                if = {
+                    limit = {
+                        event_target:AIO_Aforgomom_source_ruler = {
+                            leader_class = official
+                        }
+                    }
+                    change_leader_class = official
+                }
+                else_if = {
+                    limit = {
+                        event_target:AIO_Aforgomom_source_ruler = {
+                            leader_class = scientist
+                        }
+                    }
+                    change_leader_class = scientist
+                }
+                else = { change_leader_class = commander }
+            }
+
+            room_name_override = crisis_room
+
+            random_country = {
+                limit = {
+                    OR = {
+                        has_country_flag = AIO_crisis_country
+                        has_country_flag = AIO_empire_country
+                    }
+                }
+                if = {
+                    limit = { NOT = { has_communications = prev } }
+                    establish_communications_no_message = prev
+                }
+                add_intel = { who = prev amount = 100 }
+                prev = { add_intel = { who = prev amount = 100 } }
+            }
+
+            set_variable = { which = AIO_Aforgomom_Wrath value = 0 }
+            set_country_flag = AIO_Aforgomom_country
+            save_global_event_target_as = AIO_Aforgomom_country
+
+            # 允许进入牢塞星系
+            set_country_flag = protected_from_queen_storm
+        }
+    }
+}
+
+# 用当前隐藏倾向替换天灾事件链中的阶段 POI。
+# scope: country
+AIO_crisis_update_stage_poi_effect = {
+    remove_point_of_interest = AIO_crisis_stage_2_poi
+    remove_point_of_interest = AIO_crisis_stage_3_poi
+    remove_point_of_interest = AIO_crisis_stage_4_poi
+    remove_point_of_interest = AIO_crisis_stage_5_poi
+
+    if = {
+        limit = { has_country_flag = AIO_DAIT_tendency_construct }
+        create_point_of_interest = {
+            id = AIO_crisis_stage_$STAGE$_poi
+            name = AIO_crisis_stage_$STAGE$_poi_name
+            desc = AIO_crisis_stage_$STAGE$_construct_desc
+            event_chain = AIO_crisis_events_chain
+            location = event_target:AIO_HS_system
+        }
+    }
+    else_if = {
+        limit = { has_country_flag = AIO_DAIT_tendency_negate }
+        create_point_of_interest = {
+            id = AIO_crisis_stage_$STAGE$_poi
+            name = AIO_crisis_stage_$STAGE$_poi_name
+            desc = AIO_crisis_stage_$STAGE$_negate_desc
+            event_chain = AIO_crisis_events_chain
+            location = event_target:AIO_HS_system
+        }
+    }
+    else = {
+        create_point_of_interest = {
+            id = AIO_crisis_stage_$STAGE$_poi
+            name = AIO_crisis_stage_$STAGE$_poi_name
+            desc = AIO_crisis_stage_$STAGE$_equilibrium_desc
+            event_chain = AIO_crisis_events_chain
+            location = event_target:AIO_HS_system
+        }
+    }
+}
+
+# 完成局势, scope: country
+AIO_crisis_finish_ascension_effect = {
+    clear_variable = AIO_DAIT_count
+    clear_variable = AIO_DAIT_enrich_count
+    clear_variable = AIO_DAIT_spawn_count
+    clear_variable = AIO_DAIT_seed_count
+    clear_variable = AIO_DAIT_ethic_count
+    clear_variable = AIO_DAIT_storm_count
+    clear_variable = AIO_DAIT_harvest_count
+    clear_variable = AIO_DAIT_strike_count
+    clear_variable = AIO_DAIT_erase_count
+
+    clear_variable = AIO_DAIT_construct_count
+    clear_variable = AIO_DAIT_negate_count
+    remove_country_flag = AIO_DAIT_tendency_construct
+    remove_country_flag = AIO_DAIT_tendency_negate
+
+    remove_point_of_interest = AIO_crisis_stage_2_poi
+    remove_point_of_interest = AIO_crisis_stage_3_poi
+    remove_point_of_interest = AIO_crisis_stage_4_poi
+    remove_point_of_interest = AIO_crisis_stage_5_poi
+    end_event_chain = AIO_crisis_events_chain
+
+    every_war = { end_war_effect = yes }
+    AIO_ascension_effect = yes
+    AIO_ascension_galaxy_effect = yes
+}
+
+# scope: country
+AIO_ascension_effect = {
+    if = {
+        limit = {
+            OR = {
+                has_authority = auth_machine_intelligence
+                has_authority = auth_hive_mind
+            }
+            exists = event_target:AIO_HS_system
+            exists = event_target:AIO_TUG_system
+        }
+
+        # 转变国家类型
+        set_country_type = AIO_empire
+        if = {
+            limit = { has_authority = auth_machine_intelligence }
+            change_government = {
+                authority = auth_machine_intelligence
+                civics = { civic = civic_AIO_dream }
+            }
+        }
+        else = {
+            change_government = {
+                authority = auth_hive_mind
+                civics = { civic = civic_AIO_dream }
+            }
+        }
+        set_name = AIO_empire
+        # 杀死领袖
+        every_owned_leader = {
+            limit = {
+                AIO_safe_remove_leader_exclude_API = no
+
+                is_ruler = no
+                is_councilor = no
+                NOT = { has_leader_flag = gray_leader }
+            }
+            kill_leader = { show_notification = no fire = yes }
+        }
+        # 摧毁殖民地
+        every_owned_colony = { destroy_colony = yes }
+        # 转移首都
+        event_target:AIO_HS_system = {
+            random_system_planet = {
+                limit = { is_star = yes }
+                set_owner = root
+                set_capital = yes
+                destroy_colony = yes
+            }
+        }
+        # 移除所有原版巨构及恒星基地
+        every_system_within_border = { AIO_safe_remove_system_megastructures = yes }
+        # 移除所有舰队及恒星基地
+        every_owned_fleet = {
+            limit = { AIO_safe_remove_fleet_exclude_API = no }
+            destroy_fleet = this
+        }
+        # 与所有帝国通讯并获得所有情报
+        every_country = {
+            limit = { NOT = { is_same_value = root } }
+            if = {
+                limit = { NOT = { has_communications = root } }
+                establish_communications_no_message = root
+            }
+            # 移除扰乱现实好感修正
+            if = {
+                limit = { has_opinion_modifier = { who = root modifier = opinion_cosmogenesis_thesis } }
+                remove_opinion_modifier = { who = root modifier = opinion_cosmogenesis_thesis }
+            }
+            # 移除己方帝国的宣称好感修正
+            if = {
+                limit = { has_opinion_modifier = { who = root modifier = opinion_claims_on_us } }
+                remove_opinion_modifier = { who = root modifier = opinion_claims_on_us }
+            }
+            root = { add_intel = { who = prev amount = 100 } }
+        }
+        # 标志位
+        remove_country_flag = AIO_crisis_country
+        set_country_flag = AIO_empire_country
+        clear_global_event_target = AIO_crisis_country
+        save_global_event_target_as = AIO_empire_country
+        # 允许进入牢塞星系
+        set_country_flag = protected_from_queen_storm
+    }
+}
+
+# scope: any
+AIO_ascension_galaxy_effect = {
+    # 河系影响
+    no_scope = {
+        every_system = {
+            limit = {
+                NOR = {
+                    is_star_class = sc_AIO_void
+                    has_star_flag = AIO_HS_system
+                    has_star_flag = AIO_TUG_system
+                    AIO_is_crisis_mega_system = yes
+                    has_star_flag = synth_queen_capital
+                }
+            }
+            while = {
+                count = 2
+                random_list = {
+                    2 = {}
+                    3 = {
+                        # 随机改变天体类型
+                        random_system_planet = {
+                            limit = {
+                                AIO_safe_remove_planet_exclude_API = no
+                                is_artificial = no
+                            }
+                            AIO_safe_change_random_pc = yes
+                        }
+                    }
+                    2 = {
+                        # 随机抹除天体
+                        random_system_planet = {
+                            limit = {
+                                AIO_safe_remove_planet_exclude_API = no
+                                NOT = { is_planet_class = pc_AIO_empty_space }
+                            }
+                            AIO_safe_remove_planet = yes
+                        }
+                    }
+                    1 = {
+                        modifier = {
+                            factor = 0
+                            AIO_safe_remove_system_exclude_API = yes
+                        }
+                        # 抹除星系
+                        AIO_DAIT_erase_system_effect = yes
+                    }
+                }
+            }
+        }
+
+        every_country = {
+            limit = {
+                OR = {
+                    is_country_type = default
+                    is_country_type = fallen_empire
+                    is_country_type = awakened_fallen_empire
+                }
+            }
+            while = {
+                count = 2
+                random_list = {
+                    4 = {}
+                    3 = {
+                        # 改变政权
+                        modifier = {
+                            factor = 0
+                            NOT = { is_country_type = default }
+                        }
+                        change_government = {
+                            authority = random
+                            civics = random
+                            remove_invalid_civics = yes
+                        }
+                    }
+                    2 = {
+                        # 随机去军事化
+                        every_owned_fleet = {
+                            limit = { AIO_safe_remove_fleet_exclude_API = no }
+                            destroy_fleet = this
+                        }
+                    }
+                    1 = {
+                        # 随机抹除国家
+                        destroy_country = yes
+                    }
+                }
+            }
+        }
+    }
+}
+
+# 添加随机科技, scope: country
+AIO_add_random_tech = {
+    optimize_memory
+
+    random_list = {
+        1 = {
+            add_random_research_option = {
+                area = physics
+                add_progress = 1
+                fail_effects = {
+                    add_monthly_resource_mult = {
+                        resource = physics_research
+                        value = @tier3researchreward
+                        min = @tier3researchmin
+                        max = @tier3researchmax
+                    }
+                }
+            }
+        }
+        1 = {
+            add_random_research_option = {
+                area = society
+                add_progress = 1
+                fail_effects = {
+                    add_monthly_resource_mult = {
+                        resource = society_research
+                        value = @tier3researchreward
+                        min = @tier3researchmin
+                        max = @tier3researchmax
+                    }
+                }
+            }
+        }
+        1 = {
+            add_random_research_option = {
+                area = engineering
+                add_progress = 1
+                fail_effects = {
+                    add_monthly_resource_mult = {
+                        resource = engineering_research
+                        value = @tier3researchreward
+                        min = @tier3researchmin
+                        max = @tier3researchmax
+                    }
+                }
+            }
+        }
+    }
+}

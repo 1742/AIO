@@ -1,0 +1,714 @@
+AIO_create_hexagonal_orbital_array = {
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_change_random_pc = { STAR = 1 }
+    }
+    AIO_change_star_class = yes
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_asteroid
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 80
+        orbit_angle_offset = 0
+        size = 5
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_asteroid
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 80
+        orbit_angle_offset = 60
+        size = 5
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_asteroid
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 80
+        orbit_angle_offset = 120
+        size = 5
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_asteroid
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 80
+        orbit_angle_offset = 180
+        size = 5
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_asteroid
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 80
+        orbit_angle_offset = 240
+        size = 5
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_asteroid
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 80
+        orbit_angle_offset = 300
+        size = 5
+    }
+}
+
+# 完整环世界：四个可居住区段、四个结构区段和四个接缝。
+# scope: system
+AIO_create_ringworld_array = {
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_change_random_pc = { STAR = 1 }
+    }
+    AIO_change_star_class = yes
+
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_ringworld_habitable
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 0
+        size = 25
+    }
+    spawn_planet = {
+        class = pc_ringworld_tech
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 30
+    }
+    spawn_planet = {
+        class = pc_ringworld_seam
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 60
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_ringworld_habitable
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 90
+        size = 25
+    }
+    spawn_planet = {
+        class = pc_ringworld_tech
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 120
+    }
+    spawn_planet = {
+        class = pc_ringworld_seam
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 150
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_ringworld_habitable
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 180
+        size = 25
+    }
+    spawn_planet = {
+        class = pc_ringworld_tech
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 210
+    }
+    spawn_planet = {
+        class = pc_ringworld_seam
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 240
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_ringworld_habitable
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 270
+        size = 25
+    }
+    spawn_planet = {
+        class = pc_ringworld_tech
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 300
+    }
+    spawn_planet = {
+        class = pc_ringworld_seam
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 330
+    }
+}
+
+# 三层相互错开的等边三角形行星阵列。
+# scope: system
+AIO_create_triangular_planet_array = {
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_change_random_pc = { STAR = 1 }
+    }
+    AIO_change_star_class = yes
+
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_gaia
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 0
+        size = 18
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_gaia
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 120
+        size = 18
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_gaia
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 45
+        orbit_angle_offset = 240
+        size = 18
+    }
+
+    spawn_planet = {
+
+        generate_random_name = yes
+        class = pc_machine
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 80
+        orbit_angle_offset = 60
+        size = 20
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_machine
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 80
+        orbit_angle_offset = 180
+        size = 20
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_machine
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 80
+        orbit_angle_offset = 300
+        size = 20
+    }
+
+    spawn_planet = {
+
+        generate_random_name = yes
+        class = pc_hive
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 115
+        orbit_angle_offset = 0
+        size = 22
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_hive
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 115
+        orbit_angle_offset = 120
+        size = 22
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_hive
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 115
+        orbit_angle_offset = 240
+        size = 22
+    }
+}
+
+# 中心和轨道天体全部为黑洞。
+# scope: system
+AIO_create_black_hole_cluster = {
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_safe_change_pc = { NEW_PC = pc_black_hole }
+    }
+    set_star_class = sc_black_hole
+
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_black_hole
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 55
+        orbit_angle_offset = 0
+        size = 12
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_black_hole
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 55
+        orbit_angle_offset = 60
+        size = 12
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_black_hole
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 55
+        orbit_angle_offset = 120
+        size = 12
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_black_hole
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 55
+        orbit_angle_offset = 180
+        size = 12
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_black_hole
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 55
+        orbit_angle_offset = 240
+        size = 12
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_black_hole
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 55
+        orbit_angle_offset = 300
+        size = 12
+    }
+}
+
+# 三重同心轨道，每一层使用不同类型的天体组成规则钟面。
+# scope: system
+AIO_create_concentric_orbital_array = {
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_change_random_pc = { STAR = 1 }
+    }
+    AIO_change_star_class = yes
+
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_molten
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 40
+        orbit_angle_offset = 0
+        size = 12
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_molten
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 40
+        orbit_angle_offset = 90
+        size = 12
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_molten
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 40
+        orbit_angle_offset = 180
+        size = 12
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_molten
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 40
+        orbit_angle_offset = 270
+        size = 12
+    }
+
+    spawn_planet = {
+
+        generate_random_name = yes
+        class = pc_crystal_asteroid
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 75
+        orbit_angle_offset = 45
+        size = 8
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_crystal_asteroid
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 75
+        orbit_angle_offset = 135
+        size = 8
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_crystal_asteroid
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 75
+        orbit_angle_offset = 225
+        size = 8
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_crystal_asteroid
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 75
+        orbit_angle_offset = 315
+        size = 8
+    }
+
+    spawn_planet = {
+
+        generate_random_name = yes
+        class = pc_frozen
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 110
+        orbit_angle_offset = 0
+        size = 16
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_frozen
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 110
+        orbit_angle_offset = 90
+        size = 16
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_frozen
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 110
+        orbit_angle_offset = 180
+        size = 16
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_frozen
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 110
+        orbit_angle_offset = 270
+        size = 16
+    }
+}
+
+
+#region 递归行星树
+
+# 在指定行星下生成三颗卫星，每颗卫星各带两颗小行星。
+# scope: system
+AIO_create_recursive_satellite_branch = {
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_barren
+        location = $PARENT$
+        orbit_location = yes
+        orbit_distance_offset = 18
+        orbit_angle_offset = 0
+        size = 8
+        init_effect = {
+            save_event_target_as = AIO_DAIT_recursive_moon
+        }
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_asteroid
+        location = event_target:AIO_DAIT_recursive_moon
+        orbit_location = yes
+        orbit_distance_offset = 6
+        orbit_angle_offset = 90
+        size = 3
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_asteroid
+        location = event_target:AIO_DAIT_recursive_moon
+        orbit_location = yes
+        orbit_distance_offset = 6
+        orbit_angle_offset = 270
+        size = 3
+    }
+
+    spawn_planet = {
+
+        generate_random_name = yes
+        class = pc_frozen
+        location = $PARENT$
+        orbit_location = yes
+        orbit_distance_offset = 24
+        orbit_angle_offset = 120
+        size = 8
+        init_effect = {
+            save_event_target_as = AIO_DAIT_recursive_moon
+        }
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_ice_asteroid
+        location = event_target:AIO_DAIT_recursive_moon
+        orbit_location = yes
+        orbit_distance_offset = 6
+        orbit_angle_offset = 90
+        size = 3
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_ice_asteroid
+        location = event_target:AIO_DAIT_recursive_moon
+        orbit_location = yes
+        orbit_distance_offset = 6
+        orbit_angle_offset = 270
+        size = 3
+    }
+
+    spawn_planet = {
+
+        generate_random_name = yes
+        class = pc_molten
+        location = $PARENT$
+        orbit_location = yes
+        orbit_distance_offset = 30
+        orbit_angle_offset = 240
+        size = 8
+        init_effect = {
+            save_event_target_as = AIO_DAIT_recursive_moon
+        }
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_asteroid
+        location = event_target:AIO_DAIT_recursive_moon
+        orbit_location = yes
+        orbit_distance_offset = 6
+        orbit_angle_offset = 90
+        size = 3
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_asteroid
+        location = event_target:AIO_DAIT_recursive_moon
+        orbit_location = yes
+        orbit_distance_offset = 6
+        orbit_angle_offset = 270
+        size = 3
+    }
+}
+
+# 三颗主行星各自生长出相同的卫星树。
+# scope: system
+AIO_create_recursive_satellite_tree = {
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_change_random_pc = { STAR = 1 }
+    }
+    AIO_change_star_class = yes
+
+    spawn_planet = {
+
+        generate_random_name = yes
+        class = pc_gas_giant
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 55
+        orbit_angle_offset = 0
+        size = 30
+        init_effect = {
+            save_event_target_as = AIO_DAIT_recursive_parent
+        }
+    }
+    AIO_create_recursive_satellite_branch = { PARENT = event_target:AIO_DAIT_recursive_parent }
+
+    spawn_planet = {
+
+        generate_random_name = yes
+        class = pc_gas_giant
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 90
+        orbit_angle_offset = 120
+        size = 30
+        init_effect = {
+            save_event_target_as = AIO_DAIT_recursive_parent
+        }
+    }
+    AIO_create_recursive_satellite_branch = { PARENT = event_target:AIO_DAIT_recursive_parent }
+
+    spawn_planet = {
+
+        generate_random_name = yes
+        class = pc_gas_giant
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 125
+        orbit_angle_offset = 240
+        size = 30
+        init_effect = {
+            save_event_target_as = AIO_DAIT_recursive_parent
+        }
+    }
+    AIO_create_recursive_satellite_branch = { PARENT = event_target:AIO_DAIT_recursive_parent }
+}
+
+#endregion
+
+#region 黑洞花瓣
+
+# 生成一片由黑洞和五颗熔融球组成的花瓣。
+# scope: system
+AIO_create_black_hole_flower_petal = {
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_black_hole
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 75
+        orbit_angle_offset = $ANGLE$
+        size = 12
+        init_effect = {
+            save_event_target_as = AIO_DAIT_black_hole_petal
+        }
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_molten
+        location = event_target:AIO_DAIT_black_hole_petal
+        orbit_location = yes
+        orbit_distance_offset = 18
+        orbit_angle_offset = 0
+        size = 8
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_molten
+        location = event_target:AIO_DAIT_black_hole_petal
+        orbit_location = yes
+        orbit_distance_offset = 18
+        orbit_angle_offset = 72
+        size = 8
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_molten
+        location = event_target:AIO_DAIT_black_hole_petal
+        orbit_location = yes
+        orbit_distance_offset = 18
+        orbit_angle_offset = 144
+        size = 8
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_molten
+        location = event_target:AIO_DAIT_black_hole_petal
+        orbit_location = yes
+        orbit_distance_offset = 18
+        orbit_angle_offset = 216
+        size = 8
+    }
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_molten
+        location = event_target:AIO_DAIT_black_hole_petal
+        orbit_location = yes
+        orbit_distance_offset = 18
+        orbit_angle_offset = 288
+        size = 8
+    }
+}
+
+# 在花冠外圈生成一颗黑洞。
+# scope: system
+AIO_create_black_hole_flower_outer_body = {
+    spawn_planet = {
+        generate_random_name = yes
+        class = pc_black_hole
+        location = star
+        orbit_location = yes
+        orbit_distance_offset = 125
+        orbit_angle_offset = $ANGLE$
+        size = 10
+    }
+}
+
+# 五片黑洞花瓣和外圈十颗黑洞，中央为脉冲星。
+# scope: system
+AIO_create_black_hole_flower = {
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_safe_change_pc = { NEW_PC = pc_pulsar }
+    }
+    set_star_class = sc_pulsar
+
+    AIO_create_black_hole_flower_petal = { ANGLE = 0 }
+    AIO_create_black_hole_flower_petal = { ANGLE = 72 }
+    AIO_create_black_hole_flower_petal = { ANGLE = 144 }
+    AIO_create_black_hole_flower_petal = { ANGLE = 216 }
+    AIO_create_black_hole_flower_petal = { ANGLE = 288 }
+
+    AIO_create_black_hole_flower_outer_body = { ANGLE = 18 }
+    AIO_create_black_hole_flower_outer_body = { ANGLE = 54 }
+    AIO_create_black_hole_flower_outer_body = { ANGLE = 90 }
+    AIO_create_black_hole_flower_outer_body = { ANGLE = 126 }
+    AIO_create_black_hole_flower_outer_body = { ANGLE = 162 }
+    AIO_create_black_hole_flower_outer_body = { ANGLE = 198 }
+    AIO_create_black_hole_flower_outer_body = { ANGLE = 234 }
+    AIO_create_black_hole_flower_outer_body = { ANGLE = 270 }
+    AIO_create_black_hole_flower_outer_body = { ANGLE = 306 }
+    AIO_create_black_hole_flower_outer_body = { ANGLE = 342 }
+}
+
+#endregion

@@ -1,8 +1,9 @@
 # AIO递归节点
 AIO_recursive_node = {
 	category = AIO_recursive_node
+	first_come_first_served = yes
 	purge = purge_AIO_matryoshka_brain
-	is_capped_by_modifier = yes
+	is_capped_by_modifier = no
 
 	swappable_data = {
 		default = {
@@ -15,14 +16,22 @@ AIO_recursive_node = {
 
 	possible_pre_triggers = {
 		has_owner = yes
-		has_planet = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
 		is_sapient = yes
 	}
+
+	possible_precalc = can_fill_drone_job
+
 	possible = {
-		planet = { has_district = district_AIO_matryoshka_brain }
-		OR = {
-			is_robot_pop_group = yes
-			is_hive_species = yes
+		can_think = yes
+		has_virtual_species_trait = no
+		colony? = {
+			OR = {
+				has_district = district_AIO_lathe
+				has_district = district_AIO_lathe_frame
+			}
 		}
 	}
 
@@ -31,26 +40,34 @@ AIO_recursive_node = {
 		produces = {
 			trigger = {
 				owner = {
-					NOT = {
+					NOR = {
 						any_situation = {
 							is_situation_type = situation_energy_deficit
+						}
+						any_situation = {
+							is_situation_type = situation_nomad_economy
+							situation_progress <= 0
 						}
 					}
 				}
 			}
-			physics_research = 1
-			society_research = 1
-			engineering_research = 1
-			unity = 0.5
-			AIO_advanced_logic = 0.025
+			physics_research = 0.375
+			society_research = 0.375
+			engineering_research = 0.375
+			unity = 0.375
+			AIO_advanced_logic = 0.175
 			mult = value:AIO_recursive_node_produce_factor
 		}
 		upkeep = {
 			trigger = {
 				owner = {
-					NOT = {
+					NOR = {
 						any_situation = {
 							is_situation_type = situation_energy_deficit
+						}
+						any_situation = {
+							is_situation_type = situation_nomad_economy
+							situation_progress <= 0
 						}
 					}
 				}
@@ -62,23 +79,11 @@ AIO_recursive_node = {
 
 	weight = {
 		weight = @complex_drone_job_weight
-		mult = value:job_weights_modifier|JOB|calculator_physicist|RESOURCE|physics_research|
-
 		modifier = {
-			factor = 0.2
-			planet = { free_jobs > 0 }
+			factor = 1000
+			has_trait = trait_AIO_recursive_chassis
 		}
 	}
 
 	inline_script = "jobs/automodding_priority_research"
-
-	promotion = {
-		time = @standard_promotion_time
-		effect = {
-			pop_amount_change_category = {
-				CATEGORY = complex_drone
-				AMOUNT = local_pop_amount
-			}
-		}
-	}
 }

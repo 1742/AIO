@@ -1,0 +1,242 @@
+namespace = AIO_DAIT_events
+
+#region 定向应用入口
+
+# scripted_action
+# THIS = 目标
+# FROM = 发起动作的巨构
+system_event = {
+	id = AIO_DAIT_events.201
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		save_global_event_target_as = AIO_DAIT_target_system
+		from = {
+			set_megastructure_flag = AIO_DAIT_active
+			owner = {
+				set_country_flag = AIO_DAIT_active
+				save_global_event_target_as = AIO_DAIT_maker
+				country_event = { id = AIO_DAIT_events.202 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.202
+
+	diplomatic = yes
+	custom_gui = AIO_DAIT
+
+	is_triggered_only = yes
+
+	option = {
+		name = EXIT
+		default_hide_option = yes
+	}
+
+	after = {
+		remove_country_flag = AIO_DAIT_active
+		clear_global_event_target = AIO_DAIT_maker
+		fromfrom = { remove_megastructure_flag = AIO_DAIT_active }
+		clear_global_event_target = AIO_DAIT_target_system
+	}
+}
+
+#endregion
+
+
+#region 手动定向应用影响通知
+
+country_event = {
+	id = AIO_DAIT_events.230
+	title = AIO_DAIT_events.230.title
+	desc = AIO_DAIT_events.230.desc
+	picture = GFX_evt_drilling_for_gas
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.affected.option
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.231
+	title = AIO_DAIT_events.231.title
+	desc = AIO_DAIT_events.231.desc
+	picture = GFX_evt_nomad_contracts
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.affected.option
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.232
+	title = AIO_DAIT_events.232.title
+	desc = AIO_DAIT_events.232.desc
+	picture = GFX_evt_metropolis_nomask
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.affected.option
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.233
+	title = AIO_DAIT_events.233.title
+	desc = AIO_DAIT_events.233.desc
+	picture = GFX_evt_galactic_senate
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_DAIT_events.233.option
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.234
+	title = AIO_DAIT_events.234.title
+	desc = AIO_DAIT_events.234.desc
+	picture = GFX_evt_cosmic_storms_celestial_storm
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_dawn_it
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.235
+	title = AIO_DAIT_events.235.title
+	desc = AIO_DAIT_events.235.desc
+	picture = GFX_evt_shattered_planet
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_dawn_it
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.236
+	title = AIO_DAIT_events.236.title
+	desc = AIO_DAIT_events.236.desc
+	picture = GFX_evt_ship_under_attack
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_dawn_it
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+country_event = {
+	id = AIO_DAIT_events.237
+	title = AIO_DAIT_events.237.title
+	desc = AIO_DAIT_events.237.desc
+	picture = GFX_evt_astral_rift_microverse
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_dawn_it
+		default_hide_option = yes
+
+		ai_chance = { base = 1 }
+	}
+}
+
+#endregion
+
+
+#region 法则扩散影响通知
+
+country_event = {
+	id = AIO_DAIT_events.240
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_enrich_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.241
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_spawn_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.242
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_seed_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.243
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_ethic_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.244
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_storm_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.245
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_harvest_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.246
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_strike_message } }
+}
+
+country_event = {
+	id = AIO_DAIT_events.247
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_DAIT_echo_create_message_effect = { MESSAGE = AIO_DAIT_echo_erase_message } }
+}
+
+#endregion

@@ -1,0 +1,38 @@
+# 当前由测试巨构挂载；功能完成后改由 AIO 正式巨构挂载。
+AIO_DAIT_lock_target = {
+	user_scope = megastructure
+	scope = galactic_object
+
+	possible = {
+		custom_tooltip = {
+			fail_text = AIO_DAIT_lock_target.fail.crisis_path
+			OR = {
+				from.owner = { is_country_type = AIO_empire }
+				AIO_is_crisis_mega_system = no
+			}
+			NOT = { has_star_flag = AIO_HS_system }
+		}
+		custom_tooltip = {
+			fail_text = AIO_DAIT_lock_target.fail.api
+			AIO_safe_remove_system_exclude_API = no
+		}
+	}
+
+	button_visible = {
+		NOT = { has_megastructure_flag = AIO_DAIT_active }
+	}
+
+	button_clickable = {
+		always = yes
+	}
+
+	icon = GFX_ship_class_conduit
+	icon_selected = GFX_ship_class_conduit
+
+	# 目标被玩家选中后立即进入定向应用无限菜单。
+	on_started = on_AIO_DAIT_lock_target_started
+	context_menu_name = AIO_DAIT_lock_target_action
+	activity_key = AIO_DAIT_lock_target_activity
+	tooltip = AIO_DAIT_lock_target_tooltip
+	cooldown = 1
+}

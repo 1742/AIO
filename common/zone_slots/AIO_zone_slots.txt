@@ -1,7 +1,13 @@
-# AIO区域槽
+slot_AIO_lathe = {
+	included_zone_sets = {
+		AIO_lathe
+	}
 
-slot_AIO_matryoshka_brain = {
-	included_zone_sets = { AIO_matryoshka_brain_zone_set }
+	potential = {
+		always = yes
+	}
 
-	unlock = { always = yes }
+	unlock = {
+		always = yes
+	}
 }

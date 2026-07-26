@@ -1,11 +1,23 @@
 # AIO 法令
 
+edict_AIO_menu = {
+    length = 1
+    icon = "GFX_edict_type_policy"
+
+    resources = {
+        category = edicts
+        cost = { energy = 1 }
+    }
+
+    effect = { country_event = { id = AIO_mod_events.201 } }
+}
+
 # 暗物质驱动协议（什么小暗物质引擎）
 edict_AIO_dm_engine = {
     length = -1
     icon = "GFX_edict_type_policy"
 
-    potential = { has_menace_perk = menp_AIO_fleet_component_1_2 }
+    potential = { has_menace_perk = menp_AIO_fleet_dark_matter }
 
     resources = {
 		category = edicts
@@ -30,18 +42,18 @@ edict_AIO_nanite_construction = {
     icon = "GFX_edict_type_policy"
 
     potential = { has_menace_perk = menp_AIO_fleet_component_2 }
-    allow = { has_country_resource = { type = nanites amount > 10 } }
+    allow = { has_country_resource = { type = nanites amount > 100 } }
 
     resources = {
 		category = edicts
 
         cost = {
-            nanites = 100
+            nanites = 5
             mult = value:edict_size_effect
         }
 
 		upkeep = {
-            nanites = 10
+            nanites = 5
             mult = value:edict_size_effect
         }
 	}
@@ -59,25 +71,25 @@ edict_AIO_living_metal_construction = {
     icon = "GFX_edict_type_policy"
 
     potential = { has_ascension_perk = ap_AIO_allinone }
-    allow = { has_country_resource = { type = sr_living_metal amount > 5 } }
+    allow = { has_country_resource = { type = sr_living_metal amount > 2 } }
 
     resources = {
 		category = edicts
 
         cost = {
-            sr_living_metal = 50
+            sr_living_metal = 2
             mult = value:edict_size_effect
         }
 
 		upkeep = {
-            sr_living_metal = 5
+            sr_living_metal = 2
             mult = value:edict_size_effect
         }
 	}
 
     modifier = {
         planet_metallurgists_alloys_produces_add = 1
-        planet_metallurgists_sr_living_metal_upkeep_add = 0.5
+        planet_metallurgists_sr_living_metal_upkeep_add = 0.01
         megastructure_build_speed_mult = 1
     }
 }
@@ -91,47 +103,24 @@ edict_AIO_nanite_farming = {
         has_menace_perk = menp_AIO_fleet_component_2
         country_uses_bio_ships = yes
     }
-    allow = { has_country_resource = { type = nanites amount > 10 } }
+    allow = { has_country_resource = { type = nanites amount > 2 } }
 
     resources = {
 		category = edicts
 
         cost = {
-            nanites = 100
+            nanites = 2
             mult = value:edict_size_effect
         }
 
 		upkeep = {
-            nanites = 10
+            nanites = 2
             mult = value:edict_size_effect
         }
 	}
 
     modifier = {
         planet_farmers_food_produces_add = 2
-        planet_farmers_nanites_upkeep_add = 1
+        planet_farmers_nanites_upkeep_add = 0.01
     }
-}
-
-# 打开 Reality Editor
-edict_AIO_invoke_DAIT_menu = {
-    icon = "GFX_edict_type_policy"
-
-    length = 1
-
-    resources = { category = edicts }
-
-    potential = {
-        OR = {
-            has_country_flag = AIO_built_AIO_mega_01
-            has_country_flag = AIO_built_AIO_mega_02
-            has_country_flag = AIO_built_AIO_mega_03
-            has_country_flag = AIO_built_AIO_mega_04
-        }
-        NOT = { is_country_type = AIO_empire }
-    }
-
-    allow = { has_country_resource = { type = AIO_advanced_logic amount > 45000 } }
-
-    effect = { country_event = { id = AIO_AIT_events.401 } }
 }

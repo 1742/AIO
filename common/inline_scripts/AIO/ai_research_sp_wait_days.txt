@@ -1,0 +1,48 @@
+ai_wait_days = {
+	base = 100
+
+	modifier = {
+		any_controlled_ship = {
+			is_ship_class = $SHIP_CLASS$
+			is_fleet_idle = yes
+		}
+		mult = 0.05
+	}
+	modifier = {
+		any_controlled_ship = {
+			is_ship_class = $SHIP_CLASS$
+			is_fleet_idle = no
+		}
+		mult = 2
+	}
+
+	modifier = {
+		count_controlled_fleet = {
+			limit = { is_ship_class = $SHIP_CLASS$ }
+			count > $SHIP_NUM$
+		}
+		mult = 0.5
+	}
+	modifier = {
+		count_controlled_fleet = {
+			limit = { is_ship_class = $SHIP_CLASS$ }
+			count < $SHIP_NUM$
+		}
+		mult = 1.5
+	}
+
+	modifier = {
+		resource_revenue_compare = {
+			resource = $RESEARCH$
+			value >= $RESEARCH_VALUE$
+		}
+		mult = 0.5
+	}
+	modifier = {
+		resource_revenue_compare = {
+			resource = $RESEARCH$
+			value < $RESEARCH_VALUE$
+		}
+		mult = 1.5
+	}
+}

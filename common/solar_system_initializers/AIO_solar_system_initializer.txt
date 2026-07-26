@@ -21,10 +21,20 @@ AIO_hyperdimensional_space_initializer = {
 	}
 
     init_effect = {
-        create_starbase = {
-            size = starbase_outpost
-            owner = root
+        if = {
+            limit = { root = { is_nomadic = no } }
+            create_starbase = {
+                size = starbase_outpost
+                owner = root
+            }
         }
+        else = {
+            create_waystation_effect = {
+                OWNER = root
+                ANGLE = 0
+            }
+        }
+
         spawn_megastructure = {
             type = AIO_mega_01
             planet = event_target:AIO_HS_star
@@ -32,6 +42,7 @@ AIO_hyperdimensional_space_initializer = {
             orbit_distance = 0
             owner = root
         }
+
         set_star_flag = AIO_HS_system
         save_global_event_target_as = AIO_HS_system
     }

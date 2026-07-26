@@ -76,11 +76,8 @@ bypass_AIO_ultimate_gate = {
 	# 	}
 	# }
 
-    respect_closed_borders = yes
-	block_access_if_hostile = yes
+    respect_closed_borders = no
+	block_access_if_hostile = no
     can_bypass_be_locked = no
 	extends_sensors = no
 }
-
-
-

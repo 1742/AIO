@@ -1,16 +1,3 @@
-# AIO定位舰区段
-ship_section_template = {
-	key = "AIO_locator_builder_template"
-	ship_size = AIO_locator_builder
-	fits_on_slot = mid
-	entity = "construction_ship_ai_entity"
-	icon = "GFX_ship_part_core_mid"
-
-	small_utility_slots = 4
-	medium_utility_slots = 1
-	aux_utility_slots = 2
-}
-
 # AIO亚弗戈蒙之怒区段
 ship_section_template = {
 	key = "AIO_Aforgomom_Wrath_template"

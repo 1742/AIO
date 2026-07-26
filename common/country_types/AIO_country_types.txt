@@ -64,7 +64,6 @@ AIO_empire = {
 
 	modules = {
 		standard_event_module = {  }
-		basic_technology_module = {  }
 		exclusive_diplomacy_module = { contact_rule = on_action_only }
 	}
 }
@@ -97,7 +96,6 @@ AIO_Aforgomom = {
 	}
 
 	modules = {
-		basic_technology_module = {}
 		standard_event_module = {}
 	}
 }

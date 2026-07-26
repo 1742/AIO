@@ -18,12 +18,9 @@ AIO_horizon_engine = {
 			has_country_flag = AIO_built_AIO_mega_04
 		}
 	}
+
 	possible = {
-		hidden_trigger = { exists = starbase }
-		custom_tooltip = {
-			fail_text = "requires_inside_border"
-			is_inside_border = from
-		}
+		inline_script = megastructures/system_ownership_or_waystation_check
 		custom_tooltip = {
 			fail_text = "requires_surveyed_system"
 			NOT = {
@@ -47,6 +44,7 @@ AIO_horizon_engine = {
 			}
 		}
 	}
+
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -68,11 +66,10 @@ AIO_horizon_engine = {
 	}
 
 	build_time = 1800
-	victory_score = 0
 
 	resources = {
 		category = megastructures
-		cost = { sr_dark_matter = 2000 }
+		cost = { sr_dark_matter = 1000 }
 		cost = {
 			trigger = { country_uses_bio_ships = no }
 			alloys = 10000
@@ -89,15 +86,14 @@ AIO_horizon_engine = {
 		}
 
         produces = {
-			energy = 3000
-			sr_dark_matter = 100
+			energy = 1500
 		}
 
 		upkeep = {
-			alloys = 50
-			physics_research = 100
-			society_research = 100
-			engineering_research = 100
+			alloys = 25
+			physics_research = 25
+			society_research = 25
+			engineering_research = 25
 		}
 	}
 
@@ -133,7 +129,7 @@ AIO_horizon_engine = {
 			# 允许点星河奇迹
 			set_country_flag = has_built_or_repaired_megastructure
 			# 通知
-			country_event = { id = AIO_crisis_events.301 }
+			country_event = { id = AIO_crisis_events.402 }
 		}
 	}
 }

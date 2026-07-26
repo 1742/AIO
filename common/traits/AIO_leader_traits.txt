@@ -25,9 +25,12 @@ trait_ruler_AIO_priori_cosmos = {
 	}
 
 	leader_potential_add = {
-		has_trait = leader_trait_ruler_machine_intelligence
-		from = { has_modifier = AIO_DAIT_simulate_cosmos_modifier }
+		OR = {
+			has_trait = leader_trait_ruler_machine_intelligence
+			has_trait = leader_trait_ruler_hive_mind
+		}
 	}
+
 	leader_class = { official scientist commander }
 
 	initial = no
@@ -53,17 +56,13 @@ trait_leader_AIO_lord_of_constant_sight = {
 
 	modifier = {
 		# 调查速度
-		science_ship_survey_speed = 10
+		science_ship_survey_speed = 1
 		# 异常现象研究速度
-		ship_anomaly_research_speed_mult = 10
-		ship_archaeological_site_excavation_speed_mult = 10
-
-		ship_disengage_chance_mult = 10
-		ship_disengage_opportunities_add = 10
+		ship_anomaly_research_speed_mult = 1
+		ship_archaeological_site_excavation_speed_mult = 1
 	}
 
 	initial = no
 	starting_ruler_trait = no
 	randomized = no
 }
-

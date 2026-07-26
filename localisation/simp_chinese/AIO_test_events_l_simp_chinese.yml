@@ -1,6 +1,18 @@
 ﻿l_simp_chinese:
- AIO_test_events.202.title: "测试事件"
- AIO_test_events.202.desc: "孩子们，我一切都好！"
+ AIO_test_events.201.title: "测试201"
+ AIO_test_events.201.desc: "给予科技"
 
+ AIO_test_scripted_action_megastructure: "AIO坐标锁定测试台"
+ AIO_test_scripted_action_megastructure_DESC: "用于验证巨型结构脚本动作按钮与银河地图星系选择的测试设施。"
+ AIO_test_scripted_action_megastructure_MEGASTRUCTURE_DETAILS: "§R测试内容§!：建造后可从巨型结构面板锁定一个星系。"
 
+ AIO_test_planet_scripted_action_megastructure: "AIO行星锁定测试台"
+ AIO_test_planet_scripted_action_megastructure_DESC: "用于验证巨型结构能否直接选择行星的测试设施。"
+ AIO_test_planet_scripted_action_megastructure_MEGASTRUCTURE_DETAILS: "§R测试内容§!：建造后可从巨型结构面板锁定一颗行星。"
+ AIO_test_lock_planet_action: "锁定测试行星"
+ AIO_test_lock_planet_activity: "正在锁定$NAME$"
+ AIO_test_lock_planet_tooltip: "选择一颗行星并验证目标作用域"
+ AIO_test_events.204.title: "行星坐标锁定成功"
+ AIO_test_events.204.desc: "目标行星：§Y[event_target:AIO_test_target_planet.GetName]§!\n所属星系：§Y[event_target:AIO_test_target_planet_system.GetName]§!\n来源巨构：§Y[event_target:AIO_test_source_megastructure.GetName]§!"
+ AIO_test_events.204.a: "确认行星作用域"
 

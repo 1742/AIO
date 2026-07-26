@@ -1,10 +1,13 @@
 # AIO巨构
+@mega_01_energy_cost = 5000
+@mega_02_energy_cost = 10000
+@mega_03_energy_cost = 20000
+@mega_04_energy_cost = 50000
 
 # 现实中的万门之门
 AIO_mega_01_fact = {
     entity = "AIO_mega_1_entity"
 	construction_entity = "AIO_mega_1_entity"
-	place_entity_on_planet_plane = yes
 	scales_with_planet = no
 
 	portrait = "GFX_megastructure_dyson_sphere_background"
@@ -18,6 +21,22 @@ AIO_mega_01_fact = {
 			has_country_flag = AIO_built_AIO_mega_04
 		}
 	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = AIO_mega_01.fail.nomadic
+			from = {
+				OR = {
+					is_nomadic = no
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						situation_progress >= @mega_01_energy_cost
+					}
+				}
+			}
+		}
+	}
+
 	dismantle_potential = { always = no }
 
 	upgrade_from = { AIO_horizon_engine }
@@ -27,11 +46,10 @@ AIO_mega_01_fact = {
 	resources = {
 		category = megastructures
 		cost = {
-			energy = 30000
-			volatile_motes = 2000
-			exotic_gases = 2000
-			rare_crystals = 2000
-			sr_dark_matter = 3000
+			energy = @mega_01_energy_cost
+			sr_dark_matter = 2000
+			nanites = 2000
+			sr_living_metal = 2000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
@@ -47,104 +65,44 @@ AIO_mega_01_fact = {
 			food = 15000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
-
-		produces = {
-			trigger = {
-				owner = {
-					NOR = {
-						has_megastructure = AIO_mega_01
-						has_country_flag = AIO_built_AIO_mega_02
-						has_country_flag = AIO_built_AIO_mega_03
-						has_country_flag = AIO_built_AIO_mega_04
-					}
-				}
-			}
-			AIO_advanced_logic = 500
-		}
-
-		upkeep = {
-			trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
-			energy = 1000
-		}
 	}
 
 	# bypass类型
 	bypass_type = bypass_AIO_ultimate_gate
 
 	on_build_complete = {
-		# 清除视界引擎特效
-		event_target:AIO_horizon_engine_effect = { destroy_ambient_object = this }
-		clear_global_event_target = AIO_horizon_engine_effect
-
-		AIO_crisis_effects_manager = { CREATE_TUG_SYSTEM = 1 }
+		AIO_create_TUG_system_effect = yes
 
 		from = {
 			set_country_flag = AIO_built_AIO_mega_01
-
-			country_event = { id = AIO_crisis_events.401 }
+			country_event = { id = AIO_crisis_events.403 }
 		}
 	}
-}
-
-# 万门之门节点传送门
-AIO_mega_01_node = {
-    entity = "astral_scar_entity"
-	construction_entity = "astral_scar_entity"
-	place_entity_on_planet_plane = yes
-	scales_with_planet = no
-	build_type = outside_gravity_well
-
-	hide_name = yes
-	show_galactic_map_icon = no
-	show_in_outliner = no
-
-	portrait = "GFX_megastructure_construction_background"
-
-	potential = {
-		has_country_flag = AIO_built_AIO_mega_01
-	}
-	possible = {
-		custom_tooltip = {
-			text = AIO_existed_TDTE
-			NOR = {
-				is_same_value = event_target:AIO_HS_system
-				is_same_value = event_target:AIO_TUG_system
-				has_megastructure = AIO_mega_01_node
-			}
-		}
-	}
-	dismantle_potential = { always = no }
-
-	build_time = 0
-
-	# bypass类型
-	bypass_type = bypass_AIO_ultimate_gate
-
-	on_build_complete = { system_event = { id = AIO_crisis_events.904 days = 100 } }
 }
 
 # 无名之雾中的万门之门
 AIO_mega_01 = {
     entity = "AIO_mega_1_entity"
 	construction_entity = "AIO_mega_1_entity"
-	place_entity_on_planet_plane = yes
 	scales_with_planet = no
 
 	portrait = "GFX_megastructure_dyson_sphere_background"
 
 	potential = { always = no }
+
 	dismantle_potential = { always = no }
 
 	build_time = 1
+
 	resources = {
 		category = megastructures
 		produces = { AIO_advanced_logic = 1000 }
 
 		upkeep = {
-			energy = 1500
-			physics_research = 200
-			society_research = 200
-			engineering_research = 200
+			energy = 200
+			physics_research = 50
+			society_research = 50
+			engineering_research = 50
 		}
 	}
 
@@ -152,6 +110,7 @@ AIO_mega_01 = {
 	bypass_type = bypass_AIO_ultimate_gate
 
 	on_build_complete = {
+		fromfrom = { save_global_event_target_as = AIO_DAIT_source_megastructure }
 		# 加特效
 		create_ambient_object = {
 			type = "AIO_crisis_sphere_effect"
@@ -184,12 +143,13 @@ AIO_mega_01 = {
 			}
 		}
 	}
+
+	scripted_action = { AIO_DAIT_lock_target }
 }
 
 AIO_mega_02 = {
     entity = "AIO_mega_2_entity"
 	construction_entity = "AIO_mega_2_entity"
-	place_entity_on_planet_plane = yes
 	scales_with_planet = no
 
 	portrait = "GFX_megastructure_dyson_sphere_background"
@@ -201,6 +161,22 @@ AIO_mega_02 = {
 		}
 		NOT = { has_country_flag = AIO_built_AIO_mega_02 }
 	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = AIO_mega_02.fail.nomadic
+			from = {
+				OR = {
+					is_nomadic = no
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						situation_progress >= @mega_02_energy_cost
+					}
+				}
+			}
+		}
+	}
+
 	dismantle_potential = { always = no }
 
 	upgrade_from = { AIO_mega_01 }
@@ -211,30 +187,30 @@ AIO_mega_02 = {
 		category = megastructures
 
 		cost = {
-			energy = 40000
-			sr_dark_matter = 4000
-			nanites = 4000
-			sr_living_metal = 1500
+			energy = @mega_02_energy_cost
+			sr_dark_matter = 3000
+			nanites = 3000
+			sr_living_metal = 3000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 30000
+			alloys = 20000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 30000
+			alloys = 20000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 30000
+			food = 20000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
 		produces = { AIO_advanced_logic = 3000 }
 
 		upkeep = {
-			energy = 1000
+			energy = 500
 			physics_research = 300
 			society_research = 300
 			engineering_research = 300
@@ -247,19 +223,16 @@ AIO_mega_02 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_02
-
-			country_event = { id = AIO_crisis_events.402 }
-
-			# 重新启动局势方案
-			AIO_crisis_effects_manager = { CHANGE_SITUATION_AIO_MERGE_COSMOS_APPROACH = 1 }
+			country_event = { id = AIO_crisis_events.404 }
 		}
 	}
+
+	scripted_action = { AIO_DAIT_lock_target }
 }
 
 AIO_mega_03 = {
     entity = "AIO_mega_3_entity"
 	construction_entity = "AIO_mega_3_entity"
-	place_entity_on_planet_plane = yes
 	scales_with_planet = no
 
 	portrait = "GFX_megastructure_dyson_sphere_background"
@@ -271,6 +244,22 @@ AIO_mega_03 = {
 		}
 		NOT = { has_megastructure = AIO_mega_03 }
 	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = AIO_mega_03.fail.nomadic
+			from = {
+				OR = {
+					is_nomadic = no
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						situation_progress >= @mega_03_energy_cost
+					}
+				}
+			}
+		}
+	}
+
 	dismantle_potential = { always = no }
 
 	upgrade_from = { AIO_mega_02 }
@@ -281,30 +270,30 @@ AIO_mega_03 = {
 		category = megastructures
 
 		cost = {
-			energy = 50000
+			energy = @mega_03_energy_cost
 			sr_dark_matter = 5000
 			nanites = 5000
-			sr_living_metal = 4000
+			sr_living_metal = 5000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 40000
+			alloys = 25000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 40000
+			alloys = 25000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 40000
+			food = 25000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
 		produces = { AIO_advanced_logic = 5000 }
 
 		upkeep = {
-			energy = 2000
+			energy = 1000
 			physics_research = 500
 			society_research = 500
 			engineering_research = 500
@@ -317,19 +306,16 @@ AIO_mega_03 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_03
-
-			country_event = { id = AIO_crisis_events.403 }
-
-			# 重新启动局势方案
-			AIO_crisis_effects_manager = { CHANGE_SITUATION_AIO_MERGE_COSMOS_APPROACH = 1 }
+			country_event = { id = AIO_crisis_events.405 }
 		}
 	}
+
+	scripted_action = { AIO_DAIT_lock_target }
 }
 
 AIO_mega_04 = {
     entity = "AIO_mega_4_entity"
 	construction_entity = "AIO_mega_4_entity"
-	place_entity_on_planet_plane = yes
 	scales_with_planet = no
 
 	portrait = "GFX_megastructure_dyson_sphere_background"
@@ -341,11 +327,26 @@ AIO_mega_04 = {
 		}
 		NOT = { has_megastructure = AIO_mega_04 }
 	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = AIO_mega_04.fail.nomadic
+			from = {
+				OR = {
+					is_nomadic = no
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						situation_progress >= @mega_04_energy_cost
+					}
+				}
+			}
+		}
+	}
+
 	dismantle_potential = { always = no }
 
 	upgrade_from = {
 		AIO_mega_03
-		AIO_mega_04_activate
 	}
 
 	build_time = 3600
@@ -354,10 +355,10 @@ AIO_mega_04 = {
 		category = megastructures
 
 		cost = {
-			energy = 60000
+			energy = @mega_04_energy_cost
 			sr_dark_matter = 10000
 			nanites = 10000
-			sr_living_metal = 5000
+			sr_living_metal = 10000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
@@ -378,10 +379,7 @@ AIO_mega_04 = {
 
         upkeep = {
             trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
-            energy = 5000
-            sr_dark_matter = 200
-            sr_living_metal = 100
-            nanites = 250
+            energy = 2000
 			physics_research = 1000
 			society_research = 1000
 			engineering_research = 1000
@@ -394,39 +392,9 @@ AIO_mega_04 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_04
-
-			country_event = { id = AIO_crisis_events.404 }
-
-			# 重新启动局势方案
-			AIO_crisis_effects_manager = { CHANGE_SITUATION_AIO_MERGE_COSMOS_APPROACH = 1 }
+			country_event = { id = AIO_crisis_events.406 }
 		}
 	}
-}
 
-AIO_mega_04_activate = {
-	entity = "AIO_mega_4_entity"
-	construction_entity = "AIO_mega_4_entity"
-	place_entity_on_planet_plane = yes
-	scales_with_planet = no
-
-	portrait = "GFX_megastructure_dyson_sphere_background"
-
-	potential = {
-		is_country_type = AIO_empire
-		NOR = {
-            has_active_event = { AIO_RE_events.201 }
-            has_active_event = { AIO_RE_events.202 }
-        }
-	}
-	dismantle_potential = { always = no }
-
-	upgrade_from = { AIO_mega_04 }
-
-	on_build_complete = {
-		fromfrom = {
-			upgrade_megastructure_to = AIO_mega_04
-			finish_upgrade = yes
-		}
-		from = { country_event = { id = AIO_RE_events.201 } }
-	}
+	scripted_action = { AIO_DAIT_lock_target }
 }

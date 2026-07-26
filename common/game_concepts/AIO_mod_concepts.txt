@@ -2,7 +2,7 @@
 concept_AIO_HS_system = { icon = gfx/interface/icons/text_icons/text_icon_system.dds }
 
 # 穷极之门
-concept_AIO_TDTE_system = { icon = gfx/interface/icons/text_icons/text_icon_system.dds }
+concept_AIO_TUG_system = { icon = gfx/interface/icons/text_icons/text_icon_system.dds }
 
 # 定向应用无限
 concept_AIO_DAIT = { icon = gfx/interface/icons/text_icons/text_icon_plus_minus.dds }

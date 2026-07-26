@@ -30,22 +30,19 @@ crisobj_AIO_research_tech = {
 # 应用无限
 crisobj_AIO_research_thesis = { #Also use for the Vultaum Projects
 	reward = {
-		base = 2500
-		complex_trigger_modifier = { #subtract 200 for each playable country that exists
+		base = 8000
+		complex_trigger_modifier = { #subtract 400 for each playable country that exists
 			trigger = count_playable_country
 			mode = subtract
-			mult = 200
+			mult = 400
 		}
 		round_to = 500 	#we want a solid number
-		min = 100		#and we don't want less than 100
+		min = 1000 		#and we don't want less than 1000
 	}
 }
 
 # 建造科学枢纽
 crisobj_AIO_have_science_nexuses = {
-	potential = {
-		has_utopia = yes
-	}
 	reward = {
 		base = 800
 		complex_trigger_modifier = { #subtract 50 for each playable country that exists
@@ -58,6 +55,3 @@ crisobj_AIO_have_science_nexuses = {
 	}
 	recurring = yes
 }
-
-
-

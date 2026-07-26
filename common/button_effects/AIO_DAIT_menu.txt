@@ -1,0 +1,270 @@
+# THIS = selected object and may change; FROM = player country.
+# Keep potential anchored exclusively to the stable player-country scope.
+
+AIO_DAIT_enrich = {
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT.fail.require_mega_1
+            from = {
+                OR = {
+                    has_country_flag = AIO_built_AIO_mega_01
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.enrich
+            event_target:AIO_DAIT_target_system = {
+                NOT = { has_star_flag = AIO_DAIT_harvest_system }
+                any_system_planet = {
+                    NOR = {
+                        is_planet_class = pc_shattered
+                        is_planet_class = pc_AIO_empty_space
+                        has_planet_flag = AIO_DAIT_harvested_body
+                    }
+                }
+            }
+        }
+        from = {
+            OR = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
+        }
+    }
+    effect = {
+        from = { AIO_DAIT_manual_enrich_effect = yes }
+    }
+}
+
+AIO_DAIT_spawn = {
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT.fail.require_mega_2
+            from = {
+                OR = {
+                    has_country_flag = AIO_built_AIO_mega_02
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.crisis_path
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.synth_queen
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
+        }
+        from = {
+            OR = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
+        }
+    }
+    effect = {
+        from = { AIO_DAIT_manual_spawn_effect = yes }
+    }
+}
+
+AIO_DAIT_seed = {
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT.fail.require_mega_3
+            from = {
+                OR = {
+                    has_country_flag = AIO_built_AIO_mega_03
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.seed
+            event_target:AIO_DAIT_target_system = {
+                any_system_planet = {
+                    OR = {
+                        habitable_planet = yes
+                        is_planet_class = pc_habitat
+                        is_planet_class = pc_ringworld_habitable
+                    }
+                    pop_amount = 0
+                }
+            }
+        }
+        from = {
+            OR = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
+        }
+    }
+    effect = {
+        from = { AIO_DAIT_manual_seed_effect = yes }
+    }
+}
+
+AIO_DAIT_ethic = {
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT.fail.require_mega_4
+            from = {
+                OR = {
+                    has_country_flag = AIO_built_AIO_mega_04
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.ethic
+            event_target:AIO_DAIT_target_system = { exists = owner }
+        }
+        from = {
+            OR = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
+        }
+    }
+    effect = {
+        from = { AIO_DAIT_manual_ethic_effect = yes }
+    }
+}
+
+AIO_DAIT_storm = {
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT.fail.require_mega_1
+            from = {
+                OR = {
+                    has_country_flag = AIO_built_AIO_mega_01
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.storm
+            event_target:AIO_DAIT_target_system = { is_inside_storm = no }
+        }
+        from = {
+            OR = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
+        }
+    }
+    effect = {
+        from = { AIO_DAIT_manual_storm_effect = yes }
+    }
+}
+
+AIO_DAIT_harvest = {
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT.fail.require_mega_2
+            from = {
+                OR = {
+                    has_country_flag = AIO_built_AIO_mega_02
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.crisis_path
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = AIO_TUG_system } }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.harvest
+            event_target:AIO_DAIT_target_system = {
+                NOT = { has_star_flag = AIO_DAIT_harvest_system }
+                any_system_planet = {
+                    NOR = {
+                        is_planet_class = pc_shattered
+                        is_planet_class = pc_black_hole
+                        is_planet_class = pc_AIO_empty_space
+                        has_carrier_flag = synth_queen_bastille
+                        AIO_safe_remove_planet_exclude_API = yes
+                        has_planet_flag = AIO_DAIT_harvested_body
+                    }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.synth_queen
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
+        }
+        from = {
+            OR = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
+        }
+    }
+    effect = {
+        from = { AIO_DAIT_manual_harvest_effect = yes }
+    }
+}
+
+AIO_DAIT_strike = {
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT.fail.require_mega_3
+            from = {
+                OR = {
+                    has_country_flag = AIO_built_AIO_mega_03
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.strike
+            event_target:AIO_DAIT_target_system = {
+                NOT = { has_star_flag = AIO_Aformom_exist }
+            }
+        }
+        from = {
+            OR = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
+        }
+    }
+    effect = {
+        from = { AIO_DAIT_manual_strike_effect = yes }
+    }
+}
+
+AIO_DAIT_erase = {
+    potential = { from = { has_country_flag = AIO_DAIT_active } }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT.fail.require_mega_4
+            from = {
+                OR = {
+                    has_country_flag = AIO_built_AIO_mega_04
+                    hidden_trigger = { is_country_type = AIO_empire }
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_lock_target.fail.synth_queen
+            event_target:AIO_DAIT_target_system = { NOT = { has_star_flag = synth_queen_capital } }
+        }
+        from = {
+            OR = {
+                hidden_trigger = { is_country_type = AIO_empire }
+                resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_DAIT_cost }
+            }
+        }
+    }
+    effect = {
+        from = { AIO_DAIT_manual_erase_effect = yes }
+    }
+}
