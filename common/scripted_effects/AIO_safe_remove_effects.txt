@@ -424,7 +424,8 @@ AIO_safe_remove_rw_section = {
                     count = 1
                 }
             }
-            star = {
+            random_system_planet = {
+                limit = { is_star = yes }
                 if = {
                     limit = { has_planet_flag = has_megastructure }
                     remove_planet_flag = has_megastructure

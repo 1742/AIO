@@ -76,7 +76,8 @@ AIO_DAIT_spawn_effect = {
         remove_star_flag = AIO_DAIT_harvest_system
     }
     else = {
-        star = {
+        random_system_planet = {
+            limit = { is_star = yes }
             if = {
                 limit = {
                     NOR = {
@@ -205,7 +206,7 @@ AIO_DAIT_seed_effect = {
                     set_capital = yes
                     solar_system = {
                         if = {
-                            limit = { star = { exists = starbase } }
+                            limit = { exists = starbase }
                             starbase = { destroy_fleet = this }
                         }
                         create_starbase = {
@@ -498,7 +499,7 @@ AIO_DAIT_harvest_effect = {
                     add_resource = { food = 250 mult = prev.trigger:planet_size }
                 }
             }
-            else = {
+            else_if = {
                 limit = { is_planet_class = pc_ai }
                 # TODO
             }
@@ -632,7 +633,8 @@ AIO_DAIT_erase_effect = {
         every_ambient_object = { destroy_ambient_object = this }
         set_star_class = sc_AIO_void
 
-        star = {
+        random_system_planet = {
+            limit = { is_star = yes }
             create_ambient_object = {
                 type = "star_explosion"
                 play_animation_once = yes

@@ -60,11 +60,3 @@ on_megastructure_change_owner = {
 
     }
 }
-
-# This = target country (player)
-# From = source country
-on_custom_diplomacy = {
-    events = {
-        AIO_Tawi_communication_events.301  # 打开外交界面
-    }
-}

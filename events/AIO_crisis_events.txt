@@ -542,7 +542,10 @@ country_event = {
                 destroy_ambient_object = event_target:AIO_TUG_system_effect
                 clear_global_event_target = AIO_TUG_system_effect
             }
-            star = { change_pc = pc_black_hole }
+            random_system_planet = {
+                limit = { is_star = yes }
+                change_pc = pc_black_hole
+            }
             every_fleet_in_system = {
                 limit = { AIO_safe_remove_fleet_exclude_API = no }
                 destroy_fleet = this

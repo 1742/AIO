@@ -1,5 +1,8 @@
 AIO_create_hexagonal_orbital_array = {
-    star = { AIO_change_random_pc = { STAR = 1 } }
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_change_random_pc = { STAR = 1 }
+    }
     AIO_change_star_class = yes
     spawn_planet = {
         generate_random_name = yes
@@ -60,7 +63,10 @@ AIO_create_hexagonal_orbital_array = {
 # 完整环世界：四个可居住区段、四个结构区段和四个接缝。
 # scope: system
 AIO_create_ringworld_array = {
-    star = { AIO_change_random_pc = { STAR = 1 } }
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_change_random_pc = { STAR = 1 }
+    }
     AIO_change_star_class = yes
 
     spawn_planet = {
@@ -160,7 +166,10 @@ AIO_create_ringworld_array = {
 # 三层相互错开的等边三角形行星阵列。
 # scope: system
 AIO_create_triangular_planet_array = {
-    star = { AIO_change_random_pc = { STAR = 1 } }
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_change_random_pc = { STAR = 1 }
+    }
     AIO_change_star_class = yes
 
     spawn_planet = {
@@ -253,7 +262,10 @@ AIO_create_triangular_planet_array = {
 # 中心和轨道天体全部为黑洞。
 # scope: system
 AIO_create_black_hole_cluster = {
-    star = { AIO_safe_change_pc = { NEW_PC = pc_black_hole } }
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_safe_change_pc = { NEW_PC = pc_black_hole }
+    }
     set_star_class = sc_black_hole
 
     spawn_planet = {
@@ -315,7 +327,10 @@ AIO_create_black_hole_cluster = {
 # 三重同心轨道，每一层使用不同类型的天体组成规则钟面。
 # scope: system
 AIO_create_concentric_orbital_array = {
-    star = { AIO_change_random_pc = { STAR = 1 } }
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_change_random_pc = { STAR = 1 }
+    }
     AIO_change_star_class = yes
 
     spawn_planet = {
@@ -537,7 +552,10 @@ AIO_create_recursive_satellite_branch = {
 # 三颗主行星各自生长出相同的卫星树。
 # scope: system
 AIO_create_recursive_satellite_tree = {
-    star = { AIO_change_random_pc = { STAR = 1 } }
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_change_random_pc = { STAR = 1 }
+    }
     AIO_change_star_class = yes
 
     spawn_planet = {
@@ -669,7 +687,10 @@ AIO_create_black_hole_flower_outer_body = {
 # 五片黑洞花瓣和外圈十颗黑洞，中央为脉冲星。
 # scope: system
 AIO_create_black_hole_flower = {
-    star = { AIO_safe_change_pc = { NEW_PC = pc_pulsar } }
+    random_system_planet = {
+        limit = { is_star = yes }
+        AIO_safe_change_pc = { NEW_PC = pc_pulsar }
+    }
     set_star_class = sc_pulsar
 
     AIO_create_black_hole_flower_petal = { ANGLE = 0 }

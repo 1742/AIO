@@ -362,7 +362,8 @@ AIO_ascension_effect = {
         every_owned_colony = { destroy_colony = yes }
         # 转移首都
         event_target:AIO_HS_system = {
-            star = {
+            random_system_planet = {
+                limit = { is_star = yes }
                 set_owner = root
                 set_capital = yes
                 destroy_colony = yes

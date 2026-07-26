@@ -46,7 +46,8 @@ AIO_change_system_planet_in_frozen = {
 AIO_change_star_class = {
     if = {
         limit = { AIO_is_single_star_class = yes }
-        star = {
+        random_system_planet = {
+            limit = { is_star = yes }
             switch = {
                 trigger = is_planet_class
                 pc_b_star = { solar_system = { set_star_class = sc_b } }

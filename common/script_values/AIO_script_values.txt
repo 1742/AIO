@@ -20,7 +20,7 @@ AIO_crisis_situation_modifier = {
 	base = 0
 
 	add = AIO_DAIT_count
-	mult = 0.05
+	mult = 0.1
 
 	add = 1
 
