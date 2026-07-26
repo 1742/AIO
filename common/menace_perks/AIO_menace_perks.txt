@@ -50,6 +50,10 @@ menp_AIO_fleet_dark_matter = {
 menp_AIO_mega_02 = {
 	portrait = "GFX_menp_AIO_mega_02_icon"
 
+	modifier = {
+		megastructure_build_speed_mult = 0.25
+	}
+
 	on_unlock = {
 		custom_tooltip = unlocks_AIO_allinone_mega_01
 	}
@@ -106,6 +110,10 @@ menp_AIO_ship_2 = {
 menp_AIO_mega_03 = {
 	portrait = "GFX_menp_AIO_mega_03_icon"
 
+	modifier = {
+		megastructure_build_speed_mult = 0.25
+	}
+
 	on_unlock = {
 		custom_tooltip = unlocks_AIO_allinone_mega_02
 	}
@@ -152,6 +160,10 @@ menp_AIO_ship_3 = {
 menp_AIO_mega_04 = {
 	portrait = "GFX_menp_AIO_mega_04_icon"
 
+	modifier = {
+		megastructure_build_speed_mult = 0.25
+	}
+
 	on_unlock = {
 		custom_tooltip = unlocks_AIO_allinone_mega_03
 	}
@@ -188,6 +200,10 @@ menp_AIO_ship_4 = {
 # 维度嵌入
 menp_AIO_mega_05 = {
 	portrait = "GFX_menp_AIO_mega_05_icon"
+
+	modifier = {
+		megastructure_build_speed_mult = 0.25
+	}
 
 	on_unlock = {
 		custom_tooltip = unlocks_AIO_allinone_mega_04

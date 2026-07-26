@@ -86,7 +86,11 @@ AIO_DAIT_seed = {
             fail_text = AIO_DAIT_lock_target.fail.seed
             event_target:AIO_DAIT_target_system = {
                 any_system_planet = {
-                    habitable_planet = yes
+                    OR = {
+                        habitable_planet = yes
+                        is_planet_class = pc_habitat
+                        is_planet_class = pc_ringworld_habitable
+                    }
                     pop_amount = 0
                 }
             }

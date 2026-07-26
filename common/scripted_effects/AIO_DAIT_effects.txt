@@ -171,7 +171,11 @@ AIO_DAIT_spawn_effect = {
 AIO_DAIT_seed_effect = {
     random_system_planet = {
         limit = {
-            habitable_planet = yes
+            OR = {
+                habitable_planet = yes
+                is_planet_class = pc_habitat
+                is_planet_class = pc_ringworld_habitable
+            }
             pop_amount = 0
         }
         create_species = {
