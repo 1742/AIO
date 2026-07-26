@@ -1,0 +1,44 @@
+# 用于验证 4.4 巨构 scripted_action 面板按钮与星系目标选择。
+# 测试完成后可整体删除此文件。
+AIO_test_scripted_action_megastructure = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = yes
+	scales_with_planet = no
+
+	potential = {
+		is_ai = no
+		always = no
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+		}
+	}
+
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "must_build_around_star"
+				is_star = yes
+			}
+		}
+	}
+
+	build_time = 1
+
+	resources = {
+		category = megastructures
+		cost = { alloys = 1 }
+	}
+
+	dismantle_potential = { always = yes }
+
+	on_build_complete = {}
+
+	# 测试巨构仅挂载正式入口；全部完成后改由 AIO 正式巨构挂载。
+	scripted_action = { AIO_DAIT_lock_target }
+}

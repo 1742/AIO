@@ -1,0 +1,30 @@
+namespace = AIO_test_events
+
+
+country_event = {
+    id = AIO_test_events.201
+
+    title = AIO_test_events.201.title
+    desc = AIO_test_events.201.desc
+
+    is_triggered_only = yes
+
+    option = {
+        name = OK
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = AIO_test_events.202
+
+    title = AIO_test_events.201.title
+    desc = AIO_test_events.201.desc
+
+    is_triggered_only = yes
+
+    option = {
+        name = OK
+        default_hide_option = yes
+    }
+}
