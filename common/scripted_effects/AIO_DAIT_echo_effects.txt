@@ -3,6 +3,9 @@
 
 
 AIO_DAIT_echo_roll_effect = {
+    # The situation owner is the maker for this event chain.
+    save_event_target_as = AIO_DAIT_maker
+
     AIO_DAIT_echo_clear_affected_countries_effect = yes
 
     random_list = {
