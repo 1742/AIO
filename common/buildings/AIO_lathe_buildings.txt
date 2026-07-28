@@ -46,7 +46,7 @@ building_AIO_lathe_resonator = {
 		potential = {
 			always = yes
 		}
-		planet_AIO_recursive_node_produces_mult = 0.1
+		planet_AIO_recursive_node_produces_mult = 0.01
 		mult = value:AIO_num_recursive_node_per_100
 	}
 
@@ -137,7 +137,6 @@ building_AIO_lathe_overclocker = {
 			planet_AIO_recursive_node_society_research_produces_add = 1
 			planet_AIO_recursive_node_engineering_research_produces_add = 1
 			planet_AIO_recursive_node_AIO_advanced_logic_produces_add = 0.5
-			pop_purge_speed = 0.75
 		}
 	}
 }
@@ -181,7 +180,8 @@ building_AIO_lathe_preserver = {
 		}
 	}
 
-	planet_modifier = { pop_purge_speed = -0.15 }
+	# The recursive-cycle situation handles population loss explicitly.
+	# Its preservation effect is checked by AIO_recursive_cycle_calculate_rewards_effect.
 }
 
 building_AIO_lathe_reactor = {

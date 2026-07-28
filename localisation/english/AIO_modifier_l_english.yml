@@ -40,6 +40,7 @@
  mod_planet_AIO_recursive_node_AIO_advanced_logic_produces_add: "Per 100 [AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] produce £AIO_advanced_logic£ $AIO_advanced_logic$"
  mod_planet_AIO_recursive_node_produces_mult: "[AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] produce"
  mod_planet_AIO_recursive_node_upkeep_mult: "[AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] £energy£ $energy$ upkeep"
+ mod_pop_AIO_recursive_node_bonus_workforce_mult: "[AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] job efficiency"
 
  #endregion
 

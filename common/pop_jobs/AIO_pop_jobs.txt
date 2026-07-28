@@ -2,7 +2,6 @@
 AIO_recursive_node = {
 	category = AIO_recursive_node
 	first_come_first_served = yes
-	purge = purge_AIO_matryoshka_brain
 	is_capped_by_modifier = no
 
 	swappable_data = {

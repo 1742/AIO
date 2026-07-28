@@ -4,16 +4,16 @@
  # Resonator
  building_AIO_lathe_resonator: "$building_lathe_resonator$"
  building_AIO_lathe_resonator_desc: "$building_lathe_resonator_desc$"
- building_AIO_resonator_tt: "Per §Y$job_AIO_recursive_node$§! produce: §G+0.1%§!\n(current: §G+[AIO_AIO_resonator_factor]%§!)"
+ building_AIO_resonator_tt: "Per §Y100§! $job_AIO_recursive_node$ output: §G+1%§!\n(current: §G+[AIO_AIO_resonator_factor]%§!)"
  # Stabilisator
  building_AIO_lathe_stabilisator: "$building_lathe_stabilisator$"
  building_AIO_lathe_stabilisator_desc: "$building_lathe_stabilisator_desc$"
  # Overclocker
  building_AIO_lathe_overclocker: "$building_lathe_overclocker$"
- building_AIO_lathe_overclocker_desc: "$building_lathe_overclocker_desc$"
+ building_AIO_lathe_overclocker_desc: "The overclocker directly increases recursive-node research and advanced-logic output. Node loss from a cycle is determined by the current approach of the $AIO_recursive_cycle_situation$."
  # Preserver
  building_AIO_lathe_preserver: "$building_lathe_preserver$"
- building_AIO_lathe_preserver_desc: "$building_lathe_preserver_desc$"
+ building_AIO_lathe_preserver_desc: "The Preserver limits structural collapse at convergence, reducing recursive nodes consumed when the $AIO_recursive_cycle_situation$ completes by §G25%§!."
  # Reactor
  building_AIO_lathe_reactor: "$building_lathe_reactor$"
  building_AIO_lathe_reactor_desc: "$building_lathe_reactor_desc$"

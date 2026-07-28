@@ -11,6 +11,7 @@ on_AIO_DAIT_lock_target_started = {
 
 on_game_start_country = {
     events = {
+		AIO_recursive_events.201
         AIO_mod_events.201 # 更新提醒
         AIO_crisis_events.201  # 万物归一起源
     }
@@ -25,12 +26,14 @@ on_yearly_pulse = {
 
 on_yearly_pulse_country = {
     events = {
+		AIO_recursive_events.201
         AIO_crisis_events.804 # 给予递归载体物种模板
     }
 }
 
 on_tech_increased = {
     events = {
+		AIO_recursive_events.201
         AIO_crisis_events.401 # 完成科技升维假设，提示建造视相引擎
         AIO_crisis_events.802  # 天灾目标，研究科技
         AIO_crisis_events.804 # 虚拟帝国完成指数级学习理论
