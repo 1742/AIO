@@ -71,7 +71,7 @@ AIO_chips = {
 					}
 				}
 			}
-			energy = 2.5
+			energy = 5
 			mult = value:AIO_chips_upkeep_factor
 		}
 	}
