@@ -28,7 +28,7 @@ building_AIO_lathe_resonator = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			alloys = @b3_minerals
+			alloys = @fe_alloy_cost_1
 			rare_crystals = @fe_sr_cost_1
 			AIO_advanced_logic = @b2_minerals
 		}
@@ -39,15 +39,40 @@ building_AIO_lathe_resonator = {
 	}
 
 	triggered_planet_modifier = {
-		planet_AIO_recursive_node_upkeep_mult = 1
+		potential = {
+			owner = {
+				NOR = {
+					has_deficit = energy
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						OR = {
+							current_situation_approach = situation_nomad_economy_stringent_budget
+							current_stage <= situation_nomad_economy_stage_critical
+						}
+					}
+				}
+			}
+		}
+		planet_AIO_chips_upkeep_mult = 1
 	}
 
 	triggered_planet_modifier = {
 		potential = {
-			always = yes
+			owner = {
+				NOR = {
+					has_deficit = energy
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						OR = {
+							current_situation_approach = situation_nomad_economy_stringent_budget
+							current_stage <= situation_nomad_economy_stage_critical
+						}
+					}
+				}
+			}
 		}
-		planet_AIO_recursive_node_produces_mult = 0.1
-		mult = value:AIO_num_recursive_node_per_100
+		planet_AIO_chips_produces_mult = 0.01
+		mult = value:AIO_chips_num_per_100
 	}
 
 	triggered_desc = { text = building_AIO_resonator_tt }
@@ -79,7 +104,7 @@ building_AIO_lathe_stabilisator = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			alloys = @b3_minerals
+			alloys = @fe_alloy_cost_1
 			exotic_gases = @fe_sr_cost_1
 			AIO_advanced_logic = @b2_minerals
 		}
@@ -120,7 +145,7 @@ building_AIO_lathe_overclocker = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			alloys = @b3_minerals
+			alloys = @fe_alloy_cost_1
 			volatile_motes = @fe_sr_cost_1
 			AIO_advanced_logic = @b2_minerals
 		}
@@ -131,12 +156,25 @@ building_AIO_lathe_overclocker = {
 	}
 
 	triggered_planet_modifier = {
-		potential = { NOT = { owner = { has_deficit = energy } } }
+		potential = {
+			owner = {
+				NOR = {
+					has_deficit = energy
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						OR = {
+							current_situation_approach = situation_nomad_economy_stringent_budget
+							current_stage <= situation_nomad_economy_stage_critical
+						}
+					}
+				}
+			}
+		}
 		modifier = {
-			planet_AIO_recursive_node_physics_research_produces_add = 1
-			planet_AIO_recursive_node_society_research_produces_add = 1
-			planet_AIO_recursive_node_engineering_research_produces_add = 1
-			planet_AIO_recursive_node_AIO_advanced_logic_produces_add = 0.5
+			planet_AIO_chips_physics_research_produces_add = 1
+			planet_AIO_chips_society_research_produces_add = 1
+			planet_AIO_chips_engineering_research_produces_add = 1
+			planet_AIO_chips_AIO_advanced_logic_produces_add = 0.5
 			pop_purge_speed = 0.75
 		}
 	}
@@ -171,7 +209,7 @@ building_AIO_lathe_preserver = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			alloys = @b3_minerals
+			alloys = @fe_alloy_cost_1
 			exotic_gases = @fe_sr_cost_1
 			AIO_advanced_logic = @b2_minerals
 		}
@@ -210,7 +248,7 @@ building_AIO_lathe_reactor = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			alloys = @b3_minerals
+			alloys = @fe_alloy_cost_1
 			exotic_gases = @fe_sr_cost_1
 			AIO_advanced_logic = @b2_minerals
 		}
@@ -220,7 +258,7 @@ building_AIO_lathe_reactor = {
 	}
 
 	planet_modifier = {
-		planet_AIO_recursive_node_upkeep_mult = -0.15
+		planet_AIO_chips_upkeep_mult = -0.15
 		planet_buildings_upkeep_mult = -0.15
 		planet_districts_energy_upkeep_mult = -0.15
 	}
@@ -254,7 +292,7 @@ building_AIO_lathe_life_support = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			alloys = @b3_minerals
+			alloys = @fe_alloy_cost_1
 			rare_crystals = @fe_sr_cost_1
 			AIO_advanced_logic = @b2_minerals
 		}
@@ -298,7 +336,7 @@ building_AIO_lathe_cogitator = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			alloys = @b3_minerals
+			alloys = @fe_alloy_cost_1
 			volatile_motes = @fe_sr_cost_1
 			AIO_advanced_logic = @b3_minerals
 		}
@@ -310,14 +348,14 @@ building_AIO_lathe_cogitator = {
 
 	planet_modifier = {
 		planet_amenities_add = -5000
-		planet_AIO_recursive_node_produces_mult = -0.35
+		planet_AIO_chips_produces_mult = -0.35
 	}
 
 	triggered_country_modifier = {
 		potential = { has_active_building = building_AIO_lathe_cogitator }
 		country_naval_cap_mult = 0.01
-		ship_experience_gain_mult = 0.02
-		mult = value:AIO_num_recursive_node_per_100
+		ship_experience_gain_mult = 0.01
+		mult = value:AIO_chips_num_per_100
 	}
 
 	triggered_desc = {
@@ -352,7 +390,7 @@ building_AIO_lathe_validator = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			alloys = @b3_minerals
+			alloys = @fe_alloy_cost_1
 			rare_crystals = @fe_sr_cost_1
 			AIO_advanced_logic = @b3_minerals
 		}
@@ -367,7 +405,7 @@ building_AIO_lathe_validator = {
 	triggered_country_modifier = {
 		potential = { has_active_building = building_AIO_lathe_validator }
 		category_computing_research_speed_mult = 0.01
-		mult = value:AIO_num_recursive_node_per_100
+		mult = value:AIO_chips_num_per_100
 	}
 
 	triggered_desc = { text = building_AIO_lathe_validator_tt }

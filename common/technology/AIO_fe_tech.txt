@@ -68,7 +68,7 @@ tech_AIO_fe_forge_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -173,7 +173,7 @@ tech_AIO_fe_fabricator_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -283,7 +283,7 @@ tech_AIO_fe_singularity_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -388,7 +388,7 @@ tech_AIO_fe_mine_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -493,7 +493,7 @@ tech_AIO_nourishment_complex = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -615,7 +615,7 @@ tech_AIO_fe_affluence_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -724,7 +724,7 @@ tech_AIO_fe_silo_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -833,7 +833,7 @@ tech_AIO_fe_market_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -943,7 +943,7 @@ tech_AIO_fe_administration_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -1048,7 +1048,7 @@ tech_AIO_fe_security_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -1153,7 +1153,7 @@ tech_AIO_fe_lab_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -1258,7 +1258,7 @@ tech_AIO_fe_fortress_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -1368,7 +1368,7 @@ tech_AIO_fe_dome_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -1477,7 +1477,7 @@ tech_AIO_fe_entertainment_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -1597,7 +1597,7 @@ tech_AIO_fe_assembly_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}
@@ -1714,7 +1714,7 @@ tech_AIO_fe_clinic_1 = {
 			factor = 2
 			any_owned_planet = {
 				num_assigned_jobs = {
-					job = AIO_recursive_node
+					job = AIO_chips
 					value > 5000
 				}
 			}

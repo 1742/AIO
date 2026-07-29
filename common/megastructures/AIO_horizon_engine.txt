@@ -46,6 +46,16 @@ AIO_horizon_engine = {
 	}
 
 	placement_rules = {
+		custom_tooltip = {
+			fail_text = requires_no_colonies
+			NOT = {
+				any_system_planet = {
+					is_colony = yes
+					is_artificial = no
+					owner? = { is_primitive = no }
+				}
+			}
+		}
 		planet_possible = {
 			custom_tooltip = {
 				fail_text = "must_build_around_star"
@@ -65,7 +75,7 @@ AIO_horizon_engine = {
 		}
 	}
 
-	build_time = 1800
+	build_time = 1000
 
 	resources = {
 		category = megastructures

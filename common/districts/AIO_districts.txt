@@ -1,6 +1,10 @@
+@AIO_lathe_alloy_cost = 1000
+@AIO_lathe_logic_cost = 500
+@AIO_lathe_upkeep = 50
+
 district_AIO_lathe_frame = {
 	icon = district_AIO_lathe
-	base_cap_amount = 1
+	base_cap_amount = 7
 
 	base_buildtime = 360
 
@@ -13,11 +17,11 @@ district_AIO_lathe_frame = {
 	resources = {
 		category = planet_districts
 		cost = {
-			alloys = 2000
-			AIO_advanced_logic = 500
+			alloys = @AIO_lathe_alloy_cost
+			AIO_advanced_logic = @AIO_lathe_logic_cost
 		}
 		upkeep = {
-			energy = 100
+			energy = @AIO_lathe_upkeep
 		}
 	}
 
@@ -31,11 +35,32 @@ district_AIO_lathe_frame = {
 		planet_housing_add = 1500
 	}
 
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				NOR = {
+					has_deficit = energy
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						OR = {
+							current_stage <= situation_nomad_economy_stage_critical
+							current_situation_approach = situation_nomad_economy_stringent_budget
+						}
+					}
+				}
+			}
+		}
+		planet_AIO_chips_physics_research_produces_add = 0.75
+		planet_AIO_chips_society_research_produces_add = 0.75
+		planet_AIO_chips_engineering_research_produces_add = 0.75
+		planet_AIO_chips_AIO_advanced_logic_produces_add = 0.025
+	}
+
 	triggered_desc = {
 		trigger = { exists = owner }
-		text = job_AIO_recursive_node_effect_desc
+		text = job_AIO_chips_effect_desc
 	}
 
 	# 递归节点数量修正
-	triggered_desc = { text = district_AIO_lathe_recursive_node_factor }
+	triggered_desc = { text = district_AIO_lathe_chips_factor }
 }

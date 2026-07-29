@@ -2,7 +2,7 @@
  #region crisis technology
 
  tech_AIO_exponential_learning_theory: "$tech_cosmogenesis_crisis_1$"
- tech_AIO_exponential_learning_theory_desc: "$tech_cosmogenesis_crisis_1_desc$\n\nVirtual empires will derive a non-Virtual §Y$trait_AIO_recursive_chassis$§! from their primary species for assembly and deployment as §Y$job_AIO_recursive_node$§!."
+ tech_AIO_exponential_learning_theory_desc: "$tech_cosmogenesis_crisis_1_desc$"
  AIO_level_1_tech_title: "Unlock §H$ap_AIO_allinone$§! §HLevel 2§!"
  AIO_exponential_learning_theory_tech_desc: "§H$tech_cosmogenesis_crisis_1$§!\nTo uncover the operational secrets behind reality, we must open up our thinking on a larger scale."
 

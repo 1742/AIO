@@ -51,8 +51,8 @@
 
  #region Crisis Objective
 
- crisobj_AIO_neural_chips_name: "Deploy $job_AIO_recursive_node$"
- crisobj_AIO_neural_chips_desc: "We had to make a little sacrifice to accommodate such a large scale of research.\n\nLoad pop as §Y$job_AIO_recursive_node$§! into the §Y$district_AIO_lathe$§! for $AIO_advanced_logic$.\n\nThe output of §Y$job_AIO_recursive_node$§! increases with their number and can be further improved by zoning and buildings.\n\nContinuously increase the number of $job_AIO_recursive_node$ to gain this §Yannual§! $AIO_advanced_logic$ reward."
+ crisobj_AIO_neural_chips_name: "Deploy $job_AIO_chips$"
+ crisobj_AIO_neural_chips_desc: "We had to make a little sacrifice to accommodate such a large scale of research.\n\nLoad pop as §Y$job_AIO_chips$§! into the §Y$district_AIO_lathe$§! for $AIO_advanced_logic$.\n\nThe output of §Y$job_AIO_chips$§! increases with their number and can be further improved by zoning and buildings.\n\nContinuously increase the number of $job_AIO_chips$ to gain this §Yannual§! $AIO_advanced_logic$ reward."
  crisobj_AIO_research_tech_name: "$crisobj_research_tech_name$"
  crisobj_AIO_research_tech_desc: "$crisobj_research_tech_desc$"
  crisobj_AIO_research_thesis_name: "$crisobj_research_thesis_name$"
