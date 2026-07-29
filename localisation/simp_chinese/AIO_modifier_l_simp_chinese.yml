@@ -39,7 +39,6 @@
  mod_planet_AIO_recursive_node_AIO_advanced_logic_produces_add: "每100[AIO_recursive_node.GetIcon][AIO_recursive_node.GetNamePlural]产生的£AIO_advanced_logic£ $AIO_advanced_logic$"
  mod_planet_AIO_recursive_node_produces_mult: "[AIO_recursive_node.GetIcon][AIO_recursive_node.GetNamePlural]产出"
  mod_planet_AIO_recursive_node_upkeep_mult: "[AIO_recursive_node.GetIcon][AIO_recursive_node.GetNamePlural]£energy£ $energy$维护费"
- mod_pop_AIO_recursive_node_bonus_workforce_mult: "[AIO_recursive_node.GetIcon][AIO_recursive_node.GetNamePlural]岗位效率"
 
  #endregion
 

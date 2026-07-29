@@ -128,30 +128,26 @@ AIO_recursive_node_upkeep_factor_display = {
 	mult = 100
 }
 
+# AIO递归节点净化速度
+AIO_recursive_node_purge_factor = {
+	base = 0
+	add = value:AIO_num_recursive_node_per_100
+	mult = 4
+
+    complex_trigger_modifier = {
+		trigger = count_owned_pop_group
+        trigger_scope = colony
+        parameters = { limit = { is_pop_category = AIO_recursive_node } }
+		mode = divide
+	}
+}
+
 # AIO节点共振器修正显示
 AIO_resonator_factor_display = {
 	base = 0
 
 	add = value:AIO_num_recursive_node_per_100
-	mult = 1
-}
-
-AIO_recursive_cycle_parallel_progress = {
-	base = 0
-	add = value:AIO_num_recursive_node_per_100
-	mult = 0.5
-}
-
-AIO_recursive_cycle_serial_progress = {
-	base = 0
-	add = value:AIO_num_recursive_node_per_100
-	mult = 2
-}
-
-AIO_recursive_cycle_overclock_progress = {
-	base = 0
-	add = value:AIO_num_recursive_node_per_100
-	mult = 3
+	mult = 10
 }
 
 #endregion

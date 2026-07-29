@@ -4,16 +4,16 @@
  # 节点共振器
  building_AIO_lathe_resonator: "$building_lathe_resonator$"
  building_AIO_lathe_resonator_desc: "$building_lathe_resonator_desc$"
- building_AIO_resonator_tt: "每§Y100§!个$job_AIO_recursive_node$产出§G+1%§!\n（当前值：§G+[AIO_AIO_resonator_factor]%§!）"
+ building_AIO_resonator_tt: "每§Y$job_AIO_recursive_node$§!产出§G+0.1%§!\n（当前值：§G+[AIO_AIO_resonator_factor]%§!）"
  # 数据稳定器
  building_AIO_lathe_stabilisator: "$building_lathe_stabilisator$"
  building_AIO_lathe_stabilisator_desc: "$building_lathe_stabilisator_desc$"
  # 计算超频器
  building_AIO_lathe_overclocker: "$building_lathe_overclocker$"
- building_AIO_lathe_overclocker_desc: "超频器直接提高递归节点的科研与超然逻辑产出。循环造成的节点损耗由$AIO_recursive_cycle_situation$当前采用的计算方案决定。"
+ building_AIO_lathe_overclocker_desc: "$building_lathe_overclocker_desc$"
  # 核心保存器
  building_AIO_lathe_preserver: "$building_lathe_preserver$"
- building_AIO_lathe_preserver_desc: "保存器降低演算收束时的结构崩解，使$AIO_recursive_cycle_situation$完成时消耗的递归节点§G-25%§!。"
+ building_AIO_lathe_preserver_desc: "$building_lathe_preserver_desc$"
  # 扩展反应堆
  building_AIO_lathe_reactor: "$building_lathe_reactor$"
  building_AIO_lathe_reactor_desc: "$building_lathe_reactor_desc$"
