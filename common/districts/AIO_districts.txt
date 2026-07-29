@@ -4,9 +4,9 @@
 
 district_AIO_lathe_frame = {
 	icon = district_AIO_lathe
-	base_cap_amount = 6
+	base_cap_amount = 7
 
-	base_buildtime = 360
+	base_buildtime = 250
 
 	show_on_uncolonized = { always = no }
 
