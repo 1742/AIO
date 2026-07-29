@@ -32,13 +32,12 @@
  mod_planet_metallurgists_alloys_upkeep_add: "每100[foundry.GetIcon][GetAlloyProducerPlural]的£alloys£ $alloys$维护费"
  mod_planet_metallurgists_sr_living_metal_upkeep_add: "每100[foundry.GetIcon][GetAlloyProducerPlural]的£sr_living_metal£ $sr_living_metal$维护费"
  # 递归节点
- mod_planet_AIO_recursive_node_physics_research_produces_add: "每100[AIO_recursive_node.GetIcon][AIO_recursive_node.GetNamePlural]产生的£physics£ $physics_research$"
- mod_planet_AIO_recursive_node_society_research_produces_add: "每100[AIO_recursive_node.GetIcon][AIO_recursive_node.GetNamePlural]产生的£society£ $society_research$"
- mod_planet_AIO_recursive_node_engineering_research_produces_add: "每100[AIO_recursive_node.GetIcon][AIO_recursive_node.GetNamePlural]产生的£engineering£ $engineering_research$"
- mod_planet_AIO_recursive_node_unity_produces_add: "每100[AIO_recursive_node.GetIcon][AIO_recursive_node.GetNamePlural]产生的£unity£ $unity$"
- mod_planet_AIO_recursive_node_AIO_advanced_logic_produces_add: "每100[AIO_recursive_node.GetIcon][AIO_recursive_node.GetNamePlural]产生的£AIO_advanced_logic£ $AIO_advanced_logic$"
- mod_planet_AIO_recursive_node_produces_mult: "[AIO_recursive_node.GetIcon][AIO_recursive_node.GetNamePlural]产出"
- mod_planet_AIO_recursive_node_upkeep_mult: "[AIO_recursive_node.GetIcon][AIO_recursive_node.GetNamePlural]£energy£ $energy$维护费"
+ mod_planet_AIO_chips_physics_research_produces_add: "每100[AIO_chips.GetIcon][AIO_chips.GetNamePlural]产生的£physics£ $physics_research$"
+ mod_planet_AIO_chips_society_research_produces_add: "每100[AIO_chips.GetIcon][AIO_chips.GetNamePlural]产生的£society£ $society_research$"
+ mod_planet_AIO_chips_engineering_research_produces_add: "每100[AIO_chips.GetIcon][AIO_chips.GetNamePlural]产生的£engineering£ $engineering_research$"
+ mod_planet_AIO_chips_AIO_advanced_logic_produces_add: "每100[AIO_chips.GetIcon][AIO_chips.GetNamePlural]产生的£AIO_advanced_logic£ $AIO_advanced_logic$"
+ mod_planet_AIO_chips_produces_mult: "[AIO_chips.GetIcon][AIO_chips.GetNamePlural]产出"
+ mod_planet_AIO_chips_upkeep_mult: "[AIO_chips.GetIcon][AIO_chips.GetNamePlural]£energy£ $energy$维护费"
 
  #endregion
 

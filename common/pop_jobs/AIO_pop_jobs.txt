@@ -1,14 +1,14 @@
 # AIO递归节点
-AIO_recursive_node = {
-	category = AIO_recursive_node
+AIO_chips = {
+	category = AIO_chips
 	first_come_first_served = yes
-	purge = purge_AIO_matryoshka_brain
+	purge = purge_AIO_chips
 	is_capped_by_modifier = no
 
 	swappable_data = {
 		default = {
 			building_icon = building_lathe_capital
-			icon = AIO_recursive_node
+			icon = AIO_chips
 		}
 	}
 
@@ -36,7 +36,7 @@ AIO_recursive_node = {
 	}
 
 	resources = {
-		category = planet_AIO_recursive_node
+		category = planet_AIO_chips
 		produces = {
 			trigger = {
 				owner = {
@@ -54,9 +54,8 @@ AIO_recursive_node = {
 			physics_research = 0.375
 			society_research = 0.375
 			engineering_research = 0.375
-			unity = 0.375
-			AIO_advanced_logic = 0.175
-			mult = value:AIO_recursive_node_produce_factor
+			AIO_advanced_logic = 0.025
+			mult = value:AIO_chips_produce_factor
 		}
 		upkeep = {
 			trigger = {
@@ -72,8 +71,8 @@ AIO_recursive_node = {
 					}
 				}
 			}
-			energy = 4.5
-			mult = value:AIO_recursive_node_upkeep_factor
+			energy = 5
+			mult = value:AIO_chips_upkeep_factor
 		}
 	}
 

@@ -33,13 +33,12 @@
  mod_planet_metallurgists_alloys_upkeep_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] £alloys£ $alloys$ upkeep"
  mod_planet_metallurgists_sr_living_metal_upkeep_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] £sr_living_metal£ $sr_living_metal$ upkeep"
  # recursive node
- mod_planet_AIO_recursive_node_physics_research_produces_add: "Per 100 [AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] produce £physics£ $physics_research$"
- mod_planet_AIO_recursive_node_society_research_produces_add: "Per 100 [AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] produce £society£ $society_research$"
- mod_planet_AIO_recursive_node_engineering_research_produces_add: "Per 100 [AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] produce £engineering£ $engineering_research$"
- mod_planet_AIO_recursive_node_unity_produces_add: "Per 100 [AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] produce £unity£ $unity$"
- mod_planet_AIO_recursive_node_AIO_advanced_logic_produces_add: "Per 100 [AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] produce £AIO_advanced_logic£ $AIO_advanced_logic$"
- mod_planet_AIO_recursive_node_produces_mult: "[AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] produce"
- mod_planet_AIO_recursive_node_upkeep_mult: "[AIO_recursive_node.GetIcon] [AIO_recursive_node.GetNamePlural] £energy£ $energy$ upkeep"
+ mod_planet_AIO_chips_physics_research_produces_add: "Per 100 [AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce £physics£ $physics_research$"
+ mod_planet_AIO_chips_society_research_produces_add: "Per 100 [AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce £society£ $society_research$"
+ mod_planet_AIO_chips_engineering_research_produces_add: "Per 100 [AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce £engineering£ $engineering_research$"
+ mod_planet_AIO_chips_AIO_advanced_logic_produces_add: "Per 100 [AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce £AIO_advanced_logic£ $AIO_advanced_logic$"
+ mod_planet_AIO_chips_produces_mult: "[AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce"
+ mod_planet_AIO_chips_upkeep_mult: "[AIO_chips.GetIcon] [AIO_chips.GetNamePlural] £energy£ $energy$ upkeep"
 
  #endregion
 

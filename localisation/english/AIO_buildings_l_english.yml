@@ -4,7 +4,7 @@
  # Resonator
  building_AIO_lathe_resonator: "$building_lathe_resonator$"
  building_AIO_lathe_resonator_desc: "$building_lathe_resonator_desc$"
- building_AIO_resonator_tt: "Per §Y$job_AIO_recursive_node$§! produce: §G+0.1%§!\n(current: §G+[AIO_AIO_resonator_factor]%§!)"
+ building_AIO_resonator_tt: "Per 100 §Y$job_AIO_chips$§! produce: §G+1%§!\n(current: §G+[AIO_resonator_factor]%§!)"
  # Stabilisator
  building_AIO_lathe_stabilisator: "$building_lathe_stabilisator$"
  building_AIO_lathe_stabilisator_desc: "$building_lathe_stabilisator_desc$"
@@ -23,10 +23,10 @@
  # Cogitator
  building_AIO_lathe_cogitator: "$building_lathe_cogitator$"
  building_AIO_lathe_cogitator_desc: "$building_lathe_cogitator_desc$"
- building_AIO_lathe_cogitator_tt: "§Y$MOD_COUNTRY_NAVAL_CAP_MULT$§!: Per 100 §Y$job_AIO_recursive_node$§!: §G+1%§!\n(current: §G+[AIO_num_AIO_recursive_node_per_100]%§!)\n§Y$MOD_SHIP_EXPERIENCE_GAIN_MULT$§!: Per 100 §Y$job_AIO_recursive_node$§!: §G+2%§!\n(current: §G+[AIO_num_AIO_recursive_node_per_200]%§!)"
+ building_AIO_lathe_cogitator_tt: "§Y$MOD_COUNTRY_NAVAL_CAP_MULT$§!: Per 100 §Y$job_AIO_chips$§!: §G+1%§!\n(current: §G+[AIO_chips_num_per_100]%§!)\n§Y$MOD_SHIP_EXPERIENCE_GAIN_MULT$§!: Per 100 §Y$job_AIO_chips$§!: §G+1%§!\n(current: §G+[AIO_chips_num_per_100]%§!)"
  # Validator
  building_AIO_lathe_validator: "$building_lathe_validator$"
  building_AIO_lathe_validator_desc: "$building_lathe_validator_desc$"
- building_AIO_lathe_validator_tt: "Per 100 §Y$job_AIO_recursive_node$§!: §Y$mod_category_computing_research_speed_mult$§! §G+1%§!\n(current: §G+[AIO_num_AIO_recursive_node_per_100]%§!)"
+ building_AIO_lathe_validator_tt: "Per 100 §Y$job_AIO_chips$§!: §Y$mod_category_computing_research_speed_mult$§! §G+1%§!\n(current: §G+[AIO_chips_num_per_100]%§!)"
 
  #endregion

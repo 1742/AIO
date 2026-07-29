@@ -1,7 +1,7 @@
 # AIO岗位类型
 
 # 递归节点
-AIO_recursive_node = {
+AIO_chips = {
 	rank = 4
 	change_job_threshold = 1.25
 

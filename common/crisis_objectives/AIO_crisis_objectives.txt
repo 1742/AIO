@@ -5,7 +5,7 @@ crisobj_AIO_neural_chips = { # Fire per year
 	reward = {
 		base = 0
 
-        add = capital_scope.value:AIO_num_recursive_node_per_100
+        add = capital_scope.value:AIO_chips_num_per_100
         mult = 50
 
 		min = 0

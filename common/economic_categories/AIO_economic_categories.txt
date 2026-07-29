@@ -1,8 +1,8 @@
 # AIO经济类型
 
 # 递归节点
-planet_AIO_recursive_node = {
-	icon = "job_AIO_recursive_node"
+planet_AIO_chips = {
+	icon = job_AIO_chips
 	parent = planet_jobs_productive
 	generate_add_modifiers = {
 		produces
