@@ -1,0 +1,83 @@
+decision_AIO_add_dormant_chassis_jobs = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_deep_sleep
+
+	enactment_time = 100
+
+	potential = {
+		owner? = {
+			has_technology = tech_AIO_exponential_learning_theory
+		}
+		OR = {
+			has_district = district_AIO_lathe
+			has_district = district_AIO_lathe_frame
+		}
+		NOT = { has_carrier_flag = AIO_dormant_chassis_jobs_updating }
+		count_owned_pop_amount = {
+			limit = { has_trait = trait_AIO_recursive_chassis }
+			count > 0
+		}
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = decision_AIO_add_dormant_chassis_jobs_requirements
+			count_owned_pop_amount = {
+				limit = {
+					has_trait = trait_AIO_recursive_chassis
+					is_pop_category = AIO_chips
+				}
+				count >= 333
+			}
+		}
+	}
+
+	effect = {
+		custom_tooltip = decision_AIO_add_dormant_chassis_jobs_effect
+		hidden_effect = {
+			add_deposit = d_AIO_dormant_chassis_array
+			set_timed_carrier_flag = {
+				flag = AIO_dormant_chassis_jobs_updating
+				days = 1
+			}
+			check_planet_employment = yes
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+decision_AIO_remove_dormant_chassis_jobs = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_deep_sleep
+
+	potential = {
+		exists = owner
+		has_deposit = d_AIO_dormant_chassis_array
+		NOT = { has_carrier_flag = AIO_dormant_chassis_jobs_updating }
+	}
+
+	allow = { always = yes }
+
+	effect = {
+		custom_tooltip = decision_AIO_remove_dormant_chassis_jobs_effect
+		hidden_effect = {
+			random_deposit = {
+				limit = { is_deposit_type = d_AIO_dormant_chassis_array }
+				remove_deposit = yes
+			}
+			set_timed_carrier_flag = {
+				flag = AIO_dormant_chassis_jobs_updating
+				days = 1
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}

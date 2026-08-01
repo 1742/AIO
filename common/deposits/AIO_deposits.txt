@@ -1,0 +1,16 @@
+# One array represents 333 dormant recursive-chassis job slots. Multiple
+# instances intentionally stack, following vanilla Deep Sleep cryo pods.
+d_AIO_dormant_chassis_array = {
+	icon = d_cryo_pods
+	is_for_colonizable = yes
+
+	potential = { always = no }
+
+	planet_modifier = {
+		job_AIO_dormant_chassis_add = 333
+	}
+
+	drop_weight = {
+		weight = 0
+	}
+}

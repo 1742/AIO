@@ -1,6 +1,7 @@
 ﻿l_english:
  district_AIO_lathe_frame: "Matryoshka Brain Frame"
  district_AIO_lathe_frame_plural: "$district_AIO_lathe_frame$"
+ mod_district_AIO_lathe_frame_max_add: "£mod_planet_max_districts_add£$district_AIO_lathe$ Limit"
 
  # swap district
  district_AIO_lathe: "Matryoshka Brain District"

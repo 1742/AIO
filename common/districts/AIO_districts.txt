@@ -4,7 +4,7 @@
 
 district_AIO_lathe_frame = {
 	icon = district_AIO_lathe
-	base_cap_amount = 6
+	is_uncapped = { always = no }
 
 	base_buildtime = 250
 

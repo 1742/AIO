@@ -1,7 +1,6 @@
 # AIO递归节点
 AIO_chips = {
 	category = AIO_chips
-	first_come_first_served = yes
 	purge = purge_AIO_chips
 	is_capped_by_modifier = no
 
@@ -89,4 +88,36 @@ AIO_chips = {
 	}
 
 	inline_script = "jobs/automodding_priority_research"
+}
+
+AIO_dormant_chassis = {
+	category = deep_sleep
+	is_capped_by_modifier = yes
+	can_set_priority = no
+
+	swappable_data = {
+		default = {
+			building_icon = building_residence
+			icon = ark_deep_sleep
+		}
+	}
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible = {
+		has_trait = trait_AIO_recursive_chassis
+	}
+
+	resources = {}
+
+	# Must beat the recursive-node preference for recursive chassis.
+	weight = {
+		weight = 99999
+	}
 }
