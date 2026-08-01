@@ -11,5 +11,5 @@ planet_AIO_chips = {
         produces
         upkeep
     }
-	modifier_category = pop_job
+	modifier_category = colony
 }
