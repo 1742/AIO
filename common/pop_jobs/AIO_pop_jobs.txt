@@ -76,14 +76,14 @@ AIO_chips = {
 	}
 
 	weight = {
-		weight = @maintenance_drone_job
+		weight = 1
 		modifier = {
 			factor = 1000
 			has_trait = trait_AIO_recursive_chassis
 			colony? = { NOT = { free_jobs_of_type = { job = AIO_dormant_chassis } } }
 		}
 		modifier = {
-			factor = @maintenance_drone_job
+			factor = 0
 			colony? = { free_jobs > 0 }
 		}
 	}
