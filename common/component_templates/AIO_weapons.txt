@@ -12,15 +12,20 @@ weapon_component_template = {
 	power = 0
 	ai_tag_weight = 0
 
+	damage = { min = 22000 max = 22000 }
+	collateral_damage = 5000
+	collateral_range = 100
+
+	windup = { min = 0 max = 0 }
+	total_fire_time = 0
+
 	firing_arc = 360
 	min_range = 0
-
-	damage = { min = 22000 max = 22000 }
-	windup = { min = 0 max = 0 }
 	range = 1000
+
 	tracking = 1
 	accuracy = 1
-	total_fire_time = 0
+
 	armor_penetration = 1.50
 	shield_penetration = 1.50
 }

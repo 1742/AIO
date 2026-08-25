@@ -75,6 +75,42 @@ AIO_chips = {
 		}
 	}
 
+	triggered_country_modifier = {
+		potential = {
+			owner = {
+				NOR = {
+					any_situation = {
+						is_situation_type = situation_energy_deficit
+					}
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						situation_progress <= 0
+					}
+				}
+				is_virtual_empire = no
+			}
+		}
+		pop_workforce_mult = 0.0001
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			owner = {
+				NOR = {
+					any_situation = {
+						is_situation_type = situation_energy_deficit
+					}
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						situation_progress <= 0
+					}
+				}
+				is_virtual_empire = yes
+			}
+		}
+		pop_workforce_mult = 0.0002
+	}
+
 	weight = {
 		weight = 1
 		modifier = {
