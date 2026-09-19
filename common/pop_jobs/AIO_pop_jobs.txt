@@ -90,7 +90,7 @@ AIO_chips = {
 				is_virtual_empire = no
 			}
 		}
-		pop_workforce_mult = 0.0001
+		pop_workforce_mult = 0.0003
 	}
 
 	triggered_country_modifier = {
@@ -108,7 +108,7 @@ AIO_chips = {
 				is_virtual_empire = yes
 			}
 		}
-		pop_workforce_mult = 0.0002
+		pop_workforce_mult = 0.0005
 	}
 
 	weight = {
