@@ -57,8 +57,8 @@
 
  #region crisis reward
 
- AIO_menp_nanites_processor_metallurgists: "$menp_AIO_fleet_component_2$"
- AIO_menp_nanites_processor_farmers: "$menp_AIO_fleet_component_2$"
+ AIO_menp_nanites_processor_metallurgists: "$menp_AIO_component_5$"
+ AIO_menp_nanites_processor_farmers: "$menp_AIO_component_5$"
 
  #endregion
 

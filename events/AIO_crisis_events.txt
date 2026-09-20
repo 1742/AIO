@@ -249,22 +249,7 @@ country_event = {
             days = 30
         }
 
-        set_variable = { which = AIO_DAIT_count value = 0 }
-        set_variable = { which = AIO_DAIT_construct_count value = 0 }
-        set_variable = { which = AIO_DAIT_negate_count value = 0 }
-        set_variable = { which = AIO_DAIT_enrich_count value = 0 }
-        set_variable = { which = AIO_DAIT_storm_count value = 0 }
-        set_variable = { which = AIO_DAIT_spawn_count value = 0 }
-        set_variable = { which = AIO_DAIT_harvest_count value = 0 }
-        set_variable = { which = AIO_DAIT_seed_count value = 0 }
-        set_variable = { which = AIO_DAIT_strike_count value = 0 }
-        set_variable = { which = AIO_DAIT_ethic_count value = 0 }
-        set_variable = { which = AIO_DAIT_erase_count value = 0 }
         AIO_DAIT_refresh_tendency_effect = yes
-        start_situation = {
-            type = AIO_crisis_situation
-            target = root
-        }
         AIO_create_HS_system_effect = yes
         AIO_crisis_update_stage_poi_effect = { STAGE = 2 }
     }
@@ -565,30 +550,6 @@ country_event = {
 
 #region AIO天灾目标
 
-# 部署递归节点
-event = {
-    id = AIO_crisis_events.801
-    hide_window = yes
-
-    is_triggered_only = yes
-    trigger = {
-        any_country = {
-            has_ascension_perk = ap_AIO_allinone
-            capital_scope? = { has_district = district_AIO_lathe }
-        }
-    }
-
-    immediate = {
-        random_country = {
-            limit = {
-                has_ascension_perk = ap_AIO_allinone
-                capital_scope? = { has_district = district_AIO_lathe }
-            }
-            complete_crisis_objective = crisobj_AIO_neural_chips
-        }
-    }
-}
-
 # 研究科技
 country_event = {
     id = AIO_crisis_events.802
@@ -619,7 +580,7 @@ event = {
 	immediate = {
         random_country = {
             limit = { has_ascension_perk = ap_AIO_allinone }
-            complete_crisis_objective = crisobj_AIO_have_science_nexuses
+            complete_crisis_objective = crisobj_AIO_interference
         }
     }
 }

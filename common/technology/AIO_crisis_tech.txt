@@ -14,7 +14,6 @@ tech_AIO_exponential_learning_theory = {
 
 	modifier = {
         all_technology_research_speed = 0.1
-		district_AIO_lathe_frame_max_add = 6
     }
 
     prereqfor_desc = {

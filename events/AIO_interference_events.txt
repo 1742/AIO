@@ -1,0 +1,33 @@
+namespace = AIO_interference_events
+
+
+# Fired when a Reality Interferometer finishes construction.
+# event_target:AIO_interferometer_system = host system
+country_event = {
+	id = AIO_interference_events.202
+	title = AIO_interference_events.202.title
+	desc = AIO_interference_events.202.desc
+	picture = GFX_evt_shroud_psionic_aura
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_interference_events.202.production
+		event_target:AIO_interferometer_system = {
+			AIO_interference_create_source = {
+				TYPE = production
+				OWNER = root
+			}
+		}
+		default_hide_option = yes
+	}
+
+	option = {
+		name = AIO_interference_events.202.weapon
+		event_target:AIO_interferometer_system = {
+			AIO_interference_create_source = {
+				TYPE = weapon
+				OWNER = root
+			}
+		}
+	}
+}

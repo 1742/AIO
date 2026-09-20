@@ -1,0 +1,166 @@
+#region api
+
+# Scope: system
+# OWNER: country that owns the completed Reality Interferometer
+AIO_interference_create_source = {
+	AIO_interference_prepare_source = { OWNER = $OWNER$ }
+	set_star_flag = AIO_interference_source_$TYPE$
+	set_star_flag = AIO_interference_$TYPE$
+	aura_owner = { AIO_interference_rebuild_effect_flags = yes }
+}
+
+# Scope: system
+AIO_interference_remove_source = {
+	remove_star_flag = AIO_interference_source
+	remove_star_flag = AIO_interference_source_production
+	remove_star_flag = AIO_interference_source_weapon
+	if = {
+		limit = { has_psionic_aura = AIO_reality_interference_aura }
+		aura_owner = { AIO_interference_rebuild_effect_flags = yes }
+	}
+}
+
+# Scope: country
+# Called only when a source is added or destroyed. Re-calculate modifier of
+# all system within interference aura
+AIO_interference_rebuild_effect_flags = {
+	save_event_target_as = AIO_interference_rebuild_owner
+	every_system_with_aura = {
+		limit = {
+			has_psionic_aura = AIO_reality_interference_aura
+			aura_owner = { is_same_value = event_target:AIO_interference_rebuild_owner }
+		}
+		AIO_interference_update_system_effect_flags = {
+			OWNER = event_target:AIO_interference_rebuild_owner
+		}
+	}
+}
+
+# Scope: a system carrying the Reality Interference aura
+AIO_interference_prototype_try_spread = {
+	if = {
+		limit = { has_psionic_aura = AIO_reality_interference_aura }
+		set_variable = { which = AIO_interference_range_spread value = $RANGE|1$ }
+		aura_owner = { save_event_target_as = AIO_interference_spreading_owner }
+		random_neighbor_system = {
+			limit = {
+				AIO_is_nearby_interference_source = {
+					OWNER = event_target:AIO_interference_spreading_owner
+					MAX_STEPS = AIO_interference_range_spread
+				}
+				has_psionic_aura = no
+			}
+			spawn_psionic_aura = {
+				owner = event_target:AIO_interference_spreading_owner
+				type = AIO_reality_interference_aura
+				update_type = no
+			}
+			set_aura_intensity = 1
+			AIO_interference_update_system_effect_flags = {
+				OWNER = event_target:AIO_interference_spreading_owner
+				RANGE = AIO_interference_range_spread
+			}
+		}
+	}
+}
+
+# Scope: a system carrying the Reality Interference aura
+AIO_clear_interference_flag = {
+	remove_star_flag = AIO_interference_source
+
+	remove_star_flag = AIO_interference_source_production
+	remove_star_flag = AIO_interference_production
+	remove_star_flag = AIO_interference_production_residual
+
+	remove_star_flag = AIO_interference_source_weapon
+	remove_star_flag = AIO_interference_weapon
+	remove_star_flag = AIO_interference_weapon_residual
+}
+
+#endregion
+
+
+#region helper
+
+# Scope: system
+# OWNER: country that owns the completed Reality Interferometer
+# Existing vanilla or foreign auras are allowed to run their on_vanish effect,
+# then are replaced by the Reality Interference aura.
+AIO_interference_prepare_source = {
+	if = {
+		limit = {
+			NOT = {
+				AND = {
+					has_psionic_aura = AIO_reality_interference_aura
+					aura_owner = { is_same_value = $OWNER$ }
+				}
+			}
+		}
+		if = {
+			limit = { has_psionic_aura = yes }
+			destroy_psionic_aura = yes
+		}
+		spawn_psionic_aura = {
+			owner = $OWNER$
+			type = AIO_reality_interference_aura
+			update_type = no
+		}
+		set_aura_intensity = 1
+	}
+	set_star_flag = AIO_interference_source
+}
+
+# Scope: a system carrying an AIO Reality Interference aura
+# OWNER: country that owns the aura
+# RANGE: effect range(max jumps)
+AIO_interference_update_system_effect_flags = {
+	set_variable = { which = AIO_interference_range_update value = $RANGE|1$ }
+
+	if = {
+		limit = {
+			AIO_is_nearby_specific_interference_source = {
+				TYPE = production
+				OWNER = $OWNER$
+				MAX_STEPS= AIO_interference_range_update
+			}
+		}
+		set_star_flag = AIO_interference_production
+		remove_star_flag = AIO_interference_production_residual
+	}
+	else = {
+		if = {
+			limit = { has_star_flag = AIO_interference_production }
+			remove_star_flag = AIO_interference_production
+			set_timed_star_flag = {
+				flag = AIO_interference_production_residual
+				years = 5
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			AIO_is_nearby_specific_interference_source = {
+				TYPE = weapon
+				OWNER = $OWNER$
+				MAX_STEPS= AIO_interference_range_update
+			}
+		}
+		set_star_flag = AIO_interference_weapon
+		remove_star_flag = AIO_interference_weapon_residual
+	}
+	else = {
+		if = {
+			limit = { has_star_flag = AIO_interference_weapon }
+			remove_star_flag = AIO_interference_weapon
+			set_timed_star_flag = {
+				flag = AIO_interference_weapon_residual
+				years = 5
+			}
+		}
+	}
+
+	clear_variable = AIO_interference_range_update
+}
+
+#endregion

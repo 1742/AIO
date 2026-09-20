@@ -1,0 +1,76 @@
+# Reality Interferometer
+# Provisional economy values; mechanics are ready for balancing later.
+
+@AIO_reality_interferometer_build_time = 720
+@AIO_reality_interferometer_alloy_cost = 1000
+@AIO_reality_interferometer_energy_cost = 2000
+@AIO_reality_interferometer_energy_upkeep = 20
+@AIO_reality_interferometer_logic_output = 5
+
+AIO_reality_interferometer = {
+	entity = "shroud_seal_entity"
+	construction_entity = "shroud_seal_entity"
+	construction_scale = 1.2
+	portrait = "GFX_megastructure_shroud_seal_background"
+	place_entity_on_planet_plane = no
+	build_type = inside_gravity_well
+	show_galactic_map_icon = yes
+	entity_offset = { x = -8 y = -8 }
+
+	potential = {
+		has_ascension_perk = ap_AIO_allinone
+	}
+
+	possible = {
+		inline_script = megastructures/system_ownership_or_waystation_check
+		inline_script = megastructures/system_surveyed_or_waystation_check
+		custom_tooltip = {
+			fail_text = AIO_requires_no_existing_reality_interferometer
+			NOT = { has_megastructure = AIO_reality_interferometer }
+		}
+		custom_tooltip = {
+			fail_text = AIO_requires_reality_interferometer_capacity
+			from = {
+				count_owned_megastructure = {
+					limit = { is_megastructure_type = AIO_reality_interferometer }
+					count < 5
+				}
+			}
+		}
+	}
+
+	construction_blocks_and_blocked_by = self_type
+	build_time = @AIO_reality_interferometer_build_time
+
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = @AIO_reality_interferometer_alloy_cost
+			energy = @AIO_reality_interferometer_energy_cost
+		}
+		upkeep = {
+			energy = @AIO_reality_interferometer_energy_upkeep
+		}
+		produces = {
+			AIO_advanced_logic = @AIO_reality_interferometer_logic_output
+		}
+	}
+
+	dismantle_time = 180
+	dismantle_potential = { always = yes }
+	dismantle_possible = {
+		solar_system = { is_owned_by = from }
+	}
+
+	on_build_complete = {
+		solar_system = { save_event_target_as = AIO_interferometer_system }
+		from = { country_event = { id = AIO_interference_events.202 } }
+	}
+
+	on_dismantle_complete = {
+		solar_system = { AIO_interference_remove_source = yes }
+	}
+
+	ai_weight = { base = 0 }
+	show_in_outliner = yes
+}

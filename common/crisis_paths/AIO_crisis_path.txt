@@ -10,9 +10,10 @@ AIO_path = {
 	}
 
 	objectives = {
-		crisobj_AIO_neural_chips
 		crisobj_AIO_research_tech
+		crisobj_AIO_research_special_project
+		crisobj_AIO_explore_astral
+		crisobj_AIO_interference
 		crisobj_AIO_research_thesis
-		crisobj_AIO_have_science_nexuses
 	}
 }

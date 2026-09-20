@@ -1,0 +1,43 @@
+# The system whether nearby any interference source effect range, exclude self
+# Scope: system
+# OWNER: country that owns the Reality Interference aura
+# MAX_STEPS: max jumps
+AIO_is_nearby_interference_source = {
+	closest_system = {
+		use_bypasses = no
+		min_steps = 1
+		max_steps = $MAX_STEPS|1$
+		valid = {
+			has_star_flag = AIO_interference_source
+			has_psionic_aura = AIO_reality_interference_aura
+			aura_owner = { is_same_value = $OWNER$ }
+		}
+	}
+}
+
+# The system whether nearby a specific interference source effect range, include self
+# Scope: system
+# TYPE: modifier type
+# OWNER: country that owns the Reality Interference aura
+# MAX_STEPS: max jumps
+AIO_is_nearby_specific_interference_source = {
+	OR = {
+		AND = {
+			has_star_flag = AIO_interference_source
+			has_star_flag = AIO_interference_source_$TYPE$
+			has_psionic_aura = AIO_reality_interference_aura
+			aura_owner = { is_same_value = $OWNER$ }
+		}
+		closest_system = {
+			use_bypasses = no
+			min_steps = 1
+			max_steps = $MAX_STEPS|1$
+			valid = {
+				has_star_flag = AIO_interference_source
+				has_star_flag = AIO_interference_source_$TYPE$
+				has_psionic_aura = AIO_reality_interference_aura
+				aura_owner = { is_same_value = $OWNER$ }
+			}
+		}
+	}
+}

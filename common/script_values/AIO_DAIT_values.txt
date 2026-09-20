@@ -1,0 +1,8 @@
+# 亚弗戈蒙之怒修正
+AIO_Aforgomom_Wrath_factor = {
+    base = 2.71
+
+    pow = event_target:AIO_Aforgomom_country.AIO_Aforgomom_Wrath
+
+    min = 1
+}

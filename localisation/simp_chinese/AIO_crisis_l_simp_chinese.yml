@@ -48,16 +48,19 @@
 
  #endregion
 
+
  #region 天灾目标
 
- crisobj_AIO_neural_chips_name: "部署递归节点"
- crisobj_AIO_neural_chips_desc: "我们必须做出一点牺牲才能够适应如此宏大的研究规模。\n\n将人口作为§Y$job_AIO_chips$§!装入§Y$district_AIO_lathe$§!以获得$AIO_advanced_logic$。\n\n§Y$job_AIO_chips$§!的产出随其数量增加，并可以区划和建筑物进一步提高。\n\n持续增加§Y递归节点§!的数量以获得这项§Y年度§!$AIO_advanced_logic$奖励"
  crisobj_AIO_research_tech_name: "$crisobj_research_tech_name$"
  crisobj_AIO_research_tech_desc: "$crisobj_research_tech_desc$"
+ crisobj_AIO_research_special_project_name: "研究异常现象、特殊项目"
+ crisobj_AIO_research_special_project_desc: "REPLACE_ME"
+ crisobj_AIO_explore_astral_name: "探索星界裂隙"
+ crisobj_AIO_explore_astral_desc: "REPLACE_ME"
+ crisobj_AIO_interference_name: "干涉现实"
+ crisobj_AIO_interference_desc: "REPLACE_ME"
  crisobj_AIO_research_thesis_name: "$crisobj_research_thesis_name$"
  crisobj_AIO_research_thesis_desc: "$crisobj_research_thesis_desc$"
- crisobj_AIO_have_science_nexuses_name: "$crisobj_have_science_nexuses_name$"
- crisobj_AIO_have_science_nexuses_desc: "$crisobj_have_science_nexuses_desc$"
 
  #endregion
 
@@ -70,50 +73,52 @@
  unlocks_AIO_allinone_research: "可以开始通过完成§H天灾目标§!以积累£AIO_advanced_logic£§Y$AIO_advanced_logic$§!。"
  menp_AIO_buildings_1: "$menp_cosmo_buildings_1$"
  menp_AIO_buildings_1_desc: "$menp_cosmo_buildings_1_desc$"
- menp_AIO_fleet_component_1: "$menp_cosmo_techs_4$"
- menp_AIO_fleet_component_1_desc: "$menp_cosmo_techs_4_desc$"
- unlocks_AIO_allinone_fleet_component_1: "解锁§Y$tech_arc_emitter_2$§!和§Y$tech_dragon_armor$§!舰船部件科技。\n"
- menp_AIO_fleet_dark_matter: "$menp_cosmo_techs_2$"
- menp_AIO_fleet_dark_matter_desc: "$menp_cosmo_techs_2_desc$"
- menp_AIO_fleet_component_1_2_tt: "解锁法令：§Y$edict_edict_AIO_dm_engine$§!\n解锁区划特化：§Y$zone_AIO_dm_production$§!"
+ menp_AIO_component_1: "$menp_cosmo_techs_1$"
+ menp_AIO_component_1_desc: "$menp_cosmo_techs_1_desc$"
+ menp_AIO_interference: "现实干涉"
+ menp_AIO_interference_desc: "REPLACE_ME"
  # 二阶
  menp_AIO_mega_02: "铸门之人"
  menp_AIO_mega_02_desc: "我们将亲手打造通往无限维度的‘门’。"
- unlocks_AIO_allinone_mega_01: "解锁巨构：§Y$AIO_mega_01$§!\n解锁定向应用无限：§Y丰饶§!、§Y风暴§!\n"
+ unlocks_AIO_allinone_mega_01: "解锁巨构：§Y$AIO_mega_01$§!"
  menp_AIO_buildings_2: "$menp_cosmo_buildings_2$"
  menp_AIO_buildings_2_desc: "$menp_cosmo_buildings_2_desc$"
- menp_AIO_fleet_component_2: "纳米工艺"
- menp_AIO_fleet_component_2_desc: "$menp_cosmo_techs_5_desc$"
- menp_AIO_ship_2: "$menp_cosmo_ship_2$"
- menp_AIO_ship_2_desc: "$menp_cosmo_ship_2_desc$"
- menp_AIO_ship_2_tt.alloys: "解锁法令：§Y$edict_edict_AIO_nanite_construction$§!\n解锁区划特化：§Y$zone_AIO_nanites_production_metallurgists$§!"
- menp_AIO_ship_2_tt.food: "解锁法令：§Y$edict_edict_AIO_nanite_construction$§!、§Y$edict_edict_AIO_nanite_farming$§!\n解锁区划特化：§Y$zone_AIO_nanites_production_farmers$§!"
+ menp_AIO_component_2: "$menp_cosmo_techs_2$"
+ menp_AIO_component_2_desc: "$menp_cosmo_techs_2_desc$"
+ menp_AIO_ship_escort: "$menp_cosmo_ship_2$"
+ menp_AIO_ship_escort_desc: "$menp_cosmo_ship_2_desc$"
  # 三阶
  menp_AIO_mega_03: "时空工程"
  menp_AIO_mega_03_desc: "我们能看见事件发生前的分叉，乃至选择它的方向。"
- unlocks_AIO_allinone_mega_02: "解锁巨构：§Y$AIO_mega_02$§!\n解锁定向应用无限：§Y生成§!、§Y收割§!\n"
+ unlocks_AIO_allinone_mega_02: "解锁巨构：§Y$AIO_mega_02$§!"
  menp_AIO_buildings_3: "$menp_cosmo_buildings_3$"
  menp_AIO_buildings_3_desc: "$menp_cosmo_buildings_3_desc$"
- menp_AIO_fleet_component_3: "$menp_cosmo_techs_3$"
- menp_AIO_fleet_component_3_desc: "$menp_cosmo_techs_3_desc$"
+ menp_AIO_component_3: "$menp_cosmo_techs_3$"
+ menp_AIO_component_3_desc: "$menp_cosmo_techs_3_desc$"
  menp_AIO_ship_3: "$menp_cosmo_ship_3$"
  menp_AIO_ship_3_desc: "$menp_cosmo_ship_3_desc$"
  # 四阶
  menp_AIO_mega_04: "恒视之主"
  menp_AIO_mega_04_desc: "我们无需去征服，万物已置于我们的目光之下。"
- unlocks_AIO_allinone_mega_03: "解锁巨构：§Y$AIO_mega_03$§!\n解锁定向应用无限：§Y播种§!、§Y打击§!\n"
+ unlocks_AIO_allinone_mega_03: "解锁巨构：§Y$AIO_mega_03$§!"
  menp_AIO_buildings_4: "$menp_cosmo_buildings_4$"
  menp_AIO_buildings_4_desc: "$menp_cosmo_buildings_4_desc$"
- menp_AIO_ship_4: "$menp_cosmo_ship_4$"
- menp_AIO_ship_4_desc: "$menp_cosmo_ship_4_desc$"
+ menp_AIO_component_4: "$menp_cosmo_techs_4$"
+ menp_AIO_component_4_desc: "$menp_cosmo_techs_4_desc$"
+ unlocks_AIO_component_4: "解锁§Y$tech_arc_emitter_1$§!和§Y$tech_dragon_armor$§!舰船部件科技。"
+ menp_AIO_ship_titan: "$menp_cosmo_ship_4$"
+ menp_AIO_ship_titan_desc: "$menp_cosmo_ship_4_desc$"
  # 五阶
  menp_AIO_mega_05: "维度嵌入"
  menp_AIO_mega_05_desc: "我/我们即真理。"
- unlocks_AIO_allinone_mega_04: "解锁巨构：§Y$AIO_mega_04$§!\n解锁定向应用无限：§Y思潮§!、§Y抹除§!\n"
+ unlocks_AIO_allinone_mega_04: "解锁巨构：§Y$AIO_mega_04$§!"
  menp_AIO_buildings_5: "$menp_cosmo_buildings_5$"
  menp_AIO_buildings_5_desc: "$menp_cosmo_buildings_5_desc$"
- # 说明
- AIO_unlock_AIO_TDTE_node: "解锁§Y$AIO_mega_01_node$§!节点"
+ menp_AIO_component_5: "$menp_cosmo_techs_5$"
+ menp_AIO_component_5_desc: "$menp_cosmo_techs_5_desc$"
+ menp_AIO_interference_enhance: "$menp_cosmo_features_4$"
+ menp_AIO_interference_enhance_desc: "$menp_cosmo_features_4_desc$"
+ unlocks_AIO_interference_enhance: "REPLACE_ME"
 
  #endregion
 

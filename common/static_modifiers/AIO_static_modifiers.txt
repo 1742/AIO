@@ -3,18 +3,6 @@
 
 #region DAIT
 
-AIO_DAIT_enrich_modifier = {
-    icon = gfx/interface/icons/modifiers/mod_produces_mult.dds
-
-    planet_jobs_produces_mult = 0.25
-}
-
-AIO_DAIT_spawn_modifier = {
-    icon = gfx/interface/icons/modifiers/mod_planet_max_districts_add.dds
-
-    planet_max_districts_mult = 0.5
-}
-
 # 亚弗戈蒙之怒
 AIO_Aforgomom_Wrath_modifier = {
     icon = gfx/interface/icons/modifiers/mod_weapon_type_energy_weapon_damage_mult.dds

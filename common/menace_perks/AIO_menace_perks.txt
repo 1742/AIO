@@ -5,13 +5,9 @@
 menp_AIO_al_research = {
 	portrait = "GFX_menp_AIO_al_research_icon"
 
-	modifier = { all_technology_research_speed = 0.1 }
-
 	on_unlock = {
 		custom_tooltip = unlocks_AIO_allinone_research
-
 		add_research_option = tech_AIO_exponential_learning_theory
-		add_research_option = tech_AIO_ascending_dimensionality_theory
 	}
 }
 # 建筑
@@ -24,23 +20,20 @@ menp_AIO_buildings_1 = {
 	}
 }
 # 舰船组件
-menp_AIO_fleet_component_1 = {
-	portrait = "GFX_menp_AIO_fleet_component_1_1_icon"
+menp_AIO_component_1 = {
+	portrait = GFX_menp_AIO_component_1_icon
 
 	on_unlock = {
-		custom_tooltip = unlocks_AIO_allinone_fleet_component_1
-		add_research_option = tech_arc_emitter_2
-		add_research_option = tech_dragon_armor
+		custom_tooltip = unlocks_techs_1
+		add_research_option = tech_dark_matter_power_core
 	}
 }
-# 暗物质科技
-menp_AIO_fleet_dark_matter = {
-	portrait = "GFX_menp_AIO_fleet_component_2_icon"
+# 现实干涉
+menp_AIO_interference = {
+	portrait = "GFX_menp_AIO_interference_icon"
 
 	on_unlock = {
-		custom_tooltip = menp_AIO_fleet_component_1_2_tt
-		add_research_option = tech_enigmatic_decoder
-		add_research_option = tech_dark_matter_propulsion
+		add_research_option = tech_AIO_ascending_dimensionality_theory
 	}
 }
 
@@ -68,27 +61,18 @@ menp_AIO_buildings_2 = {
 	}
 }
 # 舰船组件
-menp_AIO_fleet_component_2 = {
-	portrait = "GFX_menp_AIO_fleet_component_1_2_icon"
+menp_AIO_component_2 = {
+	portrait = GFX_menp_AIO_component_2_icon
 
 	on_unlock = {
-        if = {
-            limit = { country_uses_bio_ships = no }
-            custom_tooltip = menp_AIO_ship_2_tt.alloys
-        }
-        else = {
-            custom_tooltip = menp_AIO_ship_2_tt.food
-        }
-
-		add_research_option = tech_nanite_transmutation
-		add_research_option = tech_nanite_repair_system
-		add_research_option = tech_nanite_autocannon
-		add_research_option = tech_nanite_flak_batteries
+		custom_tooltip = unlocks_techs_2
+		add_research_option = tech_enigmatic_decoder
+		add_research_option = tech_dark_matter_propulsion
 	}
 }
 # 舰船
-menp_AIO_ship_2 = {
-	portrait = "GFX_menp_AIO_ship_2_icon"
+menp_AIO_ship_escort = {
+	portrait = GFX_menp_AIO_ship_escort_icon
 
 	on_unlock = {
 		if = {
@@ -128,8 +112,8 @@ menp_AIO_buildings_3 = {
 	}
 }
 # 舰船组件
-menp_AIO_fleet_component_3 = {
-	portrait = "GFX_menp_AIO_fleet_component_3_icon"
+menp_AIO_component_3 = {
+	portrait = GFX_menp_AIO_component_3_icon
 
 	on_unlock = {
 		custom_tooltip = unlocks_techs_3
@@ -177,12 +161,21 @@ menp_AIO_buildings_4 = {
 		# 分型行政流程/量子行政流程/假突触簇集/假突触轴突、量子创新枢纽/超然创新部、重盾垣壁/神盾基地
 	}
 }
-# 舰船
-menp_AIO_ship_4 = {
-	portrait = "GFX_menp_AIO_ship_4_icon"
+# 舰船组件
+menp_AIO_component_4 = {
+	portrait = GFX_menp_AIO_component_4_icon
 
 	on_unlock = {
-		add_research_option = tech_dark_matter_power_core
+		custom_tooltip = unlocks_AIO_component_4
+		add_research_option = tech_arc_emitter_1
+		add_research_option = tech_dragon_armor
+	}
+}
+# 舰船
+menp_AIO_ship_titan = {
+	portrait = GFX_menp_AIO_ship_titan_icon
+
+	on_unlock = {
 		if = {
 			limit = { country_uses_bio_ships = no }
 			custom_tooltip = unlocks_ship_4
@@ -216,5 +209,24 @@ menp_AIO_buildings_5 = {
 	on_unlock = {
 		custom_tooltip = unlocks_buildings_5
 		# 天空穹顶/九天穹顶、虚拟极乐广场/无尽极乐枢纽、机器人生产节点/机器人生产中心/分子焕活所/生物再生所
+	}
+}
+# 舰船组件
+menp_AIO_component_5 = {
+	portrait = GFX_menp_AIO_fleet_nanites_icon
+
+	on_unlock = {
+		add_research_option = tech_nanite_transmutation
+		add_research_option = tech_nanite_repair_system
+		add_research_option = tech_nanite_autocannon
+		add_research_option = tech_nanite_flak_batteries
+	}
+}
+# 现实干涉
+menp_AIO_interference_enhance = {
+	portrait = "GFX_menp_AIO_interference_enhance_icon"
+
+	on_unlock = {
+		custom_tooltip = unlocks_AIO_interference_enhance
 	}
 }

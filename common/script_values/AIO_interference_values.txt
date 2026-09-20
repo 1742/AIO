@@ -1,0 +1,25 @@
+# Scope: a system carrying an AIO Reality Interference aura.
+# Each source in this system or an adjacent system contributes 2 monthly intensity.
+AIO_reality_interference_nearby_source_growth = {
+	base = 0
+
+	modifier = {
+		add = 1
+		has_star_flag = AIO_interference_source
+		has_psionic_aura = AIO_reality_interference_aura
+	}
+
+	complex_trigger_modifier = {
+		trigger = count_neighbor_system
+		parameters = {
+			limit = {
+				has_star_flag = AIO_interference_source
+				has_psionic_aura = AIO_reality_interference_aura
+				aura_owner = { is_same_value = root.aura_owner }
+			}
+		}
+		mode = add
+	}
+
+	mult = 2
+}
