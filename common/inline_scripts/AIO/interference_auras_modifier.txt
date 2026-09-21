@@ -26,6 +26,21 @@ neutral_planet_modifier = {
     }
     mult = $MULT$
 }
+rival_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_production
+                has_star_flag = AIO_interference_production_residual
+            }
+        }
+    }
+    modifier = {
+        planet_jobs_produces_mult = 0.10
+    }
+    mult = $MULT$
+}
+
 owner_fleet_modifier = {
     potential = {
         solar_system = {
@@ -41,6 +56,20 @@ owner_fleet_modifier = {
     mult = $MULT$
 }
 neutral_fleet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_weapon
+                has_star_flag = AIO_interference_weapon_residual
+            }
+        }
+    }
+    modifier = {
+        ship_fire_rate_mult = 0.10
+    }
+    mult = $MULT$
+}
+rival_fleet_modifier = {
     potential = {
         solar_system = {
             OR = {
