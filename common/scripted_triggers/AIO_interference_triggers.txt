@@ -8,10 +8,10 @@ AIO_is_nearby_interference_source = {
 		min_steps = 1
 		max_steps = $OWNER$.AIO_interference_range
 		valid = {
-			has_star_flag = AIO_interference_source
 			has_psionic_aura = AIO_reality_interference_aura
 			aura_owner = { is_same_value = $OWNER$ }
 		}
+		limit = { has_star_flag = AIO_interference_source }
 	}
 }
 
@@ -33,10 +33,12 @@ AIO_is_nearby_specific_interference_source = {
 			min_steps = 1
 			max_steps = $OWNER$.AIO_interference_range
 			valid = {
-				has_star_flag = AIO_interference_source
-				has_star_flag = AIO_interference_source_$TYPE$
 				has_psionic_aura = AIO_reality_interference_aura
 				aura_owner = { is_same_value = $OWNER$ }
+			}
+			limit = {
+				has_star_flag = AIO_interference_source
+				has_star_flag = AIO_interference_source_$TYPE$
 			}
 		}
 	}

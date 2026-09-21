@@ -2,7 +2,7 @@
 # One native Psionic Aura carries several effects selected by star flags.
 AIO_reality_interference_aura = {
 	intensity_level = {
-		end = 10
+		end = 1000
 		custom_tooltip = AIO_reality_interference_aura_level_1_tt
 		inline_script = {
 			script = AIO/interference_auras_modifier
@@ -10,7 +10,7 @@ AIO_reality_interference_aura = {
 		}
 	}
 	intensity_level = {
-		end = 20
+		end = 2000
 		custom_tooltip = AIO_reality_interference_aura_level_2_tt
 		inline_script = {
 			script = AIO/interference_auras_modifier
@@ -18,7 +18,7 @@ AIO_reality_interference_aura = {
 		}
 	}
 	intensity_level = {
-		end = 25
+		end = 2500
 		custom_tooltip = AIO_reality_interference_aura_level_3_tt
 		inline_script = {
 			script = AIO/interference_auras_modifier
@@ -26,14 +26,23 @@ AIO_reality_interference_aura = {
 		}
 	}
 
-	on_gain_level = {
-		AIO_interference_prototype_try_spread = yes
+	# Propagation is independent of intensity levels. Every existing field node
+	# attempts to advance the frontier once per month, while the scripted
+	# trigger on the target system keeps it inside the owner's source range.
+	on_monthly = {
+		if = {
+			limit = { NOT = { has_star_flag = AIO_interference_spread_cooldown } }
+			AIO_interference_prototype_try_spread = yes
+			set_timed_star_flag = {
+				flag = AIO_interference_spread_cooldown
+				months = 3
+			}
+		}
 	}
 
 	on_progress_complete = {
-		AIO_interference_prototype_try_spread = yes
 		hidden_effect = {
-			set_aura_intensity = 20
+			set_aura_intensity = 2000
 		}
 	}
 
