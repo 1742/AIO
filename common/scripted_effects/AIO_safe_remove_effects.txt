@@ -18,6 +18,11 @@ AIO_safe_remove_megastructure = {
             limit = { is_megastructure_type = grand_archive_0 }
             solar_system = { system_event = { id = grand_archive.4501 } }
         }
+        else_if = {
+            limit = { is_megastructure_type = AIO_reality_interferometer }
+            solar_system = { AIO_interference_remove_source = yes }
+            remove_megastructure = this
+        }
         else = {
             if = {
                 limit = { AIO_is_dyson_swarm = yes }

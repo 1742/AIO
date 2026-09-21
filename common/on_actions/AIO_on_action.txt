@@ -18,23 +18,16 @@ on_game_start_country = {
 
 on_yearly_pulse = {
     events = {
-        AIO_crisis_events.801  # 天灾目标，征用神经芯片
-        AIO_crisis_events.803  # 天灾目标，控有科学枢纽
-    }
-}
-
-on_yearly_pulse_country = {
-    events = {
-        AIO_crisis_events.804 # 给予递归载体物种模板
+        AIO_crisis_events.804  # 天灾目标，建造现实干涉仪
     }
 }
 
 on_tech_increased = {
     events = {
         AIO_crisis_events.401 # 完成科技升维假设，提示建造视相引擎
-        AIO_crisis_events.802  # 天灾目标，研究科技
-        AIO_crisis_events.804 # 虚拟帝国完成指数级学习理论
-		AIO_fe_events.201 # 授予 AIO 堕落帝国建筑科技对应的原版科技
+        AIO_crisis_events.801  # 天灾目标，研究科技
+		AIO_compatible_events.201 # 授予原版堕落帝国建筑科技
+        AIO_compatible_events.202 # 授予原版灵能光环科技
     }
 }
 
@@ -60,8 +53,40 @@ on_fleet_destroyed_perp = {
     }
 }
 
+# Executed when a megastructure has a new owner
+# this = new owner
+# from = megastructure
+# fromfrom = old owner (if existing)
 on_megastructure_change_owner = {
     events = {
+        AIO_crisis_events.902 # 失去现实干涉仪
+    }
+}
 
+# Fired when a ship finishes researching an anomaly.
+# this = ship
+# from = planet
+anomaly_success = {
+    events = {
+        AIO_crisis_events.8021 # 天灾目标，完成特殊项目
+    }
+}
+
+# Fired when a ship completes a special project.
+# this = country
+# fromfromfrom = ship
+special_project_success = {
+    events = {
+        AIO_crisis_events.8022 # 天灾目标，完成特殊项目
+    }
+}
+
+# Executed when the exploration of an astral rift ends
+# THIS = Country: Explorer country
+# FROM = AstralRift: Explored astral rift
+# FROMFROM = Exploring Fleet
+on_astral_rift_exploration_complete = {
+    events = {
+        AIO_crisis_events.803 # 天灾目标，探索星界裂隙
     }
 }

@@ -1,4 +1,3 @@
-# 当前由测试巨构挂载；功能完成后改由 AIO 正式巨构挂载。
 AIO_DAIT_lock_target = {
 	user_scope = megastructure
 	scope = galactic_object
@@ -34,5 +33,5 @@ AIO_DAIT_lock_target = {
 	context_menu_name = AIO_DAIT_lock_target_action
 	activity_key = AIO_DAIT_lock_target_activity
 	tooltip = AIO_DAIT_lock_target_tooltip
-	cooldown = 1
+	cooldown = 1800
 }

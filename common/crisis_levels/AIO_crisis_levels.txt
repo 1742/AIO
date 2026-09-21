@@ -107,7 +107,7 @@ crisis_AIO_level_5 = {
 		menp_AIO_mega_05
 		menp_AIO_buildings_5
 		menp_AIO_component_5
-		menp_AIO_interference_enhance
+		menp_AIO_break_rules
 	}
 
 	on_unlock = { country_event = { id = AIO_crisis_events.305 } }

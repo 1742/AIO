@@ -268,62 +268,23 @@ AIO_create_Aforgomom_effect = {
     }
 }
 
-# 用当前隐藏倾向替换天灾事件链中的阶段 POI。
 # scope: country
 AIO_crisis_update_stage_poi_effect = {
     remove_point_of_interest = AIO_crisis_stage_2_poi
     remove_point_of_interest = AIO_crisis_stage_3_poi
     remove_point_of_interest = AIO_crisis_stage_4_poi
     remove_point_of_interest = AIO_crisis_stage_5_poi
-
-    if = {
-        limit = { has_country_flag = AIO_DAIT_tendency_construct }
-        create_point_of_interest = {
-            id = AIO_crisis_stage_$STAGE$_poi
-            name = AIO_crisis_stage_$STAGE$_poi_name
-            desc = AIO_crisis_stage_$STAGE$_construct_desc
-            event_chain = AIO_crisis_events_chain
-            location = event_target:AIO_HS_system
-        }
-    }
-    else_if = {
-        limit = { has_country_flag = AIO_DAIT_tendency_negate }
-        create_point_of_interest = {
-            id = AIO_crisis_stage_$STAGE$_poi
-            name = AIO_crisis_stage_$STAGE$_poi_name
-            desc = AIO_crisis_stage_$STAGE$_negate_desc
-            event_chain = AIO_crisis_events_chain
-            location = event_target:AIO_HS_system
-        }
-    }
-    else = {
-        create_point_of_interest = {
-            id = AIO_crisis_stage_$STAGE$_poi
-            name = AIO_crisis_stage_$STAGE$_poi_name
-            desc = AIO_crisis_stage_$STAGE$_equilibrium_desc
-            event_chain = AIO_crisis_events_chain
-            location = event_target:AIO_HS_system
-        }
+    create_point_of_interest = {
+        id = AIO_crisis_stage_$STAGE$_poi
+        name = AIO_crisis_stage_$STAGE$_poi_name
+        desc = AIO_crisis_stage_$STAGE$_equilibrium_desc
+        event_chain = AIO_crisis_events_chain
+        location = event_target:AIO_HS_system
     }
 }
 
 # 完成局势, scope: country
 AIO_crisis_finish_ascension_effect = {
-    clear_variable = AIO_DAIT_count
-    clear_variable = AIO_DAIT_enrich_count
-    clear_variable = AIO_DAIT_spawn_count
-    clear_variable = AIO_DAIT_seed_count
-    clear_variable = AIO_DAIT_ethic_count
-    clear_variable = AIO_DAIT_storm_count
-    clear_variable = AIO_DAIT_harvest_count
-    clear_variable = AIO_DAIT_strike_count
-    clear_variable = AIO_DAIT_erase_count
-
-    clear_variable = AIO_DAIT_construct_count
-    clear_variable = AIO_DAIT_negate_count
-    remove_country_flag = AIO_DAIT_tendency_construct
-    remove_country_flag = AIO_DAIT_tendency_negate
-
     remove_point_of_interest = AIO_crisis_stage_2_poi
     remove_point_of_interest = AIO_crisis_stage_3_poi
     remove_point_of_interest = AIO_crisis_stage_4_poi
@@ -385,8 +346,13 @@ AIO_ascension_effect = {
                 destroy_colony = yes
             }
         }
-        # 移除所有原版巨构及恒星基地
+        # 移除所有原版巨构、现实干涉仪
         every_system_within_border = { AIO_safe_remove_system_megastructures = yes }
+        every_owned_megastructure = {
+            limit = { is_megastructure_type = AIO_reality_interferometer }
+            AIO_interference_remove_source = yes
+            remove_megastructure = this
+        }
         # 移除所有舰队及恒星基地
         every_owned_fleet = {
             limit = { AIO_safe_remove_fleet_exclude_API = no }

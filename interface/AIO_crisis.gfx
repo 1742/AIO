@@ -80,18 +80,19 @@ spriteTypes = {
 		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_1.dds
 		noOfFrames = 2
 	}
-	# 矛与盾
+	# 非重子能量
 	spriteType = {
-		name = GFX_menp_AIO_component_4_icon
-		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_fleet_component_1_1.dds
+		name = GFX_menp_AIO_component_1_icon
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_component_1.dds
 		noOfFrames = 2
 	}
-	# 纳米虫群
+	# 现实干涉
 	spriteType = {
-		name = GFX_menp_AIO_fleet_nanites_icon
-		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_fleet_component_1_2.dds
+		name = GFX_menp_AIO_interference_icon
+		texturefile = gfx/interface/icons/crisis/GFX_menp_AIO_interference.dds
 		noOfFrames = 2
 	}
+
 
 	# 铸门之人
 	spriteType = {
@@ -105,16 +106,16 @@ spriteTypes = {
 		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_2.dds
 		noOfFrames = 2
 	}
+	# 反重子进展
+	spriteType = {
+		name = GFX_menp_AIO_component_2_icon
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_component_2.dds
+		noOfFrames = 2
+	}
 	# 密语护航
 	spriteType = {
 		name = GFX_menp_AIO_ship_escort_icon
 		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_ship_2.dds
-		noOfFrames = 2
-	}
-	# 反重子进展
-	spriteType = {
-		name = GFX_menp_AIO_component_2_icon
-		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_fleet_component_2.dds
 		noOfFrames = 2
 	}
 
@@ -133,7 +134,7 @@ spriteTypes = {
 	# 奇异反重子
 	spriteType = {
 		name = GFX_menp_AIO_component_3_icon
-		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_fleet_component_3.dds
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_component_3.dds
 		noOfFrames = 2
 	}
 	# 神秘战巡
@@ -155,6 +156,12 @@ spriteTypes = {
 		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_4.dds
 		noOfFrames = 2
 	}
+	# 矛与盾
+	spriteType = {
+		name = GFX_menp_AIO_component_4_icon
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_component_4.dds
+		noOfFrames = 2
+	}
 	# 悖论泰坦
 	spriteType = {
 		name = GFX_menp_AIO_ship_titan_icon
@@ -172,6 +179,18 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_menp_AIO_buildings_5_icon"
 		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_5.dds
+		noOfFrames = 2
+	}
+	# 纳米虫群
+	spriteType = {
+		name = GFX_menp_AIO_component_5_icon
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_component_5.dds
+		noOfFrames = 2
+	}
+	# 现实干涉
+	spriteType = {
+		name = GFX_menp_AIO_break_rules_icon
+		texturefile = gfx/interface/icons/crisis/GFX_menp_AIO_break_rules.dds
 		noOfFrames = 2
 	}
 }

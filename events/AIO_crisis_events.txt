@@ -129,8 +129,6 @@ country_event = {
 	is_triggered_only = yes
     trigger = { NOT = { has_country_flag = AIO_empire_country } }
 
-    immediate = { AIO_DAIT_refresh_tendency_effect = yes }
-
     option = {
         name = AIO_crisis_events.303.option
         AIO_crisis_update_stage_poi_effect = { STAGE = 3 }
@@ -150,8 +148,6 @@ country_event = {
 
 	is_triggered_only = yes
     trigger = { NOT = { has_country_flag = AIO_empire_country } }
-
-    immediate = { AIO_DAIT_refresh_tendency_effect = yes }
 
     option = {
         name = AIO_crisis_events.304.option
@@ -174,7 +170,6 @@ country_event = {
     trigger = { NOT = { has_country_flag = AIO_empire_country } }
 
     immediate = {
-        AIO_DAIT_refresh_tendency_effect = yes
         declare_crisis_effect = yes
         every_playable_country = {
             limit = {
@@ -249,7 +244,6 @@ country_event = {
             days = 30
         }
 
-        AIO_DAIT_refresh_tendency_effect = yes
         AIO_create_HS_system_effect = yes
         AIO_crisis_update_stage_poi_effect = { STAGE = 2 }
     }
@@ -309,93 +303,8 @@ country_event = {
 #endregion
 
 
-#region 法则扩散局势
-
-situation_event = {
-    id = AIO_crisis_events.500
-    title = AIO_crisis_events.500.title
-    desc = AIO_crisis_events.500.desc
-    picture = GFX_evt_formless_system
-    show_sound = event_mystic_reveal
-
-    is_triggered_only = yes
-    situation = this
-
-    option = { name = AIO_crisis_events.500.option }
-}
-
-situation_event = {
-    id = AIO_crisis_events.501
-    hide_window = yes
-    is_triggered_only = yes
-
-    immediate = {
-        if = {
-            limit = { owner = { check_variable = { which = AIO_DAIT_count value > 0 } } }
-            random_list = {
-                90 = { }
-                10 = {
-                    modifier = {
-                        factor = 1.5
-                        current_stage >= stage_1
-                    }
-                    modifier = {
-                        factor = 1.5
-                        current_stage >= stage_2
-                    }
-                    modifier = {
-                        factor = 1.5
-                        current_stage >= stage_3
-                    }
-                    owner = { country_event = { id = AIO_crisis_events.502 } }
-                }
-            }
-        }
-    }
-}
-
-country_event = {
-    id = AIO_crisis_events.502
-    hide_window = yes
-    is_triggered_only = yes
-
-    immediate = { AIO_DAIT_echo_roll_effect = yes }
-}
-
-country_event = {
-    id = AIO_crisis_events.503
-    title = AIO_crisis_events.503.title
-    desc = AIO_crisis_events.503.desc
-    picture = GFX_evt_formless_system
-    show_sound = event_mystic_reveal
-    location = event_target:AIO_HS_system
-
-    event_chain = AIO_crisis_events_chain
-    is_triggered_only = yes
-
-    immediate = { AIO_DAIT_refresh_tendency_effect = yes }
-
-    option = {
-        name = AIO_crisis_events.503.enter
-        country_event = { id = AIO_crisis_events.601 }
-    }
-
-    option = {
-        name = AIO_crisis_events.503.contemplate
-        enable_special_project = {
-            name = AIO_CRISIS_CONTEMPLATE_GATE
-            owner = root
-            location = capital_scope
-        }
-    }
-}
-
-#endregion
-
-
 #region 飞升事件
 
-# Route the final choice and the contemplation project to the matching ending.
 country_event = {
     id = AIO_crisis_events.601
     hide_window = yes
@@ -403,60 +312,14 @@ country_event = {
     is_triggered_only = yes
 
     immediate = {
-        if = {
-            limit = { has_country_flag = AIO_DAIT_tendency_construct }
-            country_event = { id = AIO_crisis_events.611 }
-        }
-        else_if = {
-            limit = { has_country_flag = AIO_DAIT_tendency_negate }
-            country_event = { id = AIO_crisis_events.612 }
-        }
-        else = { country_event = { id = AIO_crisis_events.613 } }
+        country_event = { id = AIO_crisis_events.602 }
     }
 }
 
 country_event = {
-    id = AIO_crisis_events.611
+    id = AIO_crisis_events.602
     title = AIO_crisis_events_title
-    desc = AIO_crisis_events.611.desc
-    picture = GFX_evt_vortex
-	show_sound = event_mystic_reveal
-	location = event_target:AIO_HS_system
-
-    event_chain = AIO_crisis_events_chain
-    is_triggered_only = yes
-
-    option = {
-        name = AIO_crisis_events.end.option
-        hidden_effect = { AIO_crisis_finish_ascension_effect = yes }
-        win = yes
-        default_hide_option = yes
-    }
-}
-
-country_event = {
-    id = AIO_crisis_events.612
-    title = AIO_crisis_events_title
-    desc = AIO_crisis_events.612.desc
-    picture = GFX_evt_vortex
-	show_sound = event_mystic_reveal
-	location = event_target:AIO_HS_system
-
-    event_chain = AIO_crisis_events_chain
-    is_triggered_only = yes
-
-    option = {
-        name = AIO_crisis_events.end.option
-        hidden_effect = { AIO_crisis_finish_ascension_effect = yes }
-        win = yes
-        default_hide_option = yes
-    }
-}
-
-country_event = {
-    id = AIO_crisis_events.613
-    title = AIO_crisis_events_title
-    desc = AIO_crisis_events.613.desc
+    desc = AIO_crisis_events.602.desc
     picture = GFX_evt_vortex
 	show_sound = event_mystic_reveal
 	location = event_target:AIO_HS_system
@@ -486,6 +349,13 @@ country_event = {
     trigger = { has_ascension_perk = ap_AIO_allinone }
 
     immediate = {
+        # 清理现实干涉仪
+        every_owned_megastructure = {
+            limit = { is_megastructure_type = AIO_reality_interferometer }
+            solar_system = { AIO_interference_remove_source = yes }
+            remove_megastructure = this
+        }
+
         # 摧毁无名之雾
         event_target:AIO_HS_system = {
             # 移除特效
@@ -552,102 +422,98 @@ country_event = {
 
 # 研究科技
 country_event = {
-    id = AIO_crisis_events.802
+    id = AIO_crisis_events.801
     hide_window = yes
 
     is_triggered_only = yes
     trigger = {
         has_ascension_perk = ap_AIO_allinone
-        NOT = { has_country_flag = AIO_granting_vanilla_fe_technology }
+        NOT = { has_country_flag = AIO_crisobj_research_block }
     }
 
     immediate = { complete_crisis_objective = crisobj_AIO_research_tech }
 }
 
-# 控有科学枢纽
-event = {
+# 研究异常现象
+# this = ship
+# from = planet
+ship_event = {
+	id = AIO_crisis_events.8021
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			has_ascension_perk = ap_AIO_allinone
+		}
+	}
+
+	immediate = {
+        owner = {
+            complete_crisis_objective = crisobj_AIO_research_special_project
+        }
+    }
+}
+
+# 完成特殊项目
+# this = country
+# fromfromfrom = ship
+country_event = {
+	id = AIO_crisis_events.8022
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+        has_ascension_perk = ap_AIO_allinone
+	}
+
+	immediate = {
+        complete_crisis_objective = crisobj_AIO_research_special_project
+    }
+}
+
+# 探索星界裂隙
+# THIS = Country: Explorer country
+# FROM = AstralRift: Explored astral rift
+country_event = {
 	id = AIO_crisis_events.803
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_ascension_perk = ap_AIO_allinone
+	}
+
+	immediate = {
+        complete_crisis_objective = crisobj_AIO_explore_astral
+    }
+}
+
+# 现实干涉
+event = {
+	id = AIO_crisis_events.804
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
 		any_country = {
 			has_ascension_perk = ap_AIO_allinone
-			any_owned_megastructure = { AIO_is_think_tank = yes }
+			has_megastructure = AIO_reality_interferometer
 		}
 	}
 
 	immediate = {
-        random_country = {
-            limit = { has_ascension_perk = ap_AIO_allinone }
-            complete_crisis_objective = crisobj_AIO_interference
-        }
-    }
-}
-
-# Creates a purpose-built, non-virtual machine species for the Matryoshka Brain.
-# It is a separate species identity so cybernetics.5049 cannot digitize it again.
-country_event = {
-	id = AIO_crisis_events.804
-	title = AIO_crisis_events.804.title
-	desc = AIO_crisis_events.804.desc
-	picture = GFX_evt_robot_assembly_plant
-	show_sound = event_radio_chatter
-
-	is_triggered_only = yes
-
-	trigger = {
-		is_virtual_empire = yes
-		has_technology = tech_AIO_exponential_learning_theory
-		exists = capital_scope
-		NOT = { has_country_flag = AIO_recursive_chassis_created }
-		owner_main_species = { is_robotic_species = yes }
-	}
-
-	immediate = { set_country_flag = AIO_recursive_chassis_created }
-
-	option = {
-		name = AIO_crisis_events.804.option
-        default_hide_option = yes
-        owner_main_species = {
-            create_species = {
-                name = "AIO_RECURSIVE_CHASSIS"
-                plural = "AIO_RECURSIVE_CHASSIS_PLURAL"
-                class = this
-                portrait = this
-                traits = this
-                can_be_modified = yes
-                homeworld = this
-                namelist = this
-                gender = this
-
-                effect = {
-                    change_species_characteristics = {
-                        remove_trait = trait_robot_digital_1
-                        remove_trait = trait_robot_digital_2
-                        add_trait = trait_AIO_recursive_chassis
-                    }
-                    set_citizenship_type = {
-                        country = root
-                        type = citizenship_full_machine
-                        cooldown = no
-                    }
-                    set_population_controls = {
-                        country = root
-                        type = population_control_no
-                        cooldown = no
-                    }
-                    set_species_flag = AIO_recursive_chassis_species
-                    save_event_target_as = AIO_recursive_chassis_species
-                }
-            }
-        }
-        capital_scope = {
-            create_pop_group = {
-                species = event_target:AIO_recursive_chassis_species
-                size = 1000
-            }
-        }
+		every_playable_country = {
+			if = {
+				limit = { has_ascension_perk = ap_AIO_allinone }
+				every_owned_megastructure = {
+					limit = { is_megastructure_type = AIO_reality_interferometer }
+					prev = {
+						complete_crisis_objective = crisobj_AIO_interference
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -674,6 +540,27 @@ fleet_event = {
 
     immediate = {
         set_mia = mia_return_home
+    }
+}
+
+# 失去现实干涉仪
+# this = new owner
+# from = megastructure
+# fromfrom = old owner (if existing)
+country_event = {
+    id = AIO_crisis_events.902
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = {
+        from = { is_megastructure_type = AIO_reality_interferometer }
+    }
+
+    immediate = {
+        from = {
+            solar_system = { AIO_interference_remove_source = yes }
+            remove_megastructure = this
+        }
     }
 }
 

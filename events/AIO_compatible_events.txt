@@ -1,8 +1,8 @@
-namespace = AIO_fe_events
+namespace = AIO_compatible_events
 
 # Mirror an AIO fallen empire building technology to its vanilla counterpart.
 country_event = {
-	id = AIO_fe_events.201
+	id = AIO_compatible_events.201
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -45,4 +45,20 @@ country_event = {
 	}
 
 	immediate = { AIO_grant_vanilla_fe_building_technology = yes }
+}
+
+# give psionic auras tech
+country_event = {
+	id = AIO_compatible_events.202
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_ascension_perk = ap_AIO_allinone
+		last_increased_tech = tech_AIO_ascending_dimensionality_theory
+	}
+
+	immediate = {
+		AIO_grant_vanilla_psionic_auras_tech = yes
+	}
 }
