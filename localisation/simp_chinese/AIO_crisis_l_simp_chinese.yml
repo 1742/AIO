@@ -39,12 +39,12 @@
  # 灾飞路径提示文本
  AIO_allinone_level_2_req_success_tooltip: "£trigger_yes£完成§Y$AIO_horizon_engine$§!"
  AIO_allinone_level_2_req_fail_tooltip: "£trigger_no£完成§Y$AIO_horizon_engine$§!"
- AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_01$§!与§Y$AIO_crisis_situation$§!$stage_1$"
- AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_01$§!与§Y$AIO_crisis_situation$§!$stage_1$"
- AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_02$§!与§Y$AIO_crisis_situation$§!$stage_2$"
- AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_02$§!与§Y$AIO_crisis_situation$§!$stage_2$"
- AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_03$§!与§Y$AIO_crisis_situation$§!$stage_3$"
- AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_03$§!与§Y$AIO_crisis_situation$§!$stage_3$"
+ AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_01$§!"
+ AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_01$§!"
+ AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_02$§!"
+ AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_02$§!"
+ AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_03$§!"
+ AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_03$§!"
 
  #endregion
 
@@ -130,9 +130,9 @@
  AIO_crisis_events_chain_desc: "$AIO_advanced_logic_crisis_howto$"
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
 
- # 阶段 POI：同一阶段只显示当前隐藏倾向对应的一段文本
+ # 阶段 POI
  AIO_crisis_stage_2_poi_name: "现实回弹"
- AIO_crisis_stage_2_desc: "$AIO_crisis_stage_2_construct_desc$"
+ AIO_crisis_stage_2_desc: "每一次改写都在衰退。被移动的质量回归原位，遭替换的因果重新闭合，连观测记录也逐渐与恢复后的现实吻合。宇宙仍牢牢记得自己原本的模样。\n\n它大可以继续坚持。每一次复原，都只会让我们更清楚下一笔该落在哪里。"
  AIO_crisis_stage_3_poi_name: "复原迟滞"
  AIO_crisis_stage_3_desc: "相反的修改正在被同时抹除。现实试图沿着两个方向回到同一原点，两套复原过程却不断撤销彼此的结果。异常最终仍会消失，但所需时间已经远超从前。\n它大可以继续追赶。我们的下一笔早已写下。"
  AIO_crisis_stage_4_poi_name: "修正冲突"

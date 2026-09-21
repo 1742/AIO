@@ -49,7 +49,7 @@ AIO_reality_interference_aura = {
 		OR = {
 			has_star_flag = AIO_interference_source
 			AIO_is_nearby_interference_source = {
-				OWNER = root.aura_owner
+				OWNER = aura_owner
 			}
 		}
 	}
@@ -87,7 +87,9 @@ AIO_reality_interference_aura = {
 			subtract = 5
 			NOR = {
 				has_star_flag = AIO_interference_source
-				AIO_is_nearby_interference_source = { OWNER = root.aura_owner }
+				AIO_is_nearby_interference_source = {
+					OWNER = aura_owner
+				}
 			}
 			desc = AIO_interference_disconnected_desc
 		}

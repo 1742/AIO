@@ -30,6 +30,10 @@ menp_AIO_interference = {
 
 	on_unlock = {
 		add_research_option = tech_AIO_ascending_dimensionality_theory
+		set_variable = {
+			which = AIO_interference_range
+			value = 1
+		}
 	}
 }
 

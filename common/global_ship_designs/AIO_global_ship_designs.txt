@@ -1,34 +1,4 @@
 ship_design = {
-	name = NAME_AIO_otherworld_walker
-	ship_size = AIO_otherworld_walker
-    country_type = AIO_empire
-
-	section = {
-		template = "DEFAULT_SCIENCESHIP_SECTION"
-		slot = "mid"
-
-        component = {
-            slot = "SMALL_UTILITY_1"
-            template = SMALL_DRAGON_ARMOR
-        }
-        component = {
-            slot = "SMALL_UTILITY_2"
-            template = SMALL_DRAGON_ARMOR
-        }
-        component = {
-            slot = "SMALL_UTILITY_3"
-            template = SMALL_DARK_MATTER_DEFLECTOR
-        }
-	}
-
-	required_component = "CORVETTE_DARK_MATTER_REACTOR"
-	required_component="JUMP_DRIVE_1"
-	required_component="DESTROYER_SHIP_THRUSTER_5"
-	required_component="SENSOR_4"
-    required_component = "SCIENCE_CLOAKING_DARK_MATTER"
-}
-
-ship_design = {
 	name = "NAME_AIO_Aforgomom_Wrath"
 	ship_size = AIO_Aforgomom_Wrath
 	section = {

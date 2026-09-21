@@ -26,9 +26,9 @@ system_event = {
 
 country_event = {
 	id = AIO_DAIT_events.202
-
-	diplomatic = yes
-	custom_gui = AIO_DAIT
+	title = AIO_DAIT_text
+	desc = AIO_DAIT_remote_projection_placeholder_desc
+	picture = GFX_evt_shroud_psionic_aura
 
 	is_triggered_only = yes
 

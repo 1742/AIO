@@ -1,62 +1,13 @@
 ﻿l_english:
+ AIO_DAIT_text: "Remote Reality Projection"
+ AIO_DAIT_remote_projection_placeholder_desc: "We have locked the reality coordinates of §H[event_target:AIO_DAIT_target_system.GetName]§!, but the remote projection system has not yet been connected."
+
  #region Directed reality editing entry
 
- AIO_DAIT_lock_target_action: "Lock Reality Coordinates"
+ AIO_DAIT_lock_target_action: "Lock Projection Coordinates"
  AIO_DAIT_lock_target_activity: "Locking $NAME$"
- AIO_DAIT_lock_target_tooltip: "Select a planet and open the Directed Applied Infinity menu"
+ AIO_DAIT_lock_target_tooltip: "Select a system as the target of remote Reality Interference projection"
  AIO_DAIT_lock_target.fail.crisis_path: "£trigger_no£ The current galaxy's spacetime is unstable!"
  AIO_DAIT_lock_target.fail.api: "£trigger_no£ The system is locked onto by other modders!"
- AIO_DAIT_lock_target.fail.synth_queen: "£trigger_no£ To prevent bugs, please do not edit and lock synth queen home!"
- AIO_DAIT_lock_target.fail.enrich: "£trigger_no£ There are no celestial bodies in this system that can add resources!"
- AIO_DAIT_lock_target.fail.seed: "£trigger_no£ Require at least one habitable planet within the system!"
- AIO_DAIT_lock_target.fail.ethic: "£trigger_no£ Not locked to the empire!"
- AIO_DAIT_lock_target.fail.storm: "£trigger_no£ The galaxy is already under the storm!"
- AIO_DAIT_lock_target.fail.strike: "£trigger_no£ §Y$AIO_Aforgomom$§! has descended here!"
- AIO_DAIT_lock_target.fail.harvest: "£trigger_no£ This system is no longer worth harvesting!"
-
- #endregion
-
-
- #region DAIT menu
-
- AIO_DAIT_events.202.title: "Directional Apply Infinity Thesis"
- AIO_DAIT_events.202.desc: "Current target: [event_target:AIO_DAIT_target_system.GetName]\n\nNew UI is making ..."
- AIO_DAIT_events.202.enrich: "Enrich"
- AIO_DAIT_events.202.spawn: "Spawn"
- AIO_DAIT_events.202.seed: "Seed"
- AIO_DAIT_events.202.ethic: "Ethic"
- AIO_DAIT_events.202.storm: "Storm"
- AIO_DAIT_events.202.strike: "Strike"
- AIO_DAIT_strike_effect_tooltip: "Invoke §Y$AIO_Aforgomom$§!.\nIts wrath shall descend here; when wielded by $AIO_empire$, countless reflections will appear across the realms of every witness."
- AIO_DAIT_events.202.harvest: "Harvest"
- AIO_DAIT_events.202.erase: "Erase"
- AIO_DAIT.fail.require_mega_1: "£trigger_no£Requires §Y$AIO_mega_01$§!"
- AIO_DAIT.fail.require_mega_2: "£trigger_no£Requires §Y$AIO_mega_02$§!"
- AIO_DAIT.fail.require_mega_3: "£trigger_no£Requires §Y$AIO_mega_03$§!"
- AIO_DAIT.fail.require_mega_4: "£trigger_no£Requires §Y$AIO_mega_04$§!"
-
- #endregion
-
- #region Affected empire notifications
-
- AIO_DAIT_events.affected.option: "We will not forget this interference."
- AIO_DAIT_events.230.title: "Reality Enriched"
- AIO_DAIT_events.230.desc: "§Y[From.GetName]§! has used technology beyond conventional understanding to rewrite §Y[FromFrom.GetName]§!. Celestial bodies throughout the system are producing vast resources from nothing, but their ability to interfere with reality itself is deeply troubling."
- AIO_DAIT_events.231.title: "Reality Structure Rewritten"
- AIO_DAIT_events.231.desc: "§Y[From.GetName]§! locked onto the reality coordinates of §Y[FromFrom.GetName]§! and forcibly altered its celestial structure. Our control of the system means nothing before their technology."
- AIO_DAIT_events.232.title: "Life Seeded"
- AIO_DAIT_events.232.desc: "§Y[From.GetName]§! has created and seeded new life in §Y[FromFrom.GetName]§! without our consent. The birth of an entire civilization appears to be little more than an experiment to them."
- AIO_DAIT_events.233.title: "Cognitive Reconstruction"
- AIO_DAIT_events.233.desc: "Our former values contained grave and absurd errors. The intervention of §Y[From.GetName]§! in §Y[FromFrom.GetName]§! has finally shown us the correct path. Our past hostility over their so-called Directed Applied Infinity is no longer meaningful."
- AIO_DAIT_events.233.option: "This is the only correct path."
- AIO_DAIT_events.234.title: "Artificial Cosmic Storm"
- AIO_DAIT_events.234.desc: "§Y[From.GetName]§! has ruptured the stable cosmic environment of §Y[FromFrom.GetName]§!. An artificially generated cosmic storm is now taking shape."
- AIO_DAIT_events.235.title: "System Harvested"
- AIO_DAIT_events.235.desc: "§Y[From.GetName]§! is harvesting §Y[FromFrom.GetName]§!. Stars, planets, and even colonies are being dismantled into raw resources for their use."
- AIO_DAIT_events.236.title: "Reality-Bending Strike"
- AIO_DAIT_events.236.desc: "§Y[From.GetName]§! has launched an anomalous strike using §Y[FromFrom.GetName]§! as its coordinates. Hostile entities are entering our territory through distorted reality."
- AIO_DAIT_events.237.title: "Reality Erased"
- AIO_DAIT_events.237.desc: "§Y[From.GetName]§! has erased a vast region of reality centered on §Y[FromFrom.GetName]§!. Our systems, fleets, and billions of lives vanished in an instant, leaving behind an emptiness that can never be filled."
-
 
  #endregion

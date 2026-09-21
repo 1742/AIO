@@ -39,12 +39,12 @@
  # crisis path tooltips
  AIO_allinone_level_2_req_success_tooltip: "£trigger_yes£requires §Y$AIO_horizon_engine$§!"
  AIO_allinone_level_2_req_fail_tooltip: "£trigger_no£requires §Y$AIO_horizon_engine$§!"
- AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£Complete §Y$AIO_mega_01$§! and §Y$AIO_crisis_situation$§! $stage_1$"
- AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£Complete §Y$AIO_mega_01$§! and §Y$AIO_crisis_situation$§! $stage_1$"
- AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£Complete §Y$AIO_mega_02$§! and §Y$AIO_crisis_situation$§! $stage_2$"
- AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£Complete §Y$AIO_mega_02$§! and §Y$AIO_crisis_situation$§! $stage_2$"
- AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£Complete §Y$AIO_mega_03$§! and §Y$AIO_crisis_situation$§!$stage_3$"
- AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£Complete §Y$AIO_mega_03$§! and §Y$AIO_crisis_situation$§! $stage_3$"
+ AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£Complete §Y$AIO_mega_01$§!"
+ AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£Complete §Y$AIO_mega_01$§!"
+ AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£Complete §Y$AIO_mega_02$§!"
+ AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£Complete §Y$AIO_mega_02$§!"
+ AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£Complete §Y$AIO_mega_03$§!"
+ AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£Complete §Y$AIO_mega_03$§!"
 
  #endregion
 
@@ -90,7 +90,7 @@
  # third stage
  menp_AIO_mega_03: "Space-Time Engineering"
  menp_AIO_mega_03_desc: "We can see the fork before the event occurs and even choose its direction."
- unlocks_AIO_allinone_mega_02: "Unlocks Megastructure: §Y$AIO_mega_02$§!\nUnlocks DAIT operations: §YSpawn§! and §YHarvest§!\n"
+ unlocks_AIO_allinone_mega_02: "Unlocks Megastructure: §Y$AIO_mega_02$§!"
  menp_AIO_buildings_3: "$menp_cosmo_buildings_3$"
  menp_AIO_buildings_3_desc: "$menp_cosmo_buildings_3_desc$"
  menp_AIO_component_3: "$menp_cosmo_techs_3$"
@@ -111,7 +111,7 @@
  # fifth stage
  menp_AIO_mega_05: "Dimension Embedding"
  menp_AIO_mega_05_desc: "I/We are the truth."
- unlocks_AIO_allinone_mega_04: "Unlocks Megastructure: §Y$AIO_mega_04$§!\nUnlocks DAIT operations: §YEthics§! and §YErase§!\n"
+ unlocks_AIO_allinone_mega_04: "Unlocks Megastructure: §Y$AIO_mega_04$§!"
  menp_AIO_buildings_5: "$menp_cosmo_buildings_5$"
  menp_AIO_buildings_5_desc: "$menp_cosmo_buildings_5_desc$"
  menp_AIO_component_5: "$menp_cosmo_techs_5$"
@@ -130,9 +130,9 @@
  AIO_crisis_events_chain_desc: "$AIO_advanced_logic_crisis_howto$"
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
 
- # Stage POIs: only the text matching the current hidden tendency is shown
+ # Stage POIs
  AIO_crisis_stage_2_poi_name: "Reality Rebounds"
- AIO_crisis_stage_2_desc: "$AIO_crisis_stage_2_construct_desc$"
+ AIO_crisis_stage_2_desc: "Every alteration is fading. Displaced mass returns to its former position, replaced chains of causality close once more, and even observational records gradually conform to restored reality. The universe still remembers precisely what it used to be.\n\nLet it persist. Every restoration merely shows us where to place the next stroke."
  AIO_crisis_stage_3_poi_name: "Restoration Delayed"
  AIO_crisis_stage_3_desc: "Opposing alterations are being erased at the same time. Reality attempts to return to one origin along two directions, while the two restorative processes continually undo one another's results. The anomalies still fade, but only after far longer than before.\nLet it try to catch up. Our next stroke is already written."
  AIO_crisis_stage_4_poi_name: "Corrections in Conflict"
@@ -166,7 +166,7 @@
  # horizon engine finish
  AIO_crisis_events.402.desc: "The §Y$AIO_horizon_engine$§! located at [from.GetName] is completed."
  # Yog Sothoth finish
- AIO_crisis_events.403.desc: "The §Y$AIO_mega_01$§! located at [from.GetName] is completed.\nUnlock megastructure: §Y$AIO_mega_01_node$ node§!"
+ AIO_crisis_events.403.desc: "The §Y$AIO_mega_01$§! located at [from.GetName] is complete."
  AIO_crisis_events.404.desc: "The §Y$AIO_mega_02$§! located at [from.GetName] is completed."
  AIO_crisis_events.405.desc: "The §Y$AIO_mega_03$§! located at [from.GetName] is completed."
  AIO_crisis_events.406.desc: "The §Y$AIO_mega_04$§! located at [from.GetName] is completed."

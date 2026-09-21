@@ -1,7 +1,10 @@
 # AIO静态修正
 
+# 现实干涉仪影响范围
+AIO_interferometer_range = {
+    icon = gfx/interface/icons/modifiers/mod_country_border_mult.dds
+}
 
-#region DAIT
 
 # 亚弗戈蒙之怒
 AIO_Aforgomom_Wrath_modifier = {
@@ -11,7 +14,7 @@ AIO_Aforgomom_Wrath_modifier = {
 }
 
 # 星辰大海的渴望，启蒙触发
-AIO_the_craving_of_stellaris_modifier = {
+AIO_create_civilization_modifier = {
     icon = gfx/interface/icons/modifiers/mod_bonus_pop_growth_mult.dds
 
     bonus_pop_growth = 1
@@ -19,5 +22,3 @@ AIO_the_craving_of_stellaris_modifier = {
     planet_building_build_speed_mult = 0.5
     planet_amenities_add = 1000
 }
-
-#endregion

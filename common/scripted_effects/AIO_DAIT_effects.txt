@@ -220,7 +220,7 @@ AIO_DAIT_seed_effect = {
                     alloys = 5000
                     unity = 10000
                 }
-                add_modifier = { modifier = AIO_the_craving_of_stellaris_modifier years = 10 }
+                add_modifier = { modifier = AIO_create_civilization_modifier years = 10 }
             }
         }
     }

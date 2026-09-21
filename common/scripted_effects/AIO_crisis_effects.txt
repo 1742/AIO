@@ -277,7 +277,7 @@ AIO_crisis_update_stage_poi_effect = {
     create_point_of_interest = {
         id = AIO_crisis_stage_$STAGE$_poi
         name = AIO_crisis_stage_$STAGE$_poi_name
-        desc = AIO_crisis_stage_$STAGE$_equilibrium_desc
+        desc = AIO_crisis_stage_$STAGE$_desc
         event_chain = AIO_crisis_events_chain
         location = event_target:AIO_HS_system
     }

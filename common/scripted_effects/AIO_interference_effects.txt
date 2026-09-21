@@ -40,13 +40,11 @@ AIO_interference_rebuild_effect_flags = {
 AIO_interference_prototype_try_spread = {
 	if = {
 		limit = { has_psionic_aura = AIO_reality_interference_aura }
-		set_variable = { which = AIO_interference_range_spread value = $RANGE|1$ }
 		aura_owner = { save_event_target_as = AIO_interference_spreading_owner }
 		random_neighbor_system = {
 			limit = {
 				AIO_is_nearby_interference_source = {
 					OWNER = event_target:AIO_interference_spreading_owner
-					MAX_STEPS = AIO_interference_range_spread
 				}
 				has_psionic_aura = no
 			}
@@ -58,7 +56,6 @@ AIO_interference_prototype_try_spread = {
 			set_aura_intensity = 1
 			AIO_interference_update_system_effect_flags = {
 				OWNER = event_target:AIO_interference_spreading_owner
-				RANGE = AIO_interference_range_spread
 			}
 		}
 	}
@@ -114,14 +111,11 @@ AIO_interference_prepare_source = {
 # OWNER: country that owns the aura
 # RANGE: effect range(max jumps)
 AIO_interference_update_system_effect_flags = {
-	set_variable = { which = AIO_interference_range_update value = $RANGE|1$ }
-
 	if = {
 		limit = {
 			AIO_is_nearby_specific_interference_source = {
 				TYPE = production
 				OWNER = $OWNER$
-				MAX_STEPS= AIO_interference_range_update
 			}
 		}
 		set_star_flag = AIO_interference_production
@@ -143,7 +137,6 @@ AIO_interference_update_system_effect_flags = {
 			AIO_is_nearby_specific_interference_source = {
 				TYPE = weapon
 				OWNER = $OWNER$
-				MAX_STEPS= AIO_interference_range_update
 			}
 		}
 		set_star_flag = AIO_interference_weapon
@@ -159,8 +152,6 @@ AIO_interference_update_system_effect_flags = {
 			}
 		}
 	}
-
-	clear_variable = AIO_interference_range_update
 }
 
 #endregion

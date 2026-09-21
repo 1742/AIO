@@ -1,5 +1,3 @@
-# 超维空间
-
 AIO_hyperdimensional_space_initializer = {
     name = AIO_HYPER_DIMENSIONAL_SPACE
     class = sc_AIO_void

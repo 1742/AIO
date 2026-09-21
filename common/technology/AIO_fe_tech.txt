@@ -64,15 +64,6 @@ tech_AIO_fe_forge_1 = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
-		}
 	}
 }
 
@@ -168,15 +159,6 @@ tech_AIO_fe_fabricator_1 = {
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
-		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
 		}
 	}
 }
@@ -279,15 +261,6 @@ tech_AIO_fe_singularity_1 = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
-		}
 	}
 }
 
@@ -384,15 +357,6 @@ tech_AIO_fe_mine_1 = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
-		}
 	}
 }
 
@@ -488,15 +452,6 @@ tech_AIO_nourishment_complex = {
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
-		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
 		}
 		modifier = {
 			factor = 2
@@ -611,15 +566,6 @@ tech_AIO_fe_affluence_1 = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
-		}
 	}
 }
 
@@ -720,15 +666,6 @@ tech_AIO_fe_silo_1 = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
-		}
 	}
 }
 
@@ -828,15 +765,6 @@ tech_AIO_fe_market_1 = {
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
-		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
 		}
 	}
 }
@@ -939,15 +867,6 @@ tech_AIO_fe_administration_1 = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
-		}
 	}
 }
 
@@ -1043,15 +962,6 @@ tech_AIO_fe_security_1 = {
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
-		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
 		}
 	}
 }
@@ -1149,15 +1059,6 @@ tech_AIO_fe_lab_1 = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
-		}
 	}
 }
 
@@ -1253,15 +1154,6 @@ tech_AIO_fe_fortress_1 = {
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
-		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
 		}
 	}
 }
@@ -1364,15 +1256,6 @@ tech_AIO_fe_dome_1 = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
-		}
 	}
 }
 
@@ -1472,15 +1355,6 @@ tech_AIO_fe_entertainment_1 = {
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
-		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
 		}
 	}
 }
@@ -1593,15 +1467,6 @@ tech_AIO_fe_assembly_1 = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
 		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
-		}
 		inline_script = {
 			script = technologies/rare_technologies_weight_modifiers
 			TECHNOLOGY = tech_AIO_fe_assembly_1
@@ -1709,15 +1574,6 @@ tech_AIO_fe_clinic_1 = {
 		modifier = {
 			factor = 1.5
 			has_ascension_perk = ap_enigmatic_engineering
-		}
-		modifier = {
-			factor = 2
-			any_owned_planet = {
-				num_assigned_jobs = {
-					job = AIO_chips
-					value > 5000
-				}
-			}
 		}
 	}
 }
