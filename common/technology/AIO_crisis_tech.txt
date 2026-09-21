@@ -26,7 +26,7 @@ tech_AIO_exponential_learning_theory = {
 
 tech_AIO_ascending_dimensionality_theory = {
 	icon = tech_cosmogenesis_crisis_2
-	area = physics
+	area = engineering
     cost = 10000
     tier = 5
     category = { particles }

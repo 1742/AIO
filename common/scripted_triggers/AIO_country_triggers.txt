@@ -1,0 +1,7 @@
+# 能应用无限的国家
+AIO_can_AIT = {
+    OR = {
+        has_ascension_perk = ap_cosmogenesis
+        has_ascension_perk = ap_AIO_allinone
+    }
+}

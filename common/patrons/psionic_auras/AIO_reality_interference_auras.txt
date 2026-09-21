@@ -2,7 +2,7 @@
 # One native Psionic Aura carries several effects selected by star flags.
 AIO_reality_interference_aura = {
 	intensity_level = {
-		end = 1000
+		end = 10
 		custom_tooltip = AIO_reality_interference_aura_level_1_tt
 		inline_script = {
 			script = AIO/interference_auras_modifier
@@ -10,7 +10,7 @@ AIO_reality_interference_aura = {
 		}
 	}
 	intensity_level = {
-		end = 2000
+		end = 20
 		custom_tooltip = AIO_reality_interference_aura_level_2_tt
 		inline_script = {
 			script = AIO/interference_auras_modifier
@@ -18,7 +18,7 @@ AIO_reality_interference_aura = {
 		}
 	}
 	intensity_level = {
-		end = 2500
+		end = 25
 		custom_tooltip = AIO_reality_interference_aura_level_3_tt
 		inline_script = {
 			script = AIO/interference_auras_modifier
@@ -33,7 +33,7 @@ AIO_reality_interference_aura = {
 	on_progress_complete = {
 		AIO_interference_prototype_try_spread = yes
 		hidden_effect = {
-			set_aura_intensity = 2000
+			set_aura_intensity = 20
 		}
 	}
 
@@ -49,7 +49,7 @@ AIO_reality_interference_aura = {
 		OR = {
 			has_star_flag = AIO_interference_source
 			AIO_is_nearby_interference_source = {
-				OWNER = aura_owner
+				OWNER = root.aura_owner
 			}
 		}
 	}
@@ -88,7 +88,7 @@ AIO_reality_interference_aura = {
 			NOR = {
 				has_star_flag = AIO_interference_source
 				AIO_is_nearby_interference_source = {
-					OWNER = aura_owner
+					OWNER = root.aura_owner
 				}
 			}
 			desc = AIO_interference_disconnected_desc

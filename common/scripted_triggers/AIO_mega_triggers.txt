@@ -1,38 +1,3 @@
-# AIO触发器
-
-# 能应用无限的国家
-AIO_can_AIT = {
-    OR = {
-        has_ascension_perk = ap_cosmogenesis
-        has_ascension_perk = ap_AIO_allinone
-    }
-}
-
-# 星系内有自然殖民地
-AIO_system_existed_natural_colony = {
-    any_system_planet_colony = {
-        is_artificial = no
-    }
-}
-
-# 判断行星是否有星环基地，scope: planet
-AIO_colony_has_ring = {
-    orbital_defence? = {
-        starbase = { is_orbital_ring = yes }
-    }
-}
-
-# 星系内是否有无星环基地的天然殖民地, scope: system
-AIO_natural_colony_without_ring = {
-    any_system_planet = {
-        is_artificial = no
-        is_colony = yes
-        AIO_colony_has_ring = no
-    }
-}
-
-#region 判断巨构类型，scope: megastructure
-
 AIO_is_dyson_sphere = {
     OR = {
         is_megastructure_type = dyson_sphere_0
@@ -246,40 +211,6 @@ AIO_is_AIO_mega = {
     }
 }
 
-#endregion
-
-
-# 判断是否是单中心天体星系，scope: system
-AIO_is_single_star_class = {
-    NOR = {
-        is_star_class = sc_binary_1
-        is_star_class = sc_binary_2
-        is_star_class = sc_binary_3
-        is_star_class = sc_binary_4
-        is_star_class = sc_binary_5
-        is_star_class = sc_binary_6
-        is_star_class = sc_binary_7
-        is_star_class = sc_binary_8
-        is_star_class = sc_binary_9
-        is_star_class = sc_binary_10
-        is_star_class = sc_trinary_1
-        is_star_class = sc_binary_2
-        is_star_class = sc_binary_3
-        is_star_class = sc_binary_4
-    }
-}
-
-# 是否被选定为肃正球，scope: planet
-AIO_is_ai_planet = {
-    OR = {
-        has_carrier_flag = machine_world_1
-        has_carrier_flag = machine_world_2
-        has_carrier_flag = machine_world_3
-        has_carrier_flag = machine_world_4
-        has_carrier_flag = machine_lair
-    }
-}
-
 # scope: system
 AIO_is_crisis_mega_system = {
     any_system_megastructure = {
@@ -302,32 +233,3 @@ AIO_is_crisis_mega_planet = {
         }
     }
 }
-
-#region exclude API
-
-# 禁止AIO模组移除特定星球的API，scope: planet
-AIO_safe_remove_planet_exclude_API = {
-    always = no
-}
-
-# 禁止AIO模组移除特定星系的API，scope: system
-AIO_safe_remove_system_exclude_API = {
-    always = no
-}
-
-# 禁止AIO模组移除特定巨构的API，scope: megastructure
-AIO_safe_remove_megastructure_exclude_API = {
-    is_megastructure_type = shroud_seal
-}
-
-# 禁止AIO模组移除特定舰队的API，scope: fleet
-AIO_safe_remove_fleet_exclude_API = {
-    always = no
-}
-
-# 禁止AIO模组移除特定领袖的API，scope: leader
-AIO_safe_remove_leader_exclude_API = {
-    always = no
-}
-
-#endregion

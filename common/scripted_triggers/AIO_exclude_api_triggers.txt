@@ -1,0 +1,27 @@
+# 想要排除的物体在 trigger 里判断为 true 即可
+
+
+# 禁止AIO模组移除特定星球的API，scope: planet
+AIO_safe_remove_planet_exclude_API = {
+    always = no
+}
+
+# 禁止AIO模组移除特定星系的API，scope: system
+AIO_safe_remove_system_exclude_API = {
+    always = no
+}
+
+# 禁止AIO模组移除特定巨构的API，scope: megastructure
+AIO_safe_remove_megastructure_exclude_API = {
+    is_megastructure_type = shroud_seal
+}
+
+# 禁止AIO模组移除特定舰队的API，scope: fleet
+AIO_safe_remove_fleet_exclude_API = {
+    always = no
+}
+
+# 禁止AIO模组移除特定领袖的API，scope: leader
+AIO_safe_remove_leader_exclude_API = {
+    always = no
+}

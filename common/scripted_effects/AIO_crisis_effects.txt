@@ -350,7 +350,7 @@ AIO_ascension_effect = {
         every_system_within_border = { AIO_safe_remove_system_megastructures = yes }
         every_owned_megastructure = {
             limit = { is_megastructure_type = AIO_reality_interferometer }
-            AIO_interference_remove_source = yes
+            solar_system = { AIO_interference_remove_source = yes }
             remove_megastructure = this
         }
         # 移除所有舰队及恒星基地

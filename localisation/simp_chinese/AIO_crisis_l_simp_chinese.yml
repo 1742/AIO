@@ -80,7 +80,7 @@
  # 二阶
  menp_AIO_mega_02: "铸门之人"
  menp_AIO_mega_02_desc: "我们将亲手打造通往无限维度的‘门’。"
- unlocks_AIO_allinone_mega_01: "解锁巨构：§Y$AIO_mega_01$§!"
+ unlocks_AIO_allinone_mega_01: "解锁巨构：§Y$AIO_mega_01$§!\n"
  menp_AIO_buildings_2: "$menp_cosmo_buildings_2$"
  menp_AIO_buildings_2_desc: "$menp_cosmo_buildings_2_desc$"
  menp_AIO_component_2: "$menp_cosmo_techs_2$"
@@ -90,7 +90,7 @@
  # 三阶
  menp_AIO_mega_03: "时空工程"
  menp_AIO_mega_03_desc: "我们能看见事件发生前的分叉，乃至选择它的方向。"
- unlocks_AIO_allinone_mega_02: "解锁巨构：§Y$AIO_mega_02$§!"
+ unlocks_AIO_allinone_mega_02: "解锁巨构：§Y$AIO_mega_02$§!\n"
  menp_AIO_buildings_3: "$menp_cosmo_buildings_3$"
  menp_AIO_buildings_3_desc: "$menp_cosmo_buildings_3_desc$"
  menp_AIO_component_3: "$menp_cosmo_techs_3$"
@@ -100,7 +100,7 @@
  # 四阶
  menp_AIO_mega_04: "恒视之主"
  menp_AIO_mega_04_desc: "我们无需去征服，万物已置于我们的目光之下。"
- unlocks_AIO_allinone_mega_03: "解锁巨构：§Y$AIO_mega_03$§!"
+ unlocks_AIO_allinone_mega_03: "解锁巨构：§Y$AIO_mega_03$§!\n"
  menp_AIO_buildings_4: "$menp_cosmo_buildings_4$"
  menp_AIO_buildings_4_desc: "$menp_cosmo_buildings_4_desc$"
  menp_AIO_component_4: "$menp_cosmo_techs_4$"
@@ -111,7 +111,7 @@
  # 五阶
  menp_AIO_mega_05: "维度嵌入"
  menp_AIO_mega_05_desc: "我/我们即真理。"
- unlocks_AIO_allinone_mega_04: "解锁巨构：§Y$AIO_mega_04$§!"
+ unlocks_AIO_allinone_mega_04: "解锁巨构：§Y$AIO_mega_04$§!\n"
  menp_AIO_buildings_5: "$menp_cosmo_buildings_5$"
  menp_AIO_buildings_5_desc: "$menp_cosmo_buildings_5_desc$"
  menp_AIO_component_5: "$menp_cosmo_techs_5$"
