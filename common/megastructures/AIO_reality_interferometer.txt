@@ -65,7 +65,7 @@ AIO_reality_interferometer = {
 
 	on_build_complete = {
 		solar_system = { save_event_target_as = AIO_interferometer_system }
-		from = { country_event = { id = AIO_interference_events.202 } }
+		from = { country_event = { id = AIO_interference_events.201 } }
 	}
 
 	on_dismantle_complete = {

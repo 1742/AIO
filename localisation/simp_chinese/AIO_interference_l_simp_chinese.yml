@@ -25,9 +25,9 @@
 
  #region 提示
 
- AIO_interference_events.202.title: "校准现实干涉仪"
- AIO_interference_events.202.desc: "§H[event_target:AIO_interferometer_system.GetName]§!星系中的$AIO_reality_interferometer$已经完成。装置需要一个明确的逻辑结论，才能开始重写附近的现实。"
- AIO_interference_events.202.production: "令物质服从我们的生产需求。"
- AIO_interference_events.202.weapon: "令因果服从我们的武器。"
+ AIO_interference_events.201.title: "校准现实干涉仪"
+ AIO_interference_events.201.desc: "§H[event_target:AIO_interferometer_system.GetName]§!星系中的$AIO_reality_interferometer$已经完成。装置需要一个明确的逻辑结论，才能开始重写附近的现实。"
+ AIO_interference_events.201.energy: "令物质服从我们的生产需求。"
+ AIO_interference_events.201.resource: "令因果服从我们的武器。"
 
  #endregion

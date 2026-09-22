@@ -26,9 +26,9 @@
 
  #region tooltips
 
- AIO_interference_events.202.title: "Calibrating the Reality Interferometer"
- AIO_interference_events.202.desc: "The $AIO_reality_interferometer$ in the §H[event_target:AIO_interferometer_system.GetName]§! system is complete. The apparatus requires a precise logical conclusion before it can begin rewriting nearby reality."
- AIO_interference_events.202.production: "Make matter obey our production needs."
- AIO_interference_events.202.weapon: "Make causality obey our weapons."
+ AIO_interference_events.201.title: "Calibrating the Reality Interferometer"
+ AIO_interference_events.201.desc: "The $AIO_reality_interferometer$ in the §H[event_target:AIO_interferometer_system.GetName]§! system is complete. The apparatus requires a precise logical conclusion before it can begin rewriting nearby reality."
+ AIO_interference_events.201.energy: "Make matter obey our production needs."
+ AIO_interference_events.201.resource: "Make causality obey our weapons."
 
  #endregion

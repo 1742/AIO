@@ -1,0 +1,311 @@
+owner_planet_modifier = {
+    potential = { always = yes }
+    planet_jobs_physics_research_produces_mult = 0.2
+    mult = trigger:is_aura_intensity_level
+}
+
+
+#region energy
+
+owner_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_energy
+                has_star_flag = AIO_interference_energy_residual
+            }
+        }
+    }
+    planet_jobs_energy_produces_mult = 0.15
+    mult = trigger:is_aura_intensity_level
+}
+owner_fleet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_energy
+                has_star_flag = AIO_interference_energy_residual
+            }
+        }
+    }
+    ship_weapon_damage = 0.2
+    ship_shield_mult = -0.05
+    mult = trigger:is_aura_intensity_level
+}
+
+neutral_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_energy
+                has_star_flag = AIO_interference_energy_residual
+            }
+        }
+    }
+    planet_jobs_energy_produces_mult = 0.1
+}
+
+rival_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_energy
+                has_star_flag = AIO_interference_energy_residual
+            }
+        }
+    }
+    planet_jobs_energy_produces_mult = 0.1
+}
+
+#endregion
+
+
+#region resource
+
+owner_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_resource
+                has_star_flag = AIO_interference_resource_residual
+            }
+        }
+    }
+    station_gatherers_produces_mult = 0.33
+    planet_jobs_minerals_produces_mult = 0.1
+    planet_jobs_worker_volatile_motes_produces_mult = 0.05
+    planet_jobs_worker_exotic_gases_produces_mult = 0.05
+    planet_jobs_worker_rare_crystals_produces_mult = 0.05
+    mult = trigger:is_aura_intensity_level
+}
+
+neutral_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_resource
+                has_star_flag = AIO_interference_resource_residual
+            }
+        }
+    }
+    station_gatherers_produces_mult = 0.2
+    planet_jobs_minerals_produces_mult = 0.1
+    planet_jobs_worker_volatile_motes_produces_mult = 0.05
+    planet_jobs_worker_exotic_gases_produces_mult = 0.05
+    planet_jobs_worker_rare_crystals_produces_mult = 0.05
+}
+
+rival_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_resource
+                has_star_flag = AIO_interference_resource_residual
+            }
+        }
+    }
+    station_gatherers_produces_mult = 0.2
+    planet_jobs_minerals_produces_mult = 0.1
+    planet_jobs_worker_volatile_motes_produces_mult = 0.05
+    planet_jobs_worker_exotic_gases_produces_mult = 0.05
+    planet_jobs_worker_rare_crystals_produces_mult = 0.05
+}
+
+#endregion
+
+
+#region bio
+
+owner_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_bio
+                has_star_flag = AIO_interference_bio_residual
+            }
+        }
+    }
+    modifier = {
+        planet_jobs_food_produces_mult = 0.1
+        planet_jobs_society_research_produces_mult = 0.15
+        planet_jobs_biomass_produces_mult = 0.1
+    }
+    mult = trigger:is_aura_intensity_level
+}
+
+neutral_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_bio
+                has_star_flag = AIO_interference_bio_residual
+            }
+        }
+    }
+    modifier = {
+        planet_jobs_food_produces_mult = 0.1
+        planet_jobs_society_research_produces_mult = 0.15
+        planet_jobs_biomass_produces_mult = 0.1
+    }
+}
+
+rival_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_bio
+                has_star_flag = AIO_interference_bio_residual
+            }
+        }
+    }
+    modifier = {
+        planet_jobs_food_produces_mult = 0.1
+        planet_jobs_society_research_produces_mult = 0.15
+        planet_jobs_biomass_produces_mult = 0.1
+    }
+}
+
+#endregion
+
+
+#region industry
+
+owner_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_industry
+                has_star_flag = AIO_interference_industry_residual
+            }
+        }
+    }
+    modifier = {
+        planet_jobs_consumer_goods_produces_mult = 0.05
+        planet_jobs_alloys_produces_mult = 0.05
+        planet_jobs_engineering_research_produces_mult = 0.15
+        planet_jobs_minerals_upkeep_mult = 0.1
+    }
+    mult = trigger:is_aura_intensity_level
+}
+
+neutral_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_industry
+                has_star_flag = AIO_interference_industry_residual
+            }
+        }
+    }
+    modifier = {
+        planet_jobs_consumer_goods_produces_mult = 0.05
+        planet_jobs_alloys_produces_mult = 0.05
+        planet_jobs_engineering_research_produces_mult = 0.15
+        planet_jobs_minerals_upkeep_mult = 0.1
+    }
+}
+
+rival_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_industry
+                has_star_flag = AIO_interference_industry_residual
+            }
+        }
+    }
+    modifier = {
+        planet_jobs_consumer_goods_produces_mult = 0.05
+        planet_jobs_alloys_produces_mult = 0.05
+        planet_jobs_engineering_research_produces_mult = 0.15
+        planet_jobs_minerals_upkeep_mult = 0.1
+    }
+}
+
+#endregion
+
+
+#region build
+
+owner_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_build
+                has_star_flag = AIO_interference_build_residual
+            }
+        }
+    }
+    modifier = {
+        planet_building_build_speed_mult = 0.25
+    }
+    mult = trigger:is_aura_intensity_level
+}
+owner_fleet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_build
+                has_star_flag = AIO_interference_build_residual
+            }
+        }
+    }
+    modifier = {
+        megastructure_build_speed_mult = 0.33
+        starbase_shipyard_build_alloys_cost_mult = -0.1
+    }
+    mult = trigger:is_aura_intensity_level
+}
+
+#endregion
+
+
+#region geology
+
+owner_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_scale
+                has_star_flag = AIO_interference_scale_residual
+            }
+        }
+    }
+    modifier = {
+        planet_max_districts_add = 2
+        terraform_speed_mult = 0.5
+    }
+    mult = trigger:is_aura_intensity_level
+}
+
+neutral_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_scale
+                has_star_flag = AIO_interference_scale_residual
+            }
+        }
+    }
+    modifier = {
+        planet_max_districts_add = 1
+        terraform_speed_mult = 0.25
+    }
+}
+
+rival_planet_modifier = {
+    potential = {
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_scale
+                has_star_flag = AIO_interference_scale_residual
+            }
+        }
+    }
+    modifier = {
+        planet_max_districts_add = 1
+        terraform_speed_mult = 0.25
+    }
+}
+
+#endregion
