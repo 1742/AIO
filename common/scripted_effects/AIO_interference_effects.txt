@@ -66,8 +66,8 @@ AIO_clear_interference_flag = {
 	remove_star_flag = AIO_interference_source
 
 	remove_star_flag = AIO_interference_source_production
-	remove_star_flag = AIO_interference_production
-	remove_star_flag = AIO_interference_production_residual
+	remove_star_flag = AIO_interference_energy
+	remove_star_flag = AIO_interference_energy_residual
 
 	remove_star_flag = AIO_interference_source_weapon
 	remove_star_flag = AIO_interference_weapon
@@ -118,15 +118,15 @@ AIO_interference_update_system_effect_flags = {
 				OWNER = $OWNER$
 			}
 		}
-		set_star_flag = AIO_interference_production
-		remove_star_flag = AIO_interference_production_residual
+		set_star_flag = AIO_interference_energy
+		remove_star_flag = AIO_interference_energy_residual
 	}
 	else = {
 		if = {
-			limit = { has_star_flag = AIO_interference_production }
-			remove_star_flag = AIO_interference_production
+			limit = { has_star_flag = AIO_interference_energy }
+			remove_star_flag = AIO_interference_energy
 			set_timed_star_flag = {
-				flag = AIO_interference_production_residual
+				flag = AIO_interference_energy_residual
 				years = 5
 			}
 		}

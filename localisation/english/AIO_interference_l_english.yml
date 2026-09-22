@@ -5,9 +5,7 @@
  AIO_reality_interference_aura_level_1_tt: "§HMild Reality Distortion§!"
  AIO_reality_interference_aura_level_2_tt: "§HSignificant Reality Distortion§!"
  AIO_reality_interference_aura_level_3_tt: "§RCritical Reality Distortion§!"
- AIO_interference_production_intensity_desc: "Production Interference"
- AIO_interference_weapon_intensity_desc: "Weapon Interference"
- AIO_interference_source_intensity_desc: "Reality Interference Source"
+ AIO_interference_source_intensity_desc: "Reality Interferometer"
  AIO_interference_disconnected_desc: "Disconnected from Reality Interference Source"
 
  #endregion

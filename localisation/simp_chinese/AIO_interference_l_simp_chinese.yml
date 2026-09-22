@@ -5,9 +5,7 @@
  AIO_reality_interference_aura_level_1_tt: "§H轻度现实扭曲§!"
  AIO_reality_interference_aura_level_2_tt: "§H显著现实扭曲§!"
  AIO_reality_interference_aura_level_3_tt: "§R临界现实扭曲§!"
- AIO_interference_production_intensity_desc: "生产干涉"
- AIO_interference_weapon_intensity_desc: "武器干涉"
- AIO_interference_source_intensity_desc: "现实干涉源"
+ AIO_interference_source_intensity_desc: "现实干涉仪"
  AIO_interference_disconnected_desc: "与现实干涉源断开"
 
  #endregion

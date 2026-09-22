@@ -1,29 +1,112 @@
 # Reality Interference prototype.
 # One native Psionic Aura carries several effects selected by star flags.
 AIO_reality_interference_aura = {
+	triggered_system_modifier = {
+		potential = { always = yes }
+		planet_jobs_physics_research_produces_mult = 0.05
+		mult = trigger:is_aura_intensity_level
+	}
+	triggered_system_modifier = {
+		potential = {
+			solar_system = {
+				OR = {
+					has_star_flag = AIO_interference_energy
+					has_star_flag = AIO_interference_energy_residual
+				}
+			}
+		}
+		modifier = {
+			planet_jobs_energy_produces_mult = 0.1
+			ship_weapon_damage = 0.2
+        	ship_shield_mult = -0.05
+		}
+		mult = trigger:is_aura_intensity_level
+	}
+	triggered_system_modifier = {
+		potential = {
+			OR = {
+				has_star_flag = AIO_interference_resource
+				has_star_flag = AIO_interference_resource_residual
+			}
+		}
+		station_gatherers_produces_mult = 0.33
+		planet_jobs_minerals_produces_mult = 0.1
+        planet_jobs_worker_volatile_motes_produces_mult = 0.05
+        planet_jobs_worker_exotic_gases_produces_mult = 0.05
+        planet_jobs_worker_rare_crystals_produces_mult = 0.05
+		mult = trigger:is_aura_intensity_level
+	}
+	triggered_system_modifier = {
+		potential = {
+			solar_system = {
+				OR = {
+					has_star_flag = AIO_interference_bio
+					has_star_flag = AIO_interference_bio_residual
+				}
+			}
+		}
+		modifier = {
+			planet_jobs_food_produces_mult = 0.1
+			planet_jobs_society_research_produces_mult = 0.15
+			planet_jobs_biomass_produces_mult = 0.1
+		}
+		mult = trigger:is_aura_intensity_level
+	}
+	triggered_system_modifier = {
+		potential = {
+			solar_system = {
+				OR = {
+					has_star_flag = AIO_interference_industry
+					has_star_flag = AIO_interference_industry_residual
+				}
+			}
+		}
+		modifier = {
+			planet_jobs_consumer_goods_produces_mult = 0.05
+			planet_jobs_alloys_produces_mult = 0.05
+			planet_jobs_engineering_research_produces_mult = 0.15
+			planet_jobs_minerals_upkeep_mult = 0.1
+		}
+		mult = trigger:is_aura_intensity_level
+	}
+	triggered_system_modifier = {
+		potential = {
+			OR = {
+				has_star_flag = AIO_interference_build
+				has_star_flag = AIO_interference_build_residual
+			}
+		}
+		planet_building_build_speed_mult = 0.1
+		starbase_building_build_speed_mult = 0.1
+		starbase_upgrade_speed_mult = 0.1
+		starbase_shipyard_build_speed_mult = 0.1
+		megastructure_build_speed_mult = 0.33
+		mult = trigger:is_aura_intensity_level
+	}
+	triggered_system_modifier = {
+		potential = {
+			OR = {
+				has_star_flag = AIO_interference_cost
+				has_star_flag = AIO_interference_cost_residual
+			}
+		}
+		planet_jobs_alloys_upkeep_mult = -0.1
+		planet_buildings_alloys_cost_mult = -0.1
+		starbase_shipyard_build_alloys_cost_mult = -0.1
+		mult = trigger:is_aura_intensity_level
+	}
+
 	intensity_level = {
 		end = 1000
 		custom_tooltip = AIO_reality_interference_aura_level_1_tt
-		inline_script = {
-			script = AIO/interference_auras_modifier
-			MULT = 1
-		}
 	}
 	intensity_level = {
 		end = 2000
 		custom_tooltip = AIO_reality_interference_aura_level_2_tt
-		inline_script = {
-			script = AIO/interference_auras_modifier
-			MULT = 2
-		}
 	}
 	intensity_level = {
 		end = 2500
 		custom_tooltip = AIO_reality_interference_aura_level_3_tt
-		inline_script = {
-			script = AIO/interference_auras_modifier
-			MULT = 3
-		}
 	}
 
 	# Propagation is independent of intensity levels. Every existing field node
@@ -68,28 +151,14 @@ AIO_reality_interference_aura = {
 			add = value:AIO_reality_interference_nearby_source_growth
 			OR = {
 				has_star_flag = AIO_interference_source
-				any_neighbor_system = {
-					has_star_flag = AIO_interference_source
-					has_psionic_aura = AIO_reality_interference_aura
-					aura_owner = { is_same_value = root.aura_owner }
+				AIO_is_nearby_interference_source = {
+					OWNER = root.aura_owner
 				}
 			}
 			desc = AIO_interference_source_intensity_desc
 		}
-		modifier = {
-			add = 1
-			has_star_flag = AIO_interference_production
-			desc = AIO_interference_production_intensity_desc
-		}
-		modifier = {
-			add = 1
-			has_star_flag = AIO_interference_weapon
-			desc = AIO_interference_weapon_intensity_desc
-		}
 	}
 
-	# Residual effects last for at most five years, but they do not hold the aura
-	# open. A disconnected aura keeps decaying and clears its residuals on vanish.
 	monthly_decrease = {
 		base = 0
 		modifier = {
