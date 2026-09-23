@@ -81,4 +81,3 @@ country_event = {
 		exists = event_target:AIO_interference_target
 	}
 }
-

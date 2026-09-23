@@ -29,7 +29,7 @@
  AIO_reality_interferometer: "现实干涉仪"
  AIO_reality_interferometer_plural: "$AIO_reality_interferometer$"
  AIO_reality_interferometer_DESC: "以超然逻辑强迫局部现实服从预设结论的巨型装置。装置会生成并强化现实干涉场；若当地已有灵能光环，启动时将直接覆盖原有光环。"
- AIO_reality_interferometer_MEGASTRUCTURE_DETAILS: "建成后选择一种干涉效果。每个星系只能建造一座，每个帝国初始最多维持五座。"
+ AIO_reality_interferometer_MEGASTRUCTURE_DETAILS: "建成后选择一种干涉效果。覆盖同一星系的同类效果按来源数叠加，最多计入三座；我方效果还受光环等级影响。每个星系只能建造一座，每个帝国初始最多维持五座。"
  AIO_requires_no_existing_reality_interferometer: "$TRIGGER_FAIL$该星系已经存在一座$AIO_reality_interferometer$。"
  AIO_requires_reality_interferometer_capacity: "$TRIGGER_FAIL$我们最多只能维持§Y5§!座$AIO_reality_interferometer$。"
 

@@ -41,3 +41,21 @@ AIO_reality_interference_proof_growth = {
 	mult = 0.5
 	max = 5
 }
+
+# Planet or fleet scope. Active sources of one type stack up to three; a fading
+# residual keeps the strength of one source until it expires.
+AIO_interference_type_source_count = {
+	base = 0
+	add = solar_system.AIO_interference_$TYPE$_sources
+	modifier = {
+		add = 1
+		solar_system = { has_star_flag = AIO_interference_$TYPE$_residual }
+	}
+	max = 3
+}
+
+AIO_interference_type_level_multiplier = {
+	base = 0
+	add = value:AIO_interference_type_source_count|TYPE|$TYPE$|
+	mult = trigger:is_aura_intensity_level
+}

@@ -30,7 +30,7 @@
  AIO_reality_interferometer: "Reality Interferometer"
  AIO_reality_interferometer_plural: "$AIO_reality_interferometer$"
  AIO_reality_interferometer_DESC: "A colossal apparatus that uses transcendent logic to force local reality toward a predetermined conclusion. When activated, it creates and intensifies a Reality Interference Field, replacing any Psionic Aura already present."
- AIO_reality_interferometer_MEGASTRUCTURE_DETAILS: "Select an interference effect after construction. Only one may be built in each system, and an empire may initially maintain up to five."
+ AIO_reality_interferometer_MEGASTRUCTURE_DETAILS: "Select an interference effect after construction. Effects of the same type stack from up to three sources covering a system; effects on our assets also scale with the aura level. Only one may be built in each system, and an empire may initially maintain up to five."
  AIO_requires_no_existing_reality_interferometer: "$TRIGGER_FAIL$A $AIO_reality_interferometer$ already exists in this system."
  AIO_requires_reality_interferometer_capacity: "$TRIGGER_FAIL$We can maintain no more than §Y5§! $AIO_reality_interferometer_plural$."
 
