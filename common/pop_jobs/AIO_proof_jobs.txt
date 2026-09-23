@@ -1,0 +1,80 @@
+# Reality Proof Facility jobs. Resource values are per 100 employed workforce.
+AIO_proof_researcher = {
+	category = specialist
+
+	swappable_data = {
+		default = {
+			condition_string = SPECIALIST_JOB_TRIGGER
+			building_icon = building_AIO_reality_proof_facility
+			icon = physicist
+		}
+	}
+
+	tags = { research AIO_proof }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_specialist_job
+	possible = { complex_specialist_job_check_trigger = yes }
+
+	resources = {
+		category = planet_researchers
+		produces = {
+			physics_research = 1.5
+			society_research = 1.5
+			engineering_research = 1.5
+			AIO_advanced_logic = 0.05
+		}
+		upkeep = { consumer_goods = 1.5 }
+	}
+
+	weight = { weight = @specialist_job_weight }
+}
+
+AIO_proof_drone = {
+	category = complex_drone
+
+	swappable_data = {
+		default = {
+			condition_string = DRONE_JOB_TRIGGER
+			building_icon = building_AIO_reality_proof_facility
+			icon = physicist
+		}
+	}
+
+	tags = { research AIO_proof }
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_drone_job
+	possible = { can_think = yes }
+
+	resources = {
+		category = planet_researchers
+		produces = {
+			physics_research = 1.5
+			society_research = 1.5
+			engineering_research = 1.5
+			AIO_advanced_logic = 0.05
+		}
+		upkeep = {
+			trigger = { owner? = { is_machine_empire = yes } }
+			energy = 3
+		}
+		upkeep = {
+			trigger = { owner? = { is_hive_empire = yes } }
+			minerals = 4
+		}
+	}
+
+	weight = { weight = @complex_drone_job_weight }
+}

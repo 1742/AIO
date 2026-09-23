@@ -74,6 +74,26 @@ AIO_reality_interference_aura = {
 			}
 			desc = AIO_interference_source_intensity_desc
 		}
+		modifier = {
+			add = value:AIO_reality_interference_proof_growth
+			OR = {
+				any_system_planet_colony = {
+					is_owned_by = root.aura_owner
+					total_workforce_with_job_tag = {
+						tags = { AIO_proof }
+						value > 0
+					}
+				}
+				any_system_ship_colony = {
+					is_owned_by = root.aura_owner
+					total_workforce_with_job_tag = {
+						tags = { AIO_proof }
+						value > 0
+					}
+				}
+			}
+			desc = AIO_interference_proof_intensity_desc
+		}
 	}
 
 	monthly_decrease = {

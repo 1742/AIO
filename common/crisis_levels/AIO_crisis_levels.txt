@@ -20,6 +20,7 @@ crisis_AIO_level_2 = {
 			success_text = AIO_allinone_level_2_req_success_tooltip
 			fail_text = AIO_allinone_level_2_req_fail_tooltip
 			OR = {
+				has_technology = tech_AIO_exponential_learning_theory
 				has_country_flag = AIO_built_AIO_horizon_engine
 				has_country_flag = AIO_empire_country
 			}

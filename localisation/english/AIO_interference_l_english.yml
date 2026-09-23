@@ -6,7 +6,20 @@
  AIO_reality_interference_aura_level_2_tt: "§HSignificant Reality Distortion§!"
  AIO_reality_interference_aura_level_3_tt: "§RCritical Reality Distortion§!"
  AIO_interference_source_intensity_desc: "Reality Interferometer"
+ AIO_interference_proof_intensity_desc: "Employed Reality Provers"
  AIO_interference_disconnected_desc: "Disconnected from Reality Interference Source"
+
+ building_AIO_reality_proof_facility: "Reality Proof Facility"
+ building_AIO_reality_proof_facility_desc: "Researchers test how readily local reality can be rewritten."
+ building_AIO_reality_proof_facility_tt: "Each 100 £job_physicist£ §Y$job_AIO_proof_researcher$§! add §G0.5§! monthly intensity to the local Reality Interference Field, counting at most 1,000 per system."
+ job_AIO_proof_researcher: "Reality Prover"
+ job_AIO_proof_researcher_plural: "Reality Provers"
+ job_AIO_proof_researcher_desc: "Demonstrates that familiar physical laws are merely one possible solution."
+ mod_job_AIO_proof_researcher_add: "£job_physicist£ $job_AIO_proof_researcher$ Jobs"
+ job_AIO_proof_drone: "Reality Proof Subroutine"
+ job_AIO_proof_drone_plural: "Reality Proof Subroutines"
+ job_AIO_proof_drone_desc: "Continuously validates and revises the laws governing local reality."
+ mod_job_AIO_proof_drone_add: "£job_physicist£ $job_AIO_proof_drone$ Jobs"
 
  #endregion
 

@@ -1,0 +1,2 @@
+# Workforce tag used by Reality Proof jobs and aura intensity growth.
+AIO_proof

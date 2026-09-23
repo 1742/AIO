@@ -23,3 +23,21 @@ AIO_reality_interference_nearby_source_growth = {
 
 	mult = 2
 }
+
+# Scope: system carrying the AIO aura. One hundred employed proof workers add
+# 0.5 monthly intensity; only the aura owner's workforce counts.
+AIO_reality_interference_proof_growth = {
+	complex_trigger_modifier = {
+		trigger = total_system_workforce_with_job_tag
+		parameters = {
+			tags = { AIO_proof }
+			limit = {
+				colony.owner = { is_same_value = root.aura_owner }
+			}
+		}
+		mode = add
+	}
+	divide = 100
+	mult = 0.5
+	max = 5
+}

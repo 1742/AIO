@@ -6,7 +6,20 @@
  AIO_reality_interference_aura_level_2_tt: "§H显著现实扭曲§!"
  AIO_reality_interference_aura_level_3_tt: "§R临界现实扭曲§!"
  AIO_interference_source_intensity_desc: "现实干涉仪"
+ AIO_interference_proof_intensity_desc: "现实证明者"
  AIO_interference_disconnected_desc: "与现实干涉源断开"
+
+ building_AIO_reality_proof_facility: "现实证明设施"
+ building_AIO_reality_proof_facility_desc: "以观测和演算不断验证局部现实的可塑性。"
+ building_AIO_reality_proof_facility_tt: "每100名 £job_physicist£ §Y现实证明者§!使当地现实干涉场每月额外增长§G0.5§!强度，每星系最多计入1000名。"
+ job_AIO_proof_researcher: "现实证明者"
+ job_AIO_proof_researcher_plural: "现实证明者"
+ job_AIO_proof_researcher_desc: "证明既有物理定律只是现实的一种可选解。"
+ mod_job_AIO_proof_researcher_add: "£job_physicist£ $job_AIO_proof_researcher$岗位"
+ job_AIO_proof_drone: "现实证明子例程"
+ job_AIO_proof_drone_plural: "现实证明子例程"
+ job_AIO_proof_drone_desc: "持续验证并修订局部现实的基础规律。"
+ mod_job_AIO_proof_drone_add: "£job_physicist£ $job_AIO_proof_drone$岗位"
 
  #endregion
 
