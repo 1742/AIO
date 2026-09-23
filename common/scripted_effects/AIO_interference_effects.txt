@@ -12,8 +12,12 @@ AIO_interference_create_source = {
 # Scope: system
 AIO_interference_remove_source = {
 	remove_star_flag = AIO_interference_source
-	remove_star_flag = AIO_interference_source_production
-	remove_star_flag = AIO_interference_source_weapon
+	remove_star_flag = AIO_interference_source_energy
+	remove_star_flag = AIO_interference_source_resource
+	remove_star_flag = AIO_interference_source_bio
+	remove_star_flag = AIO_interference_source_industry
+	remove_star_flag = AIO_interference_source_build
+	remove_star_flag = AIO_interference_source_geology
 	if = {
 		limit = { has_psionic_aura = AIO_reality_interference_aura }
 		aura_owner = { AIO_interference_rebuild_effect_flags = yes }
@@ -69,9 +73,25 @@ AIO_clear_interference_flag = {
 	remove_star_flag = AIO_interference_energy
 	remove_star_flag = AIO_interference_energy_residual
 
-	remove_star_flag = AIO_interference_source_weapon
-	remove_star_flag = AIO_interference_weapon
-	remove_star_flag = AIO_interference_weapon_residual
+	remove_star_flag = AIO_interference_source_resource
+	remove_star_flag = AIO_interference_resource
+	remove_star_flag = AIO_interference_resource_residual
+
+	remove_star_flag = AIO_interference_source_bio
+	remove_star_flag = AIO_interference_bio
+	remove_star_flag = AIO_interference_bio_residual
+
+	remove_star_flag = AIO_interference_source_industry
+	remove_star_flag = AIO_interference_industry
+	remove_star_flag = AIO_interference_industry_residual
+
+	remove_star_flag = AIO_interference_source_build
+	remove_star_flag = AIO_interference_build
+	remove_star_flag = AIO_interference_build_residual
+
+	remove_star_flag = AIO_interference_source_geology
+	remove_star_flag = AIO_interference_geology
+	remove_star_flag = AIO_interference_geology_residual
 }
 
 #endregion
@@ -114,7 +134,7 @@ AIO_interference_update_system_effect_flags = {
 	if = {
 		limit = {
 			AIO_is_nearby_specific_interference_source = {
-				TYPE = production
+				TYPE = energy
 				OWNER = $OWNER$
 			}
 		}
@@ -135,19 +155,103 @@ AIO_interference_update_system_effect_flags = {
 	if = {
 		limit = {
 			AIO_is_nearby_specific_interference_source = {
-				TYPE = weapon
+				TYPE = resource
 				OWNER = $OWNER$
 			}
 		}
-		set_star_flag = AIO_interference_weapon
-		remove_star_flag = AIO_interference_weapon_residual
+		set_star_flag = AIO_interference_resource
+		remove_star_flag = AIO_interference_resource_residual
 	}
 	else = {
 		if = {
-			limit = { has_star_flag = AIO_interference_weapon }
-			remove_star_flag = AIO_interference_weapon
+			limit = { has_star_flag = AIO_interference_resource }
+			remove_star_flag = AIO_interference_resource
 			set_timed_star_flag = {
-				flag = AIO_interference_weapon_residual
+				flag = AIO_interference_resource_residual
+				years = 5
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			AIO_is_nearby_specific_interference_source = {
+				TYPE = bio
+				OWNER = $OWNER$
+			}
+		}
+		set_star_flag = AIO_interference_bio
+		remove_star_flag = AIO_interference_bio_residual
+	}
+	else = {
+		if = {
+			limit = { has_star_flag = AIO_interference_bio }
+			remove_star_flag = AIO_interference_bio
+			set_timed_star_flag = {
+				flag = AIO_interference_bio_residual
+				years = 5
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			AIO_is_nearby_specific_interference_source = {
+				TYPE = industry
+				OWNER = $OWNER$
+			}
+		}
+		set_star_flag = AIO_interference_industry
+		remove_star_flag = AIO_interference_industry_residual
+	}
+	else = {
+		if = {
+			limit = { has_star_flag = AIO_interference_industry }
+			remove_star_flag = AIO_interference_industry
+			set_timed_star_flag = {
+				flag = AIO_interference_industry_residual
+				years = 5
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			AIO_is_nearby_specific_interference_source = {
+				TYPE = build
+				OWNER = $OWNER$
+			}
+		}
+		set_star_flag = AIO_interference_build
+		remove_star_flag = AIO_interference_build_residual
+	}
+	else = {
+		if = {
+			limit = { has_star_flag = AIO_interference_build }
+			remove_star_flag = AIO_interference_build
+			set_timed_star_flag = {
+				flag = AIO_interference_build_residual
+				years = 5
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			AIO_is_nearby_specific_interference_source = {
+				TYPE = geology
+				OWNER = $OWNER$
+			}
+		}
+		set_star_flag = AIO_interference_geology
+		remove_star_flag = AIO_interference_geology_residual
+	}
+	else = {
+		if = {
+			limit = { has_star_flag = AIO_interference_geology }
+			remove_star_flag = AIO_interference_geology
+			set_timed_star_flag = {
+				flag = AIO_interference_geology_residual
 				years = 5
 			}
 		}
