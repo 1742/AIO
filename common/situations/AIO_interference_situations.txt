@@ -1,0 +1,211 @@
+# A system target keeps each accident independent. Never use target_modifier here:
+# system targets are not colony carriers.
+AIO_interference_energy_backlash = {
+	picture = GFX_evt_black_hole
+	category = negative
+	situation_log_category = developments
+	complete_icon_frame = GFX_situation_outcome_frame_blue
+	complete_icon = GFX_situation_outcome_positive
+	fail_icon_frame = GFX_situation_outcome_frame_blue
+	fail_icon = GFX_situation_outcome_meh
+	initial_progress = 15
+	progress_direction = monodirectional
+
+	on_start = {
+		situation_event = { id = AIO_interference_events.310 }
+	}
+	on_progress_complete = {
+		AIO_interference_energy_complete = yes
+		situation_event = { id = AIO_interference_events.313 }
+		AIO_interference_energy_finish = yes
+	}
+	on_fail = {
+		situation_event = { id = AIO_interference_events.314 }
+		AIO_interference_energy_finish = yes
+	}
+	on_abort = {
+		if = {
+			limit = { exists = target }
+			target = {
+				remove_star_flag = AIO_energy_backlash_active
+				every_system_planet_colony = {
+					limit = { has_modifier = AIO_energy_accidence_planet }
+					remove_modifier = AIO_energy_accidence_planet
+				}
+				every_system_ship_colony = {
+					limit = { has_modifier = AIO_energy_accidence_planet }
+					remove_modifier = AIO_energy_accidence_planet
+				}
+			}
+		}
+	}
+	abort_trigger = {
+		OR = {
+			NOT = { exists = target }
+			target = {
+				NOT = { has_psionic_aura = AIO_reality_interference_aura }
+			}
+			target = {
+				has_psionic_aura = AIO_reality_interference_aura
+				OR = {
+					is_aura_intensity_level < 3
+					aura_owner = { NOT = { is_same_value = root.owner } }
+				}
+			}
+		}
+	}
+
+	stages = {
+		AIO_energy_stage_one = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 35
+			on_first_enter = {
+				AIO_interference_energy_devastation = yes
+			}
+			on_enter = {
+				AIO_interference_energy_modifier = { MULT = 1 }
+			}
+		}
+		AIO_energy_stage_two = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_red
+			end = 70
+			on_first_enter = {
+				AIO_interference_energy_devastation = yes
+			}
+			on_enter = {
+				AIO_interference_energy_modifier = { MULT = 2 }
+			}
+		}
+		AIO_energy_stage_three = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			on_first_enter = {
+				AIO_interference_energy_devastation = yes
+			}
+			on_enter = {
+				AIO_interference_energy_modifier = { MULT = 3 }
+			}
+		}
+	}
+
+	monthly_progress = {
+		base = 0
+		modifier = {
+			add = value:AIO_interference_energy_situation_growth
+			desc = AIO_energy_progress_active
+			owner = { has_policy_flag = AIO_interference_mode_energy }
+			target = {
+				has_psionic_aura = AIO_reality_interference_aura
+				aura_owner = { is_same_value = root.owner }
+				OR = {
+					has_star_flag = AIO_interference_source
+					AIO_is_nearby_interference_source = { OWNER = root.owner }
+				}
+			}
+			OR = {
+				current_situation_approach = AIO_energy_maintain
+				current_situation_approach = AIO_energy_reverse
+			}
+		}
+		modifier = {
+			subtract = 12
+			desc = AIO_energy_progress_blockade
+			owner = { has_policy_flag = AIO_interference_mode_energy }
+			current_situation_approach = AIO_energy_blockade
+		}
+		modifier = {
+			subtract = 8
+			desc = AIO_energy_progress_policy_mismatch
+			OR = {
+				owner = { NOT = { has_policy_flag = AIO_interference_mode_energy } }
+				target = {
+					NOR = {
+						has_star_flag = AIO_interference_source
+						AIO_is_nearby_interference_source = { OWNER = root.owner }
+					}
+				}
+			}
+		}
+	}
+
+	approach = {
+		name = AIO_energy_maintain
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		allow = {
+			current_stage < AIO_energy_stage_three
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					owner = { has_policy_flag = AIO_interference_mode_energy }
+					target = {
+						OR = {
+							has_star_flag = AIO_interference_source
+							AIO_is_nearby_interference_source = { OWNER = root.owner }
+						}
+					}
+				}
+				energy = 50
+				physics_research = 20
+			}
+		}
+		ai_weight = { base = 10 }
+	}
+	approach = {
+		name = AIO_energy_blockade
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_yellow
+		allow = {
+			current_stage < AIO_energy_stage_three
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					owner = { has_policy_flag = AIO_interference_mode_energy }
+					target = {
+						OR = {
+							has_star_flag = AIO_interference_source
+							AIO_is_nearby_interference_source = { OWNER = root.owner }
+						}
+					}
+				}
+				energy = 150
+				alloys = 25
+			}
+		}
+		ai_weight = { base = 5 }
+	}
+	approach = {
+		name = AIO_energy_reverse
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_green
+		potential = { owner = { has_menace_perk = menp_AIO_mega_03 } }
+		allow = {
+			current_stage < AIO_energy_stage_three
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					owner = { has_policy_flag = AIO_interference_mode_energy }
+					target = {
+						OR = {
+							has_star_flag = AIO_interference_source
+							AIO_is_nearby_interference_source = { OWNER = root.owner }
+						}
+					}
+				}
+				AIO_advanced_logic = 100
+				energy = 100
+			}
+		}
+		ai_weight = { base = 0 }
+	}
+}

@@ -17,11 +17,35 @@ country_event = {
 	}
 }
 
-# Reserved entry point for future interference incidents. Incident identity should
-# be saved when an incident is scheduled so later policy changes cannot reroll it.
-country_event = {
-	id = AIO_interference_events.301
-	hide_window = yes
+#region Energy accident.
+# Situation events retain the situation as ROOT and its system
+# as target, so several simultaneous copies cannot overwrite event targets.
+
+situation_event = {
+	id = AIO_interference_events.310
 	is_triggered_only = yes
-	trigger = { exists = event_target:AIO_interference_target }
+	title = AIO_interference_events.310.name
+	desc = AIO_interference_events.310.desc
+	picture = GFX_evt_black_hole
+	option = { name = AIO_interference_events.310.option }
 }
+
+situation_event = {
+	id = AIO_interference_events.313
+	is_triggered_only = yes
+	title = AIO_interference_events.313.name
+	desc = AIO_interference_events.313.desc
+	picture = GFX_evt_black_hole
+	option = { name = AIO_interference_events.313.option }
+}
+
+situation_event = {
+	id = AIO_interference_events.314
+	is_triggered_only = yes
+	title = AIO_interference_events.314.name
+	desc = AIO_interference_events.314.desc
+	picture = GFX_evt_black_hole
+	option = { name = AIO_interference_events.314.option }
+}
+
+#endregion

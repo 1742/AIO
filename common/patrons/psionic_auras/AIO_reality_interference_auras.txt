@@ -28,20 +28,23 @@ AIO_reality_interference_aura = {
 	# trigger on the target system keeps it inside the owner's source range.
 	on_monthly = {
 		if = {
+			limit = {
+				is_aura_intensity_level = 3
+				aura_owner = { has_policy_flag = AIO_interference_mode_energy }
+				NOT = { has_star_flag = AIO_energy_backlash_active }
+				OR = {
+					has_star_flag = AIO_interference_source
+					AIO_is_nearby_interference_source = { OWNER = aura_owner }
+				}
+			}
+			AIO_interference_energy_start = yes
+		}
+		if = {
 			limit = { NOT = { has_star_flag = AIO_interference_spread_block } }
 			AIO_interference_prototype_try_spread = yes
 			set_timed_star_flag = {
 				flag = AIO_interference_spread_block
 				months = 3
-			}
-		}
-	}
-
-	on_progress_complete = {
-		hidden_effect = {
-			set_aura_intensity = 2000
-			root.aura_owner = {
-				country_event = { id = AIO_interference_events.301 }
 			}
 		}
 	}
@@ -66,7 +69,7 @@ AIO_reality_interference_aura = {
 	monthly_increase = {
 		base = 1
 		modifier = {
-			add = value:AIO_reality_interference_nearby_source_growth
+			add = value:AIO_reality_interference_nearby_source_growth|OWNER|root.aura_owner|
 			OR = {
 				has_star_flag = AIO_interference_source
 				AIO_is_nearby_interference_source = {
@@ -76,7 +79,7 @@ AIO_reality_interference_aura = {
 			desc = AIO_interference_source_intensity_desc
 		}
 		modifier = {
-			add = value:AIO_reality_interference_proof_growth
+			add = value:AIO_reality_interference_proof_growth|OWNER|root.aura_owner|
 			OR = {
 				any_system_planet_colony = {
 					is_owned_by = root.aura_owner

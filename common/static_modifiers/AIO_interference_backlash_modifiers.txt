@@ -1,0 +1,26 @@
+#region energy accidence
+
+AIO_energy_accidence_planet = {
+	planet_jobs_energy_produces_mult = 0.15
+	planet_jobs_physics_research_produces_mult = 0.05
+	planet_stability_mult = -0.05
+}
+
+AIO_energy_accidence_system = {
+	ship_weapon_damage = 0.05
+	ship_shield_mult = -0.03
+}
+
+AIO_energy_reversal_1 = {
+	planet_jobs_energy_produces_mult = 0.05
+}
+
+AIO_energy_reversal_2 = {
+	planet_jobs_energy_produces_mult = 0.10
+}
+
+AIO_energy_reversal_3 = {
+	planet_jobs_energy_produces_mult = 0.20
+}
+
+#endregion

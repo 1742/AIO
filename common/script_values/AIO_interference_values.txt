@@ -12,7 +12,7 @@ AIO_reality_interference_nearby_source_growth = {
 			limit = {
 				has_star_flag = AIO_interference_source
 				has_psionic_aura = AIO_reality_interference_aura
-				aura_owner = { is_same_value = root.aura_owner }
+				aura_owner = { is_same_value = $OWNER$ }
 			}
 		}
 		mode = add
@@ -26,7 +26,7 @@ AIO_reality_interference_proof_growth = {
 		parameters = {
 			tags = { AIO_proof }
 			limit = {
-				colony.owner = { is_same_value = root.aura_owner }
+				colony.owner = { is_same_value = $OWNER$ }
 			}
 		}
 		mode = add
@@ -40,4 +40,56 @@ AIO_interference_intensity_multiplier = {
 	base = 0
 	add = solar_system.AIO_interference_sources
 	mult = trigger:is_aura_intensity_level
+}
+
+# Situation scope. The field and the accident use the same source and local-job
+# values; this continues to grow after the field reaches its intensity cap.
+AIO_interference_energy_situation_growth = {
+	base = 1
+	add = target.value:AIO_reality_interference_nearby_source_growth|OWNER|root.owner|
+	add = target.value:AIO_reality_interference_proof_growth|OWNER|root.owner|
+	modifier = {
+		mult = 2
+		owner = { has_country_flag = AIO_interference_change_policy }
+	}
+}
+
+# Only running experiments and reversals share the national proof workforce.
+AIO_interference_energy_active_count = {
+	complex_trigger_modifier = {
+		trigger = count_situation
+		trigger_scope = owner
+		parameters = {
+			limit = {
+				is_situation_type = AIO_interference_energy_backlash
+				OR = {
+					current_situation_approach = AIO_energy_maintain
+					current_situation_approach = AIO_energy_reverse
+				}
+			target = {
+				has_psionic_aura = AIO_reality_interference_aura
+				aura_owner = { is_same_value = root.owner }
+				OR = {
+					has_star_flag = AIO_interference_source
+					AIO_is_nearby_interference_source = { OWNER = root.owner }
+				}
+			}
+				owner = { has_policy_flag = AIO_interference_mode_energy }
+			}
+		}
+		mode = add
+	}
+	min = 1
+}
+
+AIO_interference_energy_proof_share = {
+	complex_trigger_modifier = {
+		trigger = total_country_workforce_with_job_tag
+		trigger_scope = owner
+		parameters = { tags = { AIO_proof } }
+		mode = add
+	}
+	divide = 100
+	divide = value:AIO_interference_energy_active_count
+	max = 20
 }

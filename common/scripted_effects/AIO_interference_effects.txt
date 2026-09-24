@@ -133,3 +133,126 @@ AIO_interference_change_policy = {
 		set_aura_intensity = 1
 	}
 }
+
+
+#region energy accidence
+
+# Scope: aura system. The star flag serializes this system only, allowing the
+# country to run several independent copies of the same situation.
+AIO_interference_energy_start = {
+	set_star_flag = AIO_energy_backlash_active
+	save_event_target_as = AIO_energy_backlash_system
+	aura_owner = {
+		start_situation = {
+			type = AIO_interference_energy_backlash
+			target = event_target:AIO_energy_backlash_system
+		}
+	}
+}
+
+# Scope: energy situation. Keep the flag local to its original system.
+AIO_interference_energy_finish = {
+	if = {
+		limit = { exists = target }
+		target = {
+			remove_star_flag = AIO_energy_backlash_active
+			every_system_planet_colony = {
+				limit = { has_modifier = AIO_energy_accidence_planet }
+				remove_modifier = AIO_energy_accidence_planet
+			}
+			every_system_ship_colony = {
+				limit = { has_modifier = AIO_energy_accidence_planet }
+				remove_modifier = AIO_energy_accidence_planet
+			}
+			if = {
+				limit = {
+					has_psionic_aura = AIO_reality_interference_aura
+					aura_owner = { is_same_value = root.owner }
+				}
+				# The first value of level 2 is 1001: level 1 ends at 1000.
+				set_aura_intensity = 1001
+			}
+		}
+	}
+	destroy_situation = this
+}
+
+# scope: situation
+AIO_interference_energy_devastation = {
+	if = {
+		limit = { exists = target }
+		target = {
+			every_system_planet_colony = {
+				add_planet_devastation = 0.2
+			}
+			every_system_ship_colony = {
+				add_planet_devastation = 0.2
+			}
+		}
+	}
+}
+
+# scope: situation
+AIO_interference_energy_modifier = {
+	if = {
+		limit = { exists = target }
+		target = {
+			every_system_planet_colony = {
+				limit = { is_owned_by = root.owner }
+				add_modifier = {
+					modifier = AIO_energy_accidence_planet
+					days = 1800
+					mult = $MULT$
+				}
+			}
+			every_system_ship_colony = {
+				limit = { is_owned_by = root.owner }
+				add_modifier = {
+					modifier = AIO_energy_accidence_planet
+					days = 1800
+					mult = $MULT$
+				}
+			}
+			add_modifier = {
+				modifier = AIO_energy_accidence_system
+				mult = $MULT$
+			}
+		}
+	}
+}
+
+# Scope: energy situation. Awards depend on accumulated monthly work, never the
+# final approach alone. Permanent reversal tiers upgrade the country's best tier.
+AIO_interference_energy_complete = {
+	if = {
+		limit = { current_situation_approach = AIO_energy_maintain }
+		owner = {
+			add_resource = {
+				physics_research = 3000
+				AIO_advanced_logic = 600
+			}
+		}
+	}
+	if = {
+		limit = { current_situation_approach = AIO_energy_reverse }
+		owner = {
+			if = {
+				limit = { NOT = { has_modifier = AIO_energy_reversal_1 } }
+				add_modifier = { modifier = AIO_energy_reversal_1 }
+			}
+			else_if = {
+				limit = { NOT = { has_modifier = AIO_energy_reversal_2 } }
+				remove_modifier = AIO_energy_reversal_1
+				add_modifier = { modifier = AIO_energy_reversal_2 }
+			}
+			else_if = {
+				limit = { NOT = { has_modifier = AIO_energy_reversal_3 } }
+				remove_modifier = AIO_energy_reversal_1
+				remove_modifier = AIO_energy_reversal_2
+				add_modifier = { modifier = AIO_energy_reversal_3 }
+			}
+		}
+	}
+}
+
+#endregion
