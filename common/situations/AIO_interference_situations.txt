@@ -20,16 +20,13 @@ AIO_interference_energy_backlash = {
 		if = {
 			limit = { current_situation_approach = AIO_energy_reverse }
 			situation_event = { id = AIO_interference_events.313 }
-			AIO_interference_energy_tame = yes
 		}
 		else = {
 			situation_event = { id = AIO_interference_events.314 }
-			AIO_interference_energy_collapse = yes
 		}
 	}
 	on_fail = {
 		situation_event = { id = AIO_interference_events.315 }
-		AIO_interference_energy_suppress = yes
 	}
 	on_abort = {
 		if = {
@@ -62,20 +59,13 @@ AIO_interference_energy_backlash = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_red
 			end = 35
-			on_enter = {
-				AIO_interference_energy_modifier = { STAGE = 1 }
-			}
 		}
 		AIO_energy_stage_two = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_red
 			end = 70
 			on_first_enter = {
-				AIO_interference_energy_surge_one = yes
 				situation_event = { id = AIO_interference_events.311 }
-			}
-			on_enter = {
-				AIO_interference_energy_modifier = { STAGE = 2 }
 			}
 		}
 		AIO_energy_stage_three = {
@@ -83,11 +73,7 @@ AIO_interference_energy_backlash = {
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			on_first_enter = {
-				AIO_interference_energy_surge_two = yes
 				situation_event = { id = AIO_interference_events.312 }
-			}
-			on_enter = {
-				AIO_interference_energy_modifier = { STAGE = 3 }
 			}
 		}
 	}

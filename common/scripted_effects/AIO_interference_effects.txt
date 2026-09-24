@@ -139,6 +139,10 @@ AIO_interference_change_policy = {
 
 #region energy accidence
 
+# Bookkeeping only. Everything the player is meant to read (stage modifiers,
+# discharges, findings) is written directly in the event options, so the option
+# tooltip is generated from the effect and can never drift out of sync.
+
 # Scope: aura system. The star flag serializes this system only, allowing the
 # country to run several independent copies of the same situation.
 AIO_interference_energy_start = {
@@ -176,75 +180,6 @@ AIO_interference_energy_clear_accidence = {
 	every_system_ship_colony = { AIO_interference_energy_strip_accidence = yes }
 }
 
-# Scope: situation. Each stage replaces the previous one, so benefit and cost
-# both climb as the accident deepens.
-AIO_interference_energy_modifier = {
-	if = {
-		limit = { exists = target }
-		target = {
-			AIO_interference_energy_strip_accidence = yes
-			add_modifier = { modifier = AIO_energy_accidence_$STAGE$ }
-		}
-	}
-}
-
-# Scope: situation. Second stage discharge: the local grid goes dark. An active
-# blockade contains it, halving what the discharge leaves behind.
-AIO_interference_energy_surge_one = {
-	if = {
-		limit = {
-			exists = target
-			current_situation_approach = AIO_energy_blockade
-		}
-		target = {
-			every_system_planet_colony = {
-				add_planet_devastation = 10
-				add_modifier = { modifier = AIO_energy_blackout days = 90 }
-			}
-			every_system_ship_colony = {
-				add_planet_devastation = 10
-				add_modifier = { modifier = AIO_energy_blackout days = 90 }
-			}
-		}
-	}
-	else = {
-		limit = { exists = target }
-		target = {
-			every_system_planet_colony = {
-				add_planet_devastation = 20
-				add_modifier = { modifier = AIO_energy_blackout days = 180 }
-			}
-			every_system_ship_colony = {
-				add_planet_devastation = 20
-				add_modifier = { modifier = AIO_energy_blackout days = 180 }
-			}
-		}
-	}
-}
-
-# Scope: situation. Third stage discharge: the cascade drags the national grid in.
-AIO_interference_energy_surge_two = {
-	if = {
-		limit = {
-			exists = target
-			current_situation_approach = AIO_energy_blockade
-		}
-		target = {
-			every_system_planet_colony = { add_planet_devastation = 10 }
-			every_system_ship_colony = { add_planet_devastation = 10 }
-		}
-		target = { add_modifier = { modifier = AIO_energy_grid_drain days = 180 } }
-	}
-	else = {
-		limit = { exists = target }
-		target = {
-			every_system_planet_colony = { add_planet_devastation = 20 }
-			every_system_ship_colony = { add_planet_devastation = 20 }
-		}
-		target = { add_modifier = { modifier = AIO_energy_grid_drain days = 360 } }
-	}
-}
-
 # Scope: situation. Returns this system's field to the start of level 2. The
 # first value of level 2 is 1001: level 1 ends at 1000.
 AIO_interference_energy_reset_aura = {
@@ -264,7 +199,7 @@ AIO_interference_energy_reset_aura = {
 
 # Scope: situation. If the accident sits inside someone else's borders, tell the
 # owner, and let the opinion hit land: it is accumulative, so repeat accidents
-# accidents add up, the way vanilla's opinion_cosmogenesis_thesis does.
+# add up, the way vanilla's opinion_cosmogenesis_thesis does.
 AIO_interference_accident_notify = {
 	if = {
 		limit = { exists = target }
@@ -277,10 +212,6 @@ AIO_interference_accident_notify = {
 					NOT = { owner = { is_same_value = root.owner } }
 				}
 				owner = {
-					add_opinion_modifier = {
-						modifier = opinion_AIO_interference_accident
-						who = event_target:AIO_accident_owner
-					}
 					country_event = { id = AIO_interference_events.316 }
 				}
 			}
@@ -302,70 +233,6 @@ AIO_interference_energy_award = {
 		}
 		complete_crisis_objective = crisobj_AIO_research_thesis
 	}
-}
-
-# Scope: situation. The reversal lands before the cascade ends, so the field
-# keeps the level it reached instead of being reset. The field stays critical,
-# so an unlimited star flag is what stops the accident from restarting here; the
-# field's on_vanish clears the flag if the field ever disappears.
-AIO_interference_energy_tame = {
-	if = {
-		limit = { exists = target }
-		target = {
-			remove_star_flag = AIO_energy_backlash_active
-			AIO_interference_energy_clear_accidence = yes
-			set_star_flag = AIO_interference_backlash_sealed
-		}
-	}
-	AIO_interference_energy_award = yes
-	AIO_interference_accident_notify = yes
-	destroy_situation = this
-}
-
-# Scope: situation. Nobody stopped it: the colonies take the hit and the field
-# pays by dropping back to level 2.
-AIO_interference_energy_collapse = {
-	if = {
-		limit = { exists = target }
-		target = {
-			remove_star_flag = AIO_energy_backlash_active
-			AIO_interference_energy_clear_accidence = yes
-			every_system_planet_colony = {
-				add_planet_devastation = 40
-				if = {
-					limit = { NOT = { has_deposit = d_AIO_energy_cascade_residue } }
-					add_blocker = { type = d_AIO_energy_cascade_residue }
-				}
-			}
-			every_system_ship_colony = {
-				add_planet_devastation = 40
-				if = {
-					limit = { NOT = { has_deposit = d_AIO_energy_cascade_residue } }
-					add_blocker = { type = d_AIO_energy_cascade_residue }
-				}
-			}
-		}
-	}
-	target = { add_modifier = { modifier = AIO_energy_grid_collapse days = 1825 } }
-	AIO_interference_energy_award = yes
-	AIO_interference_accident_notify = yes
-	AIO_interference_energy_reset_aura = yes
-	destroy_situation = this
-}
-
-# Scope: situation. Blockade or a doctrine change ends the accident early.
-AIO_interference_energy_suppress = {
-	if = {
-		limit = { exists = target }
-		target = {
-			remove_star_flag = AIO_energy_backlash_active
-			AIO_interference_energy_clear_accidence = yes
-		}
-	}
-	AIO_interference_energy_award = yes
-	AIO_interference_accident_notify = yes
-	AIO_interference_energy_reset_aura = yes
-	destroy_situation = this
 }
 
 #endregion

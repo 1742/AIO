@@ -18,11 +18,17 @@ country_event = {
 }
 
 #region Energy accident.
-# Situation events retain the situation as ROOT and its system
-# as target, so several simultaneous copies cannot overwrite event targets.
-# 310 opens the accident, 311 and 312 are the stage transitions, 313 is a
-# successful reversal, 314 is the cascade running to the end and 315 is the
-# accident ending before the cascade completes.
+# Situation events retain the situation as ROOT and its system as target, so
+# several simultaneous copies cannot overwrite event targets. The consequences
+# sit in the options on purpose: the game renders them into the option tooltip,
+# so a retuned effect can never disagree with what the player is told. Each
+# option also ends the accident itself, so the situation stays in the log until
+# the click lands (vanilla does the same in situation_events.txt and
+# biogenesis_crisis_events.txt).
+# 310 opens the accident and grants the first stage, 311/312 are the stage
+# transitions and their discharges, 313 is a successful reversal, 314 is the
+# cascade running to the end, 315 is the accident ending early, and 316 tells
+# whoever owns the system.
 
 situation_event = {
 	id = AIO_interference_events.310
@@ -30,7 +36,12 @@ situation_event = {
 	title = AIO_interference_events.310.name
 	desc = AIO_interference_events.310.desc
 	picture = GFX_evt_black_hole
-	option = { name = AIO_interference_events.310.option }
+	option = {
+		name = AIO_interference_events.310.option
+		target = {
+			add_modifier = { modifier = AIO_energy_accidence_1 }
+		}
+	}
 }
 
 situation_event = {
@@ -39,7 +50,38 @@ situation_event = {
 	title = AIO_interference_events.311.name
 	desc = AIO_interference_events.311.desc
 	picture = GFX_evt_black_hole
-	option = { name = AIO_interference_events.311.option }
+	option = {
+		name = AIO_interference_events.311.option
+		target = {
+			AIO_interference_energy_strip_accidence = yes
+			add_modifier = { modifier = AIO_energy_accidence_2 }
+		}
+		if = {
+			limit = { current_situation_approach = AIO_energy_blockade }
+			target = {
+				every_system_planet_colony = {
+					add_planet_devastation = 10
+					add_modifier = { modifier = AIO_energy_blackout days = 90 }
+				}
+				every_system_ship_colony = {
+					add_planet_devastation = 10
+					add_modifier = { modifier = AIO_energy_blackout days = 90 }
+				}
+			}
+		}
+		else = {
+			target = {
+				every_system_planet_colony = {
+					add_planet_devastation = 20
+					add_modifier = { modifier = AIO_energy_blackout days = 180 }
+				}
+				every_system_ship_colony = {
+					add_planet_devastation = 20
+					add_modifier = { modifier = AIO_energy_blackout days = 180 }
+				}
+			}
+		}
+	}
 }
 
 situation_event = {
@@ -48,7 +90,28 @@ situation_event = {
 	title = AIO_interference_events.312.name
 	desc = AIO_interference_events.312.desc
 	picture = GFX_evt_black_hole
-	option = { name = AIO_interference_events.312.option }
+	option = {
+		name = AIO_interference_events.312.option
+		target = {
+			AIO_interference_energy_strip_accidence = yes
+			add_modifier = { modifier = AIO_energy_accidence_3 }
+		}
+		if = {
+			limit = { current_situation_approach = AIO_energy_blockade }
+			target = {
+				every_system_planet_colony = { add_planet_devastation = 10 }
+				every_system_ship_colony = { add_planet_devastation = 10 }
+				add_modifier = { modifier = AIO_energy_grid_drain days = 180 }
+			}
+		}
+		else = {
+			target = {
+				every_system_planet_colony = { add_planet_devastation = 20 }
+				every_system_ship_colony = { add_planet_devastation = 20 }
+				add_modifier = { modifier = AIO_energy_grid_drain days = 360 }
+			}
+		}
+	}
 }
 
 situation_event = {
@@ -57,7 +120,17 @@ situation_event = {
 	title = AIO_interference_events.313.name
 	desc = AIO_interference_events.313.desc
 	picture = GFX_evt_black_hole
-	option = { name = AIO_interference_events.313.option }
+	option = {
+		name = AIO_interference_events.313.option
+		# All three endings pay the same findings: keep these blocks in sync.
+		owner = { AIO_interference_energy_award = yes }
+		target = {
+			remove_star_flag = AIO_energy_backlash_active
+			set_star_flag = AIO_interference_backlash_sealed
+			AIO_interference_energy_clear_accidence = yes
+		}
+		destroy_situation = this
+	}
 }
 
 situation_event = {
@@ -66,7 +139,35 @@ situation_event = {
 	title = AIO_interference_events.314.name
 	desc = AIO_interference_events.314.desc
 	picture = GFX_evt_black_hole
-	option = { name = AIO_interference_events.314.option }
+	option = {
+		name = AIO_interference_events.314.option
+		target = {
+			add_modifier = { modifier = AIO_energy_grid_collapse days = 1825 }
+			every_system_planet_colony = {
+				add_planet_devastation = 40
+				if = {
+					limit = { NOT = { has_deposit = d_AIO_energy_cascade_residue } }
+					add_blocker = { type = d_AIO_energy_cascade_residue }
+				}
+			}
+			every_system_ship_colony = {
+				add_planet_devastation = 40
+				if = {
+					limit = { NOT = { has_deposit = d_AIO_energy_cascade_residue } }
+					add_blocker = { type = d_AIO_energy_cascade_residue }
+				}
+			}
+		}
+		# All three endings pay the same findings: keep these blocks in sync.
+		owner = { AIO_interference_energy_award = yes }
+		AIO_interference_accident_notify = yes
+		target = {
+			remove_star_flag = AIO_energy_backlash_active
+			AIO_interference_energy_clear_accidence = yes
+		}
+		AIO_interference_energy_reset_aura = yes
+		destroy_situation = this
+	}
 }
 
 situation_event = {
@@ -75,18 +176,34 @@ situation_event = {
 	title = AIO_interference_events.315.name
 	desc = AIO_interference_events.315.desc
 	picture = GFX_evt_black_hole
-	option = { name = AIO_interference_events.315.option }
+	option = {
+		name = AIO_interference_events.315.option
+		target = {
+			remove_star_flag = AIO_energy_backlash_active
+			AIO_interference_energy_clear_accidence = yes
+		}
+		AIO_interference_energy_reset_aura = yes
+		destroy_situation = this
+	}
 }
 
 # Fired at whoever owns the system when an accident ends inside their borders, so
-# the third party is never left guessing where the scorch marks came from.
+# the third party is never left guessing where the scorch marks came from. The
+# opinion hit itself is applied by AIO_interference_accident_notify rather than
+# in this option: the event target cannot be trusted at click time.
 country_event = {
 	id = AIO_interference_events.316
 	is_triggered_only = yes
 	title = AIO_interference_events.316.name
 	desc = AIO_interference_events.316.desc
 	picture = GFX_evt_black_hole
-	option = { name = AIO_interference_events.316.option }
+	option = {
+		name = AIO_interference_events.316.option
+		add_opinion_modifier = {
+			modifier = opinion_AIO_interference_accident
+			who = event_target:AIO_accident_owner
+		}
+	}
 }
 
 #endregion
