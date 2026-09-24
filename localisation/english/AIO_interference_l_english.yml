@@ -9,9 +9,20 @@
  AIO_interference_proof_intensity_desc: "Employed Reality Provers"
  AIO_interference_disconnected_desc: "Disconnected from Reality Interference Source"
 
+ #endregion
+
+
+ #region building
+
  building_AIO_reality_proof_facility: "Reality Proof Facility"
  building_AIO_reality_proof_facility_desc: "Researchers test how readily local reality can be rewritten."
  building_AIO_reality_proof_facility_tt: "Each 100 £job_physicist£ §Y$job_AIO_proof_researcher$§! add §G0.5§! monthly intensity to the local Reality Interference Field, counting at most 1,000 per system."
+
+ #endregion
+
+
+ #region job
+
  job_AIO_proof_researcher: "Reality Prover"
  job_AIO_proof_researcher_plural: "Reality Provers"
  job_AIO_proof_researcher_desc: "Demonstrates that familiar physical laws are merely one possible solution."
@@ -30,7 +41,7 @@
  AIO_reality_interferometer: "Reality Interferometer"
  AIO_reality_interferometer_plural: "$AIO_reality_interferometer$"
  AIO_reality_interferometer_DESC: "A colossal apparatus that uses transcendent logic to force local reality toward a predetermined conclusion. When activated, it creates and intensifies a Reality Interference Field, replacing any Psionic Aura already present."
- AIO_reality_interferometer_MEGASTRUCTURE_DETAILS: "Select an interference effect after construction. Effects of the same type stack from up to three sources covering a system; effects on our assets also scale with the aura level. Only one may be built in each system, and an empire may initially maintain up to five."
+ AIO_reality_interferometer_MEGASTRUCTURE_DETAILS: "Construction activates a uniform source under the empire interference doctrine. Effects stack from up to three sources covering a system; effects on our assets also scale with aura level. Only one may be built in each system, and an empire may initially maintain up to five."
  AIO_requires_no_existing_reality_interferometer: "$TRIGGER_FAIL$A $AIO_reality_interferometer$ already exists in this system."
  AIO_requires_reality_interferometer_capacity: "$TRIGGER_FAIL$We can maintain no more than §Y5§! $AIO_reality_interferometer_plural$."
 
@@ -46,9 +57,19 @@
 
  #region tooltips
 
- AIO_interference_events.201.title: "Calibrating the Reality Interferometer"
- AIO_interference_events.201.desc: "The $AIO_reality_interferometer$ in the §H[event_target:AIO_interferometer_system.GetName]§! system is complete. The apparatus requires a precise logical conclusion before it can begin rewriting nearby reality."
- AIO_interference_events.201.energy: "Make matter obey our production needs."
- AIO_interference_events.201.resource: "Make causality obey our weapons."
+ AIO_interferometer_completed: "The $AIO_reality_interferometer$ in the §H[from.GetName]§! system has completed."
+
+ #endregion
+
+
+ #region policy
+
+ policy_policy_AIO_interference_doctrine: "Reality Interference Doctrine"
+ policy_policy_AIO_interference_doctrine_desc: "Sets the combined effects produced by our Reality Interference Fields. Changing doctrine alters benefits, not field coverage or intensity."
+ policy_AIO_interference_balanced: "Balanced Interference"
+ policy_AIO_interference_energy: "Zero Point Energy"
+ policy_AIO_interference_ecology: "Ecology Evolution"
+ policy_AIO_interference_industry: "Refine Manufacture"
+ policy_AIO_interference_metric: "Metric Engineering"
 
  #endregion

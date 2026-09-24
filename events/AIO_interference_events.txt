@@ -1,83 +1,27 @@
 namespace = AIO_interference_events
 
-
-# Fired when a Reality Interferometer finishes construction.
-# event_target:AIO_interferometer_system = host system
+# Fired when a Reality Interferometer finishes construction. Policy controls its effects.
 country_event = {
 	id = AIO_interference_events.201
-	title = AIO_interference_events.201.title
-	desc = AIO_interference_events.201.desc
-	picture = GFX_evt_shroud_psionic_aura
+	hide_window = yes
+
 	is_triggered_only = yes
 
-	option = {
-		name = AIO_interference_events.201.energy
-		event_target:AIO_interferometer_system = {
-			AIO_interference_create_source = {
-				TYPE = energy
-				OWNER = root
-			}
-		}
-		default_hide_option = yes
-	}
-
-	option = {
-		name = AIO_interference_events.201.resource
-		event_target:AIO_interferometer_system = {
-			AIO_interference_create_source = {
-				TYPE = resource
-				OWNER = root
-			}
-		}
-	}
-
-	option = {
-		name = AIO_interference_events.201.bio
-		event_target:AIO_interferometer_system = {
-			AIO_interference_create_source = {
-				TYPE = bio
-				OWNER = root
-			}
-		}
-	}
-
-	option = {
-		name = AIO_interference_events.201.industry
-		event_target:AIO_interferometer_system = {
-			AIO_interference_create_source = {
-				TYPE = industry
-				OWNER = root
-			}
-		}
-	}
-
-	option = {
-		name = AIO_interference_events.201.build
-		event_target:AIO_interferometer_system = {
-			AIO_interference_create_source = {
-				TYPE = build
-				OWNER = root
-			}
-		}
-	}
-
-	option = {
-		name = AIO_interference_events.201.geology
-		event_target:AIO_interferometer_system = {
-			AIO_interference_create_source = {
-				TYPE = geology
-				OWNER = root
-			}
+	immediate = {
+		create_message = {
+			type = MEGASTRUCTURE_BUILT
+			localization = AIO_interferometer_completed
+			days = 30
+			target = from
 		}
 	}
 }
 
+# Reserved entry point for future interference incidents. Incident identity should
+# be saved when an incident is scheduled so later policy changes cannot reroll it.
 country_event = {
 	id = AIO_interference_events.301
 	hide_window = yes
-
 	is_triggered_only = yes
-	trigger = {
-		exists = event_target:AIO_interference_target
-	}
+	trigger = { exists = event_target:AIO_interference_target }
 }

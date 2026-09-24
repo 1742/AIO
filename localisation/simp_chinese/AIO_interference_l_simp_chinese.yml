@@ -9,9 +9,20 @@
  AIO_interference_proof_intensity_desc: "现实证明者"
  AIO_interference_disconnected_desc: "与现实干涉源断开"
 
+ #endregion
+
+
+ #region 建筑
+
  building_AIO_reality_proof_facility: "现实证明设施"
  building_AIO_reality_proof_facility_desc: "以观测和演算不断验证局部现实的可塑性。"
  building_AIO_reality_proof_facility_tt: "每100名 £job_physicist£ §Y现实证明者§!使当地现实干涉场每月额外增长§G0.5§!强度，每星系最多计入1000名。"
+
+ #endregion
+
+
+ #region 岗位
+
  job_AIO_proof_researcher: "现实证明者"
  job_AIO_proof_researcher_plural: "现实证明者"
  job_AIO_proof_researcher_desc: "证明既有物理定律只是现实的一种可选解。"
@@ -29,14 +40,14 @@
  AIO_reality_interferometer: "现实干涉仪"
  AIO_reality_interferometer_plural: "$AIO_reality_interferometer$"
  AIO_reality_interferometer_DESC: "以超然逻辑强迫局部现实服从预设结论的巨型装置。装置会生成并强化现实干涉场；若当地已有灵能光环，启动时将直接覆盖原有光环。"
- AIO_reality_interferometer_MEGASTRUCTURE_DETAILS: "建成后选择一种干涉效果。覆盖同一星系的同类效果按来源数叠加，最多计入三座；我方效果还受光环等级影响。每个星系只能建造一座，每个帝国初始最多维持五座。"
+ AIO_reality_interferometer_MEGASTRUCTURE_DETAILS: "建成后按国家干涉政策启用统一来源。覆盖同一星系的效果按本国来源数叠加，最多计入三座；我方效果还受光环等级影响。每个星系只能建造一座，每个帝国初始最多维持五座。"
  AIO_requires_no_existing_reality_interferometer: "$TRIGGER_FAIL$该星系已经存在一座$AIO_reality_interferometer$。"
  AIO_requires_reality_interferometer_capacity: "$TRIGGER_FAIL$我们最多只能维持§Y5§!座$AIO_reality_interferometer$。"
 
  #endregion
 
 
- #region modifier
+ #region 修正
 
  mod_AIO_interferometer_range: "现实干涉仪影响范围"
 
@@ -45,9 +56,19 @@
 
  #region 提示
 
- AIO_interference_events.201.title: "校准现实干涉仪"
- AIO_interference_events.201.desc: "§H[event_target:AIO_interferometer_system.GetName]§!星系中的$AIO_reality_interferometer$已经完成。装置需要一个明确的逻辑结论，才能开始重写附近的现实。"
- AIO_interference_events.201.energy: "令物质服从我们的生产需求。"
- AIO_interference_events.201.resource: "令因果服从我们的武器。"
+ AIO_interferometer_completed: "位于§Y[from.GetName]§!星系中的$AIO_reality_interferometer$已建造完成。"
+
+ #endregion
+
+
+ #region 政策
+
+ policy_policy_AIO_interference_doctrine: "现实干涉范式"
+ policy_policy_AIO_interference_doctrine_desc: "决定本国现实干涉场采用的组合效应。改变范式只改变收益构成，不改变光环覆盖与强度。"
+ policy_AIO_interference_balanced: "均衡干涉"
+ policy_AIO_interference_energy: "零点能量"
+ policy_AIO_interference_ecology: "生态演化"
+ policy_AIO_interference_industry: "精炼制造"
+ policy_AIO_interference_metric: "度规工程"
 
  #endregion

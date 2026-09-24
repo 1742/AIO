@@ -1,302 +1,326 @@
+#region Base
+
 owner_planet_modifier = {
-    potential = { always = yes }
-    planet_jobs_physics_research_produces_mult = 0.2
-    mult = trigger:is_aura_intensity_level
+	potential = { always = yes }
+	planet_jobs_physics_research_produces_mult = 0.03
+	mult = value:AIO_interference_intensity_multiplier
 }
 
+#endregion
 
-#region energy
+
+#region Balanced
+# spreads 9% gains across discrete district capacity.
 
 owner_planet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_balanced }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_energy
-                has_star_flag = AIO_interference_energy_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    planet_jobs_energy_produces_mult = 0.075
-    mult = value:AIO_interference_type_level_multiplier|TYPE|energy|
+	planet_jobs_energy_produces_mult = 0.01
+	planet_jobs_minerals_produces_mult = 0.01
+	planet_jobs_food_produces_mult = 0.01
+	planet_jobs_consumer_goods_produces_mult = 0.01
+	planet_jobs_alloys_produces_mult = 0.01
+	planet_jobs_society_research_produces_mult = 0.02
+    planet_jobs_engineering_research_produces_mult = 0.02
+	mult = value:AIO_interference_intensity_multiplier
+}
+owner_planet_modifier = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_balanced }
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
+            }
+        }
+    }
+    planet_max_districts_add = 1
+}
+
+#endregion
+
+
+#region Energy
+
+owner_planet_modifier = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_energy }
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
+            }
+        }
+    }
+	planet_jobs_energy_produces_mult = 0.10
+	mult = value:AIO_interference_intensity_multiplier
 }
 owner_fleet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_energy }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_energy
-                has_star_flag = AIO_interference_energy_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    ship_weapon_damage = 0.1
-    ship_shield_mult = -0.025
-    mult = value:AIO_interference_type_level_multiplier|TYPE|energy|
+	ship_weapon_damage = 0.1
+    ship_shield_mult = -0.03
+	mult = value:AIO_interference_intensity_multiplier
 }
 
 neutral_planet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_energy }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_energy
-                has_star_flag = AIO_interference_energy_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    planet_jobs_energy_produces_mult = 0.05
-    mult = value:AIO_interference_type_source_count|TYPE|energy|
+	planet_jobs_energy_produces_mult = 0.10
+}
+neutral_fleet_modifier = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_energy }
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
+            }
+        }
+    }
+	ship_weapon_damage = 0.1
+    ship_shield_mult = -0.03
 }
 
 rival_planet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_energy }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_energy
-                has_star_flag = AIO_interference_energy_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    planet_jobs_energy_produces_mult = 0.05
-    mult = value:AIO_interference_type_source_count|TYPE|energy|
+	planet_jobs_energy_produces_mult = 0.10
+}
+rival_fleet_modifier = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_energy }
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
+            }
+        }
+    }
+	ship_weapon_damage = 0.1
+    ship_shield_mult = -0.03
 }
 
 #endregion
 
 
-#region resource
+#region Ecology
 
 owner_planet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_ecology }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_resource
-                has_star_flag = AIO_interference_resource_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    station_gatherers_produces_mult = 0.165
-    planet_jobs_minerals_produces_mult = 0.05
-    planet_jobs_worker_volatile_motes_produces_mult = 0.025
-    planet_jobs_worker_exotic_gases_produces_mult = 0.025
-    planet_jobs_worker_rare_crystals_produces_mult = 0.025
-    mult = value:AIO_interference_type_level_multiplier|TYPE|resource|
-}
-
-neutral_planet_modifier = {
-    potential = {
-        solar_system = {
-            OR = {
-                has_star_flag = AIO_interference_resource
-                has_star_flag = AIO_interference_resource_residual
-            }
-        }
-    }
-    station_gatherers_produces_mult = 0.1
-    planet_jobs_minerals_produces_mult = 0.05
-    planet_jobs_worker_volatile_motes_produces_mult = 0.025
-    planet_jobs_worker_exotic_gases_produces_mult = 0.025
-    planet_jobs_worker_rare_crystals_produces_mult = 0.025
-    mult = value:AIO_interference_type_source_count|TYPE|resource|
-}
-
-rival_planet_modifier = {
-    potential = {
-        solar_system = {
-            OR = {
-                has_star_flag = AIO_interference_resource
-                has_star_flag = AIO_interference_resource_residual
-            }
-        }
-    }
-    station_gatherers_produces_mult = 0.1
-    planet_jobs_minerals_produces_mult = 0.05
-    planet_jobs_worker_volatile_motes_produces_mult = 0.025
-    planet_jobs_worker_exotic_gases_produces_mult = 0.025
-    planet_jobs_worker_rare_crystals_produces_mult = 0.025
-    mult = value:AIO_interference_type_source_count|TYPE|resource|
-}
-
-#endregion
-
-
-#region bio
-
-owner_planet_modifier = {
-    potential = {
-        solar_system = {
-            OR = {
-                has_star_flag = AIO_interference_bio
-                has_star_flag = AIO_interference_bio_residual
-            }
-        }
-    }
-    planet_jobs_food_produces_mult = 0.05
-    planet_jobs_society_research_produces_mult = 0.075
+	planet_jobs_food_produces_mult = 0.1
     planet_jobs_biomass_produces_mult = 0.05
-    mult = value:AIO_interference_type_level_multiplier|TYPE|bio|
+	planet_jobs_society_research_produces_mult = 0.03
+    terraform_speed_mult = 0.1
+	planet_jobs_energy_upkeep_mult = 0.03
+	mult = value:AIO_interference_intensity_multiplier
 }
 
 neutral_planet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_ecology }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_bio
-                has_star_flag = AIO_interference_bio_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    planet_jobs_food_produces_mult = 0.05
-    planet_jobs_society_research_produces_mult = 0.075
+	planet_jobs_food_produces_mult = 0.12
     planet_jobs_biomass_produces_mult = 0.05
-    mult = value:AIO_interference_type_source_count|TYPE|bio|
+    terraform_speed_mult = 0.1
+	planet_jobs_energy_upkeep_mult = 0.03
 }
 
 rival_planet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_ecology }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_bio
-                has_star_flag = AIO_interference_bio_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    planet_jobs_food_produces_mult = 0.05
-    planet_jobs_society_research_produces_mult = 0.075
+	planet_jobs_food_produces_mult = 0.12
     planet_jobs_biomass_produces_mult = 0.05
-    mult = value:AIO_interference_type_source_count|TYPE|bio|
+    terraform_speed_mult = 0.1
+	planet_jobs_energy_upkeep_mult = 0.03
 }
 
 #endregion
 
 
-#region industry
+#region Industry
 
 owner_planet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_industry }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_industry
-                has_star_flag = AIO_interference_industry_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    planet_jobs_consumer_goods_produces_mult = 0.025
-    planet_jobs_alloys_produces_mult = 0.025
-    planet_jobs_engineering_research_produces_mult = 0.075
-    planet_jobs_minerals_upkeep_mult = 0.05
-    mult = value:AIO_interference_type_level_multiplier|TYPE|industry|
+	planet_jobs_minerals_produces_mult = 0.12
+	planet_jobs_alloys_produces_mult = 0.10
+	planet_jobs_minerals_upkeep_mult = 0.05
+	mult = value:AIO_interference_intensity_multiplier
 }
 
 neutral_planet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_industry }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_industry
-                has_star_flag = AIO_interference_industry_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    planet_jobs_consumer_goods_produces_mult = 0.025
-    planet_jobs_alloys_produces_mult = 0.025
-    planet_jobs_engineering_research_produces_mult = 0.075
-    planet_jobs_minerals_upkeep_mult = 0.05
-    mult = value:AIO_interference_type_source_count|TYPE|industry|
+	planet_jobs_minerals_produces_mult = 0.12
+	planet_jobs_alloys_produces_mult = 0.10
+	planet_jobs_minerals_upkeep_mult = 0.05
 }
 
 rival_planet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_industry }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_industry
-                has_star_flag = AIO_interference_industry_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    planet_jobs_consumer_goods_produces_mult = 0.025
-    planet_jobs_alloys_produces_mult = 0.025
-    planet_jobs_engineering_research_produces_mult = 0.075
-    planet_jobs_minerals_upkeep_mult = 0.05
-    mult = value:AIO_interference_type_source_count|TYPE|industry|
+	planet_jobs_minerals_produces_mult = 0.12
+	planet_jobs_alloys_produces_mult = 0.10
+	planet_jobs_minerals_upkeep_mult = 0.05
 }
 
 #endregion
 
 
-#region build
+#region Metric
 
 owner_planet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_metric }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_build
-                has_star_flag = AIO_interference_build_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    planet_building_build_speed_mult = 0.125
-    mult = value:AIO_interference_type_level_multiplier|TYPE|build|
+	planet_max_districts_add = 1
+	planet_building_build_speed_mult = 0.12
+	planet_districts_upkeep_mult = 0.08
+	mult = value:AIO_interference_intensity_multiplier
 }
 owner_fleet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_metric }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_build
-                has_star_flag = AIO_interference_build_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    megastructure_build_speed_mult = 0.165
-    starbase_shipyard_build_alloys_cost_mult = -0.05
-    mult = value:AIO_interference_type_level_multiplier|TYPE|build|
-}
-
-#endregion
-
-
-#region geology
-
-owner_planet_modifier = {
-    potential = {
-        solar_system = {
-            OR = {
-                has_star_flag = AIO_interference_geology
-                has_star_flag = AIO_interference_geology_residual
-            }
-        }
-    }
-    planet_max_districts_add = 1
-    terraform_speed_mult = 0.25
-    planet_districts_upkeep_mult = 0.1
-    mult = value:AIO_interference_type_level_multiplier|TYPE|geology|
+	megastructure_build_speed_mult = 0.1
+	mult = value:AIO_interference_intensity_multiplier
 }
 
 neutral_planet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_metric }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_geology
-                has_star_flag = AIO_interference_geology_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    planet_max_districts_add = 1
-    terraform_speed_mult = 0.125
-    planet_districts_upkeep_mult = 0.05
-    mult = value:AIO_interference_type_source_count|TYPE|geology|
+	planet_max_districts_add = 1
+	planet_building_build_speed_mult = 0.12
+	planet_districts_upkeep_mult = 0.08
+}
+neutral_fleet_modifier = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_metric }
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
+            }
+        }
+    }
+	megastructure_build_speed_mult = 0.1
 }
 
 rival_planet_modifier = {
-    potential = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_metric }
         solar_system = {
             OR = {
-                has_star_flag = AIO_interference_geology
-                has_star_flag = AIO_interference_geology_residual
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
             }
         }
     }
-    planet_max_districts_add = 1
-    terraform_speed_mult = 0.125
-    planet_districts_upkeep_mult = 0.05
-    mult = value:AIO_interference_type_source_count|TYPE|geology|
+	planet_max_districts_add = 1
+	planet_building_build_speed_mult = 0.12
+	planet_districts_upkeep_mult = 0.08
+}
+rival_fleet_modifier = {
+	potential = {
+        owner = { has_policy_flag = AIO_interference_mode_metric }
+        solar_system = {
+            OR = {
+                has_star_flag = AIO_interference_covered
+                has_star_flag = AIO_interference_residual
+            }
+        }
+    }
+	megastructure_build_speed_mult = 0.1
 }
 
 #endregion

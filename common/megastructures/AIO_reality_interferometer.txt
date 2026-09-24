@@ -16,6 +16,7 @@ AIO_reality_interferometer = {
 	place_entity_on_planet_plane = no
 	build_type = inside_gravity_well
 	show_galactic_map_icon = yes
+	show_in_outliner = yes
 	entity_offset = { x = -8 y = -8 }
 
 	prerequisites = { tech_AIO_ascending_dimensionality_theory }
@@ -43,7 +44,7 @@ AIO_reality_interferometer = {
 		}
 	}
 
-	construction_blocks_and_blocked_by = self_type
+	construction_blocks_and_blocked_by = none
 	build_time = @AIO_reality_interferometer_build_time
 
 	resources = {
@@ -64,7 +65,7 @@ AIO_reality_interferometer = {
 	dismantle_potential = { always = yes }
 
 	on_build_complete = {
-		solar_system = { save_event_target_as = AIO_interferometer_system }
+		AIO_interference_create_source = { OWNER = root }
 		from = { country_event = { id = AIO_interference_events.201 } }
 	}
 
@@ -73,5 +74,4 @@ AIO_reality_interferometer = {
 	}
 
 	ai_weight = { base = 0 }
-	show_in_outliner = yes
 }

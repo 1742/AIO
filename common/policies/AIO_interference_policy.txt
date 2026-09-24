@@ -1,0 +1,26 @@
+policy_AIO_interference_doctrine = {
+	potential = {
+		has_technology = tech_AIO_exponential_learning_theory
+	}
+
+	option = {
+		name = policy_AIO_interference_balanced
+		policy_flags = { AIO_interference_mode_balanced }
+	}
+	option = {
+		name = policy_AIO_interference_energy
+		policy_flags = { AIO_interference_mode_energy }
+	}
+	option = {
+		name = policy_AIO_interference_ecology
+		policy_flags = { AIO_interference_mode_ecology }
+	}
+	option = {
+		name = policy_AIO_interference_industry
+		policy_flags = { AIO_interference_mode_industry }
+	}
+	option = {
+		name = policy_AIO_interference_metric
+		policy_flags = { AIO_interference_mode_metric }
+	}
+}

@@ -1,31 +1,21 @@
-#region api
-
-# Scope: system
-# OWNER: country that owns the completed Reality Interferometer
+# Complete construction activates one uniform interference source.
+# Scope: system.
 AIO_interference_create_source = {
 	AIO_interference_prepare_source = { OWNER = $OWNER$ }
-	set_star_flag = AIO_interference_source_$TYPE$
 	aura_owner = { AIO_interference_rebuild_effect_flags = yes }
 }
 
-# Scope: system
+# Remove only the source marker; covered fields become five-year residuals.
+# Scope: system.
 AIO_interference_remove_source = {
 	remove_star_flag = AIO_interference_source
-	remove_star_flag = AIO_interference_source_energy
-	remove_star_flag = AIO_interference_source_resource
-	remove_star_flag = AIO_interference_source_bio
-	remove_star_flag = AIO_interference_source_industry
-	remove_star_flag = AIO_interference_source_build
-	remove_star_flag = AIO_interference_source_geology
 	if = {
 		limit = { has_psionic_aura = AIO_reality_interference_aura }
 		aura_owner = { AIO_interference_rebuild_effect_flags = yes }
 	}
 }
 
-# Scope: country
-# Called when sources or interference range change. Recalculate effect flags
-# and source counts on every system carrying this country's aura.
+# scope: country
 AIO_interference_rebuild_effect_flags = {
 	save_event_target_as = AIO_interference_rebuild_owner
 	every_system_with_aura = {
@@ -39,7 +29,6 @@ AIO_interference_rebuild_effect_flags = {
 	}
 }
 
-# Scope: a system carrying the Reality Interference aura
 AIO_interference_prototype_try_spread = {
 	if = {
 		limit = { has_psionic_aura = AIO_reality_interference_aura }
@@ -64,50 +53,15 @@ AIO_interference_prototype_try_spread = {
 	}
 }
 
-# Scope: a system carrying the Reality Interference aura
 AIO_clear_interference_flag = {
 	remove_star_flag = AIO_interference_source
-
-	remove_star_flag = AIO_interference_source_energy
-	remove_star_flag = AIO_interference_energy
-	remove_star_flag = AIO_interference_energy_residual
-	clear_variable = AIO_interference_energy_sources
-
-	remove_star_flag = AIO_interference_source_resource
-	remove_star_flag = AIO_interference_resource
-	remove_star_flag = AIO_interference_resource_residual
-	clear_variable = AIO_interference_resource_sources
-
-	remove_star_flag = AIO_interference_source_bio
-	remove_star_flag = AIO_interference_bio
-	remove_star_flag = AIO_interference_bio_residual
-	clear_variable = AIO_interference_bio_sources
-
-	remove_star_flag = AIO_interference_source_industry
-	remove_star_flag = AIO_interference_industry
-	remove_star_flag = AIO_interference_industry_residual
-	clear_variable = AIO_interference_industry_sources
-
-	remove_star_flag = AIO_interference_source_build
-	remove_star_flag = AIO_interference_build
-	remove_star_flag = AIO_interference_build_residual
-	clear_variable = AIO_interference_build_sources
-
-	remove_star_flag = AIO_interference_source_geology
-	remove_star_flag = AIO_interference_geology
-	remove_star_flag = AIO_interference_geology_residual
-	clear_variable = AIO_interference_geology_sources
+	remove_star_flag = AIO_interference_covered
+	remove_star_flag = AIO_interference_residual
+	clear_variable = AIO_interference_sources
 }
 
-#endregion
-
-
-#region helper
-
-# Scope: system
-# OWNER: country that owns the completed Reality Interferometer
-# Existing vanilla or foreign auras are allowed to run their on_vanish effect,
-# then are replaced by the Reality Interference aura.
+# Resolve existed aura and spawn interference aura
+# scope: system
 AIO_interference_prepare_source = {
 	if = {
 		limit = {
@@ -132,148 +86,28 @@ AIO_interference_prepare_source = {
 	set_star_flag = AIO_interference_source
 }
 
-# Scope: a system carrying an AIO Reality Interference aura
-# OWNER: country that owns the aura
-# RANGE: effect range(max jumps)
+# Update sources count and preserve five-year residual when coverage disappears.
+# Scope: one aura system.
 AIO_interference_update_system_effect_flags = {
 	if = {
-		limit = {
-			AIO_is_nearby_specific_interference_source = {
-				TYPE = energy
-				OWNER = $OWNER$
-			}
-		}
-		set_star_flag = AIO_interference_energy
-		remove_star_flag = AIO_interference_energy_residual
+		limit = { AIO_is_nearby_interference_source = { OWNER = $OWNER$ } }
+		set_star_flag = AIO_interference_covered
+		remove_star_flag = AIO_interference_residual
 	}
 	else = {
 		if = {
-			limit = { has_star_flag = AIO_interference_energy }
-			remove_star_flag = AIO_interference_energy
-			set_timed_star_flag = {
-				flag = AIO_interference_energy_residual
-				years = 5
-			}
+			limit = { has_star_flag = AIO_interference_covered }
+			remove_star_flag = AIO_interference_covered
+			set_timed_star_flag = { flag = AIO_interference_residual years = 5 }
 		}
 	}
-
-	if = {
-		limit = {
-			AIO_is_nearby_specific_interference_source = {
-				TYPE = resource
-				OWNER = $OWNER$
-			}
-		}
-		set_star_flag = AIO_interference_resource
-		remove_star_flag = AIO_interference_resource_residual
-	}
-	else = {
-		if = {
-			limit = { has_star_flag = AIO_interference_resource }
-			remove_star_flag = AIO_interference_resource
-			set_timed_star_flag = {
-				flag = AIO_interference_resource_residual
-				years = 5
-			}
-		}
-	}
-
-	if = {
-		limit = {
-			AIO_is_nearby_specific_interference_source = {
-				TYPE = bio
-				OWNER = $OWNER$
-			}
-		}
-		set_star_flag = AIO_interference_bio
-		remove_star_flag = AIO_interference_bio_residual
-	}
-	else = {
-		if = {
-			limit = { has_star_flag = AIO_interference_bio }
-			remove_star_flag = AIO_interference_bio
-			set_timed_star_flag = {
-				flag = AIO_interference_bio_residual
-				years = 5
-			}
-		}
-	}
-
-	if = {
-		limit = {
-			AIO_is_nearby_specific_interference_source = {
-				TYPE = industry
-				OWNER = $OWNER$
-			}
-		}
-		set_star_flag = AIO_interference_industry
-		remove_star_flag = AIO_interference_industry_residual
-	}
-	else = {
-		if = {
-			limit = { has_star_flag = AIO_interference_industry }
-			remove_star_flag = AIO_interference_industry
-			set_timed_star_flag = {
-				flag = AIO_interference_industry_residual
-				years = 5
-			}
-		}
-	}
-
-	if = {
-		limit = {
-			AIO_is_nearby_specific_interference_source = {
-				TYPE = build
-				OWNER = $OWNER$
-			}
-		}
-		set_star_flag = AIO_interference_build
-		remove_star_flag = AIO_interference_build_residual
-	}
-	else = {
-		if = {
-			limit = { has_star_flag = AIO_interference_build }
-			remove_star_flag = AIO_interference_build
-			set_timed_star_flag = {
-				flag = AIO_interference_build_residual
-				years = 5
-			}
-		}
-	}
-
-	if = {
-		limit = {
-			AIO_is_nearby_specific_interference_source = {
-				TYPE = geology
-				OWNER = $OWNER$
-			}
-		}
-		set_star_flag = AIO_interference_geology
-		remove_star_flag = AIO_interference_geology_residual
-	}
-	else = {
-		if = {
-			limit = { has_star_flag = AIO_interference_geology }
-			remove_star_flag = AIO_interference_geology
-			set_timed_star_flag = {
-				flag = AIO_interference_geology_residual
-				years = 5
-			}
-		}
-	}
-
 	AIO_interference_recount_sources = { OWNER = $OWNER$ }
 }
 
-# Scope: affected aura system. Count distinct source systems within the aura
-# owner's range, including this system. One interferometer is allowed per system.
+# Count only this owner's source systems within range, including self.
+# Scope: one aura system.
 AIO_interference_recount_sources = {
-	set_variable = { which = AIO_interference_energy_sources value = 0 }
-	set_variable = { which = AIO_interference_resource_sources value = 0 }
-	set_variable = { which = AIO_interference_bio_sources value = 0 }
-	set_variable = { which = AIO_interference_industry_sources value = 0 }
-	set_variable = { which = AIO_interference_build_sources value = 0 }
-	set_variable = { which = AIO_interference_geology_sources value = 0 }
+	set_variable = { which = AIO_interference_sources value = 0 }
 	save_event_target_as = AIO_interference_count_target
 	aura_owner = {
 		every_system_with_aura = {
@@ -295,32 +129,9 @@ AIO_interference_recount_sources = {
 					}
 				}
 			}
-			if = {
-				limit = { has_star_flag = AIO_interference_source_energy }
-				event_target:AIO_interference_count_target = { change_variable = { which = AIO_interference_energy_sources value = 1 } }
-			}
-			if = {
-				limit = { has_star_flag = AIO_interference_source_resource }
-				event_target:AIO_interference_count_target = { change_variable = { which = AIO_interference_resource_sources value = 1 } }
-			}
-			if = {
-				limit = { has_star_flag = AIO_interference_source_bio }
-				event_target:AIO_interference_count_target = { change_variable = { which = AIO_interference_bio_sources value = 1 } }
-			}
-			if = {
-				limit = { has_star_flag = AIO_interference_source_industry }
-				event_target:AIO_interference_count_target = { change_variable = { which = AIO_interference_industry_sources value = 1 } }
-			}
-			if = {
-				limit = { has_star_flag = AIO_interference_source_build }
-				event_target:AIO_interference_count_target = { change_variable = { which = AIO_interference_build_sources value = 1 } }
-			}
-			if = {
-				limit = { has_star_flag = AIO_interference_source_geology }
-				event_target:AIO_interference_count_target = { change_variable = { which = AIO_interference_geology_sources value = 1 } }
+			event_target:AIO_interference_count_target = {
+				change_variable = { which = AIO_interference_sources value = 1 }
 			}
 		}
 	}
 }
-
-#endregion

@@ -1,14 +1,11 @@
-# Scope: a system carrying an AIO Reality Interference aura.
-# Each source in this system or an adjacent system contributes 2 monthly intensity.
+# Scope: a system carrying the AIO Reality Interference aura.
 AIO_reality_interference_nearby_source_growth = {
 	base = 0
-
 	modifier = {
 		add = 1
 		has_star_flag = AIO_interference_source
 		has_psionic_aura = AIO_reality_interference_aura
 	}
-
 	complex_trigger_modifier = {
 		trigger = count_neighbor_system
 		parameters = {
@@ -20,12 +17,9 @@ AIO_reality_interference_nearby_source_growth = {
 		}
 		mode = add
 	}
-
 	mult = 2
 }
 
-# Scope: system carrying the AIO aura. One hundred employed proof workers add
-# 0.5 monthly intensity; only the aura owner's workforce counts.
 AIO_reality_interference_proof_growth = {
 	complex_trigger_modifier = {
 		trigger = total_system_workforce_with_job_tag
@@ -42,20 +36,8 @@ AIO_reality_interference_proof_growth = {
 	max = 5
 }
 
-# Planet or fleet scope. Active sources of one type stack up to three; a fading
-# residual keeps the strength of one source until it expires.
-AIO_interference_type_source_count = {
+AIO_interference_intensity_multiplier = {
 	base = 0
-	add = solar_system.AIO_interference_$TYPE$_sources
-	modifier = {
-		add = 1
-		solar_system = { has_star_flag = AIO_interference_$TYPE$_residual }
-	}
-	max = 3
-}
-
-AIO_interference_type_level_multiplier = {
-	base = 0
-	add = value:AIO_interference_type_source_count|TYPE|$TYPE$|
+	add = solar_system.AIO_interference_sources
 	mult = trigger:is_aura_intensity_level
 }
