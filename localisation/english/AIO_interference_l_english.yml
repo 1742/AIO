@@ -37,6 +37,13 @@
  #endregion
 
 
+ #region modifier
+
+ mod_AIO_interferometer_range: "Interferometer Effect Range"
+
+ #endregion
+
+
  #region tooltips
 
  AIO_interference_events.201.title: "Calibrating the Reality Interferometer"

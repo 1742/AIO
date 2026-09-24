@@ -28,14 +28,10 @@ AIO_reality_interference_aura = {
 	# trigger on the target system keeps it inside the owner's source range.
 	on_monthly = {
 		if = {
-			limit = { NOT = { is_variable_set = AIO_interference_energy_sources } }
-			aura_owner = { AIO_interference_rebuild_effect_flags = yes }
-		}
-		if = {
-			limit = { NOT = { has_star_flag = AIO_interference_spread_cooldown } }
+			limit = { NOT = { has_star_flag = AIO_interference_spread_block } }
 			AIO_interference_prototype_try_spread = yes
 			set_timed_star_flag = {
-				flag = AIO_interference_spread_cooldown
+				flag = AIO_interference_spread_block
 				months = 3
 			}
 		}

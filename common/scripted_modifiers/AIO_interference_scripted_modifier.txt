@@ -1,0 +1,6 @@
+AIO_interferometer_range = {
+    icon = mod_country_border_mult
+	good = yes
+	percentage = no
+	category = country
+}

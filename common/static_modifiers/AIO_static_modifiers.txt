@@ -1,11 +1,5 @@
 # AIO静态修正
 
-# 现实干涉仪影响范围
-AIO_interferometer_range = {
-    icon = gfx/interface/icons/modifiers/mod_country_border_mult.dds
-}
-
-
 # 亚弗戈蒙之怒
 AIO_Aforgomom_Wrath_modifier = {
     icon = gfx/interface/icons/modifiers/mod_weapon_type_energy_weapon_damage_mult.dds

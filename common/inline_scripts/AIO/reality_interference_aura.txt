@@ -11,10 +11,7 @@ owner_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_energy_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_energy
                 has_star_flag = AIO_interference_energy_residual
             }
         }
@@ -26,10 +23,7 @@ owner_fleet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_energy_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_energy
                 has_star_flag = AIO_interference_energy_residual
             }
         }
@@ -43,10 +37,7 @@ neutral_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_energy_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_energy
                 has_star_flag = AIO_interference_energy_residual
             }
         }
@@ -59,10 +50,7 @@ rival_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_energy_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_energy
                 has_star_flag = AIO_interference_energy_residual
             }
         }
@@ -80,10 +68,7 @@ owner_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_resource_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_resource
                 has_star_flag = AIO_interference_resource_residual
             }
         }
@@ -100,10 +85,7 @@ neutral_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_resource_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_resource
                 has_star_flag = AIO_interference_resource_residual
             }
         }
@@ -120,10 +102,7 @@ rival_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_resource_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_resource
                 has_star_flag = AIO_interference_resource_residual
             }
         }
@@ -145,10 +124,7 @@ owner_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_bio_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_bio
                 has_star_flag = AIO_interference_bio_residual
             }
         }
@@ -163,10 +139,7 @@ neutral_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_bio_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_bio
                 has_star_flag = AIO_interference_bio_residual
             }
         }
@@ -181,10 +154,7 @@ rival_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_bio_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_bio
                 has_star_flag = AIO_interference_bio_residual
             }
         }
@@ -204,10 +174,7 @@ owner_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_industry_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_industry
                 has_star_flag = AIO_interference_industry_residual
             }
         }
@@ -223,10 +190,7 @@ neutral_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_industry_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_industry
                 has_star_flag = AIO_interference_industry_residual
             }
         }
@@ -242,10 +206,7 @@ rival_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_industry_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_industry
                 has_star_flag = AIO_interference_industry_residual
             }
         }
@@ -266,10 +227,7 @@ owner_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_build_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_build
                 has_star_flag = AIO_interference_build_residual
             }
         }
@@ -283,10 +241,7 @@ owner_fleet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_build_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_build
                 has_star_flag = AIO_interference_build_residual
             }
         }
@@ -305,16 +260,14 @@ owner_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_geology_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_geology
                 has_star_flag = AIO_interference_geology_residual
             }
         }
     }
     planet_max_districts_add = 1
     terraform_speed_mult = 0.25
+    planet_districts_upkeep_mult = 0.1
     mult = value:AIO_interference_type_level_multiplier|TYPE|geology|
 }
 
@@ -322,16 +275,14 @@ neutral_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_geology_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_geology
                 has_star_flag = AIO_interference_geology_residual
             }
         }
     }
     planet_max_districts_add = 1
     terraform_speed_mult = 0.125
+    planet_districts_upkeep_mult = 0.05
     mult = value:AIO_interference_type_source_count|TYPE|geology|
 }
 
@@ -339,16 +290,14 @@ rival_planet_modifier = {
     potential = {
         solar_system = {
             OR = {
-                check_variable = {
-                    which = AIO_interference_geology_sources
-                    value > 0
-                }
+                has_star_flag = AIO_interference_geology
                 has_star_flag = AIO_interference_geology_residual
             }
         }
     }
     planet_max_districts_add = 1
     terraform_speed_mult = 0.125
+    planet_districts_upkeep_mult = 0.05
     mult = value:AIO_interference_type_source_count|TYPE|geology|
 }
 

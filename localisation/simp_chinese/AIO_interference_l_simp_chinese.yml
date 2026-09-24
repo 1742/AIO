@@ -36,6 +36,13 @@
  #endregion
 
 
+ #region modifier
+
+ mod_AIO_interferometer_range: "现实干涉仪影响范围"
+
+ #endregion
+
+
  #region 提示
 
  AIO_interference_events.201.title: "校准现实干涉仪"
