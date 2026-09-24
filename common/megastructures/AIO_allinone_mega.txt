@@ -151,7 +151,7 @@ AIO_mega_01 = {
 				which = AIO_interference_range
 				value = 2
 			}
-			AIO_interference_rebuild_effect_flags = yes
+			AIO_interference_rebuild_effect = yes
 		}
 	}
 }
@@ -240,7 +240,7 @@ AIO_mega_02 = {
 				which = AIO_interference_range
 				value = 3
 			}
-			AIO_interference_rebuild_effect_flags = yes
+			AIO_interference_rebuild_effect = yes
 			country_event = { id = AIO_crisis_events.404 }
 		}
 	}
@@ -330,7 +330,7 @@ AIO_mega_03 = {
 				which = AIO_interference_range
 				value = 4
 			}
-			AIO_interference_rebuild_effect_flags = yes
+			AIO_interference_rebuild_effect = yes
 			country_event = { id = AIO_crisis_events.405 }
 		}
 	}
@@ -425,7 +425,7 @@ AIO_mega_04 = {
 				which = AIO_interference_range
 				value = 5
 			}
-			AIO_interference_rebuild_effect_flags = yes
+			AIO_interference_rebuild_effect = yes
 			country_event = { id = AIO_crisis_events.406 }
 		}
 	}

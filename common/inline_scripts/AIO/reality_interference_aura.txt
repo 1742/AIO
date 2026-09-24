@@ -10,18 +10,9 @@ owner_planet_modifier = {
 
 
 #region Balanced
-# spreads 9% gains across discrete district capacity.
 
 owner_planet_modifier = {
-	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_balanced }
-        solar_system = {
-            OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
-            }
-        }
-    }
+	potential = { owner = { has_policy_flag = AIO_interference_mode_balanced } }
 	planet_jobs_energy_produces_mult = 0.01
 	planet_jobs_minerals_produces_mult = 0.01
 	planet_jobs_food_produces_mult = 0.01
@@ -32,16 +23,18 @@ owner_planet_modifier = {
 	mult = value:AIO_interference_intensity_multiplier
 }
 owner_planet_modifier = {
-	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_balanced }
-        solar_system = {
-            OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
-            }
-        }
-    }
+	potential = { owner = { has_policy_flag = AIO_interference_mode_balanced } }
     planet_max_districts_add = 1
+}
+owner_planet_modifier = {
+	potential = { owner = { has_country_flag = AIO_interference_balance_residual } }
+	planet_jobs_energy_produces_mult = 0.01
+	planet_jobs_minerals_produces_mult = 0.01
+	planet_jobs_food_produces_mult = 0.01
+	planet_jobs_consumer_goods_produces_mult = 0.01
+	planet_jobs_alloys_produces_mult = 0.01
+	planet_jobs_society_research_produces_mult = 0.02
+    planet_jobs_engineering_research_produces_mult = 0.02
 }
 
 #endregion
@@ -50,40 +43,32 @@ owner_planet_modifier = {
 #region Energy
 
 owner_planet_modifier = {
-	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_energy }
-        solar_system = {
-            OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
-            }
-        }
-    }
+	potential = { owner = { has_policy_flag = AIO_interference_mode_energy } }
 	planet_jobs_energy_produces_mult = 0.10
 	mult = value:AIO_interference_intensity_multiplier
 }
 owner_fleet_modifier = {
-	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_energy }
-        solar_system = {
-            OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
-            }
-        }
-    }
+	potential = { owner = { has_policy_flag = AIO_interference_mode_energy } }
 	ship_weapon_damage = 0.1
     ship_shield_mult = -0.03
 	mult = value:AIO_interference_intensity_multiplier
 }
+owner_planet_modifier = {
+	potential = { owner = { has_country_flag = AIO_interference_energy_residual } }
+	planet_jobs_energy_produces_mult = 0.10
+}
+owner_fleet_modifier = {
+	potential = { owner = { has_country_flag = AIO_interference_energy_residual } }
+	ship_weapon_damage = 0.1
+    ship_shield_mult = -0.03
+}
 
 neutral_planet_modifier = {
 	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_energy }
-        solar_system = {
+        solar_system.aura_owner = {
             OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
+                has_policy_flag = AIO_interference_mode_energy
+                has_country_flag = AIO_interference_energy_residual
             }
         }
     }
@@ -91,11 +76,10 @@ neutral_planet_modifier = {
 }
 neutral_fleet_modifier = {
 	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_energy }
-        solar_system = {
+        solar_system.aura_owner = {
             OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
+                has_policy_flag = AIO_interference_mode_energy
+                has_country_flag = AIO_interference_energy_residual
             }
         }
     }
@@ -105,11 +89,10 @@ neutral_fleet_modifier = {
 
 rival_planet_modifier = {
 	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_energy }
-        solar_system = {
+        solar_system.aura_owner = {
             OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
+                has_policy_flag = AIO_interference_mode_energy
+                has_country_flag = AIO_interference_energy_residual
             }
         }
     }
@@ -117,11 +100,10 @@ rival_planet_modifier = {
 }
 rival_fleet_modifier = {
 	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_energy }
-        solar_system = {
+        solar_system.aura_owner = {
             OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
+                has_policy_flag = AIO_interference_mode_energy
+                has_country_flag = AIO_interference_energy_residual
             }
         }
     }
@@ -135,15 +117,7 @@ rival_fleet_modifier = {
 #region Ecology
 
 owner_planet_modifier = {
-	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_ecology }
-        solar_system = {
-            OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
-            }
-        }
-    }
+	potential = { owner = { has_policy_flag = AIO_interference_mode_ecology } }
 	planet_jobs_food_produces_mult = 0.1
     planet_jobs_biomass_produces_mult = 0.05
 	planet_jobs_society_research_produces_mult = 0.03
@@ -151,14 +125,21 @@ owner_planet_modifier = {
 	planet_jobs_energy_upkeep_mult = 0.03
 	mult = value:AIO_interference_intensity_multiplier
 }
+owner_planet_modifier = {
+	potential = { owner = { has_country_flag = AIO_interference_ecology_residual } }
+	planet_jobs_food_produces_mult = 0.1
+    planet_jobs_biomass_produces_mult = 0.05
+	planet_jobs_society_research_produces_mult = 0.03
+    terraform_speed_mult = 0.1
+	planet_jobs_energy_upkeep_mult = 0.03
+}
 
 neutral_planet_modifier = {
 	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_ecology }
-        solar_system = {
+        solar_system.aura_owner = {
             OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
+                has_policy_flag = AIO_interference_mode_ecology
+                has_country_flag = AIO_interference_ecology_residual
             }
         }
     }
@@ -170,11 +151,10 @@ neutral_planet_modifier = {
 
 rival_planet_modifier = {
 	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_ecology }
-        solar_system = {
+        solar_system.aura_owner = {
             OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
+                has_policy_flag = AIO_interference_mode_ecology
+                has_country_flag = AIO_interference_ecology_residual
             }
         }
     }
@@ -190,28 +170,25 @@ rival_planet_modifier = {
 #region Industry
 
 owner_planet_modifier = {
-	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_industry }
-        solar_system = {
-            OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
-            }
-        }
-    }
+	potential = { owner = { has_policy_flag = AIO_interference_mode_industry } }
 	planet_jobs_minerals_produces_mult = 0.12
 	planet_jobs_alloys_produces_mult = 0.10
 	planet_jobs_minerals_upkeep_mult = 0.05
 	mult = value:AIO_interference_intensity_multiplier
 }
+owner_planet_modifier = {
+	potential = { owner = { has_country_flag = AIO_interference_industry_residual } }
+	planet_jobs_minerals_produces_mult = 0.12
+	planet_jobs_alloys_produces_mult = 0.10
+	planet_jobs_minerals_upkeep_mult = 0.05
+}
 
 neutral_planet_modifier = {
 	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_industry }
-        solar_system = {
+        solar_system.aura_owner = {
             OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
+                has_policy_flag = AIO_interference_mode_industry
+                has_country_flag = AIO_interference_industry_residual
             }
         }
     }
@@ -222,11 +199,10 @@ neutral_planet_modifier = {
 
 rival_planet_modifier = {
 	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_industry }
-        solar_system = {
+        solar_system.aura_owner = {
             OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
+                has_policy_flag = AIO_interference_mode_industry
+                has_country_flag = AIO_interference_industry_residual
             }
         }
     }
@@ -241,41 +217,34 @@ rival_planet_modifier = {
 #region Metric
 
 owner_planet_modifier = {
-	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_metric }
-        solar_system = {
-            OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
-            }
-        }
-    }
+	potential = { owner = { has_policy_flag = AIO_interference_mode_metric } }
 	planet_max_districts_add = 1
 	planet_building_build_speed_mult = 0.12
 	planet_districts_upkeep_mult = 0.08
 	mult = value:AIO_interference_intensity_multiplier
 }
 owner_fleet_modifier = {
-	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_metric }
-        solar_system = {
-            OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
-            }
-        }
-    }
+	potential = { owner = { has_policy_flag = AIO_interference_mode_metric } }
 	megastructure_build_speed_mult = 0.1
 	mult = value:AIO_interference_intensity_multiplier
+}
+owner_planet_modifier = {
+	potential = { owner = { has_country_flag = AIO_interference_metric_residual } }
+	planet_max_districts_add = 1
+	planet_building_build_speed_mult = 0.12
+	planet_districts_upkeep_mult = 0.08
+}
+owner_fleet_modifier = {
+    potential = { owner = { has_country_flag = AIO_interference_metric_residual } }
+	megastructure_build_speed_mult = 0.1
 }
 
 neutral_planet_modifier = {
 	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_metric }
-        solar_system = {
+        solar_system.aura_owner = {
             OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
+                has_policy_flag = AIO_interference_mode_metric
+                has_country_flag = AIO_interference_metric_residual
             }
         }
     }
@@ -285,11 +254,10 @@ neutral_planet_modifier = {
 }
 neutral_fleet_modifier = {
 	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_metric }
-        solar_system = {
+        solar_system.aura_owner = {
             OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
+                has_policy_flag = AIO_interference_mode_metric
+                has_country_flag = AIO_interference_metric_residual
             }
         }
     }
@@ -298,11 +266,10 @@ neutral_fleet_modifier = {
 
 rival_planet_modifier = {
 	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_metric }
-        solar_system = {
+        solar_system.aura_owner = {
             OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
+                has_policy_flag = AIO_interference_mode_metric
+                has_country_flag = AIO_interference_metric_residual
             }
         }
     }
@@ -312,11 +279,10 @@ rival_planet_modifier = {
 }
 rival_fleet_modifier = {
 	potential = {
-        owner = { has_policy_flag = AIO_interference_mode_metric }
-        solar_system = {
+        solar_system.aura_owner = {
             OR = {
-                has_star_flag = AIO_interference_covered
-                has_star_flag = AIO_interference_residual
+                has_policy_flag = AIO_interference_mode_metric
+                has_country_flag = AIO_interference_metric_residual
             }
         }
     }

@@ -6,21 +6,36 @@ policy_AIO_interference_doctrine = {
 	option = {
 		name = policy_AIO_interference_balanced
 		policy_flags = { AIO_interference_mode_balanced }
+		on_disabled = {
+			AIO_interference_change_policy = { OLD_POLICY = balance }
+		}
 	}
 	option = {
 		name = policy_AIO_interference_energy
 		policy_flags = { AIO_interference_mode_energy }
+		on_disabled = {
+			AIO_interference_change_policy = { OLD_POLICY = energy }
+		}
 	}
 	option = {
 		name = policy_AIO_interference_ecology
 		policy_flags = { AIO_interference_mode_ecology }
+		on_disabled = {
+			AIO_interference_change_policy = { OLD_POLICY = ecology }
+		}
 	}
 	option = {
 		name = policy_AIO_interference_industry
 		policy_flags = { AIO_interference_mode_industry }
+		on_disabled = {
+			AIO_interference_change_policy = { OLD_POLICY = industry }
+		}
 	}
 	option = {
 		name = policy_AIO_interference_metric
 		policy_flags = { AIO_interference_mode_metric }
+		on_disabled = {
+			AIO_interference_change_policy = { OLD_POLICY = metric }
+		}
 	}
 }

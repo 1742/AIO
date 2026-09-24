@@ -47,18 +47,19 @@ AIO_reality_interference_aura = {
 	}
 
 	on_vanish = {
-		aura_owner = { save_event_target_as = AIO_interference_vanishing_owner }
-		AIO_clear_interference_flag = yes
-		event_target:AIO_interference_vanishing_owner = {
-			AIO_interference_rebuild_effect_flags = yes
+		if = {
+			limit = { has_star_flag = AIO_interference_source }
+			remove_star_flag = AIO_interference_source
+			aura_owner = { AIO_interference_rebuild_effect = yes }
 		}
+		clear_variable = AIO_interference_sources
 	}
 
 	increase_trigger = {
 		OR = {
 			has_star_flag = AIO_interference_source
 			AIO_is_nearby_interference_source = {
-				OWNER = root.aura_owner
+				OWNER = aura_owner
 			}
 		}
 	}
@@ -69,7 +70,7 @@ AIO_reality_interference_aura = {
 			OR = {
 				has_star_flag = AIO_interference_source
 				AIO_is_nearby_interference_source = {
-					OWNER = root.aura_owner
+					OWNER = aura_owner
 				}
 			}
 			desc = AIO_interference_source_intensity_desc
@@ -93,6 +94,10 @@ AIO_reality_interference_aura = {
 				}
 			}
 			desc = AIO_interference_proof_intensity_desc
+		}
+		modifier = {
+			mult = 2
+			aura_owner = { has_country_flag = AIO_interference_change_policy }
 		}
 	}
 

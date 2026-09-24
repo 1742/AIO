@@ -1,34 +1,34 @@
-# Complete construction activates one uniform interference source.
 # Scope: system.
 AIO_interference_create_source = {
 	AIO_interference_prepare_source = { OWNER = $OWNER$ }
-	aura_owner = { AIO_interference_rebuild_effect_flags = yes }
+	aura_owner = { AIO_interference_rebuild_effect = yes }
 }
 
-# Remove only the source marker; covered fields become five-year residuals.
 # Scope: system.
 AIO_interference_remove_source = {
 	remove_star_flag = AIO_interference_source
 	if = {
 		limit = { has_psionic_aura = AIO_reality_interference_aura }
-		aura_owner = { AIO_interference_rebuild_effect_flags = yes }
+		aura_owner = { AIO_interference_rebuild_effect = yes }
 	}
 }
 
+# Call when interference source change
 # scope: country
-AIO_interference_rebuild_effect_flags = {
+AIO_interference_rebuild_effect = {
 	save_event_target_as = AIO_interference_rebuild_owner
 	every_system_with_aura = {
 		limit = {
 			has_psionic_aura = AIO_reality_interference_aura
 			aura_owner = { is_same_value = event_target:AIO_interference_rebuild_owner }
 		}
-		AIO_interference_update_system_effect_flags = {
+		AIO_interference_recount_sources = {
 			OWNER = event_target:AIO_interference_rebuild_owner
-		}
+	 	}
 	}
 }
 
+# scope: system
 AIO_interference_prototype_try_spread = {
 	if = {
 		limit = { has_psionic_aura = AIO_reality_interference_aura }
@@ -46,18 +46,8 @@ AIO_interference_prototype_try_spread = {
 				update_type = no
 			}
 			set_aura_intensity = 1
-			AIO_interference_update_system_effect_flags = {
-				OWNER = event_target:AIO_interference_spreading_owner
-			}
 		}
 	}
-}
-
-AIO_clear_interference_flag = {
-	remove_star_flag = AIO_interference_source
-	remove_star_flag = AIO_interference_covered
-	remove_star_flag = AIO_interference_residual
-	clear_variable = AIO_interference_sources
 }
 
 # Resolve existed aura and spawn interference aura
@@ -84,24 +74,6 @@ AIO_interference_prepare_source = {
 		set_aura_intensity = 1
 	}
 	set_star_flag = AIO_interference_source
-}
-
-# Update sources count and preserve five-year residual when coverage disappears.
-# Scope: one aura system.
-AIO_interference_update_system_effect_flags = {
-	if = {
-		limit = { AIO_is_nearby_interference_source = { OWNER = $OWNER$ } }
-		set_star_flag = AIO_interference_covered
-		remove_star_flag = AIO_interference_residual
-	}
-	else = {
-		if = {
-			limit = { has_star_flag = AIO_interference_covered }
-			remove_star_flag = AIO_interference_covered
-			set_timed_star_flag = { flag = AIO_interference_residual years = 5 }
-		}
-	}
-	AIO_interference_recount_sources = { OWNER = $OWNER$ }
 }
 
 # Count only this owner's source systems within range, including self.
@@ -133,5 +105,31 @@ AIO_interference_recount_sources = {
 				change_variable = { which = AIO_interference_sources value = 1 }
 			}
 		}
+	}
+}
+
+# Reset level when change policy
+# scope: country
+AIO_interference_change_policy = {
+	remove_country_flag = AIO_interference_balance_residual
+	remove_country_flag = AIO_interference_energy_residual
+	remove_country_flag = AIO_interference_ecology_residual
+	remove_country_flag = AIO_interference_industry_residual
+	remove_country_flag = AIO_interference_metric_residual
+	set_timed_country_flag = {
+		flag = AIO_interference_change_policy
+		years = 5
+	}
+	set_timed_country_flag = {
+		flag = AIO_interference_$OLD_POLICY$_residual
+		years = 5
+	}
+	save_event_target_as = AIO_interference_change_policy_owner
+	every_system_with_aura = {
+		limit = {
+			has_psionic_aura = AIO_reality_interference_aura
+			aura_owner = { is_same_value = event_target:AIO_interference_change_policy_owner }
+		}
+		set_aura_intensity = 1
 	}
 }
