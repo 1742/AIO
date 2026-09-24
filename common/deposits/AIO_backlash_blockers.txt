@@ -1,0 +1,27 @@
+# Blocker left behind by a reality interference backlash. Only events place it,
+# so it never spawns on its own. Icon is borrowed from a vanilla blocker until a
+# dedicated texture exists.
+
+d_AIO_energy_cascade_residue = {
+	time = 360
+	icon = d_rotten_soil_blocker
+
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_jobs_energy_produces_mult = -0.05
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+		}
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+}

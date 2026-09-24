@@ -131,6 +131,8 @@ AIO_interference_change_policy = {
 			aura_owner = { is_same_value = event_target:AIO_interference_change_policy_owner }
 		}
 		set_aura_intensity = 1
+		# Changing doctrine also lifts the seal left by a reversed accident.
+		remove_star_flag = AIO_interference_backlash_sealed
 	}
 }
 
@@ -150,109 +152,220 @@ AIO_interference_energy_start = {
 	}
 }
 
-# Scope: energy situation. Keep the flag local to its original system.
-AIO_interference_energy_finish = {
+# Scope: system. Drops one escalation stage modifier if it is present.
+AIO_interference_energy_strip_accidence = {
+	if = {
+		limit = { has_modifier = AIO_energy_accidence_1 }
+		remove_modifier = AIO_energy_accidence_1
+	}
+	if = {
+		limit = { has_modifier = AIO_energy_accidence_2 }
+		remove_modifier = AIO_energy_accidence_2
+	}
+	if = {
+		limit = { has_modifier = AIO_energy_accidence_3 }
+		remove_modifier = AIO_energy_accidence_3
+	}
+}
+
+# Scope: system. The stages are system modifiers, so colonies are cleared as
+# well in case a stage was ever cached on them.
+AIO_interference_energy_clear_accidence = {
+	AIO_interference_energy_strip_accidence = yes
+	every_system_planet_colony = { AIO_interference_energy_strip_accidence = yes }
+	every_system_ship_colony = { AIO_interference_energy_strip_accidence = yes }
+}
+
+# Scope: situation. Each stage replaces the previous one, so benefit and cost
+# both climb as the accident deepens.
+AIO_interference_energy_modifier = {
 	if = {
 		limit = { exists = target }
 		target = {
-			remove_star_flag = AIO_energy_backlash_active
+			AIO_interference_energy_strip_accidence = yes
+			add_modifier = { modifier = AIO_energy_accidence_$STAGE$ }
+		}
+	}
+}
+
+# Scope: situation. Second stage discharge: the local grid goes dark. An active
+# blockade contains it, halving what the discharge leaves behind.
+AIO_interference_energy_surge_one = {
+	if = {
+		limit = {
+			exists = target
+			current_situation_approach = AIO_energy_blockade
+		}
+		target = {
 			every_system_planet_colony = {
-				limit = { has_modifier = AIO_energy_accidence_planet }
-				remove_modifier = AIO_energy_accidence_planet
+				add_planet_devastation = 10
+				add_modifier = { modifier = AIO_energy_blackout days = 90 }
 			}
 			every_system_ship_colony = {
-				limit = { has_modifier = AIO_energy_accidence_planet }
-				remove_modifier = AIO_energy_accidence_planet
+				add_planet_devastation = 10
+				add_modifier = { modifier = AIO_energy_blackout days = 90 }
 			}
+		}
+	}
+	else = {
+		limit = { exists = target }
+		target = {
+			every_system_planet_colony = {
+				add_planet_devastation = 20
+				add_modifier = { modifier = AIO_energy_blackout days = 180 }
+			}
+			every_system_ship_colony = {
+				add_planet_devastation = 20
+				add_modifier = { modifier = AIO_energy_blackout days = 180 }
+			}
+		}
+	}
+}
+
+# Scope: situation. Third stage discharge: the cascade drags the national grid in.
+AIO_interference_energy_surge_two = {
+	if = {
+		limit = {
+			exists = target
+			current_situation_approach = AIO_energy_blockade
+		}
+		target = {
+			every_system_planet_colony = { add_planet_devastation = 10 }
+			every_system_ship_colony = { add_planet_devastation = 10 }
+		}
+		target = { add_modifier = { modifier = AIO_energy_grid_drain days = 180 } }
+	}
+	else = {
+		limit = { exists = target }
+		target = {
+			every_system_planet_colony = { add_planet_devastation = 20 }
+			every_system_ship_colony = { add_planet_devastation = 20 }
+		}
+		target = { add_modifier = { modifier = AIO_energy_grid_drain days = 360 } }
+	}
+}
+
+# Scope: situation. Returns this system's field to the start of level 2. The
+# first value of level 2 is 1001: level 1 ends at 1000.
+AIO_interference_energy_reset_aura = {
+	if = {
+		limit = { exists = target }
+		target = {
 			if = {
 				limit = {
 					has_psionic_aura = AIO_reality_interference_aura
 					aura_owner = { is_same_value = root.owner }
 				}
-				# The first value of level 2 is 1001: level 1 ends at 1000.
 				set_aura_intensity = 1001
 			}
 		}
 	}
+}
+
+# Scope: situation. If the accident sits inside someone else's borders, tell the
+# owner, and let the opinion hit land: it is accumulative, so repeat accidents
+# accidents add up, the way vanilla's opinion_cosmogenesis_thesis does.
+AIO_interference_accident_notify = {
+	if = {
+		limit = { exists = target }
+		owner = { save_event_target_as = AIO_accident_owner }
+		target = {
+			random_system_planet = {
+				limit = {
+					is_colony = yes
+					has_owner = yes
+					NOT = { owner = { is_same_value = root.owner } }
+				}
+				owner = {
+					add_opinion_modifier = {
+						modifier = opinion_AIO_interference_accident
+						who = event_target:AIO_accident_owner
+					}
+					country_event = { id = AIO_interference_events.316 }
+				}
+			}
+		}
+	}
+}
+
+# Scope: situation. Every ending pays out the data the accident produced, so no
+# approach is a pure loss. "value" is months of the owner's own income, clamped so
+# a young empire still gets something and a late one cannot bank the whole tree:
+# 24 / 500 / 1000000 is the scale vanilla uses for its tier 3 research reward.
+AIO_interference_energy_award = {
+	owner = {
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+		complete_crisis_objective = crisobj_AIO_research_thesis
+	}
+}
+
+# Scope: situation. The reversal lands before the cascade ends, so the field
+# keeps the level it reached instead of being reset. The field stays critical,
+# so an unlimited star flag is what stops the accident from restarting here; the
+# field's on_vanish clears the flag if the field ever disappears.
+AIO_interference_energy_tame = {
+	if = {
+		limit = { exists = target }
+		target = {
+			remove_star_flag = AIO_energy_backlash_active
+			AIO_interference_energy_clear_accidence = yes
+			set_star_flag = AIO_interference_backlash_sealed
+		}
+	}
+	AIO_interference_energy_award = yes
+	AIO_interference_accident_notify = yes
 	destroy_situation = this
 }
 
-# scope: situation
-AIO_interference_energy_devastation = {
+# Scope: situation. Nobody stopped it: the colonies take the hit and the field
+# pays by dropping back to level 2.
+AIO_interference_energy_collapse = {
 	if = {
 		limit = { exists = target }
 		target = {
+			remove_star_flag = AIO_energy_backlash_active
+			AIO_interference_energy_clear_accidence = yes
 			every_system_planet_colony = {
-				add_planet_devastation = 0.2
+				add_planet_devastation = 40
+				if = {
+					limit = { NOT = { has_deposit = d_AIO_energy_cascade_residue } }
+					add_blocker = { type = d_AIO_energy_cascade_residue }
+				}
 			}
 			every_system_ship_colony = {
-				add_planet_devastation = 0.2
+				add_planet_devastation = 40
+				if = {
+					limit = { NOT = { has_deposit = d_AIO_energy_cascade_residue } }
+					add_blocker = { type = d_AIO_energy_cascade_residue }
+				}
 			}
 		}
 	}
+	target = { add_modifier = { modifier = AIO_energy_grid_collapse days = 1825 } }
+	AIO_interference_energy_award = yes
+	AIO_interference_accident_notify = yes
+	AIO_interference_energy_reset_aura = yes
+	destroy_situation = this
 }
 
-# scope: situation
-AIO_interference_energy_modifier = {
+# Scope: situation. Blockade or a doctrine change ends the accident early.
+AIO_interference_energy_suppress = {
 	if = {
 		limit = { exists = target }
 		target = {
-			every_system_planet_colony = {
-				limit = { is_owned_by = root.owner }
-				add_modifier = {
-					modifier = AIO_energy_accidence_planet
-					days = 1800
-					mult = $MULT$
-				}
-			}
-			every_system_ship_colony = {
-				limit = { is_owned_by = root.owner }
-				add_modifier = {
-					modifier = AIO_energy_accidence_planet
-					days = 1800
-					mult = $MULT$
-				}
-			}
-			add_modifier = {
-				modifier = AIO_energy_accidence_system
-				mult = $MULT$
-			}
+			remove_star_flag = AIO_energy_backlash_active
+			AIO_interference_energy_clear_accidence = yes
 		}
 	}
-}
-
-# Scope: energy situation. Awards depend on accumulated monthly work, never the
-# final approach alone. Permanent reversal tiers upgrade the country's best tier.
-AIO_interference_energy_complete = {
-	if = {
-		limit = { current_situation_approach = AIO_energy_maintain }
-		owner = {
-			add_resource = {
-				physics_research = 3000
-				AIO_advanced_logic = 600
-			}
-		}
-	}
-	if = {
-		limit = { current_situation_approach = AIO_energy_reverse }
-		owner = {
-			if = {
-				limit = { NOT = { has_modifier = AIO_energy_reversal_1 } }
-				add_modifier = { modifier = AIO_energy_reversal_1 }
-			}
-			else_if = {
-				limit = { NOT = { has_modifier = AIO_energy_reversal_2 } }
-				remove_modifier = AIO_energy_reversal_1
-				add_modifier = { modifier = AIO_energy_reversal_2 }
-			}
-			else_if = {
-				limit = { NOT = { has_modifier = AIO_energy_reversal_3 } }
-				remove_modifier = AIO_energy_reversal_1
-				remove_modifier = AIO_energy_reversal_2
-				add_modifier = { modifier = AIO_energy_reversal_3 }
-			}
-		}
-	}
+	AIO_interference_energy_award = yes
+	AIO_interference_accident_notify = yes
+	AIO_interference_energy_reset_aura = yes
+	destroy_situation = this
 }
 
 #endregion

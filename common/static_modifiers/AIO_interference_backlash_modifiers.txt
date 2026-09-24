@@ -1,26 +1,47 @@
 #region energy accidence
 
-AIO_energy_accidence_planet = {
+# The accident escalates in three stages. Each stage is its own modifier so one
+# stage can be tuned or dropped without touching the others.
+# Benefit and cost never share an axis: the field pays in infrastructure,
+# stability and fleet shielding, never in the energy output it boosts.
+AIO_energy_accidence_1 = {
 	planet_jobs_energy_produces_mult = 0.15
 	planet_jobs_physics_research_produces_mult = 0.05
-	planet_stability_mult = -0.05
+	planet_building_build_speed_mult = -0.10
+	planet_stability_add = -3
 }
 
-AIO_energy_accidence_system = {
-	ship_weapon_damage = 0.05
-	ship_shield_mult = -0.03
+AIO_energy_accidence_2 = {
+	planet_jobs_energy_produces_mult = 0.35
+	planet_jobs_physics_research_produces_mult = 0.10
+	ship_weapon_damage = 0.10
+	planet_building_build_speed_mult = -0.25
+	planet_stability_add = -5
+	ship_shield_mult = -0.05
 }
 
-AIO_energy_reversal_1 = {
-	planet_jobs_energy_produces_mult = 0.05
+AIO_energy_accidence_3 = {
+	planet_jobs_energy_produces_mult = 0.70
+	planet_jobs_physics_research_produces_mult = 0.20
+	ship_weapon_damage = 0.20
+	planet_building_build_speed_mult = -0.50
+	planet_stability_add = -10
+	ship_shield_mult = -0.15
 }
 
-AIO_energy_reversal_2 = {
-	planet_jobs_energy_produces_mult = 0.10
+# Timed shocks fired by the stage events. These expire on their own, so they
+# never need cleanup on abort.
+AIO_energy_blackout = {
+	planet_jobs_energy_produces_mult = -0.50
+	planet_building_build_speed_mult = -0.50
 }
 
-AIO_energy_reversal_3 = {
-	planet_jobs_energy_produces_mult = 0.20
+AIO_energy_grid_drain = {
+	planet_jobs_energy_produces_mult = -0.10
+}
+
+AIO_energy_grid_collapse = {
+	planet_jobs_energy_produces_mult = -0.20
 }
 
 #endregion

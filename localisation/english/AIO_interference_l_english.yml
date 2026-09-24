@@ -72,47 +72,92 @@
  policy_AIO_interference_industry: "Refine Manufacture"
  policy_AIO_interference_metric: "Metric Engineering"
 
- AIO_interference_energy_backlash: "Zero Point Grid Backlash: [Target.GetName]"
- AIO_interference_energy_backlash_type: "Zero Point Grid Backlash"
- AIO_interference_energy_backlash_desc: "The energy network in [Target.GetName] is losing synchronization with its reality field. The field continues to grow separately; this situation tracks one accident. At the left edge the experiment is cancelled, while the right edge completes it. Either ending resets the field to the beginning of level 2."
- AIO_interference_energy_backlash_monthly_change_tooltip: "With Zero Point Energy active, maintenance and reversal advance by the field's theoretical monthly growth: 1 plus connected sources and local employed Provers, doubled by the current policy switch acceleration. Blockade withdraws 12 monthly; another policy withdraws 8 monthly. Residual bonuses do not count as the original policy."
+ #endregion
+
+
+ #region interference accident (shared text)
+
+ AIO_interference_accidence_maintain: "Maintain Experiment"
+ AIO_interference_accidence_blockade: "Emergency Blockade"
+ AIO_interference_accidence_reverse: "Reverse the Backlash"
+ AIO_interference_accidence_progress_active: "Reality Interference Field"
+ AIO_interference_accidence_progress_blockade: "$AIO_interference_accidence_blockade$"
+ AIO_interference_accidence_progress_policy_mismatch: "Interference direction changed"
+ AIO_interference_accidence_progress_disconnect: "Cut off from interference source"
+ AIO_interference_accidence_backlash_monthly_change_tooltip: "Taking an active response means the situation is shaped by the §Ynumber of Reality Interference Field sources§! and by our §IProvers§!."
+ AIO_interference_accidence_conclusion.no_reverse: "The field's grip on reality weakened after this burst. The universe seems to destabilise badly when a contradiction peaks, then snaps back into shape - it always drifts toward a steady state."
+ AIO_interference_accidence_conclusion.reverse: "This is unlike our earlier experiments: the accident site now holds a different set of cosmic constants from everything around it, and our changes appear to be lasting."
+ AIO_interference_accidence_option.abort: "A pity."
+ AIO_interference_accidence_option.collapse: "A necessary sacrifice."
+ AIO_interference_accidence_option.reverse: "We understand the universe a little better."
+
+ #endregion
+
+
+ #region backlash opinion and notice
+
+ opinion_AIO_interference_accident: "Messing with reality"
+ AIO_interference_events.316.name: "An Experiment Across the Border"
+ AIO_interference_events.316.desc: "For months the grid in our system kept losing its footing, and our engineers wrote it off as faulty equipment. Now the truth has arrived: [event_target:AIO_accident_owner.GetName] was using our system as a test site, and all it left behind is scorched ground and a note saying the data has been archived."
+ AIO_interference_events.316.option: "Note it down."
+
+ #endregion
+
+
+ #region zero point energy backlash
+
+ AIO_interference_energy_backlash: "Zero Point Energy Backlash: [Target.GetName]"
+ AIO_interference_energy_backlash_type: "Zero Point Energy Backlash"
+ AIO_interference_energy_backlash_desc: "The grid in [Target.GetName] is losing sync with its field. Stored charge is being thrown into the seams of reality: output climbs higher and higher, and it slips further and further out of our control. We can tune our equipment to hold it down, or take the chance to study how physical law is being rewritten."
+ AIO_interference_energy_backlash_monthly_change_tooltip: "With Zero Point Energy active, $AIO_interference_accidence_backlash_monthly_change_tooltip$"
+
  AIO_energy_stage_one: "Grid Desynchronization"
- AIO_energy_stage_one_desc: "Initial oscillations. Crossing 35 causes a one time energy loss."
+ AIO_energy_stage_one_desc: "The generators run smoother than they ever have, while the appliances stop matching: cranes stall without cause, and colonial broadcasts pick up static that should not exist."
  AIO_energy_stage_two: "Feedback Surges"
- AIO_energy_stage_two_desc: "At 35, grid repair costs 500 energy, or 250 under blockade. The loss is not refunded if progress falls."
+ AIO_energy_stage_two_desc: "The grid starts pushing its surplus charge back into the colonies. Lights burn too bright, shields flicker in dock, and the grid itself burns down into a blackout in a single instant."
  AIO_energy_stage_three: "Cascade Threshold"
- AIO_energy_stage_three_desc: "At 70, lose 1,500 energy, or 750 under blockade. Owned colonies in this system suffer energy and physics disruption until the accident ends (at most five years)."
- AIO_energy_maintain: "Maintain Experiment"
- AIO_energy_maintain_desc: "Costs 50 energy and 20 physics research monthly. Advances at theoretical field growth. Each 100 employed Provers nationwide contribute 1 research point monthly, shared evenly among active experiments and reversals (maximum 20 per situation)."
- AIO_energy_blockade: "Emergency Blockade"
- AIO_energy_blockade_desc: "Costs 150 energy and 25 alloys monthly. Withdraws 12 progress monthly and halves one time energy losses. This cancels the experiment at the left edge and earns no research or reversal points."
- AIO_energy_reverse: "Reverse the Backlash"
- AIO_energy_reverse_desc: "Requires the third crisis tier's Silver Key progression. Costs 100 Transcendent Logic and 100 energy monthly. Advances at theoretical field growth. Shared national Provers accumulate reversal points, up to 20 monthly per situation. At completion, 50/150/300 points unlock permanent +5/+10/+20% energy job output, replacing earlier tiers."
- AIO_energy_progress_active: "Connected field: theoretical growth"
- AIO_energy_progress_blockade: "Emergency blockade: -12"
- AIO_energy_progress_policy_mismatch: "Zero Point Energy inactive or field disconnected: -8"
- AIO_energy_accidence_planet: "Grid Instability"
- AIO_energy_accidence_planet_desc: "The local power system remains damaged after a cascade surge."
- AIO_energy_reversal_1: "Harnessed Backlash I"
- AIO_energy_reversal_1_desc: "Reversed energy feedback improves generator work."
- AIO_energy_reversal_2: "Harnessed Backlash II"
- AIO_energy_reversal_2_desc: "Reversed energy feedback improves generator work."
- AIO_energy_reversal_3: "Harnessed Backlash III"
- AIO_energy_reversal_3_desc: "Reversed energy feedback improves generator work."
+ AIO_energy_stage_three_desc: "The surge no longer needs cables to travel. Every power system in the system hangs off the edge of the field: output is absurd, the same current is eating through the infrastructure, and nothing is stable any more."
+
+ AIO_energy_maintain: "$AIO_interference_accidence_maintain$"
+ AIO_energy_maintain_desc: "What a magnificent phenomenon. We should seize this rare chance and study it!"
+ AIO_energy_blockade: "$AIO_interference_accidence_blockade$"
+ AIO_energy_blockade_desc: "Cut the colonies off from the grid and let the surges spend themselves in the isolation layer. The accident stops here."
+ AIO_energy_reverse: "$AIO_interference_accidence_reverse$"
+ AIO_energy_reverse_desc: "With what we know of cosmic law and higher dimensions, we will guide the flow of energy back into place."
+
+ AIO_energy_accidence_1: "Grid Overload I"
+ AIO_energy_accidence_1_desc: "The generators like it; the motors do not."
+ AIO_energy_accidence_2: "Grid Overload II"
+ AIO_energy_accidence_2_desc: "The surges grow stronger and generation keeps climbing, and the bill spreads from the foundations to the docks and the fleet."
+ AIO_energy_accidence_3: "Grid Overload III"
+ AIO_energy_accidence_3_desc: "The whole system is trembling with the grid, and the surge has left common sense behind."
+ AIO_energy_blackout: "Grid Blackout"
+ AIO_energy_blackout_desc: "The surge burned through the local power systems and the colony is offline."
+ AIO_energy_grid_drain: "Grid Brownout"
+ AIO_energy_grid_drain_desc: "The surges wash back and forth through the system and the grid is forced to run at reduced load."
+ AIO_energy_grid_collapse: "Grid Collapse"
+ AIO_energy_grid_collapse_desc: "The zero point grid burned through; this system's power supply will take years to recover."
+
+ d_AIO_energy_cascade_residue: "£blocker£ Cascade Residue"
+ d_AIO_energy_cascade_residue_desc: "Ionized slag left where the grid burned through, still humming as it discharges."
+
  AIO_interference_events.310.name: "Grid Frequency Divergence"
- AIO_interference_events.310.desc: "The [Target.GetName] field has reached critical intensity. Its zero point grid now oscillates between incompatible energy states. Our response will decide whether we stop the experiment, study it, or reverse the feedback."
+ AIO_interference_events.310.desc: "The field in [Target.GetName] is critical. The zero point grid swings between two incompatible energy states, and every swing leaves a mark in reality that cannot be scrubbed out. We can act now, or watch a little longer and see how far it goes."
  AIO_interference_events.310.option: "Open the accident protocol."
  AIO_interference_events.311.name: "The First Surge"
- AIO_interference_events.311.desc: "The grid has discharged stored energy. Emergency blockade halves the immediate loss; the surge itself has already happened."
+ AIO_interference_events.311.desc: "The grid threw its stored charge in one go. Several fires broke out across the colonies in [Target.GetName], their power systems blacked out, and energy output is still climbing."
  AIO_interference_events.311.option: "Record the damage."
  AIO_interference_events.312.name: "Cascade Through the Grid"
- AIO_interference_events.312.desc: "A second surge damages energy systems on our colonies in [Target.GetName]. The disruption lasts until the accident ends, at most five years; the energy already lost cannot be recovered by reducing progress."
+ AIO_interference_events.312.desc: "The second surge stopped following the cables and started following the field instead. The national grid is forced to run at reduced load for a year, the colonies are damaged again, and the output curve is still terrifyingly high."
  AIO_interference_events.312.option: "Keep the grid isolated."
- AIO_interference_events.313.name: "The Experiment Concludes"
- AIO_interference_events.313.desc: "The cascade has run its course. Physics research and Transcendent Logic depend on research points accumulated month by month: at 50/150/300 points, cumulative awards are 500/2,000/5,000 physics and 100/400/1,000 Logic. Reversal points at the same thresholds grant cumulative 1,000/4,000/10,000 energy and the strongest permanent generator output tier reached. The field returns to the start of level 2."
- AIO_interference_events.313.option: "Archive the findings."
- AIO_interference_events.314.name: "The Experiment Is Cancelled"
- AIO_interference_events.314.desc: "The grid settles before the cascade can complete. Accumulated research is lost and spent energy is not refunded. Emergency grid penalties are cleared. The field returns to the start of level 2."
- AIO_interference_events.314.option: "Shut it down."
+ AIO_interference_events.313.name: "Harnessed Backlash"
+ AIO_interference_events.313.desc: "Under the intervention of our finest scientists, the surge of energy in [Target.GetName] is gradually brought under control, the flow turning from chaotic turbulence into a steady river. $AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.313.option: "$AIO_interference_accidence_option.reverse$"
+ AIO_interference_events.314.name: "Grid Collapse"
+ AIO_interference_events.314.desc: "A colossal energy surge burned through the grid in [Target.GetName]: colonies scorched, ionized residue heaped over the ruins, and national power that will take years to recover. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.314.option: "$AIO_interference_accidence_option.collapse$"
+ AIO_interference_events.315.name: "The Experiment Is Cancelled"
+ AIO_interference_events.315.desc: "The accident is over, and by luck the grid is not a total write-off. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.315.option: "$AIO_interference_accidence_option.abort$"
 
  #endregion

@@ -71,47 +71,92 @@
  policy_AIO_interference_industry: "精炼制造"
  policy_AIO_interference_metric: "度规工程"
 
- AIO_interference_energy_backlash: "零点电网反噬：[Target.GetName]"
- AIO_interference_energy_backlash_type: "零点电网反噬"
- AIO_interference_energy_backlash_desc: "[Target.GetName]的能源网络与现实干涉场失去同步。光环继续独立成长；此局势记录一次事故。进度退到左端即取消实验，到右端才算完成。两种结局都会将光环重置为刚进入第2级。"
- AIO_interference_energy_backlash_monthly_change_tooltip: "零点能量政策生效时，维持和逆转按光环理论月增长推进：基础1，加相连来源与当地在岗证明者；政策切换加速期间翻倍。封锁每月退12，其他政策每月退8。旧效果残留不算政策匹配。"
+ #endregion
+
+
+ #region 反噬局势通用文本
+
+ AIO_interference_accidence_maintain: "维持实验"
+ AIO_interference_accidence_blockade: "紧急封锁"
+ AIO_interference_accidence_reverse: "逆转反噬"
+ AIO_interference_accidence_progress_active: "现实干涉场"
+ AIO_interference_accidence_progress_blockade: "$AIO_interference_accidence_blockade$"
+ AIO_interference_accidence_progress_policy_mismatch: "干涉方向已改变"
+ AIO_interference_accidence_progress_disconnect: "与干涉源失联"
+ AIO_interference_accidence_backlash_monthly_change_tooltip: "采取积极的应对方案会使局势受§Y现实干涉场来源数量§!和§I证明者§!影响。"
+ AIO_interference_accidence_conclusion.no_reverse: "在这轮爆发后干涉场对现实的影响减弱了，宇宙似乎会在矛盾达到极点时严重失稳，爆发后恢复原样，它总是向着“稳态”演化。"
+ AIO_interference_accidence_conclusion.reverse: "这和以往的实验不同，事故地点与外界保持着不同的宇宙常数，我们的更改似乎会持续一段时间。"
+ AIO_interference_accidence_option.abort: "可惜。"
+ AIO_interference_accidence_option.collapse: "必要的牺牲。"
+ AIO_interference_accidence_option.reverse: "我们对宇宙的理解更进一步。"
+
+ #endregion
+
+
+ #region 反噬好感与通知
+
+ opinion_AIO_interference_accident: "扰乱现实"
+ AIO_interference_events.316.name: "越界的实验"
+ AIO_interference_events.316.desc: "过去几个月，我们星系里的电网反复失稳，工程队只当是设备故障。现在真相送到了桌上：[event_target:AIO_accident_owner.GetName]把这里当成了试验场，留给我们的只有焦毁的殖民地和一句“实验数据已归档”。"
+ AIO_interference_events.316.option: "记下这笔账。"
+
+ #endregion
+
+
+ #region 零点能量反噬
+
+ AIO_interference_energy_backlash: "零点能量反噬：[Target.GetName]"
+ AIO_interference_energy_backlash_type: "零点能量反噬"
+ AIO_interference_energy_backlash_desc: "[Target.GetName]的电网正在与干涉场失去同步。电网把积存的电荷抛进现实的缝隙，产出越推越高，越来越不受我们控制。我们可以调整功能设备抑制它，也可以抓住这个机会研究物理规则的改变。"
+ AIO_interference_energy_backlash_monthly_change_tooltip: "零点能量政策生效时，$AIO_interference_accidence_backlash_monthly_change_tooltip$"
+
  AIO_energy_stage_one: "电网失谐"
- AIO_energy_stage_one_desc: "初始震荡。跨过35时发生一次性能量损失。"
+ AIO_energy_stage_one_desc: "发电机组越转越顺，用电器却开始对不上——吊臂无故停摆，殖民地广播里混进了不该存在的静电。"
  AIO_energy_stage_two: "反馈浪涌"
- AIO_energy_stage_two_desc: "达到35时损失500能量币，封锁方案下为250。进度回退不会返还损失。"
+ AIO_energy_stage_two_desc: "电网开始把多出来的电荷推回殖民地。灯亮得刺眼，护盾在港内无故闪烁，而电网自己在一瞬间烧成了一片黑障。"
  AIO_energy_stage_three: "级联阈值"
- AIO_energy_stage_three_desc: "达到70时损失1500能量币，封锁方案下为750。该星系己方殖民地承受能源与物理科研惩罚，直到事故结束，最长五年。"
- AIO_energy_maintain: "维持实验"
- AIO_energy_maintain_desc: "每月消耗50能量币和20物理学研究。按光环理论增速推进。全国每100在岗证明者每月提供1研究点，均分给正在维持或逆转的局势；每个局势上限20点。"
- AIO_energy_blockade: "紧急封锁"
- AIO_energy_blockade_desc: "每月消耗150能量币和25合金，进度每月退12，阶段性能量损失减半。退至左端只会取消实验，不积累研究或逆转成果。"
- AIO_energy_reverse: "逆转反噬"
- AIO_energy_reverse_desc: "须解锁银时之匙对应的天灾第三级。每月消耗100超然逻辑和100能量币。按光环理论增速推进；全国在岗证明者均分产生逆转点，每局势每月最多20点。完成时累计50/150/300点分别解锁永久岗位能源产出+5/+10/+20%，高等级替换低等级。"
- AIO_energy_progress_active: "干涉场理论增长"
- AIO_energy_progress_blockade: "紧急封锁：-12"
- AIO_energy_progress_policy_mismatch: "零点能量政策未启用或干涉场失联：-8"
- AIO_energy_accidence_planet: "电网失稳"
- AIO_energy_accidence_planet_desc: "级联浪涌造成的局部供能系统损坏尚未修复。"
- AIO_energy_reversal_1: "驾驭反噬 I"
- AIO_energy_reversal_1_desc: "逆转后的能量反馈强化了发电岗位。"
- AIO_energy_reversal_2: "驾驭反噬 II"
- AIO_energy_reversal_2_desc: "逆转后的能量反馈强化了发电岗位。"
- AIO_energy_reversal_3: "驾驭反噬 III"
- AIO_energy_reversal_3_desc: "逆转后的能量反馈强化了发电岗位。"
+ AIO_energy_stage_three_desc: "浪涌已经不需要电缆来传播。整个星系的供能都吊在干涉场边缘，产出高得离谱，而同一股电流正慢慢啃掉基建，一切都变得不稳定。"
+
+ AIO_energy_maintain: "$AIO_interference_accidence_maintain$"
+ AIO_energy_maintain_desc: "多么美妙的现象啊，我们应该抓住这个难得的机会研究！"
+ AIO_energy_blockade: "$AIO_interference_accidence_blockade$"
+ AIO_energy_blockade_desc: "把殖民地与电网隔开，让浪涌在隔离层里自己耗干，事故到此为止。"
+ AIO_energy_reverse: "$AIO_interference_accidence_reverse$"
+ AIO_energy_reverse_desc: "凭借我们对宇宙规律和高维空间的认知，我们将重新引导能量的流动。"
+
+ AIO_energy_accidence_1: "电网过载 I"
+ AIO_energy_accidence_1_desc: "发电机组喜欢这样，电机却不喜欢。"
+ AIO_energy_accidence_2: "电网过载 II"
+ AIO_energy_accidence_2_desc: "浪涌越来越强，发电量一路上涨，代价也从地基蔓延到港口与舰队。"
+ AIO_energy_accidence_3: "电网过载 III"
+ AIO_energy_accidence_3_desc: "整个星系都在跟着电网震颤，浪涌已经脱离了常理。"
+ AIO_energy_blackout: "电网黑障"
+ AIO_energy_blackout_desc: "浪涌烧穿了局部供能系统，殖民地暂时停摆。"
+ AIO_energy_grid_drain: "电网降压"
+ AIO_energy_grid_drain_desc: "浪涌在星系里反复冲刷，电网被迫降压运行。"
+ AIO_energy_grid_collapse: "电网崩溃"
+ AIO_energy_grid_collapse_desc: "零点电网烧穿，这个星系的供电要数年才能缓过来。"
+
+ d_AIO_energy_cascade_residue: "£blocker£ 级联残渣"
+ d_AIO_energy_cascade_residue_desc: "电网烧穿后留下的电离渣块，仍在低鸣放电。"
+
  AIO_interference_events.310.name: "电网频率分岔"
- AIO_interference_events.310.desc: "[Target.GetName]的干涉场已达到危险强度。零点电网开始在相互冲突的能量状态间震荡。我们可以终止、研究或逆转这次事故。"
+ AIO_interference_events.310.desc: "[Target.GetName]的干涉场已经临界。零点电网在两种互不相容的能量状态之间来回震荡，每一次都在现实里留下抹不掉的痕迹。我们可以现在就动手，也可以再看看它会走到哪一步。"
  AIO_interference_events.310.option: "启动事故应对程序。"
  AIO_interference_events.311.name: "第一次浪涌"
- AIO_interference_events.311.desc: "电网释放了储存的能量。紧急封锁将即时损失减半，但浪涌已经发生。"
+ AIO_interference_events.311.desc: "电网把积存的电荷一次抛了出去，[Target.GetName]的殖民地发生了好几次火灾，供能系统陷入黑障，而能源产出还在增长。"
  AIO_interference_events.311.option: "记录损伤。"
  AIO_interference_events.312.name: "电网级联"
- AIO_interference_events.312.desc: "第二次浪涌损坏了[Target.GetName]内的殖民地能源系统。故障持续至事故结束，最长五年；回退进度不会返还已经损失的能量币。"
+ AIO_interference_events.312.desc: "第二次浪涌不再沿着电缆走，而是沿着干涉场回传。全国电网被迫降压一年，殖民地再次受损，产量曲线却依旧高的吓人。"
  AIO_interference_events.312.option: "继续隔离电网。"
- AIO_interference_events.313.name: "实验结束"
- AIO_interference_events.313.desc: "级联过程已经结束。逐月累计的研究点在50/150/300时，累计奖励分别为500/2000/5000物理学研究及100/400/1000超然逻辑。逆转点达到相同门槛时，累计返还1000/4000/10000能量币，并取得最高已达成的永久能源岗位增益。光环回到第2级起点。"
- AIO_interference_events.313.option: "归档研究成果。"
- AIO_interference_events.314.name: "实验已取消"
- AIO_interference_events.314.desc: "电网在级联完成前恢复稳定。尚未结算的研究成果消失，已损失的能量币不返还。紧急电网惩罚已清除，光环回到第2级起点。"
- AIO_interference_events.314.option: "关闭实验。"
+ AIO_interference_events.313.name: "驾驭反噬"
+ AIO_interference_events.313.desc: "在我们最强的科学家们的干预下，[Target.GetName]的能量涌动逐渐得到控制，能量从混乱的湍流变成平稳的大河。$AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.313.option: "$AIO_interference_accidence_option.reverse$"
+ AIO_interference_events.314.name: "电网崩溃"
+ AIO_interference_events.314.desc: "巨大的能量浪涌烧穿了[Target.GetName]的电网，殖民地大片焦毁，电离残渣堆在废墟上，全国供电要花数年才能缓过来。$AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.314.option: "$AIO_interference_accidence_option.collapse$"
+ AIO_interference_events.315.name: "实验已中止"
+ AIO_interference_events.315.desc: "事故结束了，幸运的是电网没有彻底报废。$AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.315.option: "$AIO_interference_accidence_option.abort$"
 
  #endregion

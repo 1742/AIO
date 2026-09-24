@@ -20,6 +20,9 @@ country_event = {
 #region Energy accident.
 # Situation events retain the situation as ROOT and its system
 # as target, so several simultaneous copies cannot overwrite event targets.
+# 310 opens the accident, 311 and 312 are the stage transitions, 313 is a
+# successful reversal, 314 is the cascade running to the end and 315 is the
+# accident ending before the cascade completes.
 
 situation_event = {
 	id = AIO_interference_events.310
@@ -28,6 +31,24 @@ situation_event = {
 	desc = AIO_interference_events.310.desc
 	picture = GFX_evt_black_hole
 	option = { name = AIO_interference_events.310.option }
+}
+
+situation_event = {
+	id = AIO_interference_events.311
+	is_triggered_only = yes
+	title = AIO_interference_events.311.name
+	desc = AIO_interference_events.311.desc
+	picture = GFX_evt_black_hole
+	option = { name = AIO_interference_events.311.option }
+}
+
+situation_event = {
+	id = AIO_interference_events.312
+	is_triggered_only = yes
+	title = AIO_interference_events.312.name
+	desc = AIO_interference_events.312.desc
+	picture = GFX_evt_black_hole
+	option = { name = AIO_interference_events.312.option }
 }
 
 situation_event = {
@@ -46,6 +67,26 @@ situation_event = {
 	desc = AIO_interference_events.314.desc
 	picture = GFX_evt_black_hole
 	option = { name = AIO_interference_events.314.option }
+}
+
+situation_event = {
+	id = AIO_interference_events.315
+	is_triggered_only = yes
+	title = AIO_interference_events.315.name
+	desc = AIO_interference_events.315.desc
+	picture = GFX_evt_black_hole
+	option = { name = AIO_interference_events.315.option }
+}
+
+# Fired at whoever owns the system when an accident ends inside their borders, so
+# the third party is never left guessing where the scorch marks came from.
+country_event = {
+	id = AIO_interference_events.316
+	is_triggered_only = yes
+	title = AIO_interference_events.316.name
+	desc = AIO_interference_events.316.desc
+	picture = GFX_evt_black_hole
+	option = { name = AIO_interference_events.316.option }
 }
 
 #endregion

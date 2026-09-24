@@ -1,0 +1,12 @@
+# 反噬实验落到别国境内时：对方把这笔账记在扰动现实的人头上
+opinion_AIO_interference_accident = { # this - country that hosts the accident, who - the interference owner
+	opinion = {
+		base = -75
+	}
+
+	accumulative = yes
+
+	decay = {
+		base = 1
+	}
+}

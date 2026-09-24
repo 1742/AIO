@@ -1,0 +1,40 @@
+monthly_progress = {
+    base = 0
+    modifier = {
+        add = value:AIO_interference_accidence_situation_growth
+        desc = AIO_interference_accidence_progress_active
+        owner = { has_policy_flag = AIO_interference_mode_$TYPE$ }
+        target = {
+            has_psionic_aura = AIO_reality_interference_aura
+            aura_owner = { is_same_value = root.owner }
+            OR = {
+                has_star_flag = AIO_interference_source
+                AIO_is_nearby_interference_source = { OWNER = root.owner }
+            }
+        }
+        OR = {
+            current_situation_approach = AIO_$TYPE$_maintain
+            current_situation_approach = AIO_$TYPE$_reverse
+        }
+    }
+    modifier = {
+        subtract = 8
+        desc = AIO_interference_accidence_progress_blockade
+        current_situation_approach = AIO_$TYPE$_blockade
+    }
+    modifier = {
+        subtract = 8
+        desc = AIO_interference_accidence_progress_policy_mismatch
+        owner = { NOT = { has_policy_flag = AIO_interference_mode_$TYPE$ } }
+    }
+    modifier = {
+        subtract = 8
+        desc = AIO_interference_accidence_progress_disconnect
+        target = {
+            NOR = {
+                has_star_flag = AIO_interference_source
+                AIO_is_nearby_interference_source = { OWNER = root.owner }
+            }
+        }
+    }
+}

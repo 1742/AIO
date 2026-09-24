@@ -30,14 +30,19 @@ AIO_reality_interference_aura = {
 		if = {
 			limit = {
 				is_aura_intensity_level = 3
-				aura_owner = { has_policy_flag = AIO_interference_mode_energy }
-				NOT = { has_star_flag = AIO_energy_backlash_active }
+				NOT = {
+					has_star_flag = AIO_energy_backlash_active
+					has_star_flag = AIO_interference_backlash_sealed
+				}
 				OR = {
 					has_star_flag = AIO_interference_source
 					AIO_is_nearby_interference_source = { OWNER = aura_owner }
 				}
 			}
-			AIO_interference_energy_start = yes
+			if = {
+				limit = { aura_owner = { has_policy_flag = AIO_interference_mode_energy } }
+				AIO_interference_energy_start = yes
+			}
 		}
 		if = {
 			limit = { NOT = { has_star_flag = AIO_interference_spread_block } }
@@ -55,6 +60,8 @@ AIO_reality_interference_aura = {
 			remove_star_flag = AIO_interference_source
 			aura_owner = { AIO_interference_rebuild_effect = yes }
 		}
+		# A sealed system only stays sealed while its field exists.
+		remove_star_flag = AIO_interference_backlash_sealed
 		clear_variable = AIO_interference_sources
 	}
 
