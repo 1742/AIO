@@ -248,3 +248,63 @@ AIO_industry_collapse = {
 }
 
 #endregion
+
+
+#region metric accidence
+
+# Metric interference keeps folding local geometry. Folded space fits more inside
+# it and moves construction along faster, and the same folding makes the district
+# bill, the gunnery and everyone's nerves unreliable. The stages replace each
+# other, so each one carries the full total.
+AIO_metric_accidence_1 = {
+	planet_max_districts_add = 1
+	planet_building_build_speed_mult = 0.10
+	planet_jobs_physics_research_produces_mult = 0.05
+	ship_speed_mult = 0.05
+	planet_districts_upkeep_mult = 0.10
+	ship_fire_rate_mult = -0.05
+	pop_happiness = -0.05
+}
+
+AIO_metric_accidence_2 = {
+	planet_max_districts_add = 2
+	planet_building_build_speed_mult = 0.25
+	planet_jobs_physics_research_produces_mult = 0.10
+	ship_speed_mult = 0.10
+	planet_districts_upkeep_mult = 0.25
+	ship_fire_rate_mult = -0.10
+	pop_happiness = -0.10
+}
+
+AIO_metric_accidence_3 = {
+	planet_max_districts_add = 3
+	planet_building_build_speed_mult = 0.50
+	planet_jobs_physics_research_produces_mult = 0.20
+	ship_speed_mult = 0.20
+	planet_districts_upkeep_mult = 0.50
+	ship_fire_rate_mult = -0.20
+	pop_happiness = -0.20
+}
+
+# Timed shocks fired by the stage events. These expire on their own, so they
+# never need cleanup on abort.
+AIO_metric_shear = {
+	planet_building_build_speed_mult = -0.50
+	ship_speed_mult = -0.30
+	planet_districts_upkeep_mult = 0.25
+}
+
+AIO_metric_inversion = {
+	planet_building_build_speed_mult = -0.60
+	ship_speed_mult = -0.50
+	planet_districts_upkeep_mult = 0.50
+}
+
+AIO_metric_collapse = {
+	planet_building_build_speed_mult = -0.50
+	ship_speed_mult = -0.30
+	planet_districts_upkeep_mult = 0.50
+	planet_max_districts_add = -1
+}
+
+#endregion

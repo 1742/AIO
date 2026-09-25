@@ -654,3 +654,167 @@ AIO_interference_industry_backlash = {
 		ai_weight = { base = 0 }
 	}
 }
+
+
+# Metric interference burns through the same skeleton, with folded space as its
+# picture and geometry as its signature.
+AIO_interference_metric_backlash = {
+	picture = GFX_evt_vortex
+	category = negative
+	situation_log_category = developments
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_outcome_negative
+	fail_icon_frame = GFX_situation_outcome_frame_green
+	fail_icon = GFX_situation_outcome_positive
+	initial_progress = 15
+	progress_direction = monodirectional
+
+	on_start = {
+		situation_event = { id = AIO_interference_events.350 }
+	}
+	# The approaches are locked once the third stage is entered, so the ending is
+	# decided by whichever approach is still active when progress completes.
+	on_progress_complete = {
+		if = {
+			limit = { current_situation_approach = AIO_metric_reverse }
+			situation_event = { id = AIO_interference_events.353 }
+		}
+		else = {
+			situation_event = { id = AIO_interference_events.354 }
+		}
+	}
+	on_fail = {
+		situation_event = { id = AIO_interference_events.355 }
+	}
+	on_abort = {
+		if = {
+			limit = { exists = target }
+			target = {
+				remove_star_flag = AIO_metric_backlash_active
+				AIO_interference_metric_clear_accidence = yes
+			}
+		}
+	}
+	abort_trigger = {
+		OR = {
+			NOT = { exists = target }
+			target = {
+				NOT = { has_psionic_aura = AIO_reality_interference_aura }
+			}
+			target = {
+				has_psionic_aura = AIO_reality_interference_aura
+				OR = {
+					# Only a lost field or a changed owner aborts here: the field falling
+					# back to a lower level does not, the accident burns on regardless.
+					aura_owner = { NOT = { is_same_value = root.owner } }
+				}
+			}
+		}
+	}
+
+	stages = {
+		AIO_metric_stage_one = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 35
+		}
+		AIO_metric_stage_two = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_red
+			end = 70
+			on_first_enter = {
+				situation_event = { id = AIO_interference_events.351 }
+			}
+		}
+		AIO_metric_stage_three = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			on_first_enter = {
+				situation_event = { id = AIO_interference_events.352 }
+			}
+		}
+	}
+
+	inline_script = {
+		script = AIO/interference_accidence_situation_progress
+		TYPE = metric
+	}
+
+	approach = {
+		name = AIO_metric_maintain
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		allow = {
+			current_stage < AIO_metric_stage_three
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					owner = { has_policy_flag = AIO_interference_mode_metric }
+					target = {
+						OR = {
+							has_star_flag = AIO_interference_source
+							AIO_is_nearby_interference_source = { OWNER = root.owner }
+						}
+					}
+				}
+				minerals = 50
+				physics_research = 20
+			}
+		}
+		ai_weight = { base = 10 }
+	}
+	approach = {
+		name = AIO_metric_blockade
+		icon = GFX_situation_approach_scales
+		icon_background = GFX_situation_approach_bg_yellow
+		allow = {
+			current_stage < AIO_metric_stage_three
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					owner = { has_policy_flag = AIO_interference_mode_metric }
+					target = {
+						OR = {
+							has_star_flag = AIO_interference_source
+							AIO_is_nearby_interference_source = { OWNER = root.owner }
+						}
+					}
+				}
+				energy = 150
+				alloys = 25
+			}
+		}
+		ai_weight = { base = 5 }
+	}
+	approach = {
+		name = AIO_metric_reverse
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_green
+		potential = { owner = { has_menace_perk = menp_AIO_mega_03 } }
+		allow = {
+			current_stage < AIO_metric_stage_three
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					owner = { has_policy_flag = AIO_interference_mode_metric }
+					target = {
+						OR = {
+							has_star_flag = AIO_interference_source
+							AIO_is_nearby_interference_source = { OWNER = root.owner }
+						}
+					}
+				}
+				energy = 200
+			}
+		}
+		ai_weight = { base = 0 }
+	}
+}

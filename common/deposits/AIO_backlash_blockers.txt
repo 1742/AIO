@@ -104,3 +104,29 @@ d_AIO_industry_slag_residue = {
 		weight = 2
 	}
 }
+
+# The metric accident leaves this: a patch of ground where the geometry never
+# settled back, still carrying the fold that was forced into it.
+d_AIO_metric_fold_residue = {
+	time = 360
+	icon = d_levitating_rocks
+
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_districts_upkeep_mult = 0.05
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+		}
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+}

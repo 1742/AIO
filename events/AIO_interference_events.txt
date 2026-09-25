@@ -690,6 +690,172 @@ situation_event = {
 #endregion
 
 
+#region Metric accident.
+# Same shape as the accidents above: 350 opens it and grants the first stage,
+# 351/352 are the stage transitions and their discharges, 353 is a successful
+# reversal, 354 is the folding running to the end, 355 is the accident ending
+# early. The shared notice 390 still tells whoever owns the system.
+
+situation_event = {
+	id = AIO_interference_events.350
+	is_triggered_only = yes
+	title = AIO_interference_events.350.name
+	desc = AIO_interference_events.350.desc
+	picture = GFX_evt_vortex
+	option = {
+		name = AIO_interference_events.350.option
+		target = {
+			add_modifier = { modifier = AIO_metric_accidence_1 }
+		}
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.351
+	is_triggered_only = yes
+	title = AIO_interference_events.351.name
+	desc = AIO_interference_events.351.desc
+	picture = GFX_evt_vortex
+	option = {
+		name = AIO_interference_events.351.option
+		target = {
+			AIO_interference_metric_strip_accidence = yes
+			add_modifier = { modifier = AIO_metric_accidence_2 }
+		}
+		if = {
+			limit = { current_situation_approach = AIO_metric_blockade }
+			target = {
+				every_system_planet_colony = {
+					add_planet_devastation = 10
+					add_modifier = { modifier = AIO_metric_shear days = 90 }
+				}
+				every_system_ship_colony = {
+					add_planet_devastation = 10
+					add_modifier = { modifier = AIO_metric_shear days = 90 }
+				}
+			}
+		}
+		else = {
+			target = {
+				every_system_planet_colony = {
+					add_planet_devastation = 20
+					add_modifier = { modifier = AIO_metric_shear days = 180 }
+				}
+				every_system_ship_colony = {
+					add_planet_devastation = 20
+					add_modifier = { modifier = AIO_metric_shear days = 180 }
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.352
+	is_triggered_only = yes
+	title = AIO_interference_events.352.name
+	desc = AIO_interference_events.352.desc
+	picture = GFX_evt_vortex
+	option = {
+		name = AIO_interference_events.352.option
+		target = {
+			AIO_interference_metric_strip_accidence = yes
+			add_modifier = { modifier = AIO_metric_accidence_3 }
+		}
+		if = {
+			limit = { current_situation_approach = AIO_metric_blockade }
+			target = {
+				every_system_planet_colony = { add_planet_devastation = 10 }
+				every_system_ship_colony = { add_planet_devastation = 10 }
+				add_modifier = { modifier = AIO_metric_inversion days = 180 }
+			}
+		}
+		else = {
+			target = {
+				every_system_planet_colony = { add_planet_devastation = 20 }
+				every_system_ship_colony = { add_planet_devastation = 20 }
+				add_modifier = { modifier = AIO_metric_inversion days = 360 }
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.353
+	is_triggered_only = yes
+	title = AIO_interference_events.353.name
+	desc = AIO_interference_events.353.desc
+	picture = GFX_evt_vortex
+	option = {
+		name = AIO_interference_events.353.option
+		# Findings are shared by every doctrine; only the research branch differs.
+		AIO_interference_award = { RESOURCE = physics_research }
+		target = {
+			remove_star_flag = AIO_metric_backlash_active
+			set_star_flag = AIO_interference_backlash_sealed
+			AIO_interference_metric_clear_accidence = yes
+		}
+		destroy_situation = this
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.354
+	is_triggered_only = yes
+	title = AIO_interference_events.354.name
+	desc = AIO_interference_events.354.desc
+	picture = GFX_evt_vortex
+	option = {
+		name = AIO_interference_events.354.option
+		target = {
+			add_modifier = { modifier = AIO_metric_collapse days = 1825 }
+			every_system_planet_colony = {
+				add_planet_devastation = 40
+				if = {
+					limit = { NOT = { has_deposit = d_AIO_metric_fold_residue } }
+					add_blocker = { type = d_AIO_metric_fold_residue }
+				}
+			}
+			every_system_ship_colony = {
+				add_planet_devastation = 40
+				if = {
+					limit = { NOT = { has_deposit = d_AIO_metric_fold_residue } }
+					add_blocker = { type = d_AIO_metric_fold_residue }
+				}
+			}
+		}
+		# Findings are shared by every doctrine; only the research branch differs.
+		AIO_interference_award = { RESOURCE = physics_research }
+		AIO_interference_accident_notify = yes
+		target = {
+			remove_star_flag = AIO_metric_backlash_active
+			AIO_interference_metric_clear_accidence = yes
+		}
+		AIO_interference_reset_aura = yes
+		destroy_situation = this
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.355
+	is_triggered_only = yes
+	title = AIO_interference_events.355.name
+	desc = AIO_interference_events.355.desc
+	picture = GFX_evt_vortex
+	option = {
+		name = AIO_interference_events.355.option
+		target = {
+			remove_star_flag = AIO_metric_backlash_active
+			AIO_interference_metric_clear_accidence = yes
+		}
+		AIO_interference_reset_aura = yes
+		destroy_situation = this
+	}
+}
+
+#endregion
+
+
 # Fired at whoever owns the system when an accident ends inside their borders, so
 # the third party is never left guessing where the scorch marks came from. The
 # opinion hit itself is applied by AIO_interference_accident_notify rather than

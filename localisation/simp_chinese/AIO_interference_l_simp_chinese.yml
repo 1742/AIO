@@ -335,3 +335,61 @@
  AIO_interference_events.345.option: "$AIO_interference_accidence_option.abort$"
 
  #endregion
+
+ #region 度规工程反噬
+
+ AIO_interference_metric_backlash: "度规工程反噬：[Target.GetName]"
+ AIO_interference_metric_backlash_type: "度规工程反噬"
+ AIO_interference_metric_backlash_desc: "[Target.GetName]的空间结构正在被反复折叠。干涉场把距离压扁，让这片区域凭空多出可用的空间，建造速度也快得反常——而支撑这一切的度量本身并不稳定，每隔一段时间就会弹回一点。我们可以投入设备把它钉住，也可以趁这个机会研究现实的空间究竟是什么。"
+ AIO_interference_metric_backlash_monthly_change_tooltip: "度规工程政策生效时，$AIO_interference_accidence_backlash_monthly_change_tooltip$"
+
+ AIO_metric_stage_one: "空间折叠"
+ AIO_metric_stage_one_desc: "距离开始压缩。规划部门在同一块地面上量出了更多可用面积，工程队的材料到场比过去快得多，没有人愿意先问一句为什么。"
+ AIO_metric_stage_two: "度量失稳"
+ AIO_metric_stage_two_desc: "折叠不再稳定。空间的褶子每隔一段时间就弹回一点：管线错位、地基返工，区划的维护账单跟着一起来。"
+ AIO_metric_stage_three: "几何临界"
+ AIO_metric_stage_three_desc: "整片区域都吊在一个不稳定的度量上。空间被塞得满满当当，建造快得离谱，而度量本身随时可能整体翻面。"
+
+ AIO_metric_maintain: "$AIO_interference_accidence_maintain$"
+ AIO_metric_maintain_desc: "多么漂亮的空间啊，我们应该抓住这个机会，看看它到底能被折到多深。"
+ AIO_metric_blockade: "$AIO_interference_accidence_blockade$"
+ AIO_metric_blockade_desc: "把殖民地与折叠区隔开，让度量自己弹回原状，事故到此为止。"
+ AIO_metric_reverse: "$AIO_interference_accidence_reverse$"
+ AIO_metric_reverse_desc: "我们已经看清这套折叠的规则，接下来给它重新定一个基准。"
+
+ AIO_metric_accidence_1: "几何畸变 I"
+ AIO_metric_accidence_1_desc: "同一块地面量出了更多可用面积，还没有人停下来问为什么。"
+ AIO_metric_accidence_2: "几何畸变 II"
+ AIO_metric_accidence_2_desc: "褶子开始往回弹：管线错位、地基返工，账单跟着一起到。"
+ AIO_metric_accidence_3: "几何畸变 III"
+ AIO_metric_accidence_3_desc: "空间被塞满，建造快得离谱，而度量随时可能整体翻面。"
+ AIO_metric_shear: "度量剪切"
+ AIO_metric_shear_desc: "空间的褶子被撕开一道：建造停摆一轮，境内的舰队也几乎动不了。"
+ AIO_metric_inversion: "度量倒转"
+ AIO_metric_inversion_desc: "度量整体翻了过来：距离不再可信，区划维护费高得离谱，舰队的火控也解算不出结果。"
+ AIO_metric_collapse: "几何崩塌"
+ AIO_metric_collapse_desc: "折叠的度量整体塌回原位，把多出来的空间一起收走了；这个星系要数年才能重新量出这些面积。"
+
+ d_AIO_metric_fold_residue: "£blocker£ 折叠残块"
+ d_AIO_metric_fold_residue_desc: "度量没有完全弹回的地方，残余的褶皱仍在吃掉区划维护费。"
+
+ AIO_interference_events.350.name: "度量临界"
+ AIO_interference_events.350.desc: "[Target.GetName]的干涉场已经临界。这里的空间正在被反复折叠：可用面积凭空变多，建造速度快得反常，而支撑这一切的度量正在失去支点。我们可以现在就动手，也可以再看看它会走到哪一步。"
+ AIO_interference_events.350.option: "启动事故应对程序。"
+ AIO_interference_events.351.name: "第一次回弹"
+ AIO_interference_events.351.desc: "第一次回弹。空间的褶子同时松开，[Target.GetName]的殖民地接连报警，在建工程被迫返工，而可用面积还在上涨。"
+ AIO_interference_events.351.option: "记录形变。"
+ AIO_interference_events.352.name: "几何反冲"
+ AIO_interference_events.352.desc: "度量不再受控。整片区域的褶子开始互相拉扯，区划维护开支被推高，舰队在境内的机动受到干扰，殖民地再次受损。"
+ AIO_interference_events.352.option: "继续钉住度量。"
+ AIO_interference_events.353.name: "驾驭反噬"
+ AIO_interference_events.353.desc: "在我们最强的科学家们的干预下，[Target.GetName]的折叠被重新钉在一个稳定基准上，多出来的空间还在，失控结束了。$AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.353.option: "$AIO_interference_accidence_option.reverse$"
+ AIO_interference_events.354.name: "几何崩塌"
+ AIO_interference_events.354.desc: "折叠的度量在同一瞬间整体塌回原位：多出来的空间、在建的工程、停在港内的舰队一起被卷了进去，这个星系要数年才能恢复。$AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.354.option: "$AIO_interference_accidence_option.collapse$"
+ AIO_interference_events.355.name: "实验已中止"
+ AIO_interference_events.355.desc: "事故结束了，残余的褶子正在自行抚平，这次没有留下真正的损伤。$AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.355.option: "$AIO_interference_accidence_option.abort$"
+
+ #endregion
