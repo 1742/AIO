@@ -1,10 +1,9 @@
 #region balanced accidence
 
 # Balanced interference pays out a little of everything, so its accident is the
-# only one whose benefit and cost both span every resource at once. The benefit
-# is production; the cost is the price of uniformity: nothing is tuned any more,
-# so upkeep climbs, comfort thins out and the population stops agreeing with
-# itself. The stages replace each other, so each one carries the full total.
+# only one whose benefit spans every resource at once. Synchronized production
+# strains construction and trade while comfort and stability decline. The
+# stages replace each other, so each one carries the full total.
 AIO_balanced_accidence_1 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_resources_2.dds
 	planet_jobs_energy_produces_mult = 0.05
@@ -15,7 +14,8 @@ AIO_balanced_accidence_1 = {
 	planet_jobs_society_research_produces_mult = 0.05
 	planet_jobs_engineering_research_produces_mult = 0.05
 	planet_max_districts_add = 1
-	planet_jobs_upkeep_mult = 0.10
+	planet_building_build_speed_mult = -0.10
+	planet_jobs_trade_produces_mult = -0.05
 	planet_stability_add = -3
 }
 
@@ -29,7 +29,8 @@ AIO_balanced_accidence_2 = {
 	planet_jobs_society_research_produces_mult = 0.10
 	planet_jobs_engineering_research_produces_mult = 0.10
 	planet_max_districts_add = 1
-	planet_jobs_upkeep_mult = 0.25
+	planet_building_build_speed_mult = -0.25
+	planet_jobs_trade_produces_mult = -0.10
 	planet_stability_add = -5
 	planet_amenities_mult = -0.10
 }
@@ -44,7 +45,8 @@ AIO_balanced_accidence_3 = {
 	planet_jobs_society_research_produces_mult = 0.20
 	planet_jobs_engineering_research_produces_mult = 0.20
 	planet_max_districts_add = 2
-	planet_jobs_upkeep_mult = 0.50
+	planet_building_build_speed_mult = -0.50
+	planet_jobs_trade_produces_mult = -0.20
 	planet_stability_add = -10
 	planet_amenities_mult = -0.20
 }
@@ -58,6 +60,7 @@ AIO_balanced_misalignment = {
 	planet_jobs_food_produces_mult = -0.30
 	planet_jobs_consumer_goods_produces_mult = -0.30
 	planet_jobs_alloys_produces_mult = -0.30
+	planet_jobs_trade_produces_mult = -0.30
 	planet_amenities_mult = -0.20
 }
 
@@ -68,7 +71,8 @@ AIO_balanced_drift = {
 	planet_jobs_food_produces_mult = -0.15
 	planet_jobs_consumer_goods_produces_mult = -0.15
 	planet_jobs_alloys_produces_mult = -0.15
-	planet_jobs_upkeep_mult = 0.25
+	planet_jobs_trade_produces_mult = -0.15
+	planet_building_build_speed_mult = -0.25
 }
 
 AIO_balanced_collapse = {
@@ -78,7 +82,8 @@ AIO_balanced_collapse = {
 	planet_jobs_food_produces_mult = -0.10
 	planet_jobs_consumer_goods_produces_mult = -0.10
 	planet_jobs_alloys_produces_mult = -0.10
-	planet_jobs_upkeep_mult = 0.25
+	planet_jobs_trade_produces_mult = -0.10
+	planet_building_build_speed_mult = -0.25
 	planet_max_districts_add = -1
 }
 
