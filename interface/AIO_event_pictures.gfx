@@ -1,10 +1,222 @@
 spriteTypes = {
     spriteType = {
-		name = "GFX_evt_AIO_library"
-		texturefile = "gfx/event_pictures/AIO_library.dds"
+		name = "GFX_evt_AIO_energy_backlash"
+		texturefile = "gfx/event_pictures/AIO_energy_backlash.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
+	spriteType = {
+		name = "GFX_evt_AIO_energy_backlash_nomask"
+		texturefile = "gfx/event_pictures/AIO_energy_backlash.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_energy_backlash_surge"
+		texturefile = "gfx/event_pictures/AIO_energy_backlash_surge.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_energy_backlash_surge_nomask"
+		texturefile = "gfx/event_pictures/AIO_energy_backlash_surge.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_energy_backlash_mastered"
+		texturefile = "gfx/event_pictures/AIO_energy_backlash_mastered.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_energy_backlash_mastered_nomask"
+		texturefile = "gfx/event_pictures/AIO_energy_backlash_mastered.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_energy_backlash_collapse"
+		texturefile = "gfx/event_pictures/AIO_energy_backlash_collapse.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_energy_backlash_collapse_nomask"
+		texturefile = "gfx/event_pictures/AIO_energy_backlash_collapse.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_energy_backlash_aborted"
+		texturefile = "gfx/event_pictures/AIO_energy_backlash_aborted.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_energy_backlash_aborted_nomask"
+		texturefile = "gfx/event_pictures/AIO_energy_backlash_aborted.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_industry_backlash"
+		texturefile = "gfx/event_pictures/AIO_industry_backlash.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_industry_backlash_nomask"
+		texturefile = "gfx/event_pictures/AIO_industry_backlash.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_industry_backlash_overheat"
+		texturefile = "gfx/event_pictures/AIO_industry_backlash_overheat.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_industry_backlash_overheat_nomask"
+		texturefile = "gfx/event_pictures/AIO_industry_backlash_overheat.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_industry_backlash_mastered"
+		texturefile = "gfx/event_pictures/AIO_industry_backlash_mastered.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_industry_backlash_mastered_nomask"
+		texturefile = "gfx/event_pictures/AIO_industry_backlash_mastered.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_industry_backlash_collapse"
+		texturefile = "gfx/event_pictures/AIO_industry_backlash_collapse.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_industry_backlash_collapse_nomask"
+		texturefile = "gfx/event_pictures/AIO_industry_backlash_collapse.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_industry_backlash_aborted"
+		texturefile = "gfx/event_pictures/AIO_industry_backlash_aborted.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_industry_backlash_aborted_nomask"
+		texturefile = "gfx/event_pictures/AIO_industry_backlash_aborted.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_metric_backlash"
+		texturefile = "gfx/event_pictures/AIO_metric_backlash.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_metric_backlash_nomask"
+		texturefile = "gfx/event_pictures/AIO_metric_backlash.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_metric_backlash_rebound"
+		texturefile = "gfx/event_pictures/AIO_metric_backlash_rebound.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_metric_backlash_rebound_nomask"
+		texturefile = "gfx/event_pictures/AIO_metric_backlash_rebound.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_metric_backlash_mastered"
+		texturefile = "gfx/event_pictures/AIO_metric_backlash_mastered.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_metric_backlash_mastered_nomask"
+		texturefile = "gfx/event_pictures/AIO_metric_backlash_mastered.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_metric_backlash_collapse"
+		texturefile = "gfx/event_pictures/AIO_metric_backlash_collapse.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_metric_backlash_collapse_nomask"
+		texturefile = "gfx/event_pictures/AIO_metric_backlash_collapse.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_metric_backlash_aborted"
+		texturefile = "gfx/event_pictures/AIO_metric_backlash_aborted.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_metric_backlash_aborted_nomask"
+		texturefile = "gfx/event_pictures/AIO_metric_backlash_aborted.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_balanced_backlash"
+		texturefile = "gfx/event_pictures/AIO_balanced_backlash.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_balanced_backlash_nomask"
+		texturefile = "gfx/event_pictures/AIO_balanced_backlash.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_balanced_backlash_imbalance"
+		texturefile = "gfx/event_pictures/AIO_balanced_backlash_imbalance.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_balanced_backlash_imbalance_nomask"
+		texturefile = "gfx/event_pictures/AIO_balanced_backlash_imbalance.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_balanced_backlash_mastered"
+		texturefile = "gfx/event_pictures/AIO_balanced_backlash_mastered.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_balanced_backlash_mastered_nomask"
+		texturefile = "gfx/event_pictures/AIO_balanced_backlash_mastered.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_balanced_backlash_collapse"
+		texturefile = "gfx/event_pictures/AIO_balanced_backlash_collapse.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_balanced_backlash_collapse_nomask"
+		texturefile = "gfx/event_pictures/AIO_balanced_backlash_collapse.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_balanced_backlash_aborted"
+		texturefile = "gfx/event_pictures/AIO_balanced_backlash_aborted.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_balanced_backlash_aborted_nomask"
+		texturefile = "gfx/event_pictures/AIO_balanced_backlash_aborted.dds"
+		alwaystransparent = yes
+	}
 }
-
-

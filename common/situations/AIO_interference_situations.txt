@@ -2,7 +2,7 @@
 # and every consequence is written into the event options so the option tooltip
 # is generated from the effect itself.
 AIO_interference_balanced_backlash = {
-	picture = GFX_evt_shrouded_planet
+	picture = GFX_evt_AIO_balanced_backlash
 	category = negative
 	situation_log_category = developments
 	complete_icon_frame = GFX_situation_outcome_frame_red
@@ -166,7 +166,7 @@ AIO_interference_balanced_backlash = {
 # A system target keeps each accident independent. Never use target_modifier here:
 # system targets are not colony carriers.
 AIO_interference_energy_backlash = {
-	picture = GFX_evt_black_hole
+	picture = GFX_evt_AIO_energy_backlash
 	category = negative
 	situation_log_category = developments
 	complete_icon_frame = GFX_situation_outcome_frame_red
@@ -331,7 +331,7 @@ AIO_interference_energy_backlash = {
 # its own signature resource: food and biomass climb while the biosphere eats the
 # infrastructure that carries them.
 AIO_interference_ecology_backlash = {
-	picture = GFX_evt_overgrown_city
+	picture = GFX_evt_alien_nature
 	category = negative
 	situation_log_category = developments
 	complete_icon_frame = GFX_situation_outcome_frame_red
@@ -495,7 +495,7 @@ AIO_interference_ecology_backlash = {
 # Industry interference burns through the same skeleton, with the smelting
 # districts as its picture and minerals and alloys as its signature pair.
 AIO_interference_industry_backlash = {
-	picture = GFX_evt_champions_forge
+	picture = GFX_evt_AIO_industry_backlash
 	category = negative
 	situation_log_category = developments
 	complete_icon_frame = GFX_situation_outcome_frame_red
@@ -659,7 +659,7 @@ AIO_interference_industry_backlash = {
 # Metric interference burns through the same skeleton, with folded space as its
 # picture and geometry as its signature.
 AIO_interference_metric_backlash = {
-	picture = GFX_evt_vortex
+	picture = GFX_evt_AIO_metric_backlash
 	category = negative
 	situation_log_category = developments
 	complete_icon_frame = GFX_situation_outcome_frame_red
