@@ -193,3 +193,58 @@ AIO_ecology_collapse = {
 }
 
 #endregion
+
+
+#region industry accidence
+
+# Industry interference pushes refining past its tolerances. Minerals and alloys
+# both climb, and the plant pays for it with everything it takes to keep running:
+# input, maintenance and the price of rebuilding. The stages replace each other,
+# so each one carries the full total.
+AIO_industry_accidence_1 = {
+	planet_jobs_minerals_produces_mult = 0.15
+	planet_jobs_alloys_produces_mult = 0.10
+	planet_jobs_minerals_upkeep_mult = 0.05
+	planet_buildings_upkeep_mult = 0.10
+	planet_structures_cost_mult = 0.20
+}
+
+AIO_industry_accidence_2 = {
+	planet_jobs_minerals_produces_mult = 0.30
+	planet_jobs_alloys_produces_mult = 0.20
+	planet_jobs_minerals_upkeep_mult = 0.15
+	planet_buildings_upkeep_mult = 0.25
+	planet_structures_cost_mult = 0.50
+}
+
+AIO_industry_accidence_3 = {
+	planet_jobs_minerals_produces_mult = 0.60
+	planet_jobs_alloys_produces_mult = 0.40
+	planet_jobs_minerals_upkeep_mult = 0.30
+	planet_buildings_upkeep_mult = 0.50
+	planet_structures_cost_mult = 1.00
+}
+
+# Timed shocks fired by the stage events. These expire on their own, so they
+# never need cleanup on abort.
+AIO_industry_overheat = {
+	planet_jobs_minerals_produces_mult = -0.40
+	planet_jobs_alloys_produces_mult = -0.20
+	planet_buildings_upkeep_mult = 0.30
+}
+
+AIO_industry_jam = {
+	planet_jobs_minerals_produces_mult = -0.20
+	planet_jobs_alloys_produces_mult = -0.10
+	planet_jobs_minerals_upkeep_mult = 0.25
+	planet_structures_cost_mult = 0.50
+}
+
+AIO_industry_collapse = {
+	planet_jobs_minerals_produces_mult = -0.25
+	planet_jobs_alloys_produces_mult = -0.15
+	planet_buildings_upkeep_mult = 0.50
+	planet_structures_cost_mult = 0.50
+}
+
+#endregion

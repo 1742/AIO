@@ -278,3 +278,61 @@
  AIO_interference_events.335.option: "$AIO_interference_accidence_option.abort$"
 
  #endregion
+
+ #region industry backlash
+
+ AIO_interference_industry_backlash: "Refine Manufacture Backlash: [Target.GetName]"
+ AIO_interference_industry_backlash_type: "Refine Manufacture Backlash"
+ AIO_interference_industry_backlash_desc: "The smelting districts of [Target.GetName] are running past their tolerances. The field makes every pass through the furnaces more thorough than the last: the mineral and alloy curves climb together, and the plant is wearing itself out at the same rate. We can pour equipment into cooling it down, or take the chance to study how far matter can be refined."
+ AIO_interference_industry_backlash_monthly_change_tooltip: "With Refine Manufacture active, $AIO_interference_accidence_backlash_monthly_change_tooltip$"
+
+ AIO_industry_stage_one: "Overrun"
+ AIO_industry_stage_one_desc: "The first change shows up on the output sheets: every mine and every furnace is beating its quota, and the equipment runs a little hotter than the design allows."
+ AIO_industry_stage_two: "Runaway Wear"
+ AIO_industry_stage_two_desc: "The wear is showing. Maintenance crews work around the clock, and it takes more ore every week to hold the same output."
+ AIO_industry_stage_three: "Redline Threshold"
+ AIO_industry_stage_three_desc: "The whole district is screaming at full load. Output is astonishing, rebuilding costs are just as astonishing, and every machine is one fault away from stopping."
+
+ AIO_industry_maintain: "$AIO_interference_accidence_maintain$"
+ AIO_industry_maintain_desc: "What magnificent plant. We should take this chance and see how far it can be squeezed."
+ AIO_industry_blockade: "$AIO_interference_accidence_blockade$"
+ AIO_industry_blockade_desc: "Cut the colonies off from the smelting districts and let the furnaces cool back to their design limits. The accident stops here."
+ AIO_industry_reverse: "$AIO_interference_accidence_reverse$"
+ AIO_industry_reverse_desc: "We have seen the rules this refining follows. Now we fit it with a safety valve."
+
+ AIO_industry_accidence_1: "Smelter Overload I"
+ AIO_industry_accidence_1_desc: "Every furnace beats its quota, and the crews have logged the temperature as an oddity rather than a fault."
+ AIO_industry_accidence_2: "Smelter Overload II"
+ AIO_industry_accidence_2_desc: "Replacement parts around the clock, and more ore every week for the same output."
+ AIO_industry_accidence_3: "Smelter Overload III"
+ AIO_industry_accidence_3_desc: "Full load everywhere, output and rebuilding costs in a race, and one fault away from silence."
+ AIO_industry_overheat: "Furnace Overheat"
+ AIO_industry_overheat_desc: "The furnaces threw off their control systems: the lines stopped for a cycle, and output is still climbing."
+ AIO_industry_jam: "Production Jam"
+ AIO_industry_jam_desc: "The plant runs flat out because it cannot stop: national upkeep is climbing, and so is the price of rebuilding any of it."
+ AIO_industry_collapse: "Industrial Shutdown"
+ AIO_industry_collapse_desc: "The whole smelting district went past its limit in a single instant and stopped together; this system will take years to bring its costs back down."
+
+ d_AIO_industry_slag_residue: "£blocker£ Slag Residue"
+ d_AIO_industry_slag_residue_desc: "Caked slag and burnt-out frames left where the smelting districts stopped. It cannot be cleared in any hurry."
+
+ AIO_interference_events.340.name: "Critical Refining"
+ AIO_interference_events.340.desc: "The field in [Target.GetName] is critical. The smelting districts here are running past their tolerances: mineral and alloy output both shoot upwards, and the service life of the plant is shrinking at the same rate. We can act now, or watch a little longer and see how far it goes."
+ AIO_interference_events.340.option: "Open the accident protocol."
+ AIO_interference_events.341.name: "The First Overheat"
+ AIO_interference_events.341.desc: "The first overheat: furnace temperatures ran away from the control systems, colony after colony raised alarms in [Target.GetName], the lines were forced to stop for a cycle - and output is still climbing."
+ AIO_interference_events.341.option: "Record the losses."
+ AIO_interference_events.342.name: "Production Jam"
+ AIO_interference_events.342.desc: "The lines are no longer under control. The whole district is being forced to run at full load, national upkeep is being pushed up, rebuilding costs are climbing with it, and the colonies are damaged again."
+ AIO_interference_events.342.option: "Keep the lines pressed."
+ AIO_interference_events.343.name: "Harnessed Backlash"
+ AIO_interference_events.343.desc: "Under the intervention of our finest scientists, the refining process in [Target.GetName] is pressed back inside its design range: the output remains, the runaway is over. $AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.343.option: "$AIO_interference_accidence_option.reverse$"
+ AIO_interference_events.344.name: "Industrial Shutdown"
+ AIO_interference_events.344.desc: "The whole smelting district went past its limit in a single instant and stopped together: colonies buried in slag, and rebuilding costs that will take years to come back down. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.344.option: "$AIO_interference_accidence_option.collapse$"
+ AIO_interference_events.345.name: "The Experiment Is Cancelled"
+ AIO_interference_events.345.desc: "The accident is over, and the excess load is bleeding off on its own. This time nothing permanent was lost. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.345.option: "$AIO_interference_accidence_option.abort$"
+
+ #endregion

@@ -99,6 +99,13 @@ AIO_interference_accidence_count = {
 							current_situation_approach = AIO_ecology_reverse
 						}
 					}
+					AND = {
+						is_situation_type = AIO_interference_industry_backlash
+						OR = {
+							current_situation_approach = AIO_industry_maintain
+							current_situation_approach = AIO_industry_reverse
+						}
+					}
 				}
 			}
 		}

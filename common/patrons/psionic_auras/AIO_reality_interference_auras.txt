@@ -34,6 +34,7 @@ AIO_reality_interference_aura = {
 					has_star_flag = AIO_energy_backlash_active
 					has_star_flag = AIO_balanced_backlash_active
 					has_star_flag = AIO_ecology_backlash_active
+					has_star_flag = AIO_industry_backlash_active
 					has_star_flag = AIO_interference_backlash_sealed
 				}
 				OR = {
@@ -54,6 +55,10 @@ AIO_reality_interference_aura = {
 			else_if = {
 				limit = { aura_owner = { has_policy_flag = AIO_interference_mode_ecology } }
 				AIO_interference_ecology_start = yes
+			}
+			else_if = {
+				limit = { aura_owner = { has_policy_flag = AIO_interference_mode_industry } }
+				AIO_interference_industry_start = yes
 			}
 		}
 		if = {

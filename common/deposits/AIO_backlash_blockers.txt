@@ -78,3 +78,29 @@ d_AIO_ecology_overgrowth = {
 		weight = 2
 	}
 }
+
+# The industry accident leaves this: slag heaps and burnt-out frames where the
+# smelting districts used to be.
+d_AIO_industry_slag_residue = {
+	time = 360
+	icon = d_metal_boneyard
+
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_jobs_minerals_produces_mult = -0.05
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+		}
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+}

@@ -277,3 +277,61 @@
  AIO_interference_events.335.option: "$AIO_interference_accidence_option.abort$"
 
  #endregion
+
+ #region 精炼制造反噬
+
+ AIO_interference_industry_backlash: "精炼制造反噬：[Target.GetName]"
+ AIO_interference_industry_backlash_type: "精炼制造反噬"
+ AIO_interference_industry_backlash_desc: "[Target.GetName]的冶炼产区正在越过自己的极限。干涉场让每一次提纯都比上一次更彻底：矿物与合金的曲线一起上翘，而炉子本身正以同样的速度磨掉自己。我们可以投入设备给它降温，也可以趁这个机会研究物质到底能被提纯到哪一步。"
+ AIO_interference_industry_backlash_monthly_change_tooltip: "精炼制造政策生效时，$AIO_interference_accidence_backlash_monthly_change_tooltip$"
+
+ AIO_industry_stage_one: "超额运转"
+ AIO_industry_stage_one_desc: "最先变化的是产量报表：每一座矿场、每一台炉子都超额完成，设备温度比设计值高了一点点。"
+ AIO_industry_stage_two: "损耗失控"
+ AIO_industry_stage_two_desc: "损耗开始显形。维护班组全天候换件，要维持同样的产出，每周得喂进去更多的矿石。"
+ AIO_industry_stage_three: "满负荷临界"
+ AIO_industry_stage_three_desc: "整片产区都在满负荷尖叫。产出惊人，重建成本同样惊人，而每一台设备都只差一次故障就会停下。"
+
+ AIO_industry_maintain: "$AIO_interference_accidence_maintain$"
+ AIO_industry_maintain_desc: "多么漂亮的产线啊，我们应该抓住这个机会，看看它到底能压榨到哪一步。"
+ AIO_industry_blockade: "$AIO_interference_accidence_blockade$"
+ AIO_industry_blockade_desc: "把殖民地与冶炼区隔开，让炉子回到设计温度，事故到此为止。"
+ AIO_industry_reverse: "$AIO_interference_accidence_reverse$"
+ AIO_industry_reverse_desc: "我们已经看清这套提纯过程的规律，接下来给它重新装上安全阀。"
+
+ AIO_industry_accidence_1: "冶炼过载 I"
+ AIO_industry_accidence_1_desc: "每台炉子都超额完成，班组把异常温度记成了“值得一提”，而不是“故障”。"
+ AIO_industry_accidence_2: "冶炼过载 II"
+ AIO_industry_accidence_2_desc: "备件昼夜不停换，产出不变，矿石消耗每周都在涨。"
+ AIO_industry_accidence_3: "冶炼过载 III"
+ AIO_industry_accidence_3_desc: "全线满负荷，产出与重建成本在赛跑，只差一次故障就会安静下来。"
+ AIO_industry_overheat: "熔炉过热"
+ AIO_industry_overheat_desc: "炉膛温度甩开了控制系统：产线被迫停了一轮，而产出还在上涨。"
+ AIO_industry_jam: "产线梗阻"
+ AIO_industry_jam_desc: "产线停不下来也不想停：全国维护开支在涨，重建任何一段的价格也在涨。"
+ AIO_industry_collapse: "工业停摆"
+ AIO_industry_collapse_desc: "整片冶炼区在同一瞬间越过极限，然后一起停摆；这个星系要数年才能把成本压回原样。"
+
+ d_AIO_industry_slag_residue: "£blocker£ 矿渣残层"
+ d_AIO_industry_slag_residue_desc: "冶炼区停摆后留下的板结矿渣与烧毁的骨架，短时间内清理不完。"
+
+ AIO_interference_events.340.name: "冶炼临界"
+ AIO_interference_events.340.desc: "[Target.GetName]的干涉场已经临界。这里的冶炼产区正在越过自己的极限：矿物与合金的产出一起上冲，而设备的寿命正以同样的速度缩短。我们可以现在就动手，也可以再看看它会走到哪一步。"
+ AIO_interference_events.340.option: "启动事故应对程序。"
+ AIO_interference_events.341.name: "第一次过热"
+ AIO_interference_events.341.desc: "第一次过热。炉膛温度甩开了控制系统，[Target.GetName]的殖民地接连报警，产线被迫停了一轮，而产出还在上涨。"
+ AIO_interference_events.341.option: "记录损耗。"
+ AIO_interference_events.342.name: "产线梗阻"
+ AIO_interference_events.342.desc: "产线不再受控制。整片产区被迫满负荷运转，全国的维护开支被推高，重建成本一起飞涨，殖民地再次受损。"
+ AIO_interference_events.342.option: "继续压住产线。"
+ AIO_interference_events.343.name: "驾驭反噬"
+ AIO_interference_events.343.desc: "在我们最强的科学家们的干预下，[Target.GetName]的提纯过程被重新压回设计区间，产量还在，失控结束了。$AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.343.option: "$AIO_interference_accidence_option.reverse$"
+ AIO_interference_events.344.name: "工业停摆"
+ AIO_interference_events.344.desc: "整片冶炼区在同一瞬间越过极限，然后一起停摆：殖民地遍地矿渣，重建成本要数年才能回落。$AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.344.option: "$AIO_interference_accidence_option.collapse$"
+ AIO_interference_events.345.name: "实验已中止"
+ AIO_interference_events.345.desc: "事故结束了，超额的负荷正在自行退去，这次没有留下真正的损伤。$AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.345.option: "$AIO_interference_accidence_option.abort$"
+
+ #endregion
