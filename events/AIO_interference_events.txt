@@ -358,6 +358,172 @@ situation_event = {
 #endregion
 
 
+#region Ecology accident.
+# Same shape as the accidents above: 330 opens it and grants the first stage,
+# 331/332 are the stage transitions and their discharges, 333 is a successful
+# reversal, 334 is the bloom running to the end, 335 is the accident ending
+# early. The shared notice 390 still tells whoever owns the system.
+
+situation_event = {
+	id = AIO_interference_events.330
+	is_triggered_only = yes
+	title = AIO_interference_events.330.name
+	desc = AIO_interference_events.330.desc
+	picture = GFX_evt_overgrown_city
+	option = {
+		name = AIO_interference_events.330.option
+		target = {
+			add_modifier = { modifier = AIO_ecology_accidence_1 }
+		}
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.331
+	is_triggered_only = yes
+	title = AIO_interference_events.331.name
+	desc = AIO_interference_events.331.desc
+	picture = GFX_evt_overgrown_city
+	option = {
+		name = AIO_interference_events.331.option
+		target = {
+			AIO_interference_ecology_strip_accidence = yes
+			add_modifier = { modifier = AIO_ecology_accidence_2 }
+		}
+		if = {
+			limit = { current_situation_approach = AIO_ecology_blockade }
+			target = {
+				every_system_planet_colony = {
+					add_planet_devastation = 10
+					add_modifier = { modifier = AIO_ecology_bloom days = 90 }
+				}
+				every_system_ship_colony = {
+					add_planet_devastation = 10
+					add_modifier = { modifier = AIO_ecology_bloom days = 90 }
+				}
+			}
+		}
+		else = {
+			target = {
+				every_system_planet_colony = {
+					add_planet_devastation = 20
+					add_modifier = { modifier = AIO_ecology_bloom days = 180 }
+				}
+				every_system_ship_colony = {
+					add_planet_devastation = 20
+					add_modifier = { modifier = AIO_ecology_bloom days = 180 }
+				}
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.332
+	is_triggered_only = yes
+	title = AIO_interference_events.332.name
+	desc = AIO_interference_events.332.desc
+	picture = GFX_evt_overgrown_city
+	option = {
+		name = AIO_interference_events.332.option
+		target = {
+			AIO_interference_ecology_strip_accidence = yes
+			add_modifier = { modifier = AIO_ecology_accidence_3 }
+		}
+		if = {
+			limit = { current_situation_approach = AIO_ecology_blockade }
+			target = {
+				every_system_planet_colony = { add_planet_devastation = 10 }
+				every_system_ship_colony = { add_planet_devastation = 10 }
+				add_modifier = { modifier = AIO_ecology_choke days = 180 }
+			}
+		}
+		else = {
+			target = {
+				every_system_planet_colony = { add_planet_devastation = 20 }
+				every_system_ship_colony = { add_planet_devastation = 20 }
+				add_modifier = { modifier = AIO_ecology_choke days = 360 }
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.333
+	is_triggered_only = yes
+	title = AIO_interference_events.333.name
+	desc = AIO_interference_events.333.desc
+	picture = GFX_evt_overgrown_city
+	option = {
+		name = AIO_interference_events.333.option
+		# Findings are shared by every doctrine; only the research branch differs.
+		AIO_interference_award = { RESOURCE = society_research }
+		target = {
+			remove_star_flag = AIO_ecology_backlash_active
+			set_star_flag = AIO_interference_backlash_sealed
+			AIO_interference_ecology_clear_accidence = yes
+		}
+		destroy_situation = this
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.334
+	is_triggered_only = yes
+	title = AIO_interference_events.334.name
+	desc = AIO_interference_events.334.desc
+	picture = GFX_evt_overgrown_city
+	option = {
+		name = AIO_interference_events.334.option
+		target = {
+			add_modifier = { modifier = AIO_ecology_collapse days = 1825 }
+			every_system_planet_colony = {
+				add_planet_devastation = 40
+				if = {
+					limit = { NOT = { has_deposit = d_AIO_ecology_overgrowth } }
+					add_blocker = { type = d_AIO_ecology_overgrowth }
+				}
+			}
+			every_system_ship_colony = {
+				add_planet_devastation = 40
+				if = {
+					limit = { NOT = { has_deposit = d_AIO_ecology_overgrowth } }
+					add_blocker = { type = d_AIO_ecology_overgrowth }
+				}
+			}
+		}
+		# Findings are shared by every doctrine; only the research branch differs.
+		AIO_interference_award = { RESOURCE = society_research }
+		AIO_interference_accident_notify = yes
+		target = {
+			remove_star_flag = AIO_ecology_backlash_active
+			AIO_interference_ecology_clear_accidence = yes
+		}
+		AIO_interference_reset_aura = yes
+		destroy_situation = this
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.335
+	is_triggered_only = yes
+	title = AIO_interference_events.335.name
+	desc = AIO_interference_events.335.desc
+	picture = GFX_evt_overgrown_city
+	option = {
+		name = AIO_interference_events.335.option
+		target = {
+			remove_star_flag = AIO_ecology_backlash_active
+			AIO_interference_ecology_clear_accidence = yes
+		}
+		AIO_interference_reset_aura = yes
+		destroy_situation = this
+	}
+}
+
+#endregion
+
+
 # Fired at whoever owns the system when an accident ends inside their borders, so
 # the third party is never left guessing where the scorch marks came from. The
 # opinion hit itself is applied by AIO_interference_accident_notify rather than

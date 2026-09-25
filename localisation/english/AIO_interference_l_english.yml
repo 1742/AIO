@@ -220,3 +220,61 @@
  AIO_interference_events.325.option: "$AIO_interference_accidence_option.abort$"
 
  #endregion
+
+ #region ecology backlash
+
+ AIO_interference_ecology_backlash: "Ecology Evolution Backlash: [Target.GetName]"
+ AIO_interference_ecology_backlash_type: "Ecology Evolution Backlash"
+ AIO_interference_ecology_backlash_desc: "The biosphere of [Target.GetName] is slipping out of control. The field makes every plant, every animal and every colony of them grow faster than they should: the output curve climbs, and the same vitality is eating through the infrastructure that carries it. We can pour equipment into holding it down, or take the chance to study why life can grow like this."
+ AIO_interference_ecology_backlash_monthly_change_tooltip: "With Ecology Evolution active, $AIO_interference_accidence_backlash_monthly_change_tooltip$"
+
+ AIO_ecology_stage_one: "Overgrowth"
+ AIO_ecology_stage_one_desc: "The first thing to change is the paperwork from the fields and the pens: nothing can be harvested fast enough, and everything grows quicker than it used to."
+ AIO_ecology_stage_two: "Runaway Biome"
+ AIO_ecology_stage_two_desc: "What grew no longer obeys. Roots get into the cable trenches, spores clog the vents, and maintenance runs around the clock just to keep the growth outside the habitable decks."
+ AIO_ecology_stage_three: "Biosphere Overload"
+ AIO_ecology_stage_three_desc: "The biosphere of the whole system has merged into one organism. Output is astonishing, and the same growth is feeding on the foundations, the conduits and the docks."
+
+ AIO_ecology_maintain: "$AIO_interference_accidence_maintain$"
+ AIO_ecology_maintain_desc: "What magnificent life. We should take this chance and see how far it can grow."
+ AIO_ecology_blockade: "$AIO_interference_accidence_blockade$"
+ AIO_ecology_blockade_desc: "Cut the colonies off from the biome and let each side keep to its own bounds. The accident stops here."
+ AIO_ecology_reverse: "$AIO_interference_accidence_reverse$"
+ AIO_ecology_reverse_desc: "We have seen the rules this growth follows. Now we draw it a new boundary."
+
+ AIO_ecology_accidence_1: "Ecological Swell I"
+ AIO_ecology_accidence_1_desc: "Every field and every pen overshoots its quota, and nobody has stopped to ask why."
+ AIO_ecology_accidence_2: "Ecological Swell II"
+ AIO_ecology_accidence_2_desc: "Roots in the conduits, spores in the vents, and the crews on permanent damage control."
+ AIO_ecology_accidence_3: "Ecological Swell III"
+ AIO_ecology_accidence_3_desc: "One organism, one appetite, and the infrastructure is on the menu."
+ AIO_ecology_bloom: "Ecological Bloom"
+ AIO_ecology_bloom_desc: "The growth went past every bound at once: spores and roots everywhere, and the colonies are paying for it."
+ AIO_ecology_choke: "Ecological Choke"
+ AIO_ecology_choke_desc: "The biome is strangling everything around it: terraforming stalls, and every job pays more for the privilege."
+ AIO_ecology_collapse: "Biosphere Collapse"
+ AIO_ecology_collapse_desc: "A whole biosphere overshot its limit and came down together; this system will take years to recover."
+
+ d_AIO_ecology_overgrowth: "£blocker£ Overgrowth Residue"
+ d_AIO_ecology_overgrowth_desc: "Thick mats of root and rot left where the bloom died back. Nothing can be planted on it with any confidence."
+
+ AIO_interference_events.330.name: "Critical Ecosystem"
+ AIO_interference_events.330.desc: "The field in [Target.GetName] is critical. The biosphere here is accelerating: output and growth both shoot upwards, and the structures that carry them are thinning out. We can act now, or watch a little longer and see how far it goes."
+ AIO_interference_events.330.option: "Open the accident protocol."
+ AIO_interference_events.331.name: "The First Bloom"
+ AIO_interference_events.331.desc: "The first bloom: spores and roots went past their tolerances at once, colony after colony raised alarms in [Target.GetName], the pens and the silos burst - and output is still climbing."
+ AIO_interference_events.331.option: "Record the losses."
+ AIO_interference_events.332.name: "Runaway Spread"
+ AIO_interference_events.332.desc: "The biome no longer needs a medium to spread through. The biosphere of the whole region has grown into a single body, national upkeep is being pushed up, the colonies are damaged again, and the output curve is still astonishing."
+ AIO_interference_events.332.option: "Keep the biome contained."
+ AIO_interference_events.333.name: "Harnessed Backlash"
+ AIO_interference_events.333.desc: "Under the intervention of our finest scientists, growth in [Target.GetName] is once again confined to its own bounds: the vitality remains, the runaway is over. $AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.333.option: "$AIO_interference_accidence_option.reverse$"
+ AIO_interference_events.334.name: "Biosphere Collapse"
+ AIO_interference_events.334.desc: "A whole biosphere went past its limit in a single instant and came down together: colonies buried under root and rot, and output that will take years to recover. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.334.option: "$AIO_interference_accidence_option.collapse$"
+ AIO_interference_events.335.name: "The Experiment Is Cancelled"
+ AIO_interference_events.335.desc: "The accident is over, and the surplus growth is receding on its own. This time nothing permanent was lost. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.335.option: "$AIO_interference_accidence_option.abort$"
+
+ #endregion

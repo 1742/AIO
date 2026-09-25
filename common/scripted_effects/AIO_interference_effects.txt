@@ -293,3 +293,47 @@ AIO_interference_energy_clear_accidence = {
 
 
 #endregion
+
+
+#region ecology accidence
+
+# Split the same way as the other accidents: stage modifiers, discharges and
+# findings live in the event options, while these effects only keep the books.
+
+# Scope: aura system.
+AIO_interference_ecology_start = {
+	set_star_flag = AIO_ecology_backlash_active
+	save_event_target_as = AIO_ecology_backlash_system
+	aura_owner = {
+		start_situation = {
+			type = AIO_interference_ecology_backlash
+			target = event_target:AIO_ecology_backlash_system
+		}
+	}
+}
+
+# Scope: system. Drops one escalation stage modifier if it is present.
+AIO_interference_ecology_strip_accidence = {
+	if = {
+		limit = { has_modifier = AIO_ecology_accidence_1 }
+		remove_modifier = AIO_ecology_accidence_1
+	}
+	if = {
+		limit = { has_modifier = AIO_ecology_accidence_2 }
+		remove_modifier = AIO_ecology_accidence_2
+	}
+	if = {
+		limit = { has_modifier = AIO_ecology_accidence_3 }
+		remove_modifier = AIO_ecology_accidence_3
+	}
+}
+
+# Scope: system. The stages are system modifiers, so colonies are cleared as
+# well in case a stage was ever cached on them.
+AIO_interference_ecology_clear_accidence = {
+	AIO_interference_ecology_strip_accidence = yes
+	every_system_planet_colony = { AIO_interference_ecology_strip_accidence = yes }
+	every_system_ship_colony = { AIO_interference_ecology_strip_accidence = yes }
+}
+
+#endregion

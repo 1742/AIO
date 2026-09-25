@@ -219,3 +219,61 @@
  AIO_interference_events.325.option: "$AIO_interference_accidence_option.abort$"
 
  #endregion
+
+ #region 生态演化反噬
+
+ AIO_interference_ecology_backlash: "生态演化反噬：[Target.GetName]"
+ AIO_interference_ecology_backlash_type: "生态演化反噬"
+ AIO_interference_ecology_backlash_desc: "[Target.GetName]的生物圈正在脱出控制。干涉场让每一株、每一只、每一群都比该有的样子长得更快：产出曲线一路上扬，而同一股生命力正在啃食承托它自己的设施。我们可以投入设备把它压下去，也可以趁这个机会研究生命为何能这样生长。"
+ AIO_interference_ecology_backlash_monthly_change_tooltip: "生态演化政策生效时，$AIO_interference_accidence_backlash_monthly_change_tooltip$"
+
+ AIO_ecology_stage_one: "过度生长"
+ AIO_ecology_stage_one_desc: "最先变化的是田地和养殖场的报表：什么都长得比过去更快，收割与捕捞都跟不上。"
+ AIO_ecology_stage_two: "失控群落"
+ AIO_ecology_stage_two_desc: "长出来的东西不再听话。根系钻进电缆槽，孢子堵住通风口，维护班次改成全天候，只为了把生长挡在生活区外面。"
+ AIO_ecology_stage_three: "生物圈过载"
+ AIO_ecology_stage_three_desc: "整个星系的生物圈已经连成一个生命体。产出惊人，而同一股生长正在吃地基、吃管线、吃船坞。"
+
+ AIO_ecology_maintain: "$AIO_interference_accidence_maintain$"
+ AIO_ecology_maintain_desc: "多么漂亮的生命啊，我们应该抓住这个机会，看看它到底能长到哪一步。"
+ AIO_ecology_blockade: "$AIO_interference_accidence_blockade$"
+ AIO_ecology_blockade_desc: "把殖民地与群落隔开，让两边各自停在自己的界限内，事故到此为止。"
+ AIO_ecology_reverse: "$AIO_interference_accidence_reverse$"
+ AIO_ecology_reverse_desc: "我们已经看清这股生长的规律，接下来给它重新画一条边界。"
+
+ AIO_ecology_accidence_1: "生态膨胀 I"
+ AIO_ecology_accidence_1_desc: "每一块田、每一间养殖舱都超出配额，还没有人停下来问为什么。"
+ AIO_ecology_accidence_2: "生态膨胀 II"
+ AIO_ecology_accidence_2_desc: "电缆槽里是根，通风口里是孢子，维护班组全天候处理损伤报告。"
+ AIO_ecology_accidence_3: "生态膨胀 III"
+ AIO_ecology_accidence_3_desc: "一个生命体，一份胃口，而基础设施正写在菜单上。"
+ AIO_ecology_bloom: "生态爆发"
+ AIO_ecology_bloom_desc: "生长一次性越过了全部界限：孢子与根系同时铺开，殖民地为此付出代价。"
+ AIO_ecology_choke: "生态窒息"
+ AIO_ecology_choke_desc: "群落正在勒住周围的一切：地形改造停摆，每个岗位都要多付一笔。"
+ AIO_ecology_collapse: "生物圈崩溃"
+ AIO_ecology_collapse_desc: "整个生物圈在同一瞬间越过极限，然后一起垮了下来；这个星系的产出要数年才能恢复。"
+
+ d_AIO_ecology_overgrowth: "£blocker£ 丛生残层"
+ d_AIO_ecology_overgrowth_desc: "生长退去后留下的厚厚一层根须与腐质，什么也种不踏实。"
+
+ AIO_interference_events.330.name: "生态临界"
+ AIO_interference_events.330.desc: "[Target.GetName]的干涉场已经临界。这里的生物圈正在加速：产出与生长一起向上冲，而承托它们的结构正在变薄。我们可以现在就动手，也可以再看看它会走到哪一步。"
+ AIO_interference_events.330.option: "启动事故应对程序。"
+ AIO_interference_events.331.name: "第一次爆发"
+ AIO_interference_events.331.desc: "第一次爆发。孢子与根系同时超出容限，[Target.GetName]的殖民地接连报警，养殖舱与筒仓被挤爆，而产出还在上涨。"
+ AIO_interference_events.331.option: "记录损失。"
+ AIO_interference_events.332.name: "失控扩散"
+ AIO_interference_events.332.desc: "群落不再需要介质来扩散。整片区域的生物圈已经长成一个整体，全国的维护开支被推高，殖民地再次受损，而产出曲线依旧惊人。"
+ AIO_interference_events.332.option: "继续隔离群落。"
+ AIO_interference_events.333.name: "驾驭反噬"
+ AIO_interference_events.333.desc: "在我们最强的科学家们的干预下，[Target.GetName]的生长被重新限制在各自的范围里，活力还在，失控结束了。$AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.333.option: "$AIO_interference_accidence_option.reverse$"
+ AIO_interference_events.334.name: "生物圈崩溃"
+ AIO_interference_events.334.desc: "整个生物圈在同一瞬间越过极限，然后一起垮了下来：殖民地被根系与腐质掩埋，产出要数年才能恢复。$AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.334.option: "$AIO_interference_accidence_option.collapse$"
+ AIO_interference_events.335.name: "实验已中止"
+ AIO_interference_events.335.desc: "事故结束了，过量的生长正在自行退去，这次没有留下真正的损伤。$AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.335.option: "$AIO_interference_accidence_option.abort$"
+
+ #endregion

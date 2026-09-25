@@ -52,3 +52,29 @@ d_AIO_balanced_uniform_residue = {
 		weight = 2
 	}
 }
+
+# The ecology accident leaves ground that the runaway biosphere has taken over
+# and made useless for anything else.
+d_AIO_ecology_overgrowth = {
+	time = 360
+	icon = d_dense_jungle
+
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_jobs_food_produces_mult = -0.05
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+		}
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+}

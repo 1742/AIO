@@ -1,52 +1,3 @@
-#region energy accidence
-
-# The accident escalates in three stages. Each stage is its own modifier so one
-# stage can be tuned or dropped without touching the others.
-# Benefit and cost never share an axis: the field pays in infrastructure,
-# stability and fleet shielding, never in the energy output it boosts.
-AIO_energy_accidence_1 = {
-	planet_jobs_energy_produces_mult = 0.15
-	planet_jobs_physics_research_produces_mult = 0.05
-	planet_building_build_speed_mult = -0.10
-	planet_stability_add = -3
-}
-
-AIO_energy_accidence_2 = {
-	planet_jobs_energy_produces_mult = 0.35
-	planet_jobs_physics_research_produces_mult = 0.10
-	ship_weapon_damage = 0.10
-	planet_building_build_speed_mult = -0.25
-	planet_stability_add = -5
-	ship_shield_mult = -0.05
-}
-
-AIO_energy_accidence_3 = {
-	planet_jobs_energy_produces_mult = 0.70
-	planet_jobs_physics_research_produces_mult = 0.20
-	ship_weapon_damage = 0.20
-	planet_building_build_speed_mult = -0.50
-	planet_stability_add = -10
-	ship_shield_mult = -0.15
-}
-
-# Timed shocks fired by the stage events. These expire on their own, so they
-# never need cleanup on abort.
-AIO_energy_blackout = {
-	planet_jobs_energy_produces_mult = -0.50
-	planet_building_build_speed_mult = -0.50
-}
-
-AIO_energy_grid_drain = {
-	planet_jobs_energy_produces_mult = -0.10
-}
-
-AIO_energy_grid_collapse = {
-	planet_jobs_energy_produces_mult = -0.20
-}
-
-#endregion
-
-
 #region balanced accidence
 
 # Balanced interference pays out a little of everything, so its accident is the
@@ -123,6 +74,122 @@ AIO_balanced_collapse = {
 	planet_jobs_alloys_produces_mult = -0.10
 	planet_jobs_upkeep_mult = 0.25
 	planet_max_districts_add = -1
+}
+
+#endregion
+
+
+#region energy accidence
+
+# The accident escalates in three stages. Each stage is its own modifier so one
+# stage can be tuned or dropped without touching the others.
+# Benefit and cost never share an axis: the field pays in infrastructure,
+# stability and fleet shielding, never in the energy output it boosts.
+AIO_energy_accidence_1 = {
+	planet_jobs_energy_produces_mult = 0.15
+	planet_jobs_physics_research_produces_mult = 0.05
+	planet_building_build_speed_mult = -0.10
+	planet_stability_add = -3
+}
+
+AIO_energy_accidence_2 = {
+	planet_jobs_energy_produces_mult = 0.35
+	planet_jobs_physics_research_produces_mult = 0.10
+	ship_weapon_damage = 0.10
+	planet_building_build_speed_mult = -0.25
+	planet_stability_add = -5
+	ship_shield_mult = -0.05
+}
+
+AIO_energy_accidence_3 = {
+	planet_jobs_energy_produces_mult = 0.70
+	planet_jobs_physics_research_produces_mult = 0.20
+	ship_weapon_damage = 0.20
+	planet_building_build_speed_mult = -0.50
+	planet_stability_add = -10
+	ship_shield_mult = -0.15
+}
+
+# Timed shocks fired by the stage events. These expire on their own, so they
+# never need cleanup on abort.
+AIO_energy_blackout = {
+	planet_jobs_energy_produces_mult = -0.50
+	planet_building_build_speed_mult = -0.50
+}
+
+AIO_energy_grid_drain = {
+	planet_jobs_energy_produces_mult = -0.10
+}
+
+AIO_energy_grid_collapse = {
+	planet_jobs_energy_produces_mult = -0.20
+}
+
+#endregion
+
+
+#region ecology accidence
+
+# Ecology interference makes living systems grow faster than the infrastructure
+# around them can carry: food, biomass, the society that studies them and the
+# population itself all climb, while the overgrowth makes the colonies steadily
+# harder to live in.
+# The stages replace each other, so each one carries the full total.
+AIO_ecology_accidence_1 = {
+	planet_jobs_food_produces_mult = 0.10
+	planet_jobs_biomass_produces_mult = 0.05
+	planet_jobs_society_research_produces_mult = 0.03
+	terraform_speed_mult = 0.10
+	logistic_growth_mult = 0.05
+	planet_pop_assembly_mult = 0.05
+	pop_environment_tolerance = -0.05
+	planet_pops_upkeep_mult = 0.05
+}
+
+AIO_ecology_accidence_2 = {
+	planet_jobs_food_produces_mult = 0.25
+	planet_jobs_biomass_produces_mult = 0.12
+	planet_jobs_society_research_produces_mult = 0.07
+	terraform_speed_mult = 0.25
+	logistic_growth_mult = 0.12
+	planet_pop_assembly_mult = 0.12
+	pop_environment_tolerance = -0.10
+	planet_pops_upkeep_mult = 0.15
+	planet_max_districts_add = -1
+}
+
+AIO_ecology_accidence_3 = {
+	planet_jobs_food_produces_mult = 0.50
+	planet_jobs_biomass_produces_mult = 0.25
+	planet_jobs_society_research_produces_mult = 0.15
+	terraform_speed_mult = 0.50
+	logistic_growth_mult = 0.25
+	planet_pop_assembly_mult = 0.25
+	pop_environment_tolerance = -0.20
+	planet_pops_upkeep_mult = 0.30
+	planet_max_districts_add = -2
+}
+
+# Timed shocks fired by the stage events. These expire on their own, so they
+# never need cleanup on abort.
+AIO_ecology_bloom = {
+	planet_jobs_food_produces_mult = -0.40
+	planet_jobs_biomass_produces_mult = -0.20
+	planet_pops_upkeep_mult = 0.20
+}
+
+AIO_ecology_choke = {
+	planet_jobs_food_produces_mult = -0.20
+	planet_jobs_biomass_produces_mult = -0.10
+	terraform_speed_mult = -0.50
+	pop_environment_tolerance = -0.10
+}
+
+AIO_ecology_collapse = {
+	planet_jobs_food_produces_mult = -0.25
+	planet_jobs_biomass_produces_mult = -0.12
+	logistic_growth_mult = -0.10
+	planet_pops_upkeep_mult = 0.25
 }
 
 #endregion
