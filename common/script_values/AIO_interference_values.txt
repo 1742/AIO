@@ -69,7 +69,8 @@ AIO_interference_proof_share = {
 	min = 0
 }
 
-# Only running experiments and reversals share the national proof workforce.
+# Only running experiments and reversals, of any doctrine, share the national
+# proof workforce.
 AIO_interference_accidence_count = {
 	complex_trigger_modifier = {
 		trigger = count_situation
@@ -82,6 +83,13 @@ AIO_interference_accidence_count = {
 						OR = {
 							current_situation_approach = AIO_energy_maintain
 							current_situation_approach = AIO_energy_reverse
+						}
+					}
+					AND = {
+						is_situation_type = AIO_interference_balanced_backlash
+						OR = {
+							current_situation_approach = AIO_balanced_maintain
+							current_situation_approach = AIO_balanced_reverse
 						}
 					}
 				}

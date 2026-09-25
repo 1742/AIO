@@ -32,6 +32,7 @@ AIO_reality_interference_aura = {
 				is_aura_intensity_level = 3
 				NOT = {
 					has_star_flag = AIO_energy_backlash_active
+					has_star_flag = AIO_balanced_backlash_active
 					has_star_flag = AIO_interference_backlash_sealed
 				}
 				OR = {
@@ -39,9 +40,15 @@ AIO_reality_interference_aura = {
 					AIO_is_nearby_interference_source = { OWNER = aura_owner }
 				}
 			}
+			# Each doctrine rolls its own accident; the star flags above keep them from
+			# stacking on the same system.
 			if = {
 				limit = { aura_owner = { has_policy_flag = AIO_interference_mode_energy } }
 				AIO_interference_energy_start = yes
+			}
+			else_if = {
+				limit = { aura_owner = { has_policy_flag = AIO_interference_mode_balanced } }
+				AIO_interference_balanced_start = yes
 			}
 		}
 		if = {

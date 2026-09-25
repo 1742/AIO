@@ -27,7 +27,7 @@ owner_planet_modifier = {
     planet_max_districts_add = 1
 }
 owner_planet_modifier = {
-	potential = { owner = { has_country_flag = AIO_interference_balance_residual } }
+	potential = { owner = { has_country_flag = AIO_interference_balanced_residual } }
 	planet_jobs_energy_produces_mult = 0.01
 	planet_jobs_minerals_produces_mult = 0.01
 	planet_jobs_food_produces_mult = 0.01

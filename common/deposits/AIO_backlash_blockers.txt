@@ -25,3 +25,30 @@ d_AIO_energy_cascade_residue = {
 		weight = 2
 	}
 }
+
+# The balanced accident leaves this instead. Same shape as the energy residue,
+# but the ground is flattened rather than charged: nothing can be built to stand
+# out on it.
+d_AIO_balanced_uniform_residue = {
+	time = 360
+	icon = d_crater
+
+	category = deposit_cat_blockers
+
+	potential = { always = no }
+
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1000
+		}
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+}

@@ -111,7 +111,7 @@ AIO_interference_recount_sources = {
 # Reset level when change policy
 # scope: country
 AIO_interference_change_policy = {
-	remove_country_flag = AIO_interference_balance_residual
+	remove_country_flag = AIO_interference_balanced_residual
 	remove_country_flag = AIO_interference_energy_residual
 	remove_country_flag = AIO_interference_ecology_residual
 	remove_country_flag = AIO_interference_industry_residual
@@ -135,6 +135,116 @@ AIO_interference_change_policy = {
 		remove_star_flag = AIO_interference_backlash_sealed
 	}
 }
+
+
+#region accidence helpers
+
+# Shared by every doctrine's accident. The type-specific parts (which stage
+# modifiers, which discharges) stay with the type; what every ending does in
+# common lives here, so a third and a fourth accident can reuse it as is.
+
+# Scope: situation. Returns this system's field to the start of level 2. The
+# first value of level 2 is 1001: level 1 ends at 1000. Used by the endings that
+# let the field fall back instead of sealing it.
+AIO_interference_reset_aura = {
+	if = {
+		limit = { exists = target }
+		target = {
+			if = {
+				limit = {
+					has_psionic_aura = AIO_reality_interference_aura
+					aura_owner = { is_same_value = root.owner }
+				}
+				set_aura_intensity = 1001
+			}
+		}
+	}
+}
+
+# Scope: situation. Every ending pays out the data the accident produced, so no
+# approach is a pure loss. RESOURCE is the research branch that doctrine is read
+# through; "value" is months of the owner's own income, clamped so a young empire
+# still gets something and a late one cannot bank the whole tree: 24 / 500 /
+# 1000000 is the scale vanilla uses for its tier 3 research reward.
+AIO_interference_award = {
+	owner = {
+		add_monthly_resource_mult = {
+			resource = $RESOURCE$
+			value = @tier3researchreward
+			min = @tier3researchmin
+			max = @tier3researchmax
+		}
+		complete_crisis_objective = crisobj_AIO_research_thesis
+	}
+}
+
+# Scope: situation. If the accident sits inside someone else's borders, tell the
+# owner, and let the opinion hit land: it is accumulative, so repeat accidents
+# add up, the way vanilla's opinion_cosmogenesis_thesis does.
+AIO_interference_accident_notify = {
+	if = {
+		limit = { exists = target }
+		owner = { save_event_target_as = AIO_accident_owner }
+		target = {
+			random_system_planet = {
+				limit = {
+					is_colony = yes
+					has_owner = yes
+					NOT = { owner = { is_same_value = root.owner } }
+				}
+				owner = {
+					country_event = { id = AIO_interference_events.390 }
+				}
+			}
+		}
+	}
+}
+
+#endregion
+
+
+#region balanced accidence
+
+# Split the same way as the energy accident: stage modifiers, discharges and
+# findings live in the event options, while these effects only keep the books.
+
+# Scope: aura system.
+AIO_interference_balanced_start = {
+	set_star_flag = AIO_balanced_backlash_active
+	save_event_target_as = AIO_balanced_backlash_system
+	aura_owner = {
+		start_situation = {
+			type = AIO_interference_balanced_backlash
+			target = event_target:AIO_balanced_backlash_system
+		}
+	}
+}
+
+# Scope: system. Drops one escalation stage modifier if it is present.
+AIO_interference_balanced_strip_accidence = {
+	if = {
+		limit = { has_modifier = AIO_balanced_accidence_1 }
+		remove_modifier = AIO_balanced_accidence_1
+	}
+	if = {
+		limit = { has_modifier = AIO_balanced_accidence_2 }
+		remove_modifier = AIO_balanced_accidence_2
+	}
+	if = {
+		limit = { has_modifier = AIO_balanced_accidence_3 }
+		remove_modifier = AIO_balanced_accidence_3
+	}
+}
+
+# Scope: system. The stages are system modifiers, so colonies are cleared as
+# well in case a stage was ever cached on them.
+AIO_interference_balanced_clear_accidence = {
+	AIO_interference_balanced_strip_accidence = yes
+	every_system_planet_colony = { AIO_interference_balanced_strip_accidence = yes }
+	every_system_ship_colony = { AIO_interference_balanced_strip_accidence = yes }
+}
+
+#endregion
 
 
 #region energy accidence
@@ -180,59 +290,6 @@ AIO_interference_energy_clear_accidence = {
 	every_system_ship_colony = { AIO_interference_energy_strip_accidence = yes }
 }
 
-# Scope: situation. Returns this system's field to the start of level 2. The
-# first value of level 2 is 1001: level 1 ends at 1000.
-AIO_interference_energy_reset_aura = {
-	if = {
-		limit = { exists = target }
-		target = {
-			if = {
-				limit = {
-					has_psionic_aura = AIO_reality_interference_aura
-					aura_owner = { is_same_value = root.owner }
-				}
-				set_aura_intensity = 1001
-			}
-		}
-	}
-}
 
-# Scope: situation. If the accident sits inside someone else's borders, tell the
-# owner, and let the opinion hit land: it is accumulative, so repeat accidents
-# add up, the way vanilla's opinion_cosmogenesis_thesis does.
-AIO_interference_accident_notify = {
-	if = {
-		limit = { exists = target }
-		owner = { save_event_target_as = AIO_accident_owner }
-		target = {
-			random_system_planet = {
-				limit = {
-					is_colony = yes
-					has_owner = yes
-					NOT = { owner = { is_same_value = root.owner } }
-				}
-				owner = {
-					country_event = { id = AIO_interference_events.316 }
-				}
-			}
-		}
-	}
-}
-
-# Scope: situation. Every ending pays out the data the accident produced, so no
-# approach is a pure loss. "value" is months of the owner's own income, clamped so
-# a young empire still gets something and a late one cannot bank the whole tree:
-# 24 / 500 / 1000000 is the scale vanilla uses for its tier 3 research reward.
-AIO_interference_energy_award = {
-	owner = {
-		add_monthly_resource_mult = {
-			resource = physics_research
-			value = @tier3researchreward
-			min = @tier3researchmin
-			max = @tier3researchmax
-		}
-		complete_crisis_objective = crisobj_AIO_research_thesis
-	}
-}
 
 #endregion

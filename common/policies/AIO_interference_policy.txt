@@ -7,7 +7,7 @@ policy_AIO_interference_doctrine = {
 		name = policy_AIO_interference_balanced
 		policy_flags = { AIO_interference_mode_balanced }
 		on_disabled = {
-			AIO_interference_change_policy = { OLD_POLICY = balance }
+			AIO_interference_change_policy = { OLD_POLICY = balanced }
 		}
 	}
 	option = {
