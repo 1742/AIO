@@ -12,3 +12,11 @@ AIO_is_nearby_interference_source = {
 		limit = { has_star_flag = AIO_interference_source }
 	}
 }
+
+# Scope: system. Includes both planetary and ship colonies.
+AIO_interference_has_colony = {
+	OR = {
+		any_system_planet_colony = { always = yes }
+		any_system_ship_colony = { always = yes }
+	}
+}

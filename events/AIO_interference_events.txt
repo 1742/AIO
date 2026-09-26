@@ -29,7 +29,14 @@ situation_event = {
 	id = AIO_interference_events.310
 	is_triggered_only = yes
 	title = AIO_interference_events.310.name
-	desc = AIO_interference_events.310.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.310.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.310.desc.no_colony
+	}
 	picture = GFX_evt_AIO_balanced_backlash
 	option = {
 		name = AIO_interference_events.310.option
@@ -43,7 +50,14 @@ situation_event = {
 	id = AIO_interference_events.311
 	is_triggered_only = yes
 	title = AIO_interference_events.311.name
-	desc = AIO_interference_events.311.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.311.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.311.desc.no_colony
+	}
 	picture = GFX_evt_AIO_balanced_backlash_imbalance
 	option = {
 		name = AIO_interference_events.311.option
@@ -83,7 +97,14 @@ situation_event = {
 	id = AIO_interference_events.312
 	is_triggered_only = yes
 	title = AIO_interference_events.312.name
-	desc = AIO_interference_events.312.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.312.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.312.desc.no_colony
+	}
 	picture = GFX_evt_AIO_balanced_backlash
 	option = {
 		name = AIO_interference_events.312.option
@@ -113,7 +134,14 @@ situation_event = {
 	id = AIO_interference_events.313
 	is_triggered_only = yes
 	title = AIO_interference_events.313.name
-	desc = AIO_interference_events.313.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.313.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.313.desc.no_colony
+	}
 	picture = GFX_evt_AIO_balanced_backlash_mastered
 	option = {
 		name = AIO_interference_events.313.option
@@ -132,7 +160,14 @@ situation_event = {
 	id = AIO_interference_events.314
 	is_triggered_only = yes
 	title = AIO_interference_events.314.name
-	desc = AIO_interference_events.314.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.314.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.314.desc.no_colony
+	}
 	picture = GFX_evt_AIO_balanced_backlash_collapse
 	option = {
 		name = AIO_interference_events.314.option
@@ -169,7 +204,14 @@ situation_event = {
 	id = AIO_interference_events.315
 	is_triggered_only = yes
 	title = AIO_interference_events.315.name
-	desc = AIO_interference_events.315.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.315.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.315.desc.no_colony
+	}
 	picture = GFX_evt_AIO_balanced_backlash_aborted
 	option = {
 		name = AIO_interference_events.315.option
@@ -202,7 +244,14 @@ situation_event = {
 	id = AIO_interference_events.320
 	is_triggered_only = yes
 	title = AIO_interference_events.320.name
-	desc = AIO_interference_events.320.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.320.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.320.desc.no_colony
+	}
 	picture = GFX_evt_AIO_energy_backlash
 	option = {
 		name = AIO_interference_events.320.option
@@ -216,7 +265,14 @@ situation_event = {
 	id = AIO_interference_events.321
 	is_triggered_only = yes
 	title = AIO_interference_events.321.name
-	desc = AIO_interference_events.321.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.321.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.321.desc.no_colony
+	}
 	picture = GFX_evt_AIO_energy_backlash_surge
 	option = {
 		name = AIO_interference_events.321.option
@@ -256,7 +312,14 @@ situation_event = {
 	id = AIO_interference_events.322
 	is_triggered_only = yes
 	title = AIO_interference_events.322.name
-	desc = AIO_interference_events.322.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.322.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.322.desc.no_colony
+	}
 	picture = GFX_evt_AIO_energy_backlash
 	option = {
 		name = AIO_interference_events.322.option
@@ -286,7 +349,14 @@ situation_event = {
 	id = AIO_interference_events.323
 	is_triggered_only = yes
 	title = AIO_interference_events.323.name
-	desc = AIO_interference_events.323.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.323.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.323.desc.no_colony
+	}
 	picture = GFX_evt_AIO_energy_backlash_mastered
 	option = {
 		name = AIO_interference_events.323.option
@@ -305,7 +375,14 @@ situation_event = {
 	id = AIO_interference_events.324
 	is_triggered_only = yes
 	title = AIO_interference_events.324.name
-	desc = AIO_interference_events.324.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.324.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.324.desc.no_colony
+	}
 	picture = GFX_evt_AIO_energy_backlash_collapse
 	option = {
 		name = AIO_interference_events.324.option
@@ -342,7 +419,14 @@ situation_event = {
 	id = AIO_interference_events.325
 	is_triggered_only = yes
 	title = AIO_interference_events.325.name
-	desc = AIO_interference_events.325.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.325.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.325.desc.no_colony
+	}
 	picture = GFX_evt_AIO_energy_backlash_aborted
 	option = {
 		name = AIO_interference_events.325.option
@@ -368,7 +452,14 @@ situation_event = {
 	id = AIO_interference_events.330
 	is_triggered_only = yes
 	title = AIO_interference_events.330.name
-	desc = AIO_interference_events.330.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.330.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.330.desc.no_colony
+	}
 	picture = GFX_evt_alien_nature
 	option = {
 		name = AIO_interference_events.330.option
@@ -382,7 +473,14 @@ situation_event = {
 	id = AIO_interference_events.331
 	is_triggered_only = yes
 	title = AIO_interference_events.331.name
-	desc = AIO_interference_events.331.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.331.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.331.desc.no_colony
+	}
 	picture = GFX_evt_aggressive_flora
 	option = {
 		name = AIO_interference_events.331.option
@@ -422,7 +520,14 @@ situation_event = {
 	id = AIO_interference_events.332
 	is_triggered_only = yes
 	title = AIO_interference_events.332.name
-	desc = AIO_interference_events.332.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.332.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.332.desc.no_colony
+	}
 	picture = GFX_evt_astral_rift_garden_2
 	option = {
 		name = AIO_interference_events.332.option
@@ -452,7 +557,14 @@ situation_event = {
 	id = AIO_interference_events.333
 	is_triggered_only = yes
 	title = AIO_interference_events.333.name
-	desc = AIO_interference_events.333.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.333.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.333.desc.no_colony
+	}
 	picture = GFX_evt_astral_rift_tropical_habitat
 	option = {
 		name = AIO_interference_events.333.option
@@ -471,7 +583,14 @@ situation_event = {
 	id = AIO_interference_events.334
 	is_triggered_only = yes
 	title = AIO_interference_events.334.name
-	desc = AIO_interference_events.334.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.334.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.334.desc.no_colony
+	}
 	picture = GFX_evt_astral_rift_garden_2_fire
 	option = {
 		name = AIO_interference_events.334.option
@@ -508,7 +627,14 @@ situation_event = {
 	id = AIO_interference_events.335
 	is_triggered_only = yes
 	title = AIO_interference_events.335.name
-	desc = AIO_interference_events.335.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.335.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.335.desc.no_colony
+	}
 	picture = GFX_evt_overgrown_city
 	option = {
 		name = AIO_interference_events.335.option
@@ -534,7 +660,14 @@ situation_event = {
 	id = AIO_interference_events.340
 	is_triggered_only = yes
 	title = AIO_interference_events.340.name
-	desc = AIO_interference_events.340.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.340.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.340.desc.no_colony
+	}
 	picture = GFX_evt_AIO_industry_backlash
 	option = {
 		name = AIO_interference_events.340.option
@@ -548,7 +681,14 @@ situation_event = {
 	id = AIO_interference_events.341
 	is_triggered_only = yes
 	title = AIO_interference_events.341.name
-	desc = AIO_interference_events.341.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.341.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.341.desc.no_colony
+	}
 	picture = GFX_evt_AIO_industry_backlash_overheat
 	option = {
 		name = AIO_interference_events.341.option
@@ -588,7 +728,14 @@ situation_event = {
 	id = AIO_interference_events.342
 	is_triggered_only = yes
 	title = AIO_interference_events.342.name
-	desc = AIO_interference_events.342.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.342.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.342.desc.no_colony
+	}
 	picture = GFX_evt_AIO_industry_backlash
 	option = {
 		name = AIO_interference_events.342.option
@@ -618,7 +765,14 @@ situation_event = {
 	id = AIO_interference_events.343
 	is_triggered_only = yes
 	title = AIO_interference_events.343.name
-	desc = AIO_interference_events.343.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.343.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.343.desc.no_colony
+	}
 	picture = GFX_evt_AIO_industry_backlash_mastered
 	option = {
 		name = AIO_interference_events.343.option
@@ -637,7 +791,14 @@ situation_event = {
 	id = AIO_interference_events.344
 	is_triggered_only = yes
 	title = AIO_interference_events.344.name
-	desc = AIO_interference_events.344.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.344.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.344.desc.no_colony
+	}
 	picture = GFX_evt_AIO_industry_backlash_collapse
 	option = {
 		name = AIO_interference_events.344.option
@@ -674,7 +835,14 @@ situation_event = {
 	id = AIO_interference_events.345
 	is_triggered_only = yes
 	title = AIO_interference_events.345.name
-	desc = AIO_interference_events.345.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.345.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.345.desc.no_colony
+	}
 	picture = GFX_evt_AIO_industry_backlash_aborted
 	option = {
 		name = AIO_interference_events.345.option
@@ -700,7 +868,14 @@ situation_event = {
 	id = AIO_interference_events.350
 	is_triggered_only = yes
 	title = AIO_interference_events.350.name
-	desc = AIO_interference_events.350.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.350.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.350.desc.no_colony
+	}
 	picture = GFX_evt_AIO_metric_backlash
 	option = {
 		name = AIO_interference_events.350.option
@@ -714,7 +889,14 @@ situation_event = {
 	id = AIO_interference_events.351
 	is_triggered_only = yes
 	title = AIO_interference_events.351.name
-	desc = AIO_interference_events.351.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.351.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.351.desc.no_colony
+	}
 	picture = GFX_evt_AIO_metric_backlash_rebound
 	option = {
 		name = AIO_interference_events.351.option
@@ -754,7 +936,14 @@ situation_event = {
 	id = AIO_interference_events.352
 	is_triggered_only = yes
 	title = AIO_interference_events.352.name
-	desc = AIO_interference_events.352.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.352.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.352.desc.no_colony
+	}
 	picture = GFX_evt_AIO_metric_backlash
 	option = {
 		name = AIO_interference_events.352.option
@@ -784,7 +973,14 @@ situation_event = {
 	id = AIO_interference_events.353
 	is_triggered_only = yes
 	title = AIO_interference_events.353.name
-	desc = AIO_interference_events.353.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.353.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.353.desc.no_colony
+	}
 	picture = GFX_evt_AIO_metric_backlash_mastered
 	option = {
 		name = AIO_interference_events.353.option
@@ -803,7 +999,14 @@ situation_event = {
 	id = AIO_interference_events.354
 	is_triggered_only = yes
 	title = AIO_interference_events.354.name
-	desc = AIO_interference_events.354.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.354.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.354.desc.no_colony
+	}
 	picture = GFX_evt_AIO_metric_backlash_collapse
 	option = {
 		name = AIO_interference_events.354.option
@@ -840,7 +1043,14 @@ situation_event = {
 	id = AIO_interference_events.355
 	is_triggered_only = yes
 	title = AIO_interference_events.355.name
-	desc = AIO_interference_events.355.desc
+	desc = {
+		trigger = { target = { AIO_interference_has_colony = yes } }
+		text = AIO_interference_events.355.desc.colony
+	}
+	desc = {
+		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.355.desc.no_colony
+	}
 	picture = GFX_evt_AIO_metric_backlash_aborted
 	option = {
 		name = AIO_interference_events.355.option
