@@ -18,1069 +18,1768 @@ country_event = {
 }
 
 
-#region Balanced accident.
-# Same shape as the energy accident below: 310 opens it and grants the first
-# stage, 311/312 are the stage transitions and their discharges, 313 is a
-# successful reversal, 314 is the leveling running to the end, 315 is the
-# accident ending early. The shared notice 390 still tells whoever owns the
-# system.
+#region Balanced accident
+
+#region effect
 
 situation_event = {
 	id = AIO_interference_events.310
+	hide_window = yes
 	is_triggered_only = yes
-	title = AIO_interference_events.310.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.310.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.310.desc.no_colony
-	}
-	picture = GFX_evt_AIO_balanced_backlash
-	option = {
-		name = AIO_interference_events.310.option
-		target = {
-			add_modifier = { modifier = AIO_balanced_accidence_1 }
-		}
+	immediate = {
+		AIO_interference_accidence_balanced_stage_1 = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.410 }
 	}
 }
 
 situation_event = {
 	id = AIO_interference_events.311
+	hide_window = yes
 	is_triggered_only = yes
-	title = AIO_interference_events.311.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.311.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.311.desc.no_colony
-	}
-	picture = GFX_evt_AIO_balanced_backlash_imbalance
-	option = {
-		name = AIO_interference_events.311.option
-		target = {
-			AIO_interference_balanced_strip_accidence = yes
-			add_modifier = { modifier = AIO_balanced_accidence_2 }
-		}
+	immediate = {
 		if = {
 			limit = { current_situation_approach = AIO_balanced_blockade }
-			target = {
-				every_system_planet_colony = {
-					add_planet_devastation = 10
-					add_modifier = { modifier = AIO_balanced_misalignment days = 90 }
-				}
-				every_system_ship_colony = {
-					add_planet_devastation = 10
-					add_modifier = { modifier = AIO_balanced_misalignment days = 90 }
-				}
-			}
+			AIO_interference_accidence_balanced_stage_2 = { DEVASTATION = 10 }
 		}
 		else = {
-			target = {
-				every_system_planet_colony = {
-					add_planet_devastation = 20
-					add_modifier = { modifier = AIO_balanced_misalignment days = 180 }
-				}
-				every_system_ship_colony = {
-					add_planet_devastation = 20
-					add_modifier = { modifier = AIO_balanced_misalignment days = 180 }
-				}
-			}
+			AIO_interference_accidence_balanced_stage_2 = { DEVASTATION = 20 }
 		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.411 }
 	}
 }
 
 situation_event = {
 	id = AIO_interference_events.312
+	hide_window = yes
 	is_triggered_only = yes
-	title = AIO_interference_events.312.name
+	immediate = {
+		if = {
+			limit = { current_situation_approach = AIO_balanced_blockade }
+			AIO_interference_accidence_balanced_stage_3 = { DEVASTATION = 10 }
+		}
+		else = {
+			AIO_interference_accidence_balanced_stage_3 = { DEVASTATION = 20 }
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.412 }
+	}
+}
+
+# reverse
+situation_event = {
+	id = AIO_interference_events.313
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		target = {
+			remove_star_flag = AIO_balanced_backlash_active
+			set_star_flag = AIO_interference_backlash_sealed
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.413 }
+		destroy_situation = this
+	}
+}
+
+# collapse
+situation_event = {
+	id = AIO_interference_events.314
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_balanced_collapse = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.414 }
+		destroy_situation = this
+	}
+}
+
+# abort
+situation_event = {
+	id = AIO_interference_events.315
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_balanced_abort = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.415 }
+		destroy_situation = this
+	}
+}
+
+#endregion
+
+#region notify
+# from: situation
+
+country_event = {
+	id = AIO_interference_events.410
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.410.name
 	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.312.desc.colony
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.410.desc.maker.colony
 	}
 	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.312.desc.no_colony
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.410.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.410.desc.other
 	}
 	picture = GFX_evt_AIO_balanced_backlash
 	option = {
-		name = AIO_interference_events.312.option
-		target = {
-			AIO_interference_balanced_strip_accidence = yes
-			add_modifier = { modifier = AIO_balanced_accidence_3 }
-		}
-		if = {
-			limit = { current_situation_approach = AIO_balanced_blockade }
-			target = {
-				every_system_planet_colony = { add_planet_devastation = 10 }
-				every_system_ship_colony = { add_planet_devastation = 10 }
-				add_modifier = { modifier = AIO_balanced_drift days = 180 }
-			}
-		}
-		else = {
-			target = {
-				every_system_planet_colony = { add_planet_devastation = 20 }
-				every_system_ship_colony = { add_planet_devastation = 20 }
-				add_modifier = { modifier = AIO_balanced_drift days = 360 }
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.410.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		tooltip = {
+			from = {
+				AIO_interference_accidence_balanced_stage_1 = yes
 			}
 		}
 	}
 }
 
-situation_event = {
-	id = AIO_interference_events.313
+country_event = {
+	id = AIO_interference_events.411
 	is_triggered_only = yes
-	title = AIO_interference_events.313.name
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.411.name
 	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.313.desc.colony
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.411.desc.maker.colony
 	}
 	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.313.desc.no_colony
+		trigger = { is_same_value = event_target:AIO_accident_owner event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } } }
+		text = AIO_interference_events.411.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.411.desc.other
+	}
+	picture = GFX_evt_AIO_balanced_backlash_imbalance
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.411.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		if = {
+			limit = { from = { current_situation_approach = AIO_balanced_blockade } }
+			tooltip = {
+				from = {
+					AIO_interference_accidence_balanced_stage_2 = { DEVASTATION = 10 }
+				}
+			}
+		}
+		else = {
+			tooltip = {
+				from = {
+					AIO_interference_accidence_balanced_stage_2 = { DEVASTATION = 20 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.412
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.412.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.412.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.412.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.412.desc.other
+	}
+	picture = GFX_evt_AIO_balanced_backlash
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.412.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		if = {
+			limit = { from = { current_situation_approach = AIO_balanced_blockade } }
+			tooltip = {
+				from = {
+					AIO_interference_accidence_balanced_stage_3 = { DEVASTATION = 10 }
+				}
+			}
+		}
+		else = {
+			tooltip = {
+				from = {
+					AIO_interference_accidence_balanced_stage_3 = { DEVASTATION = 20 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.413
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.413.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.413.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.413.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.413.desc.other
 	}
 	picture = GFX_evt_AIO_balanced_backlash_mastered
 	option = {
-		name = AIO_interference_events.313.option
-		# Findings are shared by every doctrine; only the research branch differs.
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_accidence_option.reverse
 		AIO_interference_award = { RESOURCE = society_research }
-		target = {
-			remove_star_flag = AIO_balanced_backlash_active
-			set_star_flag = AIO_interference_backlash_sealed
-			AIO_interference_balanced_clear_accidence = yes
-		}
-		destroy_situation = this
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
 	}
 }
 
-situation_event = {
-	id = AIO_interference_events.314
+country_event = {
+	id = AIO_interference_events.414
 	is_triggered_only = yes
-	title = AIO_interference_events.314.name
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.414.name
 	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.314.desc.colony
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.414.desc.maker.colony
 	}
 	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.314.desc.no_colony
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.414.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.414.desc.other
 	}
 	picture = GFX_evt_AIO_balanced_backlash_collapse
 	option = {
-		name = AIO_interference_events.314.option
-		target = {
-			add_modifier = { modifier = AIO_balanced_collapse days = 1825 }
-			every_system_planet_colony = {
-				add_planet_devastation = 40
-				if = {
-					limit = { NOT = { has_deposit = d_AIO_balanced_uniform_residue } }
-					add_blocker = { type = d_AIO_balanced_uniform_residue }
-				}
-			}
-			every_system_ship_colony = {
-				add_planet_devastation = 40
-				if = {
-					limit = { NOT = { has_deposit = d_AIO_balanced_uniform_residue } }
-					add_blocker = { type = d_AIO_balanced_uniform_residue }
-				}
-			}
-		}
-		# Findings are shared by every doctrine; only the research branch differs.
-		AIO_interference_award = { RESOURCE = society_research }
-		AIO_interference_accident_notify = yes
-		target = {
-			remove_star_flag = AIO_balanced_backlash_active
-			AIO_interference_balanced_clear_accidence = yes
-		}
-		AIO_interference_reset_aura = yes
-		destroy_situation = this
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.414.option.maker
 	}
-}
-
-situation_event = {
-	id = AIO_interference_events.315
-	is_triggered_only = yes
-	title = AIO_interference_events.315.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.315.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.315.desc.no_colony
-	}
-	picture = GFX_evt_AIO_balanced_backlash_aborted
 	option = {
-		name = AIO_interference_events.315.option
-		target = {
-			remove_star_flag = AIO_balanced_backlash_active
-			AIO_interference_balanced_clear_accidence = yes
-		}
-		AIO_interference_reset_aura = yes
-		destroy_situation = this
-	}
-}
-
-#endregion
-
-
-#region Energy accident.
-# Situation events retain the situation as ROOT and its system as target, so
-# several simultaneous copies cannot overwrite event targets. The consequences
-# sit in the options on purpose: the game renders them into the option tooltip,
-# so a retuned effect can never disagree with what the player is told. Each
-# option also ends the accident itself, so the situation stays in the log until
-# the click lands (vanilla does the same in situation_events.txt and
-# biogenesis_crisis_events.txt).
-# 320 opens the accident and grants the first stage, 321/322 are the stage
-# transitions and their discharges, 323 is a successful reversal, 324 is the
-# cascade running to the end, 325 is the accident ending early, and 390 tells
-# whoever owns the system.
-
-situation_event = {
-	id = AIO_interference_events.320
-	is_triggered_only = yes
-	title = AIO_interference_events.320.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.320.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.320.desc.no_colony
-	}
-	picture = GFX_evt_AIO_energy_backlash
-	option = {
-		name = AIO_interference_events.320.option
-		target = {
-			add_modifier = { modifier = AIO_energy_accidence_1 }
-		}
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.321
-	is_triggered_only = yes
-	title = AIO_interference_events.321.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.321.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.321.desc.no_colony
-	}
-	picture = GFX_evt_AIO_energy_backlash_surge
-	option = {
-		name = AIO_interference_events.321.option
-		target = {
-			AIO_interference_energy_strip_accidence = yes
-			add_modifier = { modifier = AIO_energy_accidence_2 }
-		}
-		if = {
-			limit = { current_situation_approach = AIO_energy_blockade }
-			target = {
-				every_system_planet_colony = {
-					add_planet_devastation = 10
-					add_modifier = { modifier = AIO_energy_blackout days = 90 }
-				}
-				every_system_ship_colony = {
-					add_planet_devastation = 10
-					add_modifier = { modifier = AIO_energy_blackout days = 90 }
-				}
-			}
-		}
-		else = {
-			target = {
-				every_system_planet_colony = {
-					add_planet_devastation = 20
-					add_modifier = { modifier = AIO_energy_blackout days = 180 }
-				}
-				every_system_ship_colony = {
-					add_planet_devastation = 20
-					add_modifier = { modifier = AIO_energy_blackout days = 180 }
-				}
-			}
-		}
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.322
-	is_triggered_only = yes
-	title = AIO_interference_events.322.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.322.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.322.desc.no_colony
-	}
-	picture = GFX_evt_AIO_energy_backlash
-	option = {
-		name = AIO_interference_events.322.option
-		target = {
-			AIO_interference_energy_strip_accidence = yes
-			add_modifier = { modifier = AIO_energy_accidence_3 }
-		}
-		if = {
-			limit = { current_situation_approach = AIO_energy_blockade }
-			target = {
-				every_system_planet_colony = { add_planet_devastation = 10 }
-				every_system_ship_colony = { add_planet_devastation = 10 }
-				add_modifier = { modifier = AIO_energy_grid_drain days = 180 }
-			}
-		}
-		else = {
-			target = {
-				every_system_planet_colony = { add_planet_devastation = 20 }
-				every_system_ship_colony = { add_planet_devastation = 20 }
-				add_modifier = { modifier = AIO_energy_grid_drain days = 360 }
-			}
-		}
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.323
-	is_triggered_only = yes
-	title = AIO_interference_events.323.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.323.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.323.desc.no_colony
-	}
-	picture = GFX_evt_AIO_energy_backlash_mastered
-	option = {
-		name = AIO_interference_events.323.option
-		# Findings are shared by every doctrine; only the research branch differs.
-		AIO_interference_award = { RESOURCE = physics_research }
-		target = {
-			remove_star_flag = AIO_energy_backlash_active
-			set_star_flag = AIO_interference_backlash_sealed
-			AIO_interference_energy_clear_accidence = yes
-		}
-		destroy_situation = this
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.324
-	is_triggered_only = yes
-	title = AIO_interference_events.324.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.324.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.324.desc.no_colony
-	}
-	picture = GFX_evt_AIO_energy_backlash_collapse
-	option = {
-		name = AIO_interference_events.324.option
-		target = {
-			add_modifier = { modifier = AIO_energy_grid_collapse days = 1825 }
-			every_system_planet_colony = {
-				add_planet_devastation = 40
-				if = {
-					limit = { NOT = { has_deposit = d_AIO_energy_cascade_residue } }
-					add_blocker = { type = d_AIO_energy_cascade_residue }
-				}
-			}
-			every_system_ship_colony = {
-				add_planet_devastation = 40
-				if = {
-					limit = { NOT = { has_deposit = d_AIO_energy_cascade_residue } }
-					add_blocker = { type = d_AIO_energy_cascade_residue }
-				}
-			}
-		}
-		# Findings are shared by every doctrine; only the research branch differs.
-		AIO_interference_award = { RESOURCE = physics_research }
-		AIO_interference_accident_notify = yes
-		target = {
-			remove_star_flag = AIO_energy_backlash_active
-			AIO_interference_energy_clear_accidence = yes
-		}
-		AIO_interference_reset_aura = yes
-		destroy_situation = this
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.325
-	is_triggered_only = yes
-	title = AIO_interference_events.325.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.325.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.325.desc.no_colony
-	}
-	picture = GFX_evt_AIO_energy_backlash_aborted
-	option = {
-		name = AIO_interference_events.325.option
-		target = {
-			remove_star_flag = AIO_energy_backlash_active
-			AIO_interference_energy_clear_accidence = yes
-		}
-		AIO_interference_reset_aura = yes
-		destroy_situation = this
-	}
-}
-
-#endregion
-
-
-#region Ecology accident.
-# Same shape as the accidents above: 330 opens it and grants the first stage,
-# 331/332 are the stage transitions and their discharges, 333 is a successful
-# reversal, 334 is the bloom running to the end, 335 is the accident ending
-# early. The shared notice 390 still tells whoever owns the system.
-
-situation_event = {
-	id = AIO_interference_events.330
-	is_triggered_only = yes
-	title = AIO_interference_events.330.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.330.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.330.desc.no_colony
-	}
-	picture = GFX_evt_alien_nature
-	option = {
-		name = AIO_interference_events.330.option
-		target = {
-			add_modifier = { modifier = AIO_ecology_accidence_1 }
-		}
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.331
-	is_triggered_only = yes
-	title = AIO_interference_events.331.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.331.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.331.desc.no_colony
-	}
-	picture = GFX_evt_aggressive_flora
-	option = {
-		name = AIO_interference_events.331.option
-		target = {
-			AIO_interference_ecology_strip_accidence = yes
-			add_modifier = { modifier = AIO_ecology_accidence_2 }
-		}
-		if = {
-			limit = { current_situation_approach = AIO_ecology_blockade }
-			target = {
-				every_system_planet_colony = {
-					add_planet_devastation = 10
-					add_modifier = { modifier = AIO_ecology_bloom days = 90 }
-				}
-				every_system_ship_colony = {
-					add_planet_devastation = 10
-					add_modifier = { modifier = AIO_ecology_bloom days = 90 }
-				}
-			}
-		}
-		else = {
-			target = {
-				every_system_planet_colony = {
-					add_planet_devastation = 20
-					add_modifier = { modifier = AIO_ecology_bloom days = 180 }
-				}
-				every_system_ship_colony = {
-					add_planet_devastation = 20
-					add_modifier = { modifier = AIO_ecology_bloom days = 180 }
-				}
-			}
-		}
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.332
-	is_triggered_only = yes
-	title = AIO_interference_events.332.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.332.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.332.desc.no_colony
-	}
-	picture = GFX_evt_astral_rift_garden_2
-	option = {
-		name = AIO_interference_events.332.option
-		target = {
-			AIO_interference_ecology_strip_accidence = yes
-			add_modifier = { modifier = AIO_ecology_accidence_3 }
-		}
-		if = {
-			limit = { current_situation_approach = AIO_ecology_blockade }
-			target = {
-				every_system_planet_colony = { add_planet_devastation = 10 }
-				every_system_ship_colony = { add_planet_devastation = 10 }
-				add_modifier = { modifier = AIO_ecology_choke days = 180 }
-			}
-		}
-		else = {
-			target = {
-				every_system_planet_colony = { add_planet_devastation = 20 }
-				every_system_ship_colony = { add_planet_devastation = 20 }
-				add_modifier = { modifier = AIO_ecology_choke days = 360 }
-			}
-		}
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.333
-	is_triggered_only = yes
-	title = AIO_interference_events.333.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.333.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.333.desc.no_colony
-	}
-	picture = GFX_evt_astral_rift_tropical_habitat
-	option = {
-		name = AIO_interference_events.333.option
-		# Findings are shared by every doctrine; only the research branch differs.
-		AIO_interference_award = { RESOURCE = society_research }
-		target = {
-			remove_star_flag = AIO_ecology_backlash_active
-			set_star_flag = AIO_interference_backlash_sealed
-			AIO_interference_ecology_clear_accidence = yes
-		}
-		destroy_situation = this
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.334
-	is_triggered_only = yes
-	title = AIO_interference_events.334.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.334.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.334.desc.no_colony
-	}
-	picture = GFX_evt_astral_rift_garden_2_fire
-	option = {
-		name = AIO_interference_events.334.option
-		target = {
-			add_modifier = { modifier = AIO_ecology_collapse days = 1825 }
-			every_system_planet_colony = {
-				add_planet_devastation = 40
-				if = {
-					limit = { NOT = { has_deposit = d_AIO_ecology_overgrowth } }
-					add_blocker = { type = d_AIO_ecology_overgrowth }
-				}
-			}
-			every_system_ship_colony = {
-				add_planet_devastation = 40
-				if = {
-					limit = { NOT = { has_deposit = d_AIO_ecology_overgrowth } }
-					add_blocker = { type = d_AIO_ecology_overgrowth }
-				}
-			}
-		}
-		# Findings are shared by every doctrine; only the research branch differs.
-		AIO_interference_award = { RESOURCE = society_research }
-		AIO_interference_accident_notify = yes
-		target = {
-			remove_star_flag = AIO_ecology_backlash_active
-			AIO_interference_ecology_clear_accidence = yes
-		}
-		AIO_interference_reset_aura = yes
-		destroy_situation = this
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.335
-	is_triggered_only = yes
-	title = AIO_interference_events.335.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.335.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.335.desc.no_colony
-	}
-	picture = GFX_evt_overgrown_city
-	option = {
-		name = AIO_interference_events.335.option
-		target = {
-			remove_star_flag = AIO_ecology_backlash_active
-			AIO_interference_ecology_clear_accidence = yes
-		}
-		AIO_interference_reset_aura = yes
-		destroy_situation = this
-	}
-}
-
-#endregion
-
-
-#region Industry accident.
-# Same shape as the accidents above: 340 opens it and grants the first stage,
-# 341/342 are the stage transitions and their discharges, 343 is a successful
-# reversal, 344 is the overload running to the end, 345 is the accident ending
-# early. The shared notice 390 still tells whoever owns the system.
-
-situation_event = {
-	id = AIO_interference_events.340
-	is_triggered_only = yes
-	title = AIO_interference_events.340.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.340.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.340.desc.no_colony
-	}
-	picture = GFX_evt_AIO_industry_backlash
-	option = {
-		name = AIO_interference_events.340.option
-		target = {
-			add_modifier = { modifier = AIO_industry_accidence_1 }
-		}
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.341
-	is_triggered_only = yes
-	title = AIO_interference_events.341.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.341.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.341.desc.no_colony
-	}
-	picture = GFX_evt_AIO_industry_backlash_overheat
-	option = {
-		name = AIO_interference_events.341.option
-		target = {
-			AIO_interference_industry_strip_accidence = yes
-			add_modifier = { modifier = AIO_industry_accidence_2 }
-		}
-		if = {
-			limit = { current_situation_approach = AIO_industry_blockade }
-			target = {
-				every_system_planet_colony = {
-					add_planet_devastation = 10
-					add_modifier = { modifier = AIO_industry_overheat days = 90 }
-				}
-				every_system_ship_colony = {
-					add_planet_devastation = 10
-					add_modifier = { modifier = AIO_industry_overheat days = 90 }
-				}
-			}
-		}
-		else = {
-			target = {
-				every_system_planet_colony = {
-					add_planet_devastation = 20
-					add_modifier = { modifier = AIO_industry_overheat days = 180 }
-				}
-				every_system_ship_colony = {
-					add_planet_devastation = 20
-					add_modifier = { modifier = AIO_industry_overheat days = 180 }
-				}
-			}
-		}
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.342
-	is_triggered_only = yes
-	title = AIO_interference_events.342.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.342.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.342.desc.no_colony
-	}
-	picture = GFX_evt_AIO_industry_backlash
-	option = {
-		name = AIO_interference_events.342.option
-		target = {
-			AIO_interference_industry_strip_accidence = yes
-			add_modifier = { modifier = AIO_industry_accidence_3 }
-		}
-		if = {
-			limit = { current_situation_approach = AIO_industry_blockade }
-			target = {
-				every_system_planet_colony = { add_planet_devastation = 10 }
-				every_system_ship_colony = { add_planet_devastation = 10 }
-				add_modifier = { modifier = AIO_industry_jam days = 180 }
-			}
-		}
-		else = {
-			target = {
-				every_system_planet_colony = { add_planet_devastation = 20 }
-				every_system_ship_colony = { add_planet_devastation = 20 }
-				add_modifier = { modifier = AIO_industry_jam days = 360 }
-			}
-		}
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.343
-	is_triggered_only = yes
-	title = AIO_interference_events.343.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.343.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.343.desc.no_colony
-	}
-	picture = GFX_evt_AIO_industry_backlash_mastered
-	option = {
-		name = AIO_interference_events.343.option
-		# Findings are shared by every doctrine; only the research branch differs.
-		AIO_interference_award = { RESOURCE = engineering_research }
-		target = {
-			remove_star_flag = AIO_industry_backlash_active
-			set_star_flag = AIO_interference_backlash_sealed
-			AIO_interference_industry_clear_accidence = yes
-		}
-		destroy_situation = this
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.344
-	is_triggered_only = yes
-	title = AIO_interference_events.344.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.344.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.344.desc.no_colony
-	}
-	picture = GFX_evt_AIO_industry_backlash_collapse
-	option = {
-		name = AIO_interference_events.344.option
-		target = {
-			add_modifier = { modifier = AIO_industry_collapse days = 1825 }
-			every_system_planet_colony = {
-				add_planet_devastation = 40
-				if = {
-					limit = { NOT = { has_deposit = d_AIO_industry_slag_residue } }
-					add_blocker = { type = d_AIO_industry_slag_residue }
-				}
-			}
-			every_system_ship_colony = {
-				add_planet_devastation = 40
-				if = {
-					limit = { NOT = { has_deposit = d_AIO_industry_slag_residue } }
-					add_blocker = { type = d_AIO_industry_slag_residue }
-				}
-			}
-		}
-		# Findings are shared by every doctrine; only the research branch differs.
-		AIO_interference_award = { RESOURCE = engineering_research }
-		AIO_interference_accident_notify = yes
-		target = {
-			remove_star_flag = AIO_industry_backlash_active
-			AIO_interference_industry_clear_accidence = yes
-		}
-		AIO_interference_reset_aura = yes
-		destroy_situation = this
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.345
-	is_triggered_only = yes
-	title = AIO_interference_events.345.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.345.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.345.desc.no_colony
-	}
-	picture = GFX_evt_AIO_industry_backlash_aborted
-	option = {
-		name = AIO_interference_events.345.option
-		target = {
-			remove_star_flag = AIO_industry_backlash_active
-			AIO_interference_industry_clear_accidence = yes
-		}
-		AIO_interference_reset_aura = yes
-		destroy_situation = this
-	}
-}
-
-#endregion
-
-
-#region Metric accident.
-# Same shape as the accidents above: 350 opens it and grants the first stage,
-# 351/352 are the stage transitions and their discharges, 353 is a successful
-# reversal, 354 is the folding running to the end, 355 is the accident ending
-# early. The shared notice 390 still tells whoever owns the system.
-
-situation_event = {
-	id = AIO_interference_events.350
-	is_triggered_only = yes
-	title = AIO_interference_events.350.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.350.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.350.desc.no_colony
-	}
-	picture = GFX_evt_AIO_metric_backlash
-	option = {
-		name = AIO_interference_events.350.option
-		target = {
-			add_modifier = { modifier = AIO_metric_accidence_1 }
-		}
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.351
-	is_triggered_only = yes
-	title = AIO_interference_events.351.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.351.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.351.desc.no_colony
-	}
-	picture = GFX_evt_AIO_metric_backlash_rebound
-	option = {
-		name = AIO_interference_events.351.option
-		target = {
-			AIO_interference_metric_strip_accidence = yes
-			add_modifier = { modifier = AIO_metric_accidence_2 }
-		}
-		if = {
-			limit = { current_situation_approach = AIO_metric_blockade }
-			target = {
-				every_system_planet_colony = {
-					add_planet_devastation = 10
-					add_modifier = { modifier = AIO_metric_shear days = 90 }
-				}
-				every_system_ship_colony = {
-					add_planet_devastation = 10
-					add_modifier = { modifier = AIO_metric_shear days = 90 }
-				}
-			}
-		}
-		else = {
-			target = {
-				every_system_planet_colony = {
-					add_planet_devastation = 20
-					add_modifier = { modifier = AIO_metric_shear days = 180 }
-				}
-				every_system_ship_colony = {
-					add_planet_devastation = 20
-					add_modifier = { modifier = AIO_metric_shear days = 180 }
-				}
-			}
-		}
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.352
-	is_triggered_only = yes
-	title = AIO_interference_events.352.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.352.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.352.desc.no_colony
-	}
-	picture = GFX_evt_AIO_metric_backlash
-	option = {
-		name = AIO_interference_events.352.option
-		target = {
-			AIO_interference_metric_strip_accidence = yes
-			add_modifier = { modifier = AIO_metric_accidence_3 }
-		}
-		if = {
-			limit = { current_situation_approach = AIO_metric_blockade }
-			target = {
-				every_system_planet_colony = { add_planet_devastation = 10 }
-				every_system_ship_colony = { add_planet_devastation = 10 }
-				add_modifier = { modifier = AIO_metric_inversion days = 180 }
-			}
-		}
-		else = {
-			target = {
-				every_system_planet_colony = { add_planet_devastation = 20 }
-				every_system_ship_colony = { add_planet_devastation = 20 }
-				add_modifier = { modifier = AIO_metric_inversion days = 360 }
-			}
-		}
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.353
-	is_triggered_only = yes
-	title = AIO_interference_events.353.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.353.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.353.desc.no_colony
-	}
-	picture = GFX_evt_AIO_metric_backlash_mastered
-	option = {
-		name = AIO_interference_events.353.option
-		# Findings are shared by every doctrine; only the research branch differs.
-		AIO_interference_award = { RESOURCE = physics_research }
-		target = {
-			remove_star_flag = AIO_metric_backlash_active
-			set_star_flag = AIO_interference_backlash_sealed
-			AIO_interference_metric_clear_accidence = yes
-		}
-		destroy_situation = this
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.354
-	is_triggered_only = yes
-	title = AIO_interference_events.354.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.354.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.354.desc.no_colony
-	}
-	picture = GFX_evt_AIO_metric_backlash_collapse
-	option = {
-		name = AIO_interference_events.354.option
-		target = {
-			add_modifier = { modifier = AIO_metric_collapse days = 1825 }
-			every_system_planet_colony = {
-				add_planet_devastation = 40
-				if = {
-					limit = { NOT = { has_deposit = d_AIO_metric_fold_residue } }
-					add_blocker = { type = d_AIO_metric_fold_residue }
-				}
-			}
-			every_system_ship_colony = {
-				add_planet_devastation = 40
-				if = {
-					limit = { NOT = { has_deposit = d_AIO_metric_fold_residue } }
-					add_blocker = { type = d_AIO_metric_fold_residue }
-				}
-			}
-		}
-		# Findings are shared by every doctrine; only the research branch differs.
-		AIO_interference_award = { RESOURCE = physics_research }
-		AIO_interference_accident_notify = yes
-		target = {
-			remove_star_flag = AIO_metric_backlash_active
-			AIO_interference_metric_clear_accidence = yes
-		}
-		AIO_interference_reset_aura = yes
-		destroy_situation = this
-	}
-}
-
-situation_event = {
-	id = AIO_interference_events.355
-	is_triggered_only = yes
-	title = AIO_interference_events.355.name
-	desc = {
-		trigger = { target = { AIO_interference_has_colony = yes } }
-		text = AIO_interference_events.355.desc.colony
-	}
-	desc = {
-		trigger = { target = { NOT = { AIO_interference_has_colony = yes } } }
-		text = AIO_interference_events.355.desc.no_colony
-	}
-	picture = GFX_evt_AIO_metric_backlash_aborted
-	option = {
-		name = AIO_interference_events.355.option
-		target = {
-			remove_star_flag = AIO_metric_backlash_active
-			AIO_interference_metric_clear_accidence = yes
-		}
-		AIO_interference_reset_aura = yes
-		destroy_situation = this
-	}
-}
-
-#endregion
-
-
-# Fired at whoever owns the system when an accident ends inside their borders, so
-# the third party is never left guessing where the scorch marks came from. The
-# opinion hit itself is applied by AIO_interference_accident_notify rather than
-# in this option: the event target cannot be trusted at click time.
-country_event = {
-	id = AIO_interference_events.390
-	is_triggered_only = yes
-	title = AIO_interference_events.390.name
-	desc = AIO_interference_events.390.desc
-	picture = GFX_evt_black_hole
-	option = {
-		name = AIO_interference_events.390.option
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.collapse_option
 		add_opinion_modifier = {
 			modifier = opinion_AIO_interference_accident
 			who = event_target:AIO_accident_owner
 		}
 	}
+	after = {
+		tooltip = {
+			from = {
+				AIO_interference_accidence_balanced_collapse = yes
+			}
+		}
+	}
 }
+
+country_event = {
+	id = AIO_interference_events.415
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.415.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.415.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.415.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.415.desc.other
+	}
+	picture = GFX_evt_AIO_balanced_backlash_aborted
+	option = {
+		name = {
+			trigger = { is_same_value = event_target:AIO_accident_owner }
+			text = AIO_interference_accidence_option.abort
+		}
+		name = {
+			trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+			text = AIO_interference_notice.option
+		}
+	}
+}
+
+#endregion
+
+#endregion
+
+
+#region Energy accident
+
+#region effect
+
+situation_event = {
+	id = AIO_interference_events.320
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_energy_stage_1 = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.420 }
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.321
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { current_situation_approach = AIO_energy_blockade }
+			AIO_interference_accidence_energy_stage_2 = { DEVASTATION = 10 }
+		}
+		else = {
+			AIO_interference_accidence_energy_stage_2 = { DEVASTATION = 20 }
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.421 }
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.322
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { current_situation_approach = AIO_energy_blockade }
+			AIO_interference_accidence_energy_stage_3 = { DEVASTATION = 10 }
+		}
+		else = {
+			AIO_interference_accidence_energy_stage_3 = { DEVASTATION = 20 }
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.422 }
+	}
+}
+
+# reverse
+situation_event = {
+	id = AIO_interference_events.323
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		target = {
+			remove_star_flag = AIO_energy_backlash_active
+			set_star_flag = AIO_interference_backlash_sealed
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.423 }
+		destroy_situation = this
+	}
+}
+
+# collapse
+situation_event = {
+	id = AIO_interference_events.324
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_energy_collapse = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.424 }
+		destroy_situation = this
+	}
+}
+
+# abort
+situation_event = {
+	id = AIO_interference_events.325
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_energy_abort = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.425 }
+		destroy_situation = this
+	}
+}
+
+#endregion
+
+#region notify
+# from: situation
+
+country_event = {
+	id = AIO_interference_events.420
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.420.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.420.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.420.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.420.desc.other
+	}
+	picture = GFX_evt_AIO_energy_backlash
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.420.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		tooltip = {
+			from = {
+				AIO_interference_accidence_energy_stage_1 = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.421
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.421.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.421.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.421.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.421.desc.other
+	}
+	picture = GFX_evt_AIO_energy_backlash_surge
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.421.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		if = {
+			limit = { from = { current_situation_approach = AIO_energy_blockade } }
+			tooltip = {
+				from = {
+					AIO_interference_accidence_energy_stage_2 = { DEVASTATION = 10 }
+				}
+			}
+		}
+		else = {
+			tooltip = {
+				from = {
+					AIO_interference_accidence_energy_stage_2 = { DEVASTATION = 20 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.422
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.422.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.422.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.422.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.422.desc.other
+	}
+	picture = GFX_evt_AIO_energy_backlash
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.422.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		if = {
+			limit = { from = { current_situation_approach = AIO_energy_blockade } }
+			tooltip = {
+				from = {
+					AIO_interference_accidence_energy_stage_3 = { DEVASTATION = 10 }
+				}
+			}
+		}
+		else = {
+			tooltip = {
+				from = {
+					AIO_interference_accidence_energy_stage_3 = { DEVASTATION = 20 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.423
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.423.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.423.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.423.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.423.desc.other
+	}
+	picture = GFX_evt_AIO_energy_backlash_mastered
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_accidence_option.reverse
+		AIO_interference_award = { RESOURCE = physics_research }
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.424
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.424.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.424.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.424.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.424.desc.other
+	}
+	picture = GFX_evt_AIO_energy_backlash_collapse
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.424.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.collapse_option
+		add_opinion_modifier = {
+			modifier = opinion_AIO_interference_accident
+			who = event_target:AIO_accident_owner
+		}
+	}
+	after = {
+		tooltip = {
+			from = {
+				AIO_interference_accidence_energy_collapse = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.425
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.425.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.425.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.425.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.425.desc.other
+	}
+	picture = GFX_evt_AIO_energy_backlash_aborted
+	option = {
+		name = {
+			trigger = { is_same_value = event_target:AIO_accident_owner }
+			text = AIO_interference_accidence_option.abort
+		}
+		name = {
+			trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+			text = AIO_interference_notice.option
+		}
+	}
+}
+
+#endregion
+
+#endregion
+
+
+#region Ecology accident
+
+#region effect
+
+situation_event = {
+	id = AIO_interference_events.330
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_ecology_stage_1 = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.430 }
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.331
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { current_situation_approach = AIO_ecology_blockade }
+			AIO_interference_accidence_ecology_stage_2 = { DEVASTATION = 10 }
+		}
+		else = {
+			AIO_interference_accidence_ecology_stage_2 = { DEVASTATION = 20 }
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.431 }
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.332
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { current_situation_approach = AIO_ecology_blockade }
+			AIO_interference_accidence_ecology_stage_3 = { DEVASTATION = 10 }
+		}
+		else = {
+			AIO_interference_accidence_ecology_stage_3 = { DEVASTATION = 20 }
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.432 }
+	}
+}
+
+# reverse
+situation_event = {
+	id = AIO_interference_events.333
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		target = {
+			remove_star_flag = AIO_ecology_backlash_active
+			set_star_flag = AIO_interference_backlash_sealed
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.433 }
+		destroy_situation = this
+	}
+}
+
+# collapse
+situation_event = {
+	id = AIO_interference_events.334
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_ecology_collapse = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.434 }
+		destroy_situation = this
+	}
+}
+
+# abort
+situation_event = {
+	id = AIO_interference_events.335
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_ecology_abort = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.435 }
+		destroy_situation = this
+	}
+}
+
+#endregion
+
+#region notify
+# from: situation
+
+country_event = {
+	id = AIO_interference_events.430
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.430.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.430.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.430.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.430.desc.other
+	}
+	picture = GFX_evt_alien_nature
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.430.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		tooltip = {
+			from = {
+				AIO_interference_accidence_ecology_stage_1 = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.431
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.431.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.431.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.431.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.431.desc.other
+	}
+	picture = GFX_evt_aggressive_flora
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.431.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		if = {
+			limit = { from = { current_situation_approach = AIO_ecology_blockade } }
+			tooltip = {
+				from = {
+					AIO_interference_accidence_ecology_stage_2 = { DEVASTATION = 10 }
+				}
+			}
+		}
+		else = {
+			tooltip = {
+				from = {
+					AIO_interference_accidence_ecology_stage_2 = { DEVASTATION = 20 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.432
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.432.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.432.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.432.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.432.desc.other
+	}
+	picture = GFX_evt_astral_rift_garden_2
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.432.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		if = {
+			limit = { from = { current_situation_approach = AIO_ecology_blockade } }
+			tooltip = {
+				from = {
+					AIO_interference_accidence_ecology_stage_3 = { DEVASTATION = 10 }
+				}
+			}
+		}
+		else = {
+			tooltip = {
+				from = {
+					AIO_interference_accidence_ecology_stage_3 = { DEVASTATION = 20 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.433
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.433.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.433.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.433.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.433.desc.other
+	}
+	picture = GFX_evt_astral_rift_tropical_habitat
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_accidence_option.reverse
+		AIO_interference_award = { RESOURCE = society_research }
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.434
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.434.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.434.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.434.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.434.desc.other
+	}
+	picture = GFX_evt_astral_rift_garden_2_fire
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.434.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.collapse_option
+		add_opinion_modifier = {
+			modifier = opinion_AIO_interference_accident
+			who = event_target:AIO_accident_owner
+		}
+	}
+	after = {
+		tooltip = {
+			from = {
+				AIO_interference_accidence_ecology_collapse = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.435
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.435.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.435.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.435.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.435.desc.other
+	}
+	picture = GFX_evt_overgrown_city
+	option = {
+		name = {
+			trigger = { is_same_value = event_target:AIO_accident_owner }
+			text = AIO_interference_accidence_option.abort
+		}
+		name = {
+			trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+			text = AIO_interference_notice.option
+		}
+	}
+}
+
+#endregion
+
+#endregion
+
+
+#region Industry accident
+
+#region effect
+
+situation_event = {
+	id = AIO_interference_events.340
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_industry_stage_1 = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.440 }
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.341
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { current_situation_approach = AIO_industry_blockade }
+			AIO_interference_accidence_industry_stage_2 = { DEVASTATION = 10 }
+		}
+		else = {
+			AIO_interference_accidence_industry_stage_2 = { DEVASTATION = 20 }
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.441 }
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.342
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { current_situation_approach = AIO_industry_blockade }
+			AIO_interference_accidence_industry_stage_3 = { DEVASTATION = 10 }
+		}
+		else = {
+			AIO_interference_accidence_industry_stage_3 = { DEVASTATION = 20 }
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.442 }
+	}
+}
+
+# reverse
+situation_event = {
+	id = AIO_interference_events.343
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		target = {
+			remove_star_flag = AIO_industry_backlash_active
+			set_star_flag = AIO_interference_backlash_sealed
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.443 }
+		destroy_situation = this
+	}
+}
+
+# collapse
+situation_event = {
+	id = AIO_interference_events.344
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_industry_collapse = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.444 }
+		destroy_situation = this
+	}
+}
+
+# abort
+situation_event = {
+	id = AIO_interference_events.345
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_industry_abort = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.445 }
+		destroy_situation = this
+	}
+}
+
+#endregion
+
+#region notify
+# from: situation
+
+country_event = {
+	id = AIO_interference_events.440
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.440.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.440.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.440.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.440.desc.other
+	}
+	picture = GFX_evt_AIO_industry_backlash
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.440.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		tooltip = {
+			from = {
+				AIO_interference_accidence_industry_stage_1 = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.441
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.441.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.441.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.441.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.441.desc.other
+	}
+	picture = GFX_evt_AIO_industry_backlash_overheat
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.441.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		if = {
+			limit = { from = { current_situation_approach = AIO_industry_blockade } }
+			tooltip = {
+				from = {
+					AIO_interference_accidence_industry_stage_2 = { DEVASTATION = 10 }
+				}
+			}
+		}
+		else = {
+			tooltip = {
+				from = {
+					AIO_interference_accidence_industry_stage_2 = { DEVASTATION = 20 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.442
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.442.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.442.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.442.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.442.desc.other
+	}
+	picture = GFX_evt_AIO_industry_backlash
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.442.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		if = {
+			limit = { from = { current_situation_approach = AIO_industry_blockade } }
+			tooltip = {
+				from = {
+					AIO_interference_accidence_industry_stage_3 = { DEVASTATION = 10 }
+				}
+			}
+		}
+		else = {
+			tooltip = {
+				from = {
+					AIO_interference_accidence_industry_stage_3 = { DEVASTATION = 20 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.443
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.443.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.443.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.443.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.443.desc.other
+	}
+	picture = GFX_evt_AIO_industry_backlash_mastered
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_accidence_option.reverse
+		AIO_interference_award = { RESOURCE = engineering_research }
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.444
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.444.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.444.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.444.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.444.desc.other
+	}
+	picture = GFX_evt_AIO_industry_backlash_collapse
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.444.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.collapse_option
+		add_opinion_modifier = {
+			modifier = opinion_AIO_interference_accident
+			who = event_target:AIO_accident_owner
+		}
+	}
+	after = {
+		tooltip = {
+			from = {
+				AIO_interference_accidence_industry_collapse = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.445
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.445.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.445.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.445.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.445.desc.other
+	}
+	picture = GFX_evt_AIO_industry_backlash_aborted
+	option = {
+		name = {
+			trigger = { is_same_value = event_target:AIO_accident_owner }
+			text = AIO_interference_accidence_option.abort
+		}
+		name = {
+			trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+			text = AIO_interference_notice.option
+		}
+	}
+}
+
+#endregion
+
+#endregion
+
+
+#region Metric accident
+
+#region effect
+
+situation_event = {
+	id = AIO_interference_events.350
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_metric_stage_1 = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.450 }
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.351
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { current_situation_approach = AIO_metric_blockade }
+			AIO_interference_accidence_metric_stage_2 = { DEVASTATION = 10 }
+		}
+		else = {
+			AIO_interference_accidence_metric_stage_2 = { DEVASTATION = 20 }
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.451 }
+	}
+}
+
+situation_event = {
+	id = AIO_interference_events.352
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { current_situation_approach = AIO_metric_blockade }
+			AIO_interference_accidence_metric_stage_3 = { DEVASTATION = 10 }
+		}
+		else = {
+			AIO_interference_accidence_metric_stage_3 = { DEVASTATION = 20 }
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.452 }
+	}
+}
+
+# reverse
+situation_event = {
+	id = AIO_interference_events.353
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		target = {
+			remove_star_flag = AIO_metric_backlash_active
+			set_star_flag = AIO_interference_backlash_sealed
+		}
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.453 }
+		destroy_situation = this
+	}
+}
+
+# collapse
+situation_event = {
+	id = AIO_interference_events.354
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_metric_collapse = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.454 }
+		destroy_situation = this
+	}
+}
+
+# abort
+situation_event = {
+	id = AIO_interference_events.355
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		AIO_interference_accidence_metric_abort = yes
+		AIO_interference_dispatch_notice = { EVENT = AIO_interference_events.455 }
+		destroy_situation = this
+	}
+}
+
+#endregion
+
+#region notify
+# from: situation
+
+country_event = {
+	id = AIO_interference_events.450
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.450.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.450.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.450.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.450.desc.other
+	}
+	picture = GFX_evt_AIO_metric_backlash
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.450.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		tooltip = {
+			from = {
+				AIO_interference_accidence_metric_stage_1 = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.451
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.451.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.451.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.451.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.451.desc.other
+	}
+	picture = GFX_evt_AIO_metric_backlash_rebound
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.451.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		if = {
+			limit = { from = { current_situation_approach = AIO_metric_blockade } }
+			tooltip = {
+				from = {
+					AIO_interference_accidence_metric_stage_2 = { DEVASTATION = 10 }
+				}
+			}
+		}
+		else = {
+			tooltip = {
+				from = {
+					AIO_interference_accidence_metric_stage_2 = { DEVASTATION = 20 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.452
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.452.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.452.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.452.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.452.desc.other
+	}
+	picture = GFX_evt_AIO_metric_backlash
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.452.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+	after = {
+		if = {
+			limit = { from = { current_situation_approach = AIO_metric_blockade } }
+			tooltip = {
+				from = {
+					AIO_interference_accidence_metric_stage_3 = { DEVASTATION = 10 }
+				}
+			}
+		}
+		else = {
+			tooltip = {
+				from = {
+					AIO_interference_accidence_metric_stage_3 = { DEVASTATION = 20 }
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.453
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.453.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.453.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.453.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.453.desc.other
+	}
+	picture = GFX_evt_AIO_metric_backlash_mastered
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_accidence_option.reverse
+		AIO_interference_award = { RESOURCE = physics_research }
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.option
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.454
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.454.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.454.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.454.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.454.desc.other
+	}
+	picture = GFX_evt_AIO_metric_backlash_collapse
+	option = {
+		trigger = { is_same_value = event_target:AIO_accident_owner }
+		name = AIO_interference_events.454.option.maker
+	}
+	option = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		name = AIO_interference_notice.collapse_option
+		add_opinion_modifier = {
+			modifier = opinion_AIO_interference_accident
+			who = event_target:AIO_accident_owner
+		}
+	}
+	after = {
+		tooltip = {
+			from = {
+				AIO_interference_accidence_metric_collapse = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = AIO_interference_events.455
+	is_triggered_only = yes
+	location = event_target:AIO_accident_system
+	title = AIO_interference_events.455.name
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
+		}
+		text = AIO_interference_events.455.desc.maker.colony
+	}
+	desc = {
+		trigger = {
+			is_same_value = event_target:AIO_accident_owner
+			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
+		}
+		text = AIO_interference_events.455.desc.maker.no_colony
+	}
+	desc = {
+		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+		text = AIO_interference_events.455.desc.other
+	}
+	picture = GFX_evt_AIO_metric_backlash_aborted
+	option = {
+		name = {
+			trigger = { is_same_value = event_target:AIO_accident_owner }
+			text = AIO_interference_accidence_option.abort
+		}
+		name = {
+			trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
+			text = AIO_interference_notice.option
+		}
+	}
+}
+
+#endregion
+
+#endregion

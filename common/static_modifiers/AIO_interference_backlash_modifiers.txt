@@ -1,9 +1,7 @@
 #region balanced accidence
 
 # Balanced interference pays out a little of everything, so its accident is the
-# only one whose benefit spans every resource at once. Synchronized production
-# strains construction and trade while comfort and stability decline. The
-# stages replace each other, so each one carries the full total.
+
 AIO_balanced_accidence_1 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_resources_2.dds
 	planet_jobs_energy_produces_mult = 0.05
@@ -15,7 +13,7 @@ AIO_balanced_accidence_1 = {
 	planet_jobs_engineering_research_produces_mult = 0.05
 	planet_max_districts_add = 1
 	planet_building_build_speed_mult = -0.10
-	planet_jobs_trade_produces_mult = -0.05
+	planet_jobs_trade_produces_mult = -0.1
 	planet_stability_add = -3
 }
 
@@ -30,7 +28,7 @@ AIO_balanced_accidence_2 = {
 	planet_jobs_engineering_research_produces_mult = 0.10
 	planet_max_districts_add = 1
 	planet_building_build_speed_mult = -0.25
-	planet_jobs_trade_produces_mult = -0.10
+	planet_jobs_trade_produces_mult = -0.2
 	planet_stability_add = -5
 	planet_amenities_mult = -0.10
 }
@@ -46,36 +44,12 @@ AIO_balanced_accidence_3 = {
 	planet_jobs_engineering_research_produces_mult = 0.20
 	planet_max_districts_add = 2
 	planet_building_build_speed_mult = -0.50
-	planet_jobs_trade_produces_mult = -0.20
+	planet_jobs_trade_produces_mult = -0.3
 	planet_stability_add = -10
 	planet_amenities_mult = -0.20
 }
 
-# Timed shocks fired by the stage events. These expire on their own, so they
-# never need cleanup on abort.
-AIO_balanced_misalignment = {
-	icon = gfx/interface/icons/planet_modifiers/pm_resources_2.dds
-	planet_jobs_energy_produces_mult = -0.30
-	planet_jobs_minerals_produces_mult = -0.30
-	planet_jobs_food_produces_mult = -0.30
-	planet_jobs_consumer_goods_produces_mult = -0.30
-	planet_jobs_alloys_produces_mult = -0.30
-	planet_jobs_trade_produces_mult = -0.30
-	planet_amenities_mult = -0.20
-}
-
-AIO_balanced_drift = {
-	icon = gfx/interface/icons/planet_modifiers/pm_resources_2.dds
-	planet_jobs_energy_produces_mult = -0.15
-	planet_jobs_minerals_produces_mult = -0.15
-	planet_jobs_food_produces_mult = -0.15
-	planet_jobs_consumer_goods_produces_mult = -0.15
-	planet_jobs_alloys_produces_mult = -0.15
-	planet_jobs_trade_produces_mult = -0.15
-	planet_building_build_speed_mult = -0.25
-}
-
-AIO_balanced_collapse = {
+AIO_balanced_collapse_colony = {
 	icon = gfx/interface/icons/planet_modifiers/pm_resources_2.dds
 	planet_jobs_energy_produces_mult = -0.10
 	planet_jobs_minerals_produces_mult = -0.10
@@ -92,10 +66,6 @@ AIO_balanced_collapse = {
 
 #region energy accidence
 
-# The accident escalates in three stages. Each stage is its own modifier so one
-# stage can be tuned or dropped without touching the others.
-# Benefit and cost never share an axis: the field pays in infrastructure,
-# stability and fleet shielding, never in the energy output it boosts.
 AIO_energy_accidence_1 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_electric_aftermath_modifier.dds
 	planet_jobs_energy_produces_mult = 0.15
@@ -108,36 +78,29 @@ AIO_energy_accidence_2 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_electric_aftermath_modifier.dds
 	planet_jobs_energy_produces_mult = 0.35
 	planet_jobs_physics_research_produces_mult = 0.10
-	ship_weapon_damage = 0.10
 	planet_building_build_speed_mult = -0.25
 	planet_stability_add = -5
-	ship_shield_mult = -0.05
 }
 
 AIO_energy_accidence_3 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_electric_aftermath_modifier.dds
 	planet_jobs_energy_produces_mult = 0.70
 	planet_jobs_physics_research_produces_mult = 0.20
-	ship_weapon_damage = 0.20
 	planet_building_build_speed_mult = -0.50
 	planet_stability_add = -10
+}
+
+AIO_energy_accidence_2_system = {
+	ship_weapon_damage = 0.10
+	ship_shield_mult = -0.05
+}
+
+AIO_energy_accidence_3_system = {
+	ship_weapon_damage = 0.20
 	ship_shield_mult = -0.15
 }
 
-# Timed shocks fired by the stage events. These expire on their own, so they
-# never need cleanup on abort.
-AIO_energy_blackout = {
-	icon = gfx/interface/icons/planet_modifiers/pm_electric_aftermath_modifier.dds
-	planet_jobs_energy_produces_mult = -0.50
-	planet_building_build_speed_mult = -0.50
-}
-
-AIO_energy_grid_drain = {
-	icon = gfx/interface/icons/planet_modifiers/pm_electric_aftermath_modifier.dds
-	planet_jobs_energy_produces_mult = -0.10
-}
-
-AIO_energy_grid_collapse = {
+AIO_energy_grid_collapse_colony = {
 	icon = gfx/interface/icons/planet_modifiers/pm_electric_aftermath_modifier.dds
 	planet_jobs_energy_produces_mult = -0.20
 }
@@ -147,11 +110,6 @@ AIO_energy_grid_collapse = {
 
 #region ecology accidence
 
-# Ecology interference makes living systems grow faster than the infrastructure
-# around them can carry: food, biomass, the society that studies them and the
-# population itself all climb, while the overgrowth makes the colonies steadily
-# harder to live in.
-# The stages replace each other, so each one carries the full total.
 AIO_ecology_accidence_1 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_docile_fauna.dds
 	planet_jobs_food_produces_mult = 0.10
@@ -190,24 +148,7 @@ AIO_ecology_accidence_3 = {
 	planet_max_districts_add = -2
 }
 
-# Timed shocks fired by the stage events. These expire on their own, so they
-# never need cleanup on abort.
-AIO_ecology_bloom = {
-	icon = gfx/interface/icons/planet_modifiers/pm_mastery_of_nature.dds
-	planet_jobs_food_produces_mult = -0.40
-	planet_jobs_biomass_produces_mult = -0.20
-	planet_pops_upkeep_mult = 0.20
-}
-
-AIO_ecology_choke = {
-	icon = gfx/interface/icons/planet_modifiers/pm_mastery_of_nature.dds
-	planet_jobs_food_produces_mult = -0.20
-	planet_jobs_biomass_produces_mult = -0.10
-	terraform_speed_mult = -0.50
-	pop_environment_tolerance = -0.10
-}
-
-AIO_ecology_collapse = {
+AIO_ecology_collapse_colony = {
 	icon = gfx/interface/icons/planet_modifiers/pm_mastery_of_nature.dds
 	planet_jobs_food_produces_mult = -0.25
 	planet_jobs_biomass_produces_mult = -0.12
@@ -220,10 +161,6 @@ AIO_ecology_collapse = {
 
 #region industry accidence
 
-# Industry interference pushes refining past its tolerances. Minerals and alloys
-# both climb, and the plant pays for it with everything it takes to keep running:
-# input, maintenance and the price of rebuilding. The stages replace each other,
-# so each one carries the full total.
 AIO_industry_accidence_1 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_arc_furnace.dds
 	planet_jobs_minerals_produces_mult = 0.15
@@ -251,24 +188,7 @@ AIO_industry_accidence_3 = {
 	planet_structures_cost_mult = 1.00
 }
 
-# Timed shocks fired by the stage events. These expire on their own, so they
-# never need cleanup on abort.
-AIO_industry_overheat = {
-	icon = gfx/interface/icons/planet_modifiers/pm_burning_settlement.dds
-	planet_jobs_minerals_produces_mult = -0.40
-	planet_jobs_alloys_produces_mult = -0.20
-	planet_buildings_upkeep_mult = 0.30
-}
-
-AIO_industry_jam = {
-	icon = gfx/interface/icons/planet_modifiers/pm_burning_settlement.dds
-	planet_jobs_minerals_produces_mult = -0.20
-	planet_jobs_alloys_produces_mult = -0.10
-	planet_jobs_minerals_upkeep_mult = 0.25
-	planet_structures_cost_mult = 0.50
-}
-
-AIO_industry_collapse = {
+AIO_industry_collapse_colony = {
 	icon = gfx/interface/icons/planet_modifiers/pm_burning_settlement.dds
 	planet_jobs_minerals_produces_mult = -0.25
 	planet_jobs_alloys_produces_mult = -0.15
@@ -281,10 +201,6 @@ AIO_industry_collapse = {
 
 #region metric accidence
 
-# Metric interference keeps folding local geometry. Folded space fits more inside
-# it and moves construction along faster, and the same folding makes the district
-# bill, the gunnery and everyone's nerves unreliable. The stages replace each
-# other, so each one carries the full total.
 AIO_metric_accidence_1 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_arcology_project.dds
 	planet_max_districts_add = 1
@@ -318,28 +234,31 @@ AIO_metric_accidence_3 = {
 	pop_happiness = -0.20
 }
 
-# Timed shocks fired by the stage events. These expire on their own, so they
-# never need cleanup on abort.
-AIO_metric_shear = {
-	icon = gfx/interface/icons/planet_modifiers/pm_celestial_aftermath_modifier.dds
-	planet_building_build_speed_mult = -0.50
-	ship_speed_mult = -0.30
-	planet_districts_upkeep_mult = 0.25
+AIO_metric_accidence_1_system = {
+	ship_speed_mult = -0.1
+	ship_weapon_range_mult = -0.05
 }
 
-AIO_metric_inversion = {
-	icon = gfx/interface/icons/planet_modifiers/pm_celestial_aftermath_modifier.dds
-	planet_building_build_speed_mult = -0.60
-	ship_speed_mult = -0.50
-	planet_districts_upkeep_mult = 0.50
+AIO_metric_accidence_2_system = {
+	ship_speed_mult = -0.15
+	ship_weapon_range_mult = -0.1
 }
 
-AIO_metric_collapse = {
+AIO_metric_accidence_3_system = {
+	ship_speed_mult = -0.2
+	ship_weapon_range_mult = -0.15
+}
+
+AIO_metric_collapse_colony = {
 	icon = gfx/interface/icons/planet_modifiers/pm_celestial_aftermath_modifier.dds
 	planet_building_build_speed_mult = -0.50
-	ship_speed_mult = -0.30
 	planet_districts_upkeep_mult = 0.50
 	planet_max_districts_add = -1
+}
+
+AIO_metric_collapse_system = {
+	ship_speed_mult = -0.30
+	ship_weapon_range_mult = -0.15
 }
 
 #endregion

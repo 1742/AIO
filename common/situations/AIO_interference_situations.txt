@@ -1,6 +1,5 @@
-# Same skeleton as the energy accident: the target keeps each copy independent,
-# and every consequence is written into the event options so the option tooltip
-# is generated from the effect itself.
+# Each stage calls a hidden situation event. It applies the consequences once,
+# then sends separate visible notices to the experimenter and system owner.
 AIO_interference_balanced_backlash = {
 	picture = GFX_evt_AIO_balanced_backlash
 	category = negative
@@ -34,7 +33,7 @@ AIO_interference_balanced_backlash = {
 			limit = { exists = target }
 			target = {
 				remove_star_flag = AIO_balanced_backlash_active
-				AIO_interference_balanced_clear_accidence = yes
+				AIO_interference_balanced_clear_modifier = yes
 			}
 		}
 	}
@@ -198,7 +197,7 @@ AIO_interference_energy_backlash = {
 			limit = { exists = target }
 			target = {
 				remove_star_flag = AIO_energy_backlash_active
-				AIO_interference_energy_clear_accidence = yes
+				AIO_interference_energy_clear_modifier = yes
 			}
 		}
 	}
@@ -363,7 +362,7 @@ AIO_interference_ecology_backlash = {
 			limit = { exists = target }
 			target = {
 				remove_star_flag = AIO_ecology_backlash_active
-				AIO_interference_ecology_clear_accidence = yes
+				AIO_interference_ecology_clear_modifier = yes
 			}
 		}
 	}
@@ -527,7 +526,7 @@ AIO_interference_industry_backlash = {
 			limit = { exists = target }
 			target = {
 				remove_star_flag = AIO_industry_backlash_active
-				AIO_interference_industry_clear_accidence = yes
+				AIO_interference_industry_clear_modifier = yes
 			}
 		}
 	}
@@ -691,7 +690,7 @@ AIO_interference_metric_backlash = {
 			limit = { exists = target }
 			target = {
 				remove_star_flag = AIO_metric_backlash_active
-				AIO_interference_metric_clear_accidence = yes
+				AIO_interference_metric_clear_modifier = yes
 			}
 		}
 	}
