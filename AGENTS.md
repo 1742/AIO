@@ -25,7 +25,7 @@
 
 官方 wiki 网站：https://stellaris.paradoxwikis.com/Modding
 
-游戏本体在本机的路径：D:\ProgramFiles\Steam\steamapps\common\Stellaris
+游戏本体在本机的路径：F:\ProgramFiles\Steam\steamapps\common\Stellaris
 
 日志在本机：C:\Users\13632\Documents\Paradox Interactive\Stellaris\logs
 
