@@ -13,10 +13,16 @@ AIO_is_nearby_interference_source = {
 	}
 }
 
-# Scope: system. Includes both planetary and ship colonies.
-AIO_interference_has_colony = {
-	OR = {
-		any_system_planet_colony = { always = yes }
-		any_system_ship_colony = { always = yes }
+# scope: system
+AIO_is_backlash_affect_system = {
+	has_psionic_aura = AIO_reality_interference_aura
+	is_aura_intensity_level = 3
+	aura_owner = { is_same_value = $MAKER$ }
+}
+
+# scope: country
+AIO_has_any_interference_aura = {
+	any_owned_megastructure = {
+		is_megastructure_type = AIO_reality_interferometer
 	}
 }

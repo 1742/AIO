@@ -1,7 +1,3 @@
-# Each stage calls a hidden situation event. It applies the consequences once,
-# then sends separate visible notices to the experimenter and system owner.
-# Entering stage three permanently locks the selected approach. Its own allow
-# trigger stays true so the active approach can continue paying upkeep and progress.
 AIO_interference_balanced_backlash = {
 	picture = GFX_evt_AIO_balanced_backlash
 	category = negative
@@ -12,10 +8,8 @@ AIO_interference_balanced_backlash = {
 	fail_icon = GFX_situation_outcome_positive
 	initial_progress = 15
 	progress_direction = monodirectional
+	on_start = { situation_event = { id = AIO_interference_events.310 } }
 
-	on_start = {
-		situation_event = { id = AIO_interference_events.310 }
-	}
 	# The approaches are locked once the third stage is entered, so the ending is
 	# decided by whichever approach is still active when progress completes.
 	on_progress_complete = {
@@ -30,31 +24,6 @@ AIO_interference_balanced_backlash = {
 	on_fail = {
 		situation_event = { id = AIO_interference_events.315 }
 	}
-	on_abort = {
-		if = {
-			limit = { exists = target }
-			target = {
-				remove_star_flag = AIO_balanced_backlash_active
-				AIO_interference_balanced_clear_modifier = yes
-			}
-		}
-	}
-	abort_trigger = {
-		OR = {
-			NOT = { exists = target }
-			target = {
-				NOT = { has_psionic_aura = AIO_reality_interference_aura }
-			}
-			target = {
-				has_psionic_aura = AIO_reality_interference_aura
-				OR = {
-					# Only a lost field or a changed owner aborts here: the field falling
-					# back to a lower level does not, the accident burns on regardless.
-					aura_owner = { NOT = { is_same_value = root.owner } }
-				}
-			}
-		}
-	}
 
 	stages = {
 		AIO_balanced_stage_one = {
@@ -65,7 +34,7 @@ AIO_interference_balanced_backlash = {
 		AIO_balanced_stage_two = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_red
-			end = 70
+			end = 75
 			on_first_enter = {
 				situation_event = { id = AIO_interference_events.311 }
 			}
@@ -75,14 +44,14 @@ AIO_interference_balanced_backlash = {
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			on_first_enter = {
-				set_situation_flag = AIO_balanced_approach_locked
+				set_situation_flag = AIO_approach_locked
 				situation_event = { id = AIO_interference_events.312 }
 			}
 		}
 	}
 
 	inline_script = {
-		script = AIO/interference_accidence_situation_progress
+		script = AIO/interference_empire_backlash_situation_progress
 		TYPE = balanced
 	}
 
@@ -94,26 +63,20 @@ AIO_interference_balanced_backlash = {
 		allow = {
 			OR = {
 				current_situation_approach = AIO_balanced_maintain
-				NOT = { has_situation_flag = AIO_balanced_approach_locked }
+				AND = {
+					owner = { has_policy_flag = AIO_interference_mode_balanced }
+					NOT = { has_situation_flag = AIO_approach_locked }
+				}
 			}
 		}
 		resources = {
 			category = situations
 			upkeep = {
-				trigger = {
-					owner = { has_policy_flag = AIO_interference_mode_balanced }
-					target = {
-						OR = {
-							has_star_flag = AIO_interference_source
-							AIO_is_nearby_interference_source = { OWNER = root.owner }
-						}
-					}
-				}
 				energy = 50
-				society_research = 20
+				minerals = 25
 			}
 		}
-		ai_weight = { base = 10 }
+		ai_weight = { base = 0 }
 	}
 	approach = {
 		name = AIO_balanced_blockade
@@ -122,51 +85,40 @@ AIO_interference_balanced_backlash = {
 		allow = {
 			OR = {
 				current_situation_approach = AIO_balanced_blockade
-				NOT = { has_situation_flag = AIO_balanced_approach_locked }
+				AND = {
+					owner = { has_policy_flag = AIO_interference_mode_balanced }
+					NOT = { has_situation_flag = AIO_approach_locked }
+				}
 			}
 		}
 		resources = {
 			category = situations
 			upkeep = {
-				trigger = {
-					owner = { has_policy_flag = AIO_interference_mode_balanced }
-					target = {
-						OR = {
-							has_star_flag = AIO_interference_source
-							AIO_is_nearby_interference_source = { OWNER = root.owner }
-						}
-					}
-				}
-				energy = 150
-				minerals = 25
+				energy= 150
+				minerals = 50
 			}
 		}
 		ai_weight = { base = 5 }
 	}
 	approach = {
 		name = AIO_balanced_reverse
-		icon = GFX_situation_approach_research
+		icon = GFX_situation_approach_dark_matter
 		icon_background = GFX_situation_approach_bg_green
 		potential = { owner = { has_menace_perk = menp_AIO_mega_03 } }
 		allow = {
 			OR = {
 				current_situation_approach = AIO_balanced_reverse
-				NOT = { has_situation_flag = AIO_balanced_approach_locked }
+				AND = {
+					owner = { has_policy_flag = AIO_interference_mode_balanced }
+					NOT = { has_situation_flag = AIO_approach_locked }
+				}
 			}
 		}
 		resources = {
 			category = situations
 			upkeep = {
-				trigger = {
-					owner = { has_policy_flag = AIO_interference_mode_balanced }
-					target = {
-						OR = {
-							has_star_flag = AIO_interference_source
-							AIO_is_nearby_interference_source = { OWNER = root.owner }
-						}
-					}
-				}
 				energy = 200
+				minerals = 100
 			}
 		}
 		ai_weight = { base = 0 }
@@ -174,8 +126,7 @@ AIO_interference_balanced_backlash = {
 }
 
 
-# A system target keeps each accident independent. Never use target_modifier here:
-# system targets are not colony carriers.
+# The target is the aura owner; affected systems are selected in scripted effects.
 AIO_interference_energy_backlash = {
 	picture = GFX_evt_AIO_energy_backlash
 	category = negative
@@ -186,10 +137,8 @@ AIO_interference_energy_backlash = {
 	fail_icon = GFX_situation_outcome_positive
 	initial_progress = 15
 	progress_direction = monodirectional
+	on_start = { situation_event = { id = AIO_interference_events.320 } }
 
-	on_start = {
-		situation_event = { id = AIO_interference_events.320 }
-	}
 	# The approaches are locked once the third stage is entered, so the ending is
 	# decided by whichever approach is still active when progress completes.
 	on_progress_complete = {
@@ -203,31 +152,6 @@ AIO_interference_energy_backlash = {
 	}
 	on_fail = {
 		situation_event = { id = AIO_interference_events.325 }
-	}
-	on_abort = {
-		if = {
-			limit = { exists = target }
-			target = {
-				remove_star_flag = AIO_energy_backlash_active
-				AIO_interference_energy_clear_modifier = yes
-			}
-		}
-	}
-	abort_trigger = {
-		OR = {
-			NOT = { exists = target }
-			target = {
-				NOT = { has_psionic_aura = AIO_reality_interference_aura }
-			}
-			target = {
-				has_psionic_aura = AIO_reality_interference_aura
-				OR = {
-					# Only a lost field or a changed owner aborts here: the field falling
-					# back to a lower level does not, the accident burns on regardless.
-					aura_owner = { NOT = { is_same_value = root.owner } }
-				}
-			}
-		}
 	}
 
 	stages = {
@@ -256,7 +180,7 @@ AIO_interference_energy_backlash = {
 	}
 
 	inline_script = {
-		script = AIO/interference_accidence_situation_progress
+		script = AIO/interference_empire_backlash_situation_progress
 		TYPE = energy
 	}
 
@@ -268,26 +192,20 @@ AIO_interference_energy_backlash = {
 		allow = {
 			OR = {
 				current_situation_approach = AIO_energy_maintain
-				NOT = { has_situation_flag = AIO_energy_approach_locked }
+				AND = {
+					owner = { has_policy_flag = AIO_interference_mode_energy }
+					NOT = { has_situation_flag = AIO_energy_approach_locked }
+				}
 			}
 		}
 		resources = {
 			category = situations
 			upkeep = {
-				trigger = {
-					owner = { has_policy_flag = AIO_interference_mode_energy }
-					target = {
-						OR = {
-							has_star_flag = AIO_interference_source
-							AIO_is_nearby_interference_source = { OWNER = root.owner }
-						}
-					}
-				}
 				energy = 50
 				physics_research = 20
 			}
 		}
-		ai_weight = { base = 10 }
+		ai_weight = { base = 0 }
 	}
 	approach = {
 		name = AIO_energy_blockade
@@ -296,21 +214,15 @@ AIO_interference_energy_backlash = {
 		allow = {
 			OR = {
 				current_situation_approach = AIO_energy_blockade
-				NOT = { has_situation_flag = AIO_energy_approach_locked }
+				AND = {
+					owner = { has_policy_flag = AIO_interference_mode_energy }
+					NOT = { has_situation_flag = AIO_energy_approach_locked }
+				}
 			}
 		}
 		resources = {
 			category = situations
 			upkeep = {
-				trigger = {
-					owner = { has_policy_flag = AIO_interference_mode_energy }
-					target = {
-						OR = {
-							has_star_flag = AIO_interference_source
-							AIO_is_nearby_interference_source = { OWNER = root.owner }
-						}
-					}
-				}
 				energy = 150
 				alloys = 25
 			}
@@ -319,27 +231,21 @@ AIO_interference_energy_backlash = {
 	}
 	approach = {
 		name = AIO_energy_reverse
-		icon = GFX_situation_approach_research
+		icon = GFX_situation_approach_dark_matter
 		icon_background = GFX_situation_approach_bg_green
 		potential = { owner = { has_menace_perk = menp_AIO_mega_03 } }
 		allow = {
 			OR = {
 				current_situation_approach = AIO_energy_reverse
-				NOT = { has_situation_flag = AIO_energy_approach_locked }
+				AND = {
+					owner = { has_policy_flag = AIO_interference_mode_energy }
+					NOT = { has_situation_flag = AIO_energy_approach_locked }
+				}
 			}
 		}
 		resources = {
 			category = situations
 			upkeep = {
-				trigger = {
-					owner = { has_policy_flag = AIO_interference_mode_energy }
-					target = {
-						OR = {
-							has_star_flag = AIO_interference_source
-							AIO_is_nearby_interference_source = { OWNER = root.owner }
-						}
-					}
-				}
 				energy = 200
 			}
 		}

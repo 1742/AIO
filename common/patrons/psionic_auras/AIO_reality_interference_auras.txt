@@ -3,24 +3,15 @@
 AIO_reality_interference_aura = {
 	intensity_level = {
 		end = 1000
-		custom_tooltip = AIO_reality_interference_aura_level_1_tt
-		inline_script = {
-			script = AIO/reality_interference_aura
-		}
+		inline_script = { script = AIO/reality_interference_aura }
 	}
 	intensity_level = {
 		end = 2000
-		custom_tooltip = AIO_reality_interference_aura_level_2_tt
-		inline_script = {
-			script = AIO/reality_interference_aura
-		}
+		inline_script = { script = AIO/reality_interference_aura }
 	}
 	intensity_level = {
 		end = 2500
-		custom_tooltip = AIO_reality_interference_aura_level_3_tt
-		inline_script = {
-			script = AIO/reality_interference_aura
-		}
+		inline_script = { script = AIO/reality_interference_aura }
 	}
 
 	# Propagation is independent of intensity levels. Every existing field node
@@ -36,34 +27,49 @@ AIO_reality_interference_aura = {
 					has_star_flag = AIO_ecology_backlash_active
 					has_star_flag = AIO_industry_backlash_active
 					has_star_flag = AIO_metric_backlash_active
-					has_star_flag = AIO_interference_backlash_sealed
 				}
 				OR = {
 					has_star_flag = AIO_interference_source
 					AIO_is_nearby_interference_source = { OWNER = root.aura_owner }
 				}
 			}
-			# Each doctrine rolls its own accident; the star flags above keep them from
-			# stacking on the same system.
-			if = {
-				limit = { aura_owner = { has_policy_flag = AIO_interference_mode_energy } }
-				AIO_interference_energy_start = yes
-			}
-			else_if = {
-				limit = { aura_owner = { has_policy_flag = AIO_interference_mode_balanced } }
-				AIO_interference_balanced_start = yes
-			}
-			else_if = {
-				limit = { aura_owner = { has_policy_flag = AIO_interference_mode_ecology } }
-				AIO_interference_ecology_start = yes
-			}
-			else_if = {
-				limit = { aura_owner = { has_policy_flag = AIO_interference_mode_industry } }
-				AIO_interference_industry_start = yes
-			}
-			else_if = {
-				limit = { aura_owner = { has_policy_flag = AIO_interference_mode_metric } }
-				AIO_interference_metric_start = yes
+			aura_owner = {
+				switch = {
+					trigger = has_policy_flag
+					AIO_interference_mode_balanced = {
+						if = {
+							limit = {
+							NOT = { has_country_flag = AIO_backlash_active }
+							root = {
+								has_star_flag = AIO_interference_source
+								NOT = { has_star_flag = AIO_interference_backlash_sealed }
+							}
+							}
+							AIO_interference_empire_backlash_start = { TYPE = balanced }
+						}
+					}
+					AIO_interference_mode_energy = {
+						if = {
+							limit = {
+							NOT = { has_country_flag = AIO_backlash_active }
+							root = {
+								has_star_flag = AIO_interference_source
+								NOT = { has_star_flag = AIO_interference_backlash_sealed }
+							}
+							}
+							AIO_interference_empire_backlash_start = { TYPE = energy }
+						}
+					}
+					AIO_interference_mode_ecology = {
+						root = { AIO_interference_ecology_start = yes }
+					}
+					AIO_interference_mode_industry = {
+						root = { AIO_interference_industry_start = yes }
+					}
+					AIO_interference_mode_metric = {
+						root = { AIO_interference_metric_start = yes }
+					}
+				}
 			}
 		}
 		if = {

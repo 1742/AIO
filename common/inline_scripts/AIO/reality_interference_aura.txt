@@ -16,7 +16,7 @@ owner_planet_modifier = {
 owner_planet_modifier = {
 	potential = { owner = { has_policy_flag = AIO_interference_mode_balanced } }
 	modifier = {
-		planet_jobs_produces_mult = 0.01
+		planet_jobs_produces_mult = 0.02
 	}
 	mult = value:AIO_interference_intensity_multiplier
 }

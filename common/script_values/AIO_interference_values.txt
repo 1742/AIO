@@ -45,20 +45,46 @@ AIO_interference_intensity_multiplier = {
 	mult = solar_system.trigger:is_aura_intensity_level
 }
 
-# Situation scope. The field and the accident use the same source and local-job
-# values; this continues to grow after the field reaches its intensity cap.
-AIO_interference_accidence_situation_growth = {
-	base = 1
-	add = target.value:AIO_reality_interference_nearby_source_growth|OWNER|root.owner|
-	add = target.value:AIO_interference_proof_share
-	modifier = {
-		mult = 2
-		owner = { has_country_flag = AIO_interference_change_policy }
-	}
+# scope: situation with a country target
+AIO_interference_empire_backlash_situation_growth = {
+	base = 0
+	add = owner.value:AIO_interferometer_num
+	add = owner.value:AIO_empire_proof_workforce
+}
+
+# scope: situation with a system target
+AIO_interference_backlash_situation_growth = {
+	base = 0
+	add = target.value:AIO_interferometer_num
+	add = target.value:AIO_proof_workforce
 }
 
 # scope: country
-AIO_interference_proof_share = {
+AIO_interferometer_num = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_megastructure
+		parameters = {
+			limit = { is_megastructure_type = AIO_reality_interferometer }
+		}
+		mode = add
+	}
+	min = 0
+}
+
+# scope: country
+AIO_empire_proof_workforce = {
+	complex_trigger_modifier = {
+		trigger = total_country_workforce_with_job_tag
+		parameters = { tags = { AIO_proof } }
+		mode = add
+	}
+	divide = 100
+	min = 0
+}
+
+# scope: system
+AIO_proof_workforce = {
 	complex_trigger_modifier = {
 		trigger = total_country_workforce_with_job_tag
 		trigger_scope = owner
@@ -66,58 +92,5 @@ AIO_interference_proof_share = {
 		mode = add
 	}
 	divide = 100
-	divide = value:AIO_interference_accidence_count
 	min = 0
-}
-
-# Only running experiments and reversals, of any doctrine, share the national
-# proof workforce.
-AIO_interference_accidence_count = {
-	complex_trigger_modifier = {
-		trigger = count_situation
-		trigger_scope = owner
-		parameters = {
-			limit = {
-				OR = {
-					AND = {
-						is_situation_type = AIO_interference_energy_backlash
-						OR = {
-							current_situation_approach = AIO_energy_maintain
-							current_situation_approach = AIO_energy_reverse
-						}
-					}
-					AND = {
-						is_situation_type = AIO_interference_balanced_backlash
-						OR = {
-							current_situation_approach = AIO_balanced_maintain
-							current_situation_approach = AIO_balanced_reverse
-						}
-					}
-					AND = {
-						is_situation_type = AIO_interference_ecology_backlash
-						OR = {
-							current_situation_approach = AIO_ecology_maintain
-							current_situation_approach = AIO_ecology_reverse
-						}
-					}
-					AND = {
-						is_situation_type = AIO_interference_industry_backlash
-						OR = {
-							current_situation_approach = AIO_industry_maintain
-							current_situation_approach = AIO_industry_reverse
-						}
-					}
-					AND = {
-						is_situation_type = AIO_interference_metric_backlash
-						OR = {
-							current_situation_approach = AIO_metric_maintain
-							current_situation_approach = AIO_metric_reverse
-						}
-					}
-				}
-			}
-		}
-		mode = add
-	}
-	min = 1
 }

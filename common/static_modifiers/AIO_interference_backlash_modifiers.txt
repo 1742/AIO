@@ -2,61 +2,34 @@
 
 # Balanced interference pays out a little of everything, so its accident is the
 
-AIO_balanced_accidence_1 = {
+AIO_balanced_backlash_1 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_resources_2.dds
-	planet_jobs_energy_produces_mult = 0.05
-	planet_jobs_minerals_produces_mult = 0.05
-	planet_jobs_food_produces_mult = 0.05
-	planet_jobs_consumer_goods_produces_mult = 0.05
-	planet_jobs_alloys_produces_mult = 0.05
-	planet_jobs_society_research_produces_mult = 0.05
-	planet_jobs_engineering_research_produces_mult = 0.05
-	planet_max_districts_add = 1
+	planet_jobs_produces_mult = 0.05
 	planet_building_build_speed_mult = -0.10
 	planet_jobs_trade_produces_mult = -0.1
 	planet_stability_add = -3
 }
 
-AIO_balanced_accidence_2 = {
+AIO_balanced_backlash_2 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_resources_2.dds
-	planet_jobs_energy_produces_mult = 0.12
-	planet_jobs_minerals_produces_mult = 0.12
-	planet_jobs_food_produces_mult = 0.12
-	planet_jobs_consumer_goods_produces_mult = 0.12
-	planet_jobs_alloys_produces_mult = 0.12
-	planet_jobs_society_research_produces_mult = 0.10
-	planet_jobs_engineering_research_produces_mult = 0.10
-	planet_max_districts_add = 1
+	planet_jobs_produces_mult = 0.12
 	planet_building_build_speed_mult = -0.25
 	planet_jobs_trade_produces_mult = -0.2
 	planet_stability_add = -5
 	planet_amenities_mult = -0.10
 }
 
-AIO_balanced_accidence_3 = {
+AIO_balanced_backlash_3 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_resources_2.dds
-	planet_jobs_energy_produces_mult = 0.25
-	planet_jobs_minerals_produces_mult = 0.25
-	planet_jobs_food_produces_mult = 0.25
-	planet_jobs_consumer_goods_produces_mult = 0.25
-	planet_jobs_alloys_produces_mult = 0.25
-	planet_jobs_society_research_produces_mult = 0.20
-	planet_jobs_engineering_research_produces_mult = 0.20
-	planet_max_districts_add = 2
-	planet_building_build_speed_mult = -0.50
+	planet_jobs_produces_mult = 0.25
 	planet_jobs_trade_produces_mult = -0.3
 	planet_stability_add = -10
 	planet_amenities_mult = -0.20
 }
 
-AIO_balanced_collapse_colony = {
+AIO_balanced_backlash_collapse_colony = {
 	icon = gfx/interface/icons/planet_modifiers/pm_resources_2.dds
-	planet_jobs_energy_produces_mult = -0.10
-	planet_jobs_minerals_produces_mult = -0.10
-	planet_jobs_food_produces_mult = -0.10
-	planet_jobs_consumer_goods_produces_mult = -0.10
-	planet_jobs_alloys_produces_mult = -0.10
-	planet_jobs_trade_produces_mult = -0.10
+	planet_jobs_trade_produces_mult = -0.15
 	planet_building_build_speed_mult = -0.25
 	planet_max_districts_add = -1
 }
@@ -66,7 +39,7 @@ AIO_balanced_collapse_colony = {
 
 #region energy accidence
 
-AIO_energy_accidence_1 = {
+AIO_energy_backlash_1 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_electric_aftermath_modifier.dds
 	planet_jobs_energy_produces_mult = 0.15
 	planet_jobs_physics_research_produces_mult = 0.05
@@ -74,7 +47,7 @@ AIO_energy_accidence_1 = {
 	planet_stability_add = -3
 }
 
-AIO_energy_accidence_2 = {
+AIO_energy_backlash_2 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_electric_aftermath_modifier.dds
 	planet_jobs_energy_produces_mult = 0.35
 	planet_jobs_physics_research_produces_mult = 0.10
@@ -82,7 +55,7 @@ AIO_energy_accidence_2 = {
 	planet_stability_add = -5
 }
 
-AIO_energy_accidence_3 = {
+AIO_energy_backlash_3 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_electric_aftermath_modifier.dds
 	planet_jobs_energy_produces_mult = 0.70
 	planet_jobs_physics_research_produces_mult = 0.20
@@ -90,17 +63,17 @@ AIO_energy_accidence_3 = {
 	planet_stability_add = -10
 }
 
-AIO_energy_accidence_2_system = {
+AIO_energy_backlash_2_system = {
 	ship_weapon_damage = 0.10
 	ship_shield_mult = -0.05
 }
 
-AIO_energy_accidence_3_system = {
+AIO_energy_backlash_3_system = {
 	ship_weapon_damage = 0.20
 	ship_shield_mult = -0.15
 }
 
-AIO_energy_grid_collapse_colony = {
+AIO_energy_backlash_collapse_colony = {
 	icon = gfx/interface/icons/planet_modifiers/pm_electric_aftermath_modifier.dds
 	planet_jobs_energy_produces_mult = -0.20
 }

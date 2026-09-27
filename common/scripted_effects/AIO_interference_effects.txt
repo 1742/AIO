@@ -148,14 +148,14 @@ AIO_interference_reset_aura = {
 	if = {
 		limit = {
 			has_psionic_aura = AIO_reality_interference_aura
-			aura_owner = { is_same_value = root.owner }
+			aura_owner = { is_same_value = $OWNER$ }
 		}
 		set_aura_intensity = 1001
 	}
 }
 
 # scope: country
-AIO_interference_award = {
+AIO_interference_reverse_award = {
 	add_monthly_resource_mult = {
 		resource = $RESOURCE$
 		value = @tier3researchreward
@@ -165,8 +165,7 @@ AIO_interference_award = {
 	complete_crisis_objective = crisobj_AIO_research_thesis
 }
 
-# Scope: country. A collapsed experiment returns a smaller, one-time research
-# payout without completing the objective awarded by a successful reversal.
+# scope: country
 AIO_interference_collapse_award = {
 	add_monthly_resource_mult = {
 		resource = $RESOURCE$
@@ -176,20 +175,81 @@ AIO_interference_collapse_award = {
 	}
 }
 
-# Scope: situation. Save the actor and system for both copies of the notice.
-# Each hidden stage event applies its effects before invoking this dispatcher.
-AIO_interference_dispatch_notice = {
-	if = {
-		limit = { exists = target }
-		target = { save_event_target_as = AIO_accident_system }
-		owner = {
-			save_event_target_as = AIO_accident_owner
-			country_event = { id = $EVENT$ }
+# scope: situation; balanced and energy empire-wide backlash only
+AIO_interference_empire_backlash_dispatch_notice = {
+	owner = {
+		set_country_flag = AIO_backlash_notified_@root.owner
+		country_event = { id = $EVENT$ scopes = { from = root.owner fromfrom = root } }
+	}
+	owner = { every_system_with_aura = {
+		limit = {
+			AIO_is_backlash_affect_system = { MAKER = root.owner }
 		}
-		target = {
-			if = {
-				limit = { owner? = { NOT = { is_same_value = root.owner } } }
-				owner = { country_event = { id = $EVENT$ } }
+		every_system_planet_colony = {
+			limit = {
+				owner? = {
+					NOT = { has_country_flag = AIO_backlash_notified_@root.owner }
+				}
+			}
+			owner = {
+				set_country_flag = AIO_backlash_notified_@root.owner
+				country_event = { id = $EVENT$ scopes = { from = root.owner fromfrom = root } }
+			}
+		}
+		every_system_ship_colony = {
+			limit = {
+				owner? = {
+					NOT = { has_country_flag = AIO_backlash_notified_@root.owner }
+				}
+			}
+			owner = {
+				set_country_flag = AIO_backlash_notified_@root.owner
+				country_event = { id = $EVENT$ scopes = { from = root.owner fromfrom = root } }
+			}
+		}
+	} }
+	every_country = {
+		limit = { has_country_flag = AIO_backlash_notified_@root.owner }
+		remove_country_flag = AIO_backlash_notified_@root.owner
+	}
+}
+
+# scope: situation; system-targeted doctrines still use their existing dispatcher
+AIO_interference_backlash_dispatch_notice = {
+	every_system_with_aura = {
+		limit = {
+			AIO_is_backlash_affect_system = { MAKER = root.owner }
+			any_system_planet_colony = {
+				owner? = {
+					NOT = { has_country_flag = AIO_backlash_notified_@root.owner }
+				}
+			}
+			any_system_ship_colony = {
+				owner? = {
+					NOT = { has_country_flag = AIO_backlash_notified_@root.owner }
+				}
+			}
+		}
+		every_system_planet_colony = {
+			limit = {
+				owner? = {
+					NOT = { has_country_flag = AIO_backlash_notified_@root.owner }
+				}
+			}
+			owner = {
+				set_country_flag = AIO_backlash_notified_@root.owner
+				country_event = { id = $EVENT$ }
+			}
+		}
+		every_system_ship_colony = {
+			limit = {
+				owner? = {
+					NOT = { has_country_flag = AIO_backlash_notified_@root.owner }
+				}
+			}
+			owner = {
+				set_country_flag = AIO_backlash_notified_@root.owner
+				country_event = { id = $EVENT$ }
 			}
 		}
 	}
@@ -198,274 +258,301 @@ AIO_interference_dispatch_notice = {
 #endregion
 
 
-#region balanced accidence
+#region empire backlash
 
-# scope: aura system
-AIO_interference_balanced_start = {
-	set_star_flag = AIO_balanced_backlash_active
-	save_event_target_as = AIO_balanced_backlash_system
-	aura_owner = {
-		start_situation = {
-			type = AIO_interference_balanced_backlash
-			target = event_target:AIO_balanced_backlash_system
-		}
+# scope: country (called from the aura owner's monthly effect)
+AIO_interference_empire_backlash_start = {
+	set_country_flag = AIO_backlash_active
+	start_situation = {
+		type = AIO_interference_$TYPE$_backlash
+		target = this
 	}
 }
 
-# scope: situation
-AIO_interference_accidence_balanced_stage_1 = {
-	target? = {
-		AIO_interference_balanced_clear_modifier = yes
+# scope: country
+AIO_interference_empire_backlash_finish = {
+	save_event_target_as = AIO_backlash_maker
+	every_system_with_aura = {
+		limit = {
+			has_psionic_aura = AIO_reality_interference_aura
+			aura_owner = { is_same_value = event_target:AIO_backlash_maker }
+		}
+		AIO_$TYPE$_backlash_clear_modifier = yes
+		[[RESET] if = {
+			limit = { is_aura_intensity_level = 3 }
+			AIO_interference_reset_aura = { OWNER = event_target:AIO_backlash_maker }
+		} ]
+		[[SEAL] if = {
+			limit = { has_star_flag = AIO_interference_source }
+			set_star_flag = AIO_interference_backlash_sealed
+		} ]
+	}
+	remove_country_flag = AIO_backlash_active
+}
+
+#endregion
+
+
+#region balanced backlash
+
+# scope: country
+# CURRENT use to display effect for country
+# Dont set CURRENT when truly add effect
+AIO_balanced_backlash_stage_1 = {
+	every_system_with_aura = {
+		limit = {
+			AIO_is_backlash_affect_system = { MAKER = $MAKER$ }
+			[[CURRENT] AIO_country_has_colony_in_system = { CURRENT = $CURRENT$ } ]
+		}
+		hidden_effect = { AIO_balanced_backlash_clear_modifier = yes }
 		every_system_planet_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_balanced_accidence_1
-				days = 360
+				modifier = AIO_balanced_backlash_1
+				years = 2
 			}
 		}
 		every_system_ship_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_balanced_accidence_1
-				days = 360
+				modifier = AIO_balanced_backlash_1
+				years = 2
 			}
 		}
 	}
 }
 
-# scope: situation
-AIO_interference_accidence_balanced_stage_2 = {
-	target? = {
-		AIO_interference_balanced_clear_modifier = yes
+# scope: country
+AIO_balanced_backlash_stage_2 = {
+	every_system_with_aura = {
+		limit = {
+			AIO_is_backlash_affect_system = { MAKER = $MAKER$ }
+			[[CURRENT] AIO_country_has_colony_in_system = { CURRENT = $CURRENT$ } ]
+		}
+		hidden_effect = { AIO_balanced_backlash_clear_modifier = yes }
 		every_system_planet_colony = {
-			add_planet_devastation = $DEVASTATION$
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_balanced_accidence_2
-				days = 720
+				modifier = AIO_balanced_backlash_2
+				years = 2
+			}
+			add_planet_devastation = $DEVASTATION$
+		}
+		every_system_ship_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
+			add_modifier = {
+				modifier = AIO_balanced_backlash_2
+				years = 2
+			}
+			add_planet_devastation = $DEVASTATION$
+		}
+	}
+}
+
+# scope: country
+AIO_balanced_backlash_stage_3 = {
+	every_system_with_aura = {
+		limit = {
+			AIO_is_backlash_affect_system = { MAKER = $MAKER$ }
+			[[CURRENT] AIO_country_has_colony_in_system = { CURRENT = $CURRENT$ } ]
+		}
+		hidden_effect = { AIO_balanced_backlash_clear_modifier = yes }
+		every_system_planet_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
+			add_modifier = {
+				modifier = AIO_balanced_backlash_3
+				years = 2
+			}
+			add_planet_devastation = $DEVASTATION$
+		}
+		every_system_ship_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
+			add_modifier = {
+				modifier = AIO_balanced_backlash_3
+				years = 2
+			}
+			add_planet_devastation = $DEVASTATION$
+		}
+	}
+}
+
+# scope: country, backlash maker
+AIO_balanced_backlash_collapse = {
+	every_system_with_aura = {
+		limit = {
+			AIO_is_backlash_affect_system = { MAKER = $MAKER$ }
+			[[CURRENT] AIO_country_has_colony_in_system = { CURRENT = $CURRENT$ } ]
+		}
+		hidden_effect = { AIO_balanced_backlash_clear_modifier = yes }
+		every_system_planet_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
+			add_planet_devastation = 40
+			add_blocker = { type = d_AIO_balanced_uniform_residue }
+			add_modifier = {
+				modifier = AIO_balanced_backlash_collapse_colony
+				years = 5
 			}
 		}
 		every_system_ship_colony = {
-			add_planet_devastation = $DEVASTATION$
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
+			add_planet_devastation = 40
+			add_blocker = { type = d_AIO_balanced_uniform_residue }
 			add_modifier = {
-				modifier = AIO_balanced_accidence_2
-				days = 720
+				modifier = AIO_balanced_backlash_collapse_colony
+				years = 5
 			}
-		}
-	}
-}
-
-# scope: situation
-AIO_interference_accidence_balanced_stage_3 = {
-	target? = {
-		AIO_interference_balanced_clear_modifier = yes
-		every_system_planet_colony = {
-			add_planet_devastation = $DEVASTATION$
-			add_modifier = {
-				modifier = AIO_balanced_accidence_3
-				days = 720
-			}
-		}
-		every_system_ship_colony = {
-			add_planet_devastation = $DEVASTATION$
-			add_modifier = {
-				modifier = AIO_balanced_accidence_3
-				days = 720
-			}
-		}
-	}
-}
-
-# scope: system. Shared by the real collapse and its native option tooltip.
-AIO_interference_balanced_collapse_outcome = {
-	every_system_planet_colony = {
-		add_planet_devastation = 40
-		add_blocker = { type = d_AIO_balanced_uniform_residue }
-		add_modifier = {
-			modifier = AIO_balanced_collapse_colony
-			days = 1825
-		}
-	}
-	every_system_ship_colony = {
-		add_planet_devastation = 40
-		add_blocker = { type = d_AIO_balanced_uniform_residue }
-		add_modifier = {
-			modifier = AIO_balanced_collapse_colony
-			days = 1825
-		}
-	}
-}
-
-# scope: situation
-AIO_interference_accidence_balanced_collapse = {
-	target? = {
-		AIO_interference_balanced_clear_modifier = yes
-		AIO_interference_balanced_collapse_outcome = yes
-		AIO_interference_reset_aura = yes
-		hidden_effect = {
-			remove_star_flag = AIO_balanced_backlash_active
-		}
-	}
-}
-
-# scope: situation
-AIO_interference_accidence_balanced_abort = {
-	target? = {
-		remove_star_flag = AIO_balanced_backlash_active
-		AIO_interference_reset_aura = yes
-		hidden_effect = {
-			remove_star_flag = AIO_balanced_backlash_active
 		}
 	}
 }
 
 # scope: system
-AIO_interference_balanced_clear_modifier = {
+AIO_balanced_backlash_clear_modifier = {
 	every_system_planet_colony = {
-		remove_modifier = AIO_balanced_accidence_1
-		remove_modifier = AIO_balanced_accidence_2
-		remove_modifier = AIO_balanced_accidence_3
+		remove_modifier = AIO_balanced_backlash_1
+		remove_modifier = AIO_balanced_backlash_2
+		remove_modifier = AIO_balanced_backlash_3
 	}
 	every_system_ship_colony = {
-		remove_modifier = AIO_balanced_accidence_1
-		remove_modifier = AIO_balanced_accidence_2
-		remove_modifier = AIO_balanced_accidence_3
+		remove_modifier = AIO_balanced_backlash_1
+		remove_modifier = AIO_balanced_backlash_2
+		remove_modifier = AIO_balanced_backlash_3
 	}
 }
 
 #endregion
 
 
-#region energy accidence
+#region energy backlash
 
-# scope: aura system
-AIO_interference_energy_start = {
-	set_star_flag = AIO_energy_backlash_active
-	save_event_target_as = AIO_energy_backlash_system
-	aura_owner = {
-		start_situation = {
-			type = AIO_interference_energy_backlash
-			target = event_target:AIO_energy_backlash_system
+# scope: country
+AIO_energy_backlash_stage_1 = {
+	every_system_with_aura = {
+		limit = {
+			AIO_is_backlash_affect_system = { MAKER = $MAKER$ }
+			[[CURRENT] AIO_country_has_colony_in_system = { CURRENT = $CURRENT$ } ]
 		}
-	}
-}
-
-# scope: situation
-AIO_interference_accidence_energy_stage_1 = {
-	target? = {
-		AIO_interference_energy_clear_modifier = yes
+		hidden_effect = { AIO_energy_backlash_clear_modifier = yes }
 		every_system_planet_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_energy_accidence_1
-				days = 360
+				modifier = AIO_energy_backlash_1
+				years = 2
 			}
 		}
 		every_system_ship_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_energy_accidence_1
-				days = 360
+				modifier = AIO_energy_backlash_1
+				years = 2
 			}
 		}
 	}
 }
 
-# scope: situation
-AIO_interference_accidence_energy_stage_2 = {
-	target? = {
-		AIO_interference_energy_clear_modifier = yes
-		add_modifier = { modifier = AIO_energy_accidence_2_system days = 720 }
-		every_system_planet_colony = {
-			add_planet_devastation = $DEVASTATION$
-			add_modifier = {
-				modifier = AIO_energy_accidence_2
-				days = 720
-			}
+# scope: country
+AIO_energy_backlash_stage_2 = {
+	every_system_with_aura = {
+		limit = {
+			AIO_is_backlash_affect_system = { MAKER = $MAKER$ }
+			[[CURRENT] AIO_country_has_colony_in_system = { CURRENT = $CURRENT$ } ]
 		}
-		every_system_ship_colony = {
-			add_planet_devastation = $DEVASTATION$
-			add_modifier = {
-				modifier = AIO_energy_accidence_2
-				days = 720
-			}
-		}
-	}
-}
-
-# scope: situation
-AIO_interference_accidence_energy_stage_3 = {
-	target? = {
-		AIO_interference_energy_clear_modifier = yes
-		add_modifier = { modifier = AIO_energy_accidence_3_system days = 720 }
-		every_system_planet_colony = {
-			add_planet_devastation = $DEVASTATION$
-			add_modifier = {
-				modifier = AIO_energy_accidence_3
-				days = 720
-			}
-		}
-		every_system_ship_colony = {
-			add_planet_devastation = $DEVASTATION$
-			add_modifier = {
-				modifier = AIO_energy_accidence_3
-				days = 720
-			}
-		}
-	}
-}
-
-# scope: system. Shared by the real collapse and its native option tooltip.
-AIO_interference_energy_collapse_outcome = {
-	every_system_planet_colony = {
-		add_planet_devastation = 40
-		add_blocker = { type = d_AIO_energy_cascade_residue }
+		hidden_effect = { AIO_energy_backlash_clear_modifier = yes }
 		add_modifier = {
-			modifier = AIO_energy_grid_collapse_colony
-			days = 1825
+			modifier = AIO_energy_backlash_2_system
+			years = 2
+		}
+		every_system_planet_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
+			add_modifier = {
+				modifier = AIO_energy_backlash_2
+				years = 2
+			}
+			add_planet_devastation = $DEVASTATION$
+		}
+		every_system_ship_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
+			add_modifier = {
+				modifier = AIO_energy_backlash_2
+				years = 2
+			}
+			add_planet_devastation = $DEVASTATION$
 		}
 	}
-	every_system_ship_colony = {
-		add_planet_devastation = 40
-		add_blocker = { type = d_AIO_energy_cascade_residue }
+}
+
+# scope: country
+AIO_energy_backlash_stage_3 = {
+	every_system_with_aura = {
+		limit = {
+			AIO_is_backlash_affect_system = { MAKER = $MAKER$ }
+			[[CURRENT] AIO_country_has_colony_in_system = { CURRENT = $CURRENT$ } ]
+		}
+		hidden_effect = { AIO_energy_backlash_clear_modifier = yes }
 		add_modifier = {
-			modifier = AIO_energy_grid_collapse_colony
-			days = 1825
+			modifier = AIO_energy_backlash_3_system
+			years = 2
+		}
+		every_system_planet_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
+			add_modifier = {
+				modifier = AIO_energy_backlash_3
+				years = 2
+			}
+			add_planet_devastation = $DEVASTATION$
+		}
+		every_system_ship_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
+			add_modifier = {
+				modifier = AIO_energy_backlash_3
+				years = 2
+			}
+			add_planet_devastation = $DEVASTATION$
 		}
 	}
 }
 
-# scope: situation
-AIO_interference_accidence_energy_collapse = {
-	target? = {
-		AIO_interference_energy_clear_modifier = yes
-		AIO_interference_energy_collapse_outcome = yes
-		AIO_interference_reset_aura = yes
-		hidden_effect = {
-			remove_star_flag = AIO_energy_backlash_active
+# scope: country
+AIO_energy_backlash_collapse = {
+	every_system_with_aura = {
+		limit = {
+			AIO_is_backlash_affect_system = { MAKER = $MAKER$ }
+			[[CURRENT] AIO_country_has_colony_in_system = { CURRENT = $CURRENT$ } ]
 		}
-	}
-}
-
-# scope: situation
-AIO_interference_accidence_energy_abort = {
-	target? = {
-		remove_star_flag = AIO_energy_backlash_active
-		AIO_interference_reset_aura = yes
-		hidden_effect = {
-			remove_star_flag = AIO_energy_backlash_active
+		hidden_effect = { AIO_energy_backlash_clear_modifier = yes }
+		every_system_planet_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
+			add_planet_devastation = 40
+			add_blocker = { type = d_AIO_energy_cascade_residue }
+			add_modifier = {
+				modifier = AIO_energy_backlash_collapse_colony
+				years = 5
+			}
+		}
+		every_system_ship_colony = {
+			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
+			add_planet_devastation = 40
+			add_blocker = { type = d_AIO_energy_cascade_residue }
+			add_modifier = {
+				modifier = AIO_energy_backlash_collapse_colony
+				years = 5
+			}
 		}
 	}
 }
 
 # scope: system
-AIO_interference_energy_clear_modifier = {
-	remove_modifier = AIO_energy_accidence_2_system
-	remove_modifier = AIO_energy_accidence_3_system
+AIO_energy_backlash_clear_modifier = {
+	remove_modifier = AIO_energy_backlash_2_system
+	remove_modifier = AIO_energy_backlash_3_system
 	every_system_planet_colony = {
-		remove_modifier = AIO_energy_accidence_1
-		remove_modifier = AIO_energy_accidence_2
-		remove_modifier = AIO_energy_accidence_3
+		remove_modifier = AIO_energy_backlash_1
+		remove_modifier = AIO_energy_backlash_2
+		remove_modifier = AIO_energy_backlash_3
 	}
 	every_system_ship_colony = {
-		remove_modifier = AIO_energy_accidence_1
-		remove_modifier = AIO_energy_accidence_2
-		remove_modifier = AIO_energy_accidence_3
+		remove_modifier = AIO_energy_backlash_1
+		remove_modifier = AIO_energy_backlash_2
+		remove_modifier = AIO_energy_backlash_3
 	}
 }
 
