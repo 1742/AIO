@@ -165,6 +165,17 @@ AIO_interference_award = {
 	complete_crisis_objective = crisobj_AIO_research_thesis
 }
 
+# Scope: country. A collapsed experiment returns a smaller, one-time research
+# payout without completing the objective awarded by a successful reversal.
+AIO_interference_collapse_award = {
+	add_monthly_resource_mult = {
+		resource = $RESOURCE$
+		value = @tier2researchreward
+		min = @tier2researchmin
+		max = @tier2researchmax
+	}
+}
+
 # Scope: situation. Save the actor and system for both copies of the notice.
 # Each hidden stage event applies its effects before invoking this dispatcher.
 AIO_interference_dispatch_notice = {
@@ -262,26 +273,31 @@ AIO_interference_accidence_balanced_stage_3 = {
 	}
 }
 
+# scope: system. Shared by the real collapse and its native option tooltip.
+AIO_interference_balanced_collapse_outcome = {
+	every_system_planet_colony = {
+		add_planet_devastation = 40
+		add_blocker = { type = d_AIO_balanced_uniform_residue }
+		add_modifier = {
+			modifier = AIO_balanced_collapse_colony
+			days = 1825
+		}
+	}
+	every_system_ship_colony = {
+		add_planet_devastation = 40
+		add_blocker = { type = d_AIO_balanced_uniform_residue }
+		add_modifier = {
+			modifier = AIO_balanced_collapse_colony
+			days = 1825
+		}
+	}
+}
+
 # scope: situation
 AIO_interference_accidence_balanced_collapse = {
 	target? = {
 		AIO_interference_balanced_clear_modifier = yes
-		every_system_planet_colony = {
-			add_planet_devastation = 40
-			add_blocker = { type = d_AIO_balanced_uniform_residue }
-			add_modifier = {
-				modifier = AIO_balanced_collapse_colony
-				days = 1825
-			}
-		}
-		every_system_ship_colony = {
-			add_planet_devastation = 40
-			add_blocker = { type = d_AIO_balanced_uniform_residue }
-			add_modifier = {
-				modifier = AIO_balanced_collapse_colony
-				days = 1825
-			}
-		}
+		AIO_interference_balanced_collapse_outcome = yes
 		AIO_interference_reset_aura = yes
 		hidden_effect = {
 			remove_star_flag = AIO_balanced_backlash_active
@@ -394,26 +410,31 @@ AIO_interference_accidence_energy_stage_3 = {
 	}
 }
 
+# scope: system. Shared by the real collapse and its native option tooltip.
+AIO_interference_energy_collapse_outcome = {
+	every_system_planet_colony = {
+		add_planet_devastation = 40
+		add_blocker = { type = d_AIO_energy_cascade_residue }
+		add_modifier = {
+			modifier = AIO_energy_grid_collapse_colony
+			days = 1825
+		}
+	}
+	every_system_ship_colony = {
+		add_planet_devastation = 40
+		add_blocker = { type = d_AIO_energy_cascade_residue }
+		add_modifier = {
+			modifier = AIO_energy_grid_collapse_colony
+			days = 1825
+		}
+	}
+}
+
 # scope: situation
 AIO_interference_accidence_energy_collapse = {
 	target? = {
 		AIO_interference_energy_clear_modifier = yes
-		every_system_planet_colony = {
-			add_planet_devastation = 40
-			add_blocker = { type = d_AIO_energy_cascade_residue }
-			add_modifier = {
-				modifier = AIO_energy_grid_collapse_colony
-				days = 1825
-			}
-		}
-		every_system_ship_colony = {
-			add_planet_devastation = 40
-			add_blocker = { type = d_AIO_energy_cascade_residue }
-			add_modifier = {
-				modifier = AIO_energy_grid_collapse_colony
-				days = 1825
-			}
-		}
+		AIO_interference_energy_collapse_outcome = yes
 		AIO_interference_reset_aura = yes
 		hidden_effect = {
 			remove_star_flag = AIO_energy_backlash_active
@@ -526,26 +547,31 @@ AIO_interference_accidence_ecology_stage_3 = {
 	}
 }
 
+# scope: system. Shared by the real collapse and its native option tooltip.
+AIO_interference_ecology_collapse_outcome = {
+	every_system_planet_colony = {
+		add_planet_devastation = 40
+		add_blocker = { type = d_AIO_ecology_overgrowth }
+		add_modifier = {
+			modifier = AIO_ecology_collapse_colony
+			days = 1825
+		}
+	}
+	every_system_ship_colony = {
+		add_planet_devastation = 40
+		add_blocker = { type = d_AIO_ecology_overgrowth }
+		add_modifier = {
+			modifier = AIO_ecology_collapse_colony
+			days = 1825
+		}
+	}
+}
+
 # scope: situation
 AIO_interference_accidence_ecology_collapse = {
 	target? = {
 		AIO_interference_ecology_clear_modifier = yes
-		every_system_planet_colony = {
-			add_planet_devastation = 40
-			add_blocker = { type = d_AIO_ecology_overgrowth }
-			add_modifier = {
-				modifier = AIO_ecology_collapse_colony
-				days = 1825
-			}
-		}
-		every_system_ship_colony = {
-			add_planet_devastation = 40
-			add_blocker = { type = d_AIO_ecology_overgrowth }
-			add_modifier = {
-				modifier = AIO_ecology_collapse_colony
-				days = 1825
-			}
-		}
+		AIO_interference_ecology_collapse_outcome = yes
 		AIO_interference_reset_aura = yes
 		hidden_effect = {
 			remove_star_flag = AIO_ecology_backlash_active
@@ -656,26 +682,31 @@ AIO_interference_accidence_industry_stage_3 = {
 	}
 }
 
+# scope: system. Shared by the real collapse and its native option tooltip.
+AIO_interference_industry_collapse_outcome = {
+	every_system_planet_colony = {
+		add_planet_devastation = 40
+		add_blocker = { type = d_AIO_industry_slag_residue }
+		add_modifier = {
+			modifier = AIO_industry_collapse_colony
+			days = 1825
+		}
+	}
+	every_system_ship_colony = {
+		add_planet_devastation = 40
+		add_blocker = { type = d_AIO_industry_slag_residue }
+		add_modifier = {
+			modifier = AIO_industry_collapse_colony
+			days = 1825
+		}
+	}
+}
+
 # scope: situation
 AIO_interference_accidence_industry_collapse = {
 	target? = {
 		AIO_interference_industry_clear_modifier = yes
-		every_system_planet_colony = {
-			add_planet_devastation = 40
-			add_blocker = { type = d_AIO_industry_slag_residue }
-			add_modifier = {
-				modifier = AIO_industry_collapse_colony
-				days = 1825
-			}
-		}
-		every_system_ship_colony = {
-			add_planet_devastation = 40
-			add_blocker = { type = d_AIO_industry_slag_residue }
-			add_modifier = {
-				modifier = AIO_industry_collapse_colony
-				days = 1825
-			}
-		}
+		AIO_interference_industry_collapse_outcome = yes
 		AIO_interference_reset_aura = yes
 		hidden_effect = {
 			remove_star_flag = AIO_industry_backlash_active
@@ -789,27 +820,32 @@ AIO_interference_accidence_metric_stage_3 = {
 	}
 }
 
+# scope: system. Shared by the real collapse and its native option tooltip.
+AIO_interference_metric_collapse_outcome = {
+	add_modifier = { modifier = AIO_metric_collapse_system days = 1825 }
+	every_system_planet_colony = {
+		add_planet_devastation = 40
+		add_blocker = { type = d_AIO_metric_fold_residue }
+		add_modifier = {
+			modifier = AIO_metric_collapse_colony
+			days = 1825
+		}
+	}
+	every_system_ship_colony = {
+		add_planet_devastation = 40
+		add_blocker = { type = d_AIO_metric_fold_residue }
+		add_modifier = {
+			modifier = AIO_metric_collapse_colony
+			days = 1825
+		}
+	}
+}
+
 # scope: situation
 AIO_interference_accidence_metric_collapse = {
 	target? = {
 		AIO_interference_metric_clear_modifier = yes
-		add_modifier = { modifier = AIO_metric_collapse_system days = 1825 }
-		every_system_planet_colony = {
-			add_planet_devastation = 40
-			add_blocker = { type = d_AIO_metric_fold_residue }
-			add_modifier = {
-				modifier = AIO_metric_collapse_colony
-				days = 1825
-			}
-		}
-		every_system_ship_colony = {
-			add_planet_devastation = 40
-			add_blocker = { type = d_AIO_metric_fold_residue }
-			add_modifier = {
-				modifier = AIO_metric_collapse_colony
-				days = 1825
-			}
-		}
+		AIO_interference_metric_collapse_outcome = yes
 		AIO_interference_reset_aura = yes
 		hidden_effect = {
 			remove_star_flag = AIO_metric_backlash_active

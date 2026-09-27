@@ -396,6 +396,8 @@
  AIO_metric_accidence_3_desc: "Usable space and travel effects peak while coordinate drift disrupts gunnery; construction and travel on any colonies also suffer."
  AIO_metric_collapse_colony: "Geometric Collapse"
  AIO_metric_collapse_colony_desc: "Some usable space contracts and travel remains disrupted; construction and district upkeep on any colonies also face years of pressure."
+ AIO_metric_collapse_system: "Geometric Collapse (System)"
+ AIO_metric_collapse_system_desc: "Coordinate drift after the collapse disrupts ship travel and targeting for years."
 
  d_AIO_metric_fold_residue: "£blocker£ Residual Fold"
  d_AIO_metric_fold_residue_desc: "Roads and building foundations overlap in one area. Crews must repeatedly survey adjacent districts before construction can resume."

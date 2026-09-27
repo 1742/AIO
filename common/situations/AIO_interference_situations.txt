@@ -1,5 +1,7 @@
 # Each stage calls a hidden situation event. It applies the consequences once,
 # then sends separate visible notices to the experimenter and system owner.
+# Entering stage three permanently locks the selected approach. Its own allow
+# trigger stays true so the active approach can continue paying upkeep and progress.
 AIO_interference_balanced_backlash = {
 	picture = GFX_evt_AIO_balanced_backlash
 	category = negative
@@ -73,6 +75,7 @@ AIO_interference_balanced_backlash = {
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			on_first_enter = {
+				set_situation_flag = AIO_balanced_approach_locked
 				situation_event = { id = AIO_interference_events.312 }
 			}
 		}
@@ -89,7 +92,10 @@ AIO_interference_balanced_backlash = {
 		icon_background = GFX_situation_approach_bg_red
 		default = yes
 		allow = {
-			current_stage < AIO_balanced_stage_three
+			OR = {
+				current_situation_approach = AIO_balanced_maintain
+				NOT = { has_situation_flag = AIO_balanced_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -114,7 +120,10 @@ AIO_interference_balanced_backlash = {
 		icon = GFX_situation_approach_scales
 		icon_background = GFX_situation_approach_bg_yellow
 		allow = {
-			current_stage < AIO_balanced_stage_three
+			OR = {
+				current_situation_approach = AIO_balanced_blockade
+				NOT = { has_situation_flag = AIO_balanced_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -140,7 +149,10 @@ AIO_interference_balanced_backlash = {
 		icon_background = GFX_situation_approach_bg_green
 		potential = { owner = { has_menace_perk = menp_AIO_mega_03 } }
 		allow = {
-			current_stage < AIO_balanced_stage_three
+			OR = {
+				current_situation_approach = AIO_balanced_reverse
+				NOT = { has_situation_flag = AIO_balanced_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -237,6 +249,7 @@ AIO_interference_energy_backlash = {
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			on_first_enter = {
+				set_situation_flag = AIO_energy_approach_locked
 				situation_event = { id = AIO_interference_events.322 }
 			}
 		}
@@ -253,7 +266,10 @@ AIO_interference_energy_backlash = {
 		icon_background = GFX_situation_approach_bg_red
 		default = yes
 		allow = {
-			current_stage < AIO_energy_stage_three
+			OR = {
+				current_situation_approach = AIO_energy_maintain
+				NOT = { has_situation_flag = AIO_energy_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -278,7 +294,10 @@ AIO_interference_energy_backlash = {
 		icon = GFX_situation_approach_scales
 		icon_background = GFX_situation_approach_bg_yellow
 		allow = {
-			current_stage < AIO_energy_stage_three
+			OR = {
+				current_situation_approach = AIO_energy_blockade
+				NOT = { has_situation_flag = AIO_energy_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -304,7 +323,10 @@ AIO_interference_energy_backlash = {
 		icon_background = GFX_situation_approach_bg_green
 		potential = { owner = { has_menace_perk = menp_AIO_mega_03 } }
 		allow = {
-			current_stage < AIO_energy_stage_three
+			OR = {
+				current_situation_approach = AIO_energy_reverse
+				NOT = { has_situation_flag = AIO_energy_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -402,6 +424,7 @@ AIO_interference_ecology_backlash = {
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			on_first_enter = {
+				set_situation_flag = AIO_ecology_approach_locked
 				situation_event = { id = AIO_interference_events.332 }
 			}
 		}
@@ -418,7 +441,10 @@ AIO_interference_ecology_backlash = {
 		icon_background = GFX_situation_approach_bg_red
 		default = yes
 		allow = {
-			current_stage < AIO_ecology_stage_three
+			OR = {
+				current_situation_approach = AIO_ecology_maintain
+				NOT = { has_situation_flag = AIO_ecology_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -443,7 +469,10 @@ AIO_interference_ecology_backlash = {
 		icon = GFX_situation_approach_scales
 		icon_background = GFX_situation_approach_bg_yellow
 		allow = {
-			current_stage < AIO_ecology_stage_three
+			OR = {
+				current_situation_approach = AIO_ecology_blockade
+				NOT = { has_situation_flag = AIO_ecology_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -469,7 +498,10 @@ AIO_interference_ecology_backlash = {
 		icon_background = GFX_situation_approach_bg_green
 		potential = { owner = { has_menace_perk = menp_AIO_mega_03 } }
 		allow = {
-			current_stage < AIO_ecology_stage_three
+			OR = {
+				current_situation_approach = AIO_ecology_reverse
+				NOT = { has_situation_flag = AIO_ecology_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -566,6 +598,7 @@ AIO_interference_industry_backlash = {
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			on_first_enter = {
+				set_situation_flag = AIO_industry_approach_locked
 				situation_event = { id = AIO_interference_events.342 }
 			}
 		}
@@ -582,7 +615,10 @@ AIO_interference_industry_backlash = {
 		icon_background = GFX_situation_approach_bg_red
 		default = yes
 		allow = {
-			current_stage < AIO_industry_stage_three
+			OR = {
+				current_situation_approach = AIO_industry_maintain
+				NOT = { has_situation_flag = AIO_industry_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -607,7 +643,10 @@ AIO_interference_industry_backlash = {
 		icon = GFX_situation_approach_scales
 		icon_background = GFX_situation_approach_bg_yellow
 		allow = {
-			current_stage < AIO_industry_stage_three
+			OR = {
+				current_situation_approach = AIO_industry_blockade
+				NOT = { has_situation_flag = AIO_industry_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -633,7 +672,10 @@ AIO_interference_industry_backlash = {
 		icon_background = GFX_situation_approach_bg_green
 		potential = { owner = { has_menace_perk = menp_AIO_mega_03 } }
 		allow = {
-			current_stage < AIO_industry_stage_three
+			OR = {
+				current_situation_approach = AIO_industry_reverse
+				NOT = { has_situation_flag = AIO_industry_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -730,6 +772,7 @@ AIO_interference_metric_backlash = {
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			on_first_enter = {
+				set_situation_flag = AIO_metric_approach_locked
 				situation_event = { id = AIO_interference_events.352 }
 			}
 		}
@@ -746,7 +789,10 @@ AIO_interference_metric_backlash = {
 		icon_background = GFX_situation_approach_bg_red
 		default = yes
 		allow = {
-			current_stage < AIO_metric_stage_three
+			OR = {
+				current_situation_approach = AIO_metric_maintain
+				NOT = { has_situation_flag = AIO_metric_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -771,7 +817,10 @@ AIO_interference_metric_backlash = {
 		icon = GFX_situation_approach_scales
 		icon_background = GFX_situation_approach_bg_yellow
 		allow = {
-			current_stage < AIO_metric_stage_three
+			OR = {
+				current_situation_approach = AIO_metric_blockade
+				NOT = { has_situation_flag = AIO_metric_approach_locked }
+			}
 		}
 		resources = {
 			category = situations
@@ -797,7 +846,10 @@ AIO_interference_metric_backlash = {
 		icon_background = GFX_situation_approach_bg_green
 		potential = { owner = { has_menace_perk = menp_AIO_mega_03 } }
 		allow = {
-			current_stage < AIO_metric_stage_three
+			OR = {
+				current_situation_approach = AIO_metric_reverse
+				NOT = { has_situation_flag = AIO_metric_approach_locked }
+			}
 		}
 		resources = {
 			category = situations

@@ -65,7 +65,7 @@ AIO_reality_interferometer = {
 	dismantle_potential = { always = yes }
 
 	on_build_complete = {
-		AIO_interference_create_source = { OWNER = root }
+		AIO_interference_create_source = { OWNER = fromfrom.owner }
 		from = { country_event = { id = AIO_interference_events.201 } }
 	}
 

@@ -40,7 +40,7 @@ AIO_reality_interference_aura = {
 				}
 				OR = {
 					has_star_flag = AIO_interference_source
-					AIO_is_nearby_interference_source = { OWNER = aura_owner }
+					AIO_is_nearby_interference_source = { OWNER = root.aura_owner }
 				}
 			}
 			# Each doctrine rolls its own accident; the star flags above keep them from
@@ -91,18 +91,18 @@ AIO_reality_interference_aura = {
 		OR = {
 			has_star_flag = AIO_interference_source
 			AIO_is_nearby_interference_source = {
-				OWNER = aura_owner
+				OWNER = root.aura_owner
 			}
 		}
 	}
 	monthly_increase = {
-		base = 1
+		base = 80
 		modifier = {
 			add = value:AIO_reality_interference_nearby_source_growth|OWNER|root.aura_owner|
 			OR = {
 				has_star_flag = AIO_interference_source
 				AIO_is_nearby_interference_source = {
-					OWNER = aura_owner
+					OWNER = root.aura_owner
 				}
 			}
 			desc = AIO_interference_source_intensity_desc

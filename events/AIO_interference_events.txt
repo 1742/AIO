@@ -310,20 +310,20 @@ country_event = {
 	option = {
 		trigger = { is_same_value = event_target:AIO_accident_owner }
 		name = AIO_interference_events.414.option.maker
+		AIO_interference_collapse_award = { RESOURCE = society_research }
+		tooltip = {
+			event_target:AIO_accident_system = { AIO_interference_balanced_collapse_outcome = yes }
+		}
 	}
 	option = {
 		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
 		name = AIO_interference_notice.collapse_option
+		tooltip = {
+			event_target:AIO_accident_system = { AIO_interference_balanced_collapse_outcome = yes }
+		}
 		add_opinion_modifier = {
 			modifier = opinion_AIO_interference_accident
 			who = event_target:AIO_accident_owner
-		}
-	}
-	after = {
-		tooltip = {
-			from = {
-				AIO_interference_accidence_balanced_collapse = yes
-			}
 		}
 	}
 }
@@ -664,20 +664,20 @@ country_event = {
 	option = {
 		trigger = { is_same_value = event_target:AIO_accident_owner }
 		name = AIO_interference_events.424.option.maker
+		AIO_interference_collapse_award = { RESOURCE = physics_research }
+		tooltip = {
+			event_target:AIO_accident_system = { AIO_interference_energy_collapse_outcome = yes }
+		}
 	}
 	option = {
 		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
 		name = AIO_interference_notice.collapse_option
+		tooltip = {
+			event_target:AIO_accident_system = { AIO_interference_energy_collapse_outcome = yes }
+		}
 		add_opinion_modifier = {
 			modifier = opinion_AIO_interference_accident
 			who = event_target:AIO_accident_owner
-		}
-	}
-	after = {
-		tooltip = {
-			from = {
-				AIO_interference_accidence_energy_collapse = yes
-			}
 		}
 	}
 }
@@ -1018,20 +1018,20 @@ country_event = {
 	option = {
 		trigger = { is_same_value = event_target:AIO_accident_owner }
 		name = AIO_interference_events.434.option.maker
+		AIO_interference_collapse_award = { RESOURCE = society_research }
+		tooltip = {
+			event_target:AIO_accident_system = { AIO_interference_ecology_collapse_outcome = yes }
+		}
 	}
 	option = {
 		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
 		name = AIO_interference_notice.collapse_option
+		tooltip = {
+			event_target:AIO_accident_system = { AIO_interference_ecology_collapse_outcome = yes }
+		}
 		add_opinion_modifier = {
 			modifier = opinion_AIO_interference_accident
 			who = event_target:AIO_accident_owner
-		}
-	}
-	after = {
-		tooltip = {
-			from = {
-				AIO_interference_accidence_ecology_collapse = yes
-			}
 		}
 	}
 }
@@ -1372,20 +1372,20 @@ country_event = {
 	option = {
 		trigger = { is_same_value = event_target:AIO_accident_owner }
 		name = AIO_interference_events.444.option.maker
+		AIO_interference_collapse_award = { RESOURCE = engineering_research }
+		tooltip = {
+			event_target:AIO_accident_system = { AIO_interference_industry_collapse_outcome = yes }
+		}
 	}
 	option = {
 		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
 		name = AIO_interference_notice.collapse_option
+		tooltip = {
+			event_target:AIO_accident_system = { AIO_interference_industry_collapse_outcome = yes }
+		}
 		add_opinion_modifier = {
 			modifier = opinion_AIO_interference_accident
 			who = event_target:AIO_accident_owner
-		}
-	}
-	after = {
-		tooltip = {
-			from = {
-				AIO_interference_accidence_industry_collapse = yes
-			}
 		}
 	}
 }
@@ -1726,20 +1726,20 @@ country_event = {
 	option = {
 		trigger = { is_same_value = event_target:AIO_accident_owner }
 		name = AIO_interference_events.454.option.maker
+		AIO_interference_collapse_award = { RESOURCE = physics_research }
+		tooltip = {
+			event_target:AIO_accident_system = { AIO_interference_metric_collapse_outcome = yes }
+		}
 	}
 	option = {
 		trigger = { NOT = { is_same_value = event_target:AIO_accident_owner } }
 		name = AIO_interference_notice.collapse_option
+		tooltip = {
+			event_target:AIO_accident_system = { AIO_interference_metric_collapse_outcome = yes }
+		}
 		add_opinion_modifier = {
 			modifier = opinion_AIO_interference_accident
 			who = event_target:AIO_accident_owner
-		}
-	}
-	after = {
-		tooltip = {
-			from = {
-				AIO_interference_accidence_metric_collapse = yes
-			}
 		}
 	}
 }

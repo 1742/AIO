@@ -402,6 +402,8 @@
  AIO_metric_accidence_3_desc: "可用空间与航行效应达到峰值，坐标漂移干扰火控；若有殖民地，施工和居民出行也会受阻。"
  AIO_metric_collapse_colony: "几何崩塌"
  AIO_metric_collapse_colony_desc: "部分可用空间回缩，航行长期受阻；若有殖民地，施工和区划维护也将承压。"
+ AIO_metric_collapse_system: "几何崩塌（星系）"
+ AIO_metric_collapse_system_desc: "崩塌后的坐标漂移使舰船航行和火控长期受阻。"
 
  d_AIO_metric_fold_residue: "£blocker£ 折叠残区"
  d_AIO_metric_fold_residue_desc: "路面与建筑基础在局部交叠，维护人员必须反复测绘相邻区划，暂时无法安全施工。"

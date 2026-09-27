@@ -37,11 +37,12 @@ AIO_reality_interference_proof_growth = {
 	max = 5
 }
 
-# scope: aura galactic object
+# Scope: a planet or fleet affected by the aura.
+# Aura intensity belongs to the system, not to the affected planet or fleet.
 AIO_interference_intensity_multiplier = {
 	base = 0
 	add = solar_system.AIO_interference_sources
-	mult = trigger:is_aura_intensity_level
+	mult = solar_system.trigger:is_aura_intensity_level
 }
 
 # Situation scope. The field and the accident use the same source and local-job
