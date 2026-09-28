@@ -22,6 +22,7 @@ country_event = {
 
 #region effect
 
+# start, apply stage one effect
 situation_event = {
 	id = AIO_interference_events.310
 	hide_window = yes
@@ -29,13 +30,14 @@ situation_event = {
 	immediate = {
 		owner = {
 			AIO_balanced_backlash_stage_1 = {
-				MAKER = root.owner
+				MAKER = this
 			}
 		}
-		AIO_interference_empire_backlash_dispatch_notice = { EVENT = AIO_interference_events.410 }
+		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.410 }
 	}
 }
 
+# stage 2
 situation_event = {
 	id = AIO_interference_events.311
 	hide_window = yes
@@ -45,7 +47,7 @@ situation_event = {
 			limit = { current_situation_approach = AIO_balanced_blockade }
 			owner = {
 				AIO_balanced_backlash_stage_2 = {
-					MAKER = root.owner
+					MAKER = this
 					DEVASTATION = 10
 				}
 			}
@@ -53,15 +55,16 @@ situation_event = {
 		else = {
 			owner = {
 				AIO_balanced_backlash_stage_2 = {
-					MAKER = root.owner
+					MAKER = this
 					DEVASTATION = 20
 				}
 			}
 		}
-		AIO_interference_empire_backlash_dispatch_notice = { EVENT = AIO_interference_events.411 }
+		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.411 }
 	}
 }
 
+# stage 3
 situation_event = {
 	id = AIO_interference_events.312
 	hide_window = yes
@@ -71,7 +74,7 @@ situation_event = {
 			limit = { current_situation_approach = AIO_balanced_blockade }
 			owner = {
 				AIO_balanced_backlash_stage_3 = {
-					MAKER = root.owner
+					MAKER = this
 					DEVASTATION = 10
 				}
 			}
@@ -79,47 +82,52 @@ situation_event = {
 		else = {
 			owner = {
 				AIO_balanced_backlash_stage_3 = {
-					MAKER = root.owner
+					MAKER = this
 					DEVASTATION = 20
 				}
 			}
 		}
-		AIO_interference_empire_backlash_dispatch_notice = { EVENT = AIO_interference_events.412 }
+		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.412 }
 	}
 }
 
+# reverse
 situation_event = {
 	id = AIO_interference_events.313
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
 		owner = { AIO_interference_reverse_award = { RESOURCE = society_research } }
-		AIO_interference_empire_backlash_dispatch_notice = { EVENT = AIO_interference_events.413 }
-		owner = { AIO_interference_empire_backlash_finish = { TYPE = balanced SEAL = yes } }
+		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.413 }
+		owner = { AIO_interference_backlash_finish = { SEAL = yes } }
 		destroy_situation = this
 	}
 }
 
+# collapse
 situation_event = {
 	id = AIO_interference_events.314
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		owner = { AIO_balanced_backlash_collapse = { MAKER = root.owner } }
-		owner = { AIO_interference_collapse_award = { RESOURCE = society_research } }
-		AIO_interference_empire_backlash_dispatch_notice = { EVENT = AIO_interference_events.414 }
-		owner = { AIO_interference_empire_backlash_finish = { TYPE = balanced RESET = yes } }
+		owner = {
+			AIO_balanced_backlash_collapse = { MAKER = this }
+			AIO_interference_collapse_award = { RESOURCE = society_research }
+		}
+		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.414 }
+		owner = { AIO_interference_backlash_finish = { RESET = yes } }
 		destroy_situation = this
 	}
 }
 
+# fail
 situation_event = {
 	id = AIO_interference_events.315
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		AIO_interference_empire_backlash_dispatch_notice = { EVENT = AIO_interference_events.415 }
-		owner = { AIO_interference_empire_backlash_finish = { TYPE = balanced RESET = yes } }
+		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.415 }
+		owner = { AIO_interference_backlash_finish = { TYPE = balanced RESET = yes } }
 		destroy_situation = this
 	}
 }
@@ -365,6 +373,7 @@ country_event = {
 
 #region effect
 
+# start, apply stage one effect
 situation_event = {
 	id = AIO_interference_events.320
 	hide_window = yes
@@ -372,13 +381,14 @@ situation_event = {
 	immediate = {
 		owner = {
 			AIO_energy_backlash_stage_1 = {
-				MAKER = root.owner
+				MAKER = this
 			}
 		}
-		AIO_interference_empire_backlash_dispatch_notice = { EVENT = AIO_interference_events.420 }
+		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.420 }
 	}
 }
 
+# stage 2
 situation_event = {
 	id = AIO_interference_events.321
 	hide_window = yes
@@ -388,7 +398,7 @@ situation_event = {
 			limit = { current_situation_approach = AIO_energy_blockade }
 			owner = {
 				AIO_energy_backlash_stage_2 = {
-					MAKER = root.owner
+					MAKER = this
 					DEVASTATION = 10
 				}
 			}
@@ -396,15 +406,16 @@ situation_event = {
 		else = {
 			owner = {
 				AIO_energy_backlash_stage_2 = {
-					MAKER = root.owner
+					MAKER = this
 					DEVASTATION = 20
 				}
 			}
 		}
-		AIO_interference_empire_backlash_dispatch_notice = { EVENT = AIO_interference_events.421 }
+		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.421 }
 	}
 }
 
+# stage 3
 situation_event = {
 	id = AIO_interference_events.322
 	hide_window = yes
@@ -414,7 +425,7 @@ situation_event = {
 			limit = { current_situation_approach = AIO_energy_blockade }
 			owner = {
 				AIO_energy_backlash_stage_3 = {
-					MAKER = root.owner
+					MAKER = this
 					DEVASTATION = 10
 				}
 			}
@@ -422,47 +433,52 @@ situation_event = {
 		else = {
 			owner = {
 				AIO_energy_backlash_stage_3 = {
-					MAKER = root.owner
+					MAKER = this
 					DEVASTATION = 20
 				}
 			}
 		}
-		AIO_interference_empire_backlash_dispatch_notice = { EVENT = AIO_interference_events.422 }
+		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.422 }
 	}
 }
 
+# reverse
 situation_event = {
 	id = AIO_interference_events.323
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
 		owner = { AIO_interference_reverse_award = { RESOURCE = physics_research } }
-		AIO_interference_empire_backlash_dispatch_notice = { EVENT = AIO_interference_events.423 }
-		owner = { AIO_interference_empire_backlash_finish = { TYPE = energy SEAL = yes } }
+		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.423 }
+		owner = { AIO_interference_backlash_finish = { SEAL = yes } }
 		destroy_situation = this
 	}
 }
 
+# collapse
 situation_event = {
 	id = AIO_interference_events.324
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		owner = { AIO_energy_backlash_collapse = { MAKER = root.owner } }
-		owner = { AIO_interference_collapse_award = { RESOURCE = physics_research } }
-		AIO_interference_empire_backlash_dispatch_notice = { EVENT = AIO_interference_events.424 }
-		owner = { AIO_interference_empire_backlash_finish = { TYPE = energy RESET = yes } }
+		owner = {
+			AIO_energy_backlash_collapse = { MAKER = this }
+			AIO_interference_collapse_award = { RESOURCE = physics_research }
+		}
+		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.424 }
+		owner = { AIO_interference_backlash_finish = { RESET = yes } }
 		destroy_situation = this
 	}
 }
 
+# fail
 situation_event = {
 	id = AIO_interference_events.325
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		AIO_interference_empire_backlash_dispatch_notice = { EVENT = AIO_interference_events.425 }
-		owner = { AIO_interference_empire_backlash_finish = { TYPE = energy RESET = yes } }
+		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.425 }
+		owner = { AIO_interference_backlash_finish = { TYPE = energy RESET = yes } }
 		destroy_situation = this
 	}
 }
@@ -501,6 +517,9 @@ country_event = {
 				CURRENT = root
 			}
 		}
+		hidden_effect = {
+			remove_country_flag = AIO_backlash_notified_@from
+		}
 	}
 }
 
@@ -528,7 +547,9 @@ country_event = {
 	}
 	after = {
 		if = {
-			limit = { fromfrom = { current_situation_approach = AIO_energy_blockade } }
+			limit = {
+				fromfrom = { current_situation_approach = AIO_energy_blockade }
+			}
 			tooltip = {
 				AIO_energy_backlash_stage_2 = {
 					MAKER = from
@@ -545,6 +566,9 @@ country_event = {
 					DEVASTATION = 20
 				}
 			}
+		}
+		hidden_effect = {
+			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -591,6 +615,9 @@ country_event = {
 				}
 			}
 		}
+		hidden_effect = {
+			remove_country_flag = AIO_backlash_notified_@from
+		}
 	}
 }
 
@@ -611,9 +638,7 @@ country_event = {
 	option = {
 		trigger = { is_same_value = from }
 		name = AIO_interference_accidence_option.reverse
-		tooltip = {
-			AIO_interference_reverse_award = { RESOURCE = physics_research }
-		}
+		tooltip = { AIO_interference_reverse_award = { RESOURCE = physics_research } }
 	}
 	option = {
 		trigger = { NOT = { is_same_value = from } }
@@ -653,15 +678,15 @@ country_event = {
 	option = {
 		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.collapse_option
+		add_opinion_modifier = {
+			modifier = opinion_AIO_interference_accident
+			who = from
+		}
 		tooltip = {
 			AIO_energy_backlash_collapse = {
 				MAKER = from
 				CURRENT = root
 			}
-		}
-		add_opinion_modifier = {
-			modifier = opinion_AIO_interference_accident
-			who = from
 		}
 	}
 }
@@ -699,16 +724,22 @@ country_event = {
 
 #region effect
 
+# start, apply stage one effect
 situation_event = {
 	id = AIO_interference_events.330
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		AIO_interference_accidence_ecology_stage_1 = yes
+		owner = {
+			AIO_ecology_backlash_stage_1 = {
+				MAKER = this
+			}
+		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.430 }
 	}
 }
 
+# stage 2
 situation_event = {
 	id = AIO_interference_events.331
 	hide_window = yes
@@ -716,15 +747,26 @@ situation_event = {
 	immediate = {
 		if = {
 			limit = { current_situation_approach = AIO_ecology_blockade }
-			AIO_interference_accidence_ecology_stage_2 = { DEVASTATION = 10 }
+			owner = {
+				AIO_ecology_backlash_stage_2 = {
+					MAKER = this
+					DEVASTATION = 10
+				}
+			}
 		}
 		else = {
-			AIO_interference_accidence_ecology_stage_2 = { DEVASTATION = 20 }
+			owner = {
+				AIO_ecology_backlash_stage_2 = {
+					MAKER = this
+					DEVASTATION = 20
+				}
+			}
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.431 }
 	}
 }
 
+# stage 3
 situation_event = {
 	id = AIO_interference_events.332
 	hide_window = yes
@@ -732,10 +774,20 @@ situation_event = {
 	immediate = {
 		if = {
 			limit = { current_situation_approach = AIO_ecology_blockade }
-			AIO_interference_accidence_ecology_stage_3 = { DEVASTATION = 10 }
+			owner = {
+				AIO_ecology_backlash_stage_3 = {
+					MAKER = this
+					DEVASTATION = 10
+				}
+			}
 		}
 		else = {
-			AIO_interference_accidence_ecology_stage_3 = { DEVASTATION = 20 }
+			owner = {
+				AIO_ecology_backlash_stage_3 = {
+					MAKER = this
+					DEVASTATION = 20
+				}
+			}
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.432 }
 	}
@@ -747,11 +799,9 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		target = {
-			remove_star_flag = AIO_ecology_backlash_active
-			set_star_flag = AIO_interference_backlash_sealed
-		}
+		owner = { AIO_interference_reverse_award = { RESOURCE = society_research } }
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.433 }
+		owner = { AIO_interference_backlash_finish = { SEAL = yes } }
 		destroy_situation = this
 	}
 }
@@ -762,20 +812,24 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		AIO_interference_accidence_ecology_collapse = yes
+		owner = {
+			AIO_ecology_backlash_collapse = { MAKER = this }
+			AIO_interference_collapse_award = { RESOURCE = society_research }
+		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.434 }
+		owner = { AIO_interference_backlash_finish = { RESET = yes } }
 		destroy_situation = this
 	}
 }
 
-# abort
+# fail
 situation_event = {
 	id = AIO_interference_events.335
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		AIO_interference_accidence_ecology_abort = yes
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.435 }
+		owner = { AIO_interference_backlash_finish = { TYPE = ecology RESET = yes } }
 		destroy_situation = this
 	}
 }
@@ -783,45 +837,39 @@ situation_event = {
 #endregion
 
 #region notify
-# from: situation
+# from: maker country; fromfrom: situation
 
 country_event = {
 	id = AIO_interference_events.430
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.430.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.430.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.430.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.430.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.430.desc.other
 	}
 	picture = GFX_evt_alien_nature
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_events.430.option.maker
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.option
 	}
 	after = {
 		tooltip = {
-			from = {
-				AIO_interference_accidence_ecology_stage_1 = yes
+			AIO_ecology_backlash_stage_1 = {
+				MAKER = from
+				CURRENT = root
 			}
+		}
+		hidden_effect = {
+			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -829,50 +877,49 @@ country_event = {
 country_event = {
 	id = AIO_interference_events.431
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.431.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.431.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.431.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.431.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.431.desc.other
 	}
 	picture = GFX_evt_aggressive_flora
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_events.431.option.maker
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.option
 	}
 	after = {
 		if = {
-			limit = { from = { current_situation_approach = AIO_ecology_blockade } }
+			limit = {
+				fromfrom = { current_situation_approach = AIO_ecology_blockade }
+			}
 			tooltip = {
-				from = {
-					AIO_interference_accidence_ecology_stage_2 = { DEVASTATION = 10 }
+				AIO_ecology_backlash_stage_2 = {
+					MAKER = from
+					CURRENT = root
+					DEVASTATION = 10
 				}
 			}
 		}
 		else = {
 			tooltip = {
-				from = {
-					AIO_interference_accidence_ecology_stage_2 = { DEVASTATION = 20 }
+				AIO_ecology_backlash_stage_2 = {
+					MAKER = from
+					CURRENT = root
+					DEVASTATION = 20
 				}
 			}
+		}
+		hidden_effect = {
+			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -880,50 +927,47 @@ country_event = {
 country_event = {
 	id = AIO_interference_events.432
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.432.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.432.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.432.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.432.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.432.desc.other
 	}
 	picture = GFX_evt_astral_rift_garden_2
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_events.432.option.maker
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.option
 	}
 	after = {
 		if = {
-			limit = { from = { current_situation_approach = AIO_ecology_blockade } }
+			limit = { fromfrom = { current_situation_approach = AIO_ecology_blockade } }
 			tooltip = {
-				from = {
-					AIO_interference_accidence_ecology_stage_3 = { DEVASTATION = 10 }
+				AIO_ecology_backlash_stage_3 = {
+					MAKER = from
+					CURRENT = root
+					DEVASTATION = 10
 				}
 			}
 		}
 		else = {
 			tooltip = {
-				from = {
-					AIO_interference_accidence_ecology_stage_3 = { DEVASTATION = 20 }
+				AIO_ecology_backlash_stage_3 = {
+					MAKER = from
+					CURRENT = root
+					DEVASTATION = 20
 				}
 			}
+		}
+		hidden_effect = {
+			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -931,79 +975,69 @@ country_event = {
 country_event = {
 	id = AIO_interference_events.433
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.433.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.433.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.433.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.433.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.433.desc.other
 	}
 	picture = GFX_evt_astral_rift_tropical_habitat
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_accidence_option.reverse
-		AIO_interference_reverse_award = { RESOURCE = society_research }
+		tooltip = { AIO_interference_reverse_award = { RESOURCE = society_research } }
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.option
+		add_opinion_modifier = {
+			modifier = opinion_AIO_interference_accident
+			who = from
+		}
 	}
 }
 
 country_event = {
 	id = AIO_interference_events.434
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.434.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.434.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.434.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.434.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.434.desc.other
 	}
 	picture = GFX_evt_astral_rift_garden_2_fire
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_events.434.option.maker
-		AIO_interference_collapse_award = { RESOURCE = society_research }
 		tooltip = {
-			event_target:AIO_accident_system = { AIO_interference_ecology_collapse_outcome = yes }
+			AIO_interference_collapse_award = { RESOURCE = society_research }
+			AIO_ecology_backlash_collapse = {
+				MAKER = from
+				CURRENT = root
+			}
 		}
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.collapse_option
-		tooltip = {
-			event_target:AIO_accident_system = { AIO_interference_ecology_collapse_outcome = yes }
-		}
 		add_opinion_modifier = {
 			modifier = opinion_AIO_interference_accident
-			who = from.owner
+			who = from
+		}
+		tooltip = {
+			AIO_ecology_backlash_collapse = {
+				MAKER = from
+				CURRENT = root
+			}
 		}
 	}
 }
@@ -1011,36 +1045,24 @@ country_event = {
 country_event = {
 	id = AIO_interference_events.435
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.435.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.435.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.435.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.435.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.435.desc.other
 	}
 	picture = GFX_evt_overgrown_city
 	option = {
-		name = {
-			trigger = { is_same_value = from.owner }
-			text = AIO_interference_accidence_option.abort
-		}
-		name = {
-			trigger = { NOT = { is_same_value = from.owner } }
-			text = AIO_interference_notice.option
-		}
+		trigger = { is_same_value = from }
+		name = AIO_interference_accidence_option.abort
+	}
+	option = {
+		trigger = { NOT = { is_same_value = from } }
+		name = AIO_interference_notice.option
 	}
 }
 
@@ -1053,16 +1075,22 @@ country_event = {
 
 #region effect
 
+# start, apply stage one effect
 situation_event = {
 	id = AIO_interference_events.340
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		AIO_interference_accidence_industry_stage_1 = yes
+		owner = {
+			AIO_industry_backlash_stage_1 = {
+				MAKER = this
+			}
+		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.440 }
 	}
 }
 
+# stage 2
 situation_event = {
 	id = AIO_interference_events.341
 	hide_window = yes
@@ -1070,15 +1098,26 @@ situation_event = {
 	immediate = {
 		if = {
 			limit = { current_situation_approach = AIO_industry_blockade }
-			AIO_interference_accidence_industry_stage_2 = { DEVASTATION = 10 }
+			owner = {
+				AIO_industry_backlash_stage_2 = {
+					MAKER = this
+					DEVASTATION = 10
+				}
+			}
 		}
 		else = {
-			AIO_interference_accidence_industry_stage_2 = { DEVASTATION = 20 }
+			owner = {
+				AIO_industry_backlash_stage_2 = {
+					MAKER = this
+					DEVASTATION = 20
+				}
+			}
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.441 }
 	}
 }
 
+# stage 3
 situation_event = {
 	id = AIO_interference_events.342
 	hide_window = yes
@@ -1086,10 +1125,20 @@ situation_event = {
 	immediate = {
 		if = {
 			limit = { current_situation_approach = AIO_industry_blockade }
-			AIO_interference_accidence_industry_stage_3 = { DEVASTATION = 10 }
+			owner = {
+				AIO_industry_backlash_stage_3 = {
+					MAKER = this
+					DEVASTATION = 10
+				}
+			}
 		}
 		else = {
-			AIO_interference_accidence_industry_stage_3 = { DEVASTATION = 20 }
+			owner = {
+				AIO_industry_backlash_stage_3 = {
+					MAKER = this
+					DEVASTATION = 20
+				}
+			}
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.442 }
 	}
@@ -1101,11 +1150,9 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		target = {
-			remove_star_flag = AIO_industry_backlash_active
-			set_star_flag = AIO_interference_backlash_sealed
-		}
+		owner = { AIO_interference_reverse_award = { RESOURCE = engineering_research } }
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.443 }
+		owner = { AIO_interference_backlash_finish = { SEAL = yes } }
 		destroy_situation = this
 	}
 }
@@ -1116,20 +1163,24 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		AIO_interference_accidence_industry_collapse = yes
+		owner = {
+			AIO_industry_backlash_collapse = { MAKER = this }
+			AIO_interference_collapse_award = { RESOURCE = engineering_research }
+		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.444 }
+		owner = { AIO_interference_backlash_finish = { RESET = yes } }
 		destroy_situation = this
 	}
 }
 
-# abort
+# fail
 situation_event = {
 	id = AIO_interference_events.345
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		AIO_interference_accidence_industry_abort = yes
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.445 }
+		owner = { AIO_interference_backlash_finish = { TYPE = industry RESET = yes } }
 		destroy_situation = this
 	}
 }
@@ -1137,45 +1188,39 @@ situation_event = {
 #endregion
 
 #region notify
-# from: situation
+# from: maker country; fromfrom: situation
 
 country_event = {
 	id = AIO_interference_events.440
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.440.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.440.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.440.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.440.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.440.desc.other
 	}
 	picture = GFX_evt_AIO_industry_backlash
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_events.440.option.maker
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.option
 	}
 	after = {
 		tooltip = {
-			from = {
-				AIO_interference_accidence_industry_stage_1 = yes
+			AIO_industry_backlash_stage_1 = {
+				MAKER = from
+				CURRENT = root
 			}
+		}
+		hidden_effect = {
+			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -1183,50 +1228,49 @@ country_event = {
 country_event = {
 	id = AIO_interference_events.441
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.441.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.441.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.441.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.441.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.441.desc.other
 	}
 	picture = GFX_evt_AIO_industry_backlash_overheat
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_events.441.option.maker
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.option
 	}
 	after = {
 		if = {
-			limit = { from = { current_situation_approach = AIO_industry_blockade } }
+			limit = {
+				fromfrom = { current_situation_approach = AIO_industry_blockade }
+			}
 			tooltip = {
-				from = {
-					AIO_interference_accidence_industry_stage_2 = { DEVASTATION = 10 }
+				AIO_industry_backlash_stage_2 = {
+					MAKER = from
+					CURRENT = root
+					DEVASTATION = 10
 				}
 			}
 		}
 		else = {
 			tooltip = {
-				from = {
-					AIO_interference_accidence_industry_stage_2 = { DEVASTATION = 20 }
+				AIO_industry_backlash_stage_2 = {
+					MAKER = from
+					CURRENT = root
+					DEVASTATION = 20
 				}
 			}
+		}
+		hidden_effect = {
+			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -1234,50 +1278,47 @@ country_event = {
 country_event = {
 	id = AIO_interference_events.442
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.442.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.442.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.442.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.442.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.442.desc.other
 	}
 	picture = GFX_evt_AIO_industry_backlash
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_events.442.option.maker
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.option
 	}
 	after = {
 		if = {
-			limit = { from = { current_situation_approach = AIO_industry_blockade } }
+			limit = { fromfrom = { current_situation_approach = AIO_industry_blockade } }
 			tooltip = {
-				from = {
-					AIO_interference_accidence_industry_stage_3 = { DEVASTATION = 10 }
+				AIO_industry_backlash_stage_3 = {
+					MAKER = from
+					CURRENT = root
+					DEVASTATION = 10
 				}
 			}
 		}
 		else = {
 			tooltip = {
-				from = {
-					AIO_interference_accidence_industry_stage_3 = { DEVASTATION = 20 }
+				AIO_industry_backlash_stage_3 = {
+					MAKER = from
+					CURRENT = root
+					DEVASTATION = 20
 				}
 			}
+		}
+		hidden_effect = {
+			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -1285,79 +1326,69 @@ country_event = {
 country_event = {
 	id = AIO_interference_events.443
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.443.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.443.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.443.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.443.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.443.desc.other
 	}
 	picture = GFX_evt_AIO_industry_backlash_mastered
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_accidence_option.reverse
-		AIO_interference_reverse_award = { RESOURCE = engineering_research }
+		tooltip = { AIO_interference_reverse_award = { RESOURCE = engineering_research } }
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.option
+		add_opinion_modifier = {
+			modifier = opinion_AIO_interference_accident
+			who = from
+		}
 	}
 }
 
 country_event = {
 	id = AIO_interference_events.444
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.444.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.444.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.444.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.444.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.444.desc.other
 	}
 	picture = GFX_evt_AIO_industry_backlash_collapse
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_events.444.option.maker
-		AIO_interference_collapse_award = { RESOURCE = engineering_research }
 		tooltip = {
-			event_target:AIO_accident_system = { AIO_interference_industry_collapse_outcome = yes }
+			AIO_interference_collapse_award = { RESOURCE = engineering_research }
+			AIO_industry_backlash_collapse = {
+				MAKER = from
+				CURRENT = root
+			}
 		}
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.collapse_option
-		tooltip = {
-			event_target:AIO_accident_system = { AIO_interference_industry_collapse_outcome = yes }
-		}
 		add_opinion_modifier = {
 			modifier = opinion_AIO_interference_accident
-			who = from.owner
+			who = from
+		}
+		tooltip = {
+			AIO_industry_backlash_collapse = {
+				MAKER = from
+				CURRENT = root
+			}
 		}
 	}
 }
@@ -1365,36 +1396,24 @@ country_event = {
 country_event = {
 	id = AIO_interference_events.445
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.445.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.445.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.445.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.445.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.445.desc.other
 	}
 	picture = GFX_evt_AIO_industry_backlash_aborted
 	option = {
-		name = {
-			trigger = { is_same_value = from.owner }
-			text = AIO_interference_accidence_option.abort
-		}
-		name = {
-			trigger = { NOT = { is_same_value = from.owner } }
-			text = AIO_interference_notice.option
-		}
+		trigger = { is_same_value = from }
+		name = AIO_interference_accidence_option.abort
+	}
+	option = {
+		trigger = { NOT = { is_same_value = from } }
+		name = AIO_interference_notice.option
 	}
 }
 
@@ -1407,16 +1426,22 @@ country_event = {
 
 #region effect
 
+# start, apply stage one effect
 situation_event = {
 	id = AIO_interference_events.350
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		AIO_interference_accidence_metric_stage_1 = yes
+		owner = {
+			AIO_metric_backlash_stage_1 = {
+				MAKER = this
+			}
+		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.450 }
 	}
 }
 
+# stage 2
 situation_event = {
 	id = AIO_interference_events.351
 	hide_window = yes
@@ -1424,15 +1449,26 @@ situation_event = {
 	immediate = {
 		if = {
 			limit = { current_situation_approach = AIO_metric_blockade }
-			AIO_interference_accidence_metric_stage_2 = { DEVASTATION = 10 }
+			owner = {
+				AIO_metric_backlash_stage_2 = {
+					MAKER = this
+					DEVASTATION = 10
+				}
+			}
 		}
 		else = {
-			AIO_interference_accidence_metric_stage_2 = { DEVASTATION = 20 }
+			owner = {
+				AIO_metric_backlash_stage_2 = {
+					MAKER = this
+					DEVASTATION = 20
+				}
+			}
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.451 }
 	}
 }
 
+# stage 3
 situation_event = {
 	id = AIO_interference_events.352
 	hide_window = yes
@@ -1440,10 +1476,20 @@ situation_event = {
 	immediate = {
 		if = {
 			limit = { current_situation_approach = AIO_metric_blockade }
-			AIO_interference_accidence_metric_stage_3 = { DEVASTATION = 10 }
+			owner = {
+				AIO_metric_backlash_stage_3 = {
+					MAKER = this
+					DEVASTATION = 10
+				}
+			}
 		}
 		else = {
-			AIO_interference_accidence_metric_stage_3 = { DEVASTATION = 20 }
+			owner = {
+				AIO_metric_backlash_stage_3 = {
+					MAKER = this
+					DEVASTATION = 20
+				}
+			}
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.452 }
 	}
@@ -1455,11 +1501,9 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		target = {
-			remove_star_flag = AIO_metric_backlash_active
-			set_star_flag = AIO_interference_backlash_sealed
-		}
+		owner = { AIO_interference_reverse_award = { RESOURCE = physics_research } }
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.453 }
+		owner = { AIO_interference_backlash_finish = { SEAL = yes } }
 		destroy_situation = this
 	}
 }
@@ -1470,20 +1514,24 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		AIO_interference_accidence_metric_collapse = yes
+		owner = {
+			AIO_metric_backlash_collapse = { MAKER = this }
+			AIO_interference_collapse_award = { RESOURCE = physics_research }
+		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.454 }
+		owner = { AIO_interference_backlash_finish = { RESET = yes } }
 		destroy_situation = this
 	}
 }
 
-# abort
+# fail
 situation_event = {
 	id = AIO_interference_events.355
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		AIO_interference_accidence_metric_abort = yes
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.455 }
+		owner = { AIO_interference_backlash_finish = { TYPE = metric RESET = yes } }
 		destroy_situation = this
 	}
 }
@@ -1491,45 +1539,39 @@ situation_event = {
 #endregion
 
 #region notify
-# from: situation
+# from: maker country; fromfrom: situation
 
 country_event = {
 	id = AIO_interference_events.450
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.450.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.450.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.450.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.450.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.450.desc.other
 	}
 	picture = GFX_evt_AIO_metric_backlash
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_events.450.option.maker
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.option
 	}
 	after = {
 		tooltip = {
-			from = {
-				AIO_interference_accidence_metric_stage_1 = yes
+			AIO_metric_backlash_stage_1 = {
+				MAKER = from
+				CURRENT = root
 			}
+		}
+		hidden_effect = {
+			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -1537,50 +1579,49 @@ country_event = {
 country_event = {
 	id = AIO_interference_events.451
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.451.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.451.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.451.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.451.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.451.desc.other
 	}
 	picture = GFX_evt_AIO_metric_backlash_rebound
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_events.451.option.maker
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.option
 	}
 	after = {
 		if = {
-			limit = { from = { current_situation_approach = AIO_metric_blockade } }
+			limit = {
+				fromfrom = { current_situation_approach = AIO_metric_blockade }
+			}
 			tooltip = {
-				from = {
-					AIO_interference_accidence_metric_stage_2 = { DEVASTATION = 10 }
+				AIO_metric_backlash_stage_2 = {
+					MAKER = from
+					CURRENT = root
+					DEVASTATION = 10
 				}
 			}
 		}
 		else = {
 			tooltip = {
-				from = {
-					AIO_interference_accidence_metric_stage_2 = { DEVASTATION = 20 }
+				AIO_metric_backlash_stage_2 = {
+					MAKER = from
+					CURRENT = root
+					DEVASTATION = 20
 				}
 			}
+		}
+		hidden_effect = {
+			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -1588,50 +1629,47 @@ country_event = {
 country_event = {
 	id = AIO_interference_events.452
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.452.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.452.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.452.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.452.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.452.desc.other
 	}
 	picture = GFX_evt_AIO_metric_backlash
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_events.452.option.maker
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.option
 	}
 	after = {
 		if = {
-			limit = { from = { current_situation_approach = AIO_metric_blockade } }
+			limit = { fromfrom = { current_situation_approach = AIO_metric_blockade } }
 			tooltip = {
-				from = {
-					AIO_interference_accidence_metric_stage_3 = { DEVASTATION = 10 }
+				AIO_metric_backlash_stage_3 = {
+					MAKER = from
+					CURRENT = root
+					DEVASTATION = 10
 				}
 			}
 		}
 		else = {
 			tooltip = {
-				from = {
-					AIO_interference_accidence_metric_stage_3 = { DEVASTATION = 20 }
+				AIO_metric_backlash_stage_3 = {
+					MAKER = from
+					CURRENT = root
+					DEVASTATION = 20
 				}
 			}
+		}
+		hidden_effect = {
+			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -1639,79 +1677,69 @@ country_event = {
 country_event = {
 	id = AIO_interference_events.453
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.453.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.453.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.453.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.453.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.453.desc.other
 	}
 	picture = GFX_evt_AIO_metric_backlash_mastered
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_accidence_option.reverse
-		AIO_interference_reverse_award = { RESOURCE = physics_research }
+		tooltip = { AIO_interference_reverse_award = { RESOURCE = physics_research } }
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.option
+		add_opinion_modifier = {
+			modifier = opinion_AIO_interference_accident
+			who = from
+		}
 	}
 }
 
 country_event = {
 	id = AIO_interference_events.454
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.454.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.454.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.454.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.454.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.454.desc.other
 	}
 	picture = GFX_evt_AIO_metric_backlash_collapse
 	option = {
-		trigger = { is_same_value = from.owner }
+		trigger = { is_same_value = from }
 		name = AIO_interference_events.454.option.maker
-		AIO_interference_collapse_award = { RESOURCE = physics_research }
 		tooltip = {
-			event_target:AIO_accident_system = { AIO_interference_metric_collapse_outcome = yes }
+			AIO_interference_collapse_award = { RESOURCE = physics_research }
+			AIO_metric_backlash_collapse = {
+				MAKER = from
+				CURRENT = root
+			}
 		}
 	}
 	option = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		name = AIO_interference_notice.collapse_option
-		tooltip = {
-			event_target:AIO_accident_system = { AIO_interference_metric_collapse_outcome = yes }
-		}
 		add_opinion_modifier = {
 			modifier = opinion_AIO_interference_accident
-			who = from.owner
+			who = from
+		}
+		tooltip = {
+			AIO_metric_backlash_collapse = {
+				MAKER = from
+				CURRENT = root
+			}
 		}
 	}
 }
@@ -1719,36 +1747,24 @@ country_event = {
 country_event = {
 	id = AIO_interference_events.455
 	is_triggered_only = yes
-	location = event_target:AIO_accident_system
+	location = from.capital_scope
 	title = AIO_interference_events.455.name
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { AIO_interference_has_colony = yes }
-		}
-		text = AIO_interference_events.455.desc.maker.colony
+		trigger = { is_same_value = from }
+		text = AIO_interference_events.455.desc.maker
 	}
 	desc = {
-		trigger = {
-			is_same_value = from.owner
-			event_target:AIO_accident_system = { NOT = { AIO_interference_has_colony = yes } }
-		}
-		text = AIO_interference_events.455.desc.maker.no_colony
-	}
-	desc = {
-		trigger = { NOT = { is_same_value = from.owner } }
+		trigger = { NOT = { is_same_value = from } }
 		text = AIO_interference_events.455.desc.other
 	}
 	picture = GFX_evt_AIO_metric_backlash_aborted
 	option = {
-		name = {
-			trigger = { is_same_value = from.owner }
-			text = AIO_interference_accidence_option.abort
-		}
-		name = {
-			trigger = { NOT = { is_same_value = from.owner } }
-			text = AIO_interference_notice.option
-		}
+		trigger = { is_same_value = from }
+		name = AIO_interference_accidence_option.abort
+	}
+	option = {
+		trigger = { NOT = { is_same_value = from } }
+		name = AIO_interference_notice.option
 	}
 }
 

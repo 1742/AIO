@@ -2,7 +2,7 @@ monthly_progress = {
     base = 0
     modifier = {
         add = value:AIO_interference_backlash_situation_growth
-        desc = AIO_interference_accidence_progress_active
+        desc = AIO_interference_backlash_progress.interferometer
         owner = { has_policy_flag = AIO_interference_mode_$TYPE$ }
         OR = {
             current_situation_approach = AIO_$TYPE$_maintain
@@ -11,17 +11,17 @@ monthly_progress = {
     }
     modifier = {
         subtract = 8
-        desc = AIO_interference_accidence_progress_blockade
+        desc = AIO_interference_backlash_progress.blockade
         current_situation_approach = AIO_$TYPE$_blockade
     }
     modifier = {
         subtract = 8
-        desc = AIO_interference_accidence_progress_policy_mismatch
+        desc = AIO_interference_backlash_progress.policy_mismatch
         owner = { NOT = { has_policy_flag = AIO_interference_mode_$TYPE$ } }
     }
     modifier = {
         subtract = 8
-        desc = AIO_interference_accidence_progress_disconnect
+        desc = AIO_interference_backlash_progress.disconnect
         owner = {
             AIO_has_any_interference_aura = no
         }

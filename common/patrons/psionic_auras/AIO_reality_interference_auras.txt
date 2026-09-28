@@ -21,53 +21,31 @@ AIO_reality_interference_aura = {
 		if = {
 			limit = {
 				is_aura_intensity_level = 3
-				NOT = {
-					has_star_flag = AIO_energy_backlash_active
-					has_star_flag = AIO_balanced_backlash_active
-					has_star_flag = AIO_ecology_backlash_active
-					has_star_flag = AIO_industry_backlash_active
-					has_star_flag = AIO_metric_backlash_active
-				}
-				OR = {
-					has_star_flag = AIO_interference_source
-					AIO_is_nearby_interference_source = { OWNER = root.aura_owner }
+				has_star_flag = AIO_interference_source
+				aura_owner = {
+					NOR = {
+						has_country_flag = AIO_backlash_active
+						has_country_flag = AIO_backlash_seal
+					}
 				}
 			}
 			aura_owner = {
 				switch = {
 					trigger = has_policy_flag
 					AIO_interference_mode_balanced = {
-						if = {
-							limit = {
-							NOT = { has_country_flag = AIO_backlash_active }
-							root = {
-								has_star_flag = AIO_interference_source
-								NOT = { has_star_flag = AIO_interference_backlash_sealed }
-							}
-							}
-							AIO_interference_empire_backlash_start = { TYPE = balanced }
-						}
+						AIO_interference_backlash_start = { TYPE = balanced }
 					}
 					AIO_interference_mode_energy = {
-						if = {
-							limit = {
-							NOT = { has_country_flag = AIO_backlash_active }
-							root = {
-								has_star_flag = AIO_interference_source
-								NOT = { has_star_flag = AIO_interference_backlash_sealed }
-							}
-							}
-							AIO_interference_empire_backlash_start = { TYPE = energy }
-						}
+						AIO_interference_backlash_start = { TYPE = energy }
 					}
 					AIO_interference_mode_ecology = {
-						root = { AIO_interference_ecology_start = yes }
+						AIO_interference_backlash_start = { TYPE = ecology }
 					}
 					AIO_interference_mode_industry = {
-						root = { AIO_interference_industry_start = yes }
+						AIO_interference_backlash_start = { TYPE = industry }
 					}
 					AIO_interference_mode_metric = {
-						root = { AIO_interference_metric_start = yes }
+						AIO_interference_backlash_start = { TYPE = metric }
 					}
 				}
 			}
@@ -114,7 +92,7 @@ AIO_reality_interference_aura = {
 			desc = AIO_interference_source_intensity_desc
 		}
 		modifier = {
-			add = value:AIO_reality_interference_proof_growth|OWNER|root.aura_owner|
+			add = value:AIO_interference_aura_proof_growth|OWNER|root.aura_owner|
 			OR = {
 				any_system_planet_colony = {
 					is_owned_by = root.aura_owner
@@ -152,6 +130,7 @@ AIO_reality_interference_aura = {
 			desc = AIO_interference_disconnected_desc
 		}
 	}
+	daily_decrease = {  }
 
 	# Reuse vanilla textures for the prototype. Dedicated AIO textures can be
 	# substituted after the mechanics have been validated in game.

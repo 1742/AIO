@@ -21,7 +21,7 @@ AIO_reality_interference_nearby_source_growth = {
 }
 
 # scope: system
-AIO_reality_interference_proof_growth = {
+AIO_interference_aura_proof_growth = {
 	complex_trigger_modifier = {
 		trigger = total_system_workforce_with_job_tag
 		parameters = {
@@ -45,18 +45,11 @@ AIO_interference_intensity_multiplier = {
 	mult = solar_system.trigger:is_aura_intensity_level
 }
 
-# scope: situation with a country target
-AIO_interference_empire_backlash_situation_growth = {
-	base = 0
-	add = owner.value:AIO_interferometer_num
-	add = owner.value:AIO_empire_proof_workforce
-}
-
-# scope: situation with a system target
+# scope: situation
 AIO_interference_backlash_situation_growth = {
 	base = 0
-	add = target.value:AIO_interferometer_num
-	add = target.value:AIO_proof_workforce
+	add = owner.value:AIO_interferometer_num
+	add = owner.value:AIO_proof_workforce
 }
 
 # scope: country
@@ -73,21 +66,9 @@ AIO_interferometer_num = {
 }
 
 # scope: country
-AIO_empire_proof_workforce = {
-	complex_trigger_modifier = {
-		trigger = total_country_workforce_with_job_tag
-		parameters = { tags = { AIO_proof } }
-		mode = add
-	}
-	divide = 100
-	min = 0
-}
-
-# scope: system
 AIO_proof_workforce = {
 	complex_trigger_modifier = {
 		trigger = total_country_workforce_with_job_tag
-		trigger_scope = owner
 		parameters = { tags = { AIO_proof } }
 		mode = add
 	}
