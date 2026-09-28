@@ -66,8 +66,6 @@ AIO_reality_interference_aura = {
 			remove_star_flag = AIO_interference_source
 			aura_owner = { AIO_interference_rebuild_effect = yes }
 		}
-		# A sealed system only stays sealed while its field exists.
-		remove_star_flag = AIO_interference_backlash_sealed
 		clear_variable = AIO_interference_sources
 	}
 

@@ -18,7 +18,7 @@ country_event = {
 }
 
 
-#region Balanced accident
+#region Balanced backlash
 
 #region effect
 
@@ -43,22 +43,8 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		if = {
-			limit = { current_situation_approach = AIO_balanced_blockade }
-			owner = {
-				AIO_balanced_backlash_stage_2 = {
-					MAKER = this
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			owner = {
-				AIO_balanced_backlash_stage_2 = {
-					MAKER = this
-					DEVASTATION = 20
-				}
-			}
+		owner = {
+			AIO_balanced_backlash_stage_2 = { MAKER = this }
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.411 }
 	}
@@ -70,22 +56,8 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		if = {
-			limit = { current_situation_approach = AIO_balanced_blockade }
-			owner = {
-				AIO_balanced_backlash_stage_3 = {
-					MAKER = this
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			owner = {
-				AIO_balanced_backlash_stage_3 = {
-					MAKER = this
-					DEVASTATION = 20
-				}
-			}
+		owner = {
+			AIO_balanced_backlash_stage_3 = { MAKER = this }
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.412 }
 	}
@@ -166,9 +138,6 @@ country_event = {
 				CURRENT = root
 			}
 		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
-		}
 	}
 }
 
@@ -195,29 +164,11 @@ country_event = {
 		name = AIO_interference_notice.option
 	}
 	after = {
-		if = {
-			limit = {
-				fromfrom = { current_situation_approach = AIO_balanced_blockade }
+		tooltip = {
+			AIO_balanced_backlash_stage_2 = {
+				MAKER = from
+				CURRENT = root
 			}
-			tooltip = {
-				AIO_balanced_backlash_stage_2 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			tooltip = {
-				AIO_balanced_backlash_stage_2 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 20
-				}
-			}
-		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -245,27 +196,11 @@ country_event = {
 		name = AIO_interference_notice.option
 	}
 	after = {
-		if = {
-			limit = { fromfrom = { current_situation_approach = AIO_balanced_blockade } }
-			tooltip = {
-				AIO_balanced_backlash_stage_3 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 10
-				}
+		tooltip = {
+			AIO_balanced_backlash_stage_3 = {
+				MAKER = from
+				CURRENT = root
 			}
-		}
-		else = {
-			tooltip = {
-				AIO_balanced_backlash_stage_3 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 20
-				}
-			}
-		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -369,7 +304,7 @@ country_event = {
 #endregion
 
 
-#region Energy accident
+#region Energy backlash
 
 #region effect
 
@@ -394,22 +329,8 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		if = {
-			limit = { current_situation_approach = AIO_energy_blockade }
-			owner = {
-				AIO_energy_backlash_stage_2 = {
-					MAKER = this
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			owner = {
-				AIO_energy_backlash_stage_2 = {
-					MAKER = this
-					DEVASTATION = 20
-				}
-			}
+		owner = {
+			AIO_energy_backlash_stage_2 = { MAKER = this }
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.421 }
 	}
@@ -421,22 +342,8 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		if = {
-			limit = { current_situation_approach = AIO_energy_blockade }
-			owner = {
-				AIO_energy_backlash_stage_3 = {
-					MAKER = this
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			owner = {
-				AIO_energy_backlash_stage_3 = {
-					MAKER = this
-					DEVASTATION = 20
-				}
-			}
+		owner = {
+			AIO_energy_backlash_stage_3 = { MAKER = this }
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.422 }
 	}
@@ -517,9 +424,6 @@ country_event = {
 				CURRENT = root
 			}
 		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
-		}
 	}
 }
 
@@ -546,29 +450,11 @@ country_event = {
 		name = AIO_interference_notice.option
 	}
 	after = {
-		if = {
-			limit = {
-				fromfrom = { current_situation_approach = AIO_energy_blockade }
+		tooltip = {
+			AIO_energy_backlash_stage_2 = {
+				MAKER = from
+				CURRENT = root
 			}
-			tooltip = {
-				AIO_energy_backlash_stage_2 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			tooltip = {
-				AIO_energy_backlash_stage_2 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 20
-				}
-			}
-		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -596,27 +482,11 @@ country_event = {
 		name = AIO_interference_notice.option
 	}
 	after = {
-		if = {
-			limit = { fromfrom = { current_situation_approach = AIO_energy_blockade } }
-			tooltip = {
-				AIO_energy_backlash_stage_3 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 10
-				}
+		tooltip = {
+			AIO_energy_backlash_stage_3 = {
+				MAKER = from
+				CURRENT = root
 			}
-		}
-		else = {
-			tooltip = {
-				AIO_energy_backlash_stage_3 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 20
-				}
-			}
-		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -720,7 +590,7 @@ country_event = {
 #endregion
 
 
-#region Ecology accident
+#region Ecology backlash
 
 #region effect
 
@@ -745,22 +615,8 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		if = {
-			limit = { current_situation_approach = AIO_ecology_blockade }
-			owner = {
-				AIO_ecology_backlash_stage_2 = {
-					MAKER = this
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			owner = {
-				AIO_ecology_backlash_stage_2 = {
-					MAKER = this
-					DEVASTATION = 20
-				}
-			}
+		owner = {
+			AIO_ecology_backlash_stage_2 = { MAKER = this }
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.431 }
 	}
@@ -772,22 +628,8 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		if = {
-			limit = { current_situation_approach = AIO_ecology_blockade }
-			owner = {
-				AIO_ecology_backlash_stage_3 = {
-					MAKER = this
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			owner = {
-				AIO_ecology_backlash_stage_3 = {
-					MAKER = this
-					DEVASTATION = 20
-				}
-			}
+		owner = {
+			AIO_ecology_backlash_stage_3 = { MAKER = this }
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.432 }
 	}
@@ -868,9 +710,6 @@ country_event = {
 				CURRENT = root
 			}
 		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
-		}
 	}
 }
 
@@ -897,29 +736,11 @@ country_event = {
 		name = AIO_interference_notice.option
 	}
 	after = {
-		if = {
-			limit = {
-				fromfrom = { current_situation_approach = AIO_ecology_blockade }
+		tooltip = {
+			AIO_ecology_backlash_stage_2 = {
+				MAKER = from
+				CURRENT = root
 			}
-			tooltip = {
-				AIO_ecology_backlash_stage_2 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			tooltip = {
-				AIO_ecology_backlash_stage_2 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 20
-				}
-			}
-		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -947,27 +768,11 @@ country_event = {
 		name = AIO_interference_notice.option
 	}
 	after = {
-		if = {
-			limit = { fromfrom = { current_situation_approach = AIO_ecology_blockade } }
-			tooltip = {
-				AIO_ecology_backlash_stage_3 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 10
-				}
+		tooltip = {
+			AIO_ecology_backlash_stage_3 = {
+				MAKER = from
+				CURRENT = root
 			}
-		}
-		else = {
-			tooltip = {
-				AIO_ecology_backlash_stage_3 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 20
-				}
-			}
-		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -1071,7 +876,7 @@ country_event = {
 #endregion
 
 
-#region Industry accident
+#region Industry backlash
 
 #region effect
 
@@ -1096,22 +901,8 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		if = {
-			limit = { current_situation_approach = AIO_industry_blockade }
-			owner = {
-				AIO_industry_backlash_stage_2 = {
-					MAKER = this
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			owner = {
-				AIO_industry_backlash_stage_2 = {
-					MAKER = this
-					DEVASTATION = 20
-				}
-			}
+		owner = {
+			AIO_industry_backlash_stage_2 = { MAKER = this }
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.441 }
 	}
@@ -1123,22 +914,8 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		if = {
-			limit = { current_situation_approach = AIO_industry_blockade }
-			owner = {
-				AIO_industry_backlash_stage_3 = {
-					MAKER = this
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			owner = {
-				AIO_industry_backlash_stage_3 = {
-					MAKER = this
-					DEVASTATION = 20
-				}
-			}
+		owner = {
+			AIO_industry_backlash_stage_3 = { MAKER = this }
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.442 }
 	}
@@ -1219,9 +996,6 @@ country_event = {
 				CURRENT = root
 			}
 		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
-		}
 	}
 }
 
@@ -1248,29 +1022,11 @@ country_event = {
 		name = AIO_interference_notice.option
 	}
 	after = {
-		if = {
-			limit = {
-				fromfrom = { current_situation_approach = AIO_industry_blockade }
+		tooltip = {
+			AIO_industry_backlash_stage_2 = {
+				MAKER = from
+				CURRENT = root
 			}
-			tooltip = {
-				AIO_industry_backlash_stage_2 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			tooltip = {
-				AIO_industry_backlash_stage_2 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 20
-				}
-			}
-		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -1298,27 +1054,11 @@ country_event = {
 		name = AIO_interference_notice.option
 	}
 	after = {
-		if = {
-			limit = { fromfrom = { current_situation_approach = AIO_industry_blockade } }
-			tooltip = {
-				AIO_industry_backlash_stage_3 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 10
-				}
+		tooltip = {
+			AIO_industry_backlash_stage_3 = {
+				MAKER = from
+				CURRENT = root
 			}
-		}
-		else = {
-			tooltip = {
-				AIO_industry_backlash_stage_3 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 20
-				}
-			}
-		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -1422,7 +1162,7 @@ country_event = {
 #endregion
 
 
-#region Metric accident
+#region Metric backlash
 
 #region effect
 
@@ -1447,22 +1187,8 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		if = {
-			limit = { current_situation_approach = AIO_metric_blockade }
-			owner = {
-				AIO_metric_backlash_stage_2 = {
-					MAKER = this
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			owner = {
-				AIO_metric_backlash_stage_2 = {
-					MAKER = this
-					DEVASTATION = 20
-				}
-			}
+		owner = {
+			AIO_metric_backlash_stage_2 = { MAKER = this }
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.451 }
 	}
@@ -1474,22 +1200,8 @@ situation_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		if = {
-			limit = { current_situation_approach = AIO_metric_blockade }
-			owner = {
-				AIO_metric_backlash_stage_3 = {
-					MAKER = this
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			owner = {
-				AIO_metric_backlash_stage_3 = {
-					MAKER = this
-					DEVASTATION = 20
-				}
-			}
+		owner = {
+			AIO_metric_backlash_stage_3 = { MAKER = this }
 		}
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.452 }
 	}
@@ -1570,9 +1282,6 @@ country_event = {
 				CURRENT = root
 			}
 		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
-		}
 	}
 }
 
@@ -1599,29 +1308,11 @@ country_event = {
 		name = AIO_interference_notice.option
 	}
 	after = {
-		if = {
-			limit = {
-				fromfrom = { current_situation_approach = AIO_metric_blockade }
+		tooltip = {
+			AIO_metric_backlash_stage_2 = {
+				MAKER = from
+				CURRENT = root
 			}
-			tooltip = {
-				AIO_metric_backlash_stage_2 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 10
-				}
-			}
-		}
-		else = {
-			tooltip = {
-				AIO_metric_backlash_stage_2 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 20
-				}
-			}
-		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }
@@ -1649,27 +1340,11 @@ country_event = {
 		name = AIO_interference_notice.option
 	}
 	after = {
-		if = {
-			limit = { fromfrom = { current_situation_approach = AIO_metric_blockade } }
-			tooltip = {
-				AIO_metric_backlash_stage_3 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 10
-				}
+		tooltip = {
+			AIO_metric_backlash_stage_3 = {
+				MAKER = from
+				CURRENT = root
 			}
-		}
-		else = {
-			tooltip = {
-				AIO_metric_backlash_stage_3 = {
-					MAKER = from
-					CURRENT = root
-					DEVASTATION = 20
-				}
-			}
-		}
-		hidden_effect = {
-			remove_country_flag = AIO_backlash_notified_@from
 		}
 	}
 }

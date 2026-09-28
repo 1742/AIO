@@ -111,6 +111,7 @@ AIO_interference_recount_sources = {
 # Reset level when change policy
 # scope: country
 AIO_interference_change_policy = {
+	remove_country_flag = AIO_backlash_seal
 	remove_country_flag = AIO_interference_balanced_residual
 	remove_country_flag = AIO_interference_energy_residual
 	remove_country_flag = AIO_interference_ecology_residual
@@ -124,15 +125,12 @@ AIO_interference_change_policy = {
 		flag = AIO_interference_$OLD_POLICY$_residual
 		years = 5
 	}
-	save_event_target_as = AIO_interference_change_policy_owner
 	every_system_with_aura = {
 		limit = {
 			has_psionic_aura = AIO_reality_interference_aura
-			aura_owner = { is_same_value = event_target:AIO_interference_change_policy_owner }
+			aura_owner = { is_same_value = prevprev }
 		}
 		set_aura_intensity = 1
-		# Changing doctrine also lifts the seal left by a reversed accident.
-		remove_star_flag = AIO_interference_backlash_sealed
 	}
 }
 
@@ -177,6 +175,16 @@ AIO_interference_collapse_award = {
 
 # scope: situation
 AIO_interference_backlash_dispatch_notice = {
+	owner = {
+		set_timed_country_flag = { flag = AIO_backlash_notified_@root.owner days = 1 }
+		country_event = {
+			id = $EVENT$
+			scopes = {
+				from = this
+				fromfrom = root
+			}
+		}
+	}
 	every_system_with_aura = {
 		limit = {
 			AIO_is_backlash_affect_system = { MAKER = root.owner }
@@ -200,7 +208,7 @@ AIO_interference_backlash_dispatch_notice = {
 				}
 			}
 			owner = {
-				set_country_flag = AIO_backlash_notified_@root.owner
+				set_timed_country_flag = { flag = AIO_backlash_notified_@root.owner days = 1 }
 				country_event = {
 					id = $EVENT$
 					scopes = {
@@ -217,7 +225,7 @@ AIO_interference_backlash_dispatch_notice = {
 				}
 			}
 			owner = {
-				set_country_flag = AIO_backlash_notified_@root.owner
+				set_timed_country_flag = { flag = AIO_backlash_notified_@root.owner days = 1 }
 				country_event = {
 					id = $EVENT$
 					scopes = {
@@ -303,7 +311,7 @@ AIO_balanced_backlash_stage_2 = {
 				modifier = AIO_balanced_backlash_2
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
@@ -311,7 +319,7 @@ AIO_balanced_backlash_stage_2 = {
 				modifier = AIO_balanced_backlash_2
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 	}
 }
@@ -330,7 +338,7 @@ AIO_balanced_backlash_stage_3 = {
 				modifier = AIO_balanced_backlash_3
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
@@ -338,7 +346,7 @@ AIO_balanced_backlash_stage_3 = {
 				modifier = AIO_balanced_backlash_3
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 	}
 }
@@ -434,7 +442,7 @@ AIO_energy_backlash_stage_2 = {
 				modifier = AIO_energy_backlash_2
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
@@ -442,7 +450,7 @@ AIO_energy_backlash_stage_2 = {
 				modifier = AIO_energy_backlash_2
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 	}
 }
@@ -465,7 +473,7 @@ AIO_energy_backlash_stage_3 = {
 				modifier = AIO_energy_backlash_3
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
@@ -473,7 +481,7 @@ AIO_energy_backlash_stage_3 = {
 				modifier = AIO_energy_backlash_3
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 	}
 }
@@ -541,14 +549,14 @@ AIO_ecology_backlash_stage_1 = {
 		every_system_planet_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_ecology_accidence_1
+				modifier = AIO_ecology_backlash_1
 				years = 2
 			}
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_ecology_accidence_1
+				modifier = AIO_ecology_backlash_1
 				years = 2
 			}
 		}
@@ -566,18 +574,18 @@ AIO_ecology_backlash_stage_2 = {
 		every_system_planet_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_ecology_accidence_2
+				modifier = AIO_ecology_backlash_2
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_ecology_accidence_2
+				modifier = AIO_ecology_backlash_2
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 	}
 }
@@ -593,18 +601,18 @@ AIO_ecology_backlash_stage_3 = {
 		every_system_planet_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_ecology_accidence_3
+				modifier = AIO_ecology_backlash_3
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_ecology_accidence_3
+				modifier = AIO_ecology_backlash_3
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 	}
 }
@@ -622,7 +630,7 @@ AIO_ecology_backlash_collapse = {
 			add_planet_devastation = 40
 			add_blocker = { type = d_AIO_ecology_overgrowth }
 			add_modifier = {
-				modifier = AIO_ecology_collapse_colony
+				modifier = AIO_ecology_backlash_collapse_colony
 				years = 5
 			}
 		}
@@ -631,7 +639,7 @@ AIO_ecology_backlash_collapse = {
 			add_planet_devastation = 40
 			add_blocker = { type = d_AIO_ecology_overgrowth }
 			add_modifier = {
-				modifier = AIO_ecology_collapse_colony
+				modifier = AIO_ecology_backlash_collapse_colony
 				years = 5
 			}
 		}
@@ -641,14 +649,14 @@ AIO_ecology_backlash_collapse = {
 # scope: system
 AIO_ecology_backlash_clear_modifier = {
 	every_system_planet_colony = {
-		remove_modifier = AIO_ecology_accidence_1
-		remove_modifier = AIO_ecology_accidence_2
-		remove_modifier = AIO_ecology_accidence_3
+		remove_modifier = AIO_ecology_backlash_1
+		remove_modifier = AIO_ecology_backlash_2
+		remove_modifier = AIO_ecology_backlash_3
 	}
 	every_system_ship_colony = {
-		remove_modifier = AIO_ecology_accidence_1
-		remove_modifier = AIO_ecology_accidence_2
-		remove_modifier = AIO_ecology_accidence_3
+		remove_modifier = AIO_ecology_backlash_1
+		remove_modifier = AIO_ecology_backlash_2
+		remove_modifier = AIO_ecology_backlash_3
 	}
 }
 
@@ -670,14 +678,14 @@ AIO_industry_backlash_stage_1 = {
 		every_system_planet_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_industry_accidence_1
+				modifier = AIO_industry_backlash_1
 				years = 2
 			}
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_industry_accidence_1
+				modifier = AIO_industry_backlash_1
 				years = 2
 			}
 		}
@@ -695,18 +703,18 @@ AIO_industry_backlash_stage_2 = {
 		every_system_planet_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_industry_accidence_2
+				modifier = AIO_industry_backlash_2
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_industry_accidence_2
+				modifier = AIO_industry_backlash_2
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 	}
 }
@@ -722,18 +730,18 @@ AIO_industry_backlash_stage_3 = {
 		every_system_planet_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_industry_accidence_3
+				modifier = AIO_industry_backlash_3
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_industry_accidence_3
+				modifier = AIO_industry_backlash_3
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 	}
 }
@@ -751,7 +759,7 @@ AIO_industry_backlash_collapse = {
 			add_planet_devastation = 40
 			add_blocker = { type = d_AIO_industry_slag_residue }
 			add_modifier = {
-				modifier = AIO_industry_collapse_colony
+				modifier = AIO_industry_backlash_collapse_colony
 				years = 5
 			}
 		}
@@ -760,7 +768,7 @@ AIO_industry_backlash_collapse = {
 			add_planet_devastation = 40
 			add_blocker = { type = d_AIO_industry_slag_residue }
 			add_modifier = {
-				modifier = AIO_industry_collapse_colony
+				modifier = AIO_industry_backlash_collapse_colony
 				years = 5
 			}
 		}
@@ -770,14 +778,14 @@ AIO_industry_backlash_collapse = {
 # scope: system
 AIO_industry_backlash_clear_modifier = {
 	every_system_planet_colony = {
-		remove_modifier = AIO_industry_accidence_1
-		remove_modifier = AIO_industry_accidence_2
-		remove_modifier = AIO_industry_accidence_3
+		remove_modifier = AIO_industry_backlash_1
+		remove_modifier = AIO_industry_backlash_2
+		remove_modifier = AIO_industry_backlash_3
 	}
 	every_system_ship_colony = {
-		remove_modifier = AIO_industry_accidence_1
-		remove_modifier = AIO_industry_accidence_2
-		remove_modifier = AIO_industry_accidence_3
+		remove_modifier = AIO_industry_backlash_1
+		remove_modifier = AIO_industry_backlash_2
+		remove_modifier = AIO_industry_backlash_3
 	}
 }
 
@@ -796,18 +804,18 @@ AIO_metric_backlash_stage_1 = {
 			[[CURRENT] AIO_country_has_colony_in_system = { CURRENT = $CURRENT$ } ]
 		}
 		hidden_effect = { AIO_metric_backlash_clear_modifier = yes }
-		add_modifier = { modifier = AIO_metric_accidence_1_system years = 2 }
+		add_modifier = { modifier = AIO_metric_backlash_1_system years = 2 }
 		every_system_planet_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_metric_accidence_1
+				modifier = AIO_metric_backlash_1
 				years = 2
 			}
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_metric_accidence_1
+				modifier = AIO_metric_backlash_1
 				years = 2
 			}
 		}
@@ -822,22 +830,22 @@ AIO_metric_backlash_stage_2 = {
 			[[CURRENT] AIO_country_has_colony_in_system = { CURRENT = $CURRENT$ } ]
 		}
 		hidden_effect = { AIO_metric_backlash_clear_modifier = yes }
-		add_modifier = { modifier = AIO_metric_accidence_2_system years = 2 }
+		add_modifier = { modifier = AIO_metric_backlash_2_system years = 2 }
 		every_system_planet_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_metric_accidence_2
+				modifier = AIO_metric_backlash_2
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_metric_accidence_2
+				modifier = AIO_metric_backlash_2
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 	}
 }
@@ -850,22 +858,22 @@ AIO_metric_backlash_stage_3 = {
 			[[CURRENT] AIO_country_has_colony_in_system = { CURRENT = $CURRENT$ } ]
 		}
 		hidden_effect = { AIO_metric_backlash_clear_modifier = yes }
-		add_modifier = { modifier = AIO_metric_accidence_3_system years = 2 }
+		add_modifier = { modifier = AIO_metric_backlash_3_system years = 2 }
 		every_system_planet_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_metric_accidence_3
+				modifier = AIO_metric_backlash_3
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 		every_system_ship_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_modifier = {
-				modifier = AIO_metric_accidence_3
+				modifier = AIO_metric_backlash_3
 				years = 2
 			}
-			add_planet_devastation = $DEVASTATION$
+			add_planet_devastation = 10
 		}
 	}
 }
@@ -878,13 +886,13 @@ AIO_metric_backlash_collapse = {
 			[[CURRENT] AIO_country_has_colony_in_system = { CURRENT = $CURRENT$ } ]
 		}
 		hidden_effect = { AIO_metric_backlash_clear_modifier = yes }
-		add_modifier = { modifier = AIO_metric_collapse_system years = 5 }
+		add_modifier = { modifier = AIO_metric_backlash_collapse_system years = 5 }
 		every_system_planet_colony = {
 			[[CURRENT] limit = { owner? = { is_same_value = $CURRENT$ } } ]
 			add_planet_devastation = 40
 			add_blocker = { type = d_AIO_metric_fold_residue }
 			add_modifier = {
-				modifier = AIO_metric_collapse_colony
+				modifier = AIO_metric_backlash_collapse_colony
 				years = 5
 			}
 		}
@@ -893,7 +901,7 @@ AIO_metric_backlash_collapse = {
 			add_planet_devastation = 40
 			add_blocker = { type = d_AIO_metric_fold_residue }
 			add_modifier = {
-				modifier = AIO_metric_collapse_colony
+				modifier = AIO_metric_backlash_collapse_colony
 				years = 5
 			}
 		}
@@ -902,19 +910,19 @@ AIO_metric_backlash_collapse = {
 
 # scope: system
 AIO_metric_backlash_clear_modifier = {
-	remove_modifier = AIO_metric_accidence_1_system
-	remove_modifier = AIO_metric_accidence_2_system
-	remove_modifier = AIO_metric_accidence_3_system
-	remove_modifier = AIO_metric_collapse_system
+	remove_modifier = AIO_metric_backlash_1_system
+	remove_modifier = AIO_metric_backlash_2_system
+	remove_modifier = AIO_metric_backlash_3_system
+	remove_modifier = AIO_metric_backlash_collapse_system
 	every_system_planet_colony = {
-		remove_modifier = AIO_metric_accidence_1
-		remove_modifier = AIO_metric_accidence_2
-		remove_modifier = AIO_metric_accidence_3
+		remove_modifier = AIO_metric_backlash_1
+		remove_modifier = AIO_metric_backlash_2
+		remove_modifier = AIO_metric_backlash_3
 	}
 	every_system_ship_colony = {
-		remove_modifier = AIO_metric_accidence_1
-		remove_modifier = AIO_metric_accidence_2
-		remove_modifier = AIO_metric_accidence_3
+		remove_modifier = AIO_metric_backlash_1
+		remove_modifier = AIO_metric_backlash_2
+		remove_modifier = AIO_metric_backlash_3
 	}
 }
 

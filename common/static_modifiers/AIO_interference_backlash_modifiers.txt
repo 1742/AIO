@@ -83,7 +83,7 @@ AIO_energy_backlash_collapse_colony = {
 
 #region ecology accidence
 
-AIO_ecology_accidence_1 = {
+AIO_ecology_backlash_1 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_docile_fauna.dds
 	planet_jobs_food_produces_mult = 0.10
 	planet_jobs_biomass_produces_mult = 0.05
@@ -95,7 +95,7 @@ AIO_ecology_accidence_1 = {
 	planet_pops_upkeep_mult = 0.05
 }
 
-AIO_ecology_accidence_2 = {
+AIO_ecology_backlash_2 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_docile_fauna.dds
 	planet_jobs_food_produces_mult = 0.25
 	planet_jobs_biomass_produces_mult = 0.12
@@ -108,7 +108,7 @@ AIO_ecology_accidence_2 = {
 	planet_max_districts_add = -1
 }
 
-AIO_ecology_accidence_3 = {
+AIO_ecology_backlash_3 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_docile_fauna.dds
 	planet_jobs_food_produces_mult = 0.50
 	planet_jobs_biomass_produces_mult = 0.25
@@ -121,7 +121,7 @@ AIO_ecology_accidence_3 = {
 	planet_max_districts_add = -2
 }
 
-AIO_ecology_collapse_colony = {
+AIO_ecology_backlash_collapse_colony = {
 	icon = gfx/interface/icons/planet_modifiers/pm_mastery_of_nature.dds
 	planet_jobs_food_produces_mult = -0.25
 	planet_jobs_biomass_produces_mult = -0.12
@@ -134,7 +134,7 @@ AIO_ecology_collapse_colony = {
 
 #region industry accidence
 
-AIO_industry_accidence_1 = {
+AIO_industry_backlash_1 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_arc_furnace.dds
 	planet_jobs_minerals_produces_mult = 0.15
 	planet_jobs_alloys_produces_mult = 0.10
@@ -143,7 +143,7 @@ AIO_industry_accidence_1 = {
 	planet_structures_cost_mult = 0.20
 }
 
-AIO_industry_accidence_2 = {
+AIO_industry_backlash_2 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_arc_furnace.dds
 	planet_jobs_minerals_produces_mult = 0.30
 	planet_jobs_alloys_produces_mult = 0.20
@@ -152,7 +152,7 @@ AIO_industry_accidence_2 = {
 	planet_structures_cost_mult = 0.50
 }
 
-AIO_industry_accidence_3 = {
+AIO_industry_backlash_3 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_arc_furnace.dds
 	planet_jobs_minerals_produces_mult = 0.60
 	planet_jobs_alloys_produces_mult = 0.40
@@ -161,7 +161,7 @@ AIO_industry_accidence_3 = {
 	planet_structures_cost_mult = 1.00
 }
 
-AIO_industry_collapse_colony = {
+AIO_industry_backlash_collapse_colony = {
 	icon = gfx/interface/icons/planet_modifiers/pm_burning_settlement.dds
 	planet_jobs_minerals_produces_mult = -0.25
 	planet_jobs_alloys_produces_mult = -0.15
@@ -174,7 +174,7 @@ AIO_industry_collapse_colony = {
 
 #region metric accidence
 
-AIO_metric_accidence_1 = {
+AIO_metric_backlash_1 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_arcology_project.dds
 	planet_max_districts_add = 1
 	planet_building_build_speed_mult = 0.10
@@ -185,7 +185,7 @@ AIO_metric_accidence_1 = {
 	pop_happiness = -0.05
 }
 
-AIO_metric_accidence_2 = {
+AIO_metric_backlash_2 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_arcology_project.dds
 	planet_max_districts_add = 2
 	planet_building_build_speed_mult = 0.25
@@ -196,7 +196,7 @@ AIO_metric_accidence_2 = {
 	pop_happiness = -0.10
 }
 
-AIO_metric_accidence_3 = {
+AIO_metric_backlash_3 = {
 	icon = gfx/interface/icons/planet_modifiers/pm_arcology_project.dds
 	planet_max_districts_add = 3
 	planet_building_build_speed_mult = 0.50
@@ -207,29 +207,29 @@ AIO_metric_accidence_3 = {
 	pop_happiness = -0.20
 }
 
-AIO_metric_accidence_1_system = {
+AIO_metric_backlash_1_system = {
 	ship_speed_mult = -0.1
 	ship_weapon_range_mult = -0.05
 }
 
-AIO_metric_accidence_2_system = {
+AIO_metric_backlash_2_system = {
 	ship_speed_mult = -0.15
 	ship_weapon_range_mult = -0.1
 }
 
-AIO_metric_accidence_3_system = {
+AIO_metric_backlash_3_system = {
 	ship_speed_mult = -0.2
 	ship_weapon_range_mult = -0.15
 }
 
-AIO_metric_collapse_colony = {
+AIO_metric_backlash_collapse_colony = {
 	icon = gfx/interface/icons/planet_modifiers/pm_celestial_aftermath_modifier.dds
 	planet_building_build_speed_mult = -0.50
 	planet_districts_upkeep_mult = 0.50
 	planet_max_districts_add = -1
 }
 
-AIO_metric_collapse_system = {
+AIO_metric_backlash_collapse_system = {
 	ship_speed_mult = -0.30
 	ship_weapon_range_mult = -0.15
 }

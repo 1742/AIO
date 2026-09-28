@@ -21,7 +21,7 @@ AIO_is_backlash_affect_system = {
 }
 
 # scope: country
-AIO_has_any_interference_aura = {
+AIO_has_any_interference_source = {
 	any_owned_megastructure = {
 		is_megastructure_type = AIO_reality_interferometer
 	}

@@ -23,7 +23,7 @@ monthly_progress = {
         subtract = 8
         desc = AIO_interference_backlash_progress.disconnect
         owner = {
-            AIO_has_any_interference_aura = no
+            AIO_has_any_interference_source = no
         }
     }
 }

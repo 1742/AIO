@@ -100,24 +100,6 @@
  opinion_AIO_interference_accident: "Messing with reality"
  AIO_interference_notice.option: "Report received."
  AIO_interference_notice.collapse_option: "We will remember this."
- AIO_interference_events.430.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: Ecological interference spreads the local biome rapidly, pushing spore and root readings beyond safe limits. Any colonies also gain output."
- AIO_interference_events.431.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: The first growth wave spreads roots and spores through more territory. Farms and cultivation chambers on any colonies are struck."
- AIO_interference_events.432.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: The biome spreads into new regions and occupies usable ground. Any colonies suffer further damage."
- AIO_interference_events.433.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: The experimenter stabilizes the growth cycle. The anomalous biome stays within its boundary, allowing cleanup to begin."
- AIO_interference_events.434.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: Overcrowded biomes exhaust their nutrients and die back, leaving roots and decay that will obstruct development for years. Any colonies suffer severe damage."
- AIO_interference_events.435.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: The ecological field is weakening and abnormal growth has slowed. Dense vegetation still needs clearing."
- AIO_interference_events.440.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: Ore separation and material phase changes accelerate as anomalous heat nears safe limits. Mines and refineries on any colonies gain output."
- AIO_interference_events.441.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: The first overheating episode produces molten ejecta and broken ore. Furnaces and transport lines on any colonies are struck."
- AIO_interference_events.442.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: Anomalous heat continues to disrupt ore bodies and transport. Any colonial production lines suffer further damage."
- AIO_interference_events.443.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: The experimenter finds a stable range for material phase changes. Abnormal heat recedes while extraction and smelting retain their gains."
- AIO_interference_events.444.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: Molten material cools into broad slag beds, obstructing extraction and construction for years. Any colonies suffer severe damage."
- AIO_interference_events.445.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: The manufacturing field is weakening and anomalous heat is falling. Residual slag still needs clearing."
- AIO_interference_events.450.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: Survey coordinates for worlds and ship routes begin to fold together. Travel shortens but navigation records diverge; any colonies gain usable districts."
- AIO_interference_events.451.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: The first spatial rebound briefly displaces routes and surface coordinates. Buildings and utilities on any colonies are struck."
- AIO_interference_events.452.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: Folded space rebounds again and ships slow to recalculate their routes. Any colonies suffer further damage."
- AIO_interference_events.453.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: The experimenter establishes a common spatial reference. The folds stabilize and the extra usable space remains."
- AIO_interference_events.454.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: Folded regions contract abruptly, leaving routes and surfaces misaligned for years. Any colonies suffer severe damage to buildings and utilities."
- AIO_interference_events.455.desc.other: "[event_target:AIO_backlash_maker.GetName] has caused a new development in our [event_target:AIO_accident_system.GetName] system: The metric field is weakening and navigation coordinates agree again. Residual displacement still needs surveying."
 
  #endregion
 
@@ -128,13 +110,6 @@
  AIO_interference_balanced_backlash_type: "Balanced Interference Backlash"
  AIO_interference_balanced_backlash_desc: "Our interference field is disrupting production across several systems. Affected colonies gain output, but their supply, transport, and repair schedules risk cascading shutdowns."
  AIO_interference_balanced_backlash_monthly_change_tooltip: "With Balanced Interference active, $AIO_interference_accidence_backlash_monthly_change_tooltip$"
-
- AIO_balanced_stage_one: "Synchronized Output"
- AIO_balanced_stage_one_desc: "Several resource readings rise together. Where colonies exist, facilities increase output together and a single supply interruption could slow several lines."
- AIO_balanced_stage_two: "Scheduling Bottleneck"
- AIO_balanced_stage_two_desc: "The field concentrates material and maintenance demand into the same period. Colonies, if present, face pressure on transport and construction resources; automated surveys also lose synchronization."
- AIO_balanced_stage_three: "Systemwide Threshold"
- AIO_balanced_stage_three_desc: "Several interference effects approach their peaks at once. Colonies, if present, can no longer stagger repairs; resource and transit readings grow unstable even in an uninhabited system."
 
  AIO_balanced_maintain: "$AIO_interference_accidence_maintain$"
  AIO_balanced_maintain_desc: "Keep the current field settings and observe how far several resource and production effects can rise together."
@@ -158,31 +133,30 @@
  AIO_interference_events.410.name: "Balanced Interference at Critical Strength"
  AIO_interference_events.410.desc.maker: "Our interference field has reached critical strength across several systems. Affected colonies gain output, while supply and repairs struggle to keep pace."
  AIO_interference_events.410.desc.other: "[from.GetName]'s interference field has reached critical strength. Output rises across affected systems, but logistics are under strain."
- AIO_interference_events.410.desc.maker.no_colony: "Our interference field has reached critical strength across several systems. Affected colonies gain output, while supply and repairs struggle to keep pace."
  AIO_interference_events.410.option.maker: "Begin accident response procedures."
+
  AIO_interference_events.411.name: "Synchronized Shutdown"
  AIO_interference_events.411.desc.maker: "Facilities across the field shut down together. Power, processing, and transport fall out of step, damaging affected colonies."
  AIO_interference_events.411.desc.other: "A synchronized shutdown has disrupted colonies in the interference field of [from.GetName]."
- AIO_interference_events.411.desc.maker.no_colony: "Facilities across the field shut down together. Power, processing, and transport fall out of step, damaging affected colonies."
  AIO_interference_events.411.option.maker: "Review the shutdown records."
+
  AIO_interference_events.412.name: "Scheduling Breakdown"
  AIO_interference_events.412.desc.maker: "Production cycles converge again. Affected colonies suffer further damage as high output strains trade and construction."
  AIO_interference_events.412.desc.other: "The interference field of [from.GetName] has caused another wave of production disruptions on affected colonies."
- AIO_interference_events.412.desc.maker.no_colony: "Production cycles converge again. Affected colonies suffer further damage as high output strains trade and construction."
  AIO_interference_events.412.option.maker: "Record the losses in each sector."
+
  AIO_interference_events.413.name: "Harnessed Backlash"
  AIO_interference_events.413.desc.maker: "Our researchers have stabilized production across the field. The gains remain, while supply chains have room to recover. $AIO_interference_accidence_conclusion.reverse$"
  AIO_interference_events.413.desc.other: "[from.GetName] has stabilized its interference field, preserving the gains while ending the disruptions."
- AIO_interference_events.413.desc.maker.no_colony: "Our researchers have stabilized production across the field. The gains remain, while supply chains have room to recover. $AIO_interference_accidence_conclusion.reverse$"
+
  AIO_interference_events.414.name: "Cascading Shutdown"
  AIO_interference_events.414.desc.maker: "Supply, power, and repair systems across the field fail in succession. Affected colonies suffer severe damage and will need years to recover. $AIO_interference_accidence_conclusion.no_reverse$"
  AIO_interference_events.414.desc.other: "The interference field of [from.GetName] has collapsed, severely damaging affected colonies."
- AIO_interference_events.414.desc.maker.no_colony: "Supply, power, and repair systems across the field fail in succession. Affected colonies suffer severe damage and will need years to recover. $AIO_interference_accidence_conclusion.no_reverse$"
  AIO_interference_events.414.option.maker: "$AIO_interference_accidence_option.collapse$"
+
  AIO_interference_events.415.name: "The Experiment Is Cancelled"
  AIO_interference_events.415.desc.maker: "The field is weakening and production schedules are separating again. Earlier losses still need attention. $AIO_interference_accidence_conclusion.no_reverse$"
  AIO_interference_events.415.desc.other: "The interference field of [from.GetName] is weakening and the disruptions are ending."
- AIO_interference_events.415.desc.maker.no_colony: "The field is weakening and production schedules are separating again. Earlier losses still need attention. $AIO_interference_accidence_conclusion.no_reverse$"
 
  #endregion
 
@@ -193,13 +167,6 @@
  AIO_interference_energy_backlash_type: "Zero Point Energy Backlash"
  AIO_interference_energy_backlash_desc: "Zero-point energy is falling out of phase across several systems in our interference field. Surges reach ships and orbital space; affected colonies gain power output but face disruption to distribution and construction."
  AIO_interference_energy_backlash_monthly_change_tooltip: "With Zero Point Energy active, $AIO_interference_accidence_backlash_monthly_change_tooltip$"
-
- AIO_energy_stage_one: "Grid Desynchronization"
- AIO_energy_stage_one_desc: "Zero-point energy output keeps rising, providing new anomalous waveforms for study. Transmission and construction equipment on any colonies begin to lose synchronization."
- AIO_energy_stage_two: "Feedback Surges"
- AIO_energy_stage_two_desc: "Feedback pulses travel through the field. Ship weapons charge faster while shields lose stability; colonial breakers, where present, trip repeatedly."
- AIO_energy_stage_three: "Cascade Threshold"
- AIO_energy_stage_three_desc: "Surges strike several parts of the system at once. Ship weapons reach peak output and shields falter; any colonies struggle to maintain reliable power and construction."
 
  AIO_energy_maintain: "$AIO_interference_accidence_maintain$"
  AIO_energy_maintain_desc: "Keep the current field settings and study the relationship between zero-point output and frequency drift."
@@ -223,31 +190,30 @@
  AIO_interference_events.420.name: "Grid Frequency Divergence"
  AIO_interference_events.420.desc.maker: "The zero-point grid is jumping between frequencies across our field. Generation rises, but distribution and shipboard power cannot stay in sync."
  AIO_interference_events.420.desc.other: "The zero-point grid in the interference field of [from.GetName] is falling out of phase."
- AIO_interference_events.420.desc.maker.no_colony: "The zero-point grid is jumping between frequencies across our field. Generation rises, but distribution and shipboard power cannot stay in sync."
  AIO_interference_events.420.option.maker: "Open the accident protocol."
+
  AIO_interference_events.421.name: "The First Surge"
  AIO_interference_events.421.desc.maker: "A feedback pulse trips substations across affected colonies. Generators go offline and construction stops, while the field keeps driving output higher."
  AIO_interference_events.421.desc.other: "A feedback surge from [from.GetName]'s interference field has struck affected ships and colonial grids."
- AIO_interference_events.421.desc.maker.no_colony: "A feedback pulse trips substations across affected colonies. Generators go offline and construction stops, while the field keeps driving output higher."
  AIO_interference_events.421.option.maker: "Record the damage."
+
  AIO_interference_events.422.name: "Cascade Through the Grid"
  AIO_interference_events.422.desc.maker: "A second surge travels through the field to several power nodes. Affected colonies suffer damage; ship weapons charge faster while shields falter."
  AIO_interference_events.422.desc.other: "A second surge from [from.GetName]'s interference field has disrupted affected colonies and ships."
- AIO_interference_events.422.desc.maker.no_colony: "A second surge travels through the field to several power nodes. Affected colonies suffer damage; ship weapons charge faster while shields falter."
  AIO_interference_events.422.option.maker: "Keep the grid isolated."
+
  AIO_interference_events.423.name: "Harnessed Backlash"
  AIO_interference_events.423.desc.maker: "Our researchers have recalibrated the zero-point waveform. Surplus power follows controlled paths and the surges stop. $AIO_interference_accidence_conclusion.reverse$"
  AIO_interference_events.423.desc.other: "[from.GetName] has stabilized its zero-point waveform and brought the surges under control."
- AIO_interference_events.423.desc.maker.no_colony: "Our researchers have recalibrated the zero-point waveform. Surplus power follows controlled paths and the surges stop. $AIO_interference_accidence_conclusion.reverse$"
+
  AIO_interference_events.424.name: "Grid Collapse"
  AIO_interference_events.424.desc.maker: "Cascading surges burn through transmission circuits across the field. Affected colonies suffer severe damage and will need years to recover. $AIO_interference_accidence_conclusion.no_reverse$"
  AIO_interference_events.424.desc.other: "The zero-point grid in [from.GetName]'s interference field has collapsed, damaging affected colonies."
- AIO_interference_events.424.desc.maker.no_colony: "Cascading surges burn through transmission circuits across the field. Affected colonies suffer severe damage and will need years to recover. $AIO_interference_accidence_conclusion.no_reverse$"
  AIO_interference_events.424.option.maker: "$AIO_interference_accidence_option.collapse$"
+
  AIO_interference_events.425.name: "The Experiment Is Cancelled"
  AIO_interference_events.425.desc.maker: "The field's influence is weakening, generator output is settling, and the distribution grid is stable again. Damaged circuits still need repair, but the cascading failures have stopped. $AIO_interference_accidence_conclusion.no_reverse$"
  AIO_interference_events.425.desc.other: "The interference field of [from.GetName] is weakening and its zero-point surges are ending."
- AIO_interference_events.425.desc.maker.no_colony: "The field is weakening and the zero-point waveform is settling. Damaged circuits still need repair, but the surges have stopped. $AIO_interference_accidence_conclusion.no_reverse$"
 
  #endregion
 
@@ -255,15 +221,8 @@
 
  AIO_interference_ecology_backlash: "Ecological Evolution Backlash: [Target.GetName]"
  AIO_interference_ecology_backlash_type: "Ecological Evolution Backlash"
- AIO_interference_ecology_backlash_desc: "The field accelerates growth cycles in [Target.GetName], creating abnormal biomes even on uninhabited worlds. Colonies, if present, gain food and biomass but face roots, spores, and supply pressure. We can contain the spread or stabilize it."
+ AIO_interference_ecology_backlash_desc: "Abnormal growth is spreading through several systems covered by our field. Affected colonies gain food and biomass but face roots, spores, and growing supply demands."
  AIO_interference_ecology_backlash_monthly_change_tooltip: "With Ecological Evolution active, $AIO_interference_accidence_backlash_monthly_change_tooltip$"
-
- AIO_ecology_stage_one: "Overgrowth"
- AIO_ecology_stage_one_desc: "Biological activity and terraforming potential rise throughout the system, along with spore counts. Fields and cultivation chambers on any colonies yield earlier harvests."
- AIO_ecology_stage_two: "Runaway Biome"
- AIO_ecology_stage_two_desc: "Roots and spores spread into more territory, occupying potential building sites. Colonies, if present, face pressure on utilities, filtration, and household supplies."
- AIO_ecology_stage_three: "Biosphere Overload"
- AIO_ecology_stage_three_desc: "The biome reaches peak growth and steadily covers usable ground. Colonies, if present, gain food and biomass but face worsening air, water, and living conditions."
 
  AIO_ecology_maintain: "$AIO_interference_accidence_maintain$"
  AIO_ecology_maintain_desc: "Keep the current field settings and observe how growth and environmental adaptation change."
@@ -272,40 +231,45 @@
  AIO_ecology_reverse: "$AIO_interference_accidence_reverse$"
  AIO_ecology_reverse_desc: "Retune the effect on growth cycles, preserving productive potential while limiting the spread."
 
- AIO_ecology_accidence_1: "Ecological Swell I"
- AIO_ecology_accidence_1_desc: "Biological activity and terraforming accelerate; any colonies gain food and biomass while supply pressure begins to rise."
- AIO_ecology_accidence_2: "Ecological Swell II"
- AIO_ecology_accidence_2_desc: "Vegetation occupies usable ground; colonies, if present, face greater filtration and household supply costs."
- AIO_ecology_accidence_3: "Ecological Swell III"
- AIO_ecology_accidence_3_desc: "The expanding biome reaches its peak and reduces usable land; living conditions on any colonies also deteriorate."
- AIO_ecology_collapse_colony: "Biosphere Collapse"
- AIO_ecology_collapse_colony_desc: "Widespread dieback leaves the environment difficult to develop for years; farms and supplies on any colonies also suffer."
+ AIO_ecology_backlash_1: "Ecological Swell I"
+ AIO_ecology_backlash_1_desc: "Biological activity and terraforming accelerate; any colonies gain food and biomass while supply pressure begins to rise."
+ AIO_ecology_backlash_2: "Ecological Swell II"
+ AIO_ecology_backlash_2_desc: "Vegetation occupies usable ground; colonies, if present, face greater filtration and household supply costs."
+ AIO_ecology_backlash_3: "Ecological Swell III"
+ AIO_ecology_backlash_3_desc: "The expanding biome reaches its peak and reduces usable land; living conditions on any colonies also deteriorate."
+ AIO_ecology_backlash_collapse_colony: "Biosphere Collapse"
+ AIO_ecology_backlash_collapse_colony_desc: "Widespread dieback leaves the environment difficult to develop for years; farms and supplies on any colonies also suffer."
 
  d_AIO_ecology_overgrowth: "£blocker£ Root Residue"
  d_AIO_ecology_overgrowth_desc: "Dead roots and decaying matter cover utility lines and buildable land. The area must be cleared before development resumes."
 
  AIO_interference_events.430.name: "Ecological Threshold"
- AIO_interference_events.430.desc.maker.colony: "The field in [event_target:AIO_accident_system.GetName] has reached critical strength. Crops and cultivated organisms keep growing faster, and terraforming is accelerating; spore counts and root density have also passed safe limits."
- AIO_interference_events.430.desc.maker.no_colony: "The field in [event_target:AIO_accident_system.GetName] has reached critical strength. Native biomes and microorganisms on uninhabited worlds are spreading rapidly, with spore counts and root density passing safe limits."
+ AIO_interference_events.430.desc.maker: "Abnormal growth is spreading through systems covered by our interference field. Affected colonies gain food and biomass output while roots, spores, and supply demands strain their infrastructure."
+ AIO_interference_events.430.desc.other: "Abnormal growth is spreading through systems covered by [from.GetName]'s ecological interference field. Biomes are expanding in our affected systems and colonial supplies are under pressure."
  AIO_interference_events.430.option.maker: "Open the accident protocol."
+
  AIO_interference_events.431.name: "The First Spread"
- AIO_interference_events.431.desc.maker.colony: "The first wave of growth sweeps through [event_target:AIO_accident_system.GetName]. Roots split irrigation pipes and warehouse foundations, while spores enter cultivation chambers. Harvests fall on the affected colonies even as their need for supplies rises."
- AIO_interference_events.431.desc.maker.no_colony: "The first wave of growth sweeps across uninhabited worlds in [event_target:AIO_accident_system.GetName]. Roots spread through the soil and spore clouds rise into the atmosphere. No farms are damaged, but planned terraforming sites are already overgrown."
+ AIO_interference_events.431.desc.maker: "The first growth wave sweeps across the field. Roots invade utility lines and spores enter cultivation facilities, briefly damaging production on affected colonies."
+ AIO_interference_events.431.desc.other: "The first growth wave from [from.GetName]'s field has struck utility lines and cultivation facilities on our affected colonies."
  AIO_interference_events.431.option.maker: "Record the losses."
+
  AIO_interference_events.432.name: "Runaway Spread"
- AIO_interference_events.432.desc.maker.colony: "The growth spreads into new districts along water, ventilation, and transport systems. Farms and cultivation chambers in [event_target:AIO_accident_system.GetName] lose output, terraforming slows, and the colonies suffer further damage; new vegetation continues to appear."
- AIO_interference_events.432.desc.maker.no_colony: "The biome spreads further across [event_target:AIO_accident_system.GetName], covering more potentially usable land. No colonial facilities are damaged, but terraforming probes are losing contact and future development is growing harder."
+ AIO_interference_events.432.desc.maker: "The biome spreads along water, ventilation, and transport networks. Affected colonies suffer further damage as vegetation occupies usable ground."
+ AIO_interference_events.432.desc.other: "The biome in [from.GetName]'s field continues to spread. Our affected colonies suffer further damage and lose usable ground."
  AIO_interference_events.432.option.maker: "Keep the biome contained."
+
  AIO_interference_events.433.name: "Harnessed Backlash"
- AIO_interference_events.433.desc.maker.colony: "Our researchers have adjusted the field in [event_target:AIO_accident_system.GetName]. Crops and cultivated organisms remain highly productive, while roots and spores no longer spread beyond production areas. Cleanup can begin. $AIO_interference_accidence_conclusion.reverse$"
- AIO_interference_events.433.desc.maker.no_colony: "Our researchers have adjusted the field in [event_target:AIO_accident_system.GetName]. Growth remains vigorous, but roots and spores no longer cross the designated boundary; biological samples can now be recovered safely. $AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.433.desc.maker: "Our researchers have stabilized growth cycles throughout the field. Crops remain productive while roots and spores stay out of production areas. $AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.433.desc.other: "[from.GetName] has stabilized its ecological field. The abnormal spread through our affected systems has stopped and cleanup can begin."
+
  AIO_interference_events.434.name: "Biosphere Collapse"
- AIO_interference_events.434.desc.maker.colony: "The crowded biome exhausts its nutrients within a single growth cycle, then dies back across a wide area. Roots and decaying matter cover colonies in [event_target:AIO_accident_system.GetName]; farms and cultivation chambers will take years to recover. $AIO_interference_accidence_conclusion.no_reverse$"
- AIO_interference_events.434.desc.maker.no_colony: "Overcrowded biomes in [event_target:AIO_accident_system.GetName] exhaust their nutrients within one growth cycle and die off. Roots and decaying matter cover the uninhabited surface, complicating terraforming and settlement for years. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.434.desc.maker: "Overcrowded biomes exhaust their nutrients and die back across the field. Affected colonies suffer severe damage, and roots and decay will obstruct development for years. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.434.desc.other: "[from.GetName] has suffered a biosphere collapse. Our affected colonies are severely damaged, and dead vegetation will obstruct development for years."
  AIO_interference_events.434.option.maker: "$AIO_interference_accidence_option.collapse$"
+
  AIO_interference_events.435.name: "The Experiment Is Cancelled"
- AIO_interference_events.435.desc.maker.colony: "The field's influence is weakening and excessive growth is slowing. Affected facilities still need clearing, but the spread is under control. $AIO_interference_accidence_conclusion.no_reverse$"
- AIO_interference_events.435.desc.maker.no_colony: "The field's influence is weakening, and abnormal growth in [event_target:AIO_accident_system.GetName] is slowing. Dense vegetation remains on uninhabited worlds, but its spread is under control. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.435.desc.maker: "The field is weakening and abnormal growth is slowing. Affected facilities still need clearing, but the spread is under control. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.435.desc.other: "[from.GetName]'s ecological field is weakening. The abnormal spread in our affected systems has stopped, though residual vegetation remains."
 
  #endregion
 
@@ -313,15 +277,8 @@
 
  AIO_interference_industry_backlash: "Industrial Refining Backlash: [Target.GetName]"
  AIO_interference_industry_backlash_type: "Industrial Refining Backlash"
- AIO_interference_industry_backlash_desc: "Ore separation and material phase changes in [Target.GetName] are accelerating, along with anomalous heat. Colonies, if present, gain mineral and alloy output but face higher maintenance and construction costs. We can lower the load or seek stable parameters."
+ AIO_interference_industry_backlash_desc: "Material phase changes and anomalous heat are accelerating through several systems covered by our field. Affected mines and refineries gain output while maintenance and construction costs rise."
  AIO_interference_industry_backlash_monthly_change_tooltip: "With Industrial Refining active, $AIO_interference_accidence_backlash_monthly_change_tooltip$"
-
- AIO_industry_stage_one: "Overcapacity"
- AIO_industry_stage_one_desc: "Ore separation and alloy reactions become more efficient while anomalous heat approaches safe limits. Any colonies face rising furnace and spare-part demand."
- AIO_industry_stage_two: "Runaway Wear"
- AIO_industry_stage_two_desc: "Mineral and alloy potential keeps rising while heat grows less stable. Colonies, if present, face greater furnace wear, maintenance demand, and expansion costs."
- AIO_industry_stage_three: "Full-Load Threshold"
- AIO_industry_stage_three_desc: "Anomalous heat approaches its limit and material phase changes could run out of control. On any colonies, one shutdown could block full-load mines and furnaces."
 
  AIO_industry_maintain: "$AIO_interference_accidence_maintain$"
  AIO_industry_maintain_desc: "Keep the current field settings and continue measuring ore separation and anomalous heat."
@@ -330,40 +287,45 @@
  AIO_industry_reverse: "$AIO_interference_accidence_reverse$"
  AIO_industry_reverse_desc: "Find a stable range for ore separation and temperature, preserving productive potential while reducing wear."
 
- AIO_industry_accidence_1: "Smelter Overload I"
- AIO_industry_accidence_1_desc: "Mineral and alloy potential rises; colonies, if present, need more furnace linings, spare parts, and new facilities."
- AIO_industry_accidence_2: "Smelter Overload II"
- AIO_industry_accidence_2_desc: "Material phase changes accelerate; colonies, if present, face higher ore, maintenance, and expansion costs."
- AIO_industry_accidence_3: "Smelter Overload III"
- AIO_industry_accidence_3_desc: "Mineral and alloy gains reach their peak; sustained output on any colonies requires more feedstock and frequent repairs."
- AIO_industry_collapse_colony: "Industrial Shutdown"
- AIO_industry_collapse_colony_desc: "Anomalous heat and slag obstruct development for years; mines and refineries on any colonies also lose output."
+ AIO_industry_backlash_1: "Smelter Overload I"
+ AIO_industry_backlash_1_desc: "Mineral and alloy potential rises; colonies, if present, need more furnace linings, spare parts, and new facilities."
+ AIO_industry_backlash_2: "Smelter Overload II"
+ AIO_industry_backlash_2_desc: "Material phase changes accelerate; colonies, if present, face higher ore, maintenance, and expansion costs."
+ AIO_industry_backlash_3: "Smelter Overload III"
+ AIO_industry_backlash_3_desc: "Mineral and alloy gains reach their peak; sustained output on any colonies requires more feedstock and frequent repairs."
+ AIO_industry_backlash_collapse_colony: "Industrial Shutdown"
+ AIO_industry_backlash_collapse_colony_desc: "Anomalous heat and slag obstruct development for years; mines and refineries on any colonies also lose output."
 
  d_AIO_industry_slag_residue: "£blocker£ Slag Residue"
  d_AIO_industry_slag_residue_desc: "Slag and solidified iron clog transport routes; the burned-out equipment frames still need dismantling."
 
  AIO_interference_events.440.name: "Refining at the Limit"
- AIO_interference_events.440.desc.maker.colony: "The field in [event_target:AIO_accident_system.GetName] has reached critical strength. Ore shipments and alloy casting are rising together, but furnace temperatures and maintenance material use have passed design limits. Cooling and transport systems are nearing full load."
- AIO_interference_events.440.desc.maker.no_colony: "The field in [event_target:AIO_accident_system.GetName] has reached critical strength. Ore separation readings and material phase changes are accelerating on uninhabited worlds; simulated smelting cycles predict unsafe heat levels."
+ AIO_interference_events.440.desc.maker: "Ore separation and material phase changes are accelerating throughout our field. Affected colonies gain mineral and alloy output while anomalous heat and maintenance demand rise."
+ AIO_interference_events.440.desc.other: "Anomalous heat is rising in systems covered by [from.GetName]'s industrial field. Our affected mines and refineries gain output but face greater maintenance demands."
  AIO_interference_events.440.option.maker: "Open the accident protocol."
+
  AIO_interference_events.441.name: "The First Overheat"
- AIO_interference_events.441.desc.maker.colony: "The first furnace banks in [event_target:AIO_accident_system.GetName] exceed safe temperatures. Cooling pumps stop, molten iron spills from the channels, and ore transport and smelting slow down. Output on the damaged colonies falls temporarily."
- AIO_interference_events.441.desc.maker.no_colony: "Minerals in [event_target:AIO_accident_system.GetName] abruptly change phase, and probes record extreme heat and molten ejecta. No mines or furnaces are damaged, but automated samplers must withdraw."
+ AIO_interference_events.441.desc.maker: "The first overheating wave strikes the field. Cooling pumps stop and molten material spills from channels, forcing ore transport and smelting on affected colonies to slow."
+ AIO_interference_events.441.desc.other: "The first overheating wave from [from.GetName]'s field has struck mines and transport lines on our affected colonies."
  AIO_interference_events.441.option.maker: "Record the losses."
+
  AIO_interference_events.442.name: "Production Jam"
- AIO_interference_events.442.desc.maker.colony: "Ore piles up on conveyors after repeated equipment failures. Mines upstream must slow down, while furnaces downstream still demand feedstock at full load. Colonies in [event_target:AIO_accident_system.GetName] suffer further damage, and clearing and rebuilding the lines takes more material."
- AIO_interference_events.442.desc.maker.no_colony: "Molten material and broken ore keep accumulating on uninhabited worlds in [event_target:AIO_accident_system.GetName]. No colonial production line is halted, but shifting ore bodies will make future extraction harder to clear."
+ AIO_interference_events.442.desc.maker: "Anomalous heat continues to disrupt ore bodies and transport. Affected colonies suffer further damage as clearing and rebuilding production lines consumes more material."
+ AIO_interference_events.442.desc.other: "[from.GetName]'s industrial field overheats again, causing further damage to production lines on our affected colonies."
  AIO_interference_events.442.option.maker: "Keep the lines pressed."
+
  AIO_interference_events.443.name: "Harnessed Backlash"
- AIO_interference_events.443.desc.maker.colony: "Our researchers have found stable ranges for ore supply and furnace temperature in [event_target:AIO_accident_system.GetName]. Molten iron flows steadily into the casting lines; mines and refineries retain higher output without uncontrolled wear. $AIO_interference_accidence_conclusion.reverse$"
- AIO_interference_events.443.desc.maker.no_colony: "Our researchers have found a stable range for mineral phase changes in [event_target:AIO_accident_system.GetName]. Ore remains easy to separate, while abnormal heat recedes; extraction can be planned safely. $AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.443.desc.maker: "Our researchers have found a stable range for ore supply and furnace temperatures. Minerals and alloys remain abundant without uncontrolled equipment wear. $AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.443.desc.other: "[from.GetName] has stabilized its industrial field. Abnormal heat has receded in our affected systems while extraction and smelting retain their gains."
+
  AIO_interference_events.444.name: "Industrial Shutdown"
- AIO_interference_events.444.desc.maker.colony: "Cooling loops fail in succession across [event_target:AIO_accident_system.GetName]. Molten iron spills from the channels and solidifies across transport routes. Slag covers the damaged colonies' production facilities; restoring mines and refineries will take years. $AIO_interference_accidence_conclusion.no_reverse$"
- AIO_interference_events.444.desc.maker.no_colony: "Anomalous heat across [event_target:AIO_accident_system.GetName] runs out of control, and molten material cools into broad slag beds. No colonial industry is destroyed, but extraction and construction will face obstacles for years. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.444.desc.maker: "Cooling loops fail in succession, and molten material solidifies into broad slag beds. Affected colonies suffer severe damage; mines and refineries will take years to recover. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.444.desc.other: "[from.GetName]'s industrial field has collapsed. Our affected colonies are severely damaged, and slag will obstruct development for years."
  AIO_interference_events.444.option.maker: "$AIO_interference_accidence_option.collapse$"
+
  AIO_interference_events.445.name: "The Experiment Is Cancelled"
- AIO_interference_events.445.desc.maker.colony: "The field's influence is weakening and furnace temperatures are falling. Damaged conveyors still need repair, while mines and refineries return toward their design loads. $AIO_interference_accidence_conclusion.no_reverse$"
- AIO_interference_events.445.desc.maker.no_colony: "The field's influence is weakening, and abnormal heat in [event_target:AIO_accident_system.GetName] is falling. Solidified slag still needs to be surveyed, but the overheating has stopped. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.445.desc.maker: "The field is weakening and anomalous heat is falling. Damaged transport lines still need repair, but widespread overheating has stopped. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.445.desc.other: "[from.GetName]'s industrial field is weakening. Anomalous heat has receded in our affected systems, though residual slag remains."
 
  #endregion
 
@@ -371,15 +333,8 @@
 
  AIO_interference_metric_backlash: "Metric Engineering Backlash: [Target.GetName]"
  AIO_interference_metric_backlash_type: "Metric Engineering Backlash"
- AIO_interference_metric_backlash_desc: "Spatial coordinates in [Target.GetName] are folding, drawing distant worlds and routes together on survey maps. Colonies, if present, gain sites and faster construction but risk displaced roads and utilities; ship routes already need recalibration."
+ AIO_interference_metric_backlash_desc: "Space is folding through several systems covered by our field. Routes shorten and affected colonies gain usable districts, but coordinate drift strains infrastructure and navigation."
  AIO_interference_metric_backlash_monthly_change_tooltip: "With Metric Engineering active, $AIO_interference_accidence_backlash_monthly_change_tooltip$"
-
- AIO_metric_stage_one: "Spatial Folding"
- AIO_metric_stage_one_desc: "Coordinates once kilometres apart now appear close together, shortening travel. Survey maps show new potential districts on any colonies."
- AIO_metric_stage_two: "Metric Instability"
- AIO_metric_stage_two_desc: "Spatial folds keep changing surveyed distances. Ships travel faster but fire-control needs constant recalibration; roads, utilities, and foundations on any colonies can shift out of alignment."
- AIO_metric_stage_three: "Geometric Threshold"
- AIO_metric_stage_three_desc: "Layers of space overlap, improving travel and construction potential. Coordinates change faster than surveys and fire-control can update; residents on any colonies also struggle to navigate."
 
  AIO_metric_maintain: "$AIO_interference_accidence_maintain$"
  AIO_metric_maintain_desc: "Keep the current field settings and measure the capacity and stability of the folded regions."
@@ -388,41 +343,44 @@
  AIO_metric_reverse: "$AIO_interference_accidence_reverse$"
  AIO_metric_reverse_desc: "Establish a common spatial reference for worlds, routes, and potential building sites, preserving usable space while limiting rebounds."
 
- AIO_metric_accidence_1: "Geometric Distortion I"
- AIO_metric_accidence_1_desc: "Usable space and travel speed increase while navigation grows harder; any colonies gain districts and faster construction."
- AIO_metric_accidence_2: "Geometric Distortion II"
- AIO_metric_accidence_2_desc: "The folds spread and fire-control errors rise; roads, utilities, and district upkeep on any colonies also suffer."
- AIO_metric_accidence_3: "Geometric Distortion III"
- AIO_metric_accidence_3_desc: "Usable space and travel effects peak while coordinate drift disrupts gunnery; construction and travel on any colonies also suffer."
- AIO_metric_collapse_colony: "Geometric Collapse"
- AIO_metric_collapse_colony_desc: "Some usable space contracts and travel remains disrupted; construction and district upkeep on any colonies also face years of pressure."
- AIO_metric_collapse_system: "Geometric Collapse (System)"
- AIO_metric_collapse_system_desc: "Coordinate drift after the collapse disrupts ship travel and targeting for years."
+ AIO_metric_backlash_1: "Geometric Distortion I"
+ AIO_metric_backlash_1_desc: "Usable space and travel speed increase while navigation grows harder; any colonies gain districts and faster construction."
+ AIO_metric_backlash_2: "Geometric Distortion II"
+ AIO_metric_backlash_2_desc: "The folds spread and fire-control errors rise; roads, utilities, and district upkeep on any colonies also suffer."
+ AIO_metric_backlash_3: "Geometric Distortion III"
+ AIO_metric_backlash_3_desc: "Usable space and travel effects peak while coordinate drift disrupts gunnery; construction and travel on any colonies also suffer."
+ AIO_metric_backlash_collapse_colony: "Geometric Collapse"
+ AIO_metric_backlash_collapse_colony_desc: "Some usable space contracts and travel remains disrupted; construction and district upkeep on any colonies also face years of pressure."
 
  d_AIO_metric_fold_residue: "£blocker£ Residual Fold"
  d_AIO_metric_fold_residue_desc: "Roads and building foundations overlap in one area. Crews must repeatedly survey adjacent districts before construction can resume."
 
  AIO_interference_events.450.name: "Metric Threshold"
- AIO_interference_events.450.desc.maker.colony: "The field in [event_target:AIO_accident_system.GetName] has reached critical strength. Street intersections draw closer on maps and distant buildings repeat in the same view. More districts can be developed and construction speeds up, but coordinate records no longer agree."
- AIO_interference_events.450.desc.maker.no_colony: "The field in [event_target:AIO_accident_system.GetName] has reached critical strength. Survey coordinates for uninhabited worlds and ship routes overlap, making distant locations appear adjacent. Navigation records are increasingly inconsistent."
+ AIO_interference_events.450.desc.maker: "Space is folding throughout the systems covered by our field. Routes shorten and usable districts expand, but surveys, roads, and utility lines are increasingly difficult to align."
+ AIO_interference_events.450.desc.other: "[from.GetName]'s metric field is folding space in our affected systems. Routes shorten while surveys and infrastructure maintenance become more difficult."
  AIO_interference_events.450.option.maker: "Open the accident protocol."
+
  AIO_interference_events.451.name: "The First Rebound"
- AIO_interference_events.451.desc.maker.colony: "The first rebound shifts several streets in [event_target:AIO_accident_system.GetName] sideways, breaks utility lines, and damages the foundations of unfinished buildings. Colonies sound alarms, and ships crossing the system must reduce speed."
- AIO_interference_events.451.desc.maker.no_colony: "The first rebound briefly shifts routes and the surfaces of uninhabited worlds in [event_target:AIO_accident_system.GetName]. Survey probes lose contact and passing ships slow down; no streets or buildings are damaged."
+ AIO_interference_events.451.desc.maker: "The first spatial rebound briefly displaces routes and surfaces across the field. Roads, utility lines, and building foundations on affected colonies suffer damage."
+ AIO_interference_events.451.desc.other: "The first rebound from [from.GetName]'s metric field has struck buildings and utilities on our affected colonies."
  AIO_interference_events.451.option.maker: "Record the deformation."
+
  AIO_interference_events.452.name: "Geometric Recoil"
- AIO_interference_events.452.desc.maker.colony: "Intersections once adjacent are suddenly kilometres apart; old foundations no longer line up with new roads. New districts still appear, but colonies in [event_target:AIO_accident_system.GetName] suffer further damage. Building work slows, ships recalculate routes at reduced speed, and district upkeep rises."
- AIO_interference_events.452.desc.maker.no_colony: "Folded space in [event_target:AIO_accident_system.GetName] rebounds again, separating routes that were adjacent moments ago. Coordinates on uninhabited worlds keep drifting, and ships must slow to recalculate their course."
+ AIO_interference_events.452.desc.maker: "Folded space rebounds again and route coordinates keep drifting. Affected colonies suffer further damage, construction slows, and ships must reduce speed to recalculate their courses."
+ AIO_interference_events.452.desc.other: "[from.GetName]'s metric field rebounds again. Our affected colonies suffer further damage while ships recalculate their courses."
  AIO_interference_events.452.option.maker: "Keep the metric pinned."
+
  AIO_interference_events.453.name: "Harnessed Backlash"
- AIO_interference_events.453.desc.maker.colony: "Our researchers have established a common spatial reference for [event_target:AIO_accident_system.GetName]. The folded districts hold steady and the additional sites remain usable; roads, buildings, and routes no longer rebound without warning. $AIO_interference_accidence_conclusion.reverse$"
- AIO_interference_events.453.desc.maker.no_colony: "Our researchers have established a common spatial reference for [event_target:AIO_accident_system.GetName]. The folds hold steady and the extra usable space remains, while ship routes no longer rebound without warning. $AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.453.desc.maker: "Our researchers have established a common spatial reference. Folded regions hold steady and new districts remain usable; roads, buildings, and routes no longer rebound without warning. $AIO_interference_accidence_conclusion.reverse$"
+ AIO_interference_events.453.desc.other: "[from.GetName] has stabilized its metric field. The folds in our affected systems have settled and the additional usable space remains."
+
  AIO_interference_events.454.name: "Geometric Collapse"
- AIO_interference_events.454.desc.maker.colony: "Folded districts across [event_target:AIO_accident_system.GetName] contract at once, removing some usable land and tearing through foundations and utility lines. Colonies suffer severe damage; displaced streets obstruct construction, travel, and district maintenance for years. $AIO_interference_accidence_conclusion.no_reverse$"
- AIO_interference_events.454.desc.maker.no_colony: "Folded regions across [event_target:AIO_accident_system.GetName] contract at once, shearing the surfaces of uninhabited worlds and throwing routes out of alignment. No colony is damaged, but construction and travel will remain disrupted for years. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.454.desc.maker: "Folded regions contract at once and route coordinates drift sharply. Affected colonies suffer severe damage; displaced terrain will obstruct construction and travel for years. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.454.desc.other: "[from.GetName]'s metric field has collapsed. Our affected colonies are severely damaged, and routes and surfaces will remain displaced for years."
  AIO_interference_events.454.option.maker: "$AIO_interference_accidence_option.collapse$"
+
  AIO_interference_events.455.name: "The Experiment Is Cancelled"
- AIO_interference_events.455.desc.maker.colony: "The field's influence is weakening, repeated streets are merging back into place, and navigation coordinates agree again. Damaged streets still need repair, but the wider rebounds have stopped. $AIO_interference_accidence_conclusion.no_reverse$"
- AIO_interference_events.455.desc.maker.no_colony: "The field's influence is weakening, overlapping space in [event_target:AIO_accident_system.GetName] is settling, and navigation coordinates agree again. Survey probes still need redeployment, but the wider rebounds have stopped. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.455.desc.maker: "The field is weakening and overlapping space is settling. Navigation coordinates agree again, though damaged streets still need repair. $AIO_interference_accidence_conclusion.no_reverse$"
+ AIO_interference_events.455.desc.other: "[from.GetName]'s metric field is weakening. Navigation coordinates in our affected systems agree again, though residual displacement remains."
 
  #endregion
