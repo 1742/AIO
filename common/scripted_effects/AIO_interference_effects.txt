@@ -135,7 +135,7 @@ AIO_interference_change_policy = {
 }
 
 
-#region accidence helpers
+#region backlash helpers
 
 # Shared by every doctrine's accident. The type-specific parts (which stage
 # modifiers, which discharges) stay with the type; what every ending does in
