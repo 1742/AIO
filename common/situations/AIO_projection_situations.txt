@@ -1,0 +1,64 @@
+AIO_projection_Aforgomom = {
+	picture = GFX_evt_shroud_psionic_aura
+	category = negative
+	situation_log_category = crises
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_outcome_negative
+	initial_progress = 0
+	progress_direction = monodirectional
+	on_start = { AIO_projection_Aforgomom_start = yes }
+	abort_trigger = { AIO_projection_has_anchor = no }
+	on_abort = { AIO_projection_Aforgomom_abort = yes }
+	on_progress_complete = {
+		if = {
+			limit = { AIO_projection_has_anchor = yes }
+			AIO_projection_Aforgomom_complete = yes
+		}
+		else = { AIO_projection_Aforgomom_abort = yes }
+	}
+	stages = {
+		stage_1 = {
+			end = 24
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+		}
+	}
+	monthly_progress = { base = 1 }
+	on_monthly = { events = { AIO_projection_events.302 } }
+	approach = {
+		name = AIO_projection_maintain_ritual
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		ai_weight = { base = 1 }
+	}
+}
+
+# 其他帝国只观察进度；target 直接绑定本次锚点舰队，不建立第二条召唤链。
+AIO_projection_observer = {
+	picture = GFX_evt_shroud_psionic_aura
+	category = negative
+	situation_log_category = crises
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_outcome_negative
+	initial_progress = 0
+	progress_direction = monodirectional
+	abort_trigger = { NOT = { exists = target } }
+	on_abort = { destroy_situation = this }
+	on_progress_complete = { destroy_situation = this }
+	stages = {
+		stage_1 = {
+			end = 24
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+		}
+	}
+	monthly_progress = { base = 0 }
+	approach = {
+		name = AIO_projection_observe_ritual
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		ai_weight = { base = 1 }
+	}
+}

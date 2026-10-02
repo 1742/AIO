@@ -334,8 +334,6 @@ AIO_mega_03 = {
 			country_event = { id = AIO_crisis_events.405 }
 		}
 	}
-
-	scripted_action = { AIO_DAIT_lock_target }
 }
 
 AIO_mega_04 = {
@@ -430,5 +428,5 @@ AIO_mega_04 = {
 		}
 	}
 
-	scripted_action = { AIO_DAIT_lock_target }
+	scripted_action = { AIO_projection_action }
 }

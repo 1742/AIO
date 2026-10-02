@@ -1,0 +1,59 @@
+# 每国一份仪式；冷却只在确认投入后开始。
+# scope：country
+AIO_projection_can_start = {
+	custom_tooltip = {
+		fail_text = AIO_projection_fail.need_mega_04
+		has_megastructure = AIO_mega_04
+	}
+	custom_tooltip = {
+		fail_text = AIO_projection_fail.cooldown
+		NOT = { has_country_flag = AIO_projection_cooldown }
+	}
+	custom_tooltip = {
+		fail_text = AIO_projection_fail.exist
+		NOT = { any_situation = { is_situation_type = AIO_projection_Aforgomom } }
+	}
+	resource_stockpile_compare = {
+		resource = AIO_advanced_logic
+		value >= $COST$
+	}
+}
+
+# country event：选择投入时重新检查来源和星系，取消选址不收费。
+# from - system fromfrom - mega
+AIO_projection_option_available = {
+	AIO_projection_can_start = { COST = $COST$ }
+	custom_tooltip = {
+		fail_text = AIO_projection_fail_center
+		exists = from
+		from = { AIO_projection_center_available = yes }
+	}
+	custom_tooltip = {
+		fail_text = AIO_projection_fail.need_mega_04
+		exists = fromfrom
+		fromfrom = {
+			is_megastructure_type = AIO_mega_04
+			owner = { is_same_value = root }
+		}
+	}
+}
+
+# system：中心不重复，外围范围允许重叠。
+AIO_projection_center_available = {
+	NOT = { any_fleet_in_system = { has_fleet_flag = AIO_projection_anchor } }
+}
+
+# situation：只认本次锚点，避免另一份仪式接替被击毁的锚点。
+AIO_projection_has_anchor = {
+	exists = target
+	target = {
+		any_fleet_in_system = { has_fleet_flag = AIO_projection_anchor_@prevprev }
+	}
+}
+
+# system：同国锚点不参与正式化身的怒气和清场判定。
+AIO_Aforgomom_has_targets = {
+	any_fleet_in_system = {
+		NOT = { is_owned_by = event_target:AIO_Aforgomom_country }
+	}
+}

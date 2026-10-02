@@ -512,17 +512,7 @@ AIO_DAIT_harvest_effect = {
     set_star_flag = AIO_DAIT_harvest_system
 }
 
-AIO_DAIT_strike_effect = {
-    if = {
-        limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
-        AIO_create_Aforgomom_effect = yes
-    }
-    if = {
-        limit = { NOT = { has_star_flag = AIO_Aformom_exist } }
-        AIO_create_Aformom_fleet = yes
-        set_star_flag = AIO_Aformom_exist
-    }
-}
+
 
 AIO_DAIT_erase_effect = {
     every_system = {
@@ -579,39 +569,7 @@ AIO_DAIT_erase_effect = {
 
 #region helper
 
-# 召唤亚弗戈蒙
-# scope: system
-AIO_create_Aformom_fleet = {
-    create_fleet = {
-        effect = {
-            set_name = AIO_Aforgomom_Wrath
-            set_owner = event_target:AIO_Aforgomom_country
-            create_ship = {
-                name = AIO_Aforgomom_Wrath
-                design = NAME_AIO_Aforgomom_Wrath
-                graphical_culture = event_target:AIO_Aforgomom_country
-            }
-            set_location = {
-                target = prev.star
-                distance = 0
-                angle = random
-            }
-            if = {
-                limit = {
-                    owner = {
-                        check_variable = { which = AIO_Aforgomom_Wrath value > 0 }
-                        check_variable = { which = AIO_Aforgomom_Wrath value < 10 }
-                    }
-                }
-                add_modifier = { modifier = AIO_Aforgomom_Wrath_modifier mult = value:AIO_Aforgomom_Wrath_factor }
-            }
-            set_fleet_stance = aggressive
-            set_aggro_range = 10000
-            set_fleet_flag = AIO_Aforgomom_fleet
-            fleet_event = { id = AIO_Aforgomom_events.201 days = 100 }
-        }
-    }
-}
+
 
 # 抹除星系
 # scope: system

@@ -1,0 +1,19 @@
+AIO_projection_action = {
+	user_scope = megastructure
+	scope = galactic_object
+	possible = {
+		custom_tooltip = {
+			fail_text = AIO_projection_fail_center
+			AIO_projection_center_available = yes
+		}
+	}
+	button_clickable = {
+		owner = { AIO_projection_can_start = { COST = @AIO_projection_logic_cost } }
+	}
+	icon = GFX_ship_class_conduit
+	icon_selected = GFX_ship_class_conduit
+	on_started = on_AIO_projection_started
+	context_menu_name = AIO_projection_aforgomom_action
+	activity_key = AIO_projection_aforgomom_activity
+	tooltip = AIO_projection_aforgomom_action_tooltip
+}

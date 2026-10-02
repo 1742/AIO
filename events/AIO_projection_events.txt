@@ -1,0 +1,105 @@
+namespace = AIO_projection_events
+
+# ROOT = 目标星系；FROM = 发起动作的巨构。
+system_event = {
+	id = AIO_projection_events.201
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		from.owner = {
+			country_event = {
+				id = AIO_projection_events.202
+				scopes = { from = root fromfrom = from }
+			}
+		}
+	}
+}
+
+# ROOT = 施法者；FROM = 星系；FROMFROM = 巨构。
+country_event = {
+	id = AIO_projection_events.202
+	title = AIO_projection_events.202.title
+	desc = AIO_projection_events.202.desc
+	picture = GFX_evt_shroud_psionic_aura
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_projection_invest_basic
+		allow = { AIO_projection_option_available = { COST = @AIO_projection_logic_cost } }
+		custom_tooltip = AIO_projection_invest_basic_tooltip
+		AIO_projection_begin = { PAYMENT = @AIO_projection_logic_payment STRENGTH = 1 }
+		ai_chance = { factor = 10 }
+	}
+
+	option = {
+		name = AIO_projection_invest_reinforced
+		allow = { AIO_projection_option_available = { COST = @AIO_projection_reinforced_cost } }
+		custom_tooltip = AIO_projection_invest_reinforced_tooltip
+		hidden_effect = { AIO_projection_begin = { PAYMENT = @AIO_projection_reinforced_payment STRENGTH = 2 } }
+		ai_chance = { factor = 5 }
+	}
+
+	option = {
+		name = AIO_projection_invest_overcharged
+		allow = { AIO_projection_option_available = { COST = @AIO_projection_overcharged_cost } }
+		custom_tooltip = AIO_projection_invest_overcharged_tooltip
+		hidden_effect = { AIO_projection_begin = { PAYMENT = @AIO_projection_overcharged_payment STRENGTH = 4 } }
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = AIO_projection_cancel
+		ai_chance = { factor = 0 }
+	}
+}
+
+# 共享国家每月回收孤立锚点；没有战争或亡国追踪。
+country_event = {
+	id = AIO_projection_events.301
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_country_flag = AIO_Aforgomom_country }
+	immediate = { AIO_projection_cleanup_orphan_anchors = yes }
+}
+
+# 主局势月度更新；观察局势本身不推进，也不触发召唤。
+situation_event = {
+	id = AIO_projection_events.302
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = { AIO_projection_sync_observers = yes }
+}
+
+# FROM = 施法者；FROMFROM = 中心星系。通知不依赖已结束的局势。
+country_event = {
+	id = AIO_projection_events.401
+	title = AIO_projection_notice_start.name
+	desc = AIO_projection_notice_start.desc
+	picture = GFX_evt_shroud_psionic_aura
+	location = fromfrom
+	is_triggered_only = yes
+	option = { name = AIO_projection_notice_ack }
+}
+
+# FROM = 施法者；FROMFROM = 中心星系。通知不依赖已结束的局势。
+country_event = {
+	id = AIO_projection_events.404
+	title = AIO_projection_notice_abort.name
+	desc = AIO_projection_notice_abort.desc
+	picture = GFX_evt_shroud_psionic_aura
+	location = fromfrom
+	is_triggered_only = yes
+	option = { name = AIO_projection_notice_ack }
+}
+
+# FROM = 施法者；FROMFROM = 中心星系。通知不依赖已结束的局势。
+country_event = {
+	id = AIO_projection_events.405
+	title = AIO_projection_notice_complete.name
+	desc = AIO_projection_notice_complete.desc
+	picture = GFX_evt_shroud_psionic_aura
+	location = fromfrom
+	is_triggered_only = yes
+	option = { name = AIO_projection_notice_ack }
+}

@@ -1,2 +1,8 @@
-@AIO_DAIT_cost = 100000
-@AIO_DAIT_cost_negative = -100000
+# 投射参数；调整时同步两份 AIO_projection 本地化中的费用和时间。
+@AIO_projection_cooldown_days = 3600
+@AIO_projection_logic_cost = 100000
+@AIO_projection_logic_payment = -100000
+@AIO_projection_reinforced_cost = 200000
+@AIO_projection_reinforced_payment = -200000
+@AIO_projection_overcharged_cost = 400000
+@AIO_projection_overcharged_payment = -400000

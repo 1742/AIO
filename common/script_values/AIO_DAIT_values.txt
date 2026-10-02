@@ -1,8 +1,6 @@
-# 亚弗戈蒙之怒修正
+# 使用位置：正式化身舰队。怒气在其所在星系，重生时不会丢失。
 AIO_Aforgomom_Wrath_factor = {
-    base = 2.71
-
-    pow = event_target:AIO_Aforgomom_country.AIO_Aforgomom_Wrath
-
-    min = 1
+	base = 2.71
+	pow = solar_system.AIO_Aforgomom_Wrath
+	min = 1
 }

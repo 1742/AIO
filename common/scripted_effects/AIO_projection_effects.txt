@@ -1,0 +1,265 @@
+# country；FROM = 选定星系。选项已检查资源、来源及占用。
+AIO_projection_begin = {
+	add_resource = { AIO_advanced_logic = $PAYMENT$ }
+	hidden_effect = {
+		set_timed_country_flag = { flag = AIO_projection_cooldown days = @AIO_projection_cooldown_days }
+		# start_situation 没有初始化参数；on_start 读取后立即移除临时值。
+		set_variable = { which = AIO_projection_strength value = $STRENGTH$ }
+	}
+	start_situation = { type = AIO_projection_Aforgomom target = from }
+	hidden_effect = { clear_variable = AIO_projection_strength }
+}
+
+# situation
+AIO_projection_Aforgomom_start = {
+	set_variable = { which = AIO_projection_range value = owner.AIO_interference_range }
+	set_variable = { which = AIO_projection_strength value = owner.AIO_projection_strength }
+	AIO_ensure_Aforgomom_country = yes
+	AIO_projection_create_anchor = yes
+	AIO_projection_sync_observers = yes
+	target = {
+		AIO_projection_create_nexus_storm = {
+			RANGE = root.AIO_projection_range
+		}
+	}
+	AIO_projection_dispatch_notice = { EVENT = AIO_projection_events.401 }
+}
+
+# situation；完成回调已经复查本次锚点。
+AIO_projection_Aforgomom_complete = {
+	AIO_projection_remove_anchor = yes
+	target = { AIO_projection_Aforgomom_effect = { RANGE = root.AIO_projection_range } }
+	AIO_projection_dispatch_notice = { EVENT = AIO_projection_events.405 }
+	destroy_situation = this
+}
+
+# situation；不退款，不修改风暴，也不删除共享国家。
+AIO_projection_Aforgomom_abort = {
+	AIO_projection_remove_anchor = yes
+	AIO_projection_dispatch_notice = { EVENT = AIO_projection_events.404 }
+	destroy_situation = this
+}
+
+# situation
+AIO_projection_create_anchor = {
+	target = {
+		create_fleet = {
+			settings = {
+				can_upgrade = no
+				can_disband = no
+				can_change_composition = no
+				can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = event_target:AIO_Aforgomom_country
+				set_name = NAME_AIO_projection_anchor
+				set_fleet_flag = AIO_projection_anchor
+				set_fleet_flag = AIO_projection_anchor_@prevprev
+				create_ship = {
+					name = NAME_AIO_projection_anchor
+					design = NAME_AIO_projection_anchor_design
+					graphical_culture = event_target:AIO_Aforgomom_country
+				}
+				set_location = { target = prev.star distance = 40 angle = random }
+				set_fleet_stance = aggressive
+				set_aggro_range = 10000
+				if = {
+					limit = { prevprev = { check_variable = { which = AIO_projection_strength value = 2 } } }
+					add_modifier = { modifier = AIO_projection_anchor_reinforced days = -1 }
+				}
+				else_if = {
+					limit = { prevprev = { check_variable = { which = AIO_projection_strength value = 4 } } }
+					add_modifier = { modifier = AIO_projection_anchor_overcharged days = -1 }
+				}
+			}
+		}
+	}
+}
+
+# situation；只清理本实例，允许别的投射范围经过这里。
+AIO_projection_remove_anchor = {
+	target? = {
+		every_fleet_in_system = {
+			limit = { has_fleet_flag = AIO_projection_anchor_@prevprev }
+			save_event_target_as = AIO_projection_observed_anchor
+			every_country = {
+				every_situation = {
+					limit = {
+						is_situation_type = AIO_projection_observer
+						target = { is_same_value = event_target:AIO_projection_observed_anchor }
+					}
+					destroy_situation = this
+				}
+			}
+			delete_fleet = this
+		}
+	}
+}
+
+# situation：启动时及每月复制主局势进度；也给新出现的帝国补上观察局势。
+AIO_projection_sync_observers = {
+	save_event_target_as = AIO_projection_source
+	export_trigger_value_to_variable = { trigger = situation_progress variable = AIO_projection_progress }
+	target? = {
+		random_fleet_in_system = {
+			limit = { has_fleet_flag = AIO_projection_anchor_@prevprev }
+			save_event_target_as = AIO_projection_observed_anchor
+			every_playable_country = {
+				limit = { NOT = { is_same_value = event_target:AIO_projection_source.owner } }
+				if = {
+					limit = {
+						NOT = {
+							any_situation = {
+								is_situation_type = AIO_projection_observer
+								target = { is_same_value = event_target:AIO_projection_observed_anchor }
+							}
+						}
+					}
+					start_situation = {
+						type = AIO_projection_observer
+						target = event_target:AIO_projection_observed_anchor
+					}
+				}
+				random_situation = {
+					limit = {
+						is_situation_type = AIO_projection_observer
+						target = { is_same_value = event_target:AIO_projection_observed_anchor }
+					}
+					set_situation_progress = event_target:AIO_projection_source.AIO_projection_progress
+					set_variable = { which = AIO_projection_range value = event_target:AIO_projection_source.AIO_projection_range }
+					set_variable = { which = AIO_projection_strength value = event_target:AIO_projection_source.AIO_projection_strength }
+				}
+			}
+		}
+	}
+}
+
+# Aforgomom country；每月只检查本国锚点，回收施法者灭亡后失去局势的对象。
+AIO_projection_cleanup_orphan_anchors = {
+	every_owned_fleet = {
+		limit = { has_fleet_flag = AIO_projection_anchor }
+		save_event_target_as = AIO_projection_checked_anchor
+		if = {
+			limit = {
+				NOT = {
+					any_country = {
+						any_situation = {
+							is_situation_type = AIO_projection_Aforgomom
+							event_target:AIO_projection_checked_anchor = { has_fleet_flag = AIO_projection_anchor_@prev }
+						}
+					}
+				}
+			}
+			delete_fleet = this
+		}
+	}
+}
+
+# situation；每个独立回调重新提供通知上下文，不修改游戏状态。
+AIO_projection_dispatch_notice = {
+	owner = { save_event_target_as = AIO_projection_maker }
+	if = {
+		limit = { exists = target }
+		target = { save_event_target_as = AIO_projection_center }
+		every_playable_country = {
+			country_event = {
+				id = $EVENT$
+				scopes = { from = event_target:AIO_projection_maker fromfrom = event_target:AIO_projection_center }
+			}
+		}
+	}
+}
+
+# system；先解除范围内的风暴覆盖，再在中心创建枢纽风暴。
+AIO_projection_create_nexus_storm = {
+	# clear range storm
+	every_system = {
+		limit = {
+			is_inside_storm = yes
+			distance = {
+				source = prev
+				max_jumps = $RANGE$
+				use_bypasses = no
+			}
+		}
+		unset_cosmic_storm = yes
+	}
+	create_cosmic_storm = {
+		type = nexus_storm
+		immediate = yes
+		cosmic_storm_start_position = this
+	}
+	last_created_cosmic_storm = { lock_storm_in_place = yes }
+}
+
+# system；中心与普通超空间范围，忽略旁路。已有化身不重复生成。
+AIO_projection_Aforgomom_effect = {
+	AIO_ensure_Aforgomom_country = yes
+	every_system = {
+		limit = {
+			NOT = { has_star_flag = AIO_Aformom_exist }
+			OR = {
+				is_same_value = prev
+				distance = {
+					source = prev
+					max_jumps = $RANGE$
+					use_bypasses = no
+				}
+			}
+		}
+		set_variable = { which = AIO_Aforgomom_Wrath value = 0 }
+		set_star_flag = AIO_Aformom_exist
+		AIO_create_Aformom_fleet = yes
+	}
+}
+
+# any；所有锚点和正式化身共用一个永久敌对国家。
+AIO_ensure_Aforgomom_country = {
+	if = {
+		limit = { NOT = { exists = event_target:AIO_Aforgomom_country } }
+		AIO_create_Aforgomom_country = yes
+	}
+}
+
+AIO_create_Aforgomom_country = {
+	create_country = {
+		name = AIO_Aforgomom
+		type = AIO_Aforgomom
+		effect = {
+			set_country_flag = AIO_Aforgomom_country
+			save_global_event_target_as = AIO_Aforgomom_country
+			set_country_flag = protected_from_queen_storm
+		}
+	}
+}
+
+# system；怒气属于星系，舰队重生时继续读取该星系的值。
+AIO_create_Aformom_fleet = {
+	create_fleet = {
+		effect = {
+			set_name = AIO_Aforgomom_Wrath
+			set_owner = event_target:AIO_Aforgomom_country
+			create_ship = {
+				name = AIO_Aforgomom_Wrath
+				design = NAME_AIO_Aforgomom_Wrath
+				graphical_culture = event_target:AIO_Aforgomom_country
+			}
+			set_location = { target = prev.star distance = 0 angle = random }
+			if = {
+				limit = {
+					solar_system = {
+						check_variable = { which = AIO_Aforgomom_Wrath value > 0 }
+						check_variable = { which = AIO_Aforgomom_Wrath value < 10 }
+					}
+				}
+				add_modifier = { modifier = AIO_Aforgomom_Wrath_modifier mult = value:AIO_Aforgomom_Wrath_factor }
+			}
+			set_fleet_stance = aggressive
+			set_aggro_range = 10000
+			set_fleet_flag = AIO_Aforgomom_fleet
+			fleet_event = { id = AIO_Aforgomom_events.201 days = 100 }
+		}
+	}
+}

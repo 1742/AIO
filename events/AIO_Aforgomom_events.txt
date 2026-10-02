@@ -1,73 +1,54 @@
-# AIO 亚弗戈蒙相关事件
 namespace = AIO_Aforgomom_events
 
-
-# 销毁亚弗戈蒙之怒事件
+# 正式化身每 100 天检查本星系；锚点不会进入这条事件链。
 fleet_event = {
-    id = AIO_Aforgomom_events.201
-    hide_window =yes
-
-    is_triggered_only = yes
-    trigger = { has_fleet_flag = AIO_Aforgomom_fleet }
-
-    immediate = {
-        # 时间到了没打完，且数值没有溢出
-        if = {
-            limit = {
-                solar_system = { any_fleet_in_system = { NOT = { has_fleet_flag = AIO_Aforgomom_fleet } } }
-                owner = { check_variable = { which = AIO_Aforgomom_Wrath value < 10 } }
-            }
-            owner = { change_variable = { which = AIO_Aforgomom_Wrath value = 1 } }
-            add_modifier = { modifier = AIO_Aforgomom_Wrath_modifier mult = value:AIO_Aforgomom_Wrath_factor }
-            fleet_event = { id = AIO_Aforgomom_events.201 days = 100 }
-        }
-        # 时间到了没打完，且数值溢出，直接删船
-        else_if = {
-            limit = {
-                solar_system = { any_fleet_in_system = { NOT = { has_fleet_flag = AIO_Aforgomom_fleet } } }
-                owner = { check_variable = { which = AIO_Aforgomom_Wrath value >= 10 } }
-            }
-            owner = { set_variable = { which = AIO_Aforgomom_Wrath value = 0 } }
-            solar_system = {
-                every_fleet_in_system = {
-                    if = {
-                        limit = { NOT = { has_fleet_flag = AIO_Aforgomom_fleet } }
-                        destroy_fleet = this
-                    }
-                    else = { delete_fleet = this }
-                }
-                remove_star_flag = AIO_Aformom_exist
-            }
-        }
-        else = {
-            owner = { set_variable = { which = AIO_Aforgomom_Wrath value = 0 } }
-            delete_fleet = this
-            solar_system = { remove_star_flag = AIO_Aformom_exist }
-        }
-    }
+	id = AIO_Aforgomom_events.201
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_fleet_flag = AIO_Aforgomom_fleet }
+	immediate = {
+		solar_system = {
+			if = {
+				limit = {
+					AIO_Aforgomom_has_targets = yes
+					check_variable = { which = AIO_Aforgomom_Wrath value < 10 }
+				}
+				change_variable = { which = AIO_Aforgomom_Wrath value = 1 }
+				root = {
+					add_modifier = { modifier = AIO_Aforgomom_Wrath_modifier mult = value:AIO_Aforgomom_Wrath_factor }
+					fleet_event = { id = AIO_Aforgomom_events.201 days = 100 }
+				}
+			}
+			else = {
+				# 无目标则离去；怒气到阈值时清场。两者都先结束本星系状态。
+				remove_star_flag = AIO_Aformom_exist
+				clear_variable = AIO_Aforgomom_Wrath
+				every_fleet_in_system = {
+					limit = { NOT = { is_owned_by = event_target:AIO_Aforgomom_country } }
+					destroy_fleet = this
+				}
+				root = { delete_fleet = this }
+			}
+		}
+	}
 }
 
-
-# 亚弗戈蒙之怒被摧毁
-# This = owner of fleet 1 (combatant)
-# From = owner of fleet 2 (destroyed)
-# FromFrom = fleet 1
-# FromFromFrom = fleet 2
+# ROOT = 被摧毁舰队的国家；FROMFROM = 被摧毁舰队。
 country_event = {
-    id = AIO_Aforgomom_events.202
-    hide_window = yes
-
-    is_triggered_only = yes
-    trigger = { fromfromfrom = { has_fleet_flag = AIO_Aforgomom_fleet } }
-
-    immediate = {
-        # 打不过，加buff
-        from = {
-            if = {
-                limit = { check_variable = { which = AIO_Aforgomom_Wrath value < 10 } }
-                change_variable = { which = AIO_Aforgomom_Wrath value = 1 }
-            }
-        }
-        fromfrom.solar_system = { AIO_create_Aformom_fleet = yes }
-    }
+	id = AIO_Aforgomom_events.202
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { fromfrom = { has_fleet_flag = AIO_Aforgomom_fleet } }
+	immediate = {
+		fromfrom.solar_system = {
+			if = {
+				limit = { has_star_flag = AIO_Aformom_exist }
+				if = {
+					limit = { check_variable = { which = AIO_Aforgomom_Wrath value < 10 } }
+					change_variable = { which = AIO_Aforgomom_Wrath value = 1 }
+				}
+				AIO_create_Aformom_fleet = yes
+			}
+		}
+	}
 }

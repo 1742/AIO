@@ -1,0 +1,12 @@
+ship_design = {
+	name = NAME_AIO_projection_anchor_design
+	ship_size = AIO_projection_anchor
+	section = {
+		template = AIO_projection_anchor_section
+		slot = mid
+		component = { slot = LARGE_01 template = AIO_PROJECTION_ANCHOR_LANCE }
+		component = { slot = LARGE_02 template = AIO_PROJECTION_ANCHOR_LANCE }
+		component = { slot = LARGE_03 template = AIO_PROJECTION_ANCHOR_LANCE }
+		component = { slot = LARGE_04 template = AIO_PROJECTION_ANCHOR_LANCE }
+	}
+}
