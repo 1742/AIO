@@ -221,7 +221,7 @@ country_event = {
 	picture = GFX_evt_AIO_balanced_backlash_mastered
 	option = {
 		trigger = { is_same_value = from }
-		name = AIO_interference_accidence_option.reverse
+		name = AIO_interference_backlash_option.reverse
 		tooltip = { AIO_interference_reverse_award = { RESOURCE = society_research } }
 	}
 	option = {
@@ -291,7 +291,7 @@ country_event = {
 	picture = GFX_evt_AIO_balanced_backlash_aborted
 	option = {
 		trigger = { is_same_value = from }
-		name = AIO_interference_accidence_option.abort
+		name = AIO_interference_backlash_option.abort
 	}
 	option = {
 		trigger = { NOT = { is_same_value = from } }
@@ -507,7 +507,7 @@ country_event = {
 	picture = GFX_evt_AIO_energy_backlash_mastered
 	option = {
 		trigger = { is_same_value = from }
-		name = AIO_interference_accidence_option.reverse
+		name = AIO_interference_backlash_option.reverse
 		tooltip = { AIO_interference_reverse_award = { RESOURCE = physics_research } }
 	}
 	option = {
@@ -577,7 +577,7 @@ country_event = {
 	picture = GFX_evt_AIO_energy_backlash_aborted
 	option = {
 		trigger = { is_same_value = from }
-		name = AIO_interference_accidence_option.abort
+		name = AIO_interference_backlash_option.abort
 	}
 	option = {
 		trigger = { NOT = { is_same_value = from } }
@@ -793,7 +793,7 @@ country_event = {
 	picture = GFX_evt_astral_rift_tropical_habitat
 	option = {
 		trigger = { is_same_value = from }
-		name = AIO_interference_accidence_option.reverse
+		name = AIO_interference_backlash_option.reverse
 		tooltip = { AIO_interference_reverse_award = { RESOURCE = society_research } }
 	}
 	option = {
@@ -863,7 +863,7 @@ country_event = {
 	picture = GFX_evt_overgrown_city
 	option = {
 		trigger = { is_same_value = from }
-		name = AIO_interference_accidence_option.abort
+		name = AIO_interference_backlash_option.abort
 	}
 	option = {
 		trigger = { NOT = { is_same_value = from } }
@@ -1079,7 +1079,7 @@ country_event = {
 	picture = GFX_evt_AIO_industry_backlash_mastered
 	option = {
 		trigger = { is_same_value = from }
-		name = AIO_interference_accidence_option.reverse
+		name = AIO_interference_backlash_option.reverse
 		tooltip = { AIO_interference_reverse_award = { RESOURCE = engineering_research } }
 	}
 	option = {
@@ -1149,7 +1149,7 @@ country_event = {
 	picture = GFX_evt_AIO_industry_backlash_aborted
 	option = {
 		trigger = { is_same_value = from }
-		name = AIO_interference_accidence_option.abort
+		name = AIO_interference_backlash_option.abort
 	}
 	option = {
 		trigger = { NOT = { is_same_value = from } }
@@ -1365,7 +1365,7 @@ country_event = {
 	picture = GFX_evt_AIO_metric_backlash_mastered
 	option = {
 		trigger = { is_same_value = from }
-		name = AIO_interference_accidence_option.reverse
+		name = AIO_interference_backlash_option.reverse
 		tooltip = { AIO_interference_reverse_award = { RESOURCE = physics_research } }
 	}
 	option = {
@@ -1435,7 +1435,7 @@ country_event = {
 	picture = GFX_evt_AIO_metric_backlash_aborted
 	option = {
 		trigger = { is_same_value = from }
-		name = AIO_interference_accidence_option.abort
+		name = AIO_interference_backlash_option.abort
 	}
 	option = {
 		trigger = { NOT = { is_same_value = from } }
