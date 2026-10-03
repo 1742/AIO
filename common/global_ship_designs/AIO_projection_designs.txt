@@ -4,9 +4,128 @@ ship_design = {
 	section = {
 		template = AIO_projection_anchor_section
 		slot = mid
-		component = { slot = LARGE_01 template = AIO_PROJECTION_ANCHOR_LANCE }
-		component = { slot = LARGE_02 template = AIO_PROJECTION_ANCHOR_LANCE }
-		component = { slot = LARGE_03 template = AIO_PROJECTION_ANCHOR_LANCE }
-		component = { slot = LARGE_04 template = AIO_PROJECTION_ANCHOR_LANCE }
+		component = { slot = LARGE_01 template = KINETIC_ARTILLERY_2 }
+		component = { slot = LARGE_02 template = LARGE_PLASMA_3 }
+		component = { slot = LARGE_03 template = KINETIC_ARTILLERY_2 }
+		component = { slot = STRIKE_CRAFT_01 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_02 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_03 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = POINT_DEFENCE_01 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_02 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_03 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_04 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_05 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_06 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_07 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_08 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_09 template = POINT_DEFENCE_3 }
+		component = { slot = LARGE_UTILITY_1 template = LARGE_ARMOR_5 }
+		component = { slot = LARGE_UTILITY_2 template = LARGE_SHIELD_5 }
+		component = { slot = LARGE_UTILITY_3 template = LARGE_ARMOR_5 }
+		component = { slot = LARGE_UTILITY_4 template = LARGE_SHIELD_5 }
+		component = { slot = LARGE_UTILITY_5 template = LARGE_ARMOR_5 }
+		component = { slot = LARGE_UTILITY_6 template = LARGE_SHIELD_5 }
+		component = { slot = AUX_UTILITY_1 template = SHIELD_BOOSTER }
 	}
+	required_component = STARBASE_ZERO_POINT_REACTOR
+	required_component = SENSOR_4
+	required_component = COMBAT_COMPUTER_PLATFORM_AUTONOMOUS
+}
+
+ship_design = {
+	name = NAME_AIO_projection_anchor_reinforced_design
+	ship_size = AIO_projection_anchor
+	section = {
+		template = AIO_projection_anchor_reinforced_section
+		slot = mid
+		component = { slot = EXTRA_LARGE_01 template = ENERGY_LANCE_2 }
+		component = { slot = EXTRA_LARGE_02 template = ENERGY_LANCE_2 }
+		component = { slot = LARGE_01 template = KINETIC_ARTILLERY_2 }
+		component = { slot = LARGE_02 template = KINETIC_ARTILLERY_2 }
+		component = { slot = STRIKE_CRAFT_01 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_02 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_03 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_04 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_05 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_06 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = POINT_DEFENCE_01 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_02 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_03 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_04 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_05 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_06 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_07 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_08 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_09 template = POINT_DEFENCE_3 }
+		component = { slot = LARGE_UTILITY_1 template = LARGE_ARMOR_5 }
+		component = { slot = LARGE_UTILITY_2 template = LARGE_SHIELD_5 }
+		component = { slot = LARGE_UTILITY_3 template = LARGE_ARMOR_5 }
+		component = { slot = LARGE_UTILITY_4 template = LARGE_SHIELD_5 }
+		component = { slot = LARGE_UTILITY_5 template = LARGE_ARMOR_5 }
+		component = { slot = LARGE_UTILITY_6 template = LARGE_SHIELD_5 }
+		component = { slot = LARGE_UTILITY_7 template = LARGE_ARMOR_5 }
+		component = { slot = LARGE_UTILITY_8 template = LARGE_SHIELD_5 }
+		component = { slot = LARGE_UTILITY_9 template = LARGE_ARMOR_5 }
+		component = { slot = LARGE_UTILITY_10 template = LARGE_SHIELD_5 }
+		component = { slot = LARGE_UTILITY_11 template = LARGE_ARMOR_5 }
+		component = { slot = LARGE_UTILITY_12 template = LARGE_SHIELD_5 }
+		component = { slot = AUX_UTILITY_1 template = SHIELD_BOOSTER }
+		component = { slot = AUX_UTILITY_2 template = SHIELD_BOOSTER }
+	}
+	required_component = STARBASE_ZERO_POINT_REACTOR
+	required_component = SENSOR_4
+	required_component = COMBAT_COMPUTER_PLATFORM_AUTONOMOUS
+}
+
+ship_design = {
+	name = NAME_AIO_projection_anchor_overcharged_design
+	ship_size = AIO_projection_anchor
+	section = {
+		template = AIO_projection_anchor_overcharged_section
+		slot = mid
+		component = { slot = TITANIC_01 template = PERDITION_BEAM_TITAN }
+		component = { slot = TITANIC_02 template = PERDITION_BEAM_TITAN }
+		component = { slot = STRIKE_CRAFT_01 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_02 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_03 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_04 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_05 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_06 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_07 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_08 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = STRIKE_CRAFT_09 template = STRIKE_CRAFT_HANGAR_3 }
+		component = { slot = POINT_DEFENCE_01 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_02 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_03 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_04 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_05 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_06 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_07 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_08 template = POINT_DEFENCE_3 }
+		component = { slot = POINT_DEFENCE_09 template = POINT_DEFENCE_3 }
+		component = { slot = LARGE_UTILITY_1 template = LARGE_DRAGON_ARMOR }
+		component = { slot = LARGE_UTILITY_2 template = LARGE_DARK_MATTER_DEFLECTOR }
+		component = { slot = LARGE_UTILITY_3 template = LARGE_DRAGON_ARMOR }
+		component = { slot = LARGE_UTILITY_4 template = LARGE_DARK_MATTER_DEFLECTOR }
+		component = { slot = LARGE_UTILITY_5 template = LARGE_DRAGON_ARMOR }
+		component = { slot = LARGE_UTILITY_6 template = LARGE_DARK_MATTER_DEFLECTOR }
+		component = { slot = LARGE_UTILITY_7 template = LARGE_DRAGON_ARMOR }
+		component = { slot = LARGE_UTILITY_8 template = LARGE_DARK_MATTER_DEFLECTOR }
+		component = { slot = LARGE_UTILITY_9 template = LARGE_DRAGON_ARMOR }
+		component = { slot = LARGE_UTILITY_10 template = LARGE_DARK_MATTER_DEFLECTOR }
+		component = { slot = LARGE_UTILITY_11 template = LARGE_DRAGON_ARMOR }
+		component = { slot = LARGE_UTILITY_12 template = LARGE_DARK_MATTER_DEFLECTOR }
+		component = { slot = LARGE_UTILITY_13 template = LARGE_DRAGON_ARMOR }
+		component = { slot = LARGE_UTILITY_14 template = LARGE_DARK_MATTER_DEFLECTOR }
+		component = { slot = LARGE_UTILITY_15 template = LARGE_DRAGON_ARMOR }
+		component = { slot = LARGE_UTILITY_16 template = LARGE_DARK_MATTER_DEFLECTOR }
+		component = { slot = LARGE_UTILITY_17 template = LARGE_DRAGON_ARMOR }
+		component = { slot = LARGE_UTILITY_18 template = LARGE_DARK_MATTER_DEFLECTOR }
+		component = { slot = AUX_UTILITY_1 template = SHIELD_BOOSTER }
+		component = { slot = AUX_UTILITY_2 template = SHIELD_BOOSTER }
+		component = { slot = AUX_UTILITY_3 template = SHIELD_BOOSTER }
+	}
+	required_component = STARBASE_DARK_MATTER_REACTOR
+	required_component = SENSOR_4
+	required_component = COMBAT_COMPUTER_PLATFORM_AUTONOMOUS
 }

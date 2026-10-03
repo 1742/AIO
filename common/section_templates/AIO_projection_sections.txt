@@ -4,10 +4,83 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = shroud_seal_entity
 	icon = GFX_ship_part_core_mid
+	should_draw_components = no
 	component_slot = { name = LARGE_01 template = invisible_large_turret locatorname = root }
 	component_slot = { name = LARGE_02 template = invisible_large_turret locatorname = root }
 	component_slot = { name = LARGE_03 template = invisible_large_turret locatorname = root }
-	component_slot = { name = LARGE_04 template = invisible_large_turret locatorname = root }
-	large_utility_slots = 0
-	aux_utility_slots = 0
+	component_slot = { name = STRIKE_CRAFT_01 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_02 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_03 template = large_strike_craft locatorname = root }
+	component_slot = { name = POINT_DEFENCE_01 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_02 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_03 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_04 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_05 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_06 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_07 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_08 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_09 template = invisible_point_defence_turret locatorname = root }
+	large_utility_slots = 6
+	aux_utility_slots = 1
+}
+
+ship_section_template = {
+	key = AIO_projection_anchor_reinforced_section
+	ship_size = AIO_projection_anchor
+	fits_on_slot = mid
+	entity = shroud_seal_entity
+	icon = GFX_ship_part_core_mid
+	should_draw_components = no
+	component_slot = { name = EXTRA_LARGE_01 template = invisible_extra_large_turret locatorname = root }
+	component_slot = { name = EXTRA_LARGE_02 template = invisible_extra_large_turret locatorname = root }
+	component_slot = { name = LARGE_01 template = invisible_large_turret locatorname = root }
+	component_slot = { name = LARGE_02 template = invisible_large_turret locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_01 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_02 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_03 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_04 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_05 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_06 template = large_strike_craft locatorname = root }
+	component_slot = { name = POINT_DEFENCE_01 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_02 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_03 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_04 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_05 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_06 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_07 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_08 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_09 template = invisible_point_defence_turret locatorname = root }
+	large_utility_slots = 12
+	aux_utility_slots = 2
+}
+
+ship_section_template = {
+	key = AIO_projection_anchor_overcharged_section
+	ship_size = AIO_projection_anchor
+	fits_on_slot = mid
+	entity = shroud_seal_entity
+	icon = GFX_ship_part_core_mid
+	should_draw_components = no
+	component_slot = { name = TITANIC_01 template = invisible_titanic_turret locatorname = root }
+	component_slot = { name = TITANIC_02 template = invisible_titanic_turret locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_01 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_02 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_03 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_04 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_05 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_06 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_07 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_08 template = large_strike_craft locatorname = root }
+	component_slot = { name = STRIKE_CRAFT_09 template = large_strike_craft locatorname = root }
+	component_slot = { name = POINT_DEFENCE_01 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_02 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_03 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_04 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_05 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_06 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_07 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_08 template = invisible_point_defence_turret locatorname = root }
+	component_slot = { name = POINT_DEFENCE_09 template = invisible_point_defence_turret locatorname = root }
+	large_utility_slots = 18
+	aux_utility_slots = 3
 }

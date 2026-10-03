@@ -1,9 +1,7 @@
-# 修正只挂本次锚点舰队，不影响共享国家的其他舰队。
+# 修正只增加本次锚点的舰体；火力由各档区段和原版武器决定。
 AIO_projection_anchor_reinforced = {
 	ship_hull_mult = 1
-	ship_weapon_damage = 1
 }
 AIO_projection_anchor_overcharged = {
 	ship_hull_mult = 3
-	ship_weapon_damage = 3
 }

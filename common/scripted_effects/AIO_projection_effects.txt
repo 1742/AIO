@@ -57,24 +57,33 @@ AIO_projection_create_anchor = {
 				set_name = NAME_AIO_projection_anchor
 				set_fleet_flag = AIO_projection_anchor
 				set_fleet_flag = AIO_projection_anchor_@prevprev
-				create_ship = {
-					name = NAME_AIO_projection_anchor
-					design = NAME_AIO_projection_anchor_design
-					graphical_culture = event_target:AIO_Aforgomom_country
-				}
-				set_location = { target = prev.star distance = 40 angle = random }
-				set_fleet_stance = aggressive
-				set_aggro_range = 10000
 				if = {
 					limit = { prevprev = { check_variable = { which = AIO_projection_strength value = 2 } } }
+					AIO_projection_spawn_anchor_ship = { DESIGN = NAME_AIO_projection_anchor_reinforced_design }
 					add_modifier = { modifier = AIO_projection_anchor_reinforced days = -1 }
 				}
 				else_if = {
 					limit = { prevprev = { check_variable = { which = AIO_projection_strength value = 4 } } }
+					AIO_projection_spawn_anchor_ship = { DESIGN = NAME_AIO_projection_anchor_overcharged_design }
 					add_modifier = { modifier = AIO_projection_anchor_overcharged days = -1 }
 				}
+				else = {
+					AIO_projection_spawn_anchor_ship = { DESIGN = NAME_AIO_projection_anchor_design }
+				}
+				set_location = { target = prev.star distance = 40 angle = random }
+				set_fleet_stance = aggressive
+				set_aggro_range = 10000
 			}
 		}
+	}
+}
+
+# fleet；固定全局设计，按投入选择区段，不依赖共享国家的自动配装。
+AIO_projection_spawn_anchor_ship = {
+	create_ship = {
+		name = NAME_AIO_projection_anchor
+		design = $DESIGN$
+		graphical_culture = event_target:AIO_Aforgomom_country
 	}
 }
 

@@ -20,9 +20,13 @@ AIO_projection_anchor = {
 	potential_construction = { always = no }
 	possible_construction = { always = no }
 	available_to_everyone = no
+	required_component_set = "power_core"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
 	ship_modifier = {
 		ship_evasion_mult = -1
 		ship_disengage_chance_mult = -10
+		ship_cloaking_detection_add = 10
 	}
 }
 
