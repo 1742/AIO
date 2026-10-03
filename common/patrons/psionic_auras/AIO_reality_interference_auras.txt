@@ -78,7 +78,7 @@ AIO_reality_interference_aura = {
 		}
 	}
 	monthly_increase = {
-		base = 80
+		base = 2
 		modifier = {
 			add = value:AIO_reality_interference_nearby_source_growth|OWNER|root.aura_owner|
 			OR = {
