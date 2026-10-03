@@ -10,11 +10,13 @@ AIO_projection_Aforgomom = {
 	abort_trigger = { AIO_projection_has_anchor = no }
 	on_abort = { AIO_projection_Aforgomom_abort = yes }
 	on_progress_complete = {
-		if = {
-			limit = { AIO_projection_has_anchor = yes }
-			AIO_projection_Aforgomom_complete = yes
+		hidden_effect = {
+			if = {
+				limit = { AIO_projection_has_anchor = yes }
+				AIO_projection_Aforgomom_complete = yes
+			}
+			else = { AIO_projection_Aforgomom_abort = yes }
 		}
-		else = { AIO_projection_Aforgomom_abort = yes }
 	}
 	stages = {
 		stage_1 = {

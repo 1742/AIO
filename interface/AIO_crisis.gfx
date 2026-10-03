@@ -89,7 +89,7 @@ spriteTypes = {
 	# 现实干涉
 	spriteType = {
 		name = GFX_menp_AIO_interference_icon
-		texturefile = gfx/interface/icons/crisis/GFX_menp_AIO_interference.dds
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_interference.dds
 		noOfFrames = 2
 	}
 
@@ -190,7 +190,7 @@ spriteTypes = {
 	# 现实干涉
 	spriteType = {
 		name = GFX_menp_AIO_break_rules_icon
-		texturefile = gfx/interface/icons/crisis/GFX_menp_AIO_break_rules.dds
+		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_break_rules.dds
 		noOfFrames = 2
 	}
 }

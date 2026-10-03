@@ -172,19 +172,38 @@ AIO_projection_dispatch_notice = {
 	}
 }
 
-# system；先解除范围内的风暴覆盖，再在中心创建枢纽风暴。
-AIO_projection_create_nexus_storm = {
-	# clear range storm
-	every_system = {
-		limit = {
-			is_inside_storm = yes
-			distance = {
-				source = prev
-				max_jumps = $RANGE$
-				use_bypasses = no
+# system；按普通超空间逐跳扩展。distance.max_jumps 不接受运行时变量，
+# while.count 支持变量。下一跳在扫描完本轮后才合并，避免一轮扩展到全银河。
+# 两个临时标记仅在当前同步 effect 中使用，调用者消费范围后立即清除。
+AIO_projection_mark_range = {
+	set_star_flag = AIO_projection_in_range
+	while = {
+		count = $RANGE$
+		every_system = {
+			limit = { has_star_flag = AIO_projection_in_range }
+			every_neighbor_system = {
+				limit = { NOT = { has_star_flag = AIO_projection_in_range } }
+				set_star_flag = AIO_projection_next_hop
 			}
 		}
-		unset_cosmic_storm = yes
+		every_system = {
+			limit = { has_star_flag = AIO_projection_next_hop }
+			remove_star_flag = AIO_projection_next_hop
+			set_star_flag = AIO_projection_in_range
+		}
+	}
+}
+
+# system；先解除范围内的风暴覆盖，再在中心创建枢纽风暴。
+AIO_projection_create_nexus_storm = {
+	AIO_projection_mark_range = { RANGE = $RANGE$ }
+	every_system = {
+		limit = { has_star_flag = AIO_projection_in_range }
+		remove_star_flag = AIO_projection_in_range
+		if = {
+			limit = { is_inside_storm = yes }
+			unset_cosmic_storm = yes
+		}
 	}
 	create_cosmic_storm = {
 		type = nexus_storm
@@ -197,21 +216,16 @@ AIO_projection_create_nexus_storm = {
 # system；中心与普通超空间范围，忽略旁路。已有化身不重复生成。
 AIO_projection_Aforgomom_effect = {
 	AIO_ensure_Aforgomom_country = yes
+	AIO_projection_mark_range = { RANGE = $RANGE$ }
 	every_system = {
-		limit = {
-			NOT = { has_star_flag = AIO_Aformom_exist }
-			OR = {
-				is_same_value = prev
-				distance = {
-					source = prev
-					max_jumps = $RANGE$
-					use_bypasses = no
-				}
-			}
+		limit = { has_star_flag = AIO_projection_in_range }
+		remove_star_flag = AIO_projection_in_range
+		if = {
+			limit = { NOT = { has_star_flag = AIO_Aformom_exist } }
+			set_variable = { which = AIO_Aforgomom_Wrath value = 0 }
+			set_star_flag = AIO_Aformom_exist
+			AIO_create_Aformom_fleet = yes
 		}
-		set_variable = { which = AIO_Aforgomom_Wrath value = 0 }
-		set_star_flag = AIO_Aformom_exist
-		AIO_create_Aformom_fleet = yes
 	}
 }
 
