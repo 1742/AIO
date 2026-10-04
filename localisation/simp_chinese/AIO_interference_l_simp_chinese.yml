@@ -384,6 +384,7 @@
  #endregion
 
  sm_AIO_arkship_interference_generator: "现实干涉发生器"
+ AIO_requires_interference_generator_capacity: "$TRIGGER_FAIL$我们最多支持§Y5§!个现实干涉发生器（方舟与驿站合并计算）。"
  AIO_requires_no_foreign_interference_field: "$TRIGGER_FAIL$当前星系已有其他国家的现实干涉场，无法建造现实干涉发生器。"
  AIO_requires_one_interference_generator: "$TRIGGER_FAIL$每个方舟或驿站只能拥有一个现实干涉发生器，包括正在建造的模块。"
  sm_AIO_arkship_interference_generator_desc: "将现实干涉仪整合进方舟。每艘安装发生器的方舟独立计为一个干涉源，覆盖、扩散及多源叠加规则与现实干涉仪相同。离开星系时记录当地己方干涉场等级，抵达后将当地干涉场至少提升到所记录的等级，不携带等级内的积累进度。"

@@ -7,12 +7,22 @@ starbase_limit = { base = 1 }
 potential = {
 	$STARBASE_TRIGGER$ = yes
 	owner? = {
+		is_nomadic = yes
 		has_ascension_perk = ap_AIO_allinone
 		has_technology = tech_AIO_ascending_dimensionality_theory
 	}
 }
 
 possible = {
+	custom_tooltip = {
+		fail_text = AIO_requires_interference_generator_capacity
+		owner = {
+			check_variable_arithmetic = {
+				which = value:AIO_interference_generator_capacity_used
+				value < 5
+			}
+		}
+	}
 	custom_tooltip = {
 		fail_text = AIO_requires_no_foreign_interference_field
 		AIO_starbase_has_foreign_interference = no

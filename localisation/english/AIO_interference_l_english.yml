@@ -385,6 +385,7 @@
  #endregion
 
  sm_AIO_arkship_interference_generator: "Reality Interference Generator"
+ AIO_requires_interference_generator_capacity: "$TRIGGER_FAIL$We only can build at most §Y5§! Reality Interference Generators across Arkships and Waystations combined."
  AIO_requires_no_foreign_interference_field: "$TRIGGER_FAIL$Cannot build a Reality Interference Generator in a system containing another empire's Reality Interference Field."
  AIO_requires_one_interference_generator: "$TRIGGER_FAIL$Each Arkship or Waystation can have only one Reality Interference Generator, including modules under construction."
  sm_AIO_arkship_interference_generator_desc: "Integrates a Reality Interferometer into an Arkship. Each equipped Arkship counts as one source, using the same coverage, propagation and stacking rules as fixed interferometers. On departure it records the level of our local field; on arrival it raises the destination field to at least that level. Progress within a level is not carried."

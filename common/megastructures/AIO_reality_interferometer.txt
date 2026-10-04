@@ -23,6 +23,7 @@ AIO_reality_interferometer = {
 	show_prereqs = yes
 
 	potential = {
+		is_nomadic = no
 		has_ascension_perk = ap_AIO_allinone
 	}
 
