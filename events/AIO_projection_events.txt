@@ -15,6 +15,9 @@ system_event = {
 	}
 }
 
+
+#region Aforgomom
+
 # ROOT = 施法者；FROM = 星系；FROMFROM = 巨构。
 country_event = {
 	id = AIO_projection_events.202
@@ -36,7 +39,7 @@ country_event = {
 		name = AIO_projection_invest_reinforced
 		allow = { AIO_projection_option_available = { COST = @AIO_projection_reinforced_cost } }
 		custom_tooltip = AIO_projection_invest_reinforced_tooltip
-		hidden_effect = { AIO_projection_begin = { PAYMENT = @AIO_projection_reinforced_payment STRENGTH = 2 } }
+		AIO_projection_begin = { PAYMENT = @AIO_projection_reinforced_payment STRENGTH = 2 }
 		ai_chance = { factor = 5 }
 	}
 
@@ -44,12 +47,13 @@ country_event = {
 		name = AIO_projection_invest_overcharged
 		allow = { AIO_projection_option_available = { COST = @AIO_projection_overcharged_cost } }
 		custom_tooltip = AIO_projection_invest_overcharged_tooltip
-		hidden_effect = { AIO_projection_begin = { PAYMENT = @AIO_projection_overcharged_payment STRENGTH = 4 } }
+		AIO_projection_begin = { PAYMENT = @AIO_projection_overcharged_payment STRENGTH = 4 }
 		ai_chance = { factor = 1 }
 	}
 
 	option = {
 		name = AIO_projection_cancel
+		default_hide_option = yes
 		ai_chance = { factor = 0 }
 	}
 }
@@ -70,6 +74,8 @@ situation_event = {
 	is_triggered_only = yes
 	immediate = { AIO_projection_sync_observers = yes }
 }
+
+#region notify
 
 # FROM = 施法者；FROMFROM = 中心星系。通知不依赖已结束的局势。
 country_event = {
@@ -103,3 +109,7 @@ country_event = {
 	is_triggered_only = yes
 	option = { name = AIO_projection_notice_ack }
 }
+
+#endregion
+
+#endregion

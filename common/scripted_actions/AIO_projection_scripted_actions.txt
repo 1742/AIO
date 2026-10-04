@@ -10,6 +10,9 @@ AIO_projection_action = {
 	button_clickable = {
 		owner = { AIO_projection_can_start = { COST = @AIO_projection_logic_cost } }
 	}
+	button_visible = {
+		owner = { NOT = { has_country_flag = AIO_projection_cooldown } }
+	}
 	icon = GFX_ship_class_conduit
 	icon_selected = GFX_ship_class_conduit
 	on_started = on_AIO_projection_started
