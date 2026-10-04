@@ -1,3 +1,5 @@
+#region aura
+
 # Scope: system.
 AIO_interference_create_source = {
 	AIO_interference_prepare_source = { OWNER = $OWNER$ }
@@ -6,11 +8,8 @@ AIO_interference_create_source = {
 
 # Scope: system.
 AIO_interference_remove_source = {
-	remove_star_flag = AIO_interference_source
-	if = {
-		limit = { has_psionic_aura = AIO_reality_interference_aura }
-		aura_owner = { AIO_interference_rebuild_effect = yes }
-	}
+	# Removal callbacks can run before the installation is actually removed.
+	system_event = { id = AIO_interference_events.205 days = 1 }
 }
 
 # Call when interference source change
@@ -73,10 +72,9 @@ AIO_interference_prepare_source = {
 		}
 		set_aura_intensity = 1
 	}
-	set_star_flag = AIO_interference_source
 }
 
-# Count only this owner's source systems within range, including self.
+# Count this owner's installations within range, including all sources in this system.
 # Scope: one aura system.
 AIO_interference_recount_sources = {
 	set_variable = { which = AIO_interference_sources value = 0 }
@@ -85,7 +83,7 @@ AIO_interference_recount_sources = {
 		every_system_with_aura = {
 			limit = {
 				has_psionic_aura = AIO_reality_interference_aura
-				has_star_flag = AIO_interference_source
+				AIO_system_has_interference_source = { OWNER = $OWNER$ }
 				aura_owner = { is_same_value = $OWNER$ }
 				OR = {
 					is_same_value = event_target:AIO_interference_count_target
@@ -102,7 +100,10 @@ AIO_interference_recount_sources = {
 				}
 			}
 			event_target:AIO_interference_count_target = {
-				change_variable = { which = AIO_interference_sources value = 1 }
+				change_variable = {
+					which = AIO_interference_sources
+					value = prev.value:AIO_interference_local_source_count|OWNER|$OWNER$|
+				}
 			}
 		}
 	}
@@ -111,6 +112,10 @@ AIO_interference_recount_sources = {
 # Reset level when change policy
 # scope: country
 AIO_interference_change_policy = {
+	every_owned_ship = {
+		limit = { is_variable_set = AIO_interference_carried_level }
+		set_variable = { which = AIO_interference_carried_level value = 1 }
+	}
 	remove_country_flag = AIO_backlash_seal
 	remove_country_flag = AIO_interference_balanced_residual
 	remove_country_flag = AIO_interference_energy_residual
@@ -133,6 +138,84 @@ AIO_interference_change_policy = {
 		set_aura_intensity = 1
 	}
 }
+
+# Scope: ship. Called on departure with the old system explicitly supplied.
+# Save the current level, not the historical maximum: resets must remain effective.
+AIO_interference_record_mobile_level = {
+	owner = { save_event_target_as = AIO_interference_record_owner }
+	set_variable = { which = AIO_interference_carried_level value = 1 }
+	if = {
+		limit = {
+			$SYSTEM$ = {
+				has_psionic_aura = AIO_reality_interference_aura
+				aura_owner = { is_same_value = event_target:AIO_interference_record_owner }
+			}
+		}
+		set_variable = {
+			which = AIO_interference_carried_level
+			value = $SYSTEM$.trigger:is_aura_intensity_level
+		}
+	}
+}
+
+# Scope: ship. Keep the stronger of the destination field and the carried level.
+# Only raise to the start of a level; moving never adds within-level progress.
+AIO_interference_arrive_mobile_source = {
+	if = {
+		limit = { NOT = { is_variable_set = AIO_interference_carried_level } }
+		set_variable = { which = AIO_interference_carried_level value = 1 }
+	}
+	save_event_target_as = AIO_interference_arriving_ship
+	owner = { save_event_target_as = AIO_interference_mobile_owner }
+	solar_system = {
+		AIO_interference_prepare_source = { OWNER = event_target:AIO_interference_mobile_owner }
+		if = {
+			limit = {
+				event_target:AIO_interference_arriving_ship = {
+					check_variable = { which = AIO_interference_carried_level value >= 3 }
+				}
+				is_aura_intensity_level < 3
+			}
+			set_aura_intensity = 2001
+		}
+		else_if = {
+			limit = {
+				event_target:AIO_interference_arriving_ship = {
+					check_variable = { which = AIO_interference_carried_level value >= 2 }
+				}
+				is_aura_intensity_level < 2
+			}
+			set_aura_intensity = 1001
+		}
+	}
+}
+
+# Scope: country. Monthly reconciliation after removals, captures or loading old saves.
+# Never restore carried levels here: that would undo local backlash resets.
+AIO_interference_refresh_installations = {
+	save_event_target_as = AIO_interference_installation_owner
+	every_owned_megastructure = {
+		limit = { AIO_is_interference_source = yes }
+		solar_system = {
+			AIO_interference_prepare_source = { OWNER = event_target:AIO_interference_installation_owner }
+		}
+	}
+	every_owned_nonprimary_starbase = {
+		limit = { AIO_is_interference_source = yes }
+		solar_system = {
+			AIO_interference_prepare_source = { OWNER = event_target:AIO_interference_installation_owner }
+		}
+	}
+	every_owned_ship = {
+		limit = { AIO_is_mobile_interference_source = yes exists = solar_system }
+		solar_system = {
+			AIO_interference_prepare_source = { OWNER = event_target:AIO_interference_installation_owner }
+		}
+	}
+	AIO_interference_rebuild_effect = yes
+}
+
+#endregion
 
 
 #region backlash helpers
@@ -249,6 +332,15 @@ AIO_interference_backlash_start = {
 
 # scope: country
 AIO_interference_backlash_finish = {
+	[[RESET]
+		every_owned_ship = {
+			limit = {
+				is_variable_set = AIO_interference_carried_level
+				check_variable = { which = AIO_interference_carried_level value > 2 }
+			}
+			set_variable = { which = AIO_interference_carried_level value = 2 }
+		}
+	]
 	every_system_with_aura = {
 		limit = {
 			has_psionic_aura = AIO_reality_interference_aura

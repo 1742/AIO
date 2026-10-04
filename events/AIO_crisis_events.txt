@@ -498,7 +498,7 @@ event = {
 	trigger = {
 		any_country = {
 			has_ascension_perk = ap_AIO_allinone
-			has_megastructure = AIO_reality_interferometer
+			AIO_has_any_interference_source = yes
 		}
 	}
 
@@ -507,10 +507,18 @@ event = {
 			if = {
 				limit = { has_ascension_perk = ap_AIO_allinone }
 				every_owned_megastructure = {
-					limit = { is_megastructure_type = AIO_reality_interferometer }
+					limit = { AIO_is_interference_source = yes }
 					prev = {
 						complete_crisis_objective = crisobj_AIO_interference
 					}
+				}
+				every_owned_nonprimary_starbase = {
+					limit = { AIO_is_interference_source = yes }
+					prev = { complete_crisis_objective = crisobj_AIO_interference }
+				}
+				every_owned_ship = {
+					limit = { AIO_is_mobile_interference_source = yes }
+					prev = { complete_crisis_objective = crisobj_AIO_interference }
 				}
 			}
 		}

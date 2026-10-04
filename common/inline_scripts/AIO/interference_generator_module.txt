@@ -1,0 +1,63 @@
+# Shared mechanics/economy for the arkship and waystation slot types.
+icon = "GFX_starbase_aura_emitter"
+construction_days = 720
+category = sm_utility_cat
+starbase_limit = { base = 1 }
+
+potential = {
+	$STARBASE_TRIGGER$ = yes
+	owner? = {
+		has_ascension_perk = ap_AIO_allinone
+		has_technology = tech_AIO_ascending_dimensionality_theory
+	}
+}
+
+possible = {
+	custom_tooltip = {
+		fail_text = AIO_requires_no_foreign_interference_field
+		AIO_starbase_has_foreign_interference = no
+	}
+	custom_tooltip = {
+		fail_text = AIO_requires_one_interference_generator
+		count_starbase_modules = {
+			type = AIO_arkship_interference_generator
+			count < 1
+			include_being_constructed = yes
+		}
+		count_starbase_modules = {
+			type = AIO_waystation_interference_generator
+			count < 1
+			include_being_constructed = yes
+		}
+	}
+}
+
+# Recheck if a moving arkship enters a foreign field during construction.
+abort_construction_trigger = {
+	AIO_starbase_has_foreign_interference = yes
+}
+
+show_in_tech = "tech_AIO_ascending_dimensionality_theory"
+show_tech_unlock_if = { is_nomadic = yes }
+
+resources = {
+	category = $RESOURCE_CATEGORY$
+	cost = { alloys = 1000 energy = 2000 }
+	upkeep = { energy = 20 }
+	produces = { AIO_advanced_logic = 5 }
+}
+
+on_finished = {
+	ship? = { set_variable = { which = AIO_interference_carried_level value = 1 } }
+	owner = { save_event_target_as = AIO_interference_module_owner }
+	solar_system = {
+		AIO_interference_create_source = { OWNER = event_target:AIO_interference_module_owner }
+	}
+}
+
+on_destroyed = {
+	ship? = { clear_variable = AIO_interference_carried_level }
+	solar_system = { AIO_interference_remove_source = yes }
+}
+
+ai_weight = { weight = 0 }

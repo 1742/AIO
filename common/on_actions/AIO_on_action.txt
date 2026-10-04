@@ -7,6 +7,13 @@ on_game_start_country = {
     }
 }
 
+on_monthly_pulse_country = {
+	events = {
+        AIO_interference_events.204 # 刷新干涉源
+        AIO_projection_events.302 # 共享亚弗戈蒙国家回收失去局势的锚点
+    }
+}
+
 on_yearly_pulse = {
     events = {
         AIO_crisis_events.804  # 天灾目标，建造现实干涉仪
@@ -30,9 +37,17 @@ on_country_destroyed = {
     }
 }
 
+# root = fleet, from = departed system.
+on_leaving_system_fleet = {
+    events = {
+        AIO_interference_events.202 # 方舟离开星系，记录光环等级
+    }
+}
+
 on_entering_system_fleet = {
     events = {
         AIO_crisis_events.901  # 驱逐无名之雾的其他舰船
+        AIO_interference_events.203 # 方舟进入星系，生成光环
     }
 }
 
@@ -44,10 +59,7 @@ on_fleet_destroyed_victim = {
     }
 }
 
-# 共享亚弗戈蒙国家回收失去局势的锚点。
-on_monthly_pulse_country = {
-	events = { AIO_projection_events.302 }
-}
+
 
 # Executed when a megastructure has a new owner
 # this = new owner

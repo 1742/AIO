@@ -37,7 +37,7 @@
  AIO_reality_interferometer: "现实干涉仪"
  AIO_reality_interferometer_plural: "$AIO_reality_interferometer$"
  AIO_reality_interferometer_DESC: "以超然逻辑强迫局部现实服从预设结论的巨型装置。装置会生成并强化现实干涉场；若当地已有灵能光环，启动时将直接覆盖原有光环。"
- AIO_reality_interferometer_MEGASTRUCTURE_DETAILS: "建成后按国家干涉政策启用统一来源。覆盖同一星系的效果按本国来源数叠加，最多计入三座；我方效果还受光环等级影响。每个星系只能建造一座，每个帝国初始最多维持五座。"
+ AIO_reality_interferometer_MEGASTRUCTURE_DETAILS: "建成后按国家干涉政策启用统一来源。覆盖同一星系的效果按本国来源数叠加；我方效果还受光环等级影响。方舟和驿站上的现实干涉发生器同样计入来源。每个星系只能建造一座现实干涉仪，每个帝国初始最多维持五座。"
  AIO_requires_no_existing_reality_interferometer: "$TRIGGER_FAIL$该星系已经存在一座$AIO_reality_interferometer$。"
  AIO_requires_reality_interferometer_capacity: "$TRIGGER_FAIL$我们最多只能维持§Y5§!座$AIO_reality_interferometer$。"
 
@@ -382,3 +382,10 @@
  AIO_interference_events.455.desc.other: "[from.GetName]的干涉场正在减弱。我们境内的距离逐渐恢复正常，导航坐标不再漂移，舰船可以重新使用熟悉的航线。\n\n殖民地仍需测绘残留的错位并修复受损设施。路程可能比前几天更长，但至少终点不会再变了。"
 
  #endregion
+
+ sm_AIO_arkship_interference_generator: "现实干涉发生器"
+ AIO_requires_no_foreign_interference_field: "$TRIGGER_FAIL$当前星系已有其他国家的现实干涉场，无法建造现实干涉发生器。"
+ AIO_requires_one_interference_generator: "$TRIGGER_FAIL$每个方舟或驿站只能拥有一个现实干涉发生器，包括正在建造的模块。"
+ sm_AIO_arkship_interference_generator_desc: "将现实干涉仪整合进方舟。每艘安装发生器的方舟独立计为一个干涉源，覆盖、扩散及多源叠加规则与现实干涉仪相同。离开星系时记录当地己方干涉场等级，抵达后将当地干涉场至少提升到所记录的等级，不携带等级内的积累进度。"
+ sm_AIO_waystation_interference_generator: "现实干涉发生器"
+ sm_AIO_waystation_interference_generator_desc: "由驿站维持的现实干涉源。覆盖、扩散及多源叠加规则与现实干涉仪相同。启动时覆盖当地已有的其他灵能光环。"

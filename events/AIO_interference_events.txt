@@ -1,5 +1,7 @@
 namespace = AIO_interference_events
 
+#region interference aura
+
 # Fired when a Reality Interferometer finishes construction. Policy controls its effects.
 country_event = {
 	id = AIO_interference_events.201
@@ -16,6 +18,62 @@ country_event = {
 		}
 	}
 }
+
+# on_leaving_system_fleet: root = fleet, from = departed system.
+fleet_event = {
+	id = AIO_interference_events.202
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { any_owned_ship = { AIO_is_mobile_interference_source = yes } }
+	immediate = {
+		every_owned_ship = {
+			limit = { AIO_is_mobile_interference_source = yes }
+			AIO_interference_record_mobile_level = { SYSTEM = from }
+		}
+		owner = { AIO_interference_rebuild_effect = yes }
+		from = { AIO_interference_remove_source = yes }
+	}
+}
+
+# on_entering_system_fleet: process every source, so order does not affect the maximum.
+fleet_event = {
+	id = AIO_interference_events.203
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { any_owned_ship = { AIO_is_mobile_interference_source = yes } }
+	immediate = {
+		every_owned_ship = {
+			limit = { AIO_is_mobile_interference_source = yes }
+			AIO_interference_arrive_mobile_source = yes
+		}
+		owner = { AIO_interference_rebuild_effect = yes }
+	}
+}
+
+# Periodic reconciliation also refreshes source counts after source destruction.
+country_event = {
+	id = AIO_interference_events.204
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			AIO_has_any_interference_source = yes
+			has_ascension_perk = ap_AIO_allinone
+		}
+	}
+	immediate = { AIO_interference_refresh_installations = yes }
+}
+
+# Defer until a dismantled/destroyed installation has actually disappeared.
+system_event = {
+	id = AIO_interference_events.205
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_psionic_aura = AIO_reality_interference_aura }
+	immediate = { aura_owner = { AIO_interference_rebuild_effect = yes } }
+}
+
+#endregion
 
 
 #region Balanced backlash

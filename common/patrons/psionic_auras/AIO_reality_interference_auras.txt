@@ -1,6 +1,9 @@
 # Reality Interference prototype.
-# One native Psionic Aura carries several effects selected by star flags.
+# One native Psionic Aura carries the effects selected by the owner's doctrine.
 AIO_reality_interference_aura = {
+	on_start = {
+		AIO_interference_recount_sources = { OWNER = root.aura_owner }
+	}
 	intensity_level = {
 		end = 1000
 		inline_script = { script = AIO/reality_interference_aura }
@@ -21,7 +24,7 @@ AIO_reality_interference_aura = {
 		if = {
 			limit = {
 				is_aura_intensity_level = 3
-				has_star_flag = AIO_interference_source
+				AIO_system_has_interference_source = { OWNER = root.aura_owner }
 				aura_owner = {
 					NOR = {
 						has_country_flag = AIO_backlash_active
@@ -61,17 +64,12 @@ AIO_reality_interference_aura = {
 	}
 
 	on_vanish = {
-		if = {
-			limit = { has_star_flag = AIO_interference_source }
-			remove_star_flag = AIO_interference_source
-			aura_owner = { AIO_interference_rebuild_effect = yes }
-		}
 		clear_variable = AIO_interference_sources
 	}
 
 	increase_trigger = {
 		OR = {
-			has_star_flag = AIO_interference_source
+			AIO_system_has_interference_source = { OWNER = root.aura_owner }
 			AIO_is_nearby_interference_source = {
 				OWNER = root.aura_owner
 			}
@@ -80,9 +78,9 @@ AIO_reality_interference_aura = {
 	monthly_increase = {
 		base = 2
 		modifier = {
-			add = value:AIO_reality_interference_nearby_source_growth|OWNER|root.aura_owner|
+			add = value:AIO_reality_interference_source_growth
 			OR = {
-				has_star_flag = AIO_interference_source
+				AIO_system_has_interference_source = { OWNER = root.aura_owner }
 				AIO_is_nearby_interference_source = {
 					OWNER = root.aura_owner
 				}
@@ -120,7 +118,7 @@ AIO_reality_interference_aura = {
 		modifier = {
 			subtract = 5
 			NOR = {
-				has_star_flag = AIO_interference_source
+				AIO_system_has_interference_source = { OWNER = root.aura_owner }
 				AIO_is_nearby_interference_source = {
 					OWNER = root.aura_owner
 				}

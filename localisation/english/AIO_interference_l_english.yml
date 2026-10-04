@@ -38,7 +38,7 @@
  AIO_reality_interferometer: "Reality Interferometer"
  AIO_reality_interferometer_plural: "$AIO_reality_interferometer$"
  AIO_reality_interferometer_DESC: "A colossal apparatus that uses transcendent logic to force local reality toward a predetermined conclusion. When activated, it creates and intensifies a Reality Interference Field, replacing any Psionic Aura already present."
- AIO_reality_interferometer_MEGASTRUCTURE_DETAILS: "Construction activates a uniform source under the empire interference doctrine. Effects stack from up to three sources covering a system; effects on our assets also scale with aura level. Only one may be built in each system, and an empire may initially maintain up to five."
+ AIO_reality_interferometer_MEGASTRUCTURE_DETAILS: "Construction activates a source under the empire interference doctrine. Effects stack with the number of our sources covering a system; effects on our assets also scale with aura level. Generators on Arkships and Waystations also count as sources. Only one fixed interferometer may be built in each system, and an empire may initially maintain up to five."
  AIO_requires_no_existing_reality_interferometer: "$TRIGGER_FAIL$A $AIO_reality_interferometer$ already exists in this system."
  AIO_requires_reality_interferometer_capacity: "$TRIGGER_FAIL$We can maintain no more than §Y5§! $AIO_reality_interferometer_plural$."
 
@@ -383,3 +383,10 @@
  AIO_interference_events.455.desc.other: "The interference field of [from.GetName] is weakening. Distances within our territory are returning to normal, navigational coordinates have stopped drifting, and ships can follow familiar routes again.\n\nOur colonies still need to survey residual displacement and repair damaged facilities. The journey may be longer than it was a few days ago, but at least the destination will stay where it is."
 
  #endregion
+
+ sm_AIO_arkship_interference_generator: "Reality Interference Generator"
+ AIO_requires_no_foreign_interference_field: "$TRIGGER_FAIL$Cannot build a Reality Interference Generator in a system containing another empire's Reality Interference Field."
+ AIO_requires_one_interference_generator: "$TRIGGER_FAIL$Each Arkship or Waystation can have only one Reality Interference Generator, including modules under construction."
+ sm_AIO_arkship_interference_generator_desc: "Integrates a Reality Interferometer into an Arkship. Each equipped Arkship counts as one source, using the same coverage, propagation and stacking rules as fixed interferometers. On departure it records the level of our local field; on arrival it raises the destination field to at least that level. Progress within a level is not carried."
+ sm_AIO_waystation_interference_generator: "Reality Interference Generator"
+ sm_AIO_waystation_interference_generator_desc: "A Reality Interference source maintained by a Waystation. Uses the same coverage, propagation and stacking rules as fixed interferometers. Activation replaces other Psionic Auras in the system."
