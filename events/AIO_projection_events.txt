@@ -15,14 +15,36 @@ system_event = {
 	}
 }
 
+country_event = {
+	id = AIO_projection_events.202
+	title = AIO_projection_events.202.title
+	desc = AIO_projection_events.202.desc
+	location = fromfrom
+
+	is_triggered_only = yes
+
+	option = {
+		name = AIO_Tawi
+		allow = { always = no }
+	}
+
+	option = {
+		name = AIO_Aforgomom
+		country_event = {
+			id = AIO_projection_events.301
+			scopes = { from = from fromfrom = fromfrom }
+		}
+	}
+}
+
 
 #region Aforgomom
 
 # ROOT = 施法者；FROM = 星系；FROMFROM = 巨构。
 country_event = {
-	id = AIO_projection_events.202
-	title = AIO_projection_events.202.title
-	desc = AIO_projection_events.202.desc
+	id = AIO_projection_events.301
+	title = AIO_projection_events.301.title
+	desc = AIO_projection_events.301.desc
 	picture = GFX_evt_shroud_psionic_aura
 	location = from
 	is_triggered_only = yes
@@ -60,7 +82,7 @@ country_event = {
 
 # 共享国家每月回收孤立锚点；没有战争或亡国追踪。
 country_event = {
-	id = AIO_projection_events.301
+	id = AIO_projection_events.302
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = { has_country_flag = AIO_Aforgomom_country }
@@ -69,7 +91,7 @@ country_event = {
 
 # 主局势月度更新；观察局势本身不推进，也不触发召唤。
 situation_event = {
-	id = AIO_projection_events.302
+	id = AIO_projection_events.303
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = { AIO_projection_sync_observers = yes }
@@ -80,8 +102,8 @@ situation_event = {
 # FROM = 施法者；FROMFROM = 中心星系。通知不依赖已结束的局势。
 country_event = {
 	id = AIO_projection_events.401
-	title = AIO_projection_notice_start.name
-	desc = AIO_projection_notice_start.desc
+	title = AIO_projection_events.401.title
+	desc = AIO_projection_events.401.desc
 	picture = GFX_evt_shroud_psionic_aura
 	location = fromfrom
 	is_triggered_only = yes
@@ -90,9 +112,9 @@ country_event = {
 
 # FROM = 施法者；FROMFROM = 中心星系。通知不依赖已结束的局势。
 country_event = {
-	id = AIO_projection_events.404
-	title = AIO_projection_notice_abort.name
-	desc = AIO_projection_notice_abort.desc
+	id = AIO_projection_events.402
+	title = AIO_projection_events.402.title
+	desc = AIO_projection_events.402.desc
 	picture = GFX_evt_shroud_psionic_aura
 	location = fromfrom
 	is_triggered_only = yes
@@ -101,9 +123,9 @@ country_event = {
 
 # FROM = 施法者；FROMFROM = 中心星系。通知不依赖已结束的局势。
 country_event = {
-	id = AIO_projection_events.405
-	title = AIO_projection_notice_complete.name
-	desc = AIO_projection_notice_complete.desc
+	id = AIO_projection_events.403
+	title = AIO_projection_events.403.title
+	desc = AIO_projection_events.403.desc
 	picture = GFX_evt_shroud_psionic_aura
 	location = fromfrom
 	is_triggered_only = yes

@@ -1,17 +1,19 @@
 ﻿l_english:
+ #region script_action
+
  AIO_projection_aforgomom_action: "Summon Aforgomom"
  AIO_projection_aforgomom_activity: "Tearing $NAME$ Apart"
  AIO_projection_aforgomom_action_tooltip: "Choose a system and invest Advanced Logic to establish an anchor capable of defending itself.\n\nCost: £AIO_advanced_logic£ §Y100,000 / 200,000 / 400,000§! for Basic / Reinforced / Overcharged sections, with §Y1 / 2 / 4 times§! base hull.\nRitual duration: §Y720 days§!\nRange: systems within §Y[owner.AIO_interference_range]§! jumps of the target\nCooldown: §Y10 years§!\n\n§RThe anchor and manifestations are hostile to every empire, including us, our allies, and our subjects.§! Destroying the anchor prevents this summoning."
  AIO_projection_fail_center: "This system already contains an anchor."
- AIO_projection_events.202.title: "Choose Where Aforgomom Will Descend"
- AIO_projection_events.202.desc: "The star charts still mark the borders, garrisons, and routes of §Y[From.GetName]§!. Those who live there still believe that anyone seeking their destruction must first pass through these defenses. Yog-Sothoth has shown us another way. We can twist reality and create a paradox singularity. Aforgomom will find its entrance there.\n\nTime: §Y720 days§!\nRange: §Y[Root.AIO_interference_range] jumps§!.\n\n§ROnce released, the anchor is immediately hostile to every empire, including us, our allies, and our subjects.§! It cannot move or resurrect, and any empire can destroy it. Activation clears existing storm coverage within range and creates a Nexus Storm at the center."
- AIO_projection_invest_basic: "Open the way."
- AIO_projection_invest_reinforced: "Make them pay to close it."
- AIO_projection_invest_overcharged: "Let them commit every ship to stopping us."
- AIO_projection_invest_basic_tooltip: "Anchor: §Y3 L + 3 H + 9 P§!, base hull."
- AIO_projection_invest_reinforced_tooltip: "Anchor: §Y2 X + 2 L + 6 H + 9 P§!, §Y2 times§! base hull."
- AIO_projection_invest_overcharged_tooltip: "Anchor: §Y2 T + 9 H + 9 P§!, §Y4 times§! base hull."
- AIO_projection_cancel: "Let me reconsider."
+ AIO_projection_fail.need_mega_04: "Requires ownership of §Y$AIO_mega_04$§!."
+ AIO_projection_fail.cooldown: "Remote projection is still on cooldown."
+ AIO_projection_fail.exist: "Our empire already has a remote projection in progress."
+
+ #endregion
+
+
+ #region main situation
+
  AIO_projection_Aforgomom: "Aforgomom's Advent: [Target.GetName]"
  AIO_projection_Aforgomom_type: "Remote Aforgomom Projection"
  AIO_projection_Aforgomom_desc: "We have driven an anchor into §Y[Target.GetName]§!. Reality is slowly cracking around it. Aforgomom's arrival awaits only the completion of the ritual. The other empires may debate whether this constitutes war, or muster their fleets and try to buy these stars a little more time.\n\nUpon completion, the ritual will summon Aforgomom in the central system and all systems within §Y[This.AIO_projection_range] jumps§!.\nAnchor strength: §Y[This.AIO_projection_strength]§!\n\n§RThe anchor and manifestations are hostile to every empire.§! Destroying the anchor aborts this ritual."
@@ -20,6 +22,24 @@
  AIO_projection_maintain_ritual_desc: "We will make reality yield, little by little, until it can accommodate what we have summoned."
  mod_AIO_projection_Aforgomom_max_progress_add: "Aforgomom Projection Required Progress"
  mod_AIO_projection_Aforgomom_max_progress_mult: "$mod_AIO_projection_Aforgomom_max_progress_add$"
+
+ #endregion
+
+
+ #region observer situation
+
+ AIO_projection_observer: "Aforgomom's Advent: [Target.Solar_System.GetName]"
+ AIO_projection_observer_type: "Aforgomom Summoning Alert"
+ AIO_projection_observer_desc: "The rift in reality at §Y[Target.Solar_System.GetName]§! is widening. Every day the anchor remains brings Aforgomom closer to these stars. Whoever the summoner intends to punish, we will not be spared.\n\nThe anchor can still be destroyed. Our fleets must seize this opportunity while the threat can still be marked as a single target.\n\nUpon completion, the ritual will affect the central system and all systems within §Y[This.AIO_projection_range] jumps§!.\nAnchor strength: §Y[This.AIO_projection_strength] times§! base hull; armament is determined by the section for the chosen investment tier. Cloaking detection strength is §Y10§!.\n\n§RThe anchor and manifestations are hostile to every empire.§! Send fleets to destroy the anchor and prevent this summoning."
+ AIO_projection_observer_monthly_change_tooltip: "Updates the summoning ritual's progress each month. This alert does not advance on its own; the ritual completes at 24 points."
+ AIO_projection_observe_ritual: "Watch the Rift"
+ AIO_projection_observe_ritual_desc: "We need to know how much time remains. More urgently, we need someone to reach it before that time runs out.\n\nContinue tracking the summoning ritual. Counter it by sending fleets to destroy the anchor."
+
+ #endregion
+
+
+ #region anchor
+
  AIO_projection_anchor: "Reality Anchor"
  AIO_projection_anchor_plural: "Reality Anchors"
  NAME_AIO_projection_anchor: "$AIO_projection_anchor$"
@@ -31,19 +51,35 @@
  AIO_projection_anchor_overcharged_section: "Overcharged Anchor Core"
  AIO_projection_anchor_reinforced: "Reinforced Anchor"
  AIO_projection_anchor_overcharged: "Overcharged Anchor"
+
+ #endregion
+
+
+ #region common
+
+ AIO_projection_cancel: "Let me reconsider."
  AIO_projection_notice_ack: "Remember this moment."
- AIO_projection_notice_start.name: "Aforgomom: The First Omen"
- AIO_projection_notice_start.desc: "§Y[From.GetName]§! has established a reality anchor in §Y[FromFrom.GetName]§!. Fleets can be intercepted and routes blockaded. Now a calamity has bypassed them all and been given coordinates on the star charts.\n\nIn approximately §Y24 months§!, Aforgomom will descend upon the surrounding systems. Its summoner has chosen the entrance, but no flag will purchase its mercy.\n\n§RThe anchor and manifestations are hostile to every empire, including the summoner and its allies.§! Any empire may send fleets to destroy the anchor and prevent this summoning; a truce cannot interrupt the ritual. Progress can be tracked in the situation log."
- AIO_projection_notice_abort.name: "Aforgomom: The Broken Gate"
- AIO_projection_notice_abort.desc: "The reality anchor in §Y[FromFrom.GetName]§! is gone. Without it, the rift is beginning to close. The path §Y[From.GetName]§! laid for Aforgomom has broken before the final step could be taken.\n\nThis time, the name on the star charts remains a place, rather than a footnote to an advent. Yet the means to tear reality open remain in the summoner's hands."
- AIO_projection_notice_complete.name: "Aforgomom: The Summons Answered"
- AIO_projection_notice_complete.desc: "§Y[From.GetName]§! has completed the summoning ritual in §Y[FromFrom.GetName]§!. The anchor has dispersed, and manifestations of Aforgomom have appeared in the central system and those within the ritual's fixed range. The threat once outlined on the star charts has taken form.\n\nBorders, treaties, and identification signals mean nothing to these beings. The summoner has proved it can deliver calamity across the void. Every attack that follows will remind the galaxy that this power never included control."
- AIO_projection_fail.need_mega_04: "Requires ownership of §Y$AIO_mega_04$§!."
- AIO_projection_fail.cooldown: "Remote projection is still on cooldown."
- AIO_projection_fail.exist: "Our empire already has a remote projection in progress."
- AIO_projection_observer: "Aforgomom's Advent: [Target.Solar_System.GetName]"
- AIO_projection_observer_type: "Aforgomom Summoning Alert"
- AIO_projection_observer_desc: "The rift in reality at §Y[Target.Solar_System.GetName]§! is widening. Every day the anchor remains brings Aforgomom closer to these stars. Whoever the summoner intends to punish, we will not be spared.\n\nThe anchor can still be destroyed. Our fleets must seize this opportunity while the threat can still be marked as a single target.\n\nUpon completion, the ritual will affect the central system and all systems within §Y[This.AIO_projection_range] jumps§!.\nAnchor strength: §Y[This.AIO_projection_strength] times§! base hull; armament is determined by the section for the chosen investment tier. Cloaking detection strength is §Y10§!.\n\n§RThe anchor and manifestations are hostile to every empire.§! Send fleets to destroy the anchor and prevent this summoning."
- AIO_projection_observer_monthly_change_tooltip: "Updates the summoning ritual's progress each month. This alert does not advance on its own; the ritual completes at 24 points."
- AIO_projection_observe_ritual: "Watch the Rift"
- AIO_projection_observe_ritual_desc: "We need to know how much time remains. More urgently, we need someone to reach it before that time runs out.\n\nContinue tracking the summoning ritual. Counter it by sending fleets to destroy the anchor."
+
+ #endregion
+
+
+ AIO_projection_events.202.title: "REPLACE_ME"
+ AIO_projection_events.202.desc: "REPLACE_ME"
+
+ AIO_projection_events.301.title: "Choose Where Aforgomom Will Descend"
+ AIO_projection_events.301.desc: "The star charts still mark the borders, garrisons, and routes of §Y[From.GetName]§!. Those who live there still believe that anyone seeking their destruction must first pass through these defenses. Yog-Sothoth has shown us another way. We can twist reality and create a paradox singularity. Aforgomom will find its entrance there.\n\nTime: §Y720 days§!\nRange: §Y[Root.AIO_interference_range] jumps§!.\n\n§ROnce released, the anchor is immediately hostile to every empire, including us, our allies, and our subjects.§! It cannot move or resurrect, and any empire can destroy it. Activation clears existing storm coverage within range and creates a Nexus Storm at the center."
+ AIO_projection_invest_basic: "Open the way."
+ AIO_projection_invest_reinforced: "Make them pay to close it."
+ AIO_projection_invest_overcharged: "Let them commit every ship to stopping us."
+ AIO_projection_invest_basic_tooltip: "Anchor: §Y3 L + 3 H + 9 P§!, base hull."
+ AIO_projection_invest_reinforced_tooltip: "Anchor: §Y2 X + 2 L + 6 H + 9 P§!, §Y2 times§! base hull."
+ AIO_projection_invest_overcharged_tooltip: "Anchor: §Y2 T + 9 H + 9 P§!, §Y4 times§! base hull."
+
+ AIO_projection_events.401.title: "Aforgomom: The First Omen"
+ AIO_projection_events.401.desc: "§Y[From.GetName]§! has established a reality anchor in §Y[FromFrom.GetName]§!. Fleets can be intercepted and routes blockaded. Now a calamity has bypassed them all and been given coordinates on the star charts.\n\nIn approximately §Y24 months§!, Aforgomom will descend upon the surrounding systems. Its summoner has chosen the entrance, but no flag will purchase its mercy.\n\n§RThe anchor and manifestations are hostile to every empire, including the summoner and its allies.§! Any empire may send fleets to destroy the anchor and prevent this summoning; a truce cannot interrupt the ritual. Progress can be tracked in the situation log."
+
+ AIO_projection_events.402.title: "Aforgomom: The Broken Gate"
+ AIO_projection_events.402.desc: "The reality anchor in §Y[FromFrom.GetName]§! is gone. Without it, the rift is beginning to close. The path §Y[From.GetName]§! laid for Aforgomom has broken before the final step could be taken.\n\nThis time, the name on the star charts remains a place, rather than a footnote to an advent. Yet the means to tear reality open remain in the summoner's hands."
+
+ AIO_projection_events.403.title: "Aforgomom: The Summons Answered"
+ AIO_projection_events.403.desc: "§Y[From.GetName]§! has completed the summoning ritual in §Y[FromFrom.GetName]§!. The anchor has dispersed, and manifestations of Aforgomom have appeared in the central system and those within the ritual's fixed range. The threat once outlined on the star charts has taken form.\n\nBorders, treaties, and identification signals mean nothing to these beings. The summoner has proved it can deliver calamity across the void. Every attack that follows will remind the galaxy that this power never included control."

@@ -29,14 +29,14 @@ AIO_projection_Aforgomom_start = {
 AIO_projection_Aforgomom_complete = {
 	AIO_projection_remove_anchor = yes
 	target = { AIO_projection_Aforgomom_effect = { RANGE = root.AIO_projection_range } }
-	AIO_projection_dispatch_notice = { EVENT = AIO_projection_events.405 }
+	AIO_projection_dispatch_notice = { EVENT = AIO_projection_events.403 }
 	destroy_situation = this
 }
 
 # situation；不退款，不修改风暴，也不删除共享国家。
 AIO_projection_Aforgomom_abort = {
 	AIO_projection_remove_anchor = yes
-	AIO_projection_dispatch_notice = { EVENT = AIO_projection_events.404 }
+	AIO_projection_dispatch_notice = { EVENT = AIO_projection_events.402 }
 	destroy_situation = this
 }
 

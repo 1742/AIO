@@ -26,7 +26,7 @@ AIO_projection_Aforgomom = {
 		}
 	}
 	monthly_progress = { base = 1 }
-	on_monthly = { events = { AIO_projection_events.302 } }
+	on_monthly = { events = { AIO_projection_events.303 } }
 	approach = {
 		name = AIO_projection_maintain_ritual
 		icon = GFX_situation_approach_research

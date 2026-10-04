@@ -46,7 +46,7 @@ on_fleet_destroyed_victim = {
 
 # 共享亚弗戈蒙国家回收失去局势的锚点。
 on_monthly_pulse_country = {
-	events = { AIO_projection_events.301 }
+	events = { AIO_projection_events.302 }
 }
 
 # Executed when a megastructure has a new owner
