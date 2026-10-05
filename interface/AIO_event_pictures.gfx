@@ -1,4 +1,33 @@
 spriteTypes = {
+	spriteType = {
+		name = "GFX_evt_AIO_projection_Aforgomom_aborted"
+		texturefile = "gfx/event_pictures/AIO_projection_Aforgomom_aborted.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_projection_Aforgomom_omen"
+		texturefile = "gfx/event_pictures/AIO_projection_Aforgomom_omen.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_projection_Aforgomom_omen_nomask"
+		texturefile = "gfx/event_pictures/AIO_projection_Aforgomom_omen.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_projection_Aforgomom_arrival"
+		texturefile = "gfx/event_pictures/AIO_projection_Aforgomom_arrival.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_AIO_projection_Aforgomom_target"
+		texturefile = "gfx/event_pictures/AIO_projection_Aforgomom_target.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
     spriteType = {
 		name = "GFX_evt_AIO_energy_backlash"
 		texturefile = "gfx/event_pictures/AIO_energy_backlash.dds"

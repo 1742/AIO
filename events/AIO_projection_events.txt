@@ -46,7 +46,7 @@ country_event = {
 	id = AIO_projection_events.301
 	title = AIO_projection_events.301.title
 	desc = AIO_projection_events.301.desc
-	picture = GFX_evt_shroud_psionic_aura
+	picture = GFX_evt_AIO_projection_Aforgomom_target
 	location = from
 	is_triggered_only = yes
 
@@ -105,7 +105,7 @@ country_event = {
 	id = AIO_projection_events.401
 	title = AIO_projection_events.401.title
 	desc = AIO_projection_events.401.desc
-	picture = GFX_evt_shroud_psionic_aura
+	picture = GFX_evt_AIO_projection_Aforgomom_omen
 	location = fromfrom
 	is_triggered_only = yes
 	option = { name = AIO_projection_notice_ack }
@@ -116,7 +116,7 @@ country_event = {
 	id = AIO_projection_events.402
 	title = AIO_projection_events.402.title
 	desc = AIO_projection_events.402.desc
-	picture = GFX_evt_shroud_psionic_aura
+	picture = GFX_evt_AIO_projection_Aforgomom_aborted
 	location = fromfrom
 	is_triggered_only = yes
 	option = { name = AIO_projection_notice_ack }
@@ -127,7 +127,7 @@ country_event = {
 	id = AIO_projection_events.403
 	title = AIO_projection_events.403.title
 	desc = AIO_projection_events.403.desc
-	picture = GFX_evt_shroud_psionic_aura
+	picture = GFX_evt_AIO_projection_Aforgomom_arrival
 	location = fromfrom
 	is_triggered_only = yes
 	option = { name = AIO_projection_notice_ack }

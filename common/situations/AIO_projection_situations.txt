@@ -1,5 +1,5 @@
 AIO_projection_Aforgomom = {
-	picture = GFX_evt_shroud_psionic_aura
+	picture = GFX_evt_AIO_projection_Aforgomom_omen_nomask
 	category = negative
 	situation_log_category = crises
 	complete_icon_frame = GFX_situation_outcome_frame_red
@@ -38,7 +38,7 @@ AIO_projection_Aforgomom = {
 
 # 其他帝国只观察进度；target 直接绑定本次锚点舰队，不建立第二条召唤链。
 AIO_projection_observer = {
-	picture = GFX_evt_shroud_psionic_aura
+	picture = GFX_evt_AIO_projection_Aforgomom_omen_nomask
 	category = negative
 	situation_log_category = crises
 	complete_icon_frame = GFX_situation_outcome_frame_red
