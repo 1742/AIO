@@ -1,0 +1,13 @@
+﻿l_simp_chinese:
+ district_AIO_dm_production: "$zone_AIO_dm_production$"
+ district_AIO_dm_production_desc: "$zone_AIO_dm_production_desc$"
+ district_AIO_dm_production_plural: "$zone_AIO_dm_production$"
+ district_AIO_nanites_production_metallurgists: "$zone_AIO_nanites_production_metallurgists$"
+ district_AIO_nanites_production_metallurgists_desc: "$zone_AIO_nanites_production_metallurgists_desc$"
+ district_AIO_nanites_production_metallurgists_plural: "$zone_AIO_nanites_production_metallurgists$"
+ district_AIO_nanites_production_farmers_desc: "$zone_AIO_nanites_production_farmers_desc$"
+ district_AIO_nanites_production_farmers_plural: "$zone_AIO_nanites_production_farmers$"
+ district_AIO_nanites_production_miners: "$zone_AIO_nanites_production_minerals$"
+ district_AIO_nanites_production_miners_desc: "$zone_AIO_nanites_production_minerals_desc$"
+ district_AIO_nanites_production_miners_plural: "$zone_AIO_nanites_production_minerals$"
+ district_AIO_nanites_production_farmers: "$zone_AIO_nanites_production_farmers$"

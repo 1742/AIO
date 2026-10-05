@@ -22,6 +22,7 @@ menp_AIO_component_1 = {
 
 	on_unlock = {
 		custom_tooltip = unlocks_techs_1
+		custom_tooltip = unlocks_AIO_dark_matter_zones
 		add_research_option = tech_dark_matter_power_core
 	}
 }
@@ -65,6 +66,7 @@ menp_AIO_component_2 = {
 
 	on_unlock = {
 		custom_tooltip = unlocks_techs_2
+		custom_tooltip = unlocks_AIO_nanite_zones
 		add_research_option = tech_enigmatic_decoder
 		add_research_option = tech_dark_matter_propulsion
 	}
