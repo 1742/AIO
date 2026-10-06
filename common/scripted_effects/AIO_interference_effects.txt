@@ -1,5 +1,76 @@
 #region aura
 
+# Scope: country. Capacity is permanent until a doctrine change; never downgrade
+# when sources move, fields decay or backlash resets their intensity.
+AIO_interference_update_district_capacity = {
+	if = {
+		limit = {
+			is_nomadic = yes
+			OR = {
+				has_policy_flag = AIO_interference_mode_balanced
+				has_policy_flag = AIO_interference_mode_metric
+			}
+		}
+		set_variable = { which = AIO_interference_district_candidate value = 0 }
+		if = {
+			limit = { AIO_has_interference_aura_level = { LEVEL = 3 } }
+			set_variable = { which = AIO_interference_district_candidate value = 3 }
+		}
+		else_if = {
+			limit = { AIO_has_interference_aura_level = { LEVEL = 2 } }
+			set_variable = { which = AIO_interference_district_candidate value = 2 }
+		}
+		else_if = {
+			limit = { AIO_has_interference_aura_level = { LEVEL = 1 } }
+			set_variable = { which = AIO_interference_district_candidate value = 1 }
+		}
+		if = {
+			limit = { has_policy_flag = AIO_interference_mode_metric }
+			multiply_variable = {
+				which = AIO_interference_district_candidate
+				value = value:AIO_interferometer_num
+			}
+		}
+		else_if = {
+			# Balanced capacity is a flat +1, just like the settled aura effect.
+			limit = { check_variable = { which = AIO_interference_district_candidate value > 0 } }
+			set_variable = { which = AIO_interference_district_candidate value = 1 }
+		}
+		if = {
+			limit = { NOT = { is_variable_set = AIO_interference_district_capacity } }
+			set_variable = { which = AIO_interference_district_capacity value = 0 }
+		}
+		if = {
+			limit = {
+				OR = {
+					check_variable = { which = AIO_interference_district_candidate value > AIO_interference_district_capacity }
+					NOT = { has_modifier = AIO_interference_districts }
+				}
+			}
+			if = {
+				limit = { check_variable = { which = AIO_interference_district_candidate value > AIO_interference_district_capacity } }
+				set_variable = { which = AIO_interference_district_capacity value = AIO_interference_district_candidate }
+			}
+			if = {
+				limit = { check_variable = { which = AIO_interference_district_capacity value > 0 } }
+				# Refresh in place: do not remove capacity before adding its replacement.
+				add_modifier = {
+					modifier = AIO_interference_districts
+					multiplier = AIO_interference_district_capacity
+					days = -1
+				}
+			}
+		}
+		clear_variable = AIO_interference_district_candidate
+	}
+}
+
+# Scope: country.
+AIO_interference_clear_district_capacity = {
+	remove_modifier = AIO_interference_districts
+	clear_variable = AIO_interference_district_capacity
+}
+
 # Scope: system.
 AIO_interference_create_source = {
 	AIO_interference_prepare_source = { OWNER = $OWNER$ }
@@ -25,6 +96,7 @@ AIO_interference_rebuild_effect = {
 			OWNER = event_target:AIO_interference_rebuild_owner
 	 	}
 	}
+	AIO_interference_update_district_capacity = yes
 }
 
 # scope: system
@@ -71,6 +143,7 @@ AIO_interference_prepare_source = {
 			update_type = no
 		}
 		set_aura_intensity = 1
+		$OWNER$ = { AIO_interference_update_district_capacity = yes }
 	}
 }
 
@@ -137,6 +210,7 @@ AIO_interference_change_policy = {
 		}
 		set_aura_intensity = 1
 	}
+	AIO_interference_clear_district_capacity = yes
 }
 
 # Scope: ship. Called on departure with the old system explicitly supplied.
@@ -188,6 +262,8 @@ AIO_interference_arrive_mobile_source = {
 			set_aura_intensity = 1001
 		}
 	}
+	# Explicit intensity changes on arrival must also publish the restored level.
+	owner = { AIO_interference_update_district_capacity = yes }
 }
 
 # Scope: country. Monthly reconciliation after removals, captures or loading old saves.
@@ -332,6 +408,7 @@ AIO_interference_backlash_start = {
 
 # scope: country
 AIO_interference_backlash_finish = {
+	save_event_target_as = AIO_interference_backlash_owner
 	[[RESET]
 		every_owned_ship = {
 			limit = {
@@ -344,11 +421,11 @@ AIO_interference_backlash_finish = {
 	every_system_with_aura = {
 		limit = {
 			has_psionic_aura = AIO_reality_interference_aura
-			aura_owner = { is_same_value = prevprev }
+			aura_owner = { is_same_value = event_target:AIO_interference_backlash_owner }
 		}
 		[[RESET] if = {
 			limit = { is_aura_intensity_level > 1 }
-			AIO_interference_reset_aura = { OWNER = prev }
+			AIO_interference_reset_aura = { OWNER = event_target:AIO_interference_backlash_owner }
 		} ]
 	}
 	[[SEAL]

@@ -1,6 +1,6 @@
 policy_AIO_interference_doctrine = {
 	potential = {
-		has_technology = tech_AIO_exponential_learning_theory
+		has_technology = tech_AIO_ascending_dimensionality_theory
 	}
 
 	option = {

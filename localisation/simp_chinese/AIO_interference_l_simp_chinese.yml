@@ -61,12 +61,17 @@
  #region 政策
 
  policy_policy_AIO_interference_doctrine: "现实干涉范式"
- policy_policy_AIO_interference_doctrine_desc: "决定本国现实干涉场采用的组合效应。改变范式只改变收益构成，不改变光环覆盖与强度。"
+ policy_policy_AIO_interference_doctrine_desc: "决定本国现实干涉场采用的组合效应。切换范式会将本国干涉场强度重置为§Y1§!，并将方舟记录的光环等级重置为§Y一级§!；旧范式的残留效应持续§Y5年§!，期间干涉场强度增长翻倍。\n\n切换范式还会移除游牧帝国已获得的全国区划容量加成。"
  policy_AIO_interference_balanced: "均衡干涉"
+ policy_AIO_interference_balanced_desc: "协调各类现实参数，普遍提升我方殖民地的岗位资源产出，并提供额外区划容量。\n\n$AIO_interference_nomadic_districts_desc$"
  policy_AIO_interference_energy: "零点能量"
+ policy_AIO_interference_energy_desc: "从真空涨落中提取能量，提高岗位能量币产出与舰船武器伤害，但会削弱护盾。场内其他国家的殖民地与舰队也会受到影响。"
  policy_AIO_interference_ecology: "生态演化"
+ policy_AIO_interference_ecology_desc: "引导生命系统的演化，提高岗位食物、生物质与社会学研究产出，加速环境改造，同时增加岗位能量币维护费。场内其他国家的殖民地也会受到部分影响。"
  policy_AIO_interference_industry: "精炼制造"
+ policy_AIO_interference_industry_desc: "重塑物质加工过程，提高岗位矿物与合金产出，同时增加岗位矿物维护费。场内其他国家的殖民地也会受到影响。"
  policy_AIO_interference_metric: "度规工程"
+ policy_AIO_interference_metric_desc: "调整空间尺度，增加区划容量、加快建筑建造，并提高场内舰队的巨构建造速度，同时增加区划维护费。场内其他国家的殖民地与舰队也会受到影响。\n\n$AIO_interference_nomadic_districts_desc$"
 
  #endregion
 
@@ -390,3 +395,7 @@
  sm_AIO_arkship_interference_generator_desc: "将现实干涉仪整合进方舟。每艘安装发生器的方舟独立计为一个干涉源，覆盖、扩散及多源叠加规则与现实干涉仪相同。离开星系时记录当地己方干涉场等级，抵达后将当地干涉场至少提升到所记录的等级，不携带等级内的积累进度。"
  sm_AIO_waystation_interference_generator: "现实干涉发生器"
  sm_AIO_waystation_interference_generator_desc: "由驿站维持的现实干涉源。覆盖、扩散及多源叠加规则与现实干涉仪相同。启动时覆盖当地已有的其他灵能光环。"
+
+ AIO_interference_nomadic_districts_desc: "§Y游牧帝国：§!区划容量改为全国永久加成。均衡干涉在拥有己方干涉场后固定提供§G+1§!区划；度规工程按§Y全国最高己方光环等级 × 全国已建成的干涉源数量§!提供区划容量。光环生成、升阶或来源更新时重新计算；获得后只升不降，切换范式时移除。"
+
+ AIO_interference_districts: "现实干涉扩容"

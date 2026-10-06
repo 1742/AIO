@@ -5,6 +5,7 @@ AIO_arkship_interference_generator = {
 	inline_script = {
 		script = AIO/interference_generator_module
 		STARBASE_TRIGGER = is_arkship_starbase
+		OTHER_MODULE = AIO_waystation_interference_generator
 		RESOURCE_CATEGORY = starbase_arkship_upgrades
 	}
 }
@@ -14,6 +15,7 @@ AIO_waystation_interference_generator = {
 	inline_script = {
 		script = AIO/interference_generator_module
 		STARBASE_TRIGGER = is_waystation_starbase
+		OTHER_MODULE = AIO_arkship_interference_generator
 		RESOURCE_CATEGORY = starbase_waystations_modules
 	}
 }

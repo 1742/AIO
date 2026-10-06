@@ -21,7 +21,12 @@ owner_planet_modifier = {
 	mult = value:AIO_interference_intensity_multiplier
 }
 owner_planet_modifier = {
-	potential = { owner = { has_policy_flag = AIO_interference_mode_balanced } }
+	potential = {
+		owner = {
+			is_nomadic = no
+			has_policy_flag = AIO_interference_mode_balanced
+		}
+	}
 	modifier = {
 		planet_max_districts_add = 1
 	}
@@ -247,9 +252,21 @@ rival_planet_modifier = {
 owner_planet_modifier = {
 	potential = { owner = { has_policy_flag = AIO_interference_mode_metric } }
 	modifier = {
-		planet_max_districts_add = 1
 		planet_building_build_speed_mult = 0.12
 		planet_districts_upkeep_mult = 0.08
+	}
+	mult = value:AIO_interference_intensity_multiplier
+}
+# Nomadic district capacity is provided by a persistent country modifier.
+owner_planet_modifier = {
+	potential = {
+		owner = {
+			is_nomadic = no
+			has_policy_flag = AIO_interference_mode_metric
+		}
+	}
+	modifier = {
+		planet_max_districts_add = 1
 	}
 	mult = value:AIO_interference_intensity_multiplier
 }
@@ -263,9 +280,20 @@ owner_fleet_modifier = {
 owner_planet_modifier = {
 	potential = { owner = { has_country_flag = AIO_interference_metric_residual } }
 	modifier = {
-		planet_max_districts_add = 1
 		planet_building_build_speed_mult = 0.12
 		planet_districts_upkeep_mult = 0.08
+	}
+}
+# Nomadic district capacity is provided by a persistent country modifier.
+owner_planet_modifier = {
+	potential = {
+		owner = {
+			is_nomadic = no
+			has_country_flag = AIO_interference_metric_residual
+		}
+	}
+	modifier = {
+		planet_max_districts_add = 1
 	}
 }
 owner_fleet_modifier = {
@@ -285,9 +313,23 @@ neutral_planet_modifier = {
         }
     }
 	modifier = {
-		planet_max_districts_add = 1
 		planet_building_build_speed_mult = 0.12
 		planet_districts_upkeep_mult = 0.08
+	}
+}
+# Nomadic district capacity is provided by a persistent country modifier.
+neutral_planet_modifier = {
+	potential = {
+		owner = { is_nomadic = no }
+        solar_system.aura_owner = {
+            OR = {
+                has_policy_flag = AIO_interference_mode_metric
+                has_country_flag = AIO_interference_metric_residual
+            }
+        }
+    }
+	modifier = {
+		planet_max_districts_add = 1
 	}
 }
 neutral_fleet_modifier = {
@@ -314,9 +356,23 @@ rival_planet_modifier = {
         }
     }
 	modifier = {
-		planet_max_districts_add = 1
 		planet_building_build_speed_mult = 0.12
 		planet_districts_upkeep_mult = 0.08
+	}
+}
+# Nomadic district capacity is provided by a persistent country modifier.
+rival_planet_modifier = {
+	potential = {
+		owner = { is_nomadic = no }
+        solar_system.aura_owner = {
+            OR = {
+                has_policy_flag = AIO_interference_mode_metric
+                has_country_flag = AIO_interference_metric_residual
+            }
+        }
+    }
+	modifier = {
+		planet_max_districts_add = 1
 	}
 }
 rival_fleet_modifier = {

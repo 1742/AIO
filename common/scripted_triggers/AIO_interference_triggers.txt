@@ -1,3 +1,12 @@
+# Scope: country. Aura ownership, not territorial ownership, determines eligibility.
+AIO_has_interference_aura_level = {
+	any_system_with_aura = {
+		has_psionic_aura = AIO_reality_interference_aura
+		is_aura_intensity_level = $LEVEL$
+		aura_owner = { is_same_value = prevprev }
+	}
+}
+
 # Search system within owner's range, excluding self.
 # Scope: system.
 AIO_is_nearby_interference_source = {

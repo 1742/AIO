@@ -1,9 +1,6 @@
 # Reality Interference prototype.
 # One native Psionic Aura carries the effects selected by the owner's doctrine.
 AIO_reality_interference_aura = {
-	on_start = {
-		AIO_interference_recount_sources = { OWNER = root.aura_owner }
-	}
 	intensity_level = {
 		end = 1000
 		inline_script = { script = AIO/reality_interference_aura }
@@ -15,6 +12,15 @@ AIO_reality_interference_aura = {
 	intensity_level = {
 		end = 2500
 		inline_script = { script = AIO/reality_interference_aura }
+	}
+
+	on_start = {
+		AIO_interference_recount_sources = { OWNER = root.aura_owner }
+		aura_owner = { AIO_interference_update_district_capacity = yes }
+	}
+
+	on_gain_level = {
+		aura_owner = { AIO_interference_update_district_capacity = yes }
 	}
 
 	# Propagation is independent of intensity levels. Every existing field node

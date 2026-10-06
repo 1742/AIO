@@ -60,27 +60,6 @@ AIO_interferometer_num = {
 	min = 0
 }
 
-# Scope: country. Both module types share a cap, including construction queues.
-AIO_interference_generator_capacity_used = {
-	base = 0
-	complex_trigger_modifier = {
-		trigger = count_starbase_modules
-		parameters = {
-			type = AIO_arkship_interference_generator
-			include_being_constructed = yes
-		}
-		mode = add
-	}
-	complex_trigger_modifier = {
-		trigger = count_starbase_modules
-		parameters = {
-			type = AIO_waystation_interference_generator
-			include_being_constructed = yes
-		}
-		mode = add
-	}
-}
-
 # Scope: system. Count installations, including multiple arkships in one system.
 AIO_interference_local_source_count = {
 	base = 0

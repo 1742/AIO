@@ -3,6 +3,20 @@ icon = "GFX_starbase_aura_emitter"
 construction_days = 720
 category = sm_utility_cat
 starbase_limit = { base = 1 }
+# Let the engine handle the current queue item when checking its own type.
+# Reserve slots occupied/queued by the other generator type to share a cap of five.
+empire_limit = {
+	base = 5
+	complex_trigger_modifier = {
+		trigger = count_starbase_modules
+		parameters = {
+			type = $OTHER_MODULE$
+			include_being_constructed = yes
+		}
+		mode = subtract
+	}
+	min = 0
+}
 
 potential = {
 	$STARBASE_TRIGGER$ = yes
@@ -15,30 +29,8 @@ potential = {
 
 possible = {
 	custom_tooltip = {
-		fail_text = AIO_requires_interference_generator_capacity
-		owner = {
-			check_variable_arithmetic = {
-				which = value:AIO_interference_generator_capacity_used
-				value < 5
-			}
-		}
-	}
-	custom_tooltip = {
 		fail_text = AIO_requires_no_foreign_interference_field
 		AIO_starbase_has_foreign_interference = no
-	}
-	custom_tooltip = {
-		fail_text = AIO_requires_one_interference_generator
-		count_starbase_modules = {
-			type = AIO_arkship_interference_generator
-			count < 1
-			include_being_constructed = yes
-		}
-		count_starbase_modules = {
-			type = AIO_waystation_interference_generator
-			count < 1
-			include_being_constructed = yes
-		}
 	}
 }
 

@@ -62,12 +62,17 @@
  #region policy
 
  policy_policy_AIO_interference_doctrine: "Reality Interference Doctrine"
- policy_policy_AIO_interference_doctrine_desc: "Sets the combined effects produced by our Reality Interference Fields. Changing doctrine alters benefits, not field coverage or intensity."
+ policy_policy_AIO_interference_doctrine_desc: "Sets the combined effects produced by our Reality Interference Fields. Changing doctrine resets our fields to §Y1§! intensity and the aura level recorded by our Arkships to §Ylevel one§!. Residual effects of the previous doctrine persist for §Y5 years§!, during which field intensity growth is doubled.\n\nChanging doctrine also removes the empire-wide district capacity bonus earned by Nomadic empires."
  policy_AIO_interference_balanced: "Balanced Interference"
+ policy_AIO_interference_balanced_desc: "Coordinates the parameters of reality to improve resource output from jobs on our colonies and provide additional district capacity.\n\n$AIO_interference_nomadic_districts_desc$"
  policy_AIO_interference_energy: "Zero Point Energy"
+ policy_AIO_interference_energy_desc: "Extracts energy from vacuum fluctuations, increasing Energy Credits from jobs and ship weapon damage at the cost of shield strength. Other empires' colonies and fleets within the field are also affected."
  policy_AIO_interference_ecology: "Ecological Evolution"
+ policy_AIO_interference_ecology_desc: "Guides living systems to increase Food, Biomass and Society Research from jobs and accelerate terraforming, at the cost of higher Energy Credit upkeep for jobs. Some effects also apply to other empires' colonies within the field."
  policy_AIO_interference_industry: "Industrial Refining"
+ policy_AIO_interference_industry_desc: "Reshapes material processing to increase Minerals and Alloys from jobs, at the cost of higher Mineral upkeep for jobs. Other empires' colonies within the field are also affected."
  policy_AIO_interference_metric: "Metric Engineering"
+ policy_AIO_interference_metric_desc: "Adjusts spatial scales to expand district capacity, accelerate building construction and increase megastructure build speed for fleets within the field, at the cost of higher district upkeep. Other empires' colonies and fleets within the field are also affected.\n\n$AIO_interference_nomadic_districts_desc$"
 
  #endregion
 
@@ -391,3 +396,7 @@
  sm_AIO_arkship_interference_generator_desc: "Integrates a Reality Interferometer into an Arkship. Each equipped Arkship counts as one source, using the same coverage, propagation and stacking rules as fixed interferometers. On departure it records the level of our local field; on arrival it raises the destination field to at least that level. Progress within a level is not carried."
  sm_AIO_waystation_interference_generator: "Reality Interference Generator"
  sm_AIO_waystation_interference_generator_desc: "A Reality Interference source maintained by a Waystation. Uses the same coverage, propagation and stacking rules as fixed interferometers. Activation replaces other Psionic Auras in the system."
+
+ AIO_interference_nomadic_districts_desc: "§YNomadic empires:§! District capacity is a permanent empire-wide bonus. Balanced Interference grants a flat §G+1§! district once we have our own field. Metric Engineering grants §Your highest aura level × the number of completed interference sources across our empire§! districts. Recalculated when fields form, gain levels or sources are updated. Once earned, this bonus can only increase and is removed when changing doctrine."
+
+ AIO_interference_districts: "Reality Interference Expansion"
