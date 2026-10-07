@@ -106,3 +106,57 @@ AIO_proof_workforce = {
 	divide = 100
 	min = 0
 }
+
+# Scope: country. Negative reservations for the other generator type.
+# Count at each installation so mobile starbases are explicitly included.
+# One generator per installation; both completed and queued modules reserve a slot.
+AIO_interference_arkship_reservation = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_ship
+		parameters = {
+			limit = {
+				is_arkship_ship = yes
+				starbase? = {
+					count_starbase_modules = {
+						type = AIO_arkship_interference_generator
+						include_being_constructed = yes
+						count > 0
+					}
+				}
+			}
+		}
+		mode = add
+	}
+	mult = -1
+	min = -5
+	max = 0
+}
+
+AIO_interference_waystation_reservation = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_nonprimary_starbase
+		parameters = {
+			limit = {
+				is_waystation_starbase = yes
+				count_starbase_modules = {
+					type = AIO_waystation_interference_generator
+					include_being_constructed = yes
+					count > 0
+				}
+			}
+		}
+		mode = add
+	}
+	mult = -1
+	min = -5
+	max = 0
+}
+
+# Only the district multiplier is capped; real source counts still drive the field.
+AIO_interference_district_source_count = {
+	base = 0
+	add = value:AIO_interferometer_num
+	max = 5
+}

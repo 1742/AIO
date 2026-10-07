@@ -28,7 +28,7 @@ AIO_interference_update_district_capacity = {
 			limit = { has_policy_flag = AIO_interference_mode_metric }
 			multiply_variable = {
 				which = AIO_interference_district_candidate
-				value = value:AIO_interferometer_num
+				value = value:AIO_interference_district_source_count
 			}
 		}
 		else_if = {
@@ -344,52 +344,54 @@ AIO_interference_backlash_dispatch_notice = {
 			}
 		}
 	}
-	every_system_with_aura = {
-		limit = {
-			AIO_is_backlash_affect_system = { MAKER = root.owner }
-			OR = {
-				any_system_planet_colony = {
+	owner = {
+		every_system_with_aura = {
+			limit = {
+				AIO_is_backlash_affect_system = { MAKER = root.owner }
+				OR = {
+					any_system_planet_colony = {
+						owner? = {
+							NOT = { has_country_flag = AIO_backlash_notified_@root.owner }
+						}
+					}
+					any_system_ship_colony = {
+						owner? = {
+							NOT = { has_country_flag = AIO_backlash_notified_@root.owner }
+						}
+					}
+				}
+			}
+			every_system_planet_colony = {
+				limit = {
 					owner? = {
 						NOT = { has_country_flag = AIO_backlash_notified_@root.owner }
 					}
 				}
-				any_system_ship_colony = {
+				owner = {
+					set_timed_country_flag = { flag = AIO_backlash_notified_@root.owner days = 1 }
+					country_event = {
+						id = $EVENT$
+						scopes = {
+							from = root.owner
+							fromfrom = root
+						}
+					}
+				}
+			}
+			every_system_ship_colony = {
+				limit = {
 					owner? = {
 						NOT = { has_country_flag = AIO_backlash_notified_@root.owner }
 					}
 				}
-			}
-		}
-		every_system_planet_colony = {
-			limit = {
-				owner? = {
-					NOT = { has_country_flag = AIO_backlash_notified_@root.owner }
-				}
-			}
-			owner = {
-				set_timed_country_flag = { flag = AIO_backlash_notified_@root.owner days = 1 }
-				country_event = {
-					id = $EVENT$
-					scopes = {
-						from = root.owner
-						fromfrom = root
-					}
-				}
-			}
-		}
-		every_system_ship_colony = {
-			limit = {
-				owner? = {
-					NOT = { has_country_flag = AIO_backlash_notified_@root.owner }
-				}
-			}
-			owner = {
-				set_timed_country_flag = { flag = AIO_backlash_notified_@root.owner days = 1 }
-				country_event = {
-					id = $EVENT$
-					scopes = {
-						from = root.owner
-						fromfrom = root
+				owner = {
+					set_timed_country_flag = { flag = AIO_backlash_notified_@root.owner days = 1 }
+					country_event = {
+						id = $EVENT$
+						scopes = {
+							from = root.owner
+							fromfrom = root
+						}
 					}
 				}
 			}
@@ -417,17 +419,15 @@ AIO_interference_backlash_finish = {
 			}
 			set_variable = { which = AIO_interference_carried_level value = 2 }
 		}
-	]
-	every_system_with_aura = {
-		limit = {
-			has_psionic_aura = AIO_reality_interference_aura
-			aura_owner = { is_same_value = event_target:AIO_interference_backlash_owner }
+		every_system_with_aura = {
+			limit = {
+				has_psionic_aura = AIO_reality_interference_aura
+				aura_owner = { is_same_value = event_target:AIO_interference_backlash_owner }
+				is_aura_intensity_level > 1
+			}
+			set_aura_intensity = 1001
 		}
-		[[RESET] if = {
-			limit = { is_aura_intensity_level > 1 }
-			AIO_interference_reset_aura = { OWNER = event_target:AIO_interference_backlash_owner }
-		} ]
-	}
+	]
 	[[SEAL]
 		set_country_flag = AIO_backlash_seal
 	]

@@ -157,7 +157,7 @@ situation_event = {
 	is_triggered_only = yes
 	immediate = {
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.415 }
-		owner = { AIO_interference_backlash_finish = { TYPE = balanced RESET = yes } }
+		owner = { AIO_interference_backlash_finish = { RESET = yes } }
 		destroy_situation = this
 	}
 }
@@ -443,7 +443,7 @@ situation_event = {
 	is_triggered_only = yes
 	immediate = {
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.425 }
-		owner = { AIO_interference_backlash_finish = { TYPE = energy RESET = yes } }
+		owner = { AIO_interference_backlash_finish = { RESET = yes } }
 		destroy_situation = this
 	}
 }
@@ -729,7 +729,7 @@ situation_event = {
 	is_triggered_only = yes
 	immediate = {
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.435 }
-		owner = { AIO_interference_backlash_finish = { TYPE = ecology RESET = yes } }
+		owner = { AIO_interference_backlash_finish = { RESET = yes } }
 		destroy_situation = this
 	}
 }
@@ -1015,7 +1015,7 @@ situation_event = {
 	is_triggered_only = yes
 	immediate = {
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.445 }
-		owner = { AIO_interference_backlash_finish = { TYPE = industry RESET = yes } }
+		owner = { AIO_interference_backlash_finish = { RESET = yes } }
 		destroy_situation = this
 	}
 }
@@ -1301,7 +1301,7 @@ situation_event = {
 	is_triggered_only = yes
 	immediate = {
 		AIO_interference_backlash_dispatch_notice = { EVENT = AIO_interference_events.455 }
-		owner = { AIO_interference_backlash_finish = { TYPE = metric RESET = yes } }
+		owner = { AIO_interference_backlash_finish = { RESET = yes } }
 		destroy_situation = this
 	}
 }

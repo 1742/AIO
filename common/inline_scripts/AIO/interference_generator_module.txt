@@ -3,19 +3,18 @@ icon = "GFX_starbase_aura_emitter"
 construction_days = 720
 category = sm_utility_cat
 starbase_limit = { base = 1 }
-# Let the engine handle the current queue item when checking its own type.
-# Reserve slots occupied/queued by the other generator type to share a cap of five.
+# Native limits account for this module's own completed/queued instances.
+# Reserve the other module type's slots using ordinary weight modifiers.
 empire_limit = {
 	base = 5
-	complex_trigger_modifier = {
-		trigger = count_starbase_modules
-		parameters = {
-			type = $OTHER_MODULE$
-			include_being_constructed = yes
-		}
-		mode = subtract
+	modifier = {
+		is_scope_type = starbase
+		add = owner.value:$OTHER_MODULE_RESERVATION$
 	}
-	min = 0
+	modifier = {
+		is_scope_type = country
+		add = value:$OTHER_MODULE_RESERVATION$
+	}
 }
 
 potential = {
