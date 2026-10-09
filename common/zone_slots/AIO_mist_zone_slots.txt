@@ -1,0 +1,73 @@
+# One production specialization per resource district; no vanilla district-set unlock gate.
+
+slot_AIO_mist_research = {
+    include = { zone_habitat_research }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
+slot_AIO_mist_farm = {
+    include = { zone_food }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
+slot_AIO_mist_alloys = {
+    include = { zone_foundry }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
+slot_AIO_mist_goods = {
+    include = { zone_factory }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
+slot_AIO_mist_energy = {
+    include = { zone_energy }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
+slot_AIO_mist_minerals = {
+    include = { zone_minerals }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
+slot_AIO_mist_motes = {
+    include = { zone_AIO_mist_motes }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
+slot_AIO_mist_gases = {
+    include = { zone_AIO_mist_gases }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
+slot_AIO_mist_crystals = {
+    include = { zone_AIO_mist_crystals }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
+slot_AIO_mist_dark_matter = {
+    include = { zone_AIO_mist_support }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
+slot_AIO_mist_living_metal = {
+    include = { zone_AIO_mist_support }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
+slot_AIO_mist_nanites = {
+    include = { zone_AIO_mist_support }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}

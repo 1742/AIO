@@ -1,0 +1,33 @@
+# Planet scope. Existing equal-weight class pool; safety checks are inlined at parse time.
+random_list = {
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_frozen } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_hive } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_machine } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_city } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_shrouded } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_broken } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_alpine } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_arctic } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_arid } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_asteroid } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_barren } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_barren_cold } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_continental } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_crystal_asteroid } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_desert } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_egg_cracked } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_gaia } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_gas_giant } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_gray_goo } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_junk } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_molten } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_nuked } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_ocean } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_relic } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_savannah } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_shattered } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_shielded } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_toxic } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_tropical } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_tundra } }
+}

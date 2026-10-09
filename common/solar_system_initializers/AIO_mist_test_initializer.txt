@@ -1,0 +1,19 @@
+# Console-only, separate from the unique live gate and mist event targets.
+AIO_mist_test_initializer = {
+	name = AIO_MIST_TEST_SYSTEM
+	class = sc_AIO_void
+	usage = misc_system_init
+	usage_odds = 0
+	planet = {
+		class = pc_AIO_empty_space
+		count = 1
+		orbit_distance = 0
+		orbit_angle = 0
+		size = 1
+		has_ring = no
+	}
+	init_effect = {
+		save_global_event_target_as = AIO_mist_test_system
+		set_star_flag = AIO_mist_test_system
+	}
+}

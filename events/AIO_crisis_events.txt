@@ -29,12 +29,20 @@ country_event = {
 
         # 激活灾飞路径
         add_ascension_perk = ap_AIO_allinone
-        add_resource = { AIO_advanced_logic = 45000 }
+        add_resource = { AIO_advanced_logic = 18000 }
 
         # 空想要3点国民理念点，不加够会转变政体失败
-        give_technology = { tech = tech_planetary_unification }
-        give_technology = { tech = tech_colonial_centralization }
-        give_technology = { tech = tech_galactic_administration }
+        give_technology = { tech = tech_planetary_unification message = no }
+        give_technology = { tech = tech_colonial_centralization message = no }
+        give_technology = { tech = tech_galactic_administration message = no }
+        # 一些区划科技
+        give_technology = { tech = tech_AIO_rule_energy message = no }
+        give_technology = { tech = tech_AIO_rule_matter message = no }
+        give_technology = { tech = tech_AIO_rule_structure message = no }
+        give_technology = { tech = tech_AIO_rule_dark_matter message = no }
+        give_technology = { tech = tech_AIO_rule_living_metal message = no }
+        give_technology = { tech = tech_AIO_rule_nanites message = no }
+
         # 创建穷极之门
         capital_scope.solar_system = {
             spawn_megastructure = {
@@ -58,8 +66,6 @@ country_event = {
                 owner = root
             }
         }
-
-        AIO_ascension_effect = yes
     }
 }
 
@@ -349,13 +355,6 @@ country_event = {
     trigger = { has_ascension_perk = ap_AIO_allinone }
 
     immediate = {
-        # 清理现实干涉仪
-        every_owned_megastructure = {
-            limit = { is_megastructure_type = AIO_reality_interferometer }
-            solar_system = { AIO_interference_remove_source = yes }
-            remove_megastructure = this
-        }
-
         # 摧毁无名之雾
         event_target:AIO_HS_system = {
             # 移除特效
@@ -489,44 +488,6 @@ country_event = {
     }
 }
 
-# 现实干涉
-event = {
-	id = AIO_crisis_events.804
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		any_country = {
-			has_ascension_perk = ap_AIO_allinone
-			AIO_has_any_interference_source = yes
-		}
-	}
-
-	immediate = {
-		every_playable_country = {
-			if = {
-				limit = { has_ascension_perk = ap_AIO_allinone }
-				every_owned_megastructure = {
-					limit = { AIO_is_interference_source = yes }
-					prev = {
-						complete_crisis_objective = crisobj_AIO_interference
-					}
-				}
-				every_owned_nonprimary_starbase = {
-					limit = { AIO_is_interference_source = yes }
-					prev = { complete_crisis_objective = crisobj_AIO_interference }
-				}
-				every_owned_ship = {
-					limit = { AIO_is_mobile_interference_source = yes }
-					prev = { complete_crisis_objective = crisobj_AIO_interference }
-				}
-			}
-		}
-	}
-}
-
-#endregion
-
 
 #region 其他效果实现
 
@@ -550,26 +511,3 @@ fleet_event = {
         set_mia = mia_return_home
     }
 }
-
-# 失去现实干涉仪
-# this = new owner
-# from = megastructure
-# fromfrom = old owner (if existing)
-country_event = {
-    id = AIO_crisis_events.902
-    hide_window = yes
-
-    is_triggered_only = yes
-    trigger = {
-        from = { is_megastructure_type = AIO_reality_interferometer }
-    }
-
-    immediate = {
-        from = {
-            solar_system = { AIO_interference_remove_source = yes }
-            remove_megastructure = this
-        }
-    }
-}
-
-#endregion

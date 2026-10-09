@@ -1,0 +1,20 @@
+# Planet scope. Shared parse-time implementation of the protected class change.
+# optimize_memory is a scripted-effect definition directive, not an inline effect.
+if = {
+    limit = {
+        NOR = {
+            is_artificial = yes
+            is_planet_class = $NEW_PC$
+            is_planet_class = pc_ai
+            colony? = { has_carrier_flag = synth_queen_bastille }
+        }
+    }
+    change_pc = $NEW_PC$
+    if = {
+        limit = {
+            is_colony = yes
+            is_colonizable = no
+        }
+        destroy_colony = yes
+    }
+}

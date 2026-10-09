@@ -1,0 +1,51 @@
+# One permanent feature replaces separate exemption modifiers on the colony.
+# Only cancel penalties that the owning empire actually applies to this carrier.
+d_AIO_mist_exemption = {
+    icon = "unused/d_drifting_gateway"
+    is_for_colonizable = yes
+    category = deposit_cat_rare
+    potential = { always = no }
+
+    triggered_planet_modifier = {
+        potential = {
+            is_planet_class = pc_AIO_mist
+            owner? = { has_modifier = AIO_rule_energy }
+        }
+        modifier = { planet_jobs_minerals_produces_mult = 0.1 }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            is_planet_class = pc_AIO_mist
+            owner? = { has_modifier = AIO_rule_matter }
+        }
+        modifier = { planet_jobs_food_produces_mult = 0.1 }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            is_planet_class = pc_AIO_mist
+            owner? = { has_modifier = AIO_rule_structure }
+        }
+        modifier = { planet_jobs_energy_upkeep_mult = -0.1 }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            is_planet_class = pc_AIO_mist
+            owner? = { has_modifier = AIO_rule_dark_matter }
+        }
+        modifier = { planet_jobs_consumer_goods_upkeep_mult = -0.1 }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            is_planet_class = pc_AIO_mist
+            owner? = { has_modifier = AIO_rule_living_metal }
+        }
+        modifier = { planet_jobs_alloys_produces_mult = 0.1 }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            is_planet_class = pc_AIO_mist
+            owner? = { has_modifier = AIO_rule_nanites }
+        }
+        modifier = { planet_jobs_energy_produces_mult = 0.1 }
+    }
+}

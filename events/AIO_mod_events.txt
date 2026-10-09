@@ -9,6 +9,8 @@ country_event = {
     diplomatic_title = ap_AIO_allinone
     desc = AIO_mod_events.201.desc
 
+    picture = GFX_leader_recruitment_bg_renowned
+    show_sound = par_portrait_12
     event_window_type = leader_recruit
     picture_event_data = {
         portrait = event_target:ethic_leader
@@ -20,7 +22,7 @@ country_event = {
     immediate = {
         set_global_flag = AIO_mod_active
         ethic_leader_creator = {
-            SPECIES_CLASS = root.owner_main_species
+            SPECIES_CLASS = HUM
             LEADER_PORTRAIT = AIO_TAWI_PORTRAITS_CASUAL
             CLASS = official
             TIER = leader_tier_legendary

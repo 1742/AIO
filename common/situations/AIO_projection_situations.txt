@@ -10,6 +10,7 @@ AIO_projection_Aforgomom = {
 	abort_trigger = { AIO_projection_has_anchor = no }
 	on_abort = { AIO_projection_Aforgomom_abort = yes }
 	on_progress_complete = {
+		custom_tooltip = AIO_projection_ritual_complete_tooltip
 		hidden_effect = {
 			if = {
 				limit = { AIO_projection_has_anchor = yes }
@@ -29,6 +30,7 @@ AIO_projection_Aforgomom = {
 	on_monthly = { events = { AIO_projection_events.303 } }
 	approach = {
 		name = AIO_projection_maintain_ritual
+		on_select = { custom_tooltip = AIO_projection_maintain_ritual_desc }
 		icon = GFX_situation_approach_research
 		icon_background = GFX_situation_approach_bg_red
 		default = yes
@@ -47,7 +49,10 @@ AIO_projection_observer = {
 	progress_direction = monodirectional
 	abort_trigger = { NOT = { exists = target } }
 	on_abort = { destroy_situation = this }
-	on_progress_complete = { destroy_situation = this }
+	on_progress_complete = {
+		custom_tooltip = AIO_projection_observer_complete_tooltip
+		hidden_effect = { destroy_situation = this }
+	}
 	stages = {
 		stage_1 = {
 			end = 24
@@ -58,6 +63,7 @@ AIO_projection_observer = {
 	monthly_progress = { base = 0 }
 	approach = {
 		name = AIO_projection_observe_ritual
+		on_select = { custom_tooltip = AIO_projection_observe_ritual_desc }
 		icon = GFX_situation_approach_research
 		icon_background = GFX_situation_approach_bg_red
 		default = yes

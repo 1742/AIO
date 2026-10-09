@@ -1,0 +1,47 @@
+# Scope: country. Called only by the console prototype event.
+AIO_mist_create_test_colony_effect = {
+	if = {
+		limit = { is_nomadic = yes }
+		create_fleet = {
+			name = NAME_AIO_Mist_Anchor
+			effect = {
+				set_owner = event_target:AIO_mist_test_owner
+				create_ship = {
+					name = NAME_AIO_Mist_Anchor
+					design = "NAME_AIO_Mist_Anchor"
+					graphical_culture = civilian_arkship
+					effect = {
+						save_global_event_target_as = AIO_mist_test_ship
+						colony = { AIO_mist_initialize_test_colony_effect = yes }
+					}
+				}
+				set_location = event_target:AIO_mist_test_system
+			}
+		}
+	}
+	else = {
+		event_target:AIO_mist_test_system = {
+			create_starbase = { size = starbase_outpost owner = event_target:AIO_mist_test_owner }
+			spawn_planet = {
+				class = pc_AIO_mist
+				size = 12
+				orbit_distance = 30
+				orbit_angle = 90
+				init_effect = {
+					set_name = NAME_AIO_Mist_Colony
+					create_colony = { owner = event_target:AIO_mist_test_owner }
+					colony = { AIO_mist_initialize_test_colony_effect = yes }
+				}
+			}
+		}
+	}
+}
+
+# Scope: colony, including ship-borne colonies (4.5 separates planet and colony scopes).
+AIO_mist_initialize_test_colony_effect = {
+	save_global_event_target_as = AIO_mist_test_colony
+	set_carrier_flag = AIO_mist_colony
+    set_planet_size = 12
+	# Do not seed pops: first inspect virtual filling, then test manual resettlement.
+	log = "AIO M0: created shared-class colony; using the current district configuration."
+}

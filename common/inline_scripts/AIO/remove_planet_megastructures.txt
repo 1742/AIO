@@ -1,0 +1,33 @@
+# Parse-time section, preserving the existing cleanup behavior and reducing effect initialization depth.
+save_event_target_as = AIO_safe_remove_mega_planet
+
+if = {
+    limit = {
+        is_colony = yes
+        AIO_colony_has_ring = yes
+    }
+    solar_system = {
+        random_starbase_in_system = {
+            limit = {
+                exists = planet
+                planet = { is_same_value = event_target:AIO_safe_remove_mega_planet }
+                OR = {
+                    has_starbase_size = orbital_ring_tier_1
+                    has_starbase_size = orbital_ring_tier_2
+                    has_starbase_size = orbital_ring_tier_3
+                }
+            }
+            destroy_fleet = this
+        }
+    }
+}
+
+solar_system = {
+    every_system_megastructure = {
+        limit = {
+            exists = planet
+            planet = { is_same_value = event_target:AIO_safe_remove_mega_planet }
+        }
+        AIO_safe_remove_megastructure = yes
+    }
+}

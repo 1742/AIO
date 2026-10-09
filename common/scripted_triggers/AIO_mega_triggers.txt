@@ -233,3 +233,12 @@ AIO_is_crisis_mega_planet = {
         }
     }
 }
+
+AIO_is_internal_mega = {
+    OR = {
+        is_megastructure_type = AIO_mega_01
+        is_megastructure_type = AIO_mega_02
+        is_megastructure_type = AIO_mega_03
+        is_megastructure_type = AIO_mega_04
+    }
+}

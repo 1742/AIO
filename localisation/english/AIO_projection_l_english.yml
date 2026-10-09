@@ -3,7 +3,7 @@
 
  AIO_projection_aforgomom_action: "Summon Aforgomom"
  AIO_projection_aforgomom_activity: "Tearing $NAME$ Apart"
- AIO_projection_aforgomom_action_tooltip: "Choose a system and invest Advanced Logic to establish an anchor capable of defending itself.\n\nCost: £AIO_advanced_logic£ §Y100,000 / 200,000 / 400,000§! for Basic / Reinforced / Overcharged sections, with §Y1 / 2 / 4 times§! base hull.\nRitual duration: §Y720 days§!\nRange: systems within §Y[owner.AIO_interference_range]§! jumps of the target\nCooldown: §Y10 years§!\n\n§RThe anchor and manifestations are hostile to every empire, including us, our allies, and our subjects.§! Destroying the anchor prevents this summoning."
+ AIO_projection_aforgomom_action_tooltip: "Choose a system and invest Advanced Logic to establish an anchor capable of defending itself.\n\nCost: £AIO_advanced_logic£ §Y100,000 / 200,000 / 400,000§! for Basic / Reinforced / Overcharged sections, with §Y1 / 2 / 4 times§! base hull.\nRitual duration: §Y720 days§!\nRange: systems within §Y[owner.AIO_projection_range]§! jumps of the target\nCooldown: §Y10 years§!\n\n§RThe anchor and manifestations are hostile to every empire, including us, our allies, and our subjects.§! Destroying the anchor prevents this summoning."
  AIO_projection_fail_center: "This system already contains an anchor."
  AIO_projection_fail.need_mega_04: "Requires ownership of §Y$AIO_mega_04$§!."
  AIO_projection_fail.cooldown: "Remote projection is still on cooldown."
@@ -67,7 +67,7 @@
  AIO_projection_events.202.desc: "REPLACE_ME"
 
  AIO_projection_events.301.title: "Choose Where Aforgomom Will Descend"
- AIO_projection_events.301.desc: "The star charts still mark the borders, garrisons, and routes of §Y[From.GetName]§!. Those who live there still believe that anyone seeking their destruction must first pass through these defenses. Yog-Sothoth has shown us another way. We can twist reality and create a paradox singularity. Aforgomom will find its entrance there.\n\nTime: §Y720 days§!\nRange: §Y[Root.AIO_interference_range] jumps§!.\n\n§ROnce released, the anchor is immediately hostile to every empire, including us, our allies, and our subjects.§! It cannot move or resurrect, and any empire can destroy it. Activation clears existing storm coverage within range and creates a Nexus Storm at the center."
+ AIO_projection_events.301.desc: "The star charts still mark the borders, garrisons, and routes of §Y[From.GetName]§!. Those who live there still believe that anyone seeking their destruction must first pass through these defenses. Yog-Sothoth has shown us another way. We can twist reality and create a paradox singularity. Aforgomom will find its entrance there.\n\nTime: §Y720 days§!\nRange: §Y[Root.AIO_projection_range] jumps§!.\n\n§ROnce released, the anchor is immediately hostile to every empire, including us, our allies, and our subjects.§! It cannot move or resurrect, and any empire can destroy it. Activation clears existing storm coverage within range and creates a Nexus Storm at the center."
  AIO_projection_invest_basic: "Open the way."
  AIO_projection_invest_reinforced: "Make them pay to close it."
  AIO_projection_invest_overcharged: "Let them commit every ship to stopping us."
@@ -83,3 +83,6 @@
 
  AIO_projection_events.403.title: "Aforgomom: The Summons Answered"
  AIO_projection_events.403.desc: "§Y[From.GetName]§! has completed the summoning ritual in §Y[FromFrom.GetName]§!. The anchor has dispersed, and manifestations of Aforgomom have appeared in the central system and those within the ritual's fixed range. The threat once outlined on the star charts has taken form.\n\nBorders, treaties, and identification signals mean nothing to these beings. The summoner has proved it can deliver calamity across the void. Every attack that follows will remind the galaxy that this power never included control."
+
+ AIO_projection_ritual_complete_tooltip:0 "If the anchor survives, summon Aforgomom in the center and within projection range. An invalid anchor cancels the summoning."
+ AIO_projection_observer_complete_tooltip:0 "The summoning alert ends when the ritual completes. The anchor ritual determines the actual outcome."

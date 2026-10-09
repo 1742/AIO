@@ -1,8 +1,13 @@
 # AIO巨构
 @mega_01_energy_cost = 5000
 @mega_02_energy_cost = 10000
-@mega_03_energy_cost = 20000
-@mega_04_energy_cost = 50000
+@mega_03_energy_cost = 15000
+@mega_04_energy_cost = 25000
+@mega_01_alloys_cost = 15000
+@mega_02_alloys_cost = 20000
+@mega_03_alloys_cost = 25000
+@mega_04_alloys_cost = 50000
+
 
 # 现实中的万门之门
 AIO_mega_01_fact = {
@@ -41,28 +46,24 @@ AIO_mega_01_fact = {
 
 	upgrade_from = { AIO_horizon_engine }
 
-	build_time = 1800
+	build_time = 500
 
 	resources = {
 		category = megastructures
-		cost = {
-			energy = @mega_01_energy_cost
-			sr_dark_matter = 2000
-			nanites = 2000
-			sr_living_metal = 2000
-		}
+
+		cost = { energy = @mega_01_energy_cost }
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 15000
+			alloys = @mega_01_alloys_cost
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 15000
+			alloys = @mega_01_alloys_cost
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 15000
+			food = @mega_01_alloys_cost
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 	}
@@ -96,7 +97,8 @@ AIO_mega_01 = {
 
 	resources = {
 		category = megastructures
-		produces = { AIO_advanced_logic = 1000 }
+
+		produces = { AIO_advanced_logic = 5 }
 
 		upkeep = {
 			energy = 200
@@ -104,10 +106,6 @@ AIO_mega_01 = {
 			society_research = 50
 			engineering_research = 50
 		}
-	}
-
-	country_modifier = {
-		AIO_interferometer_range = 2
 	}
 
 	# bypass类型
@@ -146,13 +144,6 @@ AIO_mega_01 = {
 				}
 			}
 		}
-		from = {
-			set_variable = {
-				which = AIO_interference_range
-				value = 2
-			}
-			AIO_interference_rebuild_effect = yes
-		}
 	}
 }
 
@@ -190,7 +181,7 @@ AIO_mega_02 = {
 
 	upgrade_from = { AIO_mega_01 }
 
-	build_time = 3600
+	build_time = 1800
 
 	resources = {
 		category = megastructures
@@ -198,25 +189,23 @@ AIO_mega_02 = {
 		cost = {
 			energy = @mega_02_energy_cost
 			sr_dark_matter = 3000
-			nanites = 3000
-			sr_living_metal = 3000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 20000
+			alloys = @mega_02_alloys_cost
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 20000
+			alloys = @mega_02_alloys_cost
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 20000
+			food = @mega_02_alloys_cost
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 3000 }
+		produces = { AIO_advanced_logic = 30 }
 
 		upkeep = {
 			energy = 500
@@ -226,22 +215,14 @@ AIO_mega_02 = {
 		}
 	}
 
-	country_modifier = {
-		AIO_interferometer_range = 3
-	}
-
 	# bypass类型
 	bypass_type = bypass_AIO_ultimate_gate
 
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_02
-			set_variable = {
-				which = AIO_interference_range
-				value = 3
-			}
-			AIO_interference_rebuild_effect = yes
-			country_event = { id = AIO_crisis_events.404 }
+			AIO_mist_set_capacity_effect = { STAGE = 2 }
+            country_event = { id = AIO_crisis_events.404 }
 		}
 	}
 }
@@ -280,7 +261,7 @@ AIO_mega_03 = {
 
 	upgrade_from = { AIO_mega_02 }
 
-	build_time = 3600
+	build_time = 1800
 
 	resources = {
 		category = megastructures
@@ -288,25 +269,24 @@ AIO_mega_03 = {
 		cost = {
 			energy = @mega_03_energy_cost
 			sr_dark_matter = 5000
-			nanites = 5000
 			sr_living_metal = 5000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 25000
+			alloys = @mega_03_alloys_cost
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 25000
+			alloys = @mega_03_alloys_cost
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 25000
+			food = @mega_03_alloys_cost
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 5000 }
+		produces = { AIO_advanced_logic = 50 }
 
 		upkeep = {
 			energy = 1000
@@ -316,22 +296,14 @@ AIO_mega_03 = {
 		}
 	}
 
-	country_modifier = {
-		AIO_interferometer_range = 4
-	}
-
 	# bypass类型
 	bypass_type = bypass_AIO_ultimate_gate
 
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_03
-			set_variable = {
-				which = AIO_interference_range
-				value = 4
-			}
-			AIO_interference_rebuild_effect = yes
-			country_event = { id = AIO_crisis_events.405 }
+			AIO_mist_set_capacity_effect = { STAGE = 3 }
+            country_event = { id = AIO_crisis_events.405 }
 		}
 	}
 }
@@ -368,9 +340,7 @@ AIO_mega_04 = {
 
 	dismantle_potential = { always = no }
 
-	upgrade_from = {
-		AIO_mega_03
-	}
+	upgrade_from = { AIO_mega_03 }
 
 	build_time = 3600
 
@@ -385,20 +355,20 @@ AIO_mega_04 = {
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 50000
+			alloys = @mega_04_alloys_cost
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 50000
+			alloys = @mega_04_alloys_cost
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 50000
+			food = @mega_04_alloys_cost
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 10000 }
+		produces = { AIO_advanced_logic = 100 }
 
         upkeep = {
             trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
@@ -409,22 +379,15 @@ AIO_mega_04 = {
         }
 	}
 
-	country_modifier = {
-		AIO_interferometer_range = 5
-	}
-
 	# bypass类型
 	bypass_type = bypass_AIO_ultimate_gate
 
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_04
-			set_variable = {
-				which = AIO_interference_range
-				value = 5
-			}
-			AIO_interference_rebuild_effect = yes
-			country_event = { id = AIO_crisis_events.406 }
+            set_variable = { which = AIO_projection_range value = 5 }
+			AIO_mist_set_capacity_effect = { STAGE = 4 }
+            country_event = { id = AIO_crisis_events.406 }
 		}
 	}
 

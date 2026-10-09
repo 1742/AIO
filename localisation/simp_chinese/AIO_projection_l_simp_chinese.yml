@@ -3,7 +3,7 @@
 
  AIO_projection_aforgomom_action: "召唤亚弗戈蒙"
  AIO_projection_aforgomom_activity: "撕裂 $NAME$"
- AIO_projection_aforgomom_action_tooltip: "选择星系并投入超然逻辑，建立能够自行防卫的锚点。\n\n花费：£AIO_advanced_logic£ §Y100,000／200,000／400,000§!，对应基础／强化／过载区段，舰体为 §Y1／2／4 倍§!。\n仪式时长：§Y720 天§!\n范围：以目标为中心§Y[owner.AIO_interference_range]§!跳范围内的星系\n冷却：§Y10 年§!\n\n§R锚点及化身敌视所有帝国，包括我们、盟友和附属国。§!摧毁锚点可阻止本次召唤。"
+ AIO_projection_aforgomom_action_tooltip: "选择星系并投入超然逻辑，建立能够自行防卫的锚点。\n\n花费：£AIO_advanced_logic£ §Y100,000／200,000／400,000§!，对应基础／强化／过载区段，舰体为 §Y1／2／4 倍§!。\n仪式时长：§Y720 天§!\n范围：以目标为中心§Y[owner.AIO_projection_range]§!跳范围内的星系\n冷却：§Y10 年§!\n\n§R锚点及化身敌视所有帝国，包括我们、盟友和附属国。§!摧毁锚点可阻止本次召唤。"
  AIO_projection_fail_center: "这个星系已经存在锚点。"
  AIO_projection_fail.need_mega_04: "需要拥有§Y$AIO_mega_04$§!。"
  AIO_projection_fail.cooldown: "远程投射仍在冷却中。"
@@ -67,7 +67,7 @@
  AIO_projection_events.202.desc: "REPLACE_ME"
 
  AIO_projection_events.301.title: "为亚弗戈蒙选择落点"
- AIO_projection_events.301.desc: "星图上的§Y[From.GetName]§!仍标注着疆界、驻军与航道。那里的人依然相信，要摧毁他们，就得先穿过这些防线。犹格索托斯已为我们指出另一条路。我们可以扭曲现实，制造悖论奇点，亚弗戈蒙便会在那里找到入口。\n\n时间： §Y720 天§!\n范围： §Y[Root.AIO_interference_range] 跳§!。\n\n§R锚点释放后立即敌视所有帝国，包括我们、盟友及附属国。§!它不能移动、不会复活，任何国家都可将其摧毁。启动时会解除范围内的现有风暴覆盖，并在中心生成枢纽风暴。"
+ AIO_projection_events.301.desc: "星图上的§Y[From.GetName]§!仍标注着疆界、驻军与航道。那里的人依然相信，要摧毁他们，就得先穿过这些防线。犹格索托斯已为我们指出另一条路。我们可以扭曲现实，制造悖论奇点，亚弗戈蒙便会在那里找到入口。\n\n时间： §Y720 天§!\n范围： §Y[Root.AIO_projection_range] 跳§!。\n\n§R锚点释放后立即敌视所有帝国，包括我们、盟友及附属国。§!它不能移动、不会复活，任何国家都可将其摧毁。启动时会解除范围内的现有风暴覆盖，并在中心生成枢纽风暴。"
  AIO_projection_invest_basic: "开启入口。"
  AIO_projection_invest_reinforced: "让他们付出代价才能关上它。"
  AIO_projection_invest_overcharged: "让他们倾尽舰队来阻止我们。"
@@ -83,3 +83,6 @@
 
  AIO_projection_events.403.title: "亚弗戈蒙：应召而至"
  AIO_projection_events.403.desc: "§Y[From.GetName]§!在§Y[FromFrom.GetName]§!的召唤仪式已经完成。锚点消散，亚弗戈蒙的化身出现在中心与仪式锁定范围内的星系。此前星图上标出的威胁范围，如今有了形体。\n\n边界、条约与敌我识别信号，对这些存在毫无意义。召唤者证明了自己有能力将灾厄送往远方；它们接下来的每一次攻击，都将提醒银河，这份能力从未包含驾驭。"
+
+ AIO_projection_ritual_complete_tooltip:0 "锚点存续时，在中心及投射范围内召唤亚弗戈蒙；锚点失效则取消召唤。"
+ AIO_projection_observer_complete_tooltip:0 "仪式完成后，召唤警报结束；实际召唤结果由锚点仪式决定。"

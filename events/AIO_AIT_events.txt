@@ -1,0 +1,23 @@
+namespace = AIO_AIT_events
+
+country_event = {
+    id = AIO_AIT_events.201
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_ascension_perk = ap_AIO_allinone }
+    immediate = { AIO_rules_apply_researched_effect = yes }
+}
+
+# Delayed country creation sync, after its initial type/government has been assigned.
+country_event = {
+    id = AIO_AIT_events.202
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { country_event = { id = AIO_AIT_events.203 days = 1 } }
+}
+country_event = {
+    id = AIO_AIT_events.203
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { AIO_rules_sync_country_effect = yes }
+}

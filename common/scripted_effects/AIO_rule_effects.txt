@@ -1,0 +1,112 @@
+# Country. Applied once per global rule, including scripted technology grants.
+AIO_rules_apply_researched_effect = {
+    if = {
+        limit = {
+            has_technology = tech_AIO_rule_energy
+            NOT = { has_global_flag = AIO_rule_energy_active }
+        }
+        set_global_flag = AIO_rule_energy_active
+        complete_crisis_objective = crisobj_AIO_research_thesis
+        every_country = { AIO_rules_sync_country_effect = yes }
+    }
+    if = {
+        limit = {
+            has_technology = tech_AIO_rule_matter
+            NOT = { has_global_flag = AIO_rule_matter_active }
+        }
+        set_global_flag = AIO_rule_matter_active
+        complete_crisis_objective = crisobj_AIO_research_thesis
+        every_country = { AIO_rules_sync_country_effect = yes }
+    }
+    if = {
+        limit = {
+            has_technology = tech_AIO_rule_structure
+            NOT = { has_global_flag = AIO_rule_structure_active }
+        }
+        set_global_flag = AIO_rule_structure_active
+        complete_crisis_objective = crisobj_AIO_research_thesis
+        every_country = { AIO_rules_sync_country_effect = yes }
+    }
+    if = {
+        limit = {
+            has_technology = tech_AIO_rule_dark_matter
+            NOT = { has_global_flag = AIO_rule_dark_matter_active }
+        }
+        set_global_flag = AIO_rule_dark_matter_active
+        complete_crisis_objective = crisobj_AIO_research_thesis
+        every_country = { AIO_rules_sync_country_effect = yes }
+    }
+    if = {
+        limit = {
+            has_technology = tech_AIO_rule_living_metal
+            NOT = { has_global_flag = AIO_rule_living_metal_active }
+        }
+        set_global_flag = AIO_rule_living_metal_active
+        complete_crisis_objective = crisobj_AIO_research_thesis
+        every_country = { AIO_rules_sync_country_effect = yes }
+    }
+    if = {
+        limit = {
+            has_technology = tech_AIO_rule_nanites
+            NOT = { has_global_flag = AIO_rule_nanites_active }
+        }
+        set_global_flag = AIO_rule_nanites_active
+        complete_crisis_objective = crisobj_AIO_research_thesis
+        every_country = { AIO_rules_sync_country_effect = yes }
+    }
+}
+
+# Country initialization: continuous modifiers only, no rewards or replayed events.
+AIO_rules_sync_country_effect = {
+    if = {
+        limit = {
+            OR = {
+                is_country_type = default
+                is_country_type = fallen_empire
+                is_country_type = awakened_fallen_empire
+            }
+        }
+        if = {
+            limit = {
+                has_global_flag = AIO_rule_energy_active
+                NOT = { has_modifier = AIO_rule_energy }
+            }
+            add_modifier = { modifier = AIO_rule_energy days = -1 }
+        }
+        if = {
+            limit = {
+                has_global_flag = AIO_rule_matter_active
+                NOT = { has_modifier = AIO_rule_matter }
+            }
+            add_modifier = { modifier = AIO_rule_matter days = -1 }
+        }
+        if = {
+            limit = {
+                has_global_flag = AIO_rule_structure_active
+                NOT = { has_modifier = AIO_rule_structure }
+            }
+            add_modifier = { modifier = AIO_rule_structure days = -1 }
+        }
+        if = {
+            limit = {
+                has_global_flag = AIO_rule_dark_matter_active
+                NOT = { has_modifier = AIO_rule_dark_matter }
+            }
+            add_modifier = { modifier = AIO_rule_dark_matter days = -1 }
+        }
+        if = {
+            limit = {
+                has_global_flag = AIO_rule_living_metal_active
+                NOT = { has_modifier = AIO_rule_living_metal }
+            }
+            add_modifier = { modifier = AIO_rule_living_metal days = -1 }
+        }
+        if = {
+            limit = {
+                has_global_flag = AIO_rule_nanites_active
+                NOT = { has_modifier = AIO_rule_nanites }
+            }
+            add_modifier = { modifier = AIO_rule_nanites days = -1 }
+        }
+    }
+}

@@ -18,11 +18,6 @@ AIO_safe_remove_megastructure = {
             limit = { is_megastructure_type = grand_archive_0 }
             solar_system = { system_event = { id = grand_archive.4501 } }
         }
-        else_if = {
-            limit = { is_megastructure_type = AIO_reality_interferometer }
-            solar_system = { AIO_interference_remove_source = yes }
-            remove_megastructure = this
-        }
         else = {
             if = {
                 limit = { AIO_is_dyson_swarm = yes }
@@ -343,40 +338,7 @@ AIO_safe_remove_megastructure = {
 }
 
 # Remove every removable megastructure attached to this planet. Scope: planet.
-AIO_safe_remove_planet_megastructures = {
-    save_event_target_as = AIO_safe_remove_mega_planet
 
-    if = {
-        limit = {
-            is_colony = yes
-            AIO_colony_has_ring = yes
-        }
-        solar_system = {
-            random_starbase_in_system = {
-                limit = {
-                    exists = planet
-                    planet = { is_same_value = event_target:AIO_safe_remove_mega_planet }
-                    OR = {
-                        has_starbase_size = orbital_ring_tier_1
-                        has_starbase_size = orbital_ring_tier_2
-                        has_starbase_size = orbital_ring_tier_3
-                    }
-                }
-                destroy_fleet = this
-            }
-        }
-    }
-
-    solar_system = {
-        every_system_megastructure = {
-            limit = {
-                exists = planet
-                planet = { is_same_value = event_target:AIO_safe_remove_mega_planet }
-            }
-            AIO_safe_remove_megastructure = yes
-        }
-    }
-}
 
 # Remove every permitted megastructure in this system. Scope: system.
 AIO_safe_remove_system_megastructures = {
@@ -478,7 +440,7 @@ AIO_safe_remove_planet = {
             limit = { is_star = yes }
             change_pc = pc_AIO_empty_space
             clear_deposits = yes
-            AIO_safe_remove_planet_megastructures = yes
+            inline_script = AIO/remove_planet_megastructures
         }
         else_if = {
             limit = {
@@ -486,7 +448,7 @@ AIO_safe_remove_planet = {
                 is_artificial = no
             }
             destroy_colony = yes
-            AIO_safe_remove_planet_megastructures = yes
+            inline_script = AIO/remove_planet_megastructures
             remove_planet = yes
         }
         else_if = {
@@ -636,7 +598,7 @@ AIO_safe_remove_planet = {
             remove_planet = yes
         }
         else = {
-            AIO_safe_remove_planet_megastructures = yes
+            inline_script = AIO/remove_planet_megastructures
             remove_planet = yes
         }
     }

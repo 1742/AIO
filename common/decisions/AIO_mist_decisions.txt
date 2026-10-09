@@ -1,0 +1,43 @@
+decision_AIO_expand_mist = {
+    owned_planets_only = yes
+    icon = decision_mastery_of_nature
+    enactment_time = 360
+    potential = { uses_district_set = AIO_mist }
+    allow = {
+        custom_tooltip = {
+            owner = {
+                OR = {
+                    is_nomadic = no
+                    any_situation = {
+                        is_situation_type = situation_nomad_economy
+                        situation_progress >= 5000
+                    }
+                }
+            }
+        }
+        OR = {
+            AND = {
+                planet_size < 24
+                owner = { NOT = { has_megastructure = AIO_mega_02 } }
+            }
+            AND = {
+                planet_size < 40
+                owner = { NOT = { has_megastructure = AIO_mega_03 } }
+            }
+            AND = {
+                planet_size < 64
+                owner = { NOT = { has_megastructure = AIO_mega_04 } }
+            }
+            owner = { has_megastructure = AIO_mega_04 }
+        }
+    }
+    resources = {
+        category = decisions
+        cost = {
+            energy = 5000
+            alloys = 2000
+        }
+    }
+    effect = { change_planet_size = 8 }
+    ai_weight = { weight = 0 }
+}

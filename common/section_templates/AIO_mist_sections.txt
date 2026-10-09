@@ -1,0 +1,8 @@
+ship_section_template = {
+	key = "AIO_MIST_ANCHOR_SECTION"
+	ship_size = AIO_mist_anchor
+	fits_on_slot = mid
+	entity = civilian_arkship_01_stage_1_ship_entity
+	icon = "GFX_ship_part_core_mid"
+	should_draw_components = no
+}

@@ -12,7 +12,7 @@ AIO_projection_begin = {
 
 # situation
 AIO_projection_Aforgomom_start = {
-	set_variable = { which = AIO_projection_range value = owner.AIO_interference_range }
+	set_variable = { which = AIO_projection_range value = 5 }
 	set_variable = { which = AIO_projection_strength value = owner.AIO_projection_strength }
 	AIO_ensure_Aforgomom_country = yes
 	AIO_projection_create_anchor = yes

@@ -230,17 +230,3 @@ AIO_grant_vanilla_fe_building_technology = {
 }
 
 # Grants psionic auras tech
-AIO_grant_vanilla_psionic_auras_tech = {
-	set_country_flag = AIO_crisobj_research_block
-
-	give_technology = {
-		tech = tech_psionic_aura
-		message = no
-	}
-	give_technology = {
-		tech =  tech_aura_intensification
-		message = no
-	}
-
-	remove_country_flag = AIO_crisobj_research_block
-}

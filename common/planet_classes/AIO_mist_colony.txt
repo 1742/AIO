@@ -1,0 +1,30 @@
+# Shared settled and nomadic colony class.
+pc_AIO_mist = {
+	entity = "AIO_empty_space"
+	picture = pc_habitat
+	icon = GFX_planet_type_rift_star
+	icon_large = GFX_planet_type_rift_star_big
+	entity_scale = 1.0
+	fixed_entity_scale = yes
+	enable_tilt = no
+	show_city = no
+	city_color_lut = "gfx/portraits/misc/colorcorrection_continental.dds"
+	atmosphere_color = hsv { 0.0 0.0 1.0 }
+	atmosphere_intensity = 1.0
+	atmosphere_width = 0.5
+	climate = artificial
+	is_artificial_planet = yes
+	default_planet_selection = yes
+	starting_planet = no
+	colonizable = yes
+	can_be_capital = yes
+	spawn_odds = 0
+	planet_size = { min = 12 max = 12 }
+	district_set = AIO_mist
+	modifier = {
+		pop_environment_tolerance = 1.0
+		planet_building_build_speed_mult = 0.5
+		planet_districts_upkeep_mult = 1
+	}
+	carry_cap_per_free_district = @carry_cap_low
+}

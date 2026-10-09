@@ -1,0 +1,70 @@
+# Country. The live mist has exactly one shared colony target.
+AIO_mist_create_colony_effect = {
+    if = {
+        limit = {
+            exists = event_target:AIO_HS_system
+            NOT = { exists = event_target:AIO_mist_colony }
+        }
+        save_event_target_as = AIO_mist_owner
+        if = {
+            limit = { is_nomadic = yes }
+            create_fleet = {
+                name = NAME_AIO_Mist_Anchor
+                effect = {
+                    set_owner = event_target:AIO_mist_owner
+                    create_ship = {
+                        name = NAME_AIO_Mist_Anchor
+                        design = NAME_AIO_Mist_Anchor
+                        graphical_culture = civilian_arkship
+                        effect = {
+                            save_global_event_target_as = AIO_mist_ship
+                            colony = { AIO_mist_initialize_colony_effect = yes }
+                        }
+                    }
+                    set_location = event_target:AIO_HS_system.star
+                }
+            }
+        }
+        else = {
+            event_target:AIO_HS_system = {
+                spawn_planet = {
+                    class = pc_AIO_mist
+                    size = 12
+                    orbit_distance = 0
+                    init_effect = {
+                        set_name = NAME_AIO_Mist_Colony
+                        set_surveyed = {
+                            surveyor = event_target:AIO_mist_owner
+                            surveyed = yes
+                        }
+                        create_colony = { owner = event_target:AIO_mist_owner }
+                        colony = { AIO_mist_initialize_colony_effect = yes }
+                    }
+                }
+            }
+        }
+        set_visited = event_target:AIO_HS_system
+    }
+}
+
+# Colony. No migration, ascension, or reserve gates; virtual filling uses vanilla code.
+AIO_mist_initialize_colony_effect = {
+    save_global_event_target_as = AIO_mist_colony
+    set_carrier_flag = AIO_mist_colony
+    set_planet_size = 12
+    owner = { AIO_rules_sync_country_effect = yes }
+    if = {
+        limit = { NOT = { has_deposit = d_AIO_mist_exemption } }
+        add_deposit = d_AIO_mist_exemption
+    }
+}
+
+# Country. Upgrade modifies capacity in place, never recreates the carrier or its jobs.
+AIO_mist_set_capacity_effect = {
+    event_target:AIO_mist_colony? = {
+        remove_modifier = AIO_mist_capacity_2
+        remove_modifier = AIO_mist_capacity_3
+        remove_modifier = AIO_mist_capacity_4
+        add_modifier = { modifier = AIO_mist_capacity_$STAGE$ }
+    }
+}

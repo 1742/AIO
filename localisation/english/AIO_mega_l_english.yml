@@ -13,16 +13,16 @@
  AIO_mega_01_fact: "$AIO_mega_01$"
  AIO_mega_01_fact_DESC: "$AIO_mega_01_DESC$"
  AIO_mega_01: "Ultimate Gate"
- AIO_mega_01_DESC: "Go to the "gate" of the endless dimension."
+ AIO_mega_01_DESC:0 "A passage connecting reality to the Mist. Initial colony capacity: 12; population fills its jobs."
  AIO_mega_01_MEGASTRUCTURE_DETAILS: "$AIO_mega_01_DESC$"
  AIO_mega_02: "Silver Key"
- AIO_mega_02_DESC: "The "key" to the endless dimension."
+ AIO_mega_02_DESC:0 "Raises capacity to 24. Requires dark matter production unlocked by level-two rule research."
  AIO_mega_02_MEGASTRUCTURE_DETAILS: "$AIO_mega_02_DESC$"
  AIO_mega_03: "Eternal Throne"
- AIO_mega_03_DESC: "Observe all dimensions and "points" of existence."
+ AIO_mega_03_DESC:0 "Raises capacity to 40. Requires living metal production unlocked by level-three rule research."
  AIO_mega_03_MEGASTRUCTURE_DETAILS: "$AIO_mega_03_DESC$"
  AIO_mega_04: "Yog Sothoth"
- AIO_mega_04_DESC: "A transcendent structure beyond the endless dimension."
+ AIO_mega_04_DESC:0 "Raises capacity to 64 and enables repeatable spatial expansion and remote projection. Requires nanite production."
  AIO_mega_04_MEGASTRUCTURE_DETAILS: "$AIO_mega_04_DESC$."
  AIO_mega_04_activate: "$AIO_mega_04$"
  AIO_mega_04_activate_DESC: "$AIO_mega_04_DESC$"
@@ -32,9 +32,14 @@
 
  #region tooltips
 
- AIO_mega_01.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 5000!"
- AIO_mega_02.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 10000!"
- AIO_mega_03.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 20000!"
- AIO_mega_04.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 50000!"
 
  #endregion
+
+ # Log fixes: native bypass keys and the restored nomadic reserve checks.
+ BYPASS_BYPASS_AIO_ULTIMATE_GATE:0 "$AIO_mega_01$"
+ ENTRY_BYPASS_BYPASS_AIO_ULTIMATE_GATE:0 "$AIO_mega_01$"
+ EXIT_BYPASS_BYPASS_AIO_ULTIMATE_GATE:0 "$AIO_mega_01$"
+ AIO_mega_01.fail.nomadic:0 "A nomadic empire must have operational reserves at least equal to this project's energy cost."
+ AIO_mega_02.fail.nomadic:0 "A nomadic empire must have operational reserves at least equal to this project's energy cost."
+ AIO_mega_03.fail.nomadic:0 "A nomadic empire must have operational reserves at least equal to this project's energy cost."
+ AIO_mega_04.fail.nomadic:0 "A nomadic empire must have operational reserves at least equal to this project's energy cost."

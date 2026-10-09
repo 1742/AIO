@@ -1,72 +1,16 @@
-# AIO天灾目标
-
-# 研究新科技
+# Fixed research rewards: early progression must not depend on galaxy country count.
 crisobj_AIO_research_tech = {
-	reward = {
-		base = 200
-		complex_trigger_modifier = { #subtract 10 for each playable country that exists
-			trigger = count_playable_country
-			mode = subtract
-			mult = 10
-		}
-		round_to = 5	#we want a solid number
-		min = 25		#and we don't want less than 50
-	}
+    reward = { base = 500 }
 }
 
-# 研究异常现象、特殊项目
 crisobj_AIO_research_special_project = {
-	reward = {
-		base = 1000
-		complex_trigger_modifier = { #subtract 10 for each playable country that exists
-			trigger = count_playable_country
-			mode = subtract
-			mult = 10
-		}
-		round_to = 5	#we want a solid number
-		min = 25		#and we don't want less than 50
-	}
+    reward = { base = 800 }
 }
 
-# 探索星界裂隙
 crisobj_AIO_explore_astral = {
-	reward = {
-		base = 2000
-		complex_trigger_modifier = { #subtract 10 for each playable country that exists
-			trigger = count_playable_country
-			mode = subtract
-			mult = 10
-		}
-		round_to = 5	#we want a solid number
-		min = 25		#and we don't want less than 50
-	}
+    reward = { base = 1200 }
 }
 
-# 建造现实干涉仪
-crisobj_AIO_interference = {
-	reward = {
-		base = 160
-		complex_trigger_modifier = { #subtract 50 for each playable country that exists
-			trigger = count_playable_country
-			mode = subtract
-			mult = 50
-		}
-		round_to = 200 	#we want a solid number
-		min = 200		#and we don't want less than 200
-	}
-	recurring = yes
-}
-
-# 应用无限
-crisobj_AIO_research_thesis = { #Also use for the Vultaum Projects
-	reward = {
-		base = 8000
-		complex_trigger_modifier = { #subtract 400 for each playable country that exists
-			trigger = count_playable_country
-			mode = subtract
-			mult = 400
-		}
-		round_to = 500 	#we want a solid number
-		min = 1000 		#and we don't want less than 1000
-	}
+crisobj_AIO_research_thesis = {
+    reward = { base = 1500 }
 }

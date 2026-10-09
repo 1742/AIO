@@ -1,0 +1,4 @@
+ship_design = {
+	name = "NAME_AIO_Mist_Anchor"
+	ship_size = AIO_mist_anchor
+}

@@ -55,7 +55,6 @@ AIO_empire = {
 		hostile_when_attacked = no
 		needs_border_access = no
 		generate_borders = no
-		show_borders_in_us = no
 		needs_colony = no
 		auto_delete = no
 	}

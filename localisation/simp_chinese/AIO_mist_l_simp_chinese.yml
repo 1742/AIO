@@ -1,0 +1,11 @@
+﻿l_simp_chinese:
+ pc_AIO_mist:0 "无名之雾居所"
+ pc_AIO_mist_desc:0 "截面之外的高级殖民地，内部巨构扩展容量，应用无限科技解锁独立资源区划。"
+ district_AIO_mist_research:0 "超维科研区划"
+ district_AIO_mist_research_plural:0 "超维科研区划"
+ district_AIO_mist_research_desc:0 "提供物理学家、生物学家、工程师各200岗位劳动力，格式塔使用对应科研子个体。区划每月维护2能源，岗位投入另计。"
+ AIO_mist_anchor:0 "$pc_AIO_mist$"
+ AIO_mist_anchor_plural:0 "$pc_AIO_mist$"
+ NAME_AIO_Mist_Anchor:0 "$pc_AIO_mist$"
+ NAME_AIO_Mist_Colony:0 "$pc_AIO_mist$"
+ AIO_MIST_TEST_SYSTEM:0 "无名之雾·技术验证"

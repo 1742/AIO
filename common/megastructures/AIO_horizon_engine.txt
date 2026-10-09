@@ -46,16 +46,6 @@ AIO_horizon_engine = {
 	}
 
 	placement_rules = {
-		custom_tooltip = {
-			fail_text = requires_no_colonies
-			NOT = {
-				any_system_planet = {
-					is_colony = yes
-					is_artificial = no
-					owner? = { is_primitive = no }
-				}
-			}
-		}
 		planet_possible = {
 			custom_tooltip = {
 				fail_text = "must_build_around_star"
@@ -75,36 +65,29 @@ AIO_horizon_engine = {
 		}
 	}
 
-	build_time = 1000
+	build_time = 500
 
 	resources = {
 		category = megastructures
-		cost = { sr_dark_matter = 1000 }
+
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 10000
+			alloys = 4000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 10000
+			alloys = 4000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 10000
+			food = 4000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-        produces = {
-			energy = 1500
-		}
+        produces = { energy = 100 }
 
-		upkeep = {
-			alloys = 25
-			physics_research = 25
-			society_research = 25
-			engineering_research = 25
-		}
+		upkeep = { alloys = 25 }
 	}
 
 	on_build_complete = {
@@ -137,7 +120,10 @@ AIO_horizon_engine = {
 		from = {
 			set_country_flag = AIO_built_AIO_horizon_engine
 			# 允许点星河奇迹
-			set_country_flag = has_built_or_repaired_megastructure
+			if = {
+				limit = { is_nomadic = no }
+				set_country_flag = has_built_or_repaired_megastructure
+			}
 			# 通知
 			country_event = { id = AIO_crisis_events.402 }
 		}

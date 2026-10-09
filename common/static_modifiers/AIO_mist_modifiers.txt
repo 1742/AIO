@@ -1,0 +1,10 @@
+# Capacity is additive to the shared 12-district carrier class.
+AIO_mist_capacity_2 = {
+    planet_max_districts_add = 12
+}
+AIO_mist_capacity_3 = {
+    planet_max_districts_add = 28
+}
+AIO_mist_capacity_4 = {
+    planet_max_districts_add = 52
+}

@@ -1,7 +1,7 @@
 AIO_create_hexagonal_orbital_array = {
     random_system_planet = {
         limit = { is_star = yes }
-        AIO_change_random_pc = { STAR = 1 }
+        inline_script = AIO/random_star_pc
     }
     AIO_change_star_class = yes
     spawn_planet = {
@@ -65,7 +65,7 @@ AIO_create_hexagonal_orbital_array = {
 AIO_create_ringworld_array = {
     random_system_planet = {
         limit = { is_star = yes }
-        AIO_change_random_pc = { STAR = 1 }
+        inline_script = AIO/random_star_pc
     }
     AIO_change_star_class = yes
 
@@ -168,7 +168,7 @@ AIO_create_ringworld_array = {
 AIO_create_triangular_planet_array = {
     random_system_planet = {
         limit = { is_star = yes }
-        AIO_change_random_pc = { STAR = 1 }
+        inline_script = AIO/random_star_pc
     }
     AIO_change_star_class = yes
 
@@ -329,7 +329,7 @@ AIO_create_black_hole_cluster = {
 AIO_create_concentric_orbital_array = {
     random_system_planet = {
         limit = { is_star = yes }
-        AIO_change_random_pc = { STAR = 1 }
+        inline_script = AIO/random_star_pc
     }
     AIO_change_star_class = yes
 
@@ -554,7 +554,7 @@ AIO_create_recursive_satellite_branch = {
 AIO_create_recursive_satellite_tree = {
     random_system_planet = {
         limit = { is_star = yes }
-        AIO_change_random_pc = { STAR = 1 }
+        inline_script = AIO/random_star_pc
     }
     AIO_change_star_class = yes
 

@@ -1,0 +1,159 @@
+# Per 100 workforce; one full district produces 12 resources and consumes 12 energy.
+
+AIO_dark_matter_worker = {
+    category = specialist
+    swappable_data = {
+        default = {
+            condition_string = SPECIALIST_JOB_TRIGGER
+            icon = technician
+            building_icon = building_research_lab_1
+        }
+    }
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    possible = { complex_specialist_job_check_trigger = yes }
+    resources = {
+        category = planet_jobs
+        produces = { sr_dark_matter = 2 }
+        upkeep = { energy = 4 }
+    }
+    weight = { weight = @specialist_job_weight }
+}
+
+AIO_dark_matter_drone = {
+    category = complex_drone
+    swappable_data = {
+        default = {
+            condition_string = DRONE_JOB_TRIGGER
+            icon = technician
+            building_icon = building_research_lab_1
+        }
+    }
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_drone_job
+    possible = { can_think = yes }
+    resources = {
+        category = planet_jobs
+        produces = { sr_dark_matter = 2 }
+        upkeep = { energy = 4 }
+    }
+    weight = { weight = @complex_drone_job_weight }
+}
+
+AIO_living_metal_worker = {
+    category = specialist
+    swappable_data = {
+        default = {
+            condition_string = SPECIALIST_JOB_TRIGGER
+            icon = miner
+            building_icon = building_research_lab_1
+        }
+    }
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    possible = { complex_specialist_job_check_trigger = yes }
+    resources = {
+        category = planet_jobs
+        produces = { sr_living_metal = 2 }
+        upkeep = { alloys = 4 }
+    }
+    weight = { weight = @specialist_job_weight }
+}
+
+AIO_living_metal_drone = {
+    category = complex_drone
+    swappable_data = {
+        default = {
+            condition_string = DRONE_JOB_TRIGGER
+            icon = miner
+            building_icon = building_research_lab_1
+        }
+    }
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_drone_job
+    possible = { can_think = yes }
+    resources = {
+        category = planet_jobs
+        produces = { sr_living_metal = 2 }
+        upkeep = { alloys = 4 }
+    }
+    weight = { weight = @complex_drone_job_weight }
+}
+
+AIO_nanites_worker = {
+    category = specialist
+    swappable_data = {
+        default = {
+            condition_string = SPECIALIST_JOB_TRIGGER
+            icon = foundry
+            building_icon = building_research_lab_1
+        }
+    }
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_specialist_job
+    possible = { complex_specialist_job_check_trigger = yes }
+    resources = {
+        category = planet_jobs
+        produces = { nanites = 2 }
+        upkeep = {
+            energy = 2
+            alloys = 2
+            sr_living_metal = 0.05
+        }
+    }
+    weight = { weight = @specialist_job_weight }
+}
+
+AIO_nanites_drone = {
+    category = complex_drone
+    swappable_data = {
+        default = {
+            condition_string = DRONE_JOB_TRIGGER
+            icon = foundry
+            building_icon = building_research_lab_1
+        }
+    }
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+    possible_precalc = can_fill_drone_job
+    possible = { can_think = yes }
+    resources = {
+        category = planet_jobs
+        produces = { nanites = 2 }
+        upkeep = {
+            energy = 2
+            alloys = 2
+            sr_living_metal = 0.05
+        }
+    }
+    weight = { weight = @complex_drone_job_weight }
+}

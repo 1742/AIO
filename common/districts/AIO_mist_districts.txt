@@ -1,0 +1,303 @@
+# Urban infrastructure follows vanilla city / hive / nexus districts.
+# Resource districts grant their base workforce directly; specializations add native jobs/buildings.
+@AIO_mist_district_alloys_cost = 200
+@AIO_mist_district_energy_upkeep = 2
+@AIO_mist_district_jobs = 800
+# Applied to each of the three research job types.
+@AIO_mist_district_research_jobs = 200
+@AIO_mist_district_buildtime = 360
+
+
+district_AIO_mist_research = {
+    icon = district_hab_science
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_mist_research }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist }
+    
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+    }
+    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs }
+    inline_script = { script = jobs/researchers_add AMOUNT = @AIO_mist_district_research_jobs }
+    ai_weight = { weight = 1 }
+}
+
+district_AIO_mist_farm = {
+    icon = district_farming
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_mist_farm }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist }
+    
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+    }
+    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_farmer_add = @AIO_mist_district_jobs
+    }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_agri_drone_add = @AIO_mist_district_jobs
+    }
+    ai_weight = { weight = 1 }
+}
+
+district_AIO_mist_alloys = {
+    icon = district_arcology_arms_industry
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_mist_alloys }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist }
+    
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+    }
+    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_foundry_add = @AIO_mist_district_jobs
+    }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_fabricator_add = @AIO_mist_district_jobs
+    }
+    ai_weight = { weight = 1 }
+}
+
+district_AIO_mist_goods = {
+    icon = district_arcology_civilian_industry
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_mist_goods }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist
+		owner = { country_uses_consumer_goods = yes } }
+    
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+    }
+    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_artisan_add = @AIO_mist_district_jobs
+    }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_artisan_drone_add = @AIO_mist_district_jobs
+    }
+    ai_weight = { weight = 1 }
+}
+
+district_AIO_mist_energy = {
+    icon = district_generator
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_mist_energy }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist }
+    allow = { owner = { has_technology = tech_AIO_rule_energy } }
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+    }
+    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_technician_add = @AIO_mist_district_jobs
+    }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_technician_drone_add = @AIO_mist_district_jobs
+    }
+    ai_weight = { weight = 1 }
+}
+
+district_AIO_mist_minerals = {
+    icon = district_mining
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_mist_minerals }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist }
+    allow = { owner = { has_technology = tech_AIO_rule_matter } }
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+    }
+    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_miner_add = @AIO_mist_district_jobs
+    }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_mining_drone_add = @AIO_mist_district_jobs
+    }
+    ai_weight = { weight = 1 }
+}
+
+district_AIO_mist_motes = {
+    icon = district_generator
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_mist_motes }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist }
+    allow = { owner = { has_technology = tech_AIO_rule_structure } }
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+    }
+    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_chemist_add = @AIO_mist_district_jobs
+    }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_chemist_drone_add = @AIO_mist_district_jobs
+    }
+    ai_weight = { weight = 1 }
+}
+
+district_AIO_mist_gases = {
+    icon = district_generator
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_mist_gases }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist }
+    allow = { owner = { has_technology = tech_AIO_rule_structure } }
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+    }
+    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_gas_refiner_add = @AIO_mist_district_jobs
+    }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_gas_refiner_drone_add = @AIO_mist_district_jobs
+    }
+    ai_weight = { weight = 1 }
+}
+
+district_AIO_mist_crystals = {
+    icon = district_mining
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_mist_crystals }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist }
+    allow = { owner = { has_technology = tech_AIO_rule_structure } }
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+    }
+    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_translucer_add = @AIO_mist_district_jobs
+    }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_translucer_drone_add = @AIO_mist_district_jobs
+    }
+    ai_weight = { weight = 1 }
+}
+
+district_AIO_mist_dark_matter = {
+    icon = district_generator
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_mist_dark_matter }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist }
+    allow = { owner = { has_technology = tech_AIO_rule_dark_matter } }
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+    }
+    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_AIO_dark_matter_worker_add = @AIO_mist_district_jobs
+    }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_AIO_dark_matter_drone_add = @AIO_mist_district_jobs
+    }
+    ai_weight = { weight = 1 }
+}
+
+district_AIO_mist_living_metal = {
+    icon = district_mining
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_mist_living_metal }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist }
+    allow = { owner = { has_technology = tech_AIO_rule_living_metal } }
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+    }
+    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_AIO_living_metal_worker_add = @AIO_mist_district_jobs
+    }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_AIO_living_metal_drone_add = @AIO_mist_district_jobs
+    }
+    ai_weight = { weight = 1 }
+}
+
+district_AIO_mist_nanites = {
+    icon = district_arcology_arms_industry
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_mist_nanites }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist }
+    allow = { owner = { has_technology = tech_AIO_rule_nanites } }
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+    }
+    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_AIO_nanites_worker_add = @AIO_mist_district_jobs
+    }
+    triggered_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_AIO_nanites_drone_add = @AIO_mist_district_jobs
+    }
+    ai_weight = { weight = 1 }
+}

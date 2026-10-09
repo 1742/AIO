@@ -1,0 +1,72 @@
+namespace = AIO_mist_test_events
+
+# Run in country scope: event AIO_mist_test_events.201
+# No on_action, no costs, no technology grants, no changes to the real gate chain.
+country_event = {
+	id = AIO_mist_test_events.201
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { NOT = { exists = event_target:AIO_mist_test_system } }
+			save_global_event_target_as = AIO_mist_test_owner
+			capital_scope = {
+				solar_system = {
+					spawn_system = {
+						min_distance = 15
+						max_distance = 30
+						initializer = AIO_mist_test_initializer
+						hyperlane = yes
+					}
+				}
+			}
+			AIO_mist_create_test_colony_effect = yes
+			set_visited = event_target:AIO_mist_test_system
+			country_event = { id = AIO_mist_test_events.202 days = 2 }
+		}
+		else = { log = "AIO M0: test system already exists; no duplicate created." }
+	}
+}
+
+# Optional: seed 100 population once for non-virtual tests, without moving capital pops.
+country_event = {
+	id = AIO_mist_test_events.203
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				exists = event_target:AIO_mist_test_colony
+				is_same_value = event_target:AIO_mist_test_owner
+				NOT = { has_country_flag = AIO_mist_test_seeded }
+			}
+			event_target:AIO_mist_test_colony = {
+				create_pop_group = { species = owner size = 100 }
+			}
+			set_country_flag = AIO_mist_test_seeded
+		}
+	}
+}
+
+country_event = {
+	id = AIO_mist_test_events.202
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { exists = event_target:AIO_mist_test_colony }
+			log = "AIO M0: colony initialized. Inspect districts, migration, capital, and fleet UI."
+		}
+		else = { log = "AIO M0 ERROR: colony target missing; inspect carries_colony and error.log." }
+	}
+}
+
+# Console-only production-route test, after activating the AIO ascension perk.
+# Creates the live mist without injecting research, currency, or upgrade flags.
+country_event = {
+    id = AIO_mist_test_events.204
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_ascension_perk = ap_AIO_allinone }
+    immediate = { AIO_create_HS_system_effect = yes }
+}

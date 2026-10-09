@@ -4,7 +4,6 @@ tech_AIO_exponential_learning_theory = {
     cost = 10000
     tier = 5
     category = { computing }
-    ai_update_type = all
     is_rare = yes
     weight = 0
 
@@ -30,7 +29,6 @@ tech_AIO_ascending_dimensionality_theory = {
     cost = 10000
     tier = 5
     category = { particles }
-    ai_update_type = all
     is_dangerous = yes
     weight = 0
 

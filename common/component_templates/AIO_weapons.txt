@@ -6,6 +6,7 @@ weapon_component_template = {
 	size = titanic
 	entity = "invisible_turret_entity"
 	type = instant
+	projectile_gfx = "tachyon_lance"
 	hidden = yes
 	icon = "GFX_ship_part_planet_lance_white"
 	icon_frame = 1

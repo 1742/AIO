@@ -1,0 +1,15 @@
+# Planet scope. Existing equal-weight class pool; safety checks are inlined at parse time.
+random_list = {
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_black_hole } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_a_star } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_b_star } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_f_star } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_g_star } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_k_star } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_m_giant_star } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_m_star } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_neutron_star } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_pulsar } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_rift_star } }
+    1 = { inline_script = { script = AIO/safe_change_pc NEW_PC = pc_t_star } }
+}

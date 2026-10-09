@@ -13,16 +13,16 @@
  AIO_mega_01_fact: "$AIO_mega_01$"
  AIO_mega_01_fact_DESC: "$AIO_mega_01_DESC$"
  AIO_mega_01: "万门之门"
- AIO_mega_01_DESC: "前往无尽维度的“门关”"
+ AIO_mega_01_DESC:0 "连接现实与无名之雾的门关。内部殖民地初始容量12，岗位由人口承担。"
  AIO_mega_01_MEGASTRUCTURE_DETAILS: "前往无尽维度的“门关”"
  AIO_mega_02: "银时之匙"
- AIO_mega_02_DESC: "通往无尽维度的“钥匙”"
+ AIO_mega_02_DESC:0 "容量提高到24。建造前需通过二级规则研究建立暗物质生产。"
  AIO_mega_02_MEGASTRUCTURE_DETAILS: "通往无尽维度的“钥匙”"
  AIO_mega_03: "永恒王座"
- AIO_mega_03_DESC: "观测所有维度和存在的“点”"
+ AIO_mega_03_DESC:0 "容量提高到40。建造前需通过三级规则研究建立活体金属生产。"
  AIO_mega_03_MEGASTRUCTURE_DETAILS: "观测所有维度和存在的“点”"
  AIO_mega_04: "犹格索托斯"
- AIO_mega_04_DESC: "无尽维度之外的超然结构"
+ AIO_mega_04_DESC:0 "容量提高到64，开放反复延展空间和远程投射。建造前需建立纳米机器人生产。"
  AIO_mega_04_MEGASTRUCTURE_DETAILS: "无尽维度之外的超然结构。"
  AIO_mega_04_activate: "$AIO_mega_04$"
  AIO_mega_04_activate_DESC: "$AIO_mega_04_DESC$"
@@ -32,9 +32,14 @@
 
  #region 提示
 
- AIO_mega_01.fail.nomadic: "£trigger_no£需要§Y$situation_nomad_economy$§!进度 >= 5000！"
- AIO_mega_02.fail.nomadic: "£trigger_no£需要§Y$situation_nomad_economy$§!进度 >= 10000！"
- AIO_mega_03.fail.nomadic: "£trigger_no£需要§Y$situation_nomad_economy$§!进度 >= 20000！"
- AIO_mega_04.fail.nomadic: "£trigger_no£需要§Y$situation_nomad_economy$§!进度 >= 50000！"
 
  #endregion
+
+ # Log fixes: native bypass keys and the restored nomadic reserve checks.
+ BYPASS_BYPASS_AIO_ULTIMATE_GATE:0 "$AIO_mega_01$"
+ ENTRY_BYPASS_BYPASS_AIO_ULTIMATE_GATE:0 "$AIO_mega_01$"
+ EXIT_BYPASS_BYPASS_AIO_ULTIMATE_GATE:0 "$AIO_mega_01$"
+ AIO_mega_01.fail.nomadic:0 "游牧帝国的运营储备必须不低于本次工程所需的能源费用。"
+ AIO_mega_02.fail.nomadic:0 "游牧帝国的运营储备必须不低于本次工程所需的能源费用。"
+ AIO_mega_03.fail.nomadic:0 "游牧帝国的运营储备必须不低于本次工程所需的能源费用。"
+ AIO_mega_04.fail.nomadic:0 "游牧帝国的运营储备必须不低于本次工程所需的能源费用。"

@@ -21,13 +21,10 @@ ap_AIO_allinone = {
 			fail_text = "requires_ascension_perks_3"
 			num_ascension_perks > 2
 		}
-		custom_tooltip = {
-            fail_text = AIO_requires_gestalt
-            has_ethic = ethic_gestalt_consciousness
-        }
         custom_tooltip = {
             fail_text = AND_TRIGGER_STARTS
             NOR = {
+				has_valid_civic = civic_fanatic_purifiers
                 has_valid_civic = civic_machine_terminator
                 has_valid_civic = civic_machine_assimilator
                 has_valid_civic = civic_machine_servitor

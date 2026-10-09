@@ -7,7 +7,7 @@ crisis_AIO_level_1 = {
 		menp_AIO_al_research
 		menp_AIO_buildings_1
 		menp_AIO_component_1
-		menp_AIO_interference
+		menp_AIO_dimensionality
 	}
 
 	on_unlock = { country_event = { id = AIO_crisis_events.301 } }
@@ -28,7 +28,7 @@ crisis_AIO_level_2 = {
 			}
 		}
 	}
-	required_crisis_currency = 2000
+	required_crisis_currency = 1000
 
 	# REWARDS
 	perks = {
@@ -53,7 +53,7 @@ crisis_AIO_level_3 = {
 			}
 		}
 	}
-	required_crisis_currency = 6000
+	required_crisis_currency = 4000
 
 	# REWARDS
 	perks = {
@@ -78,7 +78,7 @@ crisis_AIO_level_4 = {
 			}
 		}
 	}
-	required_crisis_currency = 18000
+	required_crisis_currency = 9000
 
 	# REWARDS
 	perks = {
@@ -103,7 +103,7 @@ crisis_AIO_level_5 = {
 			}
 		}
 	}
-	required_crisis_currency = 45000
+	required_crisis_currency = 18000
 
 	# REWARDS
 	perks = {

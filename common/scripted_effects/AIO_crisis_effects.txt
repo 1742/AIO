@@ -170,7 +170,7 @@ AIO_create_HS_system_effect = {
             }
 
             if = {
-                limit = { NOT = { any_system_megastructure = { is_megastructure_type = AIO_mega_01 } } }
+                limit = { NOT = { any_system_megastructure = { AIO_is_internal_mega = yes } } }
                 spawn_megastructure = {
                     type = AIO_mega_01
                     planet = star
@@ -182,6 +182,7 @@ AIO_create_HS_system_effect = {
             set_name = AIO_HYPER_DIMENSIONAL_SPACE
         }
     }
+    [[CREATE_COLONY] AIO_mist_create_colony_effect = yes ]
 }
 
 
@@ -210,7 +211,7 @@ AIO_crisis_finish_ascension_effect = {
 
     every_war = { end_war_effect = yes }
     AIO_ascension_effect = yes
-    AIO_ascension_galaxy_effect = yes
+    inline_script = AIO/ascension_galaxy
 }
 
 # scope: country
@@ -253,7 +254,13 @@ AIO_ascension_effect = {
             kill_leader = { show_notification = no fire = yes }
         }
         # 摧毁殖民地
-        every_owned_colony = { destroy_colony = yes }
+        every_owned_colony = {
+            destroy_colony = yes
+            if = {
+                limit = { is_planet_class = pc_AIO_mist }
+                remove_planet = yes
+            }
+        }
         # 转移首都
         event_target:AIO_HS_system = {
             random_system_planet = {
@@ -263,13 +270,8 @@ AIO_ascension_effect = {
                 destroy_colony = yes
             }
         }
-        # 移除所有原版巨构、现实干涉仪
+        # 移除所有原版巨构
         every_system_within_border = { AIO_safe_remove_system_megastructures = yes }
-        every_owned_megastructure = {
-            limit = { is_megastructure_type = AIO_reality_interferometer }
-            solar_system = { AIO_interference_remove_source = yes }
-            remove_megastructure = this
-        }
         # 移除所有舰队及恒星基地
         every_owned_fleet = {
             limit = { AIO_safe_remove_fleet_exclude_API = no }
@@ -301,146 +303,5 @@ AIO_ascension_effect = {
         save_global_event_target_as = AIO_empire_country
         # 允许进入牢塞星系
         set_country_flag = protected_from_queen_storm
-    }
-}
-
-# scope: any
-AIO_ascension_galaxy_effect = {
-    # 河系影响
-    no_scope = {
-        every_system = {
-            limit = {
-                NOR = {
-                    is_star_class = sc_AIO_void
-                    has_star_flag = AIO_HS_system
-                    has_star_flag = AIO_TUG_system
-                    AIO_is_crisis_mega_system = yes
-                    has_star_flag = synth_queen_capital
-                }
-            }
-            while = {
-                count = 2
-                random_list = {
-                    2 = {}
-                    3 = {
-                        # 随机改变天体类型
-                        random_system_planet = {
-                            limit = {
-                                AIO_safe_remove_planet_exclude_API = no
-                                is_artificial = no
-                            }
-                            AIO_safe_change_random_pc = yes
-                        }
-                    }
-                    2 = {
-                        # 随机抹除天体
-                        random_system_planet = {
-                            limit = {
-                                AIO_safe_remove_planet_exclude_API = no
-                                NOT = { is_planet_class = pc_AIO_empty_space }
-                            }
-                            AIO_safe_remove_planet = yes
-                        }
-                    }
-                    1 = {
-                        modifier = {
-                            factor = 0
-                            AIO_safe_remove_system_exclude_API = yes
-                        }
-                        # 抹除星系
-                        AIO_DAIT_erase_system_effect = yes
-                    }
-                }
-            }
-        }
-
-        every_country = {
-            limit = {
-                OR = {
-                    is_country_type = default
-                    is_country_type = fallen_empire
-                    is_country_type = awakened_fallen_empire
-                }
-            }
-            while = {
-                count = 2
-                random_list = {
-                    4 = {}
-                    3 = {
-                        # 改变政权
-                        modifier = {
-                            factor = 0
-                            NOT = { is_country_type = default }
-                        }
-                        change_government = {
-                            authority = random
-                            civics = random
-                            remove_invalid_civics = yes
-                        }
-                    }
-                    2 = {
-                        # 随机去军事化
-                        every_owned_fleet = {
-                            limit = { AIO_safe_remove_fleet_exclude_API = no }
-                            destroy_fleet = this
-                        }
-                    }
-                    1 = {
-                        # 随机抹除国家
-                        destroy_country = yes
-                    }
-                }
-            }
-        }
-    }
-}
-
-# 添加随机科技, scope: country
-AIO_add_random_tech = {
-    optimize_memory
-
-    random_list = {
-        1 = {
-            add_random_research_option = {
-                area = physics
-                add_progress = 1
-                fail_effects = {
-                    add_monthly_resource_mult = {
-                        resource = physics_research
-                        value = @tier3researchreward
-                        min = @tier3researchmin
-                        max = @tier3researchmax
-                    }
-                }
-            }
-        }
-        1 = {
-            add_random_research_option = {
-                area = society
-                add_progress = 1
-                fail_effects = {
-                    add_monthly_resource_mult = {
-                        resource = society_research
-                        value = @tier3researchreward
-                        min = @tier3researchmin
-                        max = @tier3researchmax
-                    }
-                }
-            }
-        }
-        1 = {
-            add_random_research_option = {
-                area = engineering
-                add_progress = 1
-                fail_effects = {
-                    add_monthly_resource_mult = {
-                        resource = engineering_research
-                        value = @tier3researchreward
-                        min = @tier3researchmin
-                        max = @tier3researchmax
-                    }
-                }
-            }
-        }
     }
 }

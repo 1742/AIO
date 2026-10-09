@@ -3,29 +3,25 @@
 on_game_start_country = {
     events = {
         AIO_mod_events.201 # 更新提醒
+        AIO_AIT_events.201 # 同步起始科技与规则
+        AIO_AIT_events.203 # 持续银河规律
         AIO_crisis_events.201  # 万物归一起源
     }
 }
 
 on_monthly_pulse_country = {
 	events = {
-        AIO_interference_events.204 # 刷新干涉源
         AIO_projection_events.302 # 共享亚弗戈蒙国家回收失去局势的锚点
     }
 }
 
-on_yearly_pulse = {
-    events = {
-        AIO_crisis_events.804  # 天灾目标，建造现实干涉仪
-    }
-}
 
 on_tech_increased = {
     events = {
         AIO_crisis_events.401 # 完成科技升维假设，提示建造视相引擎
         AIO_crisis_events.801  # 天灾目标，研究科技
 		AIO_compatible_events.201 # 授予原版堕落帝国建筑科技
-        AIO_compatible_events.202 # 授予原版灵能光环科技
+        AIO_AIT_events.201 # 规则科技：一次应用及后续选项
     }
 }
 
@@ -37,17 +33,9 @@ on_country_destroyed = {
     }
 }
 
-# root = fleet, from = departed system.
-on_leaving_system_fleet = {
-    events = {
-        AIO_interference_events.202 # 方舟离开星系，记录光环等级
-    }
-}
-
 on_entering_system_fleet = {
     events = {
         AIO_crisis_events.901  # 驱逐无名之雾的其他舰船
-        AIO_interference_events.203 # 方舟进入星系，生成光环
     }
 }
 
@@ -61,22 +49,12 @@ on_fleet_destroyed_victim = {
 
 
 
-# Executed when a megastructure has a new owner
-# this = new owner
-# from = megastructure
-# fromfrom = old owner (if existing)
-on_megastructure_change_owner = {
-    events = {
-        AIO_crisis_events.902 # 失去现实干涉仪
-    }
-}
-
 # Fired when a ship finishes researching an anomaly.
 # this = ship
 # from = planet
 anomaly_success = {
     events = {
-        AIO_crisis_events.8021 # 天灾目标，完成特殊项目
+        AIO_crisis_events.8021 # 天灾目标，完成异常
     }
 }
 
@@ -106,4 +84,17 @@ on_AIO_projection_started = {
 	events = {
 		AIO_projection_events.201
 	}
+}
+
+on_country_created = {
+    events = {
+        AIO_AIT_events.202
+    }
+}
+
+# Includes pre-FTLs becoming active empires without creating a new country object.
+on_country_type_changed = {
+    events = {
+        AIO_AIT_events.203
+    }
 }

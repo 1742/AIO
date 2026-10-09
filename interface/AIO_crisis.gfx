@@ -88,7 +88,7 @@ spriteTypes = {
 	}
 	# 现实干涉
 	spriteType = {
-		name = GFX_menp_AIO_interference_icon
+		name = GFX_menp_AIO_dimensionality_icon
 		texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_interference.dds
 		noOfFrames = 2
 	}

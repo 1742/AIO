@@ -1,0 +1,98 @@
+# Resource jobs remain on the district. These zones house matching factories and support facilities.
+
+zone_AIO_mist_motes = {
+    icon = GFX_district_specialization_volatile_motes
+    base_buildtime = @zone_buildtime
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+    zone_sets = { AIO_mist }
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+    max_buildings = 3
+    planet_modifier = { zone_building_slots_add = 3 }
+    included_building_sets = {
+        industrial
+        foundry
+    }
+    ai_priority = 5
+}
+
+zone_AIO_mist_gases = {
+    icon = GFX_district_specialization_exotic_gases
+    base_buildtime = @zone_buildtime
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+    zone_sets = { AIO_mist }
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+    max_buildings = 3
+    planet_modifier = { zone_building_slots_add = 3 }
+    included_building_sets = {
+        industrial
+        foundry
+    }
+    ai_priority = 5
+}
+
+zone_AIO_mist_crystals = {
+    icon = GFX_district_specialization_rare_crystals
+    base_buildtime = @zone_buildtime
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+    zone_sets = { AIO_mist }
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+    max_buildings = 3
+    planet_modifier = { zone_building_slots_add = 3 }
+    included_building_sets = {
+        industrial
+        foundry
+    }
+    ai_priority = 5
+}
+
+zone_AIO_mist_support = {
+    icon = GFX_district_specialization_urban
+    base_buildtime = @zone_buildtime
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+    zone_sets = { AIO_mist }
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+    max_buildings = 3
+    planet_modifier = { zone_building_slots_add = 3 }
+    included_building_sets = { urban }
+    ai_priority = 5
+}

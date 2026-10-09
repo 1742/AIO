@@ -1,0 +1,105 @@
+@AIO_rule_tech_cost = 75000
+@AIO_rule_tech_weight = 15
+
+
+tech_AIO_rule_energy = {
+    icon = tech_cosmogenesis_thesis
+    area = physics
+    category = { particles }
+    tier = 5
+    cost = @AIO_rule_tech_cost
+    weight = @AIO_rule_tech_weight
+    is_dangerous = yes
+    potential = { has_ascension_perk = ap_AIO_allinone }
+    prereqfor_desc = {
+        custom = {
+            title = tech_AIO_rule_energy
+            desc = tech_AIO_rule_energy_effect
+        }
+    }
+}
+
+tech_AIO_rule_matter = {
+    icon = tech_cosmogenesis_thesis
+    area = engineering
+    category = { materials }
+    tier = 5
+    cost = @AIO_rule_tech_cost
+    weight = @AIO_rule_tech_weight
+    is_dangerous = yes
+    potential = { has_ascension_perk = ap_AIO_allinone }
+    prereqfor_desc = {
+        custom = {
+            title = tech_AIO_rule_matter
+            desc = tech_AIO_rule_matter_effect
+        }
+    }
+}
+
+tech_AIO_rule_structure = {
+    icon = tech_cosmogenesis_thesis
+    area = engineering
+    category = { materials }
+    tier = 5
+    cost = @AIO_rule_tech_cost
+    weight = @AIO_rule_tech_weight
+    is_dangerous = yes
+    potential = { has_ascension_perk = ap_AIO_allinone }
+    prereqfor_desc = {
+        custom = {
+            title = tech_AIO_rule_structure
+            desc = tech_AIO_rule_structure_effect
+        }
+    }
+}
+
+tech_AIO_rule_dark_matter = {
+    icon = tech_cosmogenesis_thesis
+    area = physics
+    category = { particles }
+    tier = 5
+    cost = @AIO_rule_tech_cost
+    weight = @AIO_rule_tech_weight
+    is_dangerous = yes
+    potential = { has_ascension_perk = ap_AIO_allinone }
+    prereqfor_desc = {
+        custom = {
+            title = tech_AIO_rule_dark_matter
+            desc = tech_AIO_rule_dark_matter_effect
+        }
+    }
+}
+
+tech_AIO_rule_living_metal = {
+    icon = tech_cosmogenesis_thesis
+    area = society
+    category = { biology }
+    tier = 5
+    cost = @AIO_rule_tech_cost
+    weight = @AIO_rule_tech_weight
+    is_dangerous = yes
+    potential = { has_ascension_perk = ap_AIO_allinone }
+    prereqfor_desc = {
+        custom = {
+            title = tech_AIO_rule_living_metal
+            desc = tech_AIO_rule_living_metal_effect
+        }
+    }
+}
+
+tech_AIO_rule_nanites = {
+    icon = tech_cosmogenesis_thesis
+    area = engineering
+    category = { materials }
+    tier = 5
+    cost = @AIO_rule_tech_cost
+    weight = @AIO_rule_tech_weight
+    is_dangerous = yes
+    potential = { has_ascension_perk = ap_AIO_allinone }
+    prereqfor_desc = {
+        custom = {
+            title = tech_AIO_rule_nanites
+            desc = tech_AIO_rule_nanites_effect
+        }
+    }
+}

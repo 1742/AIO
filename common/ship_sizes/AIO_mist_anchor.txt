@@ -1,0 +1,36 @@
+# Fixed colony carrier using the tested habitat-station class.
+# No propulsion components, no automation or arkship scripted actions.
+AIO_mist_anchor = {
+	class = shipclass_habitat_station
+	carries_colony = pc_AIO_mist
+	hero_ship = {
+		hero_ship_fleet_background = GFX_arkship_fleetview_civilian
+	}
+	never_lost = yes
+	is_space_station = no
+	max_speed = 0
+	acceleration = 0
+	rotation_speed = 0
+	max_hitpoints = 10000
+	size_multiplier = 1
+	fleet_slot_size = 1
+	formation_priority = 1
+	collision_radius = 4
+	entity = civilian_arkship_01_stage_1_entity
+	num_target_locators = 0
+	icon = ship_size_civilian_arkship_tier_1
+	map_counter_icon = ship_counter_16
+	icon_frame = 16
+	ship_class_icon_frame = 64
+	arkship_picture = "arkship_civilian"
+	planet_view_header = GFX_arkship_planetview_header_civilian
+	display_attack_neutral_fleet_button = no
+	is_designable = no
+	enable_default_design = no
+	can_have_federation_design = no
+	potential_construction = { always = no }
+	possible_construction = { always = no }
+	available_to_everyone = no
+	cloaking_forbidden = yes
+	resources = { category = starbase_arkships }
+}

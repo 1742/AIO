@@ -1,0 +1,11 @@
+﻿l_english:
+ pc_AIO_mist:0 "Nameless Mist Habitat"
+ pc_AIO_mist_desc:0 "An advanced colony beyond the cross-section. Internal structures expand its capacity; Applied Infinity research unlocks independent resource districts."
+ district_AIO_mist_research:0 "Transdimensional Research District"
+ district_AIO_mist_research_plural:0 "Transdimensional Research Districts"
+ district_AIO_mist_research_desc:0 "Provides 200 workforce each for physicists, biologists and engineers, or their gestalt equivalents. District upkeep: 2 energy monthly; job inputs are separate."
+ AIO_mist_anchor:0 "Mist Anchorage"
+ AIO_mist_anchor_plural:0 "Mist Anchorages"
+ NAME_AIO_Mist_Anchor:0 "Mist Anchorage"
+ NAME_AIO_Mist_Colony:0 "Mist Habitat"
+ AIO_MIST_TEST_SYSTEM:0 "Nameless Mist Test System"
