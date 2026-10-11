@@ -1,0 +1,88 @@
+AIO_final_main_situation = {
+    picture = GFX_evt_AIO_projection_Aforgomom_omen_nomask
+    category = negative
+    situation_log_category = crises
+    complete_icon_frame = GFX_situation_outcome_frame_red
+    complete_icon = GFX_situation_outcome_negative
+    initial_progress = 0
+    progress_direction = monodirectional
+    stages = {
+        stage_1 = {
+            end = 1
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_red
+        }
+        stage_2 = {
+            end = 3
+            icon = GFX_situation_stage_2
+            icon_background = GFX_situation_stage_frame_red
+        }
+        stage_3 = {
+            end = 7
+            icon = GFX_situation_stage_3
+            icon_background = GFX_situation_stage_frame_red
+        }
+    }
+    monthly_progress = { base = 0 }
+    approach = {
+        name = AIO_final_approach
+        icon = GFX_situation_approach_research
+        icon_background = GFX_situation_approach_bg_green
+        default = yes
+        ai_weight = { base = 1 }
+    }
+}
+
+AIO_final_locate_situation = {
+    picture = GFX_evt_AIO_projection_Aforgomom_omen_nomask
+    category = negative
+    situation_log_category = crises
+    complete_icon_frame = GFX_situation_outcome_frame_red
+    complete_icon = GFX_situation_outcome_negative
+    initial_progress = 0
+    progress_direction = monodirectional
+
+    on_start = {
+        every_playable_country = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_final_locate_start
+                days = 30
+                target = root.target
+            }
+        }
+    }
+    on_progress_complete = {
+
+    }
+
+    total_progress = {
+        base = 0
+        add = owner.AIO_final_wait
+        add = @AIO_final_exist_time
+    }
+    stages = {
+        stage_1 = {
+            section_weight = owner.AIO_final_wait
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_red
+        }
+        stage_2 = {
+            section_weight = {
+                base = 0
+                add = owner.AIO_final_wait
+                add = @AIO_final_exist_time
+            }
+            icon = GFX_situation_stage_2
+            icon_background = GFX_situation_stage_frame_red
+        }
+    }
+    monthly_progress = { base = 0 }
+    approach = {
+        name = AIO_final_locate_approach
+        icon = GFX_situation_approach_research
+        icon_background = GFX_situation_approach_bg_green
+        default = yes
+        ai_weight = { base = 1 }
+    }
+}

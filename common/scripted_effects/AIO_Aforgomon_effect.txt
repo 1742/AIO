@@ -1,0 +1,48 @@
+# any；所有锚点和正式化身共用一个永久敌对国家。
+AIO_ensure_Aforgomom_country = {
+    if = {
+        limit = { NOT = { exists = event_target:AIO_Aforgomon_country } }
+        AIO_create_Aforgomom_country = yes
+    }
+}
+
+AIO_create_Aforgomom_country = {
+    create_country = {
+        name = AIO_Aforgomon
+        type = AIO_Aforgomom
+        effect = {
+            set_country_flag = AIO_Aforgomom_country
+            save_global_event_target_as = AIO_Aforgomon_country
+            set_country_flag = protected_from_queen_storm
+        }
+    }
+}
+
+# system；怒气属于星系，舰队重生时继续读取该星系的值。
+AIO_create_Aforgomon_fleet = {
+    create_fleet = {
+        effect = {
+            set_name = AIO_Aforgomon_Wrath
+            set_owner = event_target:AIO_Aforgomon_country
+            create_ship = {
+                name = AIO_Aforgomon_Wrath
+                design = $DESIGN$
+                graphical_culture = event_target:AIO_Aforgomom_country
+            }
+            set_location = { target = prev.star distance = 0 angle = random }
+            if = {
+                limit = {
+                    solar_system = {
+                        check_variable = { which = AIO_Aforgomon_Wrath value > 0 }
+                        check_variable = { which = AIO_Aforgomon_Wrath value < 10 }
+                    }
+                }
+                add_modifier = { modifier = AIO_Aforgomon_Wrath_modifier mult = value:AIO_Aforgomon_Wrath_factor }
+            }
+            set_fleet_stance = aggressive
+            set_aggro_range = 10000
+            set_fleet_flag = $FLAG$
+            fleet_event = { id = AIO_Aforgomon_events.201 days = 100 }
+        }
+    }
+}

@@ -3,9 +3,9 @@
  AIO_otherworld_walker_plural: "$AIO_otherworld_walker$"
  NAME_AIO_walker: "$AIO_otherworld_walker$"
 
- AIO_Aforgomom_Wrath: "The Wrath of Aforgomom"
- AIO_Aforgomom_Wrath_plural: "$AIO_Aforgomom_Wrath$"
- NAME_AIO_Aforgomom_Wrath: "$AIO_Aforgomom_Wrath$"
+ AIO_Aforgomon_Wrath: "The Wrath of Aforgomom"
+ AIO_Aforgomon_Wrath_plural: "$AIO_Aforgomon_Wrath$"
+ NAME_AIO_Aforgomom_Wrath: "$AIO_Aforgomon_Wrath$"
 
  QUASISTELLAR_GUN_ENTITY: "Celestial Meteor Lance"
  AIO_EXTRA_LARGE_AURA_AFORGOMOM_CHAIN: "The Chain of Aforgomom"

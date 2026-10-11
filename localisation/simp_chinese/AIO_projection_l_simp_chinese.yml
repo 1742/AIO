@@ -14,8 +14,8 @@
 
  #region main situation
 
- AIO_projection_Aforgomom: "亚弗戈蒙降临：[Target.GetName]"
- AIO_projection_Aforgomom_type: "亚弗戈蒙远程投射"
+ AIO_projection_Aforgomon: "亚弗戈蒙降临：[Target.GetName]"
+ AIO_projection_Aforgomon_type: "亚弗戈蒙远程投射"
  AIO_projection_Aforgomom_desc: "我们已在§Y[Target.GetName]§!钉下锚点。现实正围绕它缓缓开裂，亚弗戈蒙的降临只待仪式完成。各国可以争论这是否属于战争，也可以集结舰队，试着替这片星空争取更多时间。\n\n仪式完成后，将在中心及 §Y[This.AIO_projection_range] 跳§!内的星系召唤亚弗戈蒙。\n本次锚点强度：§Y[This.AIO_projection_strength]§!\n\n§R锚点和化身均敌视所有帝国。§!锚点被击毁则本次仪式中止。"
  AIO_projection_Aforgomom_monthly_change_tooltip: "每月推进 1 点，24 点完成。其他帝国可以通过观察局势查看进度；摧毁本次锚点可以阻止召唤。"
  AIO_projection_maintain_ritual: "维持"

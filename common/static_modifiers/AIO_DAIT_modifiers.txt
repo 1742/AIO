@@ -1,7 +1,7 @@
 # AIO静态修正
 
 # 亚弗戈蒙之怒
-AIO_Aforgomom_Wrath_modifier = {
+AIO_Aforgomon_Wrath_modifier = {
     icon = gfx/interface/icons/modifiers/mod_weapon_type_energy_weapon_damage_mult.dds
 
     ship_weapon_damage = 1

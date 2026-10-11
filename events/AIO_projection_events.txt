@@ -30,7 +30,7 @@ country_event = {
 	}
 
 	option = {
-		name = AIO_Aforgomom
+		name = AIO_Aforgomon
 		country_event = {
 			id = AIO_projection_events.301
 			scopes = { from = from fromfrom = fromfrom }

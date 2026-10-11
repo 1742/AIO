@@ -1,3 +1,11 @@
+# 终局相关变量
+@AIO_final_base_wait = 2000
+@AIO_final_min_wait = 200
+@AIO_final_sub = 200
+@AIO_final_exist_time = 360
+@AIO_final_interval = 100
+
+
 # 投射参数；调整时同步两份 AIO_projection 本地化中的费用和时间。
 @AIO_projection_cooldown_days = 3600
 @AIO_projection_logic_cost = 100000

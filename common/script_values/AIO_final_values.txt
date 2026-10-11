@@ -1,0 +1,9 @@
+# scope: country
+AIO_final_wait = {
+    base = 0
+    add = this.AIO_final_round
+    mult = @AIO_final_sub
+    mult = -1
+    add = @AIO_final_base_wait
+    min = @AIO_final_min_wait
+}

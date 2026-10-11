@@ -30,7 +30,7 @@ AIO_projection_anchor = {
 	}
 }
 
-AIO_Aforgomom_Wrath = {
+AIO_Aforgomon_Wrath = {
 	entity = "star_explosion_entity"
 	max_speed = 0
 	acceleration = 0

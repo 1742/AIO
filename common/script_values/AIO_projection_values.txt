@@ -1,6 +1,6 @@
 # 使用位置：正式化身舰队。怒气在其所在星系，重生时不会丢失。
-AIO_Aforgomom_Wrath_factor = {
+AIO_Aforgomon_Wrath_factor = {
 	base = 2.71
-	pow = solar_system.AIO_Aforgomom_Wrath
+	pow = solar_system.AIO_Aforgomon_Wrath
 	min = 1
 }

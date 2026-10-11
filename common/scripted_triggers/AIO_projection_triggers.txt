@@ -54,6 +54,6 @@ AIO_projection_has_anchor = {
 # system：同国锚点不参与正式化身的怒气和清场判定。
 AIO_Aforgomom_has_targets = {
 	any_fleet_in_system = {
-		NOT = { is_owned_by = event_target:AIO_Aforgomom_country }
+		NOT = { is_owned_by = event_target:AIO_Aforgomon_country }
 	}
 }

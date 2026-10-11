@@ -1,0 +1,56 @@
+# scope: country
+AIO_start_locate = {
+    hidden_effect = {
+        set_variable = { which = AIO_final_wait value = value:AIO_final_wait }
+        AIO_final_find_omen_system = yes
+    }
+    start_situation = {
+        type = AIO_final_locate_situation
+        target = event_target:AIO_final_target
+    }
+}
+
+# scope: situation
+AIO_complete_locate = {
+    target? = {
+        AIO_ensure_Aforgomom_country = yes
+        if = {
+            limit = { has_situation_flag = AIO_final_constricted }
+            AIO_create_Aforgomon_fleet = {
+                DESIGN = NAME_AIO_Aforgomom_Wrath
+                FLAG = AIO_final_constrict_fleet
+            }
+        }
+        else = {
+            AIO_create_Aforgomon_fleet = {
+                DESIGN = NAME_AIO_Aforgomom_Wrath
+                FLAG = AIO_final_normal_fleet
+            }
+        }
+    }
+}
+
+# scope: country
+AIO_final_find_omen_system = {
+    if = {
+        limit = { check_variable = { which = AIO_final_round value <= 4 } }
+        random_system = {
+            limit = {
+                distance = {
+                    source = event_target:AIO_TUG_system
+                    min_jumps = 1
+                    max_jumps = 10
+                }
+                NOR = {
+                    is_star_class = sc_AIO_void
+                    has_star_flag = AIO_Aformon_exist
+                }
+            }
+            save_event_target_as = AIO_final_target
+        }
+    }
+    else = {
+        event_target:AIO_HS_system = { save_event_target_as = AIO_final_target }
+    }
+}
+

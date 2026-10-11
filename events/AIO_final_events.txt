@@ -1,0 +1,46 @@
+namespace = AIO_final_events
+
+
+#region main situation
+
+country_event = {
+    id = AIO_final_events.201
+    title = AIO_final_events.201.title
+    desc = AIO_final_events.201.desc
+    location = event_target:AIO_HS_system
+
+    event_chain = AIO_crisis_events_chain
+
+    is_triggered_only = yes
+
+    immediate = {
+        set_country_flag = AIO_final_start
+        set_variable = { which = AIO_final_round value = 0 }
+    }
+
+    option = {
+        name = AIO_final_events.201.option
+        start_situation = {
+            type = AIO_final_main_situation
+            target = event_target:AIO_HS_system
+        }
+        AIO_start_locate = yes
+    }
+}
+
+#endregion
+
+
+#region arrive situation
+
+country_event = {
+    id = AIO_final_events.301
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = { NOT = { any_situation = { is_situation_type = AIO_final_locate_situation } } }
+
+    immediate = { AIO_start_locate = yes }
+}
+
+#endregion

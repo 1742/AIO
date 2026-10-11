@@ -488,6 +488,8 @@ country_event = {
     }
 }
 
+#endregion
+
 
 #region 其他效果实现
 
@@ -511,3 +513,5 @@ fleet_event = {
         set_mia = mia_return_home
     }
 }
+
+#endregion

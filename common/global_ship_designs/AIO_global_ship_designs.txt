@@ -1,8 +1,8 @@
 ship_design = {
-	name = "NAME_AIO_Aforgomom_Wrath"
-	ship_size = AIO_Aforgomom_Wrath
+	name = NAME_AIO_Aforgomon_Wrath
+	ship_size = AIO_Aforgomon_Wrath
 	section = {
-		template = "AIO_Aforgomom_Wrath_template"
+		template = AIO_Aforgomon_Wrath_template
 		slot = "mid"
 
 		component = {
