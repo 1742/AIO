@@ -39,14 +39,14 @@ country_event = {
 }
 
 
-#region Aforgomom
+#region Aforgomon
 
 # ROOT = 施法者；FROM = 星系；FROMFROM = 巨构。
 country_event = {
 	id = AIO_projection_events.301
 	title = AIO_projection_events.301.title
 	desc = AIO_projection_events.301.desc
-	picture = GFX_evt_AIO_projection_Aforgomom_target
+	picture = GFX_evt_AIO_projection_Aforgomon_target
 	location = from
 	is_triggered_only = yes
 
@@ -86,7 +86,7 @@ country_event = {
 	id = AIO_projection_events.302
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = { has_country_flag = AIO_Aforgomom_country }
+	trigger = { has_country_flag = AIO_Aforgomon_country }
 	immediate = { AIO_projection_cleanup_orphan_anchors = yes }
 }
 
@@ -105,7 +105,7 @@ country_event = {
 	id = AIO_projection_events.401
 	title = AIO_projection_events.401.title
 	desc = AIO_projection_events.401.desc
-	picture = GFX_evt_AIO_projection_Aforgomom_omen
+	picture = GFX_evt_AIO_projection_Aforgomon_omen
 	location = fromfrom
 	is_triggered_only = yes
 	option = { name = AIO_projection_notice_ack }
@@ -116,7 +116,7 @@ country_event = {
 	id = AIO_projection_events.402
 	title = AIO_projection_events.402.title
 	desc = AIO_projection_events.402.desc
-	picture = GFX_evt_AIO_projection_Aforgomom_aborted
+	picture = GFX_evt_AIO_projection_Aforgomon_aborted
 	location = fromfrom
 	is_triggered_only = yes
 	option = { name = AIO_projection_notice_ack }
@@ -127,7 +127,7 @@ country_event = {
 	id = AIO_projection_events.403
 	title = AIO_projection_events.403.title
 	desc = AIO_projection_events.403.desc
-	picture = GFX_evt_AIO_projection_Aforgomom_arrival
+	picture = GFX_evt_AIO_projection_Aforgomon_arrival
 	location = fromfrom
 	is_triggered_only = yes
 	option = { name = AIO_projection_notice_ack }

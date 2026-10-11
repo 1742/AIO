@@ -6,15 +6,15 @@ AIO_projection_begin = {
 		# start_situation 没有初始化参数；on_start 读取后立即移除临时值。
 		set_variable = { which = AIO_projection_strength value = $STRENGTH$ }
 	}
-	start_situation = { type = AIO_projection_Aforgomom target = from }
+	start_situation = { type = AIO_projection_Aforgomon target = from }
 	hidden_effect = { clear_variable = AIO_projection_strength }
 }
 
 # situation
-AIO_projection_Aforgomom_start = {
+AIO_projection_Aforgomon_start = {
 	set_variable = { which = AIO_projection_range value = 5 }
 	set_variable = { which = AIO_projection_strength value = owner.AIO_projection_strength }
-	AIO_ensure_Aforgomom_country = yes
+	AIO_ensure_Aforgomon_country = yes
 	AIO_projection_create_anchor = yes
 	AIO_projection_sync_observers = yes
 	target = {
@@ -26,15 +26,15 @@ AIO_projection_Aforgomom_start = {
 }
 
 # situation；完成回调已经复查本次锚点。
-AIO_projection_Aforgomom_complete = {
+AIO_projection_Aforgomon_complete = {
 	AIO_projection_remove_anchor = yes
-	target = { AIO_projection_Aforgomom_effect = { RANGE = root.AIO_projection_range } }
+	target = { AIO_projection_Aforgomon_effect = { RANGE = root.AIO_projection_range } }
 	AIO_projection_dispatch_notice = { EVENT = AIO_projection_events.403 }
 	destroy_situation = this
 }
 
 # situation；不退款，不修改风暴，也不删除共享国家。
-AIO_projection_Aforgomom_abort = {
+AIO_projection_Aforgomon_abort = {
 	AIO_projection_remove_anchor = yes
 	AIO_projection_dispatch_notice = { EVENT = AIO_projection_events.402 }
 	destroy_situation = this
@@ -83,7 +83,7 @@ AIO_projection_spawn_anchor_ship = {
 	create_ship = {
 		name = NAME_AIO_projection_anchor
 		design = $DESIGN$
-		graphical_culture = event_target:AIO_Aforgomom_country
+		graphical_culture = event_target:AIO_Aforgomon_country
 	}
 }
 
@@ -145,7 +145,7 @@ AIO_projection_sync_observers = {
 	}
 }
 
-# Aforgomom country；每月只检查本国锚点，回收施法者灭亡后失去局势的对象。
+# Aforgomon country；每月只检查本国锚点，回收施法者灭亡后失去局势的对象。
 AIO_projection_cleanup_orphan_anchors = {
 	every_owned_fleet = {
 		limit = { has_fleet_flag = AIO_projection_anchor }
@@ -155,7 +155,7 @@ AIO_projection_cleanup_orphan_anchors = {
 				NOT = {
 					any_country = {
 						any_situation = {
-							is_situation_type = AIO_projection_Aforgomom
+							is_situation_type = AIO_projection_Aforgomon
 							event_target:AIO_projection_checked_anchor = { has_fleet_flag = AIO_projection_anchor_@prev }
 						}
 					}
@@ -223,8 +223,8 @@ AIO_projection_create_nexus_storm = {
 }
 
 # system；中心与普通超空间范围，忽略旁路。已有化身不重复生成。
-AIO_projection_Aforgomom_effect = {
-	AIO_ensure_Aforgomom_country = yes
+AIO_projection_Aforgomon_effect = {
+	AIO_ensure_Aforgomon_country = yes
 	AIO_projection_mark_range = { RANGE = $RANGE$ }
 	every_system = {
 		limit = { has_star_flag = AIO_projection_in_range }

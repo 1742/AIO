@@ -67,7 +67,7 @@ AIO_empire = {
 	}
 }
 
-AIO_Aforgomom = {
+AIO_Aforgomon = {
 	government = no
 	observable = no
 	uses_origins = no

@@ -1,5 +1,5 @@
 AIO_final_main_situation = {
-    picture = GFX_evt_AIO_projection_Aforgomom_omen_nomask
+    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
     category = negative
     situation_log_category = crises
     complete_icon_frame = GFX_situation_outcome_frame_red
@@ -34,7 +34,7 @@ AIO_final_main_situation = {
 }
 
 AIO_final_locate_situation = {
-    picture = GFX_evt_AIO_projection_Aforgomom_omen_nomask
+    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
     category = negative
     situation_log_category = crises
     complete_icon_frame = GFX_situation_outcome_frame_red

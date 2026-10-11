@@ -13,17 +13,17 @@ AIO_start_locate = {
 # scope: situation
 AIO_complete_locate = {
     target? = {
-        AIO_ensure_Aforgomom_country = yes
+        AIO_ensure_Aforgomon_country = yes
         if = {
             limit = { has_situation_flag = AIO_final_constricted }
             AIO_create_Aforgomon_fleet = {
-                DESIGN = NAME_AIO_Aforgomom_Wrath
+                DESIGN = NAME_AIO_Aforgomon_Wrath
                 FLAG = AIO_final_constrict_fleet
             }
         }
         else = {
             AIO_create_Aforgomon_fleet = {
-                DESIGN = NAME_AIO_Aforgomom_Wrath
+                DESIGN = NAME_AIO_Aforgomon_Wrath
                 FLAG = AIO_final_normal_fleet
             }
         }

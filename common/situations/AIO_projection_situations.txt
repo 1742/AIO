@@ -1,22 +1,22 @@
-AIO_projection_Aforgomom = {
-	picture = GFX_evt_AIO_projection_Aforgomom_omen_nomask
+AIO_projection_Aforgomon = {
+	picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
 	category = negative
 	situation_log_category = crises
 	complete_icon_frame = GFX_situation_outcome_frame_red
 	complete_icon = GFX_situation_outcome_negative
 	initial_progress = 0
 	progress_direction = monodirectional
-	on_start = { AIO_projection_Aforgomom_start = yes }
+	on_start = { AIO_projection_Aforgomon_start = yes }
 	abort_trigger = { AIO_projection_has_anchor = no }
-	on_abort = { AIO_projection_Aforgomom_abort = yes }
+	on_abort = { AIO_projection_Aforgomon_abort = yes }
 	on_progress_complete = {
 		custom_tooltip = AIO_projection_ritual_complete_tooltip
 		hidden_effect = {
 			if = {
 				limit = { AIO_projection_has_anchor = yes }
-				AIO_projection_Aforgomom_complete = yes
+				AIO_projection_Aforgomon_complete = yes
 			}
-			else = { AIO_projection_Aforgomom_abort = yes }
+			else = { AIO_projection_Aforgomon_abort = yes }
 		}
 	}
 	stages = {
@@ -40,7 +40,7 @@ AIO_projection_Aforgomom = {
 
 # 其他帝国只观察进度；target 直接绑定本次锚点舰队，不建立第二条召唤链。
 AIO_projection_observer = {
-	picture = GFX_evt_AIO_projection_Aforgomom_omen_nomask
+	picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
 	category = negative
 	situation_log_category = crises
 	complete_icon_frame = GFX_situation_outcome_frame_red

@@ -11,7 +11,7 @@ AIO_projection_can_start = {
 	}
 	custom_tooltip = {
 		fail_text = AIO_projection_fail.exist
-		NOT = { any_situation = { is_situation_type = AIO_projection_Aforgomom } }
+		NOT = { any_situation = { is_situation_type = AIO_projection_Aforgomon } }
 	}
 	resource_stockpile_compare = {
 		resource = AIO_advanced_logic
@@ -52,7 +52,7 @@ AIO_projection_has_anchor = {
 }
 
 # system：同国锚点不参与正式化身的怒气和清场判定。
-AIO_Aforgomom_has_targets = {
+AIO_Aforgomon_has_targets = {
 	any_fleet_in_system = {
 		NOT = { is_owned_by = event_target:AIO_Aforgomon_country }
 	}

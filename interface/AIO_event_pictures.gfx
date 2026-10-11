@@ -1,30 +1,30 @@
 spriteTypes = {
 	spriteType = {
-		name = "GFX_evt_AIO_projection_Aforgomom_aborted"
-		texturefile = "gfx/event_pictures/AIO_projection_Aforgomom_aborted.dds"
+		name = "GFX_evt_AIO_projection_Aforgomon_aborted"
+		texturefile = "gfx/event_pictures/AIO_projection_Aforgomon_aborted.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
 	spriteType = {
-		name = "GFX_evt_AIO_projection_Aforgomom_omen"
-		texturefile = "gfx/event_pictures/AIO_projection_Aforgomom_omen.dds"
+		name = "GFX_evt_AIO_projection_Aforgomon_omen"
+		texturefile = "gfx/event_pictures/AIO_projection_Aforgomon_omen.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
 	spriteType = {
-		name = "GFX_evt_AIO_projection_Aforgomom_omen_nomask"
-		texturefile = "gfx/event_pictures/AIO_projection_Aforgomom_omen.dds"
+		name = "GFX_evt_AIO_projection_Aforgomon_omen_nomask"
+		texturefile = "gfx/event_pictures/AIO_projection_Aforgomon_omen.dds"
 		alwaystransparent = yes
 	}
 	spriteType = {
-		name = "GFX_evt_AIO_projection_Aforgomom_arrival"
-		texturefile = "gfx/event_pictures/AIO_projection_Aforgomom_arrival.dds"
+		name = "GFX_evt_AIO_projection_Aforgomon_arrival"
+		texturefile = "gfx/event_pictures/AIO_projection_Aforgomon_arrival.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}
 	spriteType = {
-		name = "GFX_evt_AIO_projection_Aforgomom_target"
-		texturefile = "gfx/event_pictures/AIO_projection_Aforgomom_target.dds"
+		name = "GFX_evt_AIO_projection_Aforgomon_target"
+		texturefile = "gfx/event_pictures/AIO_projection_Aforgomon_target.dds"
 		masking_texture = "gfx/interface/situation_log/event_mask.dds"
 		alwaystransparent = yes
 	}

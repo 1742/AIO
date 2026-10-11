@@ -50,7 +50,7 @@ bypass_AIO_ultimate_gate = {
 				has_country_flag = AIO_built_AIO_mega_04
 
 				is_country_type = AIO_empire
-				is_country_type = AIO_Aforgomom
+				is_country_type = AIO_Aforgomon
 			}
 		}
 	}

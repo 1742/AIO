@@ -11,7 +11,7 @@ ap_AIO_allinone = {
 			has_origin = origin_endbringers # No additional crisis for Endbringers
 
 			is_country_type = AIO_empire
-            is_country_type = AIO_Aforgomom
+            is_country_type = AIO_Aforgomon
 		}
 		is_wilderness_empire = no
 	}

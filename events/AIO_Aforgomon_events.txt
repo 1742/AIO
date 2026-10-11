@@ -10,7 +10,7 @@ fleet_event = {
 		solar_system = {
 			if = {
 				limit = {
-					AIO_Aforgomom_has_targets = yes
+					AIO_Aforgomon_has_targets = yes
 					check_variable = { which = AIO_Aforgomon_Wrath value < 10 }
 				}
 				change_variable = { which = AIO_Aforgomon_Wrath value = 1 }
@@ -48,7 +48,7 @@ country_event = {
 					change_variable = { which = AIO_Aforgomon_Wrath value = 1 }
 				}
 				AIO_create_Aforgomon_fleet = {
-					DESIGN = NAME_AIO_Aforgomom_Wrath
+					DESIGN = NAME_AIO_Aforgomon_Wrath
 					FLAG = AIO_projection_Aforgomon
 				}
 			}

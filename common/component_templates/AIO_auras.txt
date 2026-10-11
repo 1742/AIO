@@ -8,18 +8,18 @@ utility_component_template = {
 	power = 0
 	hidden = yes
 
-    potential = { is_ship_size = AIO_Aforgomom_Wrath }
+    potential = { is_ship_size = AIO_Aforgomon_Wrath }
 
 	component_set = "ship_aura_components"
 
 	hostile_aura = {
-		name = "aura_AIO_Aforgomom_Chain"
+		name = "aura_AIO_Aforgomon_Chain"
 		radius = 1000
 		apply_on = fleets
 		system_wide = yes
 
 		stack_info = { # 如果多个光环具有相同的 ID，则将应用优先级最高的光环。
-			id = hostile_AIO_Aforgomom_Chain_aura
+			id = hostile_AIO_Aforgomon_Chain_aura
 			priority = 1
 		}
 
