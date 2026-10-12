@@ -112,7 +112,6 @@ AIO_mega_01 = {
 	bypass_type = bypass_AIO_ultimate_gate
 
 	on_build_complete = {
-		fromfrom = { save_global_event_target_as = AIO_DAIT_source_megastructure }
 		# 加特效
 		create_ambient_object = {
 			type = "AIO_crisis_sphere_effect"

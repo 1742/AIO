@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
  AIO_final_events.201.title:0 "追索的征兆"
- AIO_final_events.201.desc:0 "犹格索托斯已经完成。外部星系出现了异常，亚弗戈蒙正循着我们改变现实的痕迹显现。前四次显现之后，它将直接追索无名之雾。调查抹除后的残迹，研究如何将它引向别处并加以约束。"
+ AIO_final_events.201.desc:0 "犹格索托斯已经完成。外部星系出现了异常，亚弗戈蒙正循着我们改变现实的痕迹显现。前五次显现之后，它将直接追索无名之雾。调查抹除后的残迹，研究如何将它引向别处并加以约束。"
  AIO_final_events.201.option:0 "开始观测。"
  AIO_final_events.202.title:0 "显现周期"
  AIO_final_events.202.desc:0 "第一处残迹揭示了周期的规律。每次显现后，下一轮的等待时间都会缩短。地点局势记录当前目标和本轮期限。"
@@ -33,7 +33,7 @@
  AIO_final_manifestation_stage:0 "显现驻留"
  AIO_final_location_started:0 "亚弗戈蒙的新一轮显现目标已经确定。"
  AIO_final_location_completed:0 "亚弗戈蒙的显现已经结束，当地星系被抹除。"
- AIO_final_location_complete_tooltip:0 "显现驻留超时后，目标星系将被抹除，留下可供调查的残迹，并开始下一轮追索。"
+ AIO_final_location_arrived:0 "亚弗戈蒙已在目标星系显现，驻留期限开始。"
  AIO_FINAL_RESEARCH:0 "调查抹除残迹"
  AIO_FINAL_RESEARCH_DESC:0 "派遣一艘配有科学官的科研船，进行 360 天现场研究。每处不同残迹增加 1 点终局研究进度。项目有效期为 1000 天，失败或取消后不会自动恢复。"
  AIO_FINAL_INDUCTION:0 "诱导亚弗戈蒙"

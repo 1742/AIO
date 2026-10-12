@@ -1,4 +1,4 @@
-# scope: country；0-based round，前四轮为 0..3。
+# scope: country；0-based round，前五轮为 0..4。
 AIO_start_location = {
     if = {
         limit = {
@@ -159,7 +159,7 @@ AIO_final_research = {
 }
 
 # scope: country；保留旧版飞升结局，并解锁远程投射。
-AIO_final_winned = {
+AIO_final_win = {
     set_country_flag = AIO_final_won
     AIO_final_finish = yes
     country_event = { id = AIO_crisis_events.601 }

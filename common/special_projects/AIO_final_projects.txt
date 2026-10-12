@@ -29,8 +29,6 @@ special_project = {
             owner = { AIO_final_research = yes }
         }
     }
-
-
 }
 
 # on_success: THIS = ship，FROM = 项目星球。

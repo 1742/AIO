@@ -216,7 +216,7 @@ country_event = {
                     fromfrom = { has_fleet_flag = AIO_final_fleet_@prev }
                 }
                 set_situation_flag = AIO_final_settled
-                owner = { AIO_final_winned = yes }
+                owner = { AIO_final_win = yes }
             }
         }
     }

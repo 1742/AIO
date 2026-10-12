@@ -1,6 +1,6 @@
 ﻿l_english:
  AIO_final_events.201.title:0 "Signs of Pursuit"
- AIO_final_events.201.desc:0 "Yog-Sothoth is complete. Aforgomon is following the traces of our changes to reality. After four external manifestations, it will pursue the Nameless Mist. Investigate the remnants to learn how to redirect and constrain it."
+ AIO_final_events.201.desc:0 "Yog-Sothoth is complete. Aforgomon is following the traces of our changes to reality. After five external manifestations, it will pursue the Nameless Mist. Investigate the remnants to learn how to redirect and constrain it."
  AIO_final_events.201.option:0 "Begin observations."
  AIO_final_events.202.title:0 "The Manifestation Cycle"
  AIO_final_events.202.desc:0 "The first remnant reveals a repeating cycle. Each manifestation shortens the next waiting period. The location situation tracks the current destination and deadline."
@@ -29,7 +29,7 @@
  AIO_final_location_situation_desc:0 "Destination: §Y[Target.GetName]§!. This round has §Y[Owner.AIO_final_wait] days§! of omens followed by §Y360 days§! of manifestation. The omen period shortens by 200 days per round, to a minimum of 200.\n\nFinish induction or constraint before the omen period ends. Selecting or researching a project does not change the original destination. Completion changes the destination without resetting the timer.\n\n§RArrival at the Nameless Mist causes immediate failure. An external manifestation erases the system when its residence period ends.§!"
  AIO_final_location_situation_monthly_change_tooltip:0 "Advances by 30 each month. The bar tracks the omen and residence periods."
  AIO_final_location_approach:0 "Prepare a Response"
- AIO_final_location_complete_tooltip:0 "When the manifestation's stay expires, the target system is erased, leaving remnants to investigate. A new pursuit then begins."
+ AIO_final_location_arrived:0 "Aforgomon has manifested in the target system. Its residence period has begun."
  AIO_final_omen_stage:0 "Omens"
  AIO_final_manifestation_stage:0 "Manifestation"
  AIO_final_location_started:0 "A destination has been identified for Aforgomon’s next manifestation."

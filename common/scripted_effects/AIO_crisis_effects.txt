@@ -256,6 +256,8 @@ AIO_ascension_effect = {
                 remove_planet = yes
             }
         }
+        clear_global_event_target = AIO_mist_colony
+        clear_global_event_target = AIO_mist_ship
         # 转移首都
         event_target:AIO_HS_system = {
             random_system_planet = {
