@@ -4,17 +4,6 @@ decision_AIO_expand_mist = {
     enactment_time = 360
     potential = { uses_district_set = AIO_mist }
     allow = {
-        custom_tooltip = {
-            owner = {
-                OR = {
-                    is_nomadic = no
-                    any_situation = {
-                        is_situation_type = situation_nomad_economy
-                        situation_progress >= 5000
-                    }
-                }
-            }
-        }
         OR = {
             AND = {
                 planet_size < 24

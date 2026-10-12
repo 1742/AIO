@@ -14,7 +14,7 @@ AIO_start_location = {
                 target = event_target:AIO_final_target
             }
         }
-        else = { AIO_final_failed = yes }
+        else = { country_event = { id = AIO_final_events.205 } }
     }
 }
 
@@ -34,7 +34,7 @@ AIO_final_repair_target = {
             limit = { exists = event_target:AIO_final_target }
             change_situation_target = event_target:AIO_final_target
         }
-        else = { owner = { AIO_final_failed = yes } }
+        else = { owner = { country_event = { id = AIO_final_events.205 } } }
     }
 }
 
@@ -49,7 +49,7 @@ AIO_final_create_fleet = {
         limit = { owner = { has_country_flag = AIO_final_start } }
         if = {
             limit = { target = { is_same_value = event_target:AIO_HS_system } }
-            owner = { AIO_final_failed = yes }
+            owner = { country_event = { id = AIO_final_events.205 } }
         }
         else = {
             save_event_target_as = AIO_final_instance
@@ -61,6 +61,14 @@ AIO_final_create_fleet = {
                 AIO_create_Aforgomon_fleet = {
                     DESIGN = NAME_AIO_Aforgomon_Wrath
                     FLAG = AIO_final_fleet_@event_target:AIO_final_instance
+                }
+            }
+            every_playable_country = {
+                create_message = {
+                    type = MESSAGE_DYSON_SHOT
+                    localization = AIO_final_location_arrived
+                    days = 30
+                    target = prev.target
                 }
             }
         }
@@ -78,7 +86,7 @@ AIO_final_complete_location = {
         AIO_final_remove_fleet = yes
         if = {
             limit = { target? = { is_same_value = event_target:AIO_HS_system } }
-            owner = { AIO_final_failed = yes }
+            owner = { country_event = { id = AIO_final_events.205 } }
         }
         else = {
             target? = {
@@ -86,11 +94,13 @@ AIO_final_complete_location = {
                     limit = { NOT = { is_star_class = sc_AIO_void } }
                     AIO_DAIT_erase_system_effect = yes
                 }
-                star = {
-                    enable_special_project = {
-                        name = AIO_FINAL_RESEARCH
-                        location = this
-                        owner = prevprev.owner
+                hidden_effect = {
+                    star = {
+                        enable_special_project = {
+                            name = AIO_FINAL_RESEARCH
+                            location = this
+                            owner = prevprev.owner
+                        }
                     }
                 }
                 every_playable_country = {
@@ -102,10 +112,12 @@ AIO_final_complete_location = {
                     }
                 }
             }
-            owner = {
-                change_variable = { which = AIO_final_round value = 1 }
-                # 旧局势须先销毁，下一天才启动下一轮。
-                country_event = { id = AIO_final_events.301 days = 1 }
+            hidden_effect = {
+                owner = {
+                    change_variable = { which = AIO_final_round value = 1 }
+                    # 旧局势须先销毁，下一天才启动下一轮。
+                    country_event = { id = AIO_final_events.301 days = 1 }
+                }
             }
             destroy_situation = this
         }
@@ -151,15 +163,6 @@ AIO_final_winned = {
     set_country_flag = AIO_final_won
     AIO_final_finish = yes
     country_event = { id = AIO_crisis_events.601 }
-}
-
-# scope: country
-AIO_final_failed = {
-    set_country_flag = AIO_final_lost
-    AIO_final_finish = yes
-    country_event = { id = AIO_final_events.205 }
-    AIO_destroy_HS_effect = yes
-    AIO_destroy_TUG_effect = yes
 }
 
 # scope: country；每次先覆盖本地目标，避免继承上一轮残留的事件目标。
@@ -242,6 +245,12 @@ AIO_final_complete_project = {
                     limit = { always = $CONSTRAINT$ }
                     set_situation_flag = AIO_final_constrainted
                 }
+            }
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_final_location_started
+                days = 30
+                target = from.solar_system
             }
         }
     }

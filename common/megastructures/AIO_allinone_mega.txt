@@ -221,7 +221,7 @@ AIO_mega_02 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_02
-			AIO_mist_set_capacity_effect = { STAGE = 2 }
+			event_target:AIO_mist_colony? = { change_planet_size = 12 }
             country_event = { id = AIO_crisis_events.404 }
 		}
 	}
@@ -302,7 +302,7 @@ AIO_mega_03 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_03
-			AIO_mist_set_capacity_effect = { STAGE = 3 }
+			event_target:AIO_mist_colony? = { change_planet_size = 16 }
             country_event = { id = AIO_crisis_events.405 }
 		}
 	}
@@ -386,10 +386,14 @@ AIO_mega_04 = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_04
             set_variable = { which = AIO_projection_range value = 5 }
-			AIO_mist_set_capacity_effect = { STAGE = 4 }
+			event_target:AIO_mist_colony? = { change_planet_size = 24 }
             country_event = { id = AIO_crisis_events.406 }
 		}
 	}
 
-	scripted_action = { AIO_final_induction_action AIO_final_constraint_action AIO_projection_action }
+	scripted_action = {
+		AIO_final_induction_action
+		AIO_final_constraint_action
+		AIO_projection_action
+	}
 }

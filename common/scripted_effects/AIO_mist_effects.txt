@@ -58,13 +58,3 @@ AIO_mist_initialize_colony_effect = {
         add_deposit = d_AIO_mist_exemption
     }
 }
-
-# Country. Upgrade modifies capacity in place, never recreates the carrier or its jobs.
-AIO_mist_set_capacity_effect = {
-    event_target:AIO_mist_colony? = {
-        remove_modifier = AIO_mist_capacity_2
-        remove_modifier = AIO_mist_capacity_3
-        remove_modifier = AIO_mist_capacity_4
-        add_modifier = { modifier = AIO_mist_capacity_$STAGE$ }
-    }
-}

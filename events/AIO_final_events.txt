@@ -96,13 +96,19 @@ country_event = {
     }
 }
 
-# 失败通知；实际清理已经同步执行。
+# 失败结算及通知；由事件直接清理，避免局势的 scripted effect 展开超过引擎深度限制。
 country_event = {
     id = AIO_final_events.205
     title = AIO_final_events.205.title
     desc = AIO_final_events.205.desc
     picture = GFX_evt_vortex
     is_triggered_only = yes
+    immediate = {
+        set_country_flag = AIO_final_lost
+        AIO_final_finish = yes
+        AIO_destroy_HS_effect = yes
+        AIO_destroy_TUG_effect = yes
+    }
     option = { name = OK }
 }
 
@@ -196,7 +202,6 @@ country_event = {
     is_triggered_only = yes
     trigger = {
         exists = fromfrom
-        exists = fromfromfrom
         has_country_flag = AIO_Aforgomon_country
     }
     immediate = {

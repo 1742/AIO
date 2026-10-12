@@ -35,6 +35,7 @@ AIO_final_main_situation = {
     monthly_progress = { base = 0 }
     approach = {
         name = AIO_final_approach
+        on_select = { custom_tooltip = AIO_final_main_situation_monthly_change_tooltip }
         icon = GFX_situation_approach_research
         icon_background = GFX_situation_approach_bg_green
         default = yes
@@ -61,9 +62,7 @@ AIO_final_location_situation = {
             }
         }
     }
-    on_progress_complete = {
-        AIO_final_complete_location = yes
-    }
+    on_progress_complete = { AIO_final_complete_location = yes }
     on_monthly = { events = { AIO_final_events.302 } }
 
     total_progress = {
@@ -73,7 +72,10 @@ AIO_final_location_situation = {
     }
     stages = {
         AIO_final_omen_stage = {
-            section_weight = owner.AIO_final_wait
+            section_weight = {
+                base = 0
+                add = owner.AIO_final_wait
+            }
             icon = GFX_situation_stage_1
             icon_background = GFX_situation_stage_frame_red
         }
