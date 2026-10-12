@@ -1,9 +1,9 @@
 ﻿l_simp_chinese:
  #region script_action
 
- AIO_projection_aforgomom_action: "召唤亚弗戈蒙"
- AIO_projection_aforgomom_activity: "撕裂 $NAME$"
- AIO_projection_aforgomom_action_tooltip: "选择星系并投入超然逻辑，建立能够自行防卫的锚点。\n\n花费：£AIO_advanced_logic£ §Y100,000／200,000／400,000§!，对应基础／强化／过载区段，舰体为 §Y1／2／4 倍§!。\n仪式时长：§Y720 天§!\n范围：以目标为中心§Y[owner.AIO_projection_range]§!跳范围内的星系\n冷却：§Y10 年§!\n\n§R锚点及化身敌视所有帝国，包括我们、盟友和附属国。§!摧毁锚点可阻止本次召唤。"
+ AIO_projection_aforgomon_action: "召唤亚弗戈蒙"
+ AIO_projection_aforgomon_activity: "撕裂 $NAME$"
+ AIO_projection_aforgomon_action_tooltip: "选择星系并投入超然逻辑，建立能够自行防卫的锚点。\n\n花费：£AIO_advanced_logic£ §Y100,000／200,000／400,000§!，对应基础／强化／过载区段，舰体为 §Y1／2／4 倍§!。\n仪式时长：§Y720 天§!\n范围：以目标为中心§Y[owner.AIO_projection_range]§!跳范围内的星系\n冷却：§Y10 年§!\n\n§R锚点及化身敌视所有帝国，包括我们、盟友和附属国。§!摧毁锚点可阻止本次召唤。"
  AIO_projection_fail_center: "这个星系已经存在锚点。"
  AIO_projection_fail.need_mega_04: "需要拥有§Y$AIO_mega_04$§!。"
  AIO_projection_fail.cooldown: "远程投射仍在冷却中。"

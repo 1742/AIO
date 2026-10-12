@@ -1,0 +1,46 @@
+# scope: system
+AIO_final_valid_external_target = {
+    exists = star
+    NOR = {
+        is_star_class = sc_AIO_void
+        is_same_value = event_target:AIO_HS_system
+        is_same_value = event_target:AIO_TUG_system
+        has_star_flag = AIO_Aformon_existed
+    }
+}
+
+# scope: system；无名之雾本身是虚空星系，因此单独放行。
+AIO_final_valid_target = {
+    OR = {
+        AIO_final_valid_external_target = yes
+        is_same_value = event_target:AIO_HS_system
+    }
+}
+
+# scope: country；诱导及约束共用，每轮仅一个项目，显现后禁止启动。
+AIO_final_can_select = {
+    has_country_flag = AIO_final_start
+    resource_stockpile_compare = { resource = AIO_advanced_logic value >= @AIO_final_induction_cost }
+    NOR = {
+        has_special_project = AIO_FINAL_INDUCTION
+        has_special_project = AIO_FINAL_CONSTRAINT
+    }
+    any_situation = {
+        is_situation_type = AIO_final_location_situation
+        current_stage = AIO_final_omen_stage
+        NOR = {
+            has_situation_flag = AIO_final_settled
+            has_situation_flag = AIO_final_induced
+        }
+    }
+}
+
+# scope: system event，FROM = 发起动作的巨构。
+AIO_final_action_source_valid = {
+    AIO_final_valid_external_target = yes
+    exists = from
+    from = {
+        is_megastructure_type = AIO_mega_04
+        owner = { AIO_final_can_select = yes }
+    }
+}

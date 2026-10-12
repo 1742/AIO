@@ -1,0 +1,88 @@
+# on_success: THIS = ship，FROM = 项目星球。
+# on_cancel / abort_trigger: THIS = country，FROM = ship，FROMFROM = 项目星球。
+special_project = {
+    key = "AIO_FINAL_RESEARCH"
+    days_to_research = @AIO_final_research_cost
+    timelimit = 1000
+    tech_department = physics_technology
+    picture = GFX_evt_vortex
+    icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+    event_chain = AIO_crisis_events_chain
+    location = yes
+    event_scope = ship_event
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+    }
+    abort_trigger = {
+        OR = {
+            NOT = { exists = fromfrom }
+            NOT = { has_country_flag = AIO_final_start }
+        }
+    }
+    on_success = {
+        if = {
+            limit = {
+                exists = from
+                owner = { has_country_flag = AIO_final_start }
+            }
+            owner = { AIO_final_research = yes }
+        }
+    }
+
+
+}
+
+# on_success: THIS = ship，FROM = 项目星球。
+# on_cancel / abort_trigger: THIS = country，FROM = ship，FROMFROM = 项目星球。
+special_project = {
+    key = "AIO_FINAL_INDUCTION"
+    days_to_research = @AIO_final_research_cost
+    timelimit = 1000
+    tech_department = physics_technology
+    picture = GFX_evt_vortex
+    icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+    event_chain = AIO_crisis_events_chain
+    location = yes
+    event_scope = ship_event
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+    }
+    abort_trigger = {
+        OR = {
+            NOT = { exists = fromfrom }
+            NOT = { has_country_flag = AIO_final_start }
+        }
+    }
+    on_success = {
+        AIO_final_complete_project = { CONSTRAINT = no }
+    }
+}
+
+# on_success: THIS = ship，FROM = 项目星球。
+# on_cancel / abort_trigger: THIS = country，FROM = ship，FROMFROM = 项目星球。
+special_project = {
+    key = "AIO_FINAL_CONSTRAINT"
+    days_to_research = @AIO_final_research_cost
+    timelimit = 1000
+    tech_department = physics_technology
+    picture = GFX_evt_vortex
+    icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"
+    event_chain = AIO_crisis_events_chain
+    location = yes
+    event_scope = ship_event
+    requirements = {
+        shipclass_science_ship = 1
+        leader = scientist
+    }
+    abort_trigger = {
+        OR = {
+            NOT = { exists = fromfrom }
+            NOT = { has_country_flag = AIO_final_start }
+        }
+    }
+    on_success = {
+        AIO_final_complete_project = { CONSTRAINT = yes }
+    }
+}

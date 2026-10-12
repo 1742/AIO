@@ -391,5 +391,5 @@ AIO_mega_04 = {
 		}
 	}
 
-	scripted_action = { AIO_projection_action }
+	scripted_action = { AIO_final_induction_action AIO_final_constraint_action AIO_projection_action }
 }

@@ -11,12 +11,15 @@ AIO_projection_action = {
 		owner = { AIO_projection_can_start = { COST = @AIO_projection_logic_cost } }
 	}
 	button_visible = {
-		owner = { NOT = { has_country_flag = AIO_projection_cooldown } }
+		owner = {
+			has_country_flag = AIO_final_won
+			NOT = { has_country_flag = AIO_projection_cooldown }
+		}
 	}
 	icon = GFX_ship_class_conduit
 	icon_selected = GFX_ship_class_conduit
 	on_started = on_AIO_projection_started
-	context_menu_name = AIO_projection_aforgomom_action
-	activity_key = AIO_projection_aforgomom_activity
-	tooltip = AIO_projection_aforgomom_action_tooltip
+	context_menu_name = AIO_projection_aforgomon_action
+	activity_key = AIO_projection_aforgomon_activity
+	tooltip = AIO_projection_aforgomon_action_tooltip
 }

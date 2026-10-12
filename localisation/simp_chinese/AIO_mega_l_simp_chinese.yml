@@ -22,7 +22,7 @@
  AIO_mega_03_DESC:0 "容量提高到40。建造前需通过三级规则研究建立活体金属生产。"
  AIO_mega_03_MEGASTRUCTURE_DETAILS: "观测所有维度和存在的“点”"
  AIO_mega_04: "犹格索托斯"
- AIO_mega_04_DESC:0 "容量提高到64，开放反复延展空间和远程投射。建造前需建立纳米机器人生产。"
+ AIO_mega_04_DESC:0 "容量提高到64，开放反复延展空间，并启动亚弗戈蒙终局。完成终局后解锁远程投射。建造前需建立纳米机器人生产。"
  AIO_mega_04_MEGASTRUCTURE_DETAILS: "无尽维度之外的超然结构。"
  AIO_mega_04_activate: "$AIO_mega_04$"
  AIO_mega_04_activate_DESC: "$AIO_mega_04_DESC$"

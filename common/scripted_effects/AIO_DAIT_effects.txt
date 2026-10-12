@@ -42,7 +42,7 @@ AIO_DAIT_spawn_effect = {
         }
         every_system_planet = { AIO_safe_remove_planet = yes }
         AIO_safe_remove_system_megastructures = yes
-        every_ambient_object = { destroy_ambient_object = this }
+        every_system_ambient_object = { destroy_ambient_object = this }
         set_star_class = sc_AIO_void
         random_list = {
             1 = { AIO_create_hexagonal_orbital_array = yes }
@@ -544,7 +544,7 @@ AIO_DAIT_erase_effect = {
             limit = { AIO_safe_remove_fleet_exclude_API = no }
             destroy_fleet = this
         }
-        every_ambient_object = { destroy_ambient_object = this }
+        every_system_ambient_object = { destroy_ambient_object = this }
         set_star_class = sc_AIO_void
 
         random_system_planet = {
@@ -580,7 +580,7 @@ AIO_DAIT_erase_system_effect = {
         limit = { AIO_safe_remove_fleet_exclude_API = no }
         destroy_fleet = this
     }
-    every_ambient_object = { destroy_ambient_object = this }
+    every_system_ambient_object = { destroy_ambient_object = this }
     set_star_class = sc_AIO_void
 }
 

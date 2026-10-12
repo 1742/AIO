@@ -150,7 +150,7 @@
  AIO_crisis_events.303.option: "$EXCELLENT$"
  AIO_crisis_events.304.desc:0 "银时之匙的空间已趋稳定。自组织物质研究开放活体金属生产；永恒王座将把容量提高到40。截面上的宇宙承担每次改写的收益与代价，而我们的居所抵消这些代价。"
  AIO_crisis_events.304.option: "$menp_AIO_mega_04_desc$"
- AIO_crisis_events.305.desc:0 "永恒王座为最终结构准备了基点。完成纳米连续体研究并建立生产后，即可建造犹格索托斯，将容量提高到64，随后反复延展同一居所。远程投射继续可用。"
+ AIO_crisis_events.305.desc:0 "永恒王座为最终结构准备了基点。完成纳米连续体研究并建立生产后，即可建造犹格索托斯，将容量提高到64，随后反复延展同一居所。建成后启动亚弗戈蒙终局，完成终局后解锁远程投射。"
  AIO_crisis_events.305.option: "放手去做吧。"
 
  # 飞升事件

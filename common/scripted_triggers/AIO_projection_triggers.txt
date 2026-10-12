@@ -2,6 +2,10 @@
 # scope：country
 AIO_projection_can_start = {
 	custom_tooltip = {
+		fail_text = AIO_projection_fail.need_final
+		has_country_flag = AIO_final_won
+	}
+	custom_tooltip = {
 		fail_text = AIO_projection_fail.need_mega_04
 		has_megastructure = AIO_mega_04
 	}

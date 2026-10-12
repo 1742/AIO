@@ -43,10 +43,10 @@ on_entering_system_fleet = {
 # FROMFROM = 被摧毁舰队
 on_fleet_destroyed_victim = {
 	events = {
+        AIO_final_events.502 # 受约束的亚弗戈蒙被击败
         AIO_Aforgomon_events.202 # 亚弗戈蒙之怒被摧毁
     }
 }
-
 
 
 # Fired when a ship finishes researching an anomaly.
@@ -74,6 +74,24 @@ special_project_success = {
 on_astral_rift_exploration_complete = {
     events = {
         AIO_crisis_events.803 # 天灾目标，探索星界裂隙
+    }
+}
+
+# 引诱亚弗戈蒙
+# THIS = 目标星系
+# FROM = 发起动作的巨构
+on_AIO_final_induction = {
+    events = {
+        AIO_final_events.401 # 引诱亚弗戈蒙
+    }
+}
+
+# 限制亚弗戈蒙
+# THIS = 目标星系
+# FROM = 发起动作的巨构
+on_AIO_final_constraint = {
+    events = {
+        AIO_final_events.501 # 限制亚弗戈蒙
     }
 }
 

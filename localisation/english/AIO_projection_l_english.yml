@@ -1,9 +1,9 @@
 ﻿l_english:
  #region script_action
 
- AIO_projection_aforgomom_action: "Summon Aforgomon"
- AIO_projection_aforgomom_activity: "Tearing $NAME$ Apart"
- AIO_projection_aforgomom_action_tooltip: "Choose a system and invest Advanced Logic to establish an anchor capable of defending itself.\n\nCost: £AIO_advanced_logic£ §Y100,000 / 200,000 / 400,000§! for Basic / Reinforced / Overcharged sections, with §Y1 / 2 / 4 times§! base hull.\nRitual duration: §Y720 days§!\nRange: systems within §Y[owner.AIO_projection_range]§! jumps of the target\nCooldown: §Y10 years§!\n\n§RThe anchor and manifestations are hostile to every empire, including us, our allies, and our subjects.§! Destroying the anchor prevents this summoning."
+ AIO_projection_aforgomon_action: "Summon Aforgomon"
+ AIO_projection_aforgomon_activity: "Tearing $NAME$ Apart"
+ AIO_projection_aforgomon_action_tooltip: "Choose a system and invest Advanced Logic to establish an anchor capable of defending itself.\n\nCost: £AIO_advanced_logic£ §Y100,000 / 200,000 / 400,000§! for Basic / Reinforced / Overcharged sections, with §Y1 / 2 / 4 times§! base hull.\nRitual duration: §Y720 days§!\nRange: systems within §Y[owner.AIO_projection_range]§! jumps of the target\nCooldown: §Y10 years§!\n\n§RThe anchor and manifestations are hostile to every empire, including us, our allies, and our subjects.§! Destroying the anchor prevents this summoning."
  AIO_projection_fail_center: "This system already contains an anchor."
  AIO_projection_fail.need_mega_04: "Requires ownership of §Y$AIO_mega_04$§!."
  AIO_projection_fail.cooldown: "Remote projection is still on cooldown."

@@ -1,23 +1,32 @@
 AIO_final_main_situation = {
+    desc = {
+        trigger = { owner = { check_variable = { which = AIO_final_research value >= 7 } } }
+        text = AIO_final_main_situation_ready_desc
+    }
+    desc = {
+        trigger = { owner = { check_variable = { which = AIO_final_research value < 7 } } }
+        text = AIO_final_main_situation_desc
+    }
     picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
     category = negative
     situation_log_category = crises
     complete_icon_frame = GFX_situation_outcome_frame_red
     complete_icon = GFX_situation_outcome_negative
+    permanent = yes
     initial_progress = 0
     progress_direction = monodirectional
     stages = {
-        stage_1 = {
+        AIO_final_research_stage_1 = {
             end = 1
             icon = GFX_situation_stage_1
             icon_background = GFX_situation_stage_frame_red
         }
-        stage_2 = {
+        AIO_final_research_stage_2 = {
             end = 3
             icon = GFX_situation_stage_2
             icon_background = GFX_situation_stage_frame_red
         }
-        stage_3 = {
+        AIO_final_research_stage_3 = {
             end = 7
             icon = GFX_situation_stage_3
             icon_background = GFX_situation_stage_frame_red
@@ -33,7 +42,7 @@ AIO_final_main_situation = {
     }
 }
 
-AIO_final_locate_situation = {
+AIO_final_location_situation = {
     picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
     category = negative
     situation_log_category = crises
@@ -43,18 +52,19 @@ AIO_final_locate_situation = {
     progress_direction = monodirectional
 
     on_start = {
-        every_playable_country = {
+        owner = {
             create_message = {
                 type = MESSAGE_DYSON_SHOT
-                localization = AIO_final_locate_start
+                localization = AIO_final_location_started
                 days = 30
                 target = root.target
             }
         }
     }
     on_progress_complete = {
-
+        AIO_final_complete_location = yes
     }
+    on_monthly = { events = { AIO_final_events.302 } }
 
     total_progress = {
         base = 0
@@ -62,24 +72,21 @@ AIO_final_locate_situation = {
         add = @AIO_final_exist_time
     }
     stages = {
-        stage_1 = {
+        AIO_final_omen_stage = {
             section_weight = owner.AIO_final_wait
             icon = GFX_situation_stage_1
             icon_background = GFX_situation_stage_frame_red
         }
-        stage_2 = {
-            section_weight = {
-                base = 0
-                add = owner.AIO_final_wait
-                add = @AIO_final_exist_time
-            }
+        AIO_final_manifestation_stage = {
+            section_weight = @AIO_final_exist_time
             icon = GFX_situation_stage_2
             icon_background = GFX_situation_stage_frame_red
+            on_first_enter = { AIO_final_create_fleet = yes }
         }
     }
-    monthly_progress = { base = 0 }
+    monthly_progress = { base = 30 }
     approach = {
-        name = AIO_final_locate_approach
+        name = AIO_final_location_approach
         icon = GFX_situation_approach_research
         icon_background = GFX_situation_approach_bg_green
         default = yes

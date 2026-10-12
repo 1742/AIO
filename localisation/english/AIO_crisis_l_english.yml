@@ -150,7 +150,7 @@
  AIO_crisis_events.303.option: "$EXCELLENT$"
  AIO_crisis_events.304.desc:0 "The Silver Key has stabilized our space. Self-Organizing Matter unlocks living metal production; the Eternal Throne raises capacity to 40. The surface universe bears each rewrite’s benefits and costs, while our habitat cancels those costs."
  AIO_crisis_events.304.option: "$menp_AIO_mega_04_desc$"
- AIO_crisis_events.305.desc:0 "The Eternal Throne has prepared the final foundation. Research the Nanite Continuum and establish production to build Yog-Sothoth, raising capacity to 64 and enabling repeatable expansion of the same habitat. Remote projection remains available."
+ AIO_crisis_events.305.desc:0 "The Eternal Throne has prepared the final foundation. Research the Nanite Continuum and establish production to build Yog-Sothoth, raising capacity to 64 and enabling repeatable expansion of the same habitat. Completion starts the Aforgomon endgame; overcoming it unlocks remote projection."
  AIO_crisis_events.305.option: "Just go for it."
 
  # ascension event

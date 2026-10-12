@@ -218,10 +218,6 @@ AIO_crisis_finish_ascension_effect = {
 AIO_ascension_effect = {
     if = {
         limit = {
-            OR = {
-                has_authority = auth_machine_intelligence
-                has_authority = auth_hive_mind
-            }
             exists = event_target:AIO_HS_system
             exists = event_target:AIO_TUG_system
         }
@@ -229,7 +225,7 @@ AIO_ascension_effect = {
         # 转变国家类型
         set_country_type = AIO_empire
         if = {
-            limit = { has_authority = auth_machine_intelligence }
+            limit = { owner_main_species = { is_robotic = yes } }
             change_government = {
                 authority = auth_machine_intelligence
                 civics = { civic = civic_AIO_dream }
@@ -246,7 +242,6 @@ AIO_ascension_effect = {
         every_owned_leader = {
             limit = {
                 AIO_safe_remove_leader_exclude_API = no
-
                 is_ruler = no
                 is_councilor = no
                 NOT = { has_leader_flag = gray_leader }
@@ -278,7 +273,7 @@ AIO_ascension_effect = {
             destroy_fleet = this
         }
         # 与所有帝国通讯并获得所有情报
-        every_country = {
+        every_playable_country = {
             limit = { NOT = { is_same_value = root } }
             if = {
                 limit = { NOT = { has_communications = root } }
@@ -304,4 +299,67 @@ AIO_ascension_effect = {
         # 允许进入牢塞星系
         set_country_flag = protected_from_queen_storm
     }
+}
+
+# scope: any
+AIO_destroy_HS_effect = {
+    event_target:AIO_HS_system = {
+        # 移除特效
+        destroy_ambient_object = event_target:AIO_HS_system_effect
+        clear_global_event_target = AIO_HS_system_effect
+        # 移除星球
+        event_target:AIO_mist_ship? = { delete_ship = this }
+        clear_global_event_target = AIO_mist_ship
+        event_target:AIO_mist_colony? = {
+            destroy_colony = yes
+            remove_planet = yes
+        }
+        clear_global_event_target = AIO_mist_colony
+        # 移除巨构
+        random_system_megastructure = {
+            limit = {
+                OR = {
+                    is_megastructure_type = AIO_mega_01
+                    is_megastructure_type = AIO_mega_02
+                    is_megastructure_type = AIO_mega_03
+                    is_megastructure_type = AIO_mega_04
+                }
+            }
+            remove_megastructure = this
+        }
+        AIO_safe_remove_system_megastructures = yes
+        # 移除所有舰队和恒星基地
+        every_fleet_in_system = {
+            limit = { AIO_safe_remove_fleet_exclude_API = no }
+            destroy_fleet = this
+        }
+        set_name = AIO_Abyss
+    }
+}
+
+# scope: any
+AIO_destroy_TUG_effect = {
+    event_target:AIO_TUG_system = {
+        random_system_megastructure = {
+            limit = { is_megastructure_type = AIO_mega_01_fact }
+            remove_megastructure = this
+        }
+        AIO_safe_remove_system_megastructures = yes
+        if = {
+            limit = { any_system_ambient_object = { is_same_value = event_target:AIO_TUG_system_effect } }
+            destroy_ambient_object = event_target:AIO_TUG_system_effect
+            clear_global_event_target = AIO_TUG_system_effect
+        }
+        random_system_planet = {
+            limit = { is_star = yes }
+            change_pc = pc_black_hole
+        }
+        every_fleet_in_system = {
+            limit = { AIO_safe_remove_fleet_exclude_API = no }
+            destroy_fleet = this
+        }
+        set_name = AIO_abyss_edge
+        remove_star_flag = AIO_TUG_system
+    }
+    clear_global_event_target = AIO_TUG_system
 }

@@ -23,6 +23,8 @@ country_event = {
         set_country_flag = AIO_built_AIO_mega_03
         set_country_flag = AIO_built_AIO_mega_04
         set_country_flag = AIO_empire_country
+        # 终态测试起源直接拥有飞升后的投射奖励。
+        set_country_flag = AIO_final_won
         save_global_event_target_as = AIO_empire_country
         # 允许进入牢塞星系
         set_country_flag = protected_from_queen_storm
@@ -90,6 +92,7 @@ country_event = {
 
     immediate = {
         set_country_flag = AIO_crisis_country
+        set_country_flag = is_player_crisis
         save_global_event_target_as = AIO_crisis_country
     }
 
@@ -303,6 +306,7 @@ country_event = {
             localization = AIO_crisis_events.406.desc
             days = 30
         }
+        country_event = { id = AIO_final_events.201 }
     }
 }
 
@@ -355,59 +359,12 @@ country_event = {
     trigger = { has_ascension_perk = ap_AIO_allinone }
 
     immediate = {
+        AIO_final_finish = yes
         # 摧毁无名之雾
-        event_target:AIO_HS_system = {
-            # 移除特效
-            if = {
-                limit = { any_system_ambient_object = { is_same_value = event_target:AIO_HS_system_effect } }
-                destroy_ambient_object = event_target:AIO_HS_system_effect
-                clear_global_event_target = AIO_HS_system_effect
-            }
-            # 移除巨构
-            random_system_megastructure = {
-                limit = {
-                    OR = {
-                        is_megastructure_type = AIO_mega_01
-                        is_megastructure_type = AIO_mega_02
-                        is_megastructure_type = AIO_mega_03
-                        is_megastructure_type = AIO_mega_04
-                    }
-                }
-                remove_megastructure = this
-            }
-            AIO_safe_remove_system_megastructures = yes
-            # 移除所有舰队和恒星基地
-            every_fleet_in_system = {
-                limit = { AIO_safe_remove_fleet_exclude_API = no }
-                destroy_fleet = this
-            }
-            set_name = AIO_Abyss
-        }
+        AIO_destroy_HS_effect = yes
 
         # 摧毁现实的万门之门
-        event_target:AIO_TUG_system = {
-            random_system_megastructure = {
-                limit = { is_megastructure_type = AIO_mega_01_fact }
-                remove_megastructure = this
-            }
-            AIO_safe_remove_system_megastructures = yes
-            if = {
-                limit = { any_system_ambient_object = { is_same_value = event_target:AIO_TUG_system_effect } }
-                destroy_ambient_object = event_target:AIO_TUG_system_effect
-                clear_global_event_target = AIO_TUG_system_effect
-            }
-            random_system_planet = {
-                limit = { is_star = yes }
-                change_pc = pc_black_hole
-            }
-            every_fleet_in_system = {
-                limit = { AIO_safe_remove_fleet_exclude_API = no }
-                destroy_fleet = this
-            }
-            set_name = AIO_abyss_edge
-            remove_star_flag = AIO_TUG_system
-        }
-        clear_global_event_target = AIO_TUG_system
+        AIO_destroy_TUG_effect = yes
 
         # 清除标志位
         clear_global_event_target = AIO_crisis_country

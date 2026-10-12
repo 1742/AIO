@@ -22,7 +22,7 @@
  AIO_mega_03_DESC:0 "Raises capacity to 40. Requires living metal production unlocked by level-three rule research."
  AIO_mega_03_MEGASTRUCTURE_DETAILS: "$AIO_mega_03_DESC$"
  AIO_mega_04: "Yog Sothoth"
- AIO_mega_04_DESC:0 "Raises capacity to 64 and enables repeatable spatial expansion and remote projection. Requires nanite production."
+ AIO_mega_04_DESC:0 "Raises capacity to 64, enables repeatable spatial expansion and starts the Aforgomon endgame. Completing the endgame unlocks remote projection. Requires nanite production."
  AIO_mega_04_MEGASTRUCTURE_DETAILS: "$AIO_mega_04_DESC$."
  AIO_mega_04_activate: "$AIO_mega_04$"
  AIO_mega_04_activate_DESC: "$AIO_mega_04_DESC$"

@@ -3,7 +3,9 @@
 @AIO_final_min_wait = 200
 @AIO_final_sub = 200
 @AIO_final_exist_time = 360
-@AIO_final_interval = 100
+@AIO_final_research_cost = 360
+@AIO_final_induction_cost = 10000
+@AIO_final_induction_payment = -10000
 
 
 # 投射参数；调整时同步两份 AIO_projection 本地化中的费用和时间。

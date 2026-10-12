@@ -21,7 +21,7 @@ fleet_event = {
 			}
 			else = {
 				# 无目标则离去；怒气到阈值时清场。两者都先结束本星系状态。
-				remove_star_flag = AIO_Aformon_exist
+				remove_star_flag = AIO_Aformon_existed
 				clear_variable = AIO_Aforgomon_Wrath
 				every_fleet_in_system = {
 					limit = { NOT = { is_owned_by = event_target:AIO_Aforgomon_country } }
@@ -42,7 +42,7 @@ country_event = {
 	immediate = {
 		fromfrom.solar_system = {
 			if = {
-				limit = { has_star_flag = AIO_Aformon_exist }
+				limit = { has_star_flag = AIO_Aformon_existed }
 				if = {
 					limit = { check_variable = { which = AIO_Aforgomon_Wrath value < 10 } }
 					change_variable = { which = AIO_Aforgomon_Wrath value = 1 }

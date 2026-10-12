@@ -230,10 +230,13 @@ AIO_projection_Aforgomon_effect = {
 		limit = { has_star_flag = AIO_projection_in_range }
 		remove_star_flag = AIO_projection_in_range
 		if = {
-			limit = { NOT = { has_star_flag = AIO_Aformon_exist } }
+			limit = { NOT = { has_star_flag = AIO_Aformon_existed } }
 			set_variable = { which = AIO_Aforgomon_Wrath value = 0 }
-			set_star_flag = AIO_Aformon_exist
-			AIO_create_Aforgomon_fleet = yes
+			set_star_flag = AIO_Aformon_existed
+			AIO_create_Aforgomon_fleet = {
+				DESIGN = NAME_AIO_Aforgomon_Wrath
+				FLAG = AIO_projection_Aforgomon
+			}
 		}
 	}
 }

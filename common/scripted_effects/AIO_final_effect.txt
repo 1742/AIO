@@ -1,56 +1,266 @@
-# scope: country
-AIO_start_locate = {
-    hidden_effect = {
+# scope: country；0-based round，前四轮为 0..3。
+AIO_start_location = {
+    if = {
+        limit = {
+            has_country_flag = AIO_final_start
+            NOT = { any_situation = { is_situation_type = AIO_final_location_situation } }
+        }
         set_variable = { which = AIO_final_wait value = value:AIO_final_wait }
         AIO_final_find_omen_system = yes
+        if = {
+            limit = { exists = event_target:AIO_final_target }
+            start_situation = {
+                type = AIO_final_location_situation
+                target = event_target:AIO_final_target
+            }
+        }
+        else = { AIO_final_failed = yes }
     }
-    start_situation = {
-        type = AIO_final_locate_situation
-        target = event_target:AIO_final_target
+}
+
+# scope: situation；在显现前修复失效目标，保留本实例的进度。
+AIO_final_repair_target = {
+    if = {
+        limit = {
+            OR = {
+                NOT = { exists = target }
+                target? = { AIO_final_valid_target = no }
+            }
+        }
+        remove_situation_flag = AIO_final_induced
+        remove_situation_flag = AIO_final_constrainted
+        owner = { AIO_final_find_omen_system = yes }
+        if = {
+            limit = { exists = event_target:AIO_final_target }
+            change_situation_target = event_target:AIO_final_target
+        }
+        else = { owner = { AIO_final_failed = yes } }
     }
 }
 
 # scope: situation
-AIO_complete_locate = {
-    target? = {
-        AIO_ensure_Aforgomon_country = yes
+AIO_final_create_fleet = {
+    owner = {
+        abort_special_project = { type = AIO_FINAL_INDUCTION }
+        abort_special_project = { type = AIO_FINAL_CONSTRAINT }
+    }
+    AIO_final_repair_target = yes
+    if = {
+        limit = { owner = { has_country_flag = AIO_final_start } }
         if = {
-            limit = { has_situation_flag = AIO_final_constricted }
-            AIO_create_Aforgomon_fleet = {
-                DESIGN = NAME_AIO_Aforgomon_Wrath
-                FLAG = AIO_final_constrict_fleet
-            }
+            limit = { target = { is_same_value = event_target:AIO_HS_system } }
+            owner = { AIO_final_failed = yes }
         }
         else = {
-            AIO_create_Aforgomon_fleet = {
-                DESIGN = NAME_AIO_Aforgomon_Wrath
-                FLAG = AIO_final_normal_fleet
+            save_event_target_as = AIO_final_instance
+            target = {
+                set_star_flag = AIO_Aformon_existed
+                clear_variable = AIO_Aforgomon_Wrath
+                AIO_ensure_Aforgomon_country = yes
+                # TODO：受约束版独立设计尚未实现，暂保留作者的普通设计。
+                AIO_create_Aforgomon_fleet = {
+                    DESIGN = NAME_AIO_Aforgomon_Wrath
+                    FLAG = AIO_final_fleet_@event_target:AIO_final_instance
+                }
             }
         }
     }
+}
+
+# scope: situation；超时先上锁，避免抹除产生的舰队死亡回调被算作胜利。
+AIO_final_complete_location = {
+    if = {
+        limit = {
+            NOT = { has_situation_flag = AIO_final_settled }
+            owner = { has_country_flag = AIO_final_start }
+        }
+        set_situation_flag = AIO_final_settled
+        AIO_final_remove_fleet = yes
+        if = {
+            limit = { target? = { is_same_value = event_target:AIO_HS_system } }
+            owner = { AIO_final_failed = yes }
+        }
+        else = {
+            target? = {
+                if = {
+                    limit = { NOT = { is_star_class = sc_AIO_void } }
+                    AIO_DAIT_erase_system_effect = yes
+                }
+                star = {
+                    enable_special_project = {
+                        name = AIO_FINAL_RESEARCH
+                        location = this
+                        owner = prevprev.owner
+                    }
+                }
+                every_playable_country = {
+                    create_message = {
+                        type = STAR_DESTROYED
+                        localization = AIO_final_location_completed
+                        days = 30
+                        target = prev
+                    }
+                }
+            }
+            owner = {
+                change_variable = { which = AIO_final_round value = 1 }
+                # 旧局势须先销毁，下一天才启动下一轮。
+                country_event = { id = AIO_final_events.301 days = 1 }
+            }
+            destroy_situation = this
+        }
+    }
+}
+
+# scope: situation；只删除绑定当前实例的终局舰队。
+AIO_final_remove_fleet = {
+    save_event_target_as = AIO_final_instance
+    event_target:AIO_Aforgomon_country? = {
+        every_owned_fleet = {
+            limit = { has_fleet_flag = AIO_final_fleet_@event_target:AIO_final_instance }
+            solar_system = { remove_star_flag = AIO_Aformon_existed }
+            delete_fleet = this
+        }
+    }
+    target? = { remove_star_flag = AIO_Aformon_existed }
+}
+
+# scope: country；每处残迹只提供一次调查项目，完成后增加研究进度。
+AIO_final_research = {
+    change_variable = { which = AIO_final_research value = 1 }
+    random_situation = {
+        limit = { is_situation_type = AIO_final_main_situation }
+        add_situation_progress = 1
+    }
+    if = {
+        limit = { check_variable = { which = AIO_final_research value = 1 } }
+        country_event = { id = AIO_final_events.202 scopes = { from = from.solar_system } }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_final_research value = 3 } }
+        country_event = { id = AIO_final_events.203 scopes = { from = from.solar_system } }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_final_research value = 7 } }
+        country_event = { id = AIO_final_events.204 scopes = { from = from.solar_system } }
+    }
+}
+
+# scope: country；保留旧版飞升结局，并解锁远程投射。
+AIO_final_winned = {
+    set_country_flag = AIO_final_won
+    AIO_final_finish = yes
+    country_event = { id = AIO_crisis_events.601 }
 }
 
 # scope: country
+AIO_final_failed = {
+    set_country_flag = AIO_final_lost
+    AIO_final_finish = yes
+    country_event = { id = AIO_final_events.205 }
+    AIO_destroy_HS_effect = yes
+    AIO_destroy_TUG_effect = yes
+}
+
+# scope: country；每次先覆盖本地目标，避免继承上一轮残留的事件目标。
 AIO_final_find_omen_system = {
+    # 默认回退到家园。正常游戏期间家园节点始终存在。
+    event_target:AIO_HS_system? = { save_event_target_as = AIO_final_target }
     if = {
         limit = { check_variable = { which = AIO_final_round value <= 4 } }
-        random_system = {
+        if = {
             limit = {
-                distance = {
-                    source = event_target:AIO_TUG_system
-                    min_jumps = 1
-                    max_jumps = 10
-                }
-                NOR = {
-                    is_star_class = sc_AIO_void
-                    has_star_flag = AIO_Aformon_exist
+                any_system = {
+                    distance = {
+                        source = event_target:AIO_TUG_system
+                        min_jumps = 1
+                        max_jumps = 10
+                    }
+                    AIO_final_valid_external_target = yes
                 }
             }
-            save_event_target_as = AIO_final_target
+            random_system = {
+                limit = {
+                    distance = {
+                        source = event_target:AIO_TUG_system
+                        min_jumps = 1
+                        max_jumps = 10
+                    }
+                    AIO_final_valid_external_target = yes
+                }
+                save_event_target_as = AIO_final_target
+            }
         }
-    }
-    else = {
-        event_target:AIO_HS_system = { save_event_target_as = AIO_final_target }
+        else = {
+            random_system = {
+                limit = { AIO_final_valid_external_target = yes }
+                save_event_target_as = AIO_final_target
+            }
+        }
     }
 }
 
+# scope: country；结束、失败、灭国共用清理；先移除 active 再取消项目。
+AIO_final_finish = {
+    remove_country_flag = AIO_final_start
+    abort_special_project = { type = AIO_FINAL_RESEARCH }
+    abort_special_project = { type = AIO_FINAL_INDUCTION }
+    abort_special_project = { type = AIO_FINAL_CONSTRAINT }
+    every_situation = {
+        limit = { is_situation_type = AIO_final_location_situation }
+        set_situation_flag = AIO_final_settled
+        AIO_final_remove_fleet = yes
+        destroy_situation = this
+    }
+    every_situation = {
+        limit = { is_situation_type = AIO_final_main_situation }
+        destroy_situation = this
+    }
+    clear_variable = AIO_final_wait
+    clear_variable = AIO_final_round
+    clear_variable = AIO_final_research
+}
+
+# scope: ship；FROM = 项目星球。诱导和约束共用完成入口。
+# 每轮显现前主动取消未完成项目；回调只接受仍处于前兆阶段的活动终局。
+AIO_final_complete_project = {
+    if = {
+        limit = { owner = { has_country_flag = AIO_final_start } }
+        owner = {
+            random_situation = {
+                limit = {
+                    is_situation_type = AIO_final_location_situation
+                    current_stage = AIO_final_omen_stage
+                    NOR = {
+                        has_situation_flag = AIO_final_settled
+                        has_situation_flag = AIO_final_induced
+                    }
+                }
+                change_situation_target = from.solar_system
+                set_situation_flag = AIO_final_induced
+                if = {
+                    limit = { always = $CONSTRAINT$ }
+                    set_situation_flag = AIO_final_constrainted
+                }
+            }
+        }
+    }
+}
+
+# scope: system event，FROM = 巨构；只在入口复查通过后调用。
+AIO_final_start_project = {
+    from.owner = {
+        add_resource = { AIO_advanced_logic = @AIO_final_induction_payment }
+        if = {
+            limit = { always = $CONSTRAINT$ }
+            add_resource = { sr_dark_matter = -2000 }
+        }
+    }
+    star = {
+        enable_special_project = {
+            name = $PROJECT$
+            location = this
+            owner = from.owner
+        }
+    }
+}
