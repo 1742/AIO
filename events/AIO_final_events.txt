@@ -106,6 +106,20 @@ country_event = {
     immediate = {
         set_country_flag = AIO_final_lost
         AIO_final_finish = yes
+        event_target:AIO_mist_system? = {
+            create_ambient_object = {
+                type = "star_explosion"
+                play_animation_once = yes
+                location = star
+                effect = {
+                    set_location = {
+                        target = prev.star
+                        distance = 0
+                        angle = random
+                    }
+                }
+            }
+        }
         AIO_destroy_mist_effect = yes
         AIO_destroy_gate_effect = yes
     }
