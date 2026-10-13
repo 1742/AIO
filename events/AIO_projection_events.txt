@@ -1,4 +1,4 @@
-espace = AIO_projection_events
+namespace = AIO_projection_events
 
 # ROOT = 目标星系；FROM = 发起动作的巨构。
 system_event = {

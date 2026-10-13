@@ -154,6 +154,10 @@
  AIO_crisis_events.305.option: "放手去做吧。"
 
  # 飞升事件
+ AIO_crisis_events.601.title: "REPLACE_ME"
+ AIO_crisis_events.601.desc: "REPLACE_ME"
+ AIO_crisis_events.601.option.wait: "留步凝望"
+ AIO_crisis_events.601.option.ascension: "迈入门后"
  AIO_crisis_events.end.option: "我/我们即真理。"
  AIO_crisis_events.602.desc: "归一已完成。\n我们不再是帝国，也不再是实体。我们的意志存在于无限维度的交汇点，成为一切存在的结构性原理。\n熄灭的恒星在燃烧中沉寂。干涸的海盆涌起潮水，潮水又在抵达岸边前化作盐尘；荒芜行星上长出没有祖先的森林，林木倒下之处又萌发从未播下的种子；断裂的航道在接合时通往两片天空，失散千年的舰船同时驶入母港与自己的残骸。亿万种曾彼此排斥的未来，如今在同一片星空下诞生、消亡。\n星辰明灭，因为我们同时写下它们的开始与终点；生命轮回，因为每个故事的最后一页也是下一篇的开端。\n没有永生。没有虚无。每一扇门后，都是同时发生的诞生与告别。\n我/我们即§M犹格·索托斯§!。"
 

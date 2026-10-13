@@ -55,7 +55,7 @@ country_event = {
             }
         }
         # 创建无名之雾
-        AIO_create_HS_system_effect = yes
+        AIO_create_HS_system_effect = { CREATE_COLONY = no }
         # 创建犹格索托斯
         event_target:AIO_HS_system = {
             random_system_megastructure = {
@@ -253,7 +253,7 @@ country_event = {
             days = 30
         }
 
-        AIO_create_HS_system_effect = yes
+        AIO_create_HS_system_effect = { CREATE_COLONY = yes }
         AIO_crisis_update_stage_poi_effect = { STAGE = 2 }
     }
 }
@@ -317,11 +317,26 @@ country_event = {
 
 country_event = {
     id = AIO_crisis_events.601
-    hide_window = yes
+    title = AIO_crisis_events.601.title
+    desc = AIO_crisis_events.601.desc
+    picture = GFX_evt_formless_system
+    location = event_target:AIO_HS_system
 
     is_triggered_only = yes
+    trigger = { has_country_flag = AIO_final_won }
 
-    immediate = {
+    option = {
+        name = AIO_crisis_events.601.option.wait
+        default_hide_option = yes
+        enable_special_project = {
+            name = AIO_CRISIS_CONTEMPLATE_GATE
+            location = event_target:AIO_HS_system
+            owner = root
+        }
+    }
+
+    option = {
+        name = AIO_crisis_events.601.option.ascension
         country_event = { id = AIO_crisis_events.602 }
     }
 }

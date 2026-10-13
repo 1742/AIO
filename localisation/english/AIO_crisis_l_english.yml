@@ -154,6 +154,10 @@
  AIO_crisis_events.305.option: "Just go for it."
 
  # ascension event
+ AIO_crisis_events.601.title: "REPLACE_ME"
+ AIO_crisis_events.601.desc: "REPLACE_ME"
+ AIO_crisis_events.601.option.wait: "REPLACE_ME"
+ AIO_crisis_events.601.option.ascension: "REPLACE_ME"
  AIO_crisis_events.end.option: "I/We are the truth."
  AIO_crisis_events.602.desc: "The unification is complete.\nWe are no longer an empire, nor are we entities. Our will stands at the intersection of infinite dimensions, the structural principle of all that exists.\nExtinguished stars fall silent even as they burn. Tides rise in dry ocean basins, only to become salt-dust before reaching shore; forests with no ancestors rise upon barren worlds, while unsown seeds sprout wherever their trees fall; broken hyperlanes rejoin and open onto two different skies, while ships lost for a thousand years enter both their home ports and their own wreckage. Billions of futures once hostile to one another are now born and perish beneath the same stars.\nThe stars flare and fade, because we write both their beginnings and their ends; life turns in its cycle, because the last page of every story is the first page of another.\nThere is no immortality. There is no oblivion. Beyond every gate, birth and farewell unfold as one.\nI/We are §MYog-Sothoth§!."
 

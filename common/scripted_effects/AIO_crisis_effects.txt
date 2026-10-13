@@ -182,7 +182,10 @@ AIO_create_HS_system_effect = {
             set_name = AIO_HYPER_DIMENSIONAL_SPACE
         }
     }
-    AIO_mist_create_colony_effect = yes
+    if = {
+        limit = { always = $CREATE_COLONY$ }
+        AIO_mist_create_colony_effect = yes
+    }
 }
 
 
