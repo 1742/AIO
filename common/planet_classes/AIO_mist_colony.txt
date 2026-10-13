@@ -1,7 +1,7 @@
 # Shared settled and nomadic colony class.
 pc_AIO_mist = {
 	entity = "AIO_empty_space"
-	picture = pc_habitat
+	picture = pc_AIO_mist
 	icon = GFX_planet_type_rift_star
 	icon_large = GFX_planet_type_rift_star_big
 	entity_scale = 1.0
