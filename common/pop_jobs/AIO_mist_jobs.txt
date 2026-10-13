@@ -20,7 +20,10 @@ AIO_dark_matter_worker = {
     resources = {
         category = planet_jobs
         produces = { sr_dark_matter = 2 }
-        upkeep = { energy = 4 }
+        upkeep = {
+            energy = 4
+            exotic_gases = 1
+        }
     }
     weight = { weight = @specialist_job_weight }
 }
@@ -45,7 +48,10 @@ AIO_dark_matter_drone = {
     resources = {
         category = planet_jobs
         produces = { sr_dark_matter = 2 }
-        upkeep = { energy = 4 }
+        upkeep = {
+            energy = 4
+            exotic_gases = 1
+        }
     }
     weight = { weight = @complex_drone_job_weight }
 }
@@ -70,7 +76,10 @@ AIO_living_metal_worker = {
     resources = {
         category = planet_jobs
         produces = { sr_living_metal = 2 }
-        upkeep = { alloys = 4 }
+        upkeep = {
+            alloys = 4
+            volatile_motes = 1
+        }
     }
     weight = { weight = @specialist_job_weight }
 }
@@ -95,7 +104,10 @@ AIO_living_metal_drone = {
     resources = {
         category = planet_jobs
         produces = { sr_living_metal = 2 }
-        upkeep = { alloys = 4 }
+        upkeep = {
+            alloys = 4
+            volatile_motes = 1
+        }
     }
     weight = { weight = @complex_drone_job_weight }
 }
@@ -123,7 +135,7 @@ AIO_nanites_worker = {
         upkeep = {
             energy = 2
             alloys = 2
-            sr_living_metal = 0.05
+            rare_crystals = 1
         }
     }
     weight = { weight = @specialist_job_weight }
@@ -152,7 +164,7 @@ AIO_nanites_drone = {
         upkeep = {
             energy = 2
             alloys = 2
-            sr_living_metal = 0.05
+            rare_crystals = 1
         }
     }
     weight = { weight = @complex_drone_job_weight }

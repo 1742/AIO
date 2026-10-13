@@ -1,6 +1,6 @@
 # Jobs are supplied only by specializations, once per district in that specialization.
 @AIO_mist_zone_jobs_1 = 800
-@AIO_mist_zone_jobs_2 = 200
+@AIO_mist_zone_jobs_2 = 400
 
 zone_AIO_mist_government = {
     icon = GFX_diplomatic_weight_large
@@ -412,7 +412,7 @@ zone_AIO_mist_dark_matter = {
 }
 
 zone_AIO_mist_living_metal = {
-    icon = GFX_AIO_district_nanites
+    icon = GFX_AIO_district_sr_living_metal
     base_buildtime = @zone_buildtime
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }

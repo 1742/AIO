@@ -3,7 +3,7 @@
 # Keep the vanilla default has_primary_zone = yes for single-slot production layouts.
 # The colony class selects its initial district through starting_district.
 @AIO_mist_district_alloys_cost = 200
-@AIO_mist_district_energy_upkeep = 2
+@AIO_mist_district_energy_upkeep = 4
 @AIO_mist_district_housing_1 = 800
 @AIO_mist_district_housing_2 = 200
 @AIO_mist_district_buildtime = 600
@@ -31,7 +31,7 @@ district_AIO_mist_city = {
 }
 
 district_AIO_mist_research = {
-    icon = district_hab_science
+    icon = district_AIO_lathe
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_lathe }
