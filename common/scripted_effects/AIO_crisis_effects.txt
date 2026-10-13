@@ -1,5 +1,5 @@
 # scope: system
-AIO_create_TUG_system_effect = {
+AIO_create_gate_system_effect = {
     if = {
         limit = { any_system_megastructure = { is_megastructure_type = AIO_mega_01_fact } }
 
@@ -38,7 +38,7 @@ AIO_create_TUG_system_effect = {
                             distance = 0
                             angle = random
                         }
-                        save_global_event_target_as = AIO_TUG_system_effect
+                        save_global_event_target_as = AIO_gate_system_effect
                     }
                 }
             }
@@ -60,15 +60,15 @@ AIO_create_TUG_system_effect = {
         # 改名
         set_name = AIO_The_Ultimate_Gate
         # 标志位
-        set_star_flag = AIO_TUG_system
-        save_global_event_target_as = AIO_TUG_system
+        set_star_flag = AIO_gate_system
+        save_global_event_target_as = AIO_gate_system
     }
 }
 
 # scope: country
-AIO_create_HS_system_effect = {
+AIO_create_mist_system_effect = {
     if = {
-        limit = { NOT = { exists = event_target:AIO_HS_system } }
+        limit = { NOT = { exists = event_target:AIO_mist_system } }
         no_scope = {
             switch = {
                 trigger = galaxy_size
@@ -82,7 +82,7 @@ AIO_create_HS_system_effect = {
                         min_orientation_angle = 100
                         max_orientation_angle = 170
 
-                        initializer = AIO_hyperdimensional_space_initializer
+                        initializer = AIO_mist_initializer
 
                         hyperlane = no
                     }
@@ -97,7 +97,7 @@ AIO_create_HS_system_effect = {
                         min_orientation_angle = 100
                         max_orientation_angle = 170
 
-                        initializer = AIO_hyperdimensional_space_initializer
+                        initializer = AIO_mist_initializer
 
                         hyperlane = no
                     }
@@ -112,7 +112,7 @@ AIO_create_HS_system_effect = {
                         min_orientation_angle = 100
                         max_orientation_angle = 170
 
-                        initializer = AIO_hyperdimensional_space_initializer
+                        initializer = AIO_mist_initializer
 
                         hyperlane = no
                     }
@@ -127,7 +127,7 @@ AIO_create_HS_system_effect = {
                         min_orientation_angle = 100
                         max_orientation_angle = 170
 
-                        initializer = AIO_hyperdimensional_space_initializer
+                        initializer = AIO_mist_initializer
 
                         hyperlane = no
                     }
@@ -142,7 +142,7 @@ AIO_create_HS_system_effect = {
                         min_orientation_angle = 100
                         max_orientation_angle = 170
 
-                        initializer = AIO_hyperdimensional_space_initializer
+                        initializer = AIO_mist_initializer
 
                         hyperlane = no
                     }
@@ -151,7 +151,7 @@ AIO_create_HS_system_effect = {
         }
     }
     else = {
-        event_target:AIO_HS_system = {
+        event_target:AIO_mist_system = {
             if = {
                 limit = { NOT = { exists = starbase } }
                 if = {
@@ -179,7 +179,7 @@ AIO_create_HS_system_effect = {
                     owner = root
                 }
             }
-            set_name = AIO_HYPER_DIMENSIONAL_SPACE
+            set_name = AIO_mist
         }
     }
     if = {
@@ -221,8 +221,8 @@ AIO_crisis_finish_ascension_effect = {
 AIO_ascension_effect = {
     if = {
         limit = {
-            exists = event_target:AIO_HS_system
-            exists = event_target:AIO_TUG_system
+            exists = event_target:AIO_mist_system
+            exists = event_target:AIO_gate_system
         }
 
         # 转变国家类型
@@ -262,7 +262,7 @@ AIO_ascension_effect = {
         clear_global_event_target = AIO_mist_colony
         clear_global_event_target = AIO_mist_ship
         # 转移首都
-        event_target:AIO_HS_system = {
+        event_target:AIO_mist_system = {
             random_system_planet = {
                 limit = { is_star = yes }
                 set_owner = root
@@ -307,11 +307,11 @@ AIO_ascension_effect = {
 }
 
 # scope: any
-AIO_destroy_HS_effect = {
-    event_target:AIO_HS_system = {
+AIO_destroy_mist_effect = {
+    event_target:AIO_mist_system = {
         # 移除特效
-        destroy_ambient_object = event_target:AIO_HS_system_effect
-        clear_global_event_target = AIO_HS_system_effect
+        destroy_ambient_object = event_target:AIO_mist_system_effect
+        clear_global_event_target = AIO_mist_system_effect
         # 移除星球
         event_target:AIO_mist_ship? = { delete_ship = this }
         clear_global_event_target = AIO_mist_ship
@@ -343,17 +343,17 @@ AIO_destroy_HS_effect = {
 }
 
 # scope: any
-AIO_destroy_TUG_effect = {
-    event_target:AIO_TUG_system = {
+AIO_destroy_gate_effect = {
+    event_target:AIO_gate_system = {
         random_system_megastructure = {
             limit = { is_megastructure_type = AIO_mega_01_fact }
             remove_megastructure = this
         }
         AIO_safe_remove_system_megastructures = yes
         if = {
-            limit = { any_system_ambient_object = { is_same_value = event_target:AIO_TUG_system_effect } }
-            destroy_ambient_object = event_target:AIO_TUG_system_effect
-            clear_global_event_target = AIO_TUG_system_effect
+            limit = { any_system_ambient_object = { is_same_value = event_target:AIO_gate_system_effect } }
+            destroy_ambient_object = event_target:AIO_gate_system_effect
+            clear_global_event_target = AIO_gate_system_effect
         }
         random_system_planet = {
             limit = { is_star = yes }
@@ -364,7 +364,7 @@ AIO_destroy_TUG_effect = {
             destroy_fleet = this
         }
         set_name = AIO_abyss_edge
-        remove_star_flag = AIO_TUG_system
+        remove_star_flag = AIO_gate_system
     }
-    clear_global_event_target = AIO_TUG_system
+    clear_global_event_target = AIO_gate_system
 }

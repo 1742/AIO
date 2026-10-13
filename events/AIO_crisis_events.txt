@@ -55,9 +55,9 @@ country_event = {
             }
         }
         # 创建无名之雾
-        AIO_create_HS_system_effect = { CREATE_COLONY = no }
+        AIO_create_mist_system_effect = { CREATE_COLONY = no }
         # 创建犹格索托斯
-        event_target:AIO_HS_system = {
+        event_target:AIO_mist_system = {
             random_system_megastructure = {
                 limit = { is_megastructure_type = AIO_mega_01 }
                 remove_megastructure = this
@@ -253,7 +253,7 @@ country_event = {
             days = 30
         }
 
-        AIO_create_HS_system_effect = { CREATE_COLONY = yes }
+        AIO_create_mist_system_effect = { CREATE_COLONY = yes }
         AIO_crisis_update_stage_poi_effect = { STAGE = 2 }
     }
 }
@@ -320,7 +320,7 @@ country_event = {
     title = AIO_crisis_events.601.title
     desc = AIO_crisis_events.601.desc
     picture = GFX_evt_formless_system
-    location = event_target:AIO_HS_system
+    location = event_target:AIO_mist_system
 
     is_triggered_only = yes
     trigger = { has_country_flag = AIO_final_won }
@@ -330,7 +330,7 @@ country_event = {
         default_hide_option = yes
         enable_special_project = {
             name = AIO_CRISIS_CONTEMPLATE_GATE
-            location = event_target:AIO_HS_system
+            location = event_target:AIO_mist_system
             owner = root
         }
     }
@@ -347,7 +347,7 @@ country_event = {
     desc = AIO_crisis_events.602.desc
     picture = GFX_evt_vortex
 	show_sound = event_mystic_reveal
-	location = event_target:AIO_HS_system
+	location = event_target:AIO_mist_system
 
     event_chain = AIO_crisis_events_chain
     is_triggered_only = yes
@@ -376,10 +376,10 @@ country_event = {
     immediate = {
         AIO_final_finish = yes
         # 摧毁无名之雾
-        AIO_destroy_HS_effect = yes
+        AIO_destroy_mist_effect = yes
 
         # 摧毁现实的万门之门
-        AIO_destroy_TUG_effect = yes
+        AIO_destroy_gate_effect = yes
 
         # 清除标志位
         clear_global_event_target = AIO_crisis_country
@@ -472,7 +472,7 @@ fleet_event = {
 
     is_triggered_only = yes
     trigger = {
-        from = { has_star_flag = AIO_HS_system }
+        from = { has_star_flag = AIO_mist_system }
         owner = {
             NOR = {
                 is_country_type = AIO_empire

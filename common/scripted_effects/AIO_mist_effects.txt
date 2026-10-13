@@ -2,7 +2,7 @@
 AIO_mist_create_colony_effect = {
     if = {
         limit = {
-            exists = event_target:AIO_HS_system
+            exists = event_target:AIO_mist_system
             NOT = { exists = event_target:AIO_mist_colony }
         }
         save_event_target_as = AIO_mist_owner
@@ -21,12 +21,12 @@ AIO_mist_create_colony_effect = {
                             colony = { AIO_mist_initialize_colony_effect = yes }
                         }
                     }
-                    set_location = event_target:AIO_HS_system.star
+                    set_location = event_target:AIO_mist_system.star
                 }
             }
         }
         else = {
-            event_target:AIO_HS_system = {
+            event_target:AIO_mist_system = {
                 spawn_planet = {
                     class = pc_AIO_mist
                     size = 12
@@ -43,7 +43,7 @@ AIO_mist_create_colony_effect = {
                 }
             }
         }
-        set_visited = event_target:AIO_HS_system
+        set_visited = event_target:AIO_mist_system
     }
 }
 

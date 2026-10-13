@@ -3,8 +3,8 @@ AIO_final_valid_external_target = {
     exists = star
     NOR = {
         is_star_class = sc_AIO_void
-        is_same_value = event_target:AIO_HS_system
-        is_same_value = event_target:AIO_TUG_system
+        is_same_value = event_target:AIO_mist_system
+        is_same_value = event_target:AIO_gate_system
         has_star_flag = AIO_Aforgomon_existed
     }
 }
@@ -13,7 +13,7 @@ AIO_final_valid_external_target = {
 AIO_final_valid_target = {
     OR = {
         AIO_final_valid_external_target = yes
-        is_same_value = event_target:AIO_HS_system
+        is_same_value = event_target:AIO_mist_system
     }
 }
 

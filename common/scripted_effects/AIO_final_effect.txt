@@ -48,7 +48,7 @@ AIO_final_create_fleet = {
     if = {
         limit = { owner = { has_country_flag = AIO_final_start } }
         if = {
-            limit = { target = { is_same_value = event_target:AIO_HS_system } }
+            limit = { target = { is_same_value = event_target:AIO_mist_system } }
             owner = { country_event = { id = AIO_final_events.205 } }
         }
         else = {
@@ -93,7 +93,7 @@ AIO_final_complete_location = {
         set_situation_flag = AIO_final_settled
         AIO_final_remove_fleet = yes
         if = {
-            limit = { target? = { is_same_value = event_target:AIO_HS_system } }
+            limit = { target? = { is_same_value = event_target:AIO_mist_system } }
             owner = { country_event = { id = AIO_final_events.205 } }
         }
         else = {
@@ -176,14 +176,14 @@ AIO_final_win = {
 # scope: country；每次先覆盖本地目标，避免继承上一轮残留的事件目标。
 AIO_final_find_omen_system = {
     # 默认回退到家园。正常游戏期间家园节点始终存在。
-    event_target:AIO_HS_system? = { save_event_target_as = AIO_final_target }
+    event_target:AIO_mist_system? = { save_event_target_as = AIO_final_target }
     if = {
         limit = { check_variable = { which = AIO_final_round value <= 4 } }
         if = {
             limit = {
                 any_system = {
                     distance = {
-                        source = event_target:AIO_TUG_system
+                        source = event_target:AIO_gate_system
                         min_jumps = 1
                         max_jumps = 10
                     }
@@ -193,7 +193,7 @@ AIO_final_find_omen_system = {
             random_system = {
                 limit = {
                     distance = {
-                        source = event_target:AIO_TUG_system
+                        source = event_target:AIO_gate_system
                         min_jumps = 1
                         max_jumps = 10
                     }

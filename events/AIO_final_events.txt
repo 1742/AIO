@@ -7,7 +7,7 @@ country_event = {
     id = AIO_final_events.201
     title = AIO_final_events.201.title
     desc = AIO_final_events.201.desc
-    location = event_target:AIO_HS_system
+    location = event_target:AIO_mist_system
     picture = GFX_evt_astral_rift_garden_2_fire
 
     event_chain = AIO_crisis_events_chain
@@ -15,8 +15,8 @@ country_event = {
     is_triggered_only = yes
 
     trigger = {
-        exists = event_target:AIO_HS_system
-        exists = event_target:AIO_TUG_system
+        exists = event_target:AIO_mist_system
+        exists = event_target:AIO_gate_system
         NOR = {
             has_country_flag = AIO_final_start
             has_country_flag = AIO_final_won
@@ -30,7 +30,7 @@ country_event = {
         set_variable = { which = AIO_final_research value = 0 }
         start_situation = {
             type = AIO_final_main_situation
-            target = event_target:AIO_HS_system
+            target = event_target:AIO_mist_system
         }
         AIO_start_location = yes
     }
@@ -39,7 +39,7 @@ country_event = {
         tooltip = {
             start_situation = {
                 type = AIO_final_main_situation
-                target = event_target:AIO_HS_system
+                target = event_target:AIO_mist_system
             }
         }
     }
@@ -106,8 +106,8 @@ country_event = {
     immediate = {
         set_country_flag = AIO_final_lost
         AIO_final_finish = yes
-        AIO_destroy_HS_effect = yes
-        AIO_destroy_TUG_effect = yes
+        AIO_destroy_mist_effect = yes
+        AIO_destroy_gate_effect = yes
     }
     option = { name = OK }
 }

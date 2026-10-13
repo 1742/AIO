@@ -72,7 +72,7 @@ AIO_mega_01_fact = {
 	bypass_type = bypass_AIO_ultimate_gate
 
 	on_build_complete = {
-		AIO_create_TUG_system_effect = yes
+		AIO_create_gate_system_effect = yes
 
 		from = {
 			set_country_flag = AIO_built_AIO_mega_01
@@ -127,7 +127,7 @@ AIO_mega_01 = {
 					distance = 0
 					angle = random
 				}
-				save_global_event_target_as = AIO_HS_system_effect
+				save_global_event_target_as = AIO_mist_system_effect
 			}
 		}
 		create_ambient_object = {

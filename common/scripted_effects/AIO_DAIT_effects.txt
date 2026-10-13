@@ -518,8 +518,8 @@ AIO_DAIT_erase_effect = {
     every_system = {
         limit = {
             NOR = {
-                has_star_flag = AIO_HS_system
-                has_star_flag = AIO_TUG_system
+                has_star_flag = AIO_mist_system
+                has_star_flag = AIO_gate_system
                 has_star_flag = synth_queen_capital
                 AIO_safe_remove_system_exclude_API = yes
             }

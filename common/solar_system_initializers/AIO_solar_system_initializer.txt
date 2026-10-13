@@ -1,5 +1,5 @@
-AIO_hyperdimensional_space_initializer = {
-    name = AIO_HYPER_DIMENSIONAL_SPACE
+AIO_mist_initializer = {
+    name = AIO_mist
     class = sc_AIO_void
     usage = misc_system_init
     usage_odds = 0
@@ -13,8 +13,8 @@ AIO_hyperdimensional_space_initializer = {
 		has_ring = no
 
         init_effect = {
-            set_name = AIO_HYPER_DIMENSIONAL_SPACE
-            save_event_target_as = AIO_HS_star
+            set_name = AIO_mist
+            save_event_target_as = AIO_mist_star
         }
 	}
 
@@ -35,13 +35,13 @@ AIO_hyperdimensional_space_initializer = {
 
         spawn_megastructure = {
             type = AIO_mega_01
-            planet = event_target:AIO_HS_star
+            planet = event_target:AIO_mist_star
             orbit_angle = 0
             orbit_distance = 0
             owner = root
         }
 
-        set_star_flag = AIO_HS_system
-        save_global_event_target_as = AIO_HS_system
+        set_star_flag = AIO_mist_system
+        save_global_event_target_as = AIO_mist_system
     }
 }
