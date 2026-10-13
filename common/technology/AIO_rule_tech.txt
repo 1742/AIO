@@ -1,5 +1,5 @@
 @AIO_rule_tech_cost = 75000
-@AIO_rule_tech_weight = 15
+@AIO_rule_tech_weight = 0
 
 
 tech_AIO_rule_energy = {
