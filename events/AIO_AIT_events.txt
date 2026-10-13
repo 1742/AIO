@@ -1,5 +1,6 @@
 namespace = AIO_AIT_events
 
+
 country_event = {
     id = AIO_AIT_events.201
     hide_window = yes
@@ -15,6 +16,7 @@ country_event = {
     is_triggered_only = yes
     immediate = { country_event = { id = AIO_AIT_events.203 days = 1 } }
 }
+
 country_event = {
     id = AIO_AIT_events.203
     hide_window = yes

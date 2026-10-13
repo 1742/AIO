@@ -38,7 +38,7 @@ country_event = {
 	id = AIO_Aforgomon_events.202
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = { fromfrom = { has_fleet_flag = AIO_projection_Aforgomon } }
+	trigger = { fromfrom? = { has_fleet_flag = AIO_projection_Aforgomon } }
 	immediate = {
 		fromfrom.solar_system = {
 			if = {

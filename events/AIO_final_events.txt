@@ -8,7 +8,7 @@ country_event = {
     title = AIO_final_events.201.title
     desc = AIO_final_events.201.desc
     location = event_target:AIO_mist_system
-    picture = GFX_evt_astral_rift_garden_2_fire
+    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
 
     event_chain = AIO_crisis_events_chain
 
@@ -50,7 +50,7 @@ country_event = {
     title = AIO_final_events.202.title
     desc = AIO_final_events.202.desc
     location = from
-    picture = GFX_evt_astral_rift_garden_2_fire
+    picture = GFX_evt_AIO_projection_Aforgomon_map
 
     event_chain = AIO_crisis_events_chain
 
@@ -67,7 +67,7 @@ country_event = {
     title = AIO_final_events.203.title
     desc = AIO_final_events.203.desc
     location = from
-    picture = GFX_evt_astral_rift_garden_2_fire
+    picture = GFX_evt_AIO_projection_Aforgomon_map
 
     event_chain = AIO_crisis_events_chain
 
@@ -84,7 +84,7 @@ country_event = {
     title = AIO_final_events.204.title
     desc = AIO_final_events.204.desc
     location = from
-    picture = GFX_evt_astral_rift_garden_2_fire
+    picture = GFX_evt_AIO_projection_Aforgomon_map
 
     event_chain = AIO_crisis_events_chain
 
@@ -101,7 +101,7 @@ country_event = {
     id = AIO_final_events.205
     title = AIO_final_events.205.title
     desc = AIO_final_events.205.desc
-    picture = GFX_evt_vortex
+    picture = GFX_evt_AIO_projection_Aforgomon_arrival
     is_triggered_only = yes
     immediate = {
         set_country_flag = AIO_final_lost

@@ -378,7 +378,7 @@ zone_AIO_mist_crystals = {
 }
 
 zone_AIO_mist_dark_matter = {
-    icon = GFX_AIO_district_sr_dark_matter
+    icon = GFX_AIO_district_specialization_district_dm
     base_buildtime = @zone_buildtime
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
@@ -412,7 +412,7 @@ zone_AIO_mist_dark_matter = {
 }
 
 zone_AIO_mist_living_metal = {
-    icon = GFX_AIO_district_sr_living_metal
+    icon = GFX_AIO_district_specialization_living_metal
     base_buildtime = @zone_buildtime
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
@@ -446,7 +446,7 @@ zone_AIO_mist_living_metal = {
 }
 
 zone_AIO_mist_nanites = {
-    icon = GFX_AIO_district_nanites
+    icon = GFX_AIO_district_specialization_nanites
     base_buildtime = @zone_buildtime
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }

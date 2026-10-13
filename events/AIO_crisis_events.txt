@@ -377,10 +377,8 @@ country_event = {
         AIO_final_finish = yes
         # 摧毁无名之雾
         AIO_destroy_mist_effect = yes
-
         # 摧毁现实的万门之门
         AIO_destroy_gate_effect = yes
-
         # 清除标志位
         clear_global_event_target = AIO_crisis_country
     }

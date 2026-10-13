@@ -22,7 +22,7 @@ country_event = {
 	id = AIO_projection_events.301
 	title = AIO_projection_events.301.title
 	desc = AIO_projection_events.301.desc
-	picture = GFX_evt_AIO_projection_Aforgomon_target
+	picture = GFX_evt_AIO_projection_Aforgomon_map
 	location = from
 	is_triggered_only = yes
 
