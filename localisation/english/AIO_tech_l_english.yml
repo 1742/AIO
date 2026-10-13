@@ -81,3 +81,27 @@
  tech_AIO_fe_clinic_2_desc: "$tech_fe_clinic_2_desc$"
 
  #endregion
+
+
+ #region infinity thesis
+
+ tech_AIO_rule_energy:0 "Rewriting Energy Conservation"
+ tech_AIO_rule_energy_desc:0 "Level 2. Galaxy-wide job energy output +20%, mineral output -10%. The Mist cancels the mineral penalty and unlocks energy districts."
+ tech_AIO_rule_energy_effect:0 "Level 2. Galaxy-wide job energy output +20%, mineral output -10%. The Mist cancels the mineral penalty and unlocks energy districts."
+ tech_AIO_rule_matter:0 "Matter Genesis"
+ tech_AIO_rule_matter_desc:0 "Level 3. Galaxy-wide job mineral output +20%, food output -10%. The Mist cancels the food penalty and unlocks mineral districts."
+ tech_AIO_rule_matter_effect:0 "Level 3. Galaxy-wide job mineral output +20%, food output -10%. The Mist cancels the food penalty and unlocks mineral districts."
+ tech_AIO_rule_structure:0 "Rewriting Material Structure"
+ tech_AIO_rule_structure_desc:0 "Level 4. Galaxy-wide job motes, gases and crystals output +15%, job energy upkeep +10%. The Mist cancels the upkeep penalty and unlocks three separate refining districts."
+ tech_AIO_rule_structure_effect:0 "Level 4. Galaxy-wide job motes, gases and crystals output +15%, job energy upkeep +10%. The Mist cancels the upkeep penalty and unlocks three separate refining districts."
+ tech_AIO_rule_dark_matter:0 "Dark Matter Realization"
+ tech_AIO_rule_dark_matter_desc:0 "Level 3. Galaxy-wide research job output +10%, job consumer goods upkeep +10%. The Mist cancels the upkeep penalty and unlocks dark matter districts. The Silver Key requires dark matter."
+ tech_AIO_rule_dark_matter_effect:0 "Level 3. Galaxy-wide research job output +10%, job consumer goods upkeep +10%. The Mist cancels the upkeep penalty and unlocks dark matter districts. The Silver Key requires dark matter."
+ tech_AIO_rule_living_metal:0 "Self-Organizing Matter"
+ tech_AIO_rule_living_metal_desc:0 "Level 4. Galaxy-wide job output +10%, job alloy output -10%. The Mist cancels the alloy penalty and unlocks living metal districts. The Eternal Throne requires living metal."
+ tech_AIO_rule_living_metal_effect:0 "Level 4. Galaxy-wide job output +10%, job alloy output -10%. The Mist cancels the alloy penalty and unlocks living metal districts. The Eternal Throne requires living metal."
+ tech_AIO_rule_nanites:0 "Nanite Continuum"
+ tech_AIO_rule_nanites_desc:0 "Level 5. Galaxy-wide job alloy output +15%, energy output -10%. The Mist cancels the energy penalty and unlocks nanite districts. The final structure requires nanites."
+ tech_AIO_rule_nanites_effect:0 "Level 5. Galaxy-wide job alloy output +15%, energy output -10%. The Mist cancels the energy penalty and unlocks nanite districts. The final structure requires nanites."
+
+ #endregion

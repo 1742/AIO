@@ -74,6 +74,8 @@
  menp_AIO_component_1:0 "能量边界"
  menp_AIO_component_1_desc:0 "暗物质不只是能源。掌控它，将为我们理解并改写宇宙法则铺平道路。"
  unlocks_AIO_component_1:0 "解锁科技研究选项：§Y$tech_dark_matter_power_core$§!。"
+ menp_AIO_dimensionality:0 "升维假设"
+ menp_AIO_dimensionality_desc:0 "研究升维假设，建设视界引擎，为通往无名之雾的门准备能量。"
  # 二阶
  menp_AIO_mega_02: "铸门之人"
  menp_AIO_mega_02_desc: "我们将亲手打造通往无限维度的‘门’。"
@@ -118,6 +120,7 @@
  unlocks_AIO_component_5:0 "解锁科技研究选项：§Y$tech_nanite_transmutation$§!, §Y$tech_nanite_repair_system$§!, §Y$tech_nanite_autocannon$§!, §Y$tech_nanite_flak_batteries$§!。\n解锁应用无限研究选项：§Y$tech_AIO_rule_nanites$§!。完成对应研究后开放无名之雾的§Y$district_AIO_mist_nanites$§!。"
  menp_AIO_break_rules: "$menp_cosmo_features_4$"
  menp_AIO_break_rules_desc: "$menp_cosmo_features_4_desc$"
+ unlocks_AIO_mist_expansion:0 "最终巨构完成后，可在无名之雾反复延展空间容量。"
 
  #endregion
 

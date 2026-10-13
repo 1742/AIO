@@ -1,3 +1,10 @@
 ﻿l_simp_chinese:
  AIO_Aforgomon_Wrath_modifier: "亚弗戈蒙之怒"
  AIO_create_civilization_modifier: "星辰大海的渴望"
+
+ AIO_rule_energy:0 "能量守恒改写"
+ AIO_rule_matter:0 "物质生成"
+ AIO_rule_structure:0 "物质结构改写"
+ AIO_rule_dark_matter:0 "暗物质实在化"
+ AIO_rule_living_metal:0 "自组织物质"
+ AIO_rule_nanites:0 "纳米连续体"

@@ -82,3 +82,27 @@
  tech_AIO_fe_clinic_2_desc: "$tech_fe_clinic_2_desc$"
 
  #endregion
+
+
+ #region 应用无限
+
+ tech_AIO_rule_energy:0 "能量守恒改写"
+ tech_AIO_rule_energy_desc:0 "二级。全银河岗位能源产出+20%，矿物产出−10%；无名之雾抵消矿物代价并解锁能源区划。"
+ tech_AIO_rule_energy_effect:0 "二级。全银河岗位能源产出+20%，矿物产出−10%；无名之雾抵消矿物代价并解锁能源区划。"
+ tech_AIO_rule_matter:0 "物质生成"
+ tech_AIO_rule_matter_desc:0 "三级。全银河岗位矿物产出+20%，食物产出−10%；无名之雾抵消食物代价并解锁矿物区划。"
+ tech_AIO_rule_matter_effect:0 "三级。全银河岗位矿物产出+20%，食物产出−10%；无名之雾抵消食物代价并解锁矿物区划。"
+ tech_AIO_rule_structure:0 "物质结构改写"
+ tech_AIO_rule_structure_desc:0 "四级。全银河岗位三稀有产出+15%，岗位能源维护+10%；无名之雾抵消维护代价，分别解锁微粒、气体、水晶区划。"
+ tech_AIO_rule_structure_effect:0 "四级。全银河岗位三稀有产出+15%，岗位能源维护+10%；无名之雾抵消维护代价，分别解锁微粒、气体、水晶区划。"
+ tech_AIO_rule_dark_matter:0 "暗物质实在化"
+ tech_AIO_rule_dark_matter_desc:0 "三级。全银河科研岗位产出+10%，岗位消费品维护+10%；无名之雾抵消维护代价并解锁暗物质区划。银时之匙使用暗物质。"
+ tech_AIO_rule_dark_matter_effect:0 "三级。全银河科研岗位产出+10%，岗位消费品维护+10%；无名之雾抵消维护代价并解锁暗物质区划。银时之匙使用暗物质。"
+ tech_AIO_rule_living_metal:0 "自组织物质"
+ tech_AIO_rule_living_metal_desc:0 "四级。全银河岗位产出+10%，岗位合金产出−10%；无名之雾抵消合金代价并解锁活体金属区划。永恒王座使用活体金属。"
+ tech_AIO_rule_living_metal_effect:0 "四级。全银河岗位产出+10%，岗位合金产出−10%；无名之雾抵消合金代价并解锁活体金属区划。永恒王座使用活体金属。"
+ tech_AIO_rule_nanites:0 "纳米连续体"
+ tech_AIO_rule_nanites_desc:0 "五级。全银河岗位合金产出+15%，能源产出−10%；无名之雾抵消能源代价并解锁纳米机器人区划。最终巨构使用纳米机器人。"
+ tech_AIO_rule_nanites_effect:0 "五级。全银河岗位合金产出+15%，能源产出−10%；无名之雾抵消能源代价并解锁纳米机器人区划。最终巨构使用纳米机器人。"
+
+ #endregion

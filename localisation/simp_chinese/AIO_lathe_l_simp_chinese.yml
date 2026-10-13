@@ -1,6 +1,4 @@
 ﻿l_simp_chinese:
- zone_AIO_lathe:0 "套娃脑特化"
- zone_AIO_lathe_desc:0 "为递归运算网配置专用支持设施，提供3个建筑槽。每种建筑每殖民地限建1座。"
  building_AIO_lathe_resonator:0 "$building_lathe_resonator$"
  building_AIO_lathe_resonator_desc:0 "$building_lathe_resonator_desc$"
  building_AIO_lathe_stabilisator:0 "$building_lathe_stabilisator$"

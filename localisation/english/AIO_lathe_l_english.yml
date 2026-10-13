@@ -1,6 +1,4 @@
 ﻿l_english:
- zone_AIO_lathe:0 "Matryoshka Brain Specialization"
- zone_AIO_lathe_desc:0 "Dedicated support facilities for the recursive network, providing 3 building slots. Each building is limited to one per colony."
  building_AIO_lathe_resonator:0 "$building_lathe_resonator$"
  building_AIO_lathe_resonator_desc:0 "$building_lathe_resonator_desc$"
  building_AIO_lathe_stabilisator:0 "$building_lathe_stabilisator$"
