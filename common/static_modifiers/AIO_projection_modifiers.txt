@@ -1,7 +1,0 @@
-# 修正只增加本次锚点的舰体；火力由各档区段和原版武器决定。
-AIO_projection_anchor_reinforced = {
-	ship_hull_mult = 1
-}
-AIO_projection_anchor_overcharged = {
-	ship_hull_mult = 3
-}

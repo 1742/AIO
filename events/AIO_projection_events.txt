@@ -1,4 +1,4 @@
-namespace = AIO_projection_events
+espace = AIO_projection_events
 
 # ROOT = 目标星系；FROM = 发起动作的巨构。
 system_event = {
@@ -8,36 +8,12 @@ system_event = {
 	immediate = {
 		from.owner = {
 			country_event = {
-				id = AIO_projection_events.202
+				id = AIO_projection_events.301
 				scopes = { from = root fromfrom = from }
 			}
 		}
 	}
 }
-
-country_event = {
-	id = AIO_projection_events.202
-	title = AIO_projection_events.202.title
-	desc = AIO_projection_events.202.desc
-	location = fromfrom
-	picture = GFX_evt_alien_propaganda_zoom_2
-
-	is_triggered_only = yes
-
-	option = {
-		name = AIO_Tawi
-		allow = { always = no }
-	}
-
-	option = {
-		name = AIO_Aforgomon
-		country_event = {
-			id = AIO_projection_events.301
-			scopes = { from = from fromfrom = fromfrom }
-		}
-	}
-}
-
 
 #region Aforgomon
 
@@ -51,88 +27,37 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = AIO_projection_invest_basic
+		name = AIO_projection_confirm
 		allow = { AIO_projection_option_available = { COST = @AIO_projection_logic_cost } }
-		custom_tooltip = AIO_projection_invest_basic_tooltip
-		AIO_projection_begin = { PAYMENT = @AIO_projection_logic_payment STRENGTH = 1 }
+		custom_tooltip = AIO_projection_confirm_tooltip
+		AIO_projection_begin = yes
 		ai_chance = { factor = 10 }
 	}
 
 	option = {
-		name = AIO_projection_invest_reinforced
-		allow = { AIO_projection_option_available = { COST = @AIO_projection_reinforced_cost } }
-		custom_tooltip = AIO_projection_invest_reinforced_tooltip
-		AIO_projection_begin = { PAYMENT = @AIO_projection_reinforced_payment STRENGTH = 2 }
-		ai_chance = { factor = 5 }
-	}
-
-	option = {
-		name = AIO_projection_invest_overcharged
-		allow = { AIO_projection_option_available = { COST = @AIO_projection_overcharged_cost } }
-		custom_tooltip = AIO_projection_invest_overcharged_tooltip
-		AIO_projection_begin = { PAYMENT = @AIO_projection_overcharged_payment STRENGTH = 4 }
-		ai_chance = { factor = 1 }
-	}
-
-	option = {
-		name = AIO_projection_cancel
+		name = AIO_think_more
 		default_hide_option = yes
 		ai_chance = { factor = 0 }
 	}
 }
 
-# 共享国家每月回收孤立锚点；没有战争或亡国追踪。
-country_event = {
-	id = AIO_projection_events.302
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = { has_country_flag = AIO_Aforgomon_country }
-	immediate = { AIO_projection_cleanup_orphan_anchors = yes }
+# 目标星系延迟回调；确认后不依赖锚点、局势或施法者。
+system_event = {
+    id = AIO_projection_events.302
+    hide_window = yes
+    is_triggered_only = yes
+	trigger = { has_star_flag = AIO_projection_pending }
+    immediate = {
+        remove_star_flag = AIO_projection_pending
+        if = {
+            limit = { NOT = { has_star_flag = AIO_Aforgomon_existed } }
+            AIO_projection_Aforgomon_effect = yes
+            AIO_projection_dispatch_notice = {
+				MESSAGE_TYPE = STAR_DESTROYED
+				MESSAGE = AIO_projection_Aforgomon.advented
+			}
+        }
+    }
 }
-
-# 主局势月度更新；观察局势本身不推进，也不触发召唤。
-situation_event = {
-	id = AIO_projection_events.303
-	hide_window = yes
-	is_triggered_only = yes
-	immediate = { AIO_projection_sync_observers = yes }
-}
-
-#region notify
-
-# FROM = 施法者；FROMFROM = 中心星系。通知不依赖已结束的局势。
-country_event = {
-	id = AIO_projection_events.401
-	title = AIO_projection_events.401.title
-	desc = AIO_projection_events.401.desc
-	picture = GFX_evt_AIO_projection_Aforgomon_omen
-	location = fromfrom
-	is_triggered_only = yes
-	option = { name = AIO_projection_notice_ack }
-}
-
-# FROM = 施法者；FROMFROM = 中心星系。通知不依赖已结束的局势。
-country_event = {
-	id = AIO_projection_events.402
-	title = AIO_projection_events.402.title
-	desc = AIO_projection_events.402.desc
-	picture = GFX_evt_AIO_projection_Aforgomon_aborted
-	location = fromfrom
-	is_triggered_only = yes
-	option = { name = AIO_projection_notice_ack }
-}
-
-# FROM = 施法者；FROMFROM = 中心星系。通知不依赖已结束的局势。
-country_event = {
-	id = AIO_projection_events.403
-	title = AIO_projection_events.403.title
-	desc = AIO_projection_events.403.desc
-	picture = GFX_evt_AIO_projection_Aforgomon_arrival
-	location = fromfrom
-	is_triggered_only = yes
-	option = { name = AIO_projection_notice_ack }
-}
-
-#endregion
 
 #endregion

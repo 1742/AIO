@@ -384,7 +384,6 @@ AIO_mega_04 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_04
-            set_variable = { which = AIO_projection_range value = 5 }
 			event_target:AIO_mist_colony? = { change_planet_size = 24 }
             country_event = { id = AIO_crisis_events.406 }
 		}

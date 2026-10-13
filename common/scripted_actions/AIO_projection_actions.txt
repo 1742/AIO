@@ -3,7 +3,7 @@ AIO_projection_action = {
 	scope = galactic_object
 	possible = {
 		custom_tooltip = {
-			fail_text = AIO_projection_fail_center
+			fail_text = AIO_projection_fail.target
 			AIO_projection_center_available = yes
 		}
 	}
@@ -12,8 +12,10 @@ AIO_projection_action = {
 	}
 	button_visible = {
 		owner = {
-			has_country_flag = AIO_final_won
-			NOT = { has_country_flag = AIO_projection_cooldown }
+			OR= {
+				has_country_flag = AIO_final_won
+				is_country_type = AIO_empire
+			}
 		}
 	}
 	icon = GFX_ship_class_conduit

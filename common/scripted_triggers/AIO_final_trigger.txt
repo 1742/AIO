@@ -5,7 +5,7 @@ AIO_final_valid_external_target = {
         is_star_class = sc_AIO_void
         is_same_value = event_target:AIO_HS_system
         is_same_value = event_target:AIO_TUG_system
-        has_star_flag = AIO_Aformon_existed
+        has_star_flag = AIO_Aforgomon_existed
     }
 }
 

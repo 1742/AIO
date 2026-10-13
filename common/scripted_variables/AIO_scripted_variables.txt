@@ -12,7 +12,4 @@
 @AIO_projection_cooldown_days = 3600
 @AIO_projection_logic_cost = 100000
 @AIO_projection_logic_payment = -100000
-@AIO_projection_reinforced_cost = 200000
-@AIO_projection_reinforced_payment = -200000
-@AIO_projection_overcharged_cost = 400000
-@AIO_projection_overcharged_payment = -400000
+@AIO_projection_delay_days = 720

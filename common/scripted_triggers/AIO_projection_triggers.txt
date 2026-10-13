@@ -1,9 +1,11 @@
-# 每国一份仪式；冷却只在确认投入后开始。
 # scope：country
 AIO_projection_can_start = {
 	custom_tooltip = {
 		fail_text = AIO_projection_fail.need_final
-		has_country_flag = AIO_final_won
+		OR = {
+			has_country_flag = AIO_final_won
+			is_country_type = AIO_empire
+		}
 	}
 	custom_tooltip = {
 		fail_text = AIO_projection_fail.need_mega_04
@@ -13,13 +15,12 @@ AIO_projection_can_start = {
 		fail_text = AIO_projection_fail.cooldown
 		NOT = { has_country_flag = AIO_projection_cooldown }
 	}
-	custom_tooltip = {
-		fail_text = AIO_projection_fail.exist
-		NOT = { any_situation = { is_situation_type = AIO_projection_Aforgomon } }
-	}
-	resource_stockpile_compare = {
-		resource = AIO_advanced_logic
-		value >= $COST$
+	OR = {
+		resource_stockpile_compare = {
+			resource = AIO_advanced_logic
+			value >= $COST$
+		}
+		is_country_type = AIO_empire
 	}
 }
 
@@ -28,7 +29,7 @@ AIO_projection_can_start = {
 AIO_projection_option_available = {
 	AIO_projection_can_start = { COST = $COST$ }
 	custom_tooltip = {
-		fail_text = AIO_projection_fail_center
+		fail_text = AIO_projection_fail.target
 		exists = from
 		from = { AIO_projection_center_available = yes }
 	}
@@ -42,20 +43,15 @@ AIO_projection_option_available = {
 	}
 }
 
-# system：中心不重复，外围范围允许重叠。
+# system；同一地点不能重复预约或叠加化身。
 AIO_projection_center_available = {
-	NOT = { any_fleet_in_system = { has_fleet_flag = AIO_projection_anchor } }
-}
-
-# situation：只认本次锚点，避免另一份仪式接替被击毁的锚点。
-AIO_projection_has_anchor = {
-	exists = target
-	target = {
-		any_fleet_in_system = { has_fleet_flag = AIO_projection_anchor_@prevprev }
+    NOR = {
+		has_star_flag = AIO_projection_pending
+		has_star_flag = AIO_Aforgomon_existed
 	}
 }
 
-# system：同国锚点不参与正式化身的怒气和清场判定。
+# system；共享国家的舰队不算攻击目标。
 AIO_Aforgomon_has_targets = {
 	any_fleet_in_system = {
 		NOT = { is_owned_by = event_target:AIO_Aforgomon_country }

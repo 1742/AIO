@@ -54,7 +54,7 @@ AIO_final_create_fleet = {
         else = {
             save_event_target_as = AIO_final_instance
             target = {
-                set_star_flag = AIO_Aformon_existed
+                set_star_flag = AIO_Aforgomon_existed
                 clear_variable = AIO_Aforgomon_Wrath
                 AIO_ensure_Aforgomon_country = yes
                 # TODO：受约束版独立设计尚未实现，暂保留作者的普通设计。
@@ -130,11 +130,11 @@ AIO_final_remove_fleet = {
     event_target:AIO_Aforgomon_country? = {
         every_owned_fleet = {
             limit = { has_fleet_flag = AIO_final_fleet_@event_target:AIO_final_instance }
-            solar_system = { remove_star_flag = AIO_Aformon_existed }
+            solar_system = { remove_star_flag = AIO_Aforgomon_existed }
             delete_fleet = this
         }
     }
-    target? = { remove_star_flag = AIO_Aformon_existed }
+    target? = { remove_star_flag = AIO_Aforgomon_existed }
 }
 
 # scope: country；每处残迹只提供一次调查项目，完成后增加研究进度。

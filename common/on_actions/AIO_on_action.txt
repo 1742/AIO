@@ -9,13 +9,6 @@ on_game_start_country = {
     }
 }
 
-on_monthly_pulse_country = {
-	events = {
-        AIO_projection_events.302 # 共享亚弗戈蒙国家回收失去局势的锚点
-    }
-}
-
-
 on_tech_increased = {
     events = {
         AIO_crisis_events.401 # 完成科技升维假设，提示建造视相引擎
