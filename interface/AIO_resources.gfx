@@ -3,9 +3,12 @@ spriteTypes = {
 		name = "GFX_AIO_resource_nanites_large"
 		textureFile = "gfx/interface/icons/resources/nanites_large.dds"
 	}
-
     spriteType = {
 		name = "GFX_AIO_district_sr_dark_matter"
+		textureFile = "gfx/interface/icons/resources/AIO_district_sr_dark_matter.dds"
+	}
+	spriteType = {
+		name = "GFX_AIO_district_sr_living_metal"
 		textureFile = "gfx/interface/icons/resources/AIO_district_sr_dark_matter.dds"
 	}
     spriteType = {

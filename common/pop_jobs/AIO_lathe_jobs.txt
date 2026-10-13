@@ -18,10 +18,9 @@ AIO_chips = {
     # Colony scope also supports the nomadic mist anchorage.
     possible = {
         colony? = { uses_district_set = AIO_mist }
-        has_virtual_species_trait = no
     }
     resources = {
-        category = planet_neural_chips
+        category = planet_AIO_chips
         produces = {
             physics_research = 0.375
             society_research = 0.375

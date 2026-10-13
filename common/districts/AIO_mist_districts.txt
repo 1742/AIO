@@ -1,28 +1,60 @@
-# Urban infrastructure follows vanilla city / hive / nexus districts.
-# Resource districts grant their base workforce directly; specializations add native jobs/buildings.
+# The mist has its own urban district because vanilla cities exclude this district set.
+# Districts supply housing; their specializations supply all workforce.
+# Keep the vanilla default has_primary_zone = yes for single-slot production layouts.
+# The colony class selects its initial district through starting_district.
 @AIO_mist_district_alloys_cost = 200
 @AIO_mist_district_energy_upkeep = 2
-@AIO_mist_district_jobs_1 = 800
-@AIO_mist_district_jobs_2 = 200
+@AIO_mist_district_housing_1 = 800
+@AIO_mist_district_housing_2 = 200
 @AIO_mist_district_buildtime = 600
 
 
-district_AIO_mist_research = {
-    icon = district_AIO_lathe
+district_AIO_mist_city = {
+    icon = district_city
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
-    zone_slots = { slot_empty }
+    has_primary_zone = yes
+    zone_slots = {
+        slot_AIO_mist_government
+        slot_city_01
+        slot_city_02
+    }
     show_on_uncolonized = { uses_district_set = AIO_mist }
     potential = { uses_district_set = AIO_mist }
-    
     resources = {
-        category = planet_districts
+        category = planet_districts_cities
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
+    planet_modifier = { planet_housing_add = 1000 }
+    ai_weight = { weight = 1 }
+}
+
+district_AIO_mist_research = {
+    icon = district_hab_science
+    base_buildtime = @AIO_mist_district_buildtime
+    is_uncapped = { always = yes }
+    zone_slots = { slot_AIO_lathe }
+    show_on_uncolonized = { uses_district_set = AIO_mist }
+    potential = { uses_district_set = AIO_mist }
+
+    resources = {
+        category = planet_districts
+        cost = { alloys = @AIO_mist_district_alloys_cost }
+        # Construction cost triggers use the purchasing country (from).
+        cost = {
+            trigger = { from? = { is_virtual_empire = yes } }
+            alloys = 800
+        }
+        upkeep = { energy = @AIO_mist_district_energy_upkeep }
+        # Double this district's base upkeep for virtual owners, without affecting other districts.
+        upkeep = {
+            trigger = { owner = { is_virtual_empire = yes } }
+            energy = @AIO_mist_district_energy_upkeep
+        }
+    }
     planet_modifier = {
-        planet_housing_add = @AIO_mist_district_jobs_1
-        job_AIO_chips_add = @AIO_mist_district_jobs_1
+        planet_housing_add = @AIO_mist_district_housing_1
     }
     ai_weight = { weight = 1 }
 }
@@ -34,20 +66,13 @@ district_AIO_mist_farm = {
     zone_slots = { slot_AIO_mist_farm }
     show_on_uncolonized = { uses_district_set = AIO_mist }
     potential = { uses_district_set = AIO_mist }
-    
     resources = {
         category = planet_districts
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
-    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs_1 }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = no } }
-        job_farmer_add = @AIO_mist_district_jobs_1
-    }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = yes } }
-        job_agri_drone_add = @AIO_mist_district_jobs_1
+    planet_modifier = {
+        planet_housing_add = @AIO_mist_district_housing_1
     }
     ai_weight = { weight = 1 }
 }
@@ -59,20 +84,13 @@ district_AIO_mist_alloys = {
     zone_slots = { slot_AIO_mist_alloys }
     show_on_uncolonized = { uses_district_set = AIO_mist }
     potential = { uses_district_set = AIO_mist }
-    
     resources = {
         category = planet_districts
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
-    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs_1 }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = no } }
-        job_foundry_add = @AIO_mist_district_jobs_1
-    }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = yes } }
-        job_fabricator_add = @AIO_mist_district_jobs_1
+    planet_modifier = {
+        planet_housing_add = @AIO_mist_district_housing_1
     }
     ai_weight = { weight = 1 }
 }
@@ -85,20 +103,13 @@ district_AIO_mist_goods = {
     show_on_uncolonized = { uses_district_set = AIO_mist }
     potential = { uses_district_set = AIO_mist
 		owner = { country_uses_consumer_goods = yes } }
-    
     resources = {
         category = planet_districts
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
-    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs_1 }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = no } }
-        job_artisan_add = @AIO_mist_district_jobs_1
-    }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = yes } }
-        job_artisan_drone_add = @AIO_mist_district_jobs_1
+    planet_modifier = {
+        planet_housing_add = @AIO_mist_district_housing_1
     }
     ai_weight = { weight = 1 }
 }
@@ -116,14 +127,8 @@ district_AIO_mist_energy = {
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
-    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs_1 }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = no } }
-        job_technician_add = @AIO_mist_district_jobs_1
-    }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = yes } }
-        job_technician_drone_add = @AIO_mist_district_jobs_1
+    planet_modifier = {
+        planet_housing_add = @AIO_mist_district_housing_1
     }
     ai_weight = { weight = 1 }
 }
@@ -141,14 +146,8 @@ district_AIO_mist_minerals = {
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
-    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs_1 }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = no } }
-        job_miner_add = @AIO_mist_district_jobs_1
-    }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = yes } }
-        job_mining_drone_add = @AIO_mist_district_jobs_1
+    planet_modifier = {
+        planet_housing_add = @AIO_mist_district_housing_1
     }
     ai_weight = { weight = 1 }
 }
@@ -166,14 +165,8 @@ district_AIO_mist_motes = {
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
-    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs_2 }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = no } }
-        job_chemist_add = @AIO_mist_district_jobs_2
-    }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = yes } }
-        job_chemist_drone_add = @AIO_mist_district_jobs_2
+    planet_modifier = {
+        planet_housing_add = @AIO_mist_district_housing_2
     }
     ai_weight = { weight = 1 }
 }
@@ -191,14 +184,8 @@ district_AIO_mist_gases = {
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
-    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs_2 }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = no } }
-        job_gas_refiner_add = @AIO_mist_district_jobs_2
-    }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = yes } }
-        job_gas_refiner_drone_add = @AIO_mist_district_jobs_2
+    planet_modifier = {
+        planet_housing_add = @AIO_mist_district_housing_2
     }
     ai_weight = { weight = 1 }
 }
@@ -216,14 +203,8 @@ district_AIO_mist_crystals = {
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
-    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs_2 }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = no } }
-        job_translucer_add = @AIO_mist_district_jobs_2
-    }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = yes } }
-        job_translucer_drone_add = @AIO_mist_district_jobs_2
+    planet_modifier = {
+        planet_housing_add = @AIO_mist_district_housing_2
     }
     ai_weight = { weight = 1 }
 }
@@ -241,14 +222,8 @@ district_AIO_mist_dark_matter = {
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
-    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs_2 }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = no } }
-        job_AIO_dark_matter_worker_add = @AIO_mist_district_jobs_2
-    }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = yes } }
-        job_AIO_dark_matter_drone_add = @AIO_mist_district_jobs_2
+    planet_modifier = {
+        planet_housing_add = @AIO_mist_district_housing_2
     }
     ai_weight = { weight = 1 }
 }
@@ -266,14 +241,8 @@ district_AIO_mist_living_metal = {
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
-    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs_2 }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = no } }
-        job_AIO_living_metal_worker_add = @AIO_mist_district_jobs_2
-    }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = yes } }
-        job_AIO_living_metal_drone_add = @AIO_mist_district_jobs_2
+    planet_modifier = {
+        planet_housing_add = @AIO_mist_district_housing_2
     }
     ai_weight = { weight = 1 }
 }
@@ -291,14 +260,8 @@ district_AIO_mist_nanites = {
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
-    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs_2 }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = no } }
-        job_AIO_nanites_worker_add = @AIO_mist_district_jobs_2
-    }
-    triggered_planet_modifier = {
-        potential = { owner = { is_gestalt = yes } }
-        job_AIO_nanites_drone_add = @AIO_mist_district_jobs_2
+    planet_modifier = {
+        planet_housing_add = @AIO_mist_district_housing_2
     }
     ai_weight = { weight = 1 }
 }

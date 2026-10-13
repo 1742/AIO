@@ -1,31 +1,37 @@
 # One production specialization per resource district; no vanilla district-set unlock gate.
 
+slot_AIO_lathe = {
+    include = { zone_AIO_lathe }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
 slot_AIO_mist_farm = {
-    include = { zone_food }
+    include = { zone_AIO_mist_farm }
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
 }
 
 slot_AIO_mist_alloys = {
-    include = { zone_foundry }
+    include = { zone_AIO_mist_alloys }
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
 }
 
 slot_AIO_mist_goods = {
-    include = { zone_factory }
+    include = { zone_AIO_mist_goods }
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
 }
 
 slot_AIO_mist_energy = {
-    include = { zone_energy }
+    include = { zone_AIO_mist_energy }
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
 }
 
 slot_AIO_mist_minerals = {
-    include = { zone_minerals }
+    include = { zone_AIO_mist_minerals }
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
 }
@@ -49,19 +55,26 @@ slot_AIO_mist_crystals = {
 }
 
 slot_AIO_mist_dark_matter = {
-    include = { zone_AIO_mist_support }
+    include = { zone_AIO_mist_dark_matter }
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
 }
 
 slot_AIO_mist_living_metal = {
-    include = { zone_AIO_mist_support }
+    include = { zone_AIO_mist_living_metal }
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
 }
 
 slot_AIO_mist_nanites = {
-    include = { zone_AIO_mist_support }
+    include = { zone_AIO_mist_nanites }
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+}
+
+slot_AIO_mist_government = {
+    start = zone_AIO_mist_government
+    include = { zone_AIO_mist_government }
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
 }

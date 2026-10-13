@@ -21,6 +21,7 @@ pc_AIO_mist = {
 	spawn_odds = 0
 	planet_size = { min = 12 max = 12 }
 	district_set = AIO_mist
+	starting_district = district_AIO_mist_city
 	modifier = {
 		pop_environment_tolerance = 1.0
 		planet_building_build_speed_mult = 0.5

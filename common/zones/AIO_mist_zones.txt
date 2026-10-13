@@ -1,11 +1,121 @@
-# Resource jobs remain on the district. These zones house matching factories and support facilities.
+# Jobs are supplied only by specializations, once per district in that specialization.
+@AIO_mist_zone_jobs_1 = 800
+@AIO_mist_zone_jobs_2 = 200
 
-zone_AIO_mist_motes = {
-    icon = GFX_district_specialization_volatile_motes
+zone_AIO_mist_government = {
+    icon = GFX_diplomatic_weight_large
+    base_buildtime = @zone_buildtime
+    potential = { # planet scope
+    }
+
+    unlock = { # planet scope
+        NOT = {
+            has_designation = col_resort
+        }
+    }
+
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+
+    max_buildings = 6
+
+    zone_sets = {
+        AIO_mist_government
+    }
+
+    include = {
+        all
+    }
+
+    excluded_building_sets = {
+        generator
+        mining
+        farming
+        knights
+        betharian
+        fallen_empire_generator
+        fallen_empire_farming
+        fallen_empire_mining
+        urban_automation
+        urban_automation_arcology
+        generator_automation
+        mining_automation
+        farming_automation
+    }
+
+    ai_priority = 0
+
+    triggered_district_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+                is_tankbound_empire = no
+            }
+        }
+        job_clerk_add = 100
+    }
+
+    triggered_district_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_tankbound_empire = yes }
+        }
+        job_production_overseer_add = 100
+    }
+
+    triggered_district_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { is_gestalt = yes }
+        }
+        job_logistics_drone_add = 100
+    }
+}
+
+zone_AIO_lathe = {
+    icon = GFX_colony_type_synaptic_lathe_colony
+    base_buildtime = @zone_buildtime
+    potential = {
+        uses_district_set = AIO_mist
+        has_district = district_AIO_mist_research
+    }
+    unlock = { uses_district_set = AIO_mist }
+    zone_sets = { AIO_lathe }
+    included_building_sets = { AIO_lathe_buildings }
+    resources = {
+        category = planet_zones
+        cost = {
+            energy = 1500
+            alloys = 500
+        }
+    }
+    max_buildings = 3
+    planet_modifier = { zone_building_slots_add = 3 }
+    ai_priority = 5
+    district_planet_modifier = { job_AIO_chips_add = @AIO_mist_zone_jobs_1 }
+}
+
+zone_AIO_mist_farm = {
+    icon = GFX_district_specialization_food
     base_buildtime = @zone_buildtime
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
     zone_sets = { AIO_mist }
+    included_building_sets = {
+        farming
+        hydroponics
+        farming_automation
+        fallen_empire_farming
+    }
     resources = {
         category = planet_zones
         inline_script = {
@@ -18,9 +128,183 @@ zone_AIO_mist_motes = {
     }
     max_buildings = 3
     planet_modifier = { zone_building_slots_add = 3 }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_farmer_add = @AIO_mist_zone_jobs_1
+    }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_agri_drone_add = @AIO_mist_zone_jobs_1
+    }
+    ai_priority = 5
+}
+
+zone_AIO_mist_alloys = {
+    icon = GFX_district_specialization_foundry
+    base_buildtime = @zone_buildtime
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+    zone_sets = { AIO_mist }
     included_building_sets = {
-        industrial
         foundry
+        urban_automation
+        origin
+    }
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+    max_buildings = 3
+    planet_modifier = { zone_building_slots_add = 3 }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_foundry_add = @AIO_mist_zone_jobs_1
+    }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_fabricator_add = @AIO_mist_zone_jobs_1
+    }
+    ai_priority = 5
+}
+
+zone_AIO_mist_goods = {
+    icon = GFX_district_specialization_factory
+    base_buildtime = @zone_buildtime
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+    zone_sets = { AIO_mist }
+    included_building_sets = {
+        factory
+        urban_automation
+        origin
+    }
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+    max_buildings = 3
+    planet_modifier = { zone_building_slots_add = 3 }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_artisan_add = @AIO_mist_zone_jobs_1
+    }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_artisan_drone_add = @AIO_mist_zone_jobs_1
+    }
+    ai_priority = 5
+}
+
+zone_AIO_mist_energy = {
+    icon = GFX_district_specialization_energy
+    base_buildtime = @zone_buildtime
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+    zone_sets = { AIO_mist }
+    included_building_sets = {
+        generator
+        fallen_empire_generator
+        generator_automation
+    }
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+    max_buildings = 3
+    planet_modifier = { zone_building_slots_add = 3 }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_technician_add = @AIO_mist_zone_jobs_1
+    }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_technician_drone_add = @AIO_mist_zone_jobs_1
+    }
+    ai_priority = 5
+}
+
+zone_AIO_mist_minerals = {
+    icon = GFX_district_specialization_minerals
+    base_buildtime = @zone_buildtime
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+    zone_sets = { AIO_mist }
+    included_building_sets = {
+        mining
+        fallen_empire_mining
+        mining_automation
+    }
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+    max_buildings = 3
+    planet_modifier = { zone_building_slots_add = 3 }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_miner_add = @AIO_mist_zone_jobs_1
+    }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_mining_drone_add = @AIO_mist_zone_jobs_1
+    }
+    ai_priority = 5
+}
+
+zone_AIO_mist_motes = {
+    icon = GFX_district_specialization_volatile_motes
+    base_buildtime = @zone_buildtime
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+    zone_sets = { AIO_mist }
+    included_building_sets = {
+        foundry
+        urban_automation
+        origin
+    }
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+    max_buildings = 3
+    planet_modifier = { zone_building_slots_add = 3 }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_chemist_add = @AIO_mist_zone_jobs_2
+    }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_chemist_drone_add = @AIO_mist_zone_jobs_2
     }
     ai_priority = 5
 }
@@ -31,6 +315,11 @@ zone_AIO_mist_gases = {
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
     zone_sets = { AIO_mist }
+    included_building_sets = {
+        foundry
+        urban_automation
+        origin
+    }
     resources = {
         category = planet_zones
         inline_script = {
@@ -43,9 +332,13 @@ zone_AIO_mist_gases = {
     }
     max_buildings = 3
     planet_modifier = { zone_building_slots_add = 3 }
-    included_building_sets = {
-        industrial
-        foundry
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_gas_refiner_add = @AIO_mist_zone_jobs_2
+    }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_gas_refiner_drone_add = @AIO_mist_zone_jobs_2
     }
     ai_priority = 5
 }
@@ -56,6 +349,11 @@ zone_AIO_mist_crystals = {
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
     zone_sets = { AIO_mist }
+    included_building_sets = {
+        foundry
+        urban_automation
+        origin
+    }
     resources = {
         category = planet_zones
         inline_script = {
@@ -68,19 +366,28 @@ zone_AIO_mist_crystals = {
     }
     max_buildings = 3
     planet_modifier = { zone_building_slots_add = 3 }
-    included_building_sets = {
-        industrial
-        foundry
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_translucer_add = @AIO_mist_zone_jobs_2
+    }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_translucer_drone_add = @AIO_mist_zone_jobs_2
     }
     ai_priority = 5
 }
 
-zone_AIO_mist_support = {
-    icon = GFX_district_specialization_urban
+zone_AIO_mist_dark_matter = {
+    icon = GFX_AIO_district_sr_dark_matter
     base_buildtime = @zone_buildtime
     potential = { uses_district_set = AIO_mist }
     unlock = { uses_district_set = AIO_mist }
     zone_sets = { AIO_mist }
+    included_building_sets = {
+        generator
+        fallen_empire_generator
+        generator_automation
+    }
     resources = {
         category = planet_zones
         inline_script = {
@@ -93,6 +400,81 @@ zone_AIO_mist_support = {
     }
     max_buildings = 3
     planet_modifier = { zone_building_slots_add = 3 }
-    included_building_sets = { urban }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_AIO_dark_matter_worker_add = @AIO_mist_zone_jobs_2
+    }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_AIO_dark_matter_drone_add = @AIO_mist_zone_jobs_2
+    }
+    ai_priority = 5
+}
+
+zone_AIO_mist_living_metal = {
+    icon = GFX_AIO_district_nanites
+    base_buildtime = @zone_buildtime
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+    zone_sets = { AIO_mist }
+    included_building_sets = {
+        foundry
+        urban_automation
+        origin
+    }
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+    max_buildings = 3
+    planet_modifier = { zone_building_slots_add = 3 }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_AIO_living_metal_worker_add = @AIO_mist_zone_jobs_2
+    }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_AIO_living_metal_drone_add = @AIO_mist_zone_jobs_2
+    }
+    ai_priority = 5
+}
+
+zone_AIO_mist_nanites = {
+    icon = GFX_AIO_district_nanites
+    base_buildtime = @zone_buildtime
+    potential = { uses_district_set = AIO_mist }
+    unlock = { uses_district_set = AIO_mist }
+    zone_sets = { AIO_mist }
+    included_building_sets = {
+        foundry
+        urban_automation
+        origin
+    }
+    resources = {
+        category = planet_zones
+        inline_script = {
+            script = buildings/nomadic_cost_switcher
+            REGULAR_RESOURCE = minerals
+            NOMADIC_RESOURCE = alloys
+            COST = @zone_cost
+            NOMADIC_COST_MULT = 0.5
+        }
+    }
+    max_buildings = 3
+    planet_modifier = { zone_building_slots_add = 3 }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = no } }
+        job_AIO_nanites_worker_add = @AIO_mist_zone_jobs_2
+    }
+    triggered_district_planet_modifier = {
+        potential = { owner = { is_gestalt = yes } }
+        job_AIO_nanites_drone_add = @AIO_mist_zone_jobs_2
+    }
     ai_priority = 5
 }

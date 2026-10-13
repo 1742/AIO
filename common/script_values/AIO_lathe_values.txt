@@ -16,6 +16,12 @@ AIO_chips_produce_factor = {
     divide = 20
 }
 
+AIO_chips_num_per_100_double = {
+    base = 0
+    add = value:AIO_chips_num_per_100
+    mult = 2
+}
+
 AIO_chips_upkeep_factor = {
     base = 0
     add = value:AIO_chips_num_per_100
