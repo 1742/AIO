@@ -57,10 +57,18 @@ AIO_final_create_fleet = {
                 set_star_flag = AIO_Aforgomon_existed
                 clear_variable = AIO_Aforgomon_Wrath
                 AIO_ensure_Aforgomon_country = yes
-                # TODO：受约束版独立设计尚未实现，暂保留作者的普通设计。
-                AIO_create_Aforgomon_fleet = {
-                    DESIGN = NAME_AIO_Aforgomon_Wrath
-                    FLAG = AIO_final_fleet_@event_target:AIO_final_instance
+                if = {
+                    limit = { prev = { has_situation_flag = AIO_final_constrainted } }
+                    AIO_create_Aforgomon_fleet = {
+                        DESIGN = NAME_AIO_Aforgomon_Constraint
+                        FLAG = AIO_final_fleet_@event_target:AIO_final_instance
+                    }
+                }
+                else = {
+                    AIO_create_Aforgomon_fleet = {
+                        DESIGN = NAME_AIO_Aforgomon_Wrath
+                        FLAG = AIO_final_fleet_@event_target:AIO_final_instance
+                    }
                 }
             }
             every_playable_country = {

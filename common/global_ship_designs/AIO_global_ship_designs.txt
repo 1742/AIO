@@ -2,7 +2,7 @@ ship_design = {
 	name = NAME_AIO_Aforgomon_Wrath
 	ship_size = AIO_Aforgomon_Wrath
 	section = {
-		template = AIO_Aforgomon_Wrath_template
+		template = AIO_Aforgomon_template
 		slot = "mid"
 
 		component = {
@@ -124,5 +124,49 @@ ship_design = {
     required_component = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
 	required_component="JUMP_DRIVE_1"
 	required_component="DESTROYER_SHIP_THRUSTER_5"
+    required_component = "AIO_EXTRA_LARGE_AURA_AFORGOMOM_CHAIN"
+}
+
+# 受约束终局设计；非武器组件沿用化身配置，反应堆采用原版主宰暗物质反应堆。
+ship_design = {
+    name = NAME_AIO_Aforgomon_Constraint
+    ship_size = AIO_Aforgomon_Wrath
+    section = {
+        template = AIO_Aforgomon_constraint_template
+        slot = "mid"
+        component = { slot = "TITANIC_01" template = "PERDITION_BEAM_TITAN" }
+        component = { slot = "TITANIC_02" template = "PERDITION_BEAM_TITAN" }
+        component = { slot = "TITANIC_03" template = "PERDITION_BEAM_TITAN" }
+        component = { slot = "TITANIC_04" template = "PERDITION_BEAM_TITAN" }
+        component = { slot = "EXTRA_LARGE_01" template = "ENERGY_LANCE_2" }
+        component = { slot = "EXTRA_LARGE_02" template = "ENERGY_LANCE_2" }
+        component = { slot = "EXTRA_LARGE_03" template = "ENERGY_LANCE_2" }
+        component = { slot = "EXTRA_LARGE_04" template = "ENERGY_LANCE_2" }
+        component = { slot = "LARGE_01" template = "LARGE_GAMMA_LASER" }
+        component = { slot = "LARGE_02" template = "LARGE_GAMMA_LASER" }
+        component = { slot = "LARGE_03" template = "LARGE_GAMMA_LASER" }
+        component = { slot = "LARGE_04" template = "LARGE_GAMMA_LASER" }
+        component = { slot = "LARGE_05" template = "LARGE_GAMMA_LASER" }
+        component = { slot = "LARGE_06" template = "LARGE_GAMMA_LASER" }
+        component = { slot = "LARGE_07" template = "LARGE_PLASMA_3" }
+        component = { slot = "LARGE_08" template = "LARGE_PLASMA_3" }
+        component = { slot = "LARGE_09" template = "LARGE_PLASMA_3" }
+        component = { slot = "LARGE_10" template = "LARGE_PLASMA_3" }
+        component = { slot = "LARGE_11" template = "LARGE_PLASMA_3" }
+        component = { slot = "LARGE_12" template = "LARGE_PLASMA_3" }
+        component = { slot = "MEDIUM_01" template = "MEDIUM_DISRUPTOR_3" }
+        component = { slot = "MEDIUM_02" template = "MEDIUM_DISRUPTOR_3" }
+        component = { slot = "MEDIUM_03" template = "MEDIUM_DISRUPTOR_3" }
+        component = { slot = "MEDIUM_04" template = "MEDIUM_DISRUPTOR_3" }
+        component = { slot = "MEDIUM_05" template = "MEDIUM_DISRUPTOR_3" }
+        component = { slot = "MEDIUM_06" template = "MEDIUM_DISRUPTOR_3" }
+        component = { slot = "MEDIUM_07" template = "MEDIUM_DISRUPTOR_3" }
+        component = { slot = "MEDIUM_08" template = "MEDIUM_DISRUPTOR_3" }
+    }
+    required_component = "JUGGERNAUT_DARK_MATTER_REACTOR"
+    required_component = "SENSOR_4"
+    required_component = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
+    required_component = "JUMP_DRIVE_1"
+    required_component = "DESTROYER_SHIP_THRUSTER_5"
     required_component = "AIO_EXTRA_LARGE_AURA_AFORGOMOM_CHAIN"
 }

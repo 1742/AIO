@@ -24,9 +24,9 @@ utility_component_template = {
 		}
 
 		modifier = {
+			ship_cloaking_detection_add = 10
 			ship_base_speed_mult = -1
             ship_evasion_mult = -1
-            ship_jumpdrive_cooldown_mult = 10
             ship_emergency_ftl_min_days_add = 1000
 		}
 	}

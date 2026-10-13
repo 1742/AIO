@@ -1,6 +1,6 @@
 # AIO亚弗戈蒙之怒区段
 ship_section_template = {
-	key = AIO_Aforgomon_Wrath_template
+	key = AIO_Aforgomon_template
 	ship_size = AIO_Aforgomon_Wrath
 	fits_on_slot = "mid"
 	entity = "quasistellar_portal_ship_entity"
@@ -151,3 +151,153 @@ ship_section_template = {
 	aux_utility_slots = 0
 }
 
+# 受约束亚弗戈蒙：4T + 4X + 12L + 8M，全原版能量武器。
+ship_section_template = {
+    key = AIO_Aforgomon_constraint_template
+    ship_size = AIO_Aforgomon_Wrath
+    fits_on_slot = "mid"
+    entity = "quasistellar_portal_ship_entity"
+    icon = "GFX_ship_part_core_mid"
+    component_slot = {
+        name = "TITANIC_01"
+        template = "invisible_titanic_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "TITANIC_02"
+        template = "invisible_titanic_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "TITANIC_03"
+        template = "invisible_titanic_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "TITANIC_04"
+        template = "invisible_titanic_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_01"
+        template = "invisible_extra_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_02"
+        template = "invisible_extra_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_03"
+        template = "invisible_extra_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "EXTRA_LARGE_04"
+        template = "invisible_extra_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "LARGE_01"
+        template = "invisible_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "LARGE_02"
+        template = "invisible_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "LARGE_03"
+        template = "invisible_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "LARGE_04"
+        template = "invisible_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "LARGE_05"
+        template = "invisible_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "LARGE_06"
+        template = "invisible_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "LARGE_07"
+        template = "invisible_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "LARGE_08"
+        template = "invisible_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "LARGE_09"
+        template = "invisible_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "LARGE_10"
+        template = "invisible_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "LARGE_11"
+        template = "invisible_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "LARGE_12"
+        template = "invisible_large_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "MEDIUM_01"
+        template = "invisible_medium_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "MEDIUM_02"
+        template = "invisible_medium_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "MEDIUM_03"
+        template = "invisible_medium_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "MEDIUM_04"
+        template = "invisible_medium_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "MEDIUM_05"
+        template = "invisible_medium_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "MEDIUM_06"
+        template = "invisible_medium_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "MEDIUM_07"
+        template = "invisible_medium_turret"
+        locatorname = "loc125"
+    }
+    component_slot = {
+        name = "MEDIUM_08"
+        template = "invisible_medium_turret"
+        locatorname = "loc125"
+    }
+    large_utility_slots = 0
+    aux_utility_slots = 0
+}
