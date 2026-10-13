@@ -1,4 +1,4 @@
-﻿l_english:
+l_english:
  building_AIO_lathe_resonator:0 "$building_lathe_resonator$"
  building_AIO_lathe_resonator_desc:0 "$building_lathe_resonator_desc$"
  building_AIO_lathe_stabilisator:0 "$building_lathe_stabilisator$"
@@ -15,7 +15,7 @@
  building_AIO_lathe_cogitator_desc:0 "$building_lathe_cogitator_desc$"
  building_AIO_lathe_validator:0 "$building_lathe_validator$"
  building_AIO_lathe_validator_desc:0 "$building_lathe_validator_desc$"
- AIO_lathe_resonator_tt:0 "Every 100 employed §Y$job_AIO_chips_plural$§! increase Recursive Node output by §G1%§!.\nCurrently: §G+[AIO_lathe_node_units]%§!."
+ AIO_lathe_resonator_tt:0 "Every 100 employed §Y$job_AIO_chips_plural$§! increase §Y$job_AIO_chips$§! output by §G1%§!.\nCurrently: §G+[AIO_lathe_node_units]%§!。"
  building_AIO_lathe_cogitator_tt:0 "Every 100 employed §Y$job_AIO_chips_plural$§! provide:\n§YNaval Capacity§!: §G+1%§! (currently §G+[AIO_lathe_node_units]%§!)\n§YShip Experience Gain§!: §G+2%§! (currently §G+[AIO_lathe_node_units_double]%§!)"
  building_AIO_lathe_validator_tt:0 "Every 100 employed §Y$job_AIO_chips_plural$§! increase §YComputing Research Speed§! by §G1%§!.\nCurrently: §G+[AIO_lathe_node_units]%§!."
  planet_AIO_chips:0 "$job_AIO_chips_plural$"

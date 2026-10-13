@@ -1,10 +1,10 @@
-﻿l_english:
+l_english:
  AIO_Aforgomon_Wrath_modifier: "The Wrath of Aforgomon"
  AIO_create_civilization_modifier: "The Desire for Galaxy"
 
- AIO_rule_energy:0 "Rewriting Energy Conservation"
- AIO_rule_matter:0 "Matter Genesis"
- AIO_rule_structure:0 "Rewriting Material Structure"
- AIO_rule_dark_matter:0 "Dark Matter Realization"
- AIO_rule_living_metal:0 "Self-Organizing Matter"
- AIO_rule_nanites:0 "Nanite Continuum"
+ AIO_rule_energy:0 "Applied Infinity: Directed Energy Flow"
+ AIO_rule_matter:0 "Applied Infinity: Substantive Matter Precipitation"
+ AIO_rule_structure:0 "Applied Infinity: Hyperdimensional Lattice Manifold"
+ AIO_rule_dark_matter:0 "Applied Infinity: Dark Phase Realization"
+ AIO_rule_living_metal:0 "Applied Infinity: Self-Organizing Manifold"
+ AIO_rule_nanites:0 "Applied Infinity: Nanite Continuum"

@@ -15,7 +15,7 @@
  building_AIO_lathe_cogitator_desc:0 "$building_lathe_cogitator_desc$"
  building_AIO_lathe_validator:0 "$building_lathe_validator$"
  building_AIO_lathe_validator_desc:0 "$building_lathe_validator_desc$"
- AIO_lathe_resonator_tt:0 "每100个在岗§Y$job_AIO_chips$§!使递归节点产出§G+1%§!。\n当前：§G+[AIO_lathe_node_units]%§!。"
+ AIO_lathe_resonator_tt:0 "每100个在岗§Y$job_AIO_chips$§!使§Y$job_AIO_chips$§!产出§G+1%§!。\n当前：§G+[AIO_lathe_node_units]%§!。"
  building_AIO_lathe_cogitator_tt:0 "每100个在岗§Y$job_AIO_chips$§!提供：\n§Y海军容量§!：§G+1%§!（当前：§G+[AIO_lathe_node_units]%§!）\n§Y舰船经验获得§!：§G+2%§!（当前：§G+[AIO_lathe_node_units_double]%§!）"
  building_AIO_lathe_validator_tt:0 "每100个在岗§Y$job_AIO_chips$§!使§Y计算科技研究速度§!§G+1%§!。\n当前：§G+[AIO_lathe_node_units]%§!。"
  planet_AIO_chips:0 "$job_AIO_chips_plural$"
