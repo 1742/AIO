@@ -1,11 +1,5 @@
 # One production specialization per resource district; no vanilla district-set unlock gate.
 
-slot_AIO_mist_research = {
-    include = { zone_habitat_research }
-    potential = { uses_district_set = AIO_mist }
-    unlock = { uses_district_set = AIO_mist }
-}
-
 slot_AIO_mist_farm = {
     include = { zone_food }
     potential = { uses_district_set = AIO_mist }

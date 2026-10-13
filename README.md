@@ -29,7 +29,7 @@ As with the three vanilla Crisis paths, you must adopt three Ascension Perks bef
 <h3>Crisis Level 1</h3>
 Adopting the perk unlocks:
 <ul>
-<li><b>Exponential Learning Theory:</b> Unlocks the Matryoshka Brain District on your capital and uncapped Recursive Node jobs. Virtual empires can assemble purpose-built Recursive Chassis as material nodes. <del>Isn't this just the Synaptic Lathe?</del></li>
+<li><b>Matryoshka Brain District:</b> Built in the Nameless Mist, each district provides 600 Recursive Node workforce, consuming physical populations to produce research and Advanced Logic. Output, energy upkeep and population attrition grow with the number of occupied nodes. <del>Isn't this just the Synaptic Lathe?</del></li>
 <li><b>Horizon Engine:</b> Produces Energy for burning through all those synapses. <del>The Aetherophasic Engine sends its regards.</del></li>
 </ul>
 It is worth staying at this level for a while, using the <b>Horizon Engine</b>'s Energy output to feed the Nodes and build up some Research.

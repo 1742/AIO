@@ -4,16 +4,14 @@
 @AIO_mist_district_energy_upkeep = 2
 @AIO_mist_district_jobs_1 = 800
 @AIO_mist_district_jobs_2 = 200
-# Applied to each of the three research job types.
-@AIO_mist_district_research_jobs = 200
-@AIO_mist_district_buildtime = 360
+@AIO_mist_district_buildtime = 600
 
 
 district_AIO_mist_research = {
-    icon = district_hab_science
+    icon = district_AIO_lathe
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
-    zone_slots = { slot_AIO_mist_research }
+    zone_slots = { slot_empty }
     show_on_uncolonized = { uses_district_set = AIO_mist }
     potential = { uses_district_set = AIO_mist }
     
@@ -22,8 +20,10 @@ district_AIO_mist_research = {
         cost = { alloys = @AIO_mist_district_alloys_cost }
         upkeep = { energy = @AIO_mist_district_energy_upkeep }
     }
-    planet_modifier = { planet_housing_add = @AIO_mist_district_jobs_1 }
-    inline_script = { script = jobs/researchers_add AMOUNT = @AIO_mist_district_research_jobs }
+    planet_modifier = {
+        planet_housing_add = @AIO_mist_district_jobs_1
+        job_AIO_chips_add = @AIO_mist_district_jobs_1
+    }
     ai_weight = { weight = 1 }
 }
 
