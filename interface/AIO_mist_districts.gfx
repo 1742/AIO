@@ -1,0 +1,60 @@
+# Custom district icons; vanilla gridbox styles are selected in district definitions.
+spriteTypes = {
+    corneredTileSpriteType = {
+        name = "GFX_district_AIO_mist_plain_bg"
+        textureFile = "gfx/interface/tiles/dark_area.dds"
+        borderSize = { x = 1 y = 1 }
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_city"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_city.dds"
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_research"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_research.dds"
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_farm"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_farm.dds"
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_alloys"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_alloys.dds"
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_goods"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_goods.dds"
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_energy"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_energy.dds"
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_minerals"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_minerals.dds"
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_motes"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_motes.dds"
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_gases"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_gases.dds"
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_crystals"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_crystals.dds"
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_dark_matter"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_dark_matter.dds"
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_living_metal"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_living_metal.dds"
+    }
+    spriteType = {
+        name = "GFX_district_AIO_mist_nanites"
+        textureFile = "gfx/interface/icons/districts/district_AIO_mist_nanites.dds"
+    }
+}

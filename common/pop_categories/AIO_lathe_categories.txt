@@ -1,6 +1,6 @@
 # Specialist assignment parameters; retain chip_slave living conditions.
 AIO_chips = {
-    rank = 3
+    rank = 4
     can_change_category = yes
     change_job_threshold = 1.07
     job_reshuffle_interval = 7

@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
  #region UI and crisis resources
 
  AIO_advanced_logic: "$advanced_logic$"
@@ -147,14 +147,14 @@ l_english:
  # unlock crisis level
  AIO_crisis_events.301.desc: "Physical constants, particle masses, gravity, and the expansion of entropy are not immutable — they are merely the parameters of an initial draft, crude scribbles awaiting revision. We have not yet become the law, but our hand has already taken up the pen.\n\nTo reconstruct the cosmos, we must first master its operational logic. We require advanced computational architectures to tear through the cognitive membrane draping reality."
  AIO_crisis_events.301.option: "Tear open the veil."
- AIO_crisis_events.302.desc:0 "The colossal energies harvested by the Horizon Engine have pierced the shear planes of macroscopic spacetime. Beyond the shadows of the three-dimensional horizon, we have carved out a geometric bubble immune to macroscopic thermodynamics and causal law — the 'Nameless Mist'.\n\nIt is our first foothold beyond reality. Here, matter and energy no longer adhere to inherited rules, reordered entirely at our discretion."
- AIO_crisis_events.302.option: "The Gate stands open."
- AIO_crisis_events.303.desc:0 "The dimensional bubble of the Nameless Mist has steadily hardened. The foundation of the Silver Key is unfurling, acting as a higher-dimensional wedge that anchors our colony from a fragile local horizon into a grander superstring network.\n\nThe retaliatory physics of three-dimensional space remain sealed beyond the cross-section; here, dark phases and vacuum sub-currents surge uninterrupted. It is time for our engineering to transcend the axis of time itself."
- AIO_crisis_events.303.option: "Spacetime is merely building material."
- AIO_crisis_events.304.desc:0 "The Silver Key holds causality firmly by the throat. With the construction of the Eternal Throne, the spatial capacity of the Nameless Mist leaps exponentially. The outer universe pays the price for our crude revisions — stellar aberrations, decomposing constants — while we sit upon our throne beyond the cross-section, reaping every reward and privilege in cold detachment.\n\nThe groans of reality grow ever louder. But the Throne is raised; even its right to protest shall be stripped away."
+ AIO_crisis_events.302.desc:0 "The Horizon Engine thunders into full operation. Tearing through the barriers between the shroud and physical constants, it has harvested unimaginable oceans of primordial energy.\n\nYet lower-dimensional vessels cannot hope to contain such power. We must direct this energy to forge a trans-dimensional nexus across the fractures of spacetime — the 'Gate of Gates'. Once open, we shall carve out a brand-new sanctuary beyond the cross-section, untethered from causality and thermodynamics."
+ AIO_crisis_events.302.option: "Begin casting the Gate of Gates."
+ AIO_crisis_events.303.desc:0 "The Gate of Gates is forged! Piercing straight through the projective cross-section of three-dimensional spacetime, we have carved out an embryonic dimensional bubble beyond reality — the 'Nameless Mist'.\n\nThis is our first sanctuary beyond the reach of the outer universe. Yet this newborn expanse remains constrained by local temporal turbulence. Now, we must elevate the Gate of Gates into the 'Silver Key', driving this hyperdimensional wedge deep into the very bedrock of reality to vastly expand the Mist's capacity and capture the undercurrents of dark matter."
+ AIO_crisis_events.303.option: "Turn the Silver Key."
+ AIO_crisis_events.304.desc:0 "The Silver Key has clicked shut. The unidirectional flow of time can no longer constrain our engineering, and the spatial network of the Nameless Mist expands steadily under the nourishment of dark phase energy.\n\nThe outer universe groans with violent physical rebound and decaying constants under our revisions, but these are mere growing pains of a lower-dimensional world. We must push further: the 'Eternal Throne' will infuse hyperdimensional manifolds into matter lattices, completely commanding the self-organizing laws of macroscopic form to achieve a qualitative leap in our habitat's capacity."
  AIO_crisis_events.304.option: "Reality must learn to endure its rightful pain."
- AIO_crisis_events.305.desc:0 "The foundations for the endgame are set; an ultimate structure governing all time and dimensions — §MYog-Sothoth§! — shall descend in full.\n\nThis is no longer an experiment, but an absolute overwrite of the cosmos's underlying source code. The deeper structures of reality will inevitably suffer violent convulsions and immune rejection storms, but that is our prime opportunity to seize the 'ultimate truth'."
- AIO_crisis_events.305.option: "Let it come; our scalpels are ready."
+ AIO_crisis_events.305.desc:0 "The Eternal Throne already towers atop the dimensions; lower-dimensional matter and causality are fully within our grasp. The pedestrian empires of the outer galaxy wage war against us in blinding panic, yet the wails of insects mean nothing.\n\nThe final foundation is ready: that transcendent structure embodying the very foundation of cosmic existence — §MYog-Sothoth§! — has emerged before our eyes.\n\nSuch near-sacrilegious revision will inevitably awaken a deep backlash from the universe, summoning the advent of the Purger, Aforgomon. But that shall be the very moment we capture divinity and complete our ascension."
+ AIO_crisis_events.305.option: "Let it be done."
 
  # ascension event
  AIO_crisis_events.601.title: "The Threshold of the Gate"

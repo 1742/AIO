@@ -10,7 +10,9 @@
 
 
 district_AIO_mist_city = {
-    icon = district_city
+    icon = district_AIO_mist_city
+    gridbox = district_city
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     has_primary_zone = yes
@@ -31,7 +33,9 @@ district_AIO_mist_city = {
 }
 
 district_AIO_mist_research = {
-    icon = district_AIO_lathe
+    icon = district_AIO_mist_research
+    gridbox = district_rw_science
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_lathe }
@@ -60,7 +64,9 @@ district_AIO_mist_research = {
 }
 
 district_AIO_mist_farm = {
-    icon = district_farming
+    icon = district_AIO_mist_farm
+    gridbox = district_farming
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_mist_farm }
@@ -78,7 +84,9 @@ district_AIO_mist_farm = {
 }
 
 district_AIO_mist_alloys = {
-    icon = district_arcology_arms_industry
+    icon = district_AIO_mist_alloys
+    gridbox = district_arcology_arms_industry
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_mist_alloys }
@@ -96,7 +104,9 @@ district_AIO_mist_alloys = {
 }
 
 district_AIO_mist_goods = {
-    icon = district_arcology_civilian_industry
+    icon = district_AIO_mist_goods
+    gridbox = district_arcology_civilian_industry
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_mist_goods }
@@ -115,7 +125,9 @@ district_AIO_mist_goods = {
 }
 
 district_AIO_mist_energy = {
-    icon = district_generator
+    icon = district_AIO_mist_energy
+    gridbox = district_generator
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_mist_energy }
@@ -134,7 +146,9 @@ district_AIO_mist_energy = {
 }
 
 district_AIO_mist_minerals = {
-    icon = district_mining
+    icon = district_AIO_mist_minerals
+    gridbox = district_mining
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_mist_minerals }
@@ -153,7 +167,9 @@ district_AIO_mist_minerals = {
 }
 
 district_AIO_mist_motes = {
-    icon = district_generator
+    icon = district_AIO_mist_motes
+    gridbox = district_generator
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_mist_motes }
@@ -172,7 +188,9 @@ district_AIO_mist_motes = {
 }
 
 district_AIO_mist_gases = {
-    icon = district_generator
+    icon = district_AIO_mist_gases
+    gridbox = district_generator
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_mist_gases }
@@ -191,7 +209,9 @@ district_AIO_mist_gases = {
 }
 
 district_AIO_mist_crystals = {
-    icon = district_mining
+    icon = district_AIO_mist_crystals
+    gridbox = district_mining
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_mist_crystals }
@@ -210,7 +230,9 @@ district_AIO_mist_crystals = {
 }
 
 district_AIO_mist_dark_matter = {
-    icon = district_generator
+    icon = district_AIO_mist_dark_matter
+    gridbox = district_generator
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_mist_dark_matter }
@@ -229,7 +251,9 @@ district_AIO_mist_dark_matter = {
 }
 
 district_AIO_mist_living_metal = {
-    icon = district_mining
+    icon = district_AIO_mist_living_metal
+    gridbox = district_mining
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_mist_living_metal }
@@ -248,7 +272,9 @@ district_AIO_mist_living_metal = {
 }
 
 district_AIO_mist_nanites = {
-    icon = district_arcology_arms_industry
+    icon = district_AIO_mist_nanites
+    gridbox = district_arcology_arms_industry
+    district_background = district_AIO_mist_plain
     base_buildtime = @AIO_mist_district_buildtime
     is_uncapped = { always = yes }
     zone_slots = { slot_AIO_mist_nanites }
