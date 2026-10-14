@@ -9,7 +9,6 @@ This mod adds a new Become the Crisis path: [i][b]All-in-One[/b][/i]. Regular em
 [h2]Features[/h2]
 [list]
 [*]A new Ascension Perk, [b]All-in-One[/b], and its Become the Crisis path
-[*]A new series of [b]Directional Apply Infinity Thesis[/b] effects
 [*]A new All-in-One Origin
 [*]New Crisis megastructures and an expandable [b]Nameless Mist colony[/b]
 [*]An [b]Aforgomon endgame[/b], with remote projection unlocked after victory
@@ -22,7 +21,7 @@ Requires The Machine Age DLC, three previously adopted Ascension Perks, and the 
 [h3]Getting Started and Megastructures[/h3]
 After adopting the perk, accumulate [b]Advanced Logic[/b], research the exclusive technologies and build the [b]Horizon Engine[/b]. Crisis levels require both accumulated Logic and technological or megastructure milestones; check the Crisis panel for the exact requirements.
 
-Upgrading the Horizon Engine into the gate on the reality side creates [b]the Nameless Mist[/b], its colony and a passage between the two systems. Inside the Mist, progress through the [b]Silver Key → Eternal Throne → Yog-Sothoth[/b], unlocking more DAIT operations along the way. Stockpile Energy, Alloys, Dark Matter, Living Metal and Nanites: the later upgrades are not cheap.
+Upgrading the Horizon Engine into the gate on the reality side creates [b]the Nameless Mist[/b], its colony and a passage between the two systems. Inside the Mist, progress through the [b]Silver Key → Eternal Throne → Yog-Sothoth[/b]. Stockpile Energy, Alloys, Dark Matter, Living Metal and Nanites: the later upgrades are not cheap.
 
 [h3]The Nameless Mist Colony[/h3]
 The Mist is your exclusive production base. Regular empires receive a planetary colony; nomadic empires receive a stationary shipborne colony. Jobs, population growth and assembly adapt to the empire type.
