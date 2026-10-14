@@ -213,6 +213,12 @@ AIO_crisis_finish_ascension_effect = {
     end_event_chain = AIO_crisis_events_chain
 
     every_war = { end_war_effect = yes }
+    # 飞升前解除自身的宗主关系，并释放所有附庸。
+    if = {
+        limit = { is_subject = yes }
+        set_subject_of = { who = none }
+    }
+    every_subject = { set_subject_of = { who = none } }
     AIO_ascension_effect = yes
     inline_script = AIO/ascension_galaxy
 }
