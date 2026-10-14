@@ -1,7 +1,7 @@
 <div>
 
 # All-in-One
-**Stellaris Gestalt Crisis Ascension Mod**
+**Stellaris Crisis Ascension Mod**
 
 [🇨🇳 中文](README-zh.md) | [🇺🇸 English](README.md)
 
@@ -10,42 +10,44 @@
 ---
 
 <h2>Overview</h2>
-This mod adds a brand-new Become the Crisis path for <b>Gestalt Empires</b>—<i><b>All-in-One</b></i>. Advance through the Crisis Levels, perform Directional Apply Infinity Thesis operations, and complete the exclusive megastructure <i><b>Yog-Sothoth</b></i> to ascend and master the laws of reality.
+This mod adds a new Become the Crisis path: <i><b>All-in-One</b></i>. Regular empires, Hive Minds and Machine Intelligences can all take this path; it is no longer restricted to Gestalts. Build the Nameless Mist and rewrite reality through Directional Apply Infinity Thesis operations. Completing <i><b>Yog-Sothoth</b></i> begins Aforgomon's pursuit; winning the final battle completes your ascension.
 <br>
-You will still see plenty of shadows from the vanilla Ascension paths along the way <del>(what a kitbashed Crisis)</del>, but after plenty of tinkering, the mod now features a new <b>Directional Apply Infinity Thesis</b> system (DAIT) that lets you go wild rewriting the universe.
 
 <h2>Features</h2>
 <ul>
 <li>A new Ascension Perk, <b>All-in-One</b>, and its Become the Crisis path</li>
 <li>A new series of <b>Directional Apply Infinity Thesis</b> effects</li>
 <li>A new All-in-One Origin</li>
-<li>New Crisis megastructures</li>
+<li>New Crisis megastructures and an expandable <b>Nameless Mist colony</b></li>
+<li>An <b>Aforgomon endgame</b>, with remote projection unlocked after victory</li>
 </ul>
 
 <h2>Core Gameplay</h2>
-As with the three vanilla Crisis paths, you must adopt three Ascension Perks before selecting <b>All-in-One</b>. Spend <b>Advanced Logic</b> to edit the universe and advance your Crisis progress. As a variant of the Cosmogenesis Crisis, it includes Fallen Empire buildings and ships too, though at their current power and cost efficiency, is anyone really going to use them...? (What patch is this, and we're still spamming repeatables and ships?)
+Requires The Machine Age DLC, three previously adopted Ascension Perks, and the independence, civic and other requirements shown in the perk panel. Only one empire per game can take this path. Spend <b>Advanced Logic</b> to edit the universe and advance your Crisis progress. As a variant of the Cosmogenesis Crisis, it includes Fallen Empire buildings and ships too, though at their current power and cost efficiency, is anyone really going to use them...? (What patch is this, and we're still spamming repeatables and ships?)
 
 <h2>Walkthrough</h2>
-<h3>Crisis Level 1</h3>
-Adopting the perk unlocks:
-<ul>
-<li><b>Matryoshka Brain District:</b> Built in the Nameless Mist, each specialized district provides 800 Recursive Node workforce, using recursive nodes to produce research and Advanced Logic. Output, energy upkeep and population attrition grow with the number of occupied nodes. Virtual populations can also work as Recursive Nodes; virtual empires pay 1000 alloys to build each district and incur 100% higher base district energy upkeep. <del>Isn't this just the Synaptic Lathe?</del></li>
-<li><b>Horizon Engine:</b> Produces Energy for burning through all those synapses. <del>The Aetherophasic Engine sends its regards.</del></li>
-</ul>
-It is worth staying at this level for a while, using the <b>Horizon Engine</b>'s Energy output to feed the Nodes and build up some Research.
-<h3>Crisis Level 2</h3>
-Complete the <i><b>Horizon Engine</b></i> to unlock:
-<ul>
-<li>Its upgrade into the <i><b>The Ultimate Gate</b></i>. Completing it immediately creates <i><b>the Nameless Mist</b></i>.</li>
-<li>The first pair of <b>DAIT</b> operations: <b>Enrich</b> and <b>Storm</b>.</li>
-</ul>
-This also begins the <i><b>All Things Reduced to Absurdity</b></i> Situation. Upgrading the megastructure and applying Infinity more often accelerates its progress. While the Situation is active, there is a monthly chance for a system somewhere in the galaxy to reproduce a <i>DAIT</i> effect you have previously used. <del>Growth Pains all over again, apparently.</del>
-<h3>Crisis Levels 3-5</h3>
-Continue upgrading your megastructure: <i><b>Silver Key</b></i> -> <i><b>Eternal Throne</b></i> -> <i><b>Yog-Sothoth</b></i>.
+<h3>Getting Started and Megastructures</h3>
+After adopting the perk, accumulate <b>Advanced Logic</b>, research the exclusive technologies and build the <b>Horizon Engine</b>. Crisis levels require both accumulated Logic and technological or megastructure milestones; check the Crisis panel for the exact requirements.
 <br>
-Each megastructure upgrade triggers one Random Applied Infinity Thesis. Crisis Levels 3, 4, and 5 require <i><b>All Things Reduced to Absurdity</b></i> to reach the appropriate stage, and respectively unlock <b>Spawn/Harvest</b>, <b>Seed/Strike</b>, and <b>Ethic/Erase</b>.
-<br>
-Complete the <i><b>All Things Reduced to Absurdity</b></i> Situation to finish the Ascension and win the game. If you continue playing, Yog-Sothoth can edit reality at will.
+Upgrading the Horizon Engine into the gate on the reality side creates <b>the Nameless Mist</b>, its colony and a passage between the two systems. Inside the Mist, progress through the <b>Silver Key → Eternal Throne → Yog-Sothoth</b>, unlocking more DAIT operations along the way. Stockpile Energy, Alloys, Dark Matter, Living Metal and Nanites: the later upgrades are not cheap.
+
+<h3>The Nameless Mist Colony</h3>
+The Mist is your exclusive production base. Regular empires receive a planetary colony; nomadic empires receive a stationary shipborne colony. Jobs, population growth and assembly adapt to the empire type.
+<ul>
+<li><b>Districts and specializations:</b> Provide housing, research and resource production. Specializations supply the workforce, and some resource districts require the corresponding rule technologies. These technologies change benefits and costs throughout the galaxy, while the Mist receives the corresponding local exemptions.</li>
+<li><b>Matryoshka Brain:</b> Each research district with the Recursive Computing specialization supplies 800 Recursive Node workforce, producing Research and Advanced Logic. Output, Energy upkeep and population attrition grow with occupied nodes. Virtual populations can also work as Recursive Nodes; virtual empires pay 1000 Alloys per research district and incur 100% higher base district Energy upkeep. <del>Isn't this just the Synaptic Lathe?</del></li>
+<li><b>Expansion:</b> Colony capacity starts at 12 and rises to 24, 40 and 64 through megastructure upgrades. After completing the final megastructure, a repeatable decision adds 8 district capacity for 5000 Energy and 2000 Alloys over 360 days.</li>
+</ul>
+
+<h3>Endgame: Aforgomon</h3>
+<b>Completing Yog-Sothoth immediately begins the endgame; it does not grant victory.</b> Have your science ships, resources and fleets ready before finishing construction.
+<ul>
+<li>Aforgomon manifests repeatedly, with a shorter warning period each round. After remaining in an external system for 360 days, it erases that system and leaves remnants to investigate.</li>
+<li>Investigate <b>1 / 2 / 6</b> different remnants to understand its cycle, unlock Induction, and unlock Constraint respectively. Each investigation takes 360 days and expires after 1000 days. Failed or cancelled projects are not restored.</li>
+<li>Induction redirects this round's manifestation to a chosen external system. Constraint also redirects it and makes the manifestation beatable. Both field projects take 360 days and must finish before the warning period ends. Redirecting the target does not reset the countdown.</li>
+<li>Defeat the <b>constrained manifestation</b> before its stay ends to win. Completing the research alone is not victory. If it reaches the Nameless Mist, the endgame fails and the Mist and the Ultimate Gate are removed.</li>
+</ul>
+The ascension ending removes your colonies and transforms your empire. If you continue playing, Yog-Sothoth now offers <b>remote projection</b>: select a system that is neither already locked nor occupied by Aforgomon, summon a storm, and bring forth Aforgomon there after 720 days. The summon affects only the selected system; anchors, projection Situations and area summons are no longer used.
 
 <h2>Compatibility</h2>
 

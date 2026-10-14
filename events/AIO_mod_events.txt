@@ -60,6 +60,18 @@ country_event = {
     }
 
     option = {
+        name = AIO_mod_events.201.mist
+        is_dialog_only = yes
+        response_text = AIO_mod_events.201.mist.response
+    }
+
+    option = {
+        name = AIO_mod_events.201.final
+        is_dialog_only = yes
+        response_text = AIO_mod_events.201.final.response
+    }
+
+    option = {
         name = AIO_mod_events.201.compatibility
         is_dialog_only = yes
         response_text = AIO_mod_events.201.compatibility.response
