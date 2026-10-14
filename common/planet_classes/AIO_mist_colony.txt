@@ -24,6 +24,7 @@ pc_AIO_mist = {
 	starting_district = district_AIO_mist_city
 	modifier = {
 		pop_environment_tolerance = 1.0
+		planet_building_capacity_add = 4
 		planet_building_build_speed_mult = 0.5
 		planet_districts_upkeep_mult = 1
 	}

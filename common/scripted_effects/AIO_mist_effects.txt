@@ -1,3 +1,32 @@
+# Colony. Create a normal arkship in the habitat's system, without changing its carrier.
+AIO_mist_build_arkship_effect = {
+    owner = { save_event_target_as = AIO_mist_arkship_owner }
+    solar_system = { save_event_target_as = AIO_mist_arkship_system }
+    create_arkship_effect = {
+        TYPE = $TYPE$
+        OWNER = event_target:AIO_mist_arkship_owner
+        LOCATION = event_target:AIO_mist_arkship_system
+    }
+    # Match the completion bookkeeping in vanilla megastructures/arkship.
+    owner = {
+        if = {
+            limit = {
+                has_origin = origin_synthetic_fertility
+                NOT = { has_country_flag = synthetics_traditions_unlocked }
+            }
+            every_owned_colony = {
+                limit = {
+                    is_planet_class = pc_ark
+                    fleet = { is_same_value = last_created_fleet }
+                }
+                colony_event = { id = machine_age.3130 }
+            }
+        }
+        set_country_flag = arkship_built_$TYPE$
+        country_event = { id = timeline.100 }
+    }
+}
+
 # Country. The live mist has exactly one shared colony target.
 AIO_mist_create_colony_effect = {
     if = {

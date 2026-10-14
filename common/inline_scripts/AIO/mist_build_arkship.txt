@@ -1,0 +1,52 @@
+# Colony decision. Share vanilla arkship base costs and time across all three types.
+owned_planets_only = yes
+enactment_time = @arkship_build_time_720
+
+potential = {
+    uses_district_set = AIO_mist
+    owner = { is_nomadic = yes }
+}
+
+allow = {
+    owner = {
+        has_technology = tech_arkship_construction
+        has_technology = tech_$TYPE$
+        custom_tooltip = {
+            fail_text = ROBOTS_CANNOT_COLONIZE
+            OR = {
+                NOT = { has_origin = origin_synthetic_fertility }
+                has_country_flag = origin_synthetic_fertility_droids
+            }
+        }
+    }
+}
+
+abort_trigger = {
+    NOT = { owner = { is_nomadic = yes } }
+}
+
+resources = {
+    category = megastructures_arkships
+    cost = { influence = @arkship_cost_influence_500 }
+    cost = {
+        trigger = { owner = { country_uses_bio_ships = no } }
+        alloys = @arkship_cost_alloys_10000
+    }
+    cost = {
+        trigger = { owner = { country_uses_bio_ships = yes } }
+        alloys = @arkship_cost_alloys_10000
+        mult = 0.5
+    }
+    cost = {
+        trigger = { owner = { country_uses_bio_ships = yes } }
+        food = @arkship_cost_alloys_10000
+        mult = @halved_alloy_to_food_cost_ratio
+    }
+}
+
+effect = {
+    custom_tooltip = decision_AIO_mist_build_$TYPE$_effects
+    hidden_effect = { AIO_mist_build_arkship_effect = { TYPE = $TYPE$ } }
+}
+
+ai_weight = { weight = 0 }
