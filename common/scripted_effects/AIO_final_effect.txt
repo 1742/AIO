@@ -157,11 +157,11 @@ AIO_final_research = {
         country_event = { id = AIO_final_events.202 scopes = { from = from.solar_system } }
     }
     if = {
-        limit = { check_variable = { which = AIO_final_research value = 3 } }
+        limit = { check_variable = { which = AIO_final_research value = 2 } }
         country_event = { id = AIO_final_events.203 scopes = { from = from.solar_system } }
     }
     if = {
-        limit = { check_variable = { which = AIO_final_research value = 7 } }
+        limit = { check_variable = { which = AIO_final_research value = 6 } }
         country_event = { id = AIO_final_events.204 scopes = { from = from.solar_system } }
     }
 }

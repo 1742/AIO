@@ -1,10 +1,10 @@
 AIO_final_main_situation = {
     desc = {
-        trigger = { owner = { check_variable = { which = AIO_final_research value >= 7 } } }
+        trigger = { owner = { check_variable = { which = AIO_final_research value >= 6 } } }
         text = AIO_final_main_situation_ready_desc
     }
     desc = {
-        trigger = { owner = { check_variable = { which = AIO_final_research value < 7 } } }
+        trigger = { owner = { check_variable = { which = AIO_final_research value < 6 } } }
         text = AIO_final_main_situation_desc
     }
     picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
@@ -22,12 +22,12 @@ AIO_final_main_situation = {
             icon_background = GFX_situation_stage_frame_red
         }
         AIO_final_research_stage_2 = {
-            end = 3
+            end = 2
             icon = GFX_situation_stage_2
             icon_background = GFX_situation_stage_frame_red
         }
         AIO_final_research_stage_3 = {
-            end = 7
+            end = 6
             icon = GFX_situation_stage_3
             icon_background = GFX_situation_stage_frame_red
         }

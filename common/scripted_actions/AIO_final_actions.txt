@@ -19,8 +19,8 @@ AIO_final_induction_action = {
         is_megastructure_type = AIO_mega_04
         owner = {
             has_country_flag = AIO_final_start
-            check_variable = { which = AIO_final_research value >= 3 }
-            check_variable = { which = AIO_final_research value < 7 }
+            check_variable = { which = AIO_final_research value >= 2 }
+            check_variable = { which = AIO_final_research value < 6 }
         }
     }
     icon = GFX_ship_class_conduit
@@ -53,7 +53,7 @@ AIO_final_constraint_action = {
         is_megastructure_type = AIO_mega_04
         owner = {
             has_country_flag = AIO_final_start
-            check_variable = { which = AIO_final_research value >= 7 }
+            check_variable = { which = AIO_final_research value >= 6 }
         }
     }
     icon = GFX_ship_class_conduit
