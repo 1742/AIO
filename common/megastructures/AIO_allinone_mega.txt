@@ -143,16 +143,6 @@ AIO_mega_01 = {
 			}
 		}
 	}
-    scripted_action = {
-		AIO_DAIT_enrich_action
-		AIO_DAIT_spawn_action
-		AIO_DAIT_seed_action
-		AIO_DAIT_ethic_action
-		AIO_DAIT_storm_action
-		AIO_DAIT_harvest_action
-		AIO_DAIT_strike_action
-		AIO_DAIT_erase_action
-	}
 }
 
 AIO_mega_02 = {
@@ -233,16 +223,6 @@ AIO_mega_02 = {
 			set_country_flag = AIO_built_AIO_mega_02
 			country_event = { id = AIO_crisis_events.404 }
 		}
-	}
-    scripted_action = {
-		AIO_DAIT_enrich_action
-		AIO_DAIT_spawn_action
-		AIO_DAIT_seed_action
-		AIO_DAIT_ethic_action
-		AIO_DAIT_storm_action
-		AIO_DAIT_harvest_action
-		AIO_DAIT_strike_action
-		AIO_DAIT_erase_action
 	}
 }
 
@@ -325,16 +305,6 @@ AIO_mega_03 = {
 			country_event = { id = AIO_crisis_events.405 }
 		}
 	}
-    scripted_action = {
-		AIO_DAIT_enrich_action
-		AIO_DAIT_spawn_action
-		AIO_DAIT_seed_action
-		AIO_DAIT_ethic_action
-		AIO_DAIT_storm_action
-		AIO_DAIT_harvest_action
-		AIO_DAIT_strike_action
-		AIO_DAIT_erase_action
-	}
 }
 
 AIO_mega_04 = {
@@ -416,17 +386,5 @@ AIO_mega_04 = {
 			set_country_flag = AIO_built_AIO_mega_04
 			country_event = { id = AIO_crisis_events.406 }
 		}
-	}
-    scripted_action = {
-		AIO_DAIT_enrich_action
-		AIO_DAIT_spawn_action
-		AIO_DAIT_seed_action
-		AIO_DAIT_ethic_action
-		AIO_DAIT_storm_action
-		AIO_DAIT_harvest_action
-		AIO_DAIT_strike_action
-		AIO_DAIT_erase_action
-		AIO_final_induction_action
-		AIO_final_constraint_action
 	}
 }

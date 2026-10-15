@@ -1,17 +1,5 @@
-# Stable country scope ONLY in potential. Selection is checked in allow/effect.
-AIO_DAIT_toggle = {
-    potential = { from = { AIO_DAIT_country_valid = yes } }
-    allow = { always = yes }
-    effect = {
-        from = {
-            if = {
-                limit = { has_country_flag = AIO_DAIT_toolbar }
-                remove_country_flag = AIO_DAIT_toolbar
-            }
-            else = { set_country_flag = AIO_DAIT_toolbar }
-        }
-    }
-}
+# Custom menu buttons: FROM is the player, THIS is the selected object.
+
 
 AIO_DAIT_enrich = {
     potential = {
@@ -429,4 +417,77 @@ AIO_DAIT_target_label = {
     }
     allow = { always = yes }
     effect = { }
+}
+
+AIO_DAIT_final_induction = {
+    potential = {
+        from = {
+            has_country_flag = AIO_DAIT_toolbar
+            has_country_flag = AIO_final_start
+            check_variable = { which = AIO_final_research value >= 2 }
+            check_variable = { which = AIO_final_research value < 3 }
+        }
+    }
+    allow = {
+        from = {
+            AIO_final_can_select = yes
+
+            any_owned_megastructure = { is_megastructure_type = AIO_mega_04 }
+        }
+        OR = {
+            AND = { is_scope_type = galactic_object AIO_final_valid_external_target = yes }
+            AND = { is_scope_type = planet solar_system = { AIO_final_valid_external_target = yes } }
+        }
+    }
+    effect = {
+        AIO_DAIT_capture_target = yes
+        from = {
+            random_owned_megastructure = {
+                limit = { is_megastructure_type = AIO_mega_04 }
+                save_event_target_as = AIO_DAIT_source_mega
+            }
+        }
+        event_target:AIO_DAIT_target_system = {
+            fire_on_action = {
+                on_action = on_AIO_final_induction
+                scopes = { from = event_target:AIO_DAIT_source_mega }
+            }
+        }
+    }
+}
+
+AIO_DAIT_final_constraint = {
+    potential = {
+        from = {
+            has_country_flag = AIO_DAIT_toolbar
+            has_country_flag = AIO_final_start
+            check_variable = { which = AIO_final_research value >= 3 }
+        }
+    }
+    allow = {
+        from = {
+            AIO_final_can_select = yes
+            resource_stockpile_compare = { resource = sr_dark_matter value >= 2000 }
+            any_owned_megastructure = { is_megastructure_type = AIO_mega_04 }
+        }
+        OR = {
+            AND = { is_scope_type = galactic_object AIO_final_valid_external_target = yes }
+            AND = { is_scope_type = planet solar_system = { AIO_final_valid_external_target = yes } }
+        }
+    }
+    effect = {
+        AIO_DAIT_capture_target = yes
+        from = {
+            random_owned_megastructure = {
+                limit = { is_megastructure_type = AIO_mega_04 }
+                save_event_target_as = AIO_DAIT_source_mega
+            }
+        }
+        event_target:AIO_DAIT_target_system = {
+            fire_on_action = {
+                on_action = on_AIO_final_constraint
+                scopes = { from = event_target:AIO_DAIT_source_mega }
+            }
+        }
+    }
 }

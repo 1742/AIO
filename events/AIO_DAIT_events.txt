@@ -8,7 +8,7 @@ country_event = {
     immediate = { set_variable = { which = AIO_DAIT_range value = 0 } }
 }
 
-colony_event = {
+carrier_event = {
     id = AIO_DAIT_events.202
     hide_window = yes
     is_triggered_only = yes
@@ -80,146 +80,24 @@ country_event = {
     immediate = { AIO_DAIT_finish_erase = yes }
 }
 
-system_event = {
-    id = AIO_DAIT_events.401
-    hide_window = yes
-    is_triggered_only = yes
-    trigger = {
-        exists = from
-        from.owner = { AIO_DAIT_enrich_ready = yes }
-        AIO_DAIT_enrich_target_valid = yes
-    }
-    immediate = {
-        save_event_target_as = AIO_DAIT_target_system
-        from.owner = {
-            save_event_target_as = AIO_DAIT_maker
-            AIO_DAIT_start_enrich = yes
-        }
-    }
-}
 
-system_event = {
-    id = AIO_DAIT_events.402
-    hide_window = yes
-    is_triggered_only = yes
-    trigger = {
-        exists = from
-        from.owner = { AIO_DAIT_spawn_ready = yes }
-        AIO_DAIT_spawn_target_valid = yes
-    }
-    immediate = {
-        save_event_target_as = AIO_DAIT_target_system
-        from.owner = {
-            save_event_target_as = AIO_DAIT_maker
-            AIO_DAIT_start_spawn = yes
-        }
-    }
-}
 
-system_event = {
-    id = AIO_DAIT_events.403
-    hide_window = yes
+# Effect buttons do not dismiss this window; close/ESC resolves its hidden option.
+country_event = {
+    id = AIO_DAIT_events.203
+    title = AIO_DAIT_events.202.title
+    desc = AIO_DAIT_menu_desc
+    diplomatic = yes
+    custom_gui = AIO_DAIT
     is_triggered_only = yes
     trigger = {
-        exists = from
-        from.owner = { AIO_DAIT_seed_ready = yes }
-        AIO_DAIT_seed_target_valid = yes
+        AIO_DAIT_country_valid = yes
+        NOT = { has_country_flag = AIO_DAIT_toolbar }
     }
-    immediate = {
-        save_event_target_as = AIO_DAIT_target_system
-        from.owner = {
-            save_event_target_as = AIO_DAIT_maker
-            AIO_DAIT_start_seed = yes
-        }
+    immediate = { set_country_flag = AIO_DAIT_toolbar }
+    option = {
+        name = EXIT
+        default_hide_option = yes
     }
-}
-
-system_event = {
-    id = AIO_DAIT_events.404
-    hide_window = yes
-    is_triggered_only = yes
-    trigger = {
-        exists = from
-        from.owner = { AIO_DAIT_ethic_ready = yes }
-        AIO_DAIT_ethic_target_valid = yes
-    }
-    immediate = {
-        save_event_target_as = AIO_DAIT_target_system
-        from.owner = {
-            save_event_target_as = AIO_DAIT_maker
-            AIO_DAIT_start_ethic = yes
-        }
-    }
-}
-
-system_event = {
-    id = AIO_DAIT_events.405
-    hide_window = yes
-    is_triggered_only = yes
-    trigger = {
-        exists = from
-        from.owner = { AIO_DAIT_storm_ready = yes }
-        AIO_DAIT_storm_target_valid = yes
-    }
-    immediate = {
-        save_event_target_as = AIO_DAIT_target_system
-        from.owner = {
-            save_event_target_as = AIO_DAIT_maker
-            AIO_DAIT_start_storm = yes
-        }
-    }
-}
-
-system_event = {
-    id = AIO_DAIT_events.406
-    hide_window = yes
-    is_triggered_only = yes
-    trigger = {
-        exists = from
-        from.owner = { AIO_DAIT_harvest_ready = yes }
-        AIO_DAIT_harvest_target_valid = yes
-    }
-    immediate = {
-        save_event_target_as = AIO_DAIT_target_system
-        from.owner = {
-            save_event_target_as = AIO_DAIT_maker
-            AIO_DAIT_start_harvest = yes
-        }
-    }
-}
-
-system_event = {
-    id = AIO_DAIT_events.407
-    hide_window = yes
-    is_triggered_only = yes
-    trigger = {
-        exists = from
-        from.owner = { AIO_DAIT_strike_ready = yes }
-        AIO_DAIT_strike_target_valid = yes
-    }
-    immediate = {
-        save_event_target_as = AIO_DAIT_target_system
-        from.owner = {
-            save_event_target_as = AIO_DAIT_maker
-            AIO_DAIT_start_strike = yes
-        }
-    }
-}
-
-system_event = {
-    id = AIO_DAIT_events.408
-    hide_window = yes
-    is_triggered_only = yes
-    trigger = {
-        exists = from
-        from.owner = { AIO_DAIT_erase_ready = yes }
-        AIO_DAIT_erase_target_valid = yes
-    }
-    immediate = {
-        save_event_target_as = AIO_DAIT_target_system
-        from.owner = {
-            save_event_target_as = AIO_DAIT_maker
-            AIO_DAIT_start_erase = yes
-        }
-    }
+    after = { remove_country_flag = AIO_DAIT_toolbar }
 }

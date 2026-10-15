@@ -307,3 +307,18 @@ defined_text = {
     }
     default = AIO_DAIT_range_0
 }
+
+# The camera's current system is not an effectbutton selection.
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_selected_target
+    text = {
+        trigger = { is_scope_type = galactic_object }
+        localization_key = AIO_DAIT_target_system_name
+    }
+    text = {
+        trigger = { is_scope_type = planet }
+        localization_key = AIO_DAIT_target_planet_system_name
+    }
+    default = AIO_DAIT_target_none
+}

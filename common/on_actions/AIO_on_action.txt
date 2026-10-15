@@ -77,13 +77,9 @@ on_AIO_final_constraint = {
         AIO_final_events.501 # 限制亚弗戈蒙
     }
 }
-on_AIO_DAIT_enrich = { events = { AIO_DAIT_events.401 } }
-on_AIO_DAIT_spawn = { events = { AIO_DAIT_events.402 } }
-on_AIO_DAIT_seed = { events = { AIO_DAIT_events.403 } }
-on_AIO_DAIT_ethic = { events = { AIO_DAIT_events.404 } }
-on_AIO_DAIT_storm = { events = { AIO_DAIT_events.405 } }
-on_AIO_DAIT_harvest = { events = { AIO_DAIT_events.406 } }
-on_AIO_DAIT_strike = { events = { AIO_DAIT_events.407 } }
-on_AIO_DAIT_erase = { events = { AIO_DAIT_events.408 } }
 
-on_district_complete = { events = { AIO_DAIT_events.202 } }
+on_district_complete = {
+    events = {
+        AIO_DAIT_events.202
+    }
+}

@@ -36,7 +36,7 @@ One Matryoshka Brain district per eligible colony unlocks uncapped Recursive Nod
 <br>
 Enrich, Generate and Storm cost 50000 Hyperlogic; other operations cost 100000. Ascended empires cast for free. At 0/1/2 jumps, costs are multiplied by 1/2/3. All operations have a windup; Seed, Harvest, Strike and Erase also have separate 360-day cooldowns after success. Enrich and Generate change systems directly without country buffs.
 <br>
-Use megastructure action buttons to select a target system and the range edict to cycle range. A top toolbar also provides access; its selection scopes and presentation still require in-game validation. The special origin starts directly ascended.
+Use the Apply Infinity: Open Menu edict to open the movable toolbar. Select a system or celestial body, then choose an operation and range in the toolbar. The entry does not replace vanilla interface files. The special origin starts directly ascended.
 
 <h3>Endgame: Aforgomon</h3>
 <b>Completing Yog-Sothoth immediately begins the endgame; it does not grant victory.</b> Have your science ships, resources and fleets ready before finishing construction.

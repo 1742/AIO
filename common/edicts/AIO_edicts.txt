@@ -125,9 +125,18 @@ edict_AIO_nanite_farming = {
     }
 }
 
-edict_AIO_DAIT_range = {
+AIO_DAIT_range = {
     length = 0
     icon = "GFX_edict_type_policy"
     potential = { AIO_DAIT_country_valid = yes }
     effect = { AIO_DAIT_cycle_range = yes }
+}
+
+# Native edict entry avoids replacing vanilla GUI files or changing megastructure state.
+AIO_DAIT_menu = {
+    length = 0
+    icon = "GFX_edict_type_policy"
+    potential = { AIO_DAIT_country_valid = yes }
+    allow = { NOT = { has_country_flag = AIO_DAIT_toolbar } }
+    effect = { country_event = { id = AIO_DAIT_events.203 } }
 }
