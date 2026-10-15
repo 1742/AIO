@@ -42,7 +42,10 @@ AIO_DAIT_notify_system = {
 
 AIO_DAIT_notify_country = {
     if = {
-        limit = { NOT = { has_country_flag = AIO_DAIT_notified } }
+        limit = {
+            NOT = { has_country_flag = AIO_DAIT_notified }
+            NOT = { is_same_value = event_target:AIO_DAIT_maker }
+        }
         set_country_flag = AIO_DAIT_notified
         create_message = {
             type = MESSAGE_DYSON_SHOT
@@ -82,24 +85,9 @@ AIO_DAIT_start_enrich = {
             limit = { is_variable_set = AIO_DAIT_range }
             set_variable = { which = AIO_DAIT_enrich_range value = AIO_DAIT_range }
         }
-        set_variable = { which = AIO_DAIT_enrich_delay value = value:AIO_DAIT_enrich_windup }
-        set_saved_date = {
-            key = AIO_DAIT_enrich_due
-            days_from_present = AIO_DAIT_enrich_delay
-        }
         event_target:AIO_DAIT_target_system = {
             set_star_flag = AIO_DAIT_center_busy
             set_star_flag = AIO_DAIT_enrich_center_@event_target:AIO_DAIT_maker
-        }
-        event_target:AIO_DAIT_target_system = {
-            create_ambient_object = {
-                type = "crisis_sphere_1"
-                location = star
-                effect = {
-                    set_ambient_object_flag = AIO_DAIT_enrich_warning_@event_target:AIO_DAIT_maker
-                    set_location = { target = prev.star distance = 0 angle = 0 }
-                }
-            }
         }
         every_system = {
             limit = {
@@ -121,22 +109,16 @@ AIO_DAIT_start_enrich = {
                 AIO_DAIT_system_valid = yes
             }
             set_star_flag = AIO_DAIT_enrich_candidate_@event_target:AIO_DAIT_maker
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_enrich_warning }
         }
-        AIO_DAIT_clear_notifications = yes
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_enrich_warning
-            days = 30
-            target = event_target:AIO_DAIT_target_system
-        }
-        country_event = { id = AIO_DAIT_events.301 days = AIO_DAIT_enrich_delay }
+        AIO_DAIT_finish_enrich = yes
     }
 }
 
 AIO_DAIT_finish_enrich = {
-    save_event_target_as = AIO_DAIT_maker
-    set_variable = { which = AIO_DAIT_enrich_affected value = 0 }
+    hidden_effect = {
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_enrich_affected value = 0 }
+    }
     if = {
         limit = {
             AIO_DAIT_enrich_unlocked = yes
@@ -151,31 +133,37 @@ AIO_DAIT_finish_enrich = {
                 has_star_flag = AIO_DAIT_enrich_candidate_@event_target:AIO_DAIT_maker
                 AIO_DAIT_enrich_target_valid = yes
             }
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_enrich_completed }
-            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_enrich_affected value = 1 } }
+            hidden_effect = { AIO_DAIT_notify_system = { TEXT = AIO_DAIT_enrich_completed } }
+            event_target:AIO_DAIT_maker = { hidden_effect = { change_variable = { which = AIO_DAIT_enrich_affected value = 1 } } }
             AIO_DAIT_enrich_effect = { TIMES = 10 }
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_enrich_affected value = 0 } }
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_enrich_paid }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_cancelled
-            days = 30
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_cancelled
+                days = 30
+            }
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_enrich_affected value > 0 } }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_enrich_completed
-            days = 30
-            target = event_target:AIO_DAIT_target_system
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_enrich_completed
+                days = 30
+                target = event_target:AIO_DAIT_target_system
+            }
         }
     }
-    AIO_DAIT_cleanup_enrich = yes
-    AIO_DAIT_clear_notifications = yes
+    hidden_effect = {
+        AIO_DAIT_cleanup_enrich = yes
+        AIO_DAIT_clear_notifications = yes
+    }
 }
 
 AIO_DAIT_cleanup_enrich = {
@@ -261,21 +249,16 @@ AIO_DAIT_start_spawn = {
                 AIO_DAIT_system_valid = yes
             }
             set_star_flag = AIO_DAIT_spawn_candidate_@event_target:AIO_DAIT_maker
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_spawn_warning }
         }
-        AIO_DAIT_clear_notifications = yes
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_spawn_warning
-            days = 30 target = event_target:AIO_DAIT_target_system
-        }
-        country_event = { id = AIO_DAIT_events.302 days = AIO_DAIT_spawn_delay }
+        start_situation = { type = AIO_DAIT_spawn_situation target = event_target:AIO_DAIT_target_system }
     }
 }
 
 AIO_DAIT_finish_spawn = {
-    save_event_target_as = AIO_DAIT_maker
-    set_variable = { which = AIO_DAIT_spawn_affected value = 0 }
+    hidden_effect = {
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_spawn_affected value = 0 }
+    }
     if = {
         limit = {
             AIO_DAIT_spawn_unlocked = yes
@@ -290,30 +273,36 @@ AIO_DAIT_finish_spawn = {
                 has_star_flag = AIO_DAIT_spawn_candidate_@event_target:AIO_DAIT_maker
                 AIO_DAIT_spawn_target_valid = yes
             }
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_spawn_completed }
-            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_spawn_affected value = 1 } }
+            hidden_effect = { AIO_DAIT_notify_system = { TEXT = AIO_DAIT_spawn_completed } }
+            event_target:AIO_DAIT_maker = { hidden_effect = { change_variable = { which = AIO_DAIT_spawn_affected value = 1 } } }
             AIO_DAIT_spawn_effect = yes
         }
     }
     if = { limit = { check_variable = { which = AIO_DAIT_spawn_affected value = 0 } }
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_spawn_paid }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_cancelled
-            days = 30
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_cancelled
+                days = 30
+            }
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_spawn_affected value > 0 } }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_spawn_completed
-            days = 30
-            target = event_target:AIO_DAIT_target_system
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_spawn_completed
+                days = 30
+                target = event_target:AIO_DAIT_target_system
+            }
         }
     }
-    AIO_DAIT_cleanup_spawn = yes
-    AIO_DAIT_clear_notifications = yes
+    hidden_effect = {
+        AIO_DAIT_cleanup_spawn = yes
+        AIO_DAIT_clear_notifications = yes
+    }
 }
 
 AIO_DAIT_cleanup_spawn = {
@@ -400,22 +389,16 @@ AIO_DAIT_start_seed = {
                 AIO_DAIT_system_valid = yes
             }
             set_star_flag = AIO_DAIT_seed_candidate_@event_target:AIO_DAIT_maker
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_seed_warning }
         }
-        AIO_DAIT_clear_notifications = yes
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_seed_warning
-            days = 30
-            target = event_target:AIO_DAIT_target_system
-        }
-        country_event = { id = AIO_DAIT_events.303 days = AIO_DAIT_seed_delay }
+        start_situation = { type = AIO_DAIT_seed_situation target = event_target:AIO_DAIT_target_system }
     }
 }
 
 AIO_DAIT_finish_seed = {
-    save_event_target_as = AIO_DAIT_maker
-    set_variable = { which = AIO_DAIT_seed_affected value = 0 }
+    hidden_effect = {
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_seed_affected value = 0 }
+    }
     if = {
         limit = {
             AIO_DAIT_seed_unlocked = yes
@@ -430,39 +413,47 @@ AIO_DAIT_finish_seed = {
                 has_star_flag = AIO_DAIT_seed_candidate_@event_target:AIO_DAIT_maker
                 AIO_DAIT_seed_target_valid = yes
             }
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_seed_completed }
-            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_seed_affected value = 1 } }
+            hidden_effect = { AIO_DAIT_notify_system = { TEXT = AIO_DAIT_seed_completed } }
+            event_target:AIO_DAIT_maker = { hidden_effect = { change_variable = { which = AIO_DAIT_seed_affected value = 1 } } }
             AIO_DAIT_seed_effect = yes
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_seed_affected value = 0 } }
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_seed_paid }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_cancelled
-            days = 30
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_cancelled
+                days = 30
+            }
         }
     }
     else = {
-        set_timed_country_flag = { flag = AIO_DAIT_seed_cooldown days = 360 }
-        set_saved_date = {
-            key = AIO_DAIT_seed_ready_date
-            days_from_present = 360
-            expires = 360
+        hidden_effect = {
+            set_timed_country_flag = { flag = AIO_DAIT_seed_cooldown days = 360 }
+            set_saved_date = {
+                key = AIO_DAIT_seed_ready_date
+                days_from_present = 360
+                expires = 360
+            }
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_seed_affected value > 0 } }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_seed_completed
-            days = 30
-            target = event_target:AIO_DAIT_target_system
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_seed_completed
+                days = 30
+                target = event_target:AIO_DAIT_target_system
+            }
         }
     }
-    AIO_DAIT_cleanup_seed = yes
-    AIO_DAIT_clear_notifications = yes
+    hidden_effect = {
+        AIO_DAIT_cleanup_seed = yes
+        AIO_DAIT_clear_notifications = yes
+    }
 }
 
 AIO_DAIT_cleanup_seed = {
@@ -549,22 +540,16 @@ AIO_DAIT_start_ethic = {
                 AIO_DAIT_system_valid = yes
             }
             set_star_flag = AIO_DAIT_ethic_candidate_@event_target:AIO_DAIT_maker
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_ethic_warning }
         }
-        AIO_DAIT_clear_notifications = yes
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_ethic_warning
-            days = 30
-            target = event_target:AIO_DAIT_target_system
-        }
-        country_event = { id = AIO_DAIT_events.304 days = AIO_DAIT_ethic_delay }
+        start_situation = { type = AIO_DAIT_ethic_situation target = event_target:AIO_DAIT_target_system }
     }
 }
 
 AIO_DAIT_finish_ethic = {
-    save_event_target_as = AIO_DAIT_maker
-    set_variable = { which = AIO_DAIT_ethic_affected value = 0 }
+    hidden_effect = {
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_ethic_affected value = 0 }
+    }
     if = {
         limit = {
             AIO_DAIT_ethic_unlocked = yes
@@ -580,32 +565,38 @@ AIO_DAIT_finish_ethic = {
                 AIO_DAIT_ethic_target_valid = yes
                 NOT = { owner = { has_country_flag = AIO_DAIT_ethic_changed } }
             }
-            owner = { set_country_flag = AIO_DAIT_ethic_changed }
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_ethic_completed }
-            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_ethic_affected value = 1 } }
+            owner = { hidden_effect = { set_country_flag = AIO_DAIT_ethic_changed } }
+            hidden_effect = { AIO_DAIT_notify_system = { TEXT = AIO_DAIT_ethic_completed } }
+            event_target:AIO_DAIT_maker = { hidden_effect = { change_variable = { which = AIO_DAIT_ethic_affected value = 1 } } }
             AIO_DAIT_ethic_effect = yes
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_ethic_affected value = 0 } }
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_ethic_paid }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_cancelled
-            days = 30
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_cancelled
+                days = 30
+            }
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_ethic_affected value > 0 } }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_ethic_completed
-            days = 30
-            target = event_target:AIO_DAIT_target_system
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_ethic_completed
+                days = 30
+                target = event_target:AIO_DAIT_target_system
+            }
         }
     }
-    AIO_DAIT_cleanup_ethic = yes
-    AIO_DAIT_clear_notifications = yes
+    hidden_effect = {
+        AIO_DAIT_cleanup_ethic = yes
+        AIO_DAIT_clear_notifications = yes
+    }
 }
 
 AIO_DAIT_cleanup_ethic = {
@@ -696,22 +687,16 @@ AIO_DAIT_start_storm = {
                 AIO_DAIT_system_valid = yes
             }
             set_star_flag = AIO_DAIT_storm_candidate_@event_target:AIO_DAIT_maker
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_storm_warning }
         }
-        AIO_DAIT_clear_notifications = yes
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_storm_warning
-            days = 30
-            target = event_target:AIO_DAIT_target_system
-        }
-        country_event = { id = AIO_DAIT_events.305 days = AIO_DAIT_storm_delay }
+        start_situation = { type = AIO_DAIT_storm_situation target = event_target:AIO_DAIT_target_system }
     }
 }
 
 AIO_DAIT_finish_storm = {
-    save_event_target_as = AIO_DAIT_maker
-    set_variable = { which = AIO_DAIT_storm_affected value = 0 }
+    hidden_effect = {
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_storm_affected value = 0 }
+    }
     if = {
         limit = {
             AIO_DAIT_storm_unlocked = yes
@@ -726,31 +711,37 @@ AIO_DAIT_finish_storm = {
                 has_star_flag = AIO_DAIT_storm_candidate_@event_target:AIO_DAIT_maker
                 AIO_DAIT_storm_target_valid = yes
             }
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_storm_completed }
-            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_storm_affected value = 1 } }
+            hidden_effect = { AIO_DAIT_notify_system = { TEXT = AIO_DAIT_storm_completed } }
+            event_target:AIO_DAIT_maker = { hidden_effect = { change_variable = { which = AIO_DAIT_storm_affected value = 1 } } }
             AIO_DAIT_storm_effect = yes
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_storm_affected value = 0 } }
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_storm_paid }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_cancelled
-            days = 30
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_cancelled
+                days = 30
+            }
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_storm_affected value > 0 } }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_storm_completed
-            days = 30
-            target = event_target:AIO_DAIT_target_system
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_storm_completed
+                days = 30
+                target = event_target:AIO_DAIT_target_system
+            }
         }
     }
-    AIO_DAIT_cleanup_storm = yes
-    AIO_DAIT_clear_notifications = yes
+    hidden_effect = {
+        AIO_DAIT_cleanup_storm = yes
+        AIO_DAIT_clear_notifications = yes
+    }
 }
 
 AIO_DAIT_cleanup_storm = {
@@ -837,22 +828,16 @@ AIO_DAIT_start_harvest = {
                 AIO_DAIT_system_valid = yes
             }
             set_star_flag = AIO_DAIT_harvest_candidate_@event_target:AIO_DAIT_maker
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_harvest_warning }
         }
-        AIO_DAIT_clear_notifications = yes
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_harvest_warning
-            days = 30
-            target = event_target:AIO_DAIT_target_system
-        }
-        country_event = { id = AIO_DAIT_events.306 days = AIO_DAIT_harvest_delay }
+        start_situation = { type = AIO_DAIT_harvest_situation target = event_target:AIO_DAIT_target_system }
     }
 }
 
 AIO_DAIT_finish_harvest = {
-    save_event_target_as = AIO_DAIT_maker
-    set_variable = { which = AIO_DAIT_harvest_affected value = 0 }
+    hidden_effect = {
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_harvest_affected value = 0 }
+    }
     if = {
         limit = {
             AIO_DAIT_harvest_unlocked = yes
@@ -867,39 +852,47 @@ AIO_DAIT_finish_harvest = {
                 has_star_flag = AIO_DAIT_harvest_candidate_@event_target:AIO_DAIT_maker
                 AIO_DAIT_harvest_target_valid = yes
             }
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_harvest_completed }
-            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_harvest_affected value = 1 } }
+            hidden_effect = { AIO_DAIT_notify_system = { TEXT = AIO_DAIT_harvest_completed } }
+            event_target:AIO_DAIT_maker = { hidden_effect = { change_variable = { which = AIO_DAIT_harvest_affected value = 1 } } }
             AIO_DAIT_harvest_effect = yes
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_harvest_affected value = 0 } }
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_harvest_paid }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_cancelled
-            days = 30
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_cancelled
+                days = 30
+            }
         }
     }
     else = {
-        set_timed_country_flag = { flag = AIO_DAIT_harvest_cooldown days = 360 }
-        set_saved_date = {
-            key = AIO_DAIT_harvest_ready_date
-            days_from_present = 360
-            expires = 360
+        hidden_effect = {
+            set_timed_country_flag = { flag = AIO_DAIT_harvest_cooldown days = 360 }
+            set_saved_date = {
+                key = AIO_DAIT_harvest_ready_date
+                days_from_present = 360
+                expires = 360
+            }
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_harvest_affected value > 0 } }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_harvest_completed
-            days = 30
-            target = event_target:AIO_DAIT_target_system
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_harvest_completed
+                days = 30
+                target = event_target:AIO_DAIT_target_system
+            }
         }
     }
-    AIO_DAIT_cleanup_harvest = yes
-    AIO_DAIT_clear_notifications = yes
+    hidden_effect = {
+        AIO_DAIT_cleanup_harvest = yes
+        AIO_DAIT_clear_notifications = yes
+    }
 }
 
 AIO_DAIT_cleanup_harvest = {
@@ -962,12 +955,12 @@ AIO_DAIT_start_strike = {
             set_star_flag = AIO_DAIT_strike_center_@event_target:AIO_DAIT_maker
         }
         event_target:AIO_DAIT_target_system = {
-            create_ambient_object = {
-                type = "crisis_sphere_1"
-                location = star
-                effect = {
-                    set_ambient_object_flag = AIO_DAIT_strike_warning_@event_target:AIO_DAIT_maker
-                    set_location = { target = prev.star distance = 0 angle = 0 }
+            if = {
+                limit = { is_inside_storm = no }
+                create_cosmic_storm = {
+                    type = nexus_storm
+                    immediate = yes
+                    storm_start_position = this
                 }
             }
         }
@@ -990,7 +983,6 @@ AIO_DAIT_start_strike = {
                 AIO_DAIT_system_valid = yes
             }
             set_star_flag = AIO_DAIT_strike_candidate_@event_target:AIO_DAIT_maker
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_strike_warning }
         }
 
         if = {
@@ -1006,25 +998,19 @@ AIO_DAIT_start_strike = {
                     }
                     owner = {
                         set_country_flag = AIO_DAIT_witness_@event_target:AIO_DAIT_maker
-                        AIO_DAIT_notify_country = { TEXT = AIO_DAIT_strike_warning }
                     }
                 }
             }
         }
-        AIO_DAIT_clear_notifications = yes
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_strike_warning
-            days = 30
-            target = event_target:AIO_DAIT_target_system
-        }
-        country_event = { id = AIO_DAIT_events.307 days = AIO_DAIT_strike_delay }
+        start_situation = { type = AIO_DAIT_strike_situation target = event_target:AIO_DAIT_target_system }
     }
 }
 
 AIO_DAIT_finish_strike = {
-    save_event_target_as = AIO_DAIT_maker
-    set_variable = { which = AIO_DAIT_strike_affected value = 0 }
+    hidden_effect = {
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_strike_affected value = 0 }
+    }
     if = {
         limit = {
             AIO_DAIT_strike_unlocked = yes
@@ -1040,7 +1026,7 @@ AIO_DAIT_finish_strike = {
                 limit = { has_country_flag = AIO_DAIT_witness_@event_target:AIO_DAIT_maker }
                 every_system_within_border = {
                     limit = { AIO_DAIT_system_valid = yes }
-                    set_star_flag = AIO_DAIT_strike_candidate_@event_target:AIO_DAIT_maker
+                    hidden_effect = { set_star_flag = AIO_DAIT_strike_candidate_@event_target:AIO_DAIT_maker }
                 }
             }
         }
@@ -1049,39 +1035,47 @@ AIO_DAIT_finish_strike = {
                 has_star_flag = AIO_DAIT_strike_candidate_@event_target:AIO_DAIT_maker
                 AIO_DAIT_strike_target_valid = yes
             }
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_strike_completed }
-            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_strike_affected value = 1 } }
+            hidden_effect = { AIO_DAIT_notify_system = { TEXT = AIO_DAIT_strike_completed } }
+            event_target:AIO_DAIT_maker = { hidden_effect = { change_variable = { which = AIO_DAIT_strike_affected value = 1 } } }
             AIO_DAIT_strike_effect = yes
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_strike_affected value = 0 } }
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_strike_paid }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_cancelled
-            days = 30
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_cancelled
+                days = 30
+            }
         }
     }
     else = {
-        set_timed_country_flag = { flag = AIO_DAIT_strike_cooldown days = 360 }
-        set_saved_date = {
-            key = AIO_DAIT_strike_ready_date
-            days_from_present = 360
-            expires = 360
+        hidden_effect = {
+            set_timed_country_flag = { flag = AIO_DAIT_strike_cooldown days = 360 }
+            set_saved_date = {
+                key = AIO_DAIT_strike_ready_date
+                days_from_present = 360
+                expires = 360
+            }
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_strike_affected value > 0 } }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_strike_completed
-            days = 30
-            target = event_target:AIO_DAIT_target_system
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_strike_completed
+                days = 30
+                target = event_target:AIO_DAIT_target_system
+            }
         }
     }
-    AIO_DAIT_cleanup_strike = yes
-    AIO_DAIT_clear_notifications = yes
+    hidden_effect = {
+        AIO_DAIT_cleanup_strike = yes
+        AIO_DAIT_clear_notifications = yes
+    }
 }
 
 AIO_DAIT_cleanup_strike = {
@@ -1093,10 +1087,6 @@ AIO_DAIT_cleanup_strike = {
     every_system = {
         limit = { has_star_flag = AIO_DAIT_strike_center_@event_target:AIO_DAIT_maker }
         remove_star_flag = AIO_DAIT_strike_center_@event_target:AIO_DAIT_maker
-        every_system_ambient_object = {
-            limit = { has_ambient_object_flag = AIO_DAIT_strike_warning_@event_target:AIO_DAIT_maker }
-            destroy_ambient_object = this
-        }
         remove_star_flag = AIO_DAIT_center_busy
     }
     remove_country_flag = AIO_DAIT_strike_due
@@ -1172,22 +1162,16 @@ AIO_DAIT_start_erase = {
                 AIO_DAIT_system_valid = yes
             }
             set_star_flag = AIO_DAIT_erase_candidate_@event_target:AIO_DAIT_maker
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_erase_warning }
         }
-        AIO_DAIT_clear_notifications = yes
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_erase_warning
-            days = 30
-            target = event_target:AIO_DAIT_target_system
-        }
-        country_event = { id = AIO_DAIT_events.308 days = AIO_DAIT_erase_delay }
+        start_situation = { type = AIO_DAIT_erase_situation target = event_target:AIO_DAIT_target_system }
     }
 }
 
 AIO_DAIT_finish_erase = {
-    save_event_target_as = AIO_DAIT_maker
-    set_variable = { which = AIO_DAIT_erase_affected value = 0 }
+    hidden_effect = {
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_erase_affected value = 0 }
+    }
     if = {
         limit = {
             AIO_DAIT_erase_unlocked = yes
@@ -1202,38 +1186,61 @@ AIO_DAIT_finish_erase = {
                 has_star_flag = AIO_DAIT_erase_candidate_@event_target:AIO_DAIT_maker
                 AIO_DAIT_erase_target_valid = yes
             }
-            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_erase_completed }
-            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_erase_affected value = 1 } }
+            hidden_effect = { AIO_DAIT_notify_system = { TEXT = AIO_DAIT_erase_completed } }
+            event_target:AIO_DAIT_maker = { hidden_effect = { change_variable = { which = AIO_DAIT_erase_affected value = 1 } } }
             AIO_DAIT_erase_system_effect = yes
+            random_system_planet = {
+                limit = { is_star = yes }
+                create_ambient_object = {
+                    type = "star_explosion"
+                    play_animation_once = yes
+                    location = this
+                    effect = {
+                        set_location = {
+                            target = prev
+                            distance = 0
+                            angle = random
+                        }
+                    }
+                }
+            }
         }
     }
     if = { limit = { check_variable = { which = AIO_DAIT_erase_affected value = 0 } }
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_erase_paid }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_cancelled
-            days = 30
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_cancelled
+                days = 30
+            }
         }
     }
     else = {
-        set_timed_country_flag = { flag = AIO_DAIT_erase_cooldown days = 360 }
-        set_saved_date = {
-            key = AIO_DAIT_erase_ready_date
-            days_from_present = 360
-            expires = 360
+        hidden_effect = {
+            set_timed_country_flag = { flag = AIO_DAIT_erase_cooldown days = 360 }
+            set_saved_date = {
+                key = AIO_DAIT_erase_ready_date
+                days_from_present = 360
+                expires = 360
+            }
         }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_erase_affected value > 0 } }
-        create_message = {
-            type = MESSAGE_DYSON_SHOT
-            localization = AIO_DAIT_erase_completed
-            days = 30
-            target = event_target:AIO_DAIT_target_system
+        hidden_effect = {
+            create_message = {
+                type = MESSAGE_DYSON_SHOT
+                localization = AIO_DAIT_erase_completed
+                days = 30
+                target = event_target:AIO_DAIT_target_system
+            }
         }
     }
-    AIO_DAIT_cleanup_erase = yes
-    AIO_DAIT_clear_notifications = yes
+    hidden_effect = {
+        AIO_DAIT_cleanup_erase = yes
+        AIO_DAIT_clear_notifications = yes
+    }
 }
 
 AIO_DAIT_cleanup_erase = {

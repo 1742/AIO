@@ -4,12 +4,7 @@ AIO_DAIT_enrich_price = {
     modifier = { add = 100000 check_variable = { which = AIO_DAIT_range value = 2 } }
     modifier = { add = 250000 check_variable = { which = AIO_DAIT_range value >= 3 } }
 }
-AIO_DAIT_enrich_windup = {
-    base = 90
-    modifier = { add = 90 check_variable = { which = AIO_DAIT_enrich_range value = 1 } }
-    modifier = { add = 180 check_variable = { which = AIO_DAIT_enrich_range value = 2 } }
-    modifier = { add = 450 check_variable = { which = AIO_DAIT_enrich_range value = 3 } }
-}
+
 
 AIO_DAIT_spawn_price = {
     base = 50000

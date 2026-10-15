@@ -55,7 +55,7 @@ AIO_DAIT_spawn_effect = {
             1 = { AIO_create_recursive_satellite_tree = yes }
             1 = { AIO_create_black_hole_flower = yes }
         }
-        remove_star_flag = AIO_DAIT_harvest_system
+        hidden_effect = { remove_star_flag = AIO_DAIT_harvest_system }
     }
     else = {
         random_system_planet = {
@@ -141,7 +141,7 @@ AIO_DAIT_seed_effect = {
             portrait = random
             traits = random
             homeworld = this
-            effect = { save_event_target_as = AIO_DAIT_seed_species }
+            effect = { hidden_effect = { save_event_target_as = AIO_DAIT_seed_species } }
         }
         create_pop_group = {
             species = event_target:AIO_DAIT_seed_species
@@ -232,67 +232,67 @@ AIO_DAIT_ethic_effect = {
     owner? = {
         if = {
             limit = { has_ethic = ethic_authoritarian }
-            set_country_flag = AIO_DAIT_old_authoritarian
+            hidden_effect = { set_country_flag = AIO_DAIT_old_authoritarian }
         }
         if = {
             limit = { has_ethic = ethic_egalitarian }
-            set_country_flag = AIO_DAIT_old_egalitarian
+            hidden_effect = { set_country_flag = AIO_DAIT_old_egalitarian }
         }
         if = {
             limit = { has_ethic = ethic_fanatic_authoritarian }
-            set_country_flag = AIO_DAIT_old_fanatic_authoritarian
+            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_authoritarian }
         }
         if = {
             limit = { has_ethic = ethic_fanatic_egalitarian }
-            set_country_flag = AIO_DAIT_old_fanatic_egalitarian
+            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_egalitarian }
         }
         if = {
             limit = { has_ethic = ethic_materialist }
-            set_country_flag = AIO_DAIT_old_materialist
+            hidden_effect = { set_country_flag = AIO_DAIT_old_materialist }
         }
         if = {
             limit = { has_ethic = ethic_spiritualist }
-            set_country_flag = AIO_DAIT_old_spiritualist
+            hidden_effect = { set_country_flag = AIO_DAIT_old_spiritualist }
         }
         if = {
             limit = { has_ethic = ethic_fanatic_materialist }
-            set_country_flag = AIO_DAIT_old_fanatic_materialist
+            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_materialist }
         }
         if = {
             limit = { has_ethic = ethic_fanatic_spiritualist }
-            set_country_flag = AIO_DAIT_old_fanatic_spiritualist
+            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_spiritualist }
         }
         if = {
             limit = { has_ethic = ethic_militarist }
-            set_country_flag = AIO_DAIT_old_militarist
+            hidden_effect = { set_country_flag = AIO_DAIT_old_militarist }
         }
         if = {
             limit = { has_ethic = ethic_pacifist }
-            set_country_flag = AIO_DAIT_old_pacifist
+            hidden_effect = { set_country_flag = AIO_DAIT_old_pacifist }
         }
         if = {
             limit = { has_ethic = ethic_fanatic_militarist }
-            set_country_flag = AIO_DAIT_old_fanatic_militarist
+            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_militarist }
         }
         if = {
             limit = { has_ethic = ethic_fanatic_pacifist }
-            set_country_flag = AIO_DAIT_old_fanatic_pacifist
+            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_pacifist }
         }
         if = {
             limit = { has_ethic = ethic_xenophile }
-            set_country_flag = AIO_DAIT_old_xenophile
+            hidden_effect = { set_country_flag = AIO_DAIT_old_xenophile }
         }
         if = {
             limit = { has_ethic = ethic_xenophobe }
-            set_country_flag = AIO_DAIT_old_xenophobe
+            hidden_effect = { set_country_flag = AIO_DAIT_old_xenophobe }
         }
         if = {
             limit = { has_ethic = ethic_fanatic_xenophile }
-            set_country_flag = AIO_DAIT_old_fanatic_xenophile
+            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_xenophile }
         }
         if = {
             limit = { has_ethic = ethic_fanatic_xenophobe }
-            set_country_flag = AIO_DAIT_old_fanatic_xenophobe
+            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_xenophobe }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_authoritarian }
@@ -362,82 +362,82 @@ AIO_DAIT_ethic_effect = {
         if = {
             limit = { has_country_flag = AIO_DAIT_old_authoritarian }
             country_add_ethic = ethic_egalitarian
-            remove_country_flag = AIO_DAIT_old_authoritarian
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_authoritarian }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_egalitarian }
             country_add_ethic = ethic_authoritarian
-            remove_country_flag = AIO_DAIT_old_egalitarian
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_egalitarian }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_fanatic_authoritarian }
             country_add_ethic = ethic_fanatic_egalitarian
-            remove_country_flag = AIO_DAIT_old_fanatic_authoritarian
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_authoritarian }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_fanatic_egalitarian }
             country_add_ethic = ethic_fanatic_authoritarian
-            remove_country_flag = AIO_DAIT_old_fanatic_egalitarian
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_egalitarian }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_materialist }
             country_add_ethic = ethic_spiritualist
-            remove_country_flag = AIO_DAIT_old_materialist
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_materialist }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_spiritualist }
             country_add_ethic = ethic_materialist
-            remove_country_flag = AIO_DAIT_old_spiritualist
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_spiritualist }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_fanatic_materialist }
             country_add_ethic = ethic_fanatic_spiritualist
-            remove_country_flag = AIO_DAIT_old_fanatic_materialist
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_materialist }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_fanatic_spiritualist }
             country_add_ethic = ethic_fanatic_materialist
-            remove_country_flag = AIO_DAIT_old_fanatic_spiritualist
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_spiritualist }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_militarist }
             country_add_ethic = ethic_pacifist
-            remove_country_flag = AIO_DAIT_old_militarist
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_militarist }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_pacifist }
             country_add_ethic = ethic_militarist
-            remove_country_flag = AIO_DAIT_old_pacifist
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_pacifist }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_fanatic_militarist }
             country_add_ethic = ethic_fanatic_pacifist
-            remove_country_flag = AIO_DAIT_old_fanatic_militarist
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_militarist }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_fanatic_pacifist }
             country_add_ethic = ethic_fanatic_militarist
-            remove_country_flag = AIO_DAIT_old_fanatic_pacifist
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_pacifist }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_xenophile }
             country_add_ethic = ethic_xenophobe
-            remove_country_flag = AIO_DAIT_old_xenophile
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_xenophile }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_xenophobe }
             country_add_ethic = ethic_xenophile
-            remove_country_flag = AIO_DAIT_old_xenophobe
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_xenophobe }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_fanatic_xenophile }
             country_add_ethic = ethic_fanatic_xenophobe
-            remove_country_flag = AIO_DAIT_old_fanatic_xenophile
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_xenophile }
         }
         if = {
             limit = { has_country_flag = AIO_DAIT_old_fanatic_xenophobe }
             country_add_ethic = ethic_fanatic_xenophile
-            remove_country_flag = AIO_DAIT_old_fanatic_xenophobe
+            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_xenophobe }
         }
         change_government = {
             authority = random
@@ -541,7 +541,7 @@ AIO_DAIT_harvest_effect = {
             }
             change_pc = pc_t_star
             solar_system = { AIO_change_star_class = yes }
-            set_planet_flag = AIO_DAIT_harvested_body
+            hidden_effect = { set_planet_flag = AIO_DAIT_harvested_body }
         }
         else_if = {
             limit = { is_artificial = no }
@@ -620,7 +620,7 @@ AIO_DAIT_harvest_effect = {
                 destroy_colony = yes
             }
             inline_script = { script = AIO/AIO_safe_change_pc NEW_PC = pc_shattered }
-            set_planet_flag = AIO_DAIT_harvested_body
+            hidden_effect = { set_planet_flag = AIO_DAIT_harvested_body }
         }
         else = {
             switch = {
@@ -652,23 +652,23 @@ AIO_DAIT_harvest_effect = {
             }
         }
     }
-    set_star_flag = AIO_DAIT_harvest_system
+    hidden_effect = { set_star_flag = AIO_DAIT_harvest_system }
 }
 
 # system, local maker is captured by the originating DAIT chain.
 AIO_DAIT_strike_effect = {
     AIO_ensure_Aforgomon_country = yes
-    set_star_flag = AIO_Aforgomon_existed
-    set_star_flag = AIO_DAIT_strike_active
-    clear_variable = AIO_Aforgomon_Wrath
+    hidden_effect = { set_star_flag = AIO_Aforgomon_existed }
+    hidden_effect = { set_star_flag = AIO_DAIT_strike_active }
+    hidden_effect = { clear_variable = AIO_Aforgomon_Wrath }
     if = {
         limit = { event_target:AIO_DAIT_maker = { has_country_flag = AIO_DAIT_strike_full } }
-        set_star_flag = AIO_DAIT_strike_complete
+        hidden_effect = { set_star_flag = AIO_DAIT_strike_complete }
         AIO_create_Aforgomon_fleet = { DESIGN = NAME_AIO_Aforgomon_Wrath FLAG = AIO_DAIT_strike_fleet }
         system_event = { id = AIO_Aforgomon_events.203 days = 360 }
     }
     else = {
-        remove_star_flag = AIO_DAIT_strike_complete
+        hidden_effect = { remove_star_flag = AIO_DAIT_strike_complete }
         AIO_create_Aforgomon_fleet = { DESIGN = NAME_AIO_Aforgomon_Constraint FLAG = AIO_DAIT_strike_fleet }
         system_event = { id = AIO_Aforgomon_events.203 days = 180 }
     }

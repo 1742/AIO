@@ -25,7 +25,7 @@ Upgrading the Horizon Engine into the gate on the reality side creates [b]the Na
 [h3]Matryoshka Brain and Apply Infinity[/h3]
 One Matryoshka Brain district per eligible colony unlocks uncapped Recursive Node jobs. Moving the capital leaves existing Brains intact. Nodes still require population, housing and Energy, and suffer attrition. Virtual pops cannot work these jobs; virtual empires use physical Recursive Chassis instead.
 
-Enrich, Generate and Storm cost 50000 Hyperlogic; other operations cost 100000. Ascended empires cast for free. At 0/1/2 jumps, costs are multiplied by 1/2/3. All operations have a windup; Seed, Harvest, Strike and Erase also have separate 360-day cooldowns after success. Enrich and Generate change systems directly without country buffs.
+Enrich, Generate and Storm cost 50000 Hyperlogic; other operations cost 100000. Ascended empires cast for free. At 0/1/2 jumps, costs are multiplied by 1/2/3. Enrich resolves instantly. Other operations use separate caster-owned Situations to show the windup, validate targets and resolve effects. Seed, Harvest, Strike and Erase also have separate 360-day cooldowns after success. Other empires are notified only when effects resolve. Enrich and Generate change systems directly without country buffs.
 
 Use the Apply Infinity: Open Menu edict to open the movable toolbar. Select a system or celestial body, then choose an operation and range in the toolbar. The entry does not replace vanilla interface files. The special origin starts directly ascended.
 

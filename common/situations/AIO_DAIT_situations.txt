@@ -1,0 +1,468 @@
+# One pending cast per operation and country; target is persisted by the situation.
+AIO_DAIT_spawn_situation = {
+    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    desc = AIO_DAIT_spawn_situation_desc
+    category = neutral
+    situation_log_category = urgent_matters
+    initial_progress = 0
+    progress_direction = monodirectional
+    complete_icon = GFX_situation_outcome_positive
+    complete_icon_frame = GFX_situation_outcome_frame_green
+    on_start = {
+        hidden_effect = { set_variable = { which = AIO_DAIT_windup_days value = owner.AIO_DAIT_spawn_delay } }
+    }
+    total_progress = { base = 0 add = this.AIO_DAIT_windup_days }
+    monthly_progress = { base = 30 }
+    stages = {
+        AIO_DAIT_windup_stage = {
+            section_weight = { base = 1 }
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_green
+        }
+    }
+    abort_trigger = {
+        OR = {
+            NOT = { exists = target }
+            owner = {
+                NOT = { has_country_flag = AIO_DAIT_spawn_pending }
+            }
+            owner = { NOT = { AIO_DAIT_spawn_unlocked = yes } }
+            target = { NOT = { AIO_DAIT_spawn_target_valid = yes } }
+        }
+    }
+    on_abort = {
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_spawn_pending }
+                add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_spawn_paid }
+                create_message = {
+                    type = MESSAGE_DYSON_SHOT
+                    localization = AIO_DAIT_cancelled
+                    days = 30
+                }
+                hidden_effect = { AIO_DAIT_cleanup_spawn = yes }
+            }
+        }
+    }
+    on_progress_complete = {
+        hidden_effect = {
+            target = { save_event_target_as = AIO_DAIT_target_system }
+        }
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_spawn_pending }
+                AIO_DAIT_finish_spawn = yes
+            }
+        }
+    }
+    approach = {
+        name = AIO_DAIT_wait_approach
+        default = yes
+        icon = GFX_situation_approach_suspicious
+        icon_background = GFX_situation_approach_bg_yellow
+        on_select = { custom_tooltip = AIO_DAIT_wait_approach_desc }
+        ai_weight = { base = 1 }
+    }
+}
+
+# One pending cast per operation and country; target is persisted by the situation.
+AIO_DAIT_seed_situation = {
+    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    desc = AIO_DAIT_seed_situation_desc
+    category = neutral
+    situation_log_category = urgent_matters
+    initial_progress = 0
+    progress_direction = monodirectional
+    complete_icon = GFX_situation_outcome_positive
+    complete_icon_frame = GFX_situation_outcome_frame_green
+    on_start = {
+        hidden_effect = { set_variable = { which = AIO_DAIT_windup_days value = owner.AIO_DAIT_seed_delay } }
+    }
+    total_progress = { base = 0 add = this.AIO_DAIT_windup_days }
+    monthly_progress = { base = 30 }
+    stages = {
+        AIO_DAIT_windup_stage = {
+            section_weight = { base = 1 }
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_green
+        }
+    }
+    abort_trigger = {
+        OR = {
+            NOT = { exists = target }
+            owner = {
+                NOT = { has_country_flag = AIO_DAIT_seed_pending }
+            }
+            owner = { NOT = { AIO_DAIT_seed_unlocked = yes } }
+            target = { NOT = { AIO_DAIT_seed_target_valid = yes } }
+        }
+    }
+    on_abort = {
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_seed_pending }
+                add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_seed_paid }
+                create_message = {
+                    type = MESSAGE_DYSON_SHOT
+                    localization = AIO_DAIT_cancelled
+                    days = 30
+                }
+                hidden_effect = { AIO_DAIT_cleanup_seed = yes }
+            }
+        }
+    }
+    on_progress_complete = {
+        hidden_effect = {
+            target = { save_event_target_as = AIO_DAIT_target_system }
+        }
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_seed_pending }
+                AIO_DAIT_finish_seed = yes
+            }
+        }
+    }
+    approach = {
+        name = AIO_DAIT_wait_approach
+        default = yes
+        icon = GFX_situation_icon_mutation
+        icon_background = GFX_situation_approach_bg_green
+        on_select = { custom_tooltip = AIO_DAIT_wait_approach_desc }
+        ai_weight = { base = 1 }
+    }
+}
+
+# One pending cast per operation and country; target is persisted by the situation.
+AIO_DAIT_ethic_situation = {
+    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    desc = AIO_DAIT_ethic_situation_desc
+    category = neutral
+    situation_log_category = others
+    initial_progress = 0
+    progress_direction = monodirectional
+    complete_icon = GFX_situation_outcome_positive
+    complete_icon_frame = GFX_situation_outcome_frame_green
+    on_start = {
+        hidden_effect = { set_variable = { which = AIO_DAIT_windup_days value = owner.AIO_DAIT_ethic_delay } }
+    }
+    total_progress = { base = 0 add = this.AIO_DAIT_windup_days }
+    monthly_progress = { base = 30 }
+    stages = {
+        AIO_DAIT_windup_stage = {
+            section_weight = { base = 1 }
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_green
+        }
+    }
+    abort_trigger = {
+        OR = {
+            NOT = { exists = target }
+            owner = {
+                NOT = { has_country_flag = AIO_DAIT_ethic_pending }
+            }
+            owner = { NOT = { AIO_DAIT_ethic_unlocked = yes } }
+            target = { NOT = { AIO_DAIT_ethic_target_valid = yes } }
+        }
+    }
+    on_abort = {
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_ethic_pending }
+                add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_ethic_paid }
+                create_message = {
+                    type = MESSAGE_DYSON_SHOT
+                    localization = AIO_DAIT_cancelled
+                    days = 30
+                }
+                hidden_effect = { AIO_DAIT_cleanup_ethic = yes }
+            }
+        }
+    }
+    on_progress_complete = {
+        hidden_effect = {
+            target = { save_event_target_as = AIO_DAIT_target_system }
+        }
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_ethic_pending }
+                AIO_DAIT_finish_ethic = yes
+            }
+        }
+    }
+    approach = {
+        name = AIO_DAIT_wait_approach
+        default = yes
+        icon = GFX_situation_approach_influence
+        icon_background = GFX_situation_approach_bg_yellow
+        on_select = { custom_tooltip = AIO_DAIT_wait_approach_desc }
+        ai_weight = { base = 1 }
+    }
+}
+
+# One pending cast per operation and country; target is persisted by the situation.
+AIO_DAIT_storm_situation = {
+    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    desc = AIO_DAIT_storm_situation_desc
+    category = negative
+    situation_log_category = urgent_matters
+    initial_progress = 0
+    progress_direction = monodirectional
+    complete_icon = GFX_situation_outcome_negative
+    complete_icon_frame = GFX_situation_outcome_frame_red
+    on_start = {
+        hidden_effect = { set_variable = { which = AIO_DAIT_windup_days value = owner.AIO_DAIT_storm_delay } }
+    }
+    total_progress = { base = 0 add = this.AIO_DAIT_windup_days }
+    monthly_progress = { base = 30 }
+    stages = {
+        AIO_DAIT_windup_stage = {
+            section_weight = { base = 1 }
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_red
+        }
+    }
+    abort_trigger = {
+        OR = {
+            NOT = { exists = target }
+            owner = {
+                NOT = { has_country_flag = AIO_DAIT_storm_pending }
+            }
+            owner = { NOT = { AIO_DAIT_storm_unlocked = yes } }
+            target = { NOT = { AIO_DAIT_storm_target_valid = yes } }
+        }
+    }
+    on_abort = {
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_storm_pending }
+                add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_storm_paid }
+                create_message = {
+                    type = MESSAGE_DYSON_SHOT
+                    localization = AIO_DAIT_cancelled
+                    days = 30
+                }
+                hidden_effect = { AIO_DAIT_cleanup_storm = yes }
+            }
+        }
+    }
+    on_progress_complete = {
+        hidden_effect = {
+            target = { save_event_target_as = AIO_DAIT_target_system }
+        }
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_storm_pending }
+                AIO_DAIT_finish_storm = yes
+            }
+        }
+    }
+    approach = {
+        name = AIO_DAIT_wait_approach
+        default = yes
+        icon = GFX_situation_approach_spiral
+        icon_background = GFX_situation_approach_bg_red
+        on_select = { custom_tooltip = AIO_DAIT_wait_approach_desc }
+        ai_weight = { base = 1 }
+    }
+}
+
+# One pending cast per operation and country; target is persisted by the situation.
+AIO_DAIT_harvest_situation = {
+    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    desc = AIO_DAIT_harvest_situation_desc
+    category = negative
+    situation_log_category = urgent_matters
+    initial_progress = 0
+    progress_direction = monodirectional
+    complete_icon = GFX_situation_outcome_negative
+    complete_icon_frame = GFX_situation_outcome_frame_red
+    on_start = {
+        hidden_effect = { set_variable = { which = AIO_DAIT_windup_days value = owner.AIO_DAIT_harvest_delay } }
+    }
+    total_progress = { base = 0 add = this.AIO_DAIT_windup_days }
+    monthly_progress = { base = 30 }
+    stages = {
+        AIO_DAIT_windup_stage = {
+            section_weight = { base = 1 }
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_red
+        }
+    }
+    abort_trigger = {
+        OR = {
+            NOT = { exists = target }
+            owner = {
+                NOT = { has_country_flag = AIO_DAIT_harvest_pending }
+            }
+            owner = { NOT = { AIO_DAIT_harvest_unlocked = yes } }
+            target = { NOT = { AIO_DAIT_harvest_target_valid = yes } }
+        }
+    }
+    on_abort = {
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_harvest_pending }
+                add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_harvest_paid }
+                create_message = {
+                    type = MESSAGE_DYSON_SHOT
+                    localization = AIO_DAIT_cancelled
+                    days = 30
+                }
+                hidden_effect = { AIO_DAIT_cleanup_harvest = yes }
+            }
+        }
+    }
+    on_progress_complete = {
+        hidden_effect = {
+            target = { save_event_target_as = AIO_DAIT_target_system }
+        }
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_harvest_pending }
+                AIO_DAIT_finish_harvest = yes
+            }
+        }
+    }
+    approach = {
+        name = AIO_DAIT_wait_approach
+        default = yes
+        icon = GFX_situation_approach_minerals
+        icon_background = GFX_situation_approach_bg_red
+        on_select = { custom_tooltip = AIO_DAIT_wait_approach_desc }
+        ai_weight = { base = 1 }
+    }
+}
+
+# One pending cast per operation and country; target is persisted by the situation.
+AIO_DAIT_strike_situation = {
+    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    desc = AIO_DAIT_strike_situation_desc
+    category = negative
+    situation_log_category = crises
+    initial_progress = 0
+    progress_direction = monodirectional
+    complete_icon = GFX_situation_outcome_negative
+    complete_icon_frame = GFX_situation_outcome_frame_red
+    on_start = {
+        hidden_effect = { set_variable = { which = AIO_DAIT_windup_days value = owner.AIO_DAIT_strike_delay } }
+    }
+    total_progress = { base = 0 add = this.AIO_DAIT_windup_days }
+    monthly_progress = { base = 30 }
+    stages = {
+        AIO_DAIT_windup_stage = {
+            section_weight = { base = 1 }
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_red
+        }
+    }
+    abort_trigger = {
+        OR = {
+            NOT = { exists = target }
+            owner = {
+                NOT = { has_country_flag = AIO_DAIT_strike_pending }
+            }
+            owner = { NOT = { AIO_DAIT_strike_unlocked = yes } }
+            target = { NOT = { AIO_DAIT_strike_target_valid = yes } }
+        }
+    }
+    on_abort = {
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_strike_pending }
+                add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_strike_paid }
+                create_message = {
+                    type = MESSAGE_DYSON_SHOT
+                    localization = AIO_DAIT_cancelled
+                    days = 30
+                }
+                hidden_effect = { AIO_DAIT_cleanup_strike = yes }
+            }
+        }
+    }
+    on_progress_complete = {
+        hidden_effect = {
+            target = { save_event_target_as = AIO_DAIT_target_system }
+        }
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_strike_pending }
+                AIO_DAIT_finish_strike = yes
+            }
+        }
+    }
+    approach = {
+        name = AIO_DAIT_wait_approach
+        default = yes
+        icon = GFX_situation_approach_fist
+        icon_background = GFX_situation_approach_bg_red
+        on_select = { custom_tooltip = AIO_DAIT_wait_approach_desc }
+        ai_weight = { base = 1 }
+    }
+}
+
+# One pending cast per operation and country; target is persisted by the situation.
+AIO_DAIT_erase_situation = {
+    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    desc = AIO_DAIT_erase_situation_desc
+    category = negative
+    situation_log_category = crises
+    initial_progress = 0
+    progress_direction = monodirectional
+    complete_icon = GFX_situation_outcome_negative
+    complete_icon_frame = GFX_situation_outcome_frame_red
+    on_start = {
+        hidden_effect = { set_variable = { which = AIO_DAIT_windup_days value = owner.AIO_DAIT_erase_delay } }
+    }
+    total_progress = { base = 0 add = this.AIO_DAIT_windup_days }
+    monthly_progress = { base = 30 }
+    stages = {
+        AIO_DAIT_windup_stage = {
+            section_weight = { base = 1 }
+            icon = GFX_situation_stage_1
+            icon_background = GFX_situation_stage_frame_red
+        }
+    }
+    abort_trigger = {
+        OR = {
+            NOT = { exists = target }
+            owner = {
+                NOT = { has_country_flag = AIO_DAIT_erase_pending }
+            }
+            owner = { NOT = { AIO_DAIT_erase_unlocked = yes } }
+            target = { NOT = { AIO_DAIT_erase_target_valid = yes } }
+        }
+    }
+    on_abort = {
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_erase_pending }
+                add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_erase_paid }
+                create_message = {
+                    type = MESSAGE_DYSON_SHOT
+                    localization = AIO_DAIT_cancelled
+                    days = 30
+                }
+                hidden_effect = { AIO_DAIT_cleanup_erase = yes }
+            }
+        }
+    }
+    on_progress_complete = {
+        hidden_effect = {
+            target = { save_event_target_as = AIO_DAIT_target_system }
+        }
+        owner = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_erase_pending }
+                AIO_DAIT_finish_erase = yes
+            }
+        }
+    }
+    approach = {
+        name = AIO_DAIT_wait_approach
+        default = yes
+        icon = GFX_situation_approach_threads
+        icon_background = GFX_situation_approach_bg_red
+        on_select = { custom_tooltip = AIO_DAIT_wait_approach_desc }
+        ai_weight = { base = 1 }
+    }
+}
