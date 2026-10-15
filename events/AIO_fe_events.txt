@@ -1,0 +1,48 @@
+namespace = AIO_fe_events
+
+# Mirror an AIO fallen empire building technology to its vanilla counterpart.
+country_event = {
+	id = AIO_fe_events.201
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_ascension_perk = ap_AIO_allinone
+		OR = {
+			last_increased_tech = tech_AIO_fe_forge_1
+			last_increased_tech = tech_AIO_fe_forge_2
+			last_increased_tech = tech_AIO_fe_fabricator_1
+			last_increased_tech = tech_AIO_fe_fabricator_2
+			last_increased_tech = tech_AIO_fe_singularity_1
+			last_increased_tech = tech_AIO_fe_singularity_2
+			last_increased_tech = tech_AIO_fe_mine_1
+			last_increased_tech = tech_AIO_fe_mine_2
+			last_increased_tech = tech_AIO_nourishment_complex
+			last_increased_tech = tech_AIO_nourishment_center
+			last_increased_tech = tech_AIO_fe_affluence_1
+			last_increased_tech = tech_AIO_fe_affluence_2
+			last_increased_tech = tech_AIO_fe_silo_1
+			last_increased_tech = tech_AIO_fe_silo_2
+			last_increased_tech = tech_AIO_fe_market_1
+			last_increased_tech = tech_AIO_fe_market_2
+			last_increased_tech = tech_AIO_fe_administration_1
+			last_increased_tech = tech_AIO_fe_administration_2
+			last_increased_tech = tech_AIO_fe_security_1
+			last_increased_tech = tech_AIO_fe_security_2
+			last_increased_tech = tech_AIO_fe_lab_1
+			last_increased_tech = tech_AIO_fe_lab_2
+			last_increased_tech = tech_AIO_fe_fortress_1
+			last_increased_tech = tech_AIO_fe_fortress_2
+			last_increased_tech = tech_AIO_fe_dome_1
+			last_increased_tech = tech_AIO_fe_dome_2
+			last_increased_tech = tech_AIO_fe_entertainment_1
+			last_increased_tech = tech_AIO_fe_entertainment_2
+			last_increased_tech = tech_AIO_fe_assembly_1
+			last_increased_tech = tech_AIO_fe_assembly_2
+			last_increased_tech = tech_AIO_fe_clinic_1
+			last_increased_tech = tech_AIO_fe_clinic_2
+		}
+	}
+
+	immediate = { AIO_grant_vanilla_fe_building_technology = yes }
+}

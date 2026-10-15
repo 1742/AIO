@@ -1,25 +1,40 @@
 # AIO on_action触发事件
 
+# 定向应用无限入口
+# THIS = 目标行星
+# FROM = 发起动作的巨构
+
+
 on_game_start_country = {
     events = {
+        AIO_DAIT_events.201
         AIO_mod_events.201 # 更新提醒
-        AIO_AIT_events.201 # 同步起始科技与规则
-        AIO_AIT_events.203 # 持续银河规律
         AIO_crisis_events.201  # 万物归一起源
+    }
+}
+
+on_yearly_pulse = {
+    events = {
+        AIO_crisis_events.801  # 天灾目标，征用神经芯片
+        AIO_crisis_events.803  # 天灾目标，控有科学枢纽
+    }
+}
+
+on_yearly_pulse_country = {
+    events = {
+        AIO_crisis_events.902 # 给予递归载体物种模板
     }
 }
 
 on_tech_increased = {
     events = {
         AIO_crisis_events.401 # 完成科技升维假设，提示建造视相引擎
-        AIO_crisis_events.801  # 天灾目标，研究科技
-		AIO_compatible_events.201 # 授予原版堕落帝国建筑科技
-        AIO_AIT_events.201 # 规则科技：一次应用及后续选项
+        AIO_crisis_events.802  # 天灾目标，研究科技
+        AIO_crisis_events.902 # 虚拟帝国完成指数级学习理论
+		AIO_fe_events.201 # 授予 AIO 堕落帝国建筑科技对应的原版科技
     }
 }
 
-#This = destroyed country
-#From = optional, destroyer (country)
 on_country_destroyed = {
     events = {
         AIO_crisis_events.701 # AIO天灾帝国被摧毁
@@ -32,8 +47,18 @@ on_entering_system_fleet = {
     }
 }
 
-# THIS = 被摧毁舰船所有者
-# FROMFROM = 被摧毁舰队
+# This = owner of fleet 1 (combatant)
+# From = owner of fleet 2 (destroyed)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+
+
+on_megastructure_change_owner = {
+    events = {
+
+    }
+}
+
 on_fleet_destroyed_victim = {
 	events = {
         AIO_final_events.502 # 受约束的亚弗戈蒙被击败
@@ -41,71 +66,24 @@ on_fleet_destroyed_victim = {
     }
 }
 
-
-# Fired when a ship finishes researching an anomaly.
-# this = ship
-# from = planet
-anomaly_success = {
-    events = {
-        AIO_crisis_events.8021 # 天灾目标，完成异常
-    }
-}
-
-# Fired when a ship completes a special project.
-# this = country
-# fromfromfrom = ship
-special_project_success = {
-    events = {
-        AIO_crisis_events.8022 # 天灾目标，完成特殊项目
-    }
-}
-
-# Executed when the exploration of an astral rift ends
-# THIS = Country: Explorer country
-# FROM = AstralRift: Explored astral rift
-# FROMFROM = Exploring Fleet
-on_astral_rift_exploration_complete = {
-    events = {
-        AIO_crisis_events.803 # 天灾目标，探索星界裂隙
-    }
-}
-
-# 引诱亚弗戈蒙
-# THIS = 目标星系
-# FROM = 发起动作的巨构
 on_AIO_final_induction = {
     events = {
         AIO_final_events.401 # 引诱亚弗戈蒙
     }
 }
 
-# 限制亚弗戈蒙
-# THIS = 目标星系
-# FROM = 发起动作的巨构
 on_AIO_final_constraint = {
     events = {
         AIO_final_events.501 # 限制亚弗戈蒙
     }
 }
+on_AIO_DAIT_enrich = { events = { AIO_DAIT_events.401 } }
+on_AIO_DAIT_spawn = { events = { AIO_DAIT_events.402 } }
+on_AIO_DAIT_seed = { events = { AIO_DAIT_events.403 } }
+on_AIO_DAIT_ethic = { events = { AIO_DAIT_events.404 } }
+on_AIO_DAIT_storm = { events = { AIO_DAIT_events.405 } }
+on_AIO_DAIT_harvest = { events = { AIO_DAIT_events.406 } }
+on_AIO_DAIT_strike = { events = { AIO_DAIT_events.407 } }
+on_AIO_DAIT_erase = { events = { AIO_DAIT_events.408 } }
 
-# 远程投射
-# THIS = 目标星系
-# FROM = 发起动作的巨构
-on_AIO_projection_started = {
-	events = {
-		AIO_projection_events.201
-	}
-}
-
-on_country_created = {
-    events = {
-        AIO_AIT_events.202
-    }
-}
-
-# Includes pre-FTLs becoming active empires without creating a new country object.
-on_country_type_changed = {
-    events = {
-        AIO_AIT_events.203
-    }
-}
+on_district_complete = { events = { AIO_DAIT_events.202 } }

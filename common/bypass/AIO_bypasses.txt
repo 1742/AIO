@@ -63,14 +63,14 @@ bypass_AIO_ultimate_gate = {
 	# 	# 满足node条件下的星系中的bypass作为node, 只能通往nexus
 	# 	node = {
 	# 		NOR = {
-	# 			is_same_value = event_target:AIO_HS_system
+	# 			is_same_value = event_target:AIO_mist_system
 	# 			is_same_value = event_target:AIO_TDTE_system
 	# 		}
 	# 	}
 	# 	# 满足nexus条件下的星系作为nexus, 可到达所有其他相同类型的node
 	# 	nexus = {
 	# 		OR = {
-	# 			is_same_value = event_target:AIO_HS_system
+	# 			is_same_value = event_target:AIO_mist_system
 	# 			is_same_value = event_target:AIO_TDTE_system
 	# 		}
 	# 	}

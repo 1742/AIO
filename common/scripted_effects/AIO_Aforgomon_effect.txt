@@ -42,7 +42,6 @@ AIO_create_Aforgomon_fleet = {
             set_fleet_stance = aggressive
             set_aggro_range = 10000
             set_fleet_flag = $FLAG$
-            fleet_event = { id = AIO_Aforgomon_events.201 days = 100 }
         }
     }
 }

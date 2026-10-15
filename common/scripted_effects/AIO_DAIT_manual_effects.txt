@@ -1,0 +1,1271 @@
+# Button THIS = selected object, FROM = player. Snapshot only local event targets.
+AIO_DAIT_capture_target = {
+    from = { save_event_target_as = AIO_DAIT_maker }
+    if = {
+        limit = { is_scope_type = galactic_object }
+        save_event_target_as = AIO_DAIT_target_system
+    }
+    else_if = {
+        limit = { is_scope_type = planet }
+        solar_system = { save_event_target_as = AIO_DAIT_target_system }
+    }
+}
+
+# country; range 0/1/2, 3 = erase five jumps, 4 = strike witnessed realms.
+AIO_DAIT_cycle_range = {
+    if = {
+        limit = { NOT = { is_variable_set = AIO_DAIT_range } }
+        set_variable = { which = AIO_DAIT_range value = 0 }
+    }
+    change_variable = { which = AIO_DAIT_range value = 1 }
+    if = {
+        limit = {
+            OR = {
+                check_variable = { which = AIO_DAIT_range value > 4 }
+                AND = {
+                    NOT = { is_country_type = AIO_empire }
+                    check_variable = { which = AIO_DAIT_range value > 2 }
+                }
+            }
+        }
+        set_variable = { which = AIO_DAIT_range value = 0 }
+    }
+}
+
+# system; notify current occupants, at most once per cast phase.
+AIO_DAIT_notify_system = {
+    owner? = { AIO_DAIT_notify_country = { TEXT = $TEXT$ } }
+    every_system_planet_colony = { owner = { AIO_DAIT_notify_country = { TEXT = $TEXT$ } } }
+    every_system_ship_colony = { owner = { AIO_DAIT_notify_country = { TEXT = $TEXT$ } } }
+    every_fleet_in_system = { owner? = { AIO_DAIT_notify_country = { TEXT = $TEXT$ } } }
+}
+
+AIO_DAIT_notify_country = {
+    if = {
+        limit = { NOT = { has_country_flag = AIO_DAIT_notified } }
+        set_country_flag = AIO_DAIT_notified
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = $TEXT$
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+    }
+}
+
+AIO_DAIT_clear_notifications = {
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_notified }
+        remove_country_flag = AIO_DAIT_notified
+    }
+}
+
+AIO_DAIT_start_enrich = {
+    if = {
+        limit = {
+            AIO_DAIT_enrich_ready = yes
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_enrich_target_valid = yes
+                NOT = { has_star_flag = AIO_DAIT_center_busy }
+            }
+        }
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_enrich_paid value = value:AIO_DAIT_enrich_price }
+        if = {
+            limit = { is_country_type = AIO_empire }
+            set_variable = { which = AIO_DAIT_enrich_paid value = 0 }
+        }
+        add_resource = { AIO_advanced_logic = -1 mult = this.AIO_DAIT_enrich_paid }
+        set_country_flag = AIO_DAIT_enrich_pending
+        set_variable = { which = AIO_DAIT_enrich_range value = 0 }
+        if = {
+            limit = { is_variable_set = AIO_DAIT_range }
+            set_variable = { which = AIO_DAIT_enrich_range value = AIO_DAIT_range }
+        }
+        set_variable = { which = AIO_DAIT_enrich_delay value = value:AIO_DAIT_enrich_windup }
+        set_saved_date = {
+            key = AIO_DAIT_enrich_due
+            days_from_present = AIO_DAIT_enrich_delay
+        }
+        event_target:AIO_DAIT_target_system = {
+            set_star_flag = AIO_DAIT_center_busy
+            set_star_flag = AIO_DAIT_enrich_center_@event_target:AIO_DAIT_maker
+        }
+        event_target:AIO_DAIT_target_system = {
+            create_ambient_object = {
+                type = "crisis_sphere_1"
+                location = star
+                effect = {
+                    set_ambient_object_flag = AIO_DAIT_enrich_warning_@event_target:AIO_DAIT_maker
+                    set_location = { target = prev.star distance = 0 angle = 0 }
+                }
+            }
+        }
+        every_system = {
+            limit = {
+                OR = {
+                    is_same_value = event_target:AIO_DAIT_target_system
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_enrich_range value = 1 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 1 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_enrich_range value = 2 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 2 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_enrich_range value = 3 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 5 use_bypasses = no }
+                    }
+                }
+                AIO_DAIT_system_valid = yes
+            }
+            set_star_flag = AIO_DAIT_enrich_candidate_@event_target:AIO_DAIT_maker
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_enrich_warning }
+        }
+        AIO_DAIT_clear_notifications = yes
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_enrich_warning
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+        country_event = { id = AIO_DAIT_events.301 days = AIO_DAIT_enrich_delay }
+    }
+}
+
+AIO_DAIT_finish_enrich = {
+    save_event_target_as = AIO_DAIT_maker
+    set_variable = { which = AIO_DAIT_enrich_affected value = 0 }
+    if = {
+        limit = {
+            AIO_DAIT_enrich_unlocked = yes
+            exists = event_target:AIO_DAIT_target_system
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_system_valid = yes
+                has_star_flag = AIO_DAIT_enrich_center_@event_target:AIO_DAIT_maker
+            }
+        }
+        every_system = {
+            limit = {
+                has_star_flag = AIO_DAIT_enrich_candidate_@event_target:AIO_DAIT_maker
+                AIO_DAIT_enrich_target_valid = yes
+            }
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_enrich_completed }
+            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_enrich_affected value = 1 } }
+            AIO_DAIT_enrich_effect = { TIMES = 10 }
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_enrich_affected value = 0 } }
+        add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_enrich_paid }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_cancelled
+            days = 30
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_enrich_affected value > 0 } }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_enrich_completed
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+    }
+    AIO_DAIT_cleanup_enrich = yes
+    AIO_DAIT_clear_notifications = yes
+}
+
+AIO_DAIT_cleanup_enrich = {
+    save_event_target_as = AIO_DAIT_maker
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_enrich_candidate_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_enrich_candidate_@event_target:AIO_DAIT_maker
+    }
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_enrich_center_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_enrich_center_@event_target:AIO_DAIT_maker
+        every_system_ambient_object = {
+            limit = { has_ambient_object_flag = AIO_DAIT_enrich_warning_@event_target:AIO_DAIT_maker }
+            destroy_ambient_object = this
+        }
+        remove_star_flag = AIO_DAIT_center_busy
+    }
+    remove_country_flag = AIO_DAIT_enrich_due
+    remove_country_flag = AIO_DAIT_enrich_pending
+    clear_variable = AIO_DAIT_enrich_paid
+    clear_variable = AIO_DAIT_enrich_range
+    clear_variable = AIO_DAIT_enrich_delay
+    clear_variable = AIO_DAIT_enrich_affected
+}
+
+AIO_DAIT_start_spawn = {
+    if = {
+        limit = {
+            AIO_DAIT_spawn_ready = yes
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_spawn_target_valid = yes
+                NOT = { has_star_flag = AIO_DAIT_center_busy }
+            }
+        }
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_spawn_paid value = value:AIO_DAIT_spawn_price }
+        if = {
+            limit = { is_country_type = AIO_empire }
+            set_variable = { which = AIO_DAIT_spawn_paid value = 0 }
+        }
+        add_resource = { AIO_advanced_logic = -1 mult = this.AIO_DAIT_spawn_paid }
+        set_country_flag = AIO_DAIT_spawn_pending
+        set_variable = { which = AIO_DAIT_spawn_range value = 0 }
+        if = {
+            limit = { is_variable_set = AIO_DAIT_range }
+            set_variable = { which = AIO_DAIT_spawn_range value = AIO_DAIT_range }
+        }
+        set_variable = { which = AIO_DAIT_spawn_delay value = value:AIO_DAIT_spawn_windup }
+        set_saved_date = {
+            key = AIO_DAIT_spawn_due
+            days_from_present = AIO_DAIT_spawn_delay
+        }
+        event_target:AIO_DAIT_target_system = {
+            set_star_flag = AIO_DAIT_center_busy
+            set_star_flag = AIO_DAIT_spawn_center_@event_target:AIO_DAIT_maker
+        }
+        event_target:AIO_DAIT_target_system = {
+            create_ambient_object = {
+                type = "crisis_sphere_1"
+                location = star
+                effect = {
+                    set_ambient_object_flag = AIO_DAIT_spawn_warning_@event_target:AIO_DAIT_maker
+                    set_location = { target = prev.star distance = 0 angle = 0 }
+                }
+            }
+        }
+        every_system = {
+            limit = {
+                OR = { is_same_value = event_target:AIO_DAIT_target_system
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_spawn_range value = 1 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 1 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_spawn_range value = 2 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 2 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_spawn_range value = 3 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 5 use_bypasses = no }
+                    }
+                }
+                AIO_DAIT_system_valid = yes
+            }
+            set_star_flag = AIO_DAIT_spawn_candidate_@event_target:AIO_DAIT_maker
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_spawn_warning }
+        }
+        AIO_DAIT_clear_notifications = yes
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_spawn_warning
+            days = 30 target = event_target:AIO_DAIT_target_system
+        }
+        country_event = { id = AIO_DAIT_events.302 days = AIO_DAIT_spawn_delay }
+    }
+}
+
+AIO_DAIT_finish_spawn = {
+    save_event_target_as = AIO_DAIT_maker
+    set_variable = { which = AIO_DAIT_spawn_affected value = 0 }
+    if = {
+        limit = {
+            AIO_DAIT_spawn_unlocked = yes
+            exists = event_target:AIO_DAIT_target_system
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_system_valid = yes
+                has_star_flag = AIO_DAIT_spawn_center_@event_target:AIO_DAIT_maker
+            }
+        }
+        every_system = {
+            limit = {
+                has_star_flag = AIO_DAIT_spawn_candidate_@event_target:AIO_DAIT_maker
+                AIO_DAIT_spawn_target_valid = yes
+            }
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_spawn_completed }
+            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_spawn_affected value = 1 } }
+            AIO_DAIT_spawn_effect = yes
+        }
+    }
+    if = { limit = { check_variable = { which = AIO_DAIT_spawn_affected value = 0 } }
+        add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_spawn_paid }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_cancelled
+            days = 30
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_spawn_affected value > 0 } }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_spawn_completed
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+    }
+    AIO_DAIT_cleanup_spawn = yes
+    AIO_DAIT_clear_notifications = yes
+}
+
+AIO_DAIT_cleanup_spawn = {
+    save_event_target_as = AIO_DAIT_maker
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_spawn_candidate_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_spawn_candidate_@event_target:AIO_DAIT_maker
+    }
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_spawn_center_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_spawn_center_@event_target:AIO_DAIT_maker
+        every_system_ambient_object = {
+            limit = { has_ambient_object_flag = AIO_DAIT_spawn_warning_@event_target:AIO_DAIT_maker }
+            destroy_ambient_object = this
+        }
+        remove_star_flag = AIO_DAIT_center_busy
+    }
+    remove_country_flag = AIO_DAIT_spawn_due
+    remove_country_flag = AIO_DAIT_spawn_pending
+    clear_variable = AIO_DAIT_spawn_paid
+    clear_variable = AIO_DAIT_spawn_range
+    clear_variable = AIO_DAIT_spawn_delay
+    clear_variable = AIO_DAIT_spawn_affected
+}
+
+AIO_DAIT_start_seed = {
+    if = {
+        limit = {
+            AIO_DAIT_seed_ready = yes
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_seed_target_valid = yes
+                NOT = { has_star_flag = AIO_DAIT_center_busy }
+            }
+        }
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_seed_paid value = value:AIO_DAIT_seed_price }
+        if = {
+            limit = { is_country_type = AIO_empire }
+            set_variable = { which = AIO_DAIT_seed_paid value = 0 }
+        }
+        add_resource = { AIO_advanced_logic = -1 mult = this.AIO_DAIT_seed_paid }
+        set_country_flag = AIO_DAIT_seed_pending
+        set_variable = { which = AIO_DAIT_seed_range value = 0 }
+        if = {
+            limit = { is_variable_set = AIO_DAIT_range }
+            set_variable = { which = AIO_DAIT_seed_range value = AIO_DAIT_range }
+        }
+        set_variable = { which = AIO_DAIT_seed_delay value = value:AIO_DAIT_seed_windup }
+        set_saved_date = {
+            key = AIO_DAIT_seed_due
+            days_from_present = AIO_DAIT_seed_delay
+        }
+        event_target:AIO_DAIT_target_system = {
+            set_star_flag = AIO_DAIT_center_busy
+            set_star_flag = AIO_DAIT_seed_center_@event_target:AIO_DAIT_maker
+        }
+        event_target:AIO_DAIT_target_system = {
+            create_ambient_object = {
+                type = "crisis_sphere_1"
+                location = star
+                effect = {
+                    set_ambient_object_flag = AIO_DAIT_seed_warning_@event_target:AIO_DAIT_maker
+                    set_location = { target = prev.star distance = 0 angle = 0 }
+                }
+            }
+        }
+        every_system = {
+            limit = {
+                OR = {
+                    is_same_value = event_target:AIO_DAIT_target_system
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_seed_range value = 1 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 1 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_seed_range value = 2 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 2 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_seed_range value = 3 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 5 use_bypasses = no }
+                    }
+                }
+                AIO_DAIT_system_valid = yes
+            }
+            set_star_flag = AIO_DAIT_seed_candidate_@event_target:AIO_DAIT_maker
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_seed_warning }
+        }
+        AIO_DAIT_clear_notifications = yes
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_seed_warning
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+        country_event = { id = AIO_DAIT_events.303 days = AIO_DAIT_seed_delay }
+    }
+}
+
+AIO_DAIT_finish_seed = {
+    save_event_target_as = AIO_DAIT_maker
+    set_variable = { which = AIO_DAIT_seed_affected value = 0 }
+    if = {
+        limit = {
+            AIO_DAIT_seed_unlocked = yes
+            exists = event_target:AIO_DAIT_target_system
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_system_valid = yes
+                has_star_flag = AIO_DAIT_seed_center_@event_target:AIO_DAIT_maker
+            }
+        }
+        every_system = {
+            limit = {
+                has_star_flag = AIO_DAIT_seed_candidate_@event_target:AIO_DAIT_maker
+                AIO_DAIT_seed_target_valid = yes
+            }
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_seed_completed }
+            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_seed_affected value = 1 } }
+            AIO_DAIT_seed_effect = yes
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_seed_affected value = 0 } }
+        add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_seed_paid }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_cancelled
+            days = 30
+        }
+    }
+    else = {
+        set_timed_country_flag = { flag = AIO_DAIT_seed_cooldown days = 360 }
+        set_saved_date = {
+            key = AIO_DAIT_seed_ready_date
+            days_from_present = 360
+            expires = 360
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_seed_affected value > 0 } }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_seed_completed
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+    }
+    AIO_DAIT_cleanup_seed = yes
+    AIO_DAIT_clear_notifications = yes
+}
+
+AIO_DAIT_cleanup_seed = {
+    save_event_target_as = AIO_DAIT_maker
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_seed_candidate_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_seed_candidate_@event_target:AIO_DAIT_maker
+    }
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_seed_center_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_seed_center_@event_target:AIO_DAIT_maker
+        every_system_ambient_object = {
+            limit = { has_ambient_object_flag = AIO_DAIT_seed_warning_@event_target:AIO_DAIT_maker }
+            destroy_ambient_object = this
+        }
+        remove_star_flag = AIO_DAIT_center_busy
+    }
+    remove_country_flag = AIO_DAIT_seed_due
+    remove_country_flag = AIO_DAIT_seed_pending
+    clear_variable = AIO_DAIT_seed_paid
+    clear_variable = AIO_DAIT_seed_range
+    clear_variable = AIO_DAIT_seed_delay
+    clear_variable = AIO_DAIT_seed_affected
+}
+
+AIO_DAIT_start_ethic = {
+    if = {
+        limit = {
+            AIO_DAIT_ethic_ready = yes
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_ethic_target_valid = yes
+                NOT = { has_star_flag = AIO_DAIT_center_busy }
+            }
+        }
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_ethic_paid value = value:AIO_DAIT_ethic_price }
+        if = {
+            limit = { is_country_type = AIO_empire }
+            set_variable = { which = AIO_DAIT_ethic_paid value = 0 }
+        }
+        add_resource = { AIO_advanced_logic = -1 mult = this.AIO_DAIT_ethic_paid }
+        set_country_flag = AIO_DAIT_ethic_pending
+        set_variable = { which = AIO_DAIT_ethic_range value = 0 }
+        if = {
+            limit = { is_variable_set = AIO_DAIT_range }
+            set_variable = { which = AIO_DAIT_ethic_range value = AIO_DAIT_range }
+        }
+        set_variable = { which = AIO_DAIT_ethic_delay value = value:AIO_DAIT_ethic_windup }
+        set_saved_date = {
+            key = AIO_DAIT_ethic_due
+            days_from_present = AIO_DAIT_ethic_delay
+        }
+        event_target:AIO_DAIT_target_system = {
+            set_star_flag = AIO_DAIT_center_busy
+            set_star_flag = AIO_DAIT_ethic_center_@event_target:AIO_DAIT_maker
+        }
+        event_target:AIO_DAIT_target_system = {
+            create_ambient_object = {
+                type = "crisis_sphere_1"
+                location = star
+                effect = {
+                    set_ambient_object_flag = AIO_DAIT_ethic_warning_@event_target:AIO_DAIT_maker
+                    set_location = { target = prev.star distance = 0 angle = 0 }
+                }
+            }
+        }
+        every_system = {
+            limit = {
+                OR = {
+                    is_same_value = event_target:AIO_DAIT_target_system
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_ethic_range value = 1 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 1 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_ethic_range value = 2 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 2 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_ethic_range value = 3 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 5 use_bypasses = no }
+                    }
+                }
+                AIO_DAIT_system_valid = yes
+            }
+            set_star_flag = AIO_DAIT_ethic_candidate_@event_target:AIO_DAIT_maker
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_ethic_warning }
+        }
+        AIO_DAIT_clear_notifications = yes
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_ethic_warning
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+        country_event = { id = AIO_DAIT_events.304 days = AIO_DAIT_ethic_delay }
+    }
+}
+
+AIO_DAIT_finish_ethic = {
+    save_event_target_as = AIO_DAIT_maker
+    set_variable = { which = AIO_DAIT_ethic_affected value = 0 }
+    if = {
+        limit = {
+            AIO_DAIT_ethic_unlocked = yes
+            exists = event_target:AIO_DAIT_target_system
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_system_valid = yes
+                has_star_flag = AIO_DAIT_ethic_center_@event_target:AIO_DAIT_maker
+            }
+        }
+        every_system = {
+            limit = {
+                has_star_flag = AIO_DAIT_ethic_candidate_@event_target:AIO_DAIT_maker
+                AIO_DAIT_ethic_target_valid = yes
+                NOT = { owner = { has_country_flag = AIO_DAIT_ethic_changed } }
+            }
+            owner = { set_country_flag = AIO_DAIT_ethic_changed }
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_ethic_completed }
+            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_ethic_affected value = 1 } }
+            AIO_DAIT_ethic_effect = yes
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_ethic_affected value = 0 } }
+        add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_ethic_paid }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_cancelled
+            days = 30
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_ethic_affected value > 0 } }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_ethic_completed
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+    }
+    AIO_DAIT_cleanup_ethic = yes
+    AIO_DAIT_clear_notifications = yes
+}
+
+AIO_DAIT_cleanup_ethic = {
+    save_event_target_as = AIO_DAIT_maker
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_ethic_candidate_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_ethic_candidate_@event_target:AIO_DAIT_maker
+    }
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_ethic_center_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_ethic_center_@event_target:AIO_DAIT_maker
+        every_system_ambient_object = {
+            limit = { has_ambient_object_flag = AIO_DAIT_ethic_warning_@event_target:AIO_DAIT_maker }
+            destroy_ambient_object = this
+        }
+        remove_star_flag = AIO_DAIT_center_busy
+    }
+    remove_country_flag = AIO_DAIT_ethic_due
+    remove_country_flag = AIO_DAIT_ethic_pending
+    clear_variable = AIO_DAIT_ethic_paid
+    clear_variable = AIO_DAIT_ethic_range
+    clear_variable = AIO_DAIT_ethic_delay
+    clear_variable = AIO_DAIT_ethic_affected
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_ethic_changed }
+        remove_country_flag = AIO_DAIT_ethic_changed
+    }
+}
+
+AIO_DAIT_start_storm = {
+    if = {
+        limit = {
+            AIO_DAIT_storm_ready = yes
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_storm_target_valid = yes
+                NOT = { has_star_flag = AIO_DAIT_center_busy }
+            }
+        }
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_storm_paid value = value:AIO_DAIT_storm_price }
+        if = {
+            limit = { is_country_type = AIO_empire }
+            set_variable = { which = AIO_DAIT_storm_paid value = 0 }
+        }
+        add_resource = { AIO_advanced_logic = -1 mult = this.AIO_DAIT_storm_paid }
+        set_country_flag = AIO_DAIT_storm_pending
+        set_variable = { which = AIO_DAIT_storm_range value = 0 }
+        if = {
+            limit = { is_variable_set = AIO_DAIT_range }
+            set_variable = { which = AIO_DAIT_storm_range value = AIO_DAIT_range }
+        }
+        set_variable = { which = AIO_DAIT_storm_delay value = value:AIO_DAIT_storm_windup }
+        set_saved_date = {
+            key = AIO_DAIT_storm_due
+            days_from_present = AIO_DAIT_storm_delay
+        }
+        event_target:AIO_DAIT_target_system = {
+            set_star_flag = AIO_DAIT_center_busy
+            set_star_flag = AIO_DAIT_storm_center_@event_target:AIO_DAIT_maker
+        }
+        event_target:AIO_DAIT_target_system = {
+            create_ambient_object = {
+                type = "crisis_sphere_1"
+                location = star
+                effect = {
+                    set_ambient_object_flag = AIO_DAIT_storm_warning_@event_target:AIO_DAIT_maker
+                    set_location = { target = prev.star distance = 0 angle = 0 }
+                }
+            }
+        }
+        every_system = {
+            limit = {
+                OR = {
+                    is_same_value = event_target:AIO_DAIT_target_system
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_storm_range value = 1 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 1 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_storm_range value = 2 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 2 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_storm_range value = 3 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 5 use_bypasses = no }
+                    }
+                }
+                AIO_DAIT_system_valid = yes
+            }
+            set_star_flag = AIO_DAIT_storm_candidate_@event_target:AIO_DAIT_maker
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_storm_warning }
+        }
+        AIO_DAIT_clear_notifications = yes
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_storm_warning
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+        country_event = { id = AIO_DAIT_events.305 days = AIO_DAIT_storm_delay }
+    }
+}
+
+AIO_DAIT_finish_storm = {
+    save_event_target_as = AIO_DAIT_maker
+    set_variable = { which = AIO_DAIT_storm_affected value = 0 }
+    if = {
+        limit = {
+            AIO_DAIT_storm_unlocked = yes
+            exists = event_target:AIO_DAIT_target_system
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_system_valid = yes
+                has_star_flag = AIO_DAIT_storm_center_@event_target:AIO_DAIT_maker
+            }
+        }
+        every_system = {
+            limit = {
+                has_star_flag = AIO_DAIT_storm_candidate_@event_target:AIO_DAIT_maker
+                AIO_DAIT_storm_target_valid = yes
+            }
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_storm_completed }
+            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_storm_affected value = 1 } }
+            AIO_DAIT_storm_effect = yes
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_storm_affected value = 0 } }
+        add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_storm_paid }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_cancelled
+            days = 30
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_storm_affected value > 0 } }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_storm_completed
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+    }
+    AIO_DAIT_cleanup_storm = yes
+    AIO_DAIT_clear_notifications = yes
+}
+
+AIO_DAIT_cleanup_storm = {
+    save_event_target_as = AIO_DAIT_maker
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_storm_candidate_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_storm_candidate_@event_target:AIO_DAIT_maker
+    }
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_storm_center_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_storm_center_@event_target:AIO_DAIT_maker
+        every_system_ambient_object = {
+            limit = { has_ambient_object_flag = AIO_DAIT_storm_warning_@event_target:AIO_DAIT_maker }
+            destroy_ambient_object = this
+        }
+        remove_star_flag = AIO_DAIT_center_busy
+    }
+    remove_country_flag = AIO_DAIT_storm_due
+    remove_country_flag = AIO_DAIT_storm_pending
+    clear_variable = AIO_DAIT_storm_paid
+    clear_variable = AIO_DAIT_storm_range
+    clear_variable = AIO_DAIT_storm_delay
+    clear_variable = AIO_DAIT_storm_affected
+}
+
+AIO_DAIT_start_harvest = {
+    if = {
+        limit = {
+            AIO_DAIT_harvest_ready = yes
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_harvest_target_valid = yes
+                NOT = { has_star_flag = AIO_DAIT_center_busy }
+            }
+        }
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_harvest_paid value = value:AIO_DAIT_harvest_price }
+        if = {
+            limit = { is_country_type = AIO_empire }
+            set_variable = { which = AIO_DAIT_harvest_paid value = 0 }
+        }
+        add_resource = { AIO_advanced_logic = -1 mult = this.AIO_DAIT_harvest_paid }
+        set_country_flag = AIO_DAIT_harvest_pending
+        set_variable = { which = AIO_DAIT_harvest_range value = 0 }
+        if = {
+            limit = { is_variable_set = AIO_DAIT_range }
+            set_variable = { which = AIO_DAIT_harvest_range value = AIO_DAIT_range }
+        }
+        set_variable = { which = AIO_DAIT_harvest_delay value = value:AIO_DAIT_harvest_windup }
+        set_saved_date = {
+            key = AIO_DAIT_harvest_due
+            days_from_present = AIO_DAIT_harvest_delay
+        }
+        event_target:AIO_DAIT_target_system = {
+            set_star_flag = AIO_DAIT_center_busy
+            set_star_flag = AIO_DAIT_harvest_center_@event_target:AIO_DAIT_maker
+        }
+        event_target:AIO_DAIT_target_system = {
+            create_ambient_object = {
+                type = "crisis_sphere_1"
+                location = star
+                effect = {
+                    set_ambient_object_flag = AIO_DAIT_harvest_warning_@event_target:AIO_DAIT_maker
+                    set_location = { target = prev.star distance = 0 angle = 0 }
+                }
+            }
+        }
+        every_system = {
+            limit = {
+                OR = {
+                    is_same_value = event_target:AIO_DAIT_target_system
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_harvest_range value = 1 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 1 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_harvest_range value = 2 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 2 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_harvest_range value = 3 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 5 use_bypasses = no }
+                    }
+                }
+                AIO_DAIT_system_valid = yes
+            }
+            set_star_flag = AIO_DAIT_harvest_candidate_@event_target:AIO_DAIT_maker
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_harvest_warning }
+        }
+        AIO_DAIT_clear_notifications = yes
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_harvest_warning
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+        country_event = { id = AIO_DAIT_events.306 days = AIO_DAIT_harvest_delay }
+    }
+}
+
+AIO_DAIT_finish_harvest = {
+    save_event_target_as = AIO_DAIT_maker
+    set_variable = { which = AIO_DAIT_harvest_affected value = 0 }
+    if = {
+        limit = {
+            AIO_DAIT_harvest_unlocked = yes
+            exists = event_target:AIO_DAIT_target_system
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_system_valid = yes
+                has_star_flag = AIO_DAIT_harvest_center_@event_target:AIO_DAIT_maker
+            }
+        }
+        every_system = {
+            limit = {
+                has_star_flag = AIO_DAIT_harvest_candidate_@event_target:AIO_DAIT_maker
+                AIO_DAIT_harvest_target_valid = yes
+            }
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_harvest_completed }
+            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_harvest_affected value = 1 } }
+            AIO_DAIT_harvest_effect = yes
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_harvest_affected value = 0 } }
+        add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_harvest_paid }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_cancelled
+            days = 30
+        }
+    }
+    else = {
+        set_timed_country_flag = { flag = AIO_DAIT_harvest_cooldown days = 360 }
+        set_saved_date = {
+            key = AIO_DAIT_harvest_ready_date
+            days_from_present = 360
+            expires = 360
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_harvest_affected value > 0 } }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_harvest_completed
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+    }
+    AIO_DAIT_cleanup_harvest = yes
+    AIO_DAIT_clear_notifications = yes
+}
+
+AIO_DAIT_cleanup_harvest = {
+    save_event_target_as = AIO_DAIT_maker
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_harvest_candidate_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_harvest_candidate_@event_target:AIO_DAIT_maker
+    }
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_harvest_center_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_harvest_center_@event_target:AIO_DAIT_maker
+        every_system_ambient_object = {
+            limit = { has_ambient_object_flag = AIO_DAIT_harvest_warning_@event_target:AIO_DAIT_maker }
+            destroy_ambient_object = this
+        }
+        remove_star_flag = AIO_DAIT_center_busy
+    }
+    remove_country_flag = AIO_DAIT_harvest_due
+    remove_country_flag = AIO_DAIT_harvest_pending
+    clear_variable = AIO_DAIT_harvest_paid
+    clear_variable = AIO_DAIT_harvest_range
+    clear_variable = AIO_DAIT_harvest_delay
+    clear_variable = AIO_DAIT_harvest_affected
+}
+
+AIO_DAIT_start_strike = {
+    if = {
+        limit = {
+            AIO_DAIT_strike_ready = yes
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_strike_target_valid = yes
+                NOT = { has_star_flag = AIO_DAIT_center_busy }
+            }
+        }
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_strike_paid value = value:AIO_DAIT_strike_price }
+        if = {
+            limit = { is_country_type = AIO_empire }
+            set_variable = { which = AIO_DAIT_strike_paid value = 0 }
+        }
+        add_resource = { AIO_advanced_logic = -1 mult = this.AIO_DAIT_strike_paid }
+        set_country_flag = AIO_DAIT_strike_pending
+        set_variable = { which = AIO_DAIT_strike_range value = 0 }
+        if = {
+            limit = { is_variable_set = AIO_DAIT_range }
+            set_variable = { which = AIO_DAIT_strike_range value = AIO_DAIT_range }
+        }
+        remove_country_flag = AIO_DAIT_strike_full
+        if = {
+            limit = { is_country_type = AIO_empire }
+            set_country_flag = AIO_DAIT_strike_full
+        }
+        set_variable = { which = AIO_DAIT_strike_delay value = value:AIO_DAIT_strike_windup }
+        set_saved_date = {
+            key = AIO_DAIT_strike_due
+            days_from_present = AIO_DAIT_strike_delay
+        }
+        event_target:AIO_DAIT_target_system = {
+            set_star_flag = AIO_DAIT_center_busy
+            set_star_flag = AIO_DAIT_strike_center_@event_target:AIO_DAIT_maker
+        }
+        event_target:AIO_DAIT_target_system = {
+            create_ambient_object = {
+                type = "crisis_sphere_1"
+                location = star
+                effect = {
+                    set_ambient_object_flag = AIO_DAIT_strike_warning_@event_target:AIO_DAIT_maker
+                    set_location = { target = prev.star distance = 0 angle = 0 }
+                }
+            }
+        }
+        every_system = {
+            limit = {
+                OR = { is_same_value = event_target:AIO_DAIT_target_system
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_strike_range value = 1 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 1 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_strike_range value = 2 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 2 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_strike_range value = 3 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 5 use_bypasses = no }
+                    }
+                }
+                AIO_DAIT_system_valid = yes
+            }
+            set_star_flag = AIO_DAIT_strike_candidate_@event_target:AIO_DAIT_maker
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_strike_warning }
+        }
+
+        if = {
+            limit = { check_variable = { which = AIO_DAIT_strike_range value = 4 } }
+            event_target:AIO_DAIT_target_system = {
+                every_fleet_in_system = {
+                    limit = {
+                        exists = owner
+                        owner = {
+                            is_nomadic = no
+                            NOT = { is_country_type = AIO_Aforgomon }
+                        }
+                    }
+                    owner = {
+                        set_country_flag = AIO_DAIT_witness_@event_target:AIO_DAIT_maker
+                        AIO_DAIT_notify_country = { TEXT = AIO_DAIT_strike_warning }
+                    }
+                }
+            }
+        }
+        AIO_DAIT_clear_notifications = yes
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_strike_warning
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+        country_event = { id = AIO_DAIT_events.307 days = AIO_DAIT_strike_delay }
+    }
+}
+
+AIO_DAIT_finish_strike = {
+    save_event_target_as = AIO_DAIT_maker
+    set_variable = { which = AIO_DAIT_strike_affected value = 0 }
+    if = {
+        limit = {
+            AIO_DAIT_strike_unlocked = yes
+            exists = event_target:AIO_DAIT_target_system
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_system_valid = yes
+                has_star_flag = AIO_DAIT_strike_center_@event_target:AIO_DAIT_maker
+            }
+        }
+        if = {
+            limit = { check_variable = { which = AIO_DAIT_strike_range value = 4 } }
+            every_country = {
+                limit = { has_country_flag = AIO_DAIT_witness_@event_target:AIO_DAIT_maker }
+                every_system_within_border = {
+                    limit = { AIO_DAIT_system_valid = yes }
+                    set_star_flag = AIO_DAIT_strike_candidate_@event_target:AIO_DAIT_maker
+                }
+            }
+        }
+        every_system = {
+            limit = {
+                has_star_flag = AIO_DAIT_strike_candidate_@event_target:AIO_DAIT_maker
+                AIO_DAIT_strike_target_valid = yes
+            }
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_strike_completed }
+            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_strike_affected value = 1 } }
+            AIO_DAIT_strike_effect = yes
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_strike_affected value = 0 } }
+        add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_strike_paid }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_cancelled
+            days = 30
+        }
+    }
+    else = {
+        set_timed_country_flag = { flag = AIO_DAIT_strike_cooldown days = 360 }
+        set_saved_date = {
+            key = AIO_DAIT_strike_ready_date
+            days_from_present = 360
+            expires = 360
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_strike_affected value > 0 } }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_strike_completed
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+    }
+    AIO_DAIT_cleanup_strike = yes
+    AIO_DAIT_clear_notifications = yes
+}
+
+AIO_DAIT_cleanup_strike = {
+    save_event_target_as = AIO_DAIT_maker
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_strike_candidate_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_strike_candidate_@event_target:AIO_DAIT_maker
+    }
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_strike_center_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_strike_center_@event_target:AIO_DAIT_maker
+        every_system_ambient_object = {
+            limit = { has_ambient_object_flag = AIO_DAIT_strike_warning_@event_target:AIO_DAIT_maker }
+            destroy_ambient_object = this
+        }
+        remove_star_flag = AIO_DAIT_center_busy
+    }
+    remove_country_flag = AIO_DAIT_strike_due
+    remove_country_flag = AIO_DAIT_strike_pending
+    clear_variable = AIO_DAIT_strike_paid
+    clear_variable = AIO_DAIT_strike_range
+    clear_variable = AIO_DAIT_strike_delay
+    clear_variable = AIO_DAIT_strike_affected
+    remove_country_flag = AIO_DAIT_strike_full
+    every_country = {
+        limit = { has_country_flag = AIO_DAIT_witness_@event_target:AIO_DAIT_maker }
+        remove_country_flag = AIO_DAIT_witness_@event_target:AIO_DAIT_maker
+    }
+}
+
+AIO_DAIT_start_erase = {
+    if = {
+        limit = {
+            AIO_DAIT_erase_ready = yes
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_erase_target_valid = yes
+                NOT = { has_star_flag = AIO_DAIT_center_busy }
+            }
+        }
+        save_event_target_as = AIO_DAIT_maker
+        set_variable = { which = AIO_DAIT_erase_paid value = value:AIO_DAIT_erase_price }
+        if = {
+            limit = { is_country_type = AIO_empire }
+            set_variable = { which = AIO_DAIT_erase_paid value = 0 }
+        }
+        add_resource = { AIO_advanced_logic = -1 mult = this.AIO_DAIT_erase_paid }
+        set_country_flag = AIO_DAIT_erase_pending
+        set_variable = { which = AIO_DAIT_erase_range value = 0 }
+        if = {
+            limit = { is_variable_set = AIO_DAIT_range }
+            set_variable = { which = AIO_DAIT_erase_range value = AIO_DAIT_range }
+        }
+        set_variable = { which = AIO_DAIT_erase_delay value = value:AIO_DAIT_erase_windup }
+        set_saved_date = {
+            key = AIO_DAIT_erase_due
+            days_from_present = AIO_DAIT_erase_delay
+        }
+        event_target:AIO_DAIT_target_system = {
+            set_star_flag = AIO_DAIT_center_busy
+            set_star_flag = AIO_DAIT_erase_center_@event_target:AIO_DAIT_maker
+        }
+        event_target:AIO_DAIT_target_system = {
+            create_ambient_object = {
+                type = "crisis_sphere_1"
+                location = star
+                effect = {
+                    set_ambient_object_flag = AIO_DAIT_erase_warning_@event_target:AIO_DAIT_maker
+                    set_location = { target = prev.star distance = 0 angle = 0 }
+                }
+            }
+        }
+        every_system = {
+            limit = {
+                OR = { is_same_value = event_target:AIO_DAIT_target_system
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_erase_range value = 1 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 1 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_erase_range value = 2 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 2 use_bypasses = no }
+                    }
+                    AND = {
+                        event_target:AIO_DAIT_maker = { check_variable = { which = AIO_DAIT_erase_range value = 3 } }
+                        distance = { source = event_target:AIO_DAIT_target_system max_jumps = 5 use_bypasses = no }
+                    }
+                }
+                AIO_DAIT_system_valid = yes
+            }
+            set_star_flag = AIO_DAIT_erase_candidate_@event_target:AIO_DAIT_maker
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_erase_warning }
+        }
+        AIO_DAIT_clear_notifications = yes
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_erase_warning
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+        country_event = { id = AIO_DAIT_events.308 days = AIO_DAIT_erase_delay }
+    }
+}
+
+AIO_DAIT_finish_erase = {
+    save_event_target_as = AIO_DAIT_maker
+    set_variable = { which = AIO_DAIT_erase_affected value = 0 }
+    if = {
+        limit = {
+            AIO_DAIT_erase_unlocked = yes
+            exists = event_target:AIO_DAIT_target_system
+            event_target:AIO_DAIT_target_system = {
+                AIO_DAIT_system_valid = yes
+                has_star_flag = AIO_DAIT_erase_center_@event_target:AIO_DAIT_maker
+            }
+        }
+        every_system = {
+            limit = {
+                has_star_flag = AIO_DAIT_erase_candidate_@event_target:AIO_DAIT_maker
+                AIO_DAIT_erase_target_valid = yes
+            }
+            AIO_DAIT_notify_system = { TEXT = AIO_DAIT_erase_completed }
+            event_target:AIO_DAIT_maker = { change_variable = { which = AIO_DAIT_erase_affected value = 1 } }
+            AIO_DAIT_erase_system_effect = yes
+        }
+    }
+    if = { limit = { check_variable = { which = AIO_DAIT_erase_affected value = 0 } }
+        add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_erase_paid }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_cancelled
+            days = 30
+        }
+    }
+    else = {
+        set_timed_country_flag = { flag = AIO_DAIT_erase_cooldown days = 360 }
+        set_saved_date = {
+            key = AIO_DAIT_erase_ready_date
+            days_from_present = 360
+            expires = 360
+        }
+    }
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_erase_affected value > 0 } }
+        create_message = {
+            type = MESSAGE_DYSON_SHOT
+            localization = AIO_DAIT_erase_completed
+            days = 30
+            target = event_target:AIO_DAIT_target_system
+        }
+    }
+    AIO_DAIT_cleanup_erase = yes
+    AIO_DAIT_clear_notifications = yes
+}
+
+AIO_DAIT_cleanup_erase = {
+    save_event_target_as = AIO_DAIT_maker
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_erase_candidate_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_erase_candidate_@event_target:AIO_DAIT_maker
+    }
+    every_system = {
+        limit = { has_star_flag = AIO_DAIT_erase_center_@event_target:AIO_DAIT_maker }
+        remove_star_flag = AIO_DAIT_erase_center_@event_target:AIO_DAIT_maker
+        every_system_ambient_object = {
+            limit = { has_ambient_object_flag = AIO_DAIT_erase_warning_@event_target:AIO_DAIT_maker }
+            destroy_ambient_object = this
+        }
+        remove_star_flag = AIO_DAIT_center_busy
+    }
+    remove_country_flag = AIO_DAIT_erase_due
+    remove_country_flag = AIO_DAIT_erase_pending
+    clear_variable = AIO_DAIT_erase_paid
+    clear_variable = AIO_DAIT_erase_range
+    clear_variable = AIO_DAIT_erase_delay
+    clear_variable = AIO_DAIT_erase_affected
+}
+
+AIO_DAIT_cleanup_all = {
+    AIO_DAIT_cleanup_enrich = yes
+    AIO_DAIT_cleanup_spawn = yes
+    AIO_DAIT_cleanup_seed = yes
+    AIO_DAIT_cleanup_ethic = yes
+    AIO_DAIT_cleanup_storm = yes
+    AIO_DAIT_cleanup_harvest = yes
+    AIO_DAIT_cleanup_strike = yes
+    AIO_DAIT_cleanup_erase = yes
+}

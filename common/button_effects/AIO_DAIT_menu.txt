@@ -1,0 +1,432 @@
+# Stable country scope ONLY in potential. Selection is checked in allow/effect.
+AIO_DAIT_toggle = {
+    potential = { from = { AIO_DAIT_country_valid = yes } }
+    allow = { always = yes }
+    effect = {
+        from = {
+            if = {
+                limit = { has_country_flag = AIO_DAIT_toolbar }
+                remove_country_flag = AIO_DAIT_toolbar
+            }
+            else = { set_country_flag = AIO_DAIT_toolbar }
+        }
+    }
+}
+
+AIO_DAIT_enrich = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_need_target
+            AIO_DAIT_ui_target_valid = yes
+        }
+        from = { AIO_DAIT_enrich_ready = yes }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_invalid_target
+            OR = {
+                AND = {
+                    is_scope_type = galactic_object
+                    AIO_DAIT_enrich_target_valid = yes
+                    NOT = { has_star_flag = AIO_DAIT_center_busy }
+                }
+                AND = {
+                    is_scope_type = planet
+                    solar_system = {
+                        AIO_DAIT_enrich_target_valid = yes
+                        NOT = { has_star_flag = AIO_DAIT_center_busy }
+                    }
+                }
+            }
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                AIO_DAIT_ui_target_valid = yes
+                from = { AIO_DAIT_enrich_ready = yes }
+            }
+            AIO_DAIT_capture_target = yes
+            event_target:AIO_DAIT_maker = { AIO_DAIT_start_enrich = yes }
+        }
+    }
+}
+
+AIO_DAIT_spawn = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_need_target
+            AIO_DAIT_ui_target_valid = yes
+        }
+        from = { AIO_DAIT_spawn_ready = yes }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_invalid_target
+            OR = {
+                AND = {
+                    is_scope_type = galactic_object
+                    AIO_DAIT_spawn_target_valid = yes
+                    NOT = { has_star_flag = AIO_DAIT_center_busy }
+                }
+                AND = {
+                    is_scope_type = planet
+                    solar_system = {
+                        AIO_DAIT_spawn_target_valid = yes
+                        NOT = { has_star_flag = AIO_DAIT_center_busy }
+                    }
+                }
+            }
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                AIO_DAIT_ui_target_valid = yes
+                from = { AIO_DAIT_spawn_ready = yes }
+            }
+            AIO_DAIT_capture_target = yes
+            event_target:AIO_DAIT_maker = { AIO_DAIT_start_spawn = yes }
+        }
+    }
+}
+
+AIO_DAIT_seed = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_need_target
+            AIO_DAIT_ui_target_valid = yes
+        }
+        from = { AIO_DAIT_seed_ready = yes }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_invalid_target
+            OR = {
+                AND = {
+                    is_scope_type = galactic_object
+                    AIO_DAIT_seed_target_valid = yes
+                    NOT = { has_star_flag = AIO_DAIT_center_busy }
+                }
+                AND = {
+                    is_scope_type = planet
+                    solar_system = {
+                        AIO_DAIT_seed_target_valid = yes
+                        NOT = { has_star_flag = AIO_DAIT_center_busy }
+                    }
+                }
+            }
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                AIO_DAIT_ui_target_valid = yes
+                from = { AIO_DAIT_seed_ready = yes }
+            }
+            AIO_DAIT_capture_target = yes
+            event_target:AIO_DAIT_maker = { AIO_DAIT_start_seed = yes }
+        }
+    }
+}
+
+AIO_DAIT_ethic = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_need_target
+            AIO_DAIT_ui_target_valid = yes
+        }
+        from = { AIO_DAIT_ethic_ready = yes }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_invalid_target
+            OR = {
+                AND = {
+                    is_scope_type = galactic_object
+                    AIO_DAIT_ethic_target_valid = yes
+                    NOT = { has_star_flag = AIO_DAIT_center_busy }
+                }
+                AND = {
+                    is_scope_type = planet
+                    solar_system = {
+                        AIO_DAIT_ethic_target_valid = yes
+                        NOT = { has_star_flag = AIO_DAIT_center_busy }
+                    }
+                }
+            }
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                AIO_DAIT_ui_target_valid = yes
+                from = { AIO_DAIT_ethic_ready = yes }
+            }
+            AIO_DAIT_capture_target = yes
+            event_target:AIO_DAIT_maker = { AIO_DAIT_start_ethic = yes }
+        }
+    }
+}
+
+AIO_DAIT_storm = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_need_target
+            AIO_DAIT_ui_target_valid = yes
+        }
+        from = { AIO_DAIT_storm_ready = yes }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_invalid_target
+            OR = {
+                AND = {
+                    is_scope_type = galactic_object
+                    AIO_DAIT_storm_target_valid = yes
+                    NOT = { has_star_flag = AIO_DAIT_center_busy }
+                }
+                AND = {
+                    is_scope_type = planet
+                    solar_system = {
+                        AIO_DAIT_storm_target_valid = yes
+                        NOT = { has_star_flag = AIO_DAIT_center_busy }
+                    }
+                }
+            }
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                AIO_DAIT_ui_target_valid = yes
+                from = { AIO_DAIT_storm_ready = yes }
+            }
+            AIO_DAIT_capture_target = yes
+            event_target:AIO_DAIT_maker = { AIO_DAIT_start_storm = yes }
+        }
+    }
+}
+
+AIO_DAIT_harvest = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_need_target
+            AIO_DAIT_ui_target_valid = yes
+        }
+        from = { AIO_DAIT_harvest_ready = yes }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_invalid_target
+            OR = {
+                AND = {
+                    is_scope_type = galactic_object
+                    AIO_DAIT_harvest_target_valid = yes
+                    NOT = { has_star_flag = AIO_DAIT_center_busy }
+                }
+                AND = {
+                    is_scope_type = planet
+                    solar_system = {
+                        AIO_DAIT_harvest_target_valid = yes
+                        NOT = { has_star_flag = AIO_DAIT_center_busy }
+                    }
+                }
+            }
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                AIO_DAIT_ui_target_valid = yes
+                from = { AIO_DAIT_harvest_ready = yes }
+            }
+            AIO_DAIT_capture_target = yes
+            event_target:AIO_DAIT_maker = { AIO_DAIT_start_harvest = yes }
+        }
+    }
+}
+
+AIO_DAIT_strike = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_need_target
+            AIO_DAIT_ui_target_valid = yes
+        }
+        from = { AIO_DAIT_strike_ready = yes }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_invalid_target
+            OR = {
+                AND = {
+                    is_scope_type = galactic_object
+                    AIO_DAIT_strike_target_valid = yes
+                    NOT = { has_star_flag = AIO_DAIT_center_busy }
+                }
+                AND = {
+                    is_scope_type = planet
+                    solar_system = {
+                        AIO_DAIT_strike_target_valid = yes
+                        NOT = { has_star_flag = AIO_DAIT_center_busy }
+                    }
+                }
+            }
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                AIO_DAIT_ui_target_valid = yes
+                from = { AIO_DAIT_strike_ready = yes }
+            }
+            AIO_DAIT_capture_target = yes
+            event_target:AIO_DAIT_maker = { AIO_DAIT_start_strike = yes }
+        }
+    }
+}
+
+AIO_DAIT_erase = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+        }
+    }
+    allow = {
+        custom_tooltip = {
+            fail_text = AIO_DAIT_need_target
+            AIO_DAIT_ui_target_valid = yes
+        }
+        from = { AIO_DAIT_erase_ready = yes }
+        custom_tooltip = {
+            fail_text = AIO_DAIT_invalid_target
+            OR = {
+                AND = {
+                    is_scope_type = galactic_object
+                    AIO_DAIT_erase_target_valid = yes
+                    NOT = { has_star_flag = AIO_DAIT_center_busy }
+                }
+                AND = {
+                    is_scope_type = planet
+                    solar_system = {
+                        AIO_DAIT_erase_target_valid = yes
+                        NOT = { has_star_flag = AIO_DAIT_center_busy }
+                    }
+                }
+            }
+        }
+    }
+    effect = {
+        if = {
+            limit = {
+                AIO_DAIT_ui_target_valid = yes
+                from = { AIO_DAIT_erase_ready = yes }
+            }
+            AIO_DAIT_capture_target = yes
+            event_target:AIO_DAIT_maker = { AIO_DAIT_start_erase = yes }
+        }
+    }
+}
+
+AIO_DAIT_range_0 = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+            OR = {
+                NOT = { is_variable_set = AIO_DAIT_range }
+                check_variable = { which = AIO_DAIT_range value = 0 }
+            }
+        }
+    }
+    allow = { always = yes }
+    effect = { from = { AIO_DAIT_cycle_range = yes } }
+}
+
+AIO_DAIT_range_1 = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+            check_variable = { which = AIO_DAIT_range value = 1 }
+        }
+    }
+    allow = { always = yes }
+    effect = { from = { AIO_DAIT_cycle_range = yes } }
+}
+
+AIO_DAIT_range_2 = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+            check_variable = { which = AIO_DAIT_range value = 2 }
+        }
+    }
+    allow = { always = yes }
+    effect = { from = { AIO_DAIT_cycle_range = yes } }
+}
+
+AIO_DAIT_range_3 = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+            check_variable = { which = AIO_DAIT_range value = 3 }
+        }
+    }
+    allow = { always = yes }
+    effect = { from = { AIO_DAIT_cycle_range = yes } }
+}
+
+AIO_DAIT_range_4 = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+            check_variable = { which = AIO_DAIT_range value = 4 }
+        }
+    }
+    allow = { always = yes }
+    effect = { from = { AIO_DAIT_cycle_range = yes } }
+}
+
+AIO_DAIT_target_label = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+        }
+    }
+    allow = { always = yes }
+    effect = { }
+}

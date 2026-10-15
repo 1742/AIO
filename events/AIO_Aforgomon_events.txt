@@ -1,57 +1,48 @@
 namespace = AIO_Aforgomon_events
 
-# 正式化身每 100 天检查本星系
-fleet_event = {
-	id = AIO_Aforgomon_events.201
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = { has_fleet_flag = AIO_projection_Aforgomon }
-	immediate = {
-		solar_system = {
-			if = {
-				limit = {
-					AIO_Aforgomon_has_targets = yes
-					check_variable = { which = AIO_Aforgomon_Wrath value < 10 }
-				}
-				change_variable = { which = AIO_Aforgomon_Wrath value = 1 }
-				root = {
-					add_modifier = { modifier = AIO_Aforgomon_Wrath_modifier mult = value:AIO_Aforgomon_Wrath_factor }
-					fleet_event = { id = AIO_Aforgomon_events.201 days = 100 }
-				}
-			}
-			else = {
-				# 无目标则离去；怒气到阈值时清场。两者都先结束本星系状态。
-				remove_star_flag = AIO_Aforgomon_existed
-				clear_variable = AIO_Aforgomon_Wrath
-				every_fleet_in_system = {
-					limit = { NOT = { is_owned_by = event_target:AIO_Aforgomon_country } }
-					destroy_fleet = this
-				}
-				root = { delete_fleet = this }
-			}
-		}
-	}
+# Victim callback: only direct full strikes respawn, never final-situation fleets.
+country_event = {
+    id = AIO_Aforgomon_events.202
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { fromfrom? = { has_fleet_flag = AIO_DAIT_strike_fleet } }
+    immediate = {
+        fromfrom.solar_system = {
+            if = {
+                limit = {
+                    has_star_flag = AIO_DAIT_strike_active
+                    has_star_flag = AIO_DAIT_strike_complete
+                }
+                if = {
+                    limit = { check_variable = { which = AIO_Aforgomon_Wrath value < 10 } }
+                    change_variable = { which = AIO_Aforgomon_Wrath value = 1 }
+                }
+                AIO_create_Aforgomon_fleet = {
+                    DESIGN = NAME_AIO_Aforgomon_Wrath
+                    FLAG = AIO_DAIT_strike_fleet
+                }
+            }
+        }
+    }
 }
 
-# ROOT = 被摧毁舰队的国家；FROMFROM = 被摧毁舰队。
-country_event = {
-	id = AIO_Aforgomon_events.202
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = { fromfrom? = { has_fleet_flag = AIO_projection_Aforgomon } }
-	immediate = {
-		fromfrom.solar_system = {
-			if = {
-				limit = { has_star_flag = AIO_Aforgomon_existed }
-				if = {
-					limit = { check_variable = { which = AIO_Aforgomon_Wrath value < 10 } }
-					change_variable = { which = AIO_Aforgomon_Wrath value = 1 }
-				}
-				AIO_create_Aforgomon_fleet = {
-					DESIGN = NAME_AIO_Aforgomon_Wrath
-					FLAG = AIO_projection_Aforgomon
-				}
-			}
-		}
-	}
+system_event = {
+    id = AIO_Aforgomon_events.203
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_star_flag = AIO_DAIT_strike_active }
+    immediate = {
+        remove_star_flag = AIO_DAIT_strike_active
+        every_fleet_in_system = {
+            limit = { has_fleet_flag = AIO_DAIT_strike_fleet }
+            delete_fleet = this
+        }
+        if = {
+            limit = { has_star_flag = AIO_DAIT_strike_complete }
+            AIO_DAIT_erase_system_effect = yes
+        }
+        remove_star_flag = AIO_DAIT_strike_complete
+        remove_star_flag = AIO_Aforgomon_existed
+        clear_variable = AIO_Aforgomon_Wrath
+    }
 }

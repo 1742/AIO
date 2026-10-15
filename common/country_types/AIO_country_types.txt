@@ -67,6 +67,8 @@ AIO_empire = {
 	}
 }
 
+
+
 AIO_Aforgomon = {
 	government = no
 	observable = no

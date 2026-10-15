@@ -1,0 +1,309 @@
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_enrich_state
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_enrich_pending }
+        localization_key = AIO_DAIT_enrich_pending_text
+    }
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_enrich_cooldown }
+        localization_key = AIO_DAIT_enrich_cooldown_text
+    }
+    default = AIO_DAIT_ready_text
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_spawn_state
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_spawn_pending }
+        localization_key = AIO_DAIT_spawn_pending_text
+    }
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_spawn_cooldown }
+        localization_key = AIO_DAIT_spawn_cooldown_text
+    }
+    default = AIO_DAIT_ready_text
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_seed_state
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_seed_pending }
+        localization_key = AIO_DAIT_seed_pending_text
+    }
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_seed_cooldown }
+        localization_key = AIO_DAIT_seed_cooldown_text
+    }
+    default = AIO_DAIT_ready_text
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_ethic_state
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_ethic_pending }
+        localization_key = AIO_DAIT_ethic_pending_text
+    }
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_ethic_cooldown }
+        localization_key = AIO_DAIT_ethic_cooldown_text
+    }
+    default = AIO_DAIT_ready_text
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_storm_state
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_storm_pending }
+        localization_key = AIO_DAIT_storm_pending_text
+    }
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_storm_cooldown }
+        localization_key = AIO_DAIT_storm_cooldown_text
+    }
+    default = AIO_DAIT_ready_text
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_harvest_state
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_harvest_pending }
+        localization_key = AIO_DAIT_harvest_pending_text
+    }
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_harvest_cooldown }
+        localization_key = AIO_DAIT_harvest_cooldown_text
+    }
+    default = AIO_DAIT_ready_text
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_strike_state
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_strike_pending }
+        localization_key = AIO_DAIT_strike_pending_text
+    }
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_strike_cooldown }
+        localization_key = AIO_DAIT_strike_cooldown_text
+    }
+    default = AIO_DAIT_ready_text
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_erase_state
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_erase_pending }
+        localization_key = AIO_DAIT_erase_pending_text
+    }
+    text = {
+        trigger = { has_country_flag = AIO_DAIT_erase_cooldown }
+        localization_key = AIO_DAIT_erase_cooldown_text
+    }
+    default = AIO_DAIT_ready_text
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_range_name
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 1 } }
+        localization_key = AIO_DAIT_range_1
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 2 } }
+        localization_key = AIO_DAIT_range_2
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 3 } }
+        localization_key = AIO_DAIT_range_3
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 4 } }
+        localization_key = AIO_DAIT_range_4
+    }
+    default = AIO_DAIT_range_0
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_enrich_range_name
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_enrich_range value = 1 } }
+        localization_key = AIO_DAIT_range_1
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_enrich_range value = 2 } }
+        localization_key = AIO_DAIT_range_2
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_enrich_range value = 3 } }
+        localization_key = AIO_DAIT_range_3
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_enrich_range value = 4 } }
+        localization_key = AIO_DAIT_range_4
+    }
+    default = AIO_DAIT_range_0
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_spawn_range_name
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_spawn_range value = 1 } }
+        localization_key = AIO_DAIT_range_1
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_spawn_range value = 2 } }
+        localization_key = AIO_DAIT_range_2
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_spawn_range value = 3 } }
+        localization_key = AIO_DAIT_range_3
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_spawn_range value = 4 } }
+        localization_key = AIO_DAIT_range_4
+    }
+    default = AIO_DAIT_range_0
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_seed_range_name
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_seed_range value = 1 } }
+        localization_key = AIO_DAIT_range_1
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_seed_range value = 2 } }
+        localization_key = AIO_DAIT_range_2
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_seed_range value = 3 } }
+        localization_key = AIO_DAIT_range_3
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_seed_range value = 4 } }
+        localization_key = AIO_DAIT_range_4
+    }
+    default = AIO_DAIT_range_0
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_ethic_range_name
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_ethic_range value = 1 } }
+        localization_key = AIO_DAIT_range_1
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_ethic_range value = 2 } }
+        localization_key = AIO_DAIT_range_2
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_ethic_range value = 3 } }
+        localization_key = AIO_DAIT_range_3
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_ethic_range value = 4 } }
+        localization_key = AIO_DAIT_range_4
+    }
+    default = AIO_DAIT_range_0
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_storm_range_name
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_storm_range value = 1 } }
+        localization_key = AIO_DAIT_range_1
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_storm_range value = 2 } }
+        localization_key = AIO_DAIT_range_2
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_storm_range value = 3 } }
+        localization_key = AIO_DAIT_range_3
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_storm_range value = 4 } }
+        localization_key = AIO_DAIT_range_4
+    }
+    default = AIO_DAIT_range_0
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_harvest_range_name
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_harvest_range value = 1 } }
+        localization_key = AIO_DAIT_range_1
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_harvest_range value = 2 } }
+        localization_key = AIO_DAIT_range_2
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_harvest_range value = 3 } }
+        localization_key = AIO_DAIT_range_3
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_harvest_range value = 4 } }
+        localization_key = AIO_DAIT_range_4
+    }
+    default = AIO_DAIT_range_0
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_strike_range_name
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_strike_range value = 1 } }
+        localization_key = AIO_DAIT_range_1
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_strike_range value = 2 } }
+        localization_key = AIO_DAIT_range_2
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_strike_range value = 3 } }
+        localization_key = AIO_DAIT_range_3
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_strike_range value = 4 } }
+        localization_key = AIO_DAIT_range_4
+    }
+    default = AIO_DAIT_range_0
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_erase_range_name
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_erase_range value = 1 } }
+        localization_key = AIO_DAIT_range_1
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_erase_range value = 2 } }
+        localization_key = AIO_DAIT_range_2
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_erase_range value = 3 } }
+        localization_key = AIO_DAIT_range_3
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_erase_range value = 4 } }
+        localization_key = AIO_DAIT_range_4
+    }
+    default = AIO_DAIT_range_0
+}

@@ -1,0 +1,9 @@
+# Shared inline primitive; keep scope unchanged.
+inline_script = AIO/AIO_prepare_remove_planet
+
+if = {
+    limit = { is_planet_class = pc_cosmogenesis_world }
+    owner? = { remove_country_flag = cosmogenesis_world_built }
+    destroy_colony = yes
+    remove_planet = yes
+}

@@ -1,0 +1,153 @@
+# Planet removal primitive, expanded before effect initialization.
+if = {
+    limit = {
+        NOR = {
+            is_planet_class = pc_AIO_empty_space
+            colony? = { has_carrier_flag = synth_queen_bastille }
+            AIO_safe_remove_planet_exclude_API = yes
+        }
+    }
+
+    inline_script = AIO/AIO_prepare_remove_planet
+    if = {
+        limit = { is_star = yes }
+        change_pc = pc_AIO_empty_space
+        clear_deposits = yes
+        inline_script = AIO/remove_planet_megastructures
+    }
+    else_if = {
+        limit = {
+            is_colony = yes
+            is_artificial = no
+        }
+        destroy_colony = yes
+        inline_script = AIO/remove_planet_megastructures
+        remove_planet = yes
+    }
+    else_if = {
+        limit = { is_planet_class = pc_ark }
+        ship = {
+            fleet = { destroy_fleet = this }
+        }
+    }
+    else_if = {
+        limit = { is_planet_class = pc_habitat }
+        inline_script = AIO/AIO_safe_remove_habitat
+    }
+    else_if = {
+        limit = {
+            OR = {
+                is_planet_class = pc_ringworld_habitable
+                is_planet_class = pc_shattered_ring_habitable
+            }
+        }
+        inline_script = AIO/AIO_safe_remove_rw_section
+    }
+    else_if = {
+        limit = { is_planet_class = pc_cosmogenesis_world }
+        inline_script = AIO/AIO_safe_remove_cosmogenesis_world
+    }
+    else_if = {
+        # 潜在的肃正球
+        limit = {
+            AIO_is_ai_planet = yes
+            NOT = { has_planet_flag = AIO_machine_world_settled }
+            NOT = { is_planet_class = pc_ai }
+        }
+        switch = {
+            trigger = has_carrier_flag
+            machine_world_1 = {
+                remove_carrier_flag = machine_world_1
+                remove_carrier_flag = crisis_vital_planet
+                solar_system = {
+                    remove_star_flag = AI_hub
+                    remove_star_flag = AI_system_1
+                }
+                random_galaxy_planet = {
+                    limit = {
+                        is_planet_class = pc_barren
+                        solar_system = {
+                            NOT = { any_system_planet = { AIO_is_ai_planet = yes } }
+                        }
+                    }
+                    set_carrier_flag = machine_world_1
+                    set_carrier_flag = crisis_vital_planet
+                    solar_system = {
+                        set_star_flag = AI_hub
+                        set_star_flag = AI_system_1
+                    }
+                }
+            }
+            machine_world_2 = {
+                remove_carrier_flag = machine_world_2
+                remove_carrier_flag = crisis_vital_planet
+                solar_system = {
+                    remove_star_flag = AI_hub
+                    remove_star_flag = AI_system_2
+                }
+                random_galaxy_planet = {
+                    limit = {
+                        is_planet_class = pc_barren
+                        solar_system = {
+                            NOT = { any_system_planet = { AIO_is_ai_planet = yes } }
+                        }
+                    }
+                    set_carrier_flag = machine_world_2
+                    set_carrier_flag = crisis_vital_planet
+                    solar_system = {
+                        set_star_flag = AI_hub
+                        set_star_flag = AI_system_2
+                    }
+                }
+            }
+            machine_world_3 = {
+                remove_carrier_flag = machine_world_3
+                remove_carrier_flag = crisis_vital_planet
+                solar_system = {
+                    remove_star_flag = AI_hub
+                    remove_star_flag = AI_system_3
+                }
+                random_galaxy_planet = {
+                    limit = {
+                        is_planet_class = pc_barren
+                        solar_system = {
+                            NOT = { any_system_planet = { AIO_is_ai_planet = yes } }
+                        }
+                    }
+                    set_carrier_flag = machine_world_3
+                    set_carrier_flag = crisis_vital_planet
+                    solar_system = {
+                        set_star_flag = AI_hub
+                        set_star_flag = AI_system_3
+                    }
+                }
+            }
+            machine_world_4 = {
+                remove_carrier_flag = machine_world_4
+                remove_carrier_flag = crisis_vital_planet
+                solar_system = {
+                    remove_star_flag = AI_hub
+                    remove_star_flag = AI_system_4
+                }
+                random_galaxy_planet = {
+                    limit = {
+                        is_planet_class = pc_barren
+                        solar_system = {
+                            NOT = { any_system_planet = { AIO_is_ai_planet = yes } }
+                        }
+                    }
+                    set_carrier_flag = machine_world_4
+                    set_carrier_flag = crisis_vital_planet
+                    solar_system = {
+                        set_star_flag = AI_hub
+                        set_star_flag = AI_system_4
+                    }
+                }
+            }
+        }
+    }
+    else = {
+        inline_script = AIO/remove_planet_megastructures
+        remove_planet = yes
+    }
+}

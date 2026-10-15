@@ -1,0 +1,225 @@
+namespace = AIO_DAIT_events
+
+
+country_event = {
+    id = AIO_DAIT_events.201
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = { set_variable = { which = AIO_DAIT_range value = 0 } }
+}
+
+colony_event = {
+    id = AIO_DAIT_events.202
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_district = district_AIO_lathe }
+    immediate = { owner = { country_event = { id = AIO_crisis_events.902 } } }
+}
+
+country_event = {
+    id = AIO_DAIT_events.301
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_country_flag = AIO_DAIT_enrich_pending }
+    immediate = { AIO_DAIT_finish_enrich = yes }
+}
+
+country_event = {
+    id = AIO_DAIT_events.302
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_country_flag = AIO_DAIT_spawn_pending }
+    immediate = { AIO_DAIT_finish_spawn = yes }
+}
+
+country_event = {
+    id = AIO_DAIT_events.303
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_country_flag = AIO_DAIT_seed_pending }
+    immediate = { AIO_DAIT_finish_seed = yes }
+}
+
+country_event = {
+    id = AIO_DAIT_events.304
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_country_flag = AIO_DAIT_ethic_pending }
+    immediate = { AIO_DAIT_finish_ethic = yes }
+}
+
+country_event = {
+    id = AIO_DAIT_events.305
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_country_flag = AIO_DAIT_storm_pending }
+    immediate = { AIO_DAIT_finish_storm = yes }
+}
+
+country_event = {
+    id = AIO_DAIT_events.306
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_country_flag = AIO_DAIT_harvest_pending }
+    immediate = { AIO_DAIT_finish_harvest = yes }
+}
+
+country_event = {
+    id = AIO_DAIT_events.307
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_country_flag = AIO_DAIT_strike_pending }
+    immediate = { AIO_DAIT_finish_strike = yes }
+}
+
+country_event = {
+    id = AIO_DAIT_events.308
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_country_flag = AIO_DAIT_erase_pending }
+    immediate = { AIO_DAIT_finish_erase = yes }
+}
+
+system_event = {
+    id = AIO_DAIT_events.401
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        exists = from
+        from.owner = { AIO_DAIT_enrich_ready = yes }
+        AIO_DAIT_enrich_target_valid = yes
+    }
+    immediate = {
+        save_event_target_as = AIO_DAIT_target_system
+        from.owner = {
+            save_event_target_as = AIO_DAIT_maker
+            AIO_DAIT_start_enrich = yes
+        }
+    }
+}
+
+system_event = {
+    id = AIO_DAIT_events.402
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        exists = from
+        from.owner = { AIO_DAIT_spawn_ready = yes }
+        AIO_DAIT_spawn_target_valid = yes
+    }
+    immediate = {
+        save_event_target_as = AIO_DAIT_target_system
+        from.owner = {
+            save_event_target_as = AIO_DAIT_maker
+            AIO_DAIT_start_spawn = yes
+        }
+    }
+}
+
+system_event = {
+    id = AIO_DAIT_events.403
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        exists = from
+        from.owner = { AIO_DAIT_seed_ready = yes }
+        AIO_DAIT_seed_target_valid = yes
+    }
+    immediate = {
+        save_event_target_as = AIO_DAIT_target_system
+        from.owner = {
+            save_event_target_as = AIO_DAIT_maker
+            AIO_DAIT_start_seed = yes
+        }
+    }
+}
+
+system_event = {
+    id = AIO_DAIT_events.404
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        exists = from
+        from.owner = { AIO_DAIT_ethic_ready = yes }
+        AIO_DAIT_ethic_target_valid = yes
+    }
+    immediate = {
+        save_event_target_as = AIO_DAIT_target_system
+        from.owner = {
+            save_event_target_as = AIO_DAIT_maker
+            AIO_DAIT_start_ethic = yes
+        }
+    }
+}
+
+system_event = {
+    id = AIO_DAIT_events.405
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        exists = from
+        from.owner = { AIO_DAIT_storm_ready = yes }
+        AIO_DAIT_storm_target_valid = yes
+    }
+    immediate = {
+        save_event_target_as = AIO_DAIT_target_system
+        from.owner = {
+            save_event_target_as = AIO_DAIT_maker
+            AIO_DAIT_start_storm = yes
+        }
+    }
+}
+
+system_event = {
+    id = AIO_DAIT_events.406
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        exists = from
+        from.owner = { AIO_DAIT_harvest_ready = yes }
+        AIO_DAIT_harvest_target_valid = yes
+    }
+    immediate = {
+        save_event_target_as = AIO_DAIT_target_system
+        from.owner = {
+            save_event_target_as = AIO_DAIT_maker
+            AIO_DAIT_start_harvest = yes
+        }
+    }
+}
+
+system_event = {
+    id = AIO_DAIT_events.407
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        exists = from
+        from.owner = { AIO_DAIT_strike_ready = yes }
+        AIO_DAIT_strike_target_valid = yes
+    }
+    immediate = {
+        save_event_target_as = AIO_DAIT_target_system
+        from.owner = {
+            save_event_target_as = AIO_DAIT_maker
+            AIO_DAIT_start_strike = yes
+        }
+    }
+}
+
+system_event = {
+    id = AIO_DAIT_events.408
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        exists = from
+        from.owner = { AIO_DAIT_erase_ready = yes }
+        AIO_DAIT_erase_target_valid = yes
+    }
+    immediate = {
+        save_event_target_as = AIO_DAIT_target_system
+        from.owner = {
+            save_event_target_as = AIO_DAIT_maker
+            AIO_DAIT_start_erase = yes
+        }
+    }
+}

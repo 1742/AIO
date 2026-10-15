@@ -23,28 +23,18 @@ country_event = {
         set_country_flag = AIO_built_AIO_mega_03
         set_country_flag = AIO_built_AIO_mega_04
         set_country_flag = AIO_empire_country
-        # 终态测试起源直接拥有飞升后的投射奖励。
-        set_country_flag = AIO_final_won
         save_global_event_target_as = AIO_empire_country
         # 允许进入牢塞星系
         set_country_flag = protected_from_queen_storm
 
         # 激活灾飞路径
         add_ascension_perk = ap_AIO_allinone
-        add_resource = { AIO_advanced_logic = 18000 }
+        add_resource = { AIO_advanced_logic = 45000 }
 
         # 空想要3点国民理念点，不加够会转变政体失败
-        give_technology = { tech = tech_planetary_unification message = no }
-        give_technology = { tech = tech_colonial_centralization message = no }
-        give_technology = { tech = tech_galactic_administration message = no }
-        # 一些区划科技
-        give_technology = { tech = tech_AIO_rule_energy message = no }
-        give_technology = { tech = tech_AIO_rule_matter message = no }
-        give_technology = { tech = tech_AIO_rule_structure message = no }
-        give_technology = { tech = tech_AIO_rule_dark_matter message = no }
-        give_technology = { tech = tech_AIO_rule_living_metal message = no }
-        give_technology = { tech = tech_AIO_rule_nanites message = no }
-
+        give_technology = { tech = tech_planetary_unification }
+        give_technology = { tech = tech_colonial_centralization }
+        give_technology = { tech = tech_galactic_administration }
         # 创建穷极之门
         capital_scope.solar_system = {
             spawn_megastructure = {
@@ -53,9 +43,12 @@ country_event = {
                 owner = root
                 graphical_culture = root
             }
+            # 先保留首都，转为无需殖民地的国家类型后再清理星系。
+            set_star_flag = AIO_gate_system
+            save_global_event_target_as = AIO_gate_system
         }
         # 创建无名之雾
-        AIO_create_mist_system_effect = { CREATE_COLONY = no }
+        AIO_create_mist_system_effect = yes
         # 创建犹格索托斯
         event_target:AIO_mist_system = {
             random_system_megastructure = {
@@ -68,6 +61,9 @@ country_event = {
                 owner = root
             }
         }
+
+        AIO_ascension_effect = yes
+        event_target:AIO_gate_system = { AIO_create_gate_system_effect = yes }
     }
 }
 
@@ -92,7 +88,6 @@ country_event = {
 
     immediate = {
         set_country_flag = AIO_crisis_country
-        set_country_flag = is_player_crisis
         save_global_event_target_as = AIO_crisis_country
     }
 
@@ -140,7 +135,6 @@ country_event = {
 
     option = {
         name = AIO_crisis_events.303.option
-        AIO_crisis_update_stage_poi_effect = { STAGE = 3 }
     }
 }
 
@@ -160,7 +154,6 @@ country_event = {
 
     option = {
         name = AIO_crisis_events.304.option
-        AIO_crisis_update_stage_poi_effect = { STAGE = 4 }
     }
 }
 
@@ -197,7 +190,6 @@ country_event = {
 
     option = {
         name = AIO_crisis_events.305.option
-        AIO_crisis_update_stage_poi_effect = { STAGE = 5 }
     }
 }
 
@@ -252,9 +244,7 @@ country_event = {
             localization = AIO_crisis_events.403.desc
             days = 30
         }
-
-        AIO_create_mist_system_effect = { CREATE_COLONY = yes }
-        AIO_crisis_update_stage_poi_effect = { STAGE = 2 }
+        AIO_create_mist_system_effect = yes
     }
 }
 
@@ -316,38 +306,12 @@ country_event = {
 #region 飞升事件
 
 country_event = {
-    id = AIO_crisis_events.601
-    title = AIO_crisis_events.601.title
-    desc = AIO_crisis_events.601.desc
-    picture = GFX_evt_formless_system
-    location = event_target:AIO_mist_system
-
-    is_triggered_only = yes
-    trigger = { has_country_flag = AIO_final_won }
-
-    option = {
-        name = AIO_crisis_events.601.option.wait
-        default_hide_option = yes
-        enable_special_project = {
-            name = AIO_CRISIS_CONTEMPLATE_GATE
-            location = event_target:AIO_mist_system
-            owner = root
-        }
-    }
-
-    option = {
-        name = AIO_crisis_events.601.option.ascension
-        country_event = { id = AIO_crisis_events.602 }
-    }
-}
-
-country_event = {
     id = AIO_crisis_events.602
     title = AIO_crisis_events_title
     desc = AIO_crisis_events.602.desc
     picture = GFX_evt_vortex
-	show_sound = event_mystic_reveal
-	location = event_target:AIO_mist_system
+    show_sound = event_mystic_reveal
+    location = event_target:AIO_mist_system
 
     event_chain = AIO_crisis_events_chain
     is_triggered_only = yes
@@ -374,6 +338,7 @@ country_event = {
     trigger = { has_ascension_perk = ap_AIO_allinone }
 
     immediate = {
+        AIO_DAIT_cleanup_all = yes
         AIO_final_finish = yes
         # 摧毁无名之雾
         AIO_destroy_mist_effect = yes
@@ -389,72 +354,62 @@ country_event = {
 
 #region AIO天灾目标
 
-# 研究科技
-country_event = {
+# 部署递归节点
+event = {
     id = AIO_crisis_events.801
     hide_window = yes
 
     is_triggered_only = yes
     trigger = {
+        any_country = {
+            has_ascension_perk = ap_AIO_allinone
+            any_owned_colony = { has_district = district_AIO_lathe }
+        }
+    }
+
+    immediate = {
+        random_country = {
+            limit = {
+                has_ascension_perk = ap_AIO_allinone
+                any_owned_colony = { has_district = district_AIO_lathe }
+            }
+            complete_crisis_objective = crisobj_AIO_neural_chips
+        }
+    }
+}
+
+# 研究科技
+country_event = {
+    id = AIO_crisis_events.802
+    hide_window = yes
+
+    is_triggered_only = yes
+    trigger = {
         has_ascension_perk = ap_AIO_allinone
-        NOT = { has_country_flag = AIO_crisobj_research_block }
+        NOT = { has_country_flag = AIO_granting_vanilla_fe_technology }
     }
 
     immediate = { complete_crisis_objective = crisobj_AIO_research_tech }
 }
 
-# 研究异常现象
-# this = ship
-# from = planet
-ship_event = {
-	id = AIO_crisis_events.8021
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		owner = {
-			has_ascension_perk = ap_AIO_allinone
-		}
-	}
-
-	immediate = {
-        owner = {
-            complete_crisis_objective = crisobj_AIO_research_special_project
-        }
-    }
-}
-
-# 完成特殊项目
-# this = country
-# fromfromfrom = ship
-country_event = {
-	id = AIO_crisis_events.8022
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-        has_ascension_perk = ap_AIO_allinone
-	}
-
-	immediate = {
-        complete_crisis_objective = crisobj_AIO_research_special_project
-    }
-}
-
-# 探索星界裂隙
-# THIS = Country: Explorer country
-# FROM = AstralRift: Explored astral rift
-country_event = {
+# 控有科学枢纽
+event = {
 	id = AIO_crisis_events.803
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		has_ascension_perk = ap_AIO_allinone
+		any_country = {
+			has_ascension_perk = ap_AIO_allinone
+			any_owned_megastructure = { AIO_is_think_tank = yes }
+		}
 	}
 
 	immediate = {
-        complete_crisis_objective = crisobj_AIO_explore_astral
+        random_country = {
+            limit = { has_ascension_perk = ap_AIO_allinone }
+            complete_crisis_objective = crisobj_AIO_have_science_nexuses
+        }
     }
 }
 
@@ -481,6 +436,88 @@ fleet_event = {
 
     immediate = {
         set_mia = mia_return_home
+    }
+}
+
+# Creates a purpose-built, non-virtual machine species for the Matryoshka Brain.
+# It is a separate species identity so cybernetics.5049 cannot digitize it again.
+country_event = {
+    id = AIO_crisis_events.902
+    title = AIO_crisis_events.902.title
+    desc = AIO_crisis_events.902.desc
+    picture = GFX_evt_robot_assembly_plant
+    show_sound = event_radio_chatter
+
+    is_triggered_only = yes
+
+    trigger = {
+        is_country_type = default
+        is_virtual_empire = yes
+        has_technology = tech_AIO_exponential_learning_theory
+        NOT = { has_country_flag = AIO_recursive_chassis_created }
+    }
+
+    immediate = {
+        set_country_flag = AIO_recursive_chassis_created
+        capital_scope = { save_event_target_as = AIO_recursive_chassis_colony }
+        random_owned_colony = {
+            limit = { has_district = district_AIO_lathe }
+            save_event_target_as = AIO_recursive_chassis_colony
+        }
+    }
+
+    option = {
+        name = AIO_crisis_events.902.option
+        default_hide_option = yes
+        owner_main_species = {
+            create_species = {
+                name = "AIO_RECURSIVE_CHASSIS"
+                plural = "AIO_RECURSIVE_CHASSIS_PLURAL"
+                class = this
+                portrait = this
+                traits = this
+                can_be_modified = yes
+                homeworld = this
+                namelist = this
+                gender = this
+
+                effect = {
+                    change_species_characteristics = {
+                        remove_trait = trait_robot_digital_1
+                        remove_trait = trait_robot_digital_2
+                        add_trait = trait_AIO_recursive_chassis
+                    }
+                    if = {
+                        limit = { root = { is_machine_empire = yes } }
+                        set_citizenship_type = {
+                            country = root
+                            type = citizenship_full_machine
+                            cooldown = no
+                        }
+                    }
+                    else = {
+                        set_citizenship_type = {
+                            country = root
+                            type = citizenship_full
+                            cooldown = no
+                        }
+                    }
+                    set_population_controls = {
+                        country = root
+                        type = population_control_no
+                        cooldown = no
+                    }
+                    set_species_flag = AIO_recursive_chassis_species
+                    save_event_target_as = AIO_recursive_chassis_species
+                }
+            }
+        }
+        event_target:AIO_recursive_chassis_colony = {
+            create_pop_group = {
+                species = event_target:AIO_recursive_chassis_species
+                size = 1000
+            }
+        }
     }
 }
 

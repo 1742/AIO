@@ -1,0 +1,18 @@
+# Shared inline primitive; keep scope unchanged.
+clear_consecration_effect = yes
+inline_script = AIO/AIO_settle_machine_world
+if = {
+    limit = { exists = orbital_defence }
+    destroy_fleet = orbital_defence
+}
+if = {
+    limit = { exists = orbital_station }
+    orbital_station = { dismantle = yes }
+}
+if = {
+    limit = { is_colony = yes }
+    remove_all_buildings = yes
+}
+clear_deposits = yes
+clear_planet_modifiers = yes
+prevent_anomaly = yes

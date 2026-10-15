@@ -1,0 +1,11 @@
+# Shared inline primitive; keep scope unchanged.
+if = {
+    limit = { exists = event_target:AIO_DAIT_maker }
+    fire_on_action = { on_action = on_destroy_star_system scopes = { from = event_target:AIO_DAIT_maker } }
+}
+else = { fire_on_action = { on_action = on_destroy_star_system } }
+every_system_planet = {
+    limit = { AIO_safe_remove_planet_exclude_API = no }
+    clear_consecration_effect = yes
+}
+remove_system_terraforming_candidates = yes

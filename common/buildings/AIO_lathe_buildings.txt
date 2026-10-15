@@ -1,15 +1,24 @@
-# Synaptic Lathe support buildings adapted for the mixed-use mist colony.
-# Preserve the original AIO limit of one of each building per colony.
+# AIO套娃脑建筑
 
 building_AIO_lathe_resonator = {
-	icon = building_lathe_resonator
+    icon = building_lathe_resonator
+
 	base_buildtime = @b2_time
 	planet_limit = 1
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		uses_district_set = AIO_mist
-		has_district = district_AIO_mist_research
+		OR = {
+			has_district = district_AIO_lathe
+		}
+	}
+
+	prerequisites = { tech_AIO_exponential_learning_theory }
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe
+		}
 	}
 
 	category = resource
@@ -28,39 +37,62 @@ building_AIO_lathe_resonator = {
 	}
 
 	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				NOR = {
+					has_deficit = energy
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						OR = {
+							current_situation_approach = situation_nomad_economy_stringent_budget
+							nomad_in_reserve_crisis = yes
+						}
+					}
+				}
+			}
+		}
 		planet_AIO_chips_upkeep_mult = 1
 	}
 
 	triggered_planet_modifier = {
 		potential = {
-			always = yes
+			owner = {
+				NOR = {
+					has_deficit = energy
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						OR = {
+							current_situation_approach = situation_nomad_economy_stringent_budget
+							nomad_in_reserve_crisis = yes
+						}
+					}
+				}
+			}
 		}
 		planet_AIO_chips_produces_mult = 0.01
 		mult = value:AIO_chips_num_per_100
 	}
 
-	prerequisites = { tech_AIO_exponential_learning_theory }
-
-	triggered_desc = {
-		text = AIO_lathe_resonator_tt
-	}
-
-	ai_estimate_without_unemployment = yes
-	additional_ai_weight = 200
-	ai_weight_coefficient = 1.2
-
-	destroy_trigger = { NOT = { has_district = district_AIO_mist_research } }
+	triggered_desc = { text = building_AIO_resonator_tt }
 }
 
 building_AIO_lathe_stabilisator = {
-	icon = building_lathe_stabilisator
+    icon = building_lathe_stabilisator
+
 	base_buildtime = @b2_time
 	planet_limit = 1
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		uses_district_set = AIO_mist
-		has_district = district_AIO_mist_research
+		OR = {
+			has_district = district_AIO_lathe
+		}
+	}
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe
+		}
 	}
 
 	category = government
@@ -78,26 +110,28 @@ building_AIO_lathe_stabilisator = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		planet_stability_add = 10
-	}
-
-	ai_estimate_without_unemployment = yes
-	additional_ai_weight = 200
-	ai_weight_coefficient = 1.2
-
-	destroy_trigger = { NOT = { has_district = district_AIO_mist_research } }
+	triggered_planet_modifier = { planet_stability_add = 10 }
 }
 
 building_AIO_lathe_overclocker = {
-	icon = building_lathe_overclocker
+    icon = building_lathe_overclocker
+
 	base_buildtime = @b2_time
 	planet_limit = 1
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		uses_district_set = AIO_mist
-		has_district = district_AIO_mist_research
+		OR = {
+			has_district = district_AIO_lathe
+		}
+	}
+
+	prerequisites = { tech_AIO_exponential_learning_theory }
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe
+		}
 	}
 
 	category = resource
@@ -117,7 +151,18 @@ building_AIO_lathe_overclocker = {
 
 	triggered_planet_modifier = {
 		potential = {
-			NOT = { owner = { has_deficit = energy } }
+			owner = {
+				NOR = {
+					has_deficit = energy
+					any_situation = {
+						is_situation_type = situation_nomad_economy
+						OR = {
+							current_situation_approach = situation_nomad_economy_stringent_budget
+							nomad_in_reserve_crisis = yes
+						}
+					}
+				}
+			}
 		}
 		modifier = {
 			planet_AIO_chips_physics_research_produces_add = 1
@@ -127,26 +172,28 @@ building_AIO_lathe_overclocker = {
 			pop_purge_speed = 0.75
 		}
 	}
-
-
-	prerequisites = { tech_AIO_exponential_learning_theory }
-
-	ai_estimate_without_unemployment = yes
-	additional_ai_weight = 200
-	ai_weight_coefficient = 1.2
-
-	destroy_trigger = { NOT = { has_district = district_AIO_mist_research } }
 }
 
 building_AIO_lathe_preserver = {
-	icon = building_lathe_preserver
+    icon = building_lathe_preserver
+
 	base_buildtime = @b2_time
 	planet_limit = 1
 	building_sets = { AIO_lathe_buildings }
+	exempt_from_ai_planet_specialization = yes
 
 	potential = {
-		uses_district_set = AIO_mist
-		has_district = district_AIO_mist_research
+		OR = {
+			has_district = district_AIO_lathe
+		}
+	}
+
+	prerequisites = { tech_AIO_exponential_learning_theory }
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe
+		}
 	}
 
 	category = amenity
@@ -164,28 +211,26 @@ building_AIO_lathe_preserver = {
 		}
 	}
 
-	planet_modifier = {
-		pop_purge_speed = -0.15
-	}
-
-	prerequisites = { tech_AIO_exponential_learning_theory }
-
-	ai_estimate_without_unemployment = yes
-	additional_ai_weight = 200
-	ai_weight_coefficient = 1.2
-
-	destroy_trigger = { NOT = { has_district = district_AIO_mist_research } }
+	planet_modifier = { pop_purge_speed = -0.15 }
 }
 
 building_AIO_lathe_reactor = {
-	icon = building_lathe_reactor
+    icon = building_lathe_reactor
+
 	base_buildtime = @b2_time
 	planet_limit = 1
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		uses_district_set = AIO_mist
-		has_district = district_AIO_mist_research
+		OR = {
+			has_district = district_AIO_lathe
+		}
+	}
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe
+		}
 	}
 
 	category = resource
@@ -207,23 +252,27 @@ building_AIO_lathe_reactor = {
 		planet_buildings_upkeep_mult = -0.15
 		planet_districts_energy_upkeep_mult = -0.15
 	}
-
-	ai_estimate_without_unemployment = yes
-	additional_ai_weight = 200
-	ai_weight_coefficient = 1.2
-
-	destroy_trigger = { NOT = { has_district = district_AIO_mist_research } }
 }
 
 building_AIO_lathe_life_support = {
-	icon = building_lathe_life_support
+    icon = building_lathe_life_support
+
 	base_buildtime = @b2_time
 	planet_limit = 1
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		uses_district_set = AIO_mist
-		has_district = district_AIO_mist_research
+		OR = {
+			has_district = district_AIO_lathe
+		}
+	}
+
+	prerequisites = { tech_AIO_exponential_learning_theory }
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe
+		}
 	}
 
 	category = amenity
@@ -245,25 +294,27 @@ building_AIO_lathe_life_support = {
 		planet_housing_add = 5000
 		planet_amenities_add = 5000
 	}
-
-	prerequisites = { tech_AIO_exponential_learning_theory }
-
-	ai_estimate_without_unemployment = yes
-	additional_ai_weight = 200
-	ai_weight_coefficient = 1.2
-
-	destroy_trigger = { NOT = { has_district = district_AIO_mist_research } }
 }
 
 building_AIO_lathe_cogitator = {
-	icon = building_lathe_cogitator
+    icon = building_lathe_cogitator
+
 	base_buildtime = @b2_time
 	planet_limit = 1
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		uses_district_set = AIO_mist
-		has_district = district_AIO_mist_research
+		OR = {
+			has_district = district_AIO_lathe
+		}
+	}
+
+	prerequisites = { tech_AIO_exponential_learning_theory }
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe
+		}
 	}
 
 	category = army
@@ -287,25 +338,15 @@ building_AIO_lathe_cogitator = {
 	}
 
 	triggered_country_modifier = {
-		potential = {
-			has_active_building = building_AIO_lathe_cogitator
-		}
+		potential = { has_active_building = building_AIO_lathe_cogitator }
 		country_naval_cap_mult = 0.01
-		ship_experience_gain_mult = 0.02
+		ship_experience_gain_mult = 0.01
 		mult = value:AIO_chips_num_per_100
 	}
 
 	triggered_desc = {
 		text = building_AIO_lathe_cogitator_tt
 	}
-
-	prerequisites = { tech_AIO_exponential_learning_theory }
-
-	ai_estimate_without_unemployment = yes
-	additional_ai_weight = 200
-	ai_weight_coefficient = 1.2
-
-	destroy_trigger = { NOT = { has_district = district_AIO_mist_research } }
 }
 
 building_AIO_lathe_validator = {
@@ -315,8 +356,17 @@ building_AIO_lathe_validator = {
 	building_sets = { AIO_lathe_buildings }
 
 	potential = {
-		uses_district_set = AIO_mist
-		has_district = district_AIO_mist_research
+		OR = {
+			has_district = district_AIO_lathe
+		}
+	}
+
+	prerequisites = { tech_AIO_exponential_learning_theory }
+
+	destroy_trigger = {
+		NOR = {
+			has_district = district_AIO_lathe
+		}
 	}
 
 	category = research
@@ -334,27 +384,13 @@ building_AIO_lathe_validator = {
 		}
 	}
 
-	planet_modifier = {
-		planet_stability_add = -10
-	}
+	planet_modifier = { planet_stability_add = -10 }
 
 	triggered_country_modifier = {
-		potential = {
-			always = yes
-		}
+		potential = { has_active_building = building_AIO_lathe_validator }
 		category_computing_research_speed_mult = 0.01
 		mult = value:AIO_chips_num_per_100
 	}
 
-	triggered_desc = {
-		text = building_AIO_lathe_validator_tt
-	}
-
-	prerequisites = { tech_AIO_exponential_learning_theory }
-
-	ai_estimate_without_unemployment = yes
-	additional_ai_weight = 200
-	ai_weight_coefficient = 1.2
-
-	destroy_trigger = { NOT = { has_district = district_AIO_mist_research } }
+	triggered_desc = { text = building_AIO_lathe_validator_tt }
 }

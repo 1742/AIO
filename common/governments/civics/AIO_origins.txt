@@ -10,12 +10,6 @@ origin_AIO_YogSothoth = {
 	potential = { always = yes }
 
 	possible = {
-        authority = {
-            OR = {
-                value = auth_machine_intelligence
-                value = auth_hive_mind
-            }
-        }
         civics = {
             NOR = {
                 value = civic_machine_terminator

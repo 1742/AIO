@@ -5,10 +5,12 @@ AIO_start_location = {
             has_country_flag = AIO_final_start
             NOT = { any_situation = { is_situation_type = AIO_final_location_situation } }
         }
+        save_event_target_as = AIO_DAIT_maker
         set_variable = { which = AIO_final_wait value = value:AIO_final_wait }
         AIO_final_find_omen_system = yes
         if = {
             limit = { exists = event_target:AIO_final_target }
+            event_target:AIO_final_target = { set_star_flag = AIO_final_reserved }
             start_situation = {
                 type = AIO_final_location_situation
                 target = event_target:AIO_final_target
@@ -27,12 +29,14 @@ AIO_final_repair_target = {
                 target? = { AIO_final_valid_target = no }
             }
         }
+        target? = { remove_star_flag = AIO_final_reserved }
         remove_situation_flag = AIO_final_induced
         remove_situation_flag = AIO_final_constrainted
         owner = { AIO_final_find_omen_system = yes }
         if = {
             limit = { exists = event_target:AIO_final_target }
             change_situation_target = event_target:AIO_final_target
+            target = { set_star_flag = AIO_final_reserved }
         }
         else = { owner = { country_event = { id = AIO_final_events.205 } } }
     }
@@ -90,6 +94,7 @@ AIO_final_complete_location = {
             NOT = { has_situation_flag = AIO_final_settled }
             owner = { has_country_flag = AIO_final_start }
         }
+        owner = { save_event_target_as = AIO_DAIT_maker }
         set_situation_flag = AIO_final_settled
         AIO_final_remove_fleet = yes
         if = {
@@ -142,7 +147,10 @@ AIO_final_remove_fleet = {
             delete_fleet = this
         }
     }
-    target? = { remove_star_flag = AIO_Aforgomon_existed }
+    target? = {
+        remove_star_flag = AIO_Aforgomon_existed
+        remove_star_flag = AIO_final_reserved
+    }
 }
 
 # scope: country；每处残迹只提供一次调查项目，完成后增加研究进度。
@@ -161,16 +169,16 @@ AIO_final_research = {
         country_event = { id = AIO_final_events.203 scopes = { from = from.solar_system } }
     }
     if = {
-        limit = { check_variable = { which = AIO_final_research value = 6 } }
+        limit = { check_variable = { which = AIO_final_research value = 3 } }
         country_event = { id = AIO_final_events.204 scopes = { from = from.solar_system } }
     }
 }
 
-# scope: country；保留旧版飞升结局，并解锁远程投射。
+# scope: country；保留旧版飞升结局，并解锁完整 DAIT。
 AIO_final_win = {
     set_country_flag = AIO_final_won
     AIO_final_finish = yes
-    country_event = { id = AIO_crisis_events.601 }
+    country_event = { id = AIO_crisis_events.602 }
 }
 
 # scope: country；每次先覆盖本地目标，避免继承上一轮残留的事件目标。
@@ -247,7 +255,9 @@ AIO_final_complete_project = {
                         has_situation_flag = AIO_final_induced
                     }
                 }
+                target? = { remove_star_flag = AIO_final_reserved }
                 change_situation_target = from.solar_system
+                target = { set_star_flag = AIO_final_reserved }
                 set_situation_flag = AIO_final_induced
                 if = {
                     limit = { always = $CONSTRAINT$ }

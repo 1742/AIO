@@ -65,29 +65,36 @@ AIO_horizon_engine = {
 		}
 	}
 
-	build_time = 500
+	build_time = 1000
 
 	resources = {
 		category = megastructures
-
+		cost = { sr_dark_matter = 1000 }
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 4000
+			alloys = 10000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 4000
+			alloys = 10000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 4000
+			food = 10000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-        produces = { energy = 100 }
+        produces = {
+			energy = 1500
+		}
 
-		upkeep = { alloys = 25 }
+		upkeep = {
+			alloys = 25
+			physics_research = 25
+			society_research = 25
+			engineering_research = 25
+		}
 	}
 
 	on_build_complete = {
@@ -120,10 +127,7 @@ AIO_horizon_engine = {
 		from = {
 			set_country_flag = AIO_built_AIO_horizon_engine
 			# 允许点星河奇迹
-			if = {
-				limit = { is_nomadic = no }
-				set_country_flag = has_built_or_repaired_megastructure
-			}
+			set_country_flag = has_built_or_repaired_megastructure
 			# 通知
 			country_event = { id = AIO_crisis_events.402 }
 		}

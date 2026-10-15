@@ -1,0 +1,12 @@
+# Shared inline primitive; keep scope unchanged.
+inline_script = AIO/AIO_safe_remove_system_megastructures
+every_system_planet = { inline_script = AIO/AIO_safe_remove_planet }
+every_system_ambient_object = {
+    limit = {
+        NOR = {
+            has_ambient_object_flag = extradimensional_system_effect
+            has_ambient_object_flag = extradimensional_system_effect_2
+        }
+    }
+    destroy_ambient_object = this
+}

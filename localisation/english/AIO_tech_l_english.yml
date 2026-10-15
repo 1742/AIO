@@ -1,10 +1,10 @@
-l_english:
+﻿l_english:
  #region crisis technology
 
  tech_AIO_exponential_learning_theory: "$tech_cosmogenesis_crisis_1$"
  tech_AIO_exponential_learning_theory_desc: "$tech_cosmogenesis_crisis_1_desc$"
  AIO_level_1_tech_title: "Unlock §H$ap_AIO_allinone$§! §HLevel 2§!"
- AIO_exponential_learning_theory_tech_desc: "§H$tech_cosmogenesis_crisis_1$§!\nTo uncover the operational secrets behind reality, we must open up our thinking on a larger scale."
+ AIO_exponential_learning_theory_tech_desc:0 "Enables one Matryoshka Brain district per colony with uncapped Recursive Node jobs."
 
  tech_AIO_ascending_dimensionality_theory: "Dimensionality Escalation Hypothesis"
  tech_AIO_ascending_dimensionality_theory_desc: "To break through the barriers between dimensions, we need special structures to gather energy."
@@ -79,29 +79,5 @@ l_english:
  tech_AIO_fe_clinic_1_desc: "$tech_fe_clinic_1_desc$"
  tech_AIO_fe_clinic_2: "$tech_fe_clinic_2$"
  tech_AIO_fe_clinic_2_desc: "$tech_fe_clinic_2_desc$"
-
- #endregion
-
-
- #region infinity thesis
-
- tech_AIO_rule_energy:0 "Applied Infinity: Directed Energy Flow"
- tech_AIO_rule_energy_desc:0 "The first law of thermodynamics is merely a narrow rule of thumb for lower-dimensional closed systems. By opening higher-dimensional potential sluices deep within spacetime, we allow energy to surge ex nihilo, offloading the atomic bond-decay costs of minerals entirely onto the outer galaxy."
- tech_AIO_rule_energy_effect:0 "Level 2. Galaxy-wide job energy output +20%, mineral output -10%. The Mist cancels the mineral penalty and unlocks energy districts."
- tech_AIO_rule_matter:0 "Applied Infinity: Substantive Matter Precipitation"
- tech_AIO_rule_matter_desc:0 "Mass-energy equivalence ceases to be a two-way balance; we irreversibly press raw energy into baryonic lattices. The abundance of physical minerals is bought by the degradation of foundational organic matter, but so long as the foundries thunder, who cares for the rations of lesser beings?"
- tech_AIO_rule_matter_effect:0 "Level 3. Galaxy-wide job mineral output +20%, food output -10%. The Mist cancels the food penalty and unlocks mineral districts."
- tech_AIO_rule_structure:0 "Applied Infinity: Hyperdimensional Lattice Manifold"
- tech_AIO_rule_structure_desc:0 "The atomic bond configurations dictated by natural evolution are far too mundane. Imprinted topological stresses force exotic resources to crystallize spontaneously within standard matter; while sustaining such distorted constants demands appalling energy, under the shelter of the Nameless Mist, all of it is pure gain."
- tech_AIO_rule_structure_effect:0 "Level 4. Galaxy-wide job motes, gases and crystals output +15%, job energy upkeep +10%. The Mist cancels the upkeep penalty and unlocks three separate refining districts."
- tech_AIO_rule_dark_matter:0 "Applied Infinity: Dark Phase Realization"
- tech_AIO_rule_dark_matter_desc:0 "The weak force and gravity are elusive no more. We capture clandestine higher-dimensional currents into macroscopic reality, unveiling scientific truths previously unimagined, while pedestrian civilizations must bear the burden of crippling consumer shortages."
- tech_AIO_rule_dark_matter_effect:0 "Level 3. Galaxy-wide research job output +10%, job consumer goods upkeep +10%. The Mist cancels the upkeep penalty and unlocks dark matter districts. The Silver Key requires dark matter."
- tech_AIO_rule_living_metal:0 "Applied Infinity: Self-Organizing Manifold"
- tech_AIO_rule_living_metal_desc:0 "The boundary separating the inorganic from the living is mathematically obliterated. Metallic lattices learn to self-repair and extend infinitely like protoplasm, assimilating and reshaping metallurgical industries across the galaxy."
- tech_AIO_rule_living_metal_effect:0 "Level 4. Galaxy-wide job output +10%, job alloy output -10%. The Mist cancels the alloy penalty and unlocks living metal districts. The Eternal Throne requires living metal."
- tech_AIO_rule_nanites:0 "Applied Infinity: Nanite Continuum"
- tech_AIO_rule_nanites_desc:0 "All macroscopic structures degrade into a continuous torrent of commanded particles. Matter disassociates and reconverges in an instant; energy grids of the lower universe bleed dry in violent molecular-scale reorganization, yielding an invincible tide of higher-dimensional alloy configurations."
- tech_AIO_rule_nanites_effect:0 "Level 5. Galaxy-wide job alloy output +15%, energy output -10%. The Mist cancels the energy penalty and unlocks nanite districts. The final structure requires nanites."
 
  #endregion

@@ -9,8 +9,6 @@ country_event = {
     diplomatic_title = ap_AIO_allinone
     desc = AIO_mod_events.201.desc
 
-    picture = GFX_leader_recruitment_bg_renowned
-    show_sound = par_portrait_12
     event_window_type = leader_recruit
     picture_event_data = {
         portrait = event_target:ethic_leader
@@ -60,15 +58,15 @@ country_event = {
     }
 
     option = {
-        name = AIO_mod_events.201.mist
+        name = AIO_mod_events.201.dait
         is_dialog_only = yes
-        response_text = AIO_mod_events.201.mist.response
+        response_text = AIO_mod_events.201.dait.response
     }
 
     option = {
-        name = AIO_mod_events.201.final
+        name = AIO_mod_events.201.situation
         is_dialog_only = yes
-        response_text = AIO_mod_events.201.final.response
+        response_text = AIO_mod_events.201.situation.response
     }
 
     option = {

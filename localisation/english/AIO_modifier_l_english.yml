@@ -1,10 +1,70 @@
-l_english:
- AIO_Aforgomon_Wrath_modifier: "The Wrath of Aforgomon"
- AIO_create_civilization_modifier: "The Desire for Galaxy"
+﻿l_english:
+ #region pop
 
- AIO_rule_energy:0 "Applied Infinity: Directed Energy Flow"
- AIO_rule_matter:0 "Applied Infinity: Substantive Matter Precipitation"
- AIO_rule_structure:0 "Applied Infinity: Hyperdimensional Lattice Manifold"
- AIO_rule_dark_matter:0 "Applied Infinity: Dark Phase Realization"
- AIO_rule_living_metal:0 "Applied Infinity: Self-Organizing Manifold"
- AIO_rule_nanites:0 "Applied Infinity: Nanite Continuum"
+ mod_planet_jobs_sr_zro_produces_mult: "£job£ jobs produce  £sr_zro£ $sr_zro$"
+ mod_planet_jobs_sr_dark_matter_produces_mult: "£job£ jobs produce  £sr_dark_matter£ $sr_dark_matter$"
+ mod_planet_jobs_nanites_produces_mult: "£job£ jobs produce  £nanites£ $nanites$"
+ mod_planet_pops_produces_mult: "Population Produce"
+
+ #endregion
+
+
+ #region jobs
+
+ # roboticist
+ mod_planet_pop_assemblers_sr_living_metal_produces_add: "Per 100 [roboticist.GetIcon] [GetPopAssemblersPlural] produce £sr_living_metal£ $sr_living_metal$"
+ mod_planet_pop_assemblers_alloys_upkeep_add: "Per 100 [roboticist.GetIcon] [GetPopAssemblersPlural] £alloys£ $alloys$ upkeep"
+ mod_planet_pop_assemblers_food_upkeep_add: "Per 100 [spawning_drone.GetIcon] [GetPopAssemblersPlural] £food£ $food$ upkeep"
+ # technician
+ mod_planet_technician_sr_dark_matter_produces_add: "Per 100 [technician.GetIcon] [GetTechnicianPlural] produce £sr_dark_matter£ $sr_dark_matter$"
+ mod_planet_technician_sr_dark_matter_upkeep_add: "Per 100 [technician.GetIcon] [GetTechnicianPlural] £sr_dark_matter£ $sr_dark_matter$ upkeep"
+ # miner
+ mod_planet_miners_sr_zro_produces_add: "Per 100 [miner.GetIcon] [GetMinerPlural] produce £sr_zro£ $sr_zro$"
+ mod_planet_miners_minerals_upkeep_add: "Per 100 [miner.GetIcon] [GetMinerPlural] £minerals£ $minerals$ upkeep"
+ # farmer
+ mod_planet_farmers_food_upkeep_add: "Per 100 [farmer.GetIcon] [GetFarmerPlural] £food£ $food$ upkeep"
+ mod_planet_farmers_nanites_upkeep_add: "Per 100 [farmer.GetIcon] [GetFarmerPlural] £nanites£ $nanites$ upkeep"
+ # metallurgists
+ mod_planet_metallurgists_sr_dark_matter_produces_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] produce £sr_dark_matter£ $sr_dark_matter$"
+ mod_planet_metallurgists_sr_living_metal_produces_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] produce £sr_living_metal£ $sr_living_metal$"
+ mod_planet_metallurgists_sr_zro_produces_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] produce £sr_zro£ $sr_zro$"
+ mod_planet_metallurgists_nanites_produces_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] produce £nanites£ $nanites$"
+ mod_planet_metallurgists_nanites_produces_mult: "[foundry.GetIcon] [GetAlloyProducerPlural] produce £nanites£ $nanites$"
+ mod_planet_metallurgists_alloys_upkeep_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] £alloys£ $alloys$ upkeep"
+ mod_planet_metallurgists_sr_living_metal_upkeep_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] £sr_living_metal£ $sr_living_metal$ upkeep"
+ # recursive node
+ mod_planet_AIO_chips_physics_research_produces_add: "Per 100 [AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce £physics£ $physics_research$"
+ mod_planet_AIO_chips_society_research_produces_add: "Per 100 [AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce £society£ $society_research$"
+ mod_planet_AIO_chips_engineering_research_produces_add: "Per 100 [AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce £engineering£ $engineering_research$"
+ mod_planet_AIO_chips_AIO_advanced_logic_produces_add: "Per 100 [AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce £AIO_advanced_logic£ $AIO_advanced_logic$"
+ mod_planet_AIO_chips_produces_mult: "[AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce"
+ mod_planet_AIO_chips_upkeep_mult: "[AIO_chips.GetIcon] [AIO_chips.GetNamePlural] £energy£ $energy$ upkeep"
+
+ #endregion
+
+
+ #region country
+
+ mod_terraform_speed_mult: "£planet£ Planet Terraform Speed"
+ mod_building_time_mult: "£mod_planet_building_build_speed_mult£ Building Time Cost"
+ mod_ships_nanites_upkeep_mult: "Ships £nanites£ nanites upkeep"
+
+ MOD_ALL_TECHNOLOGY_RESEARCH_SPEED: "All Research Speed"
+ mod_megastructures_energy_upkeep_mult: "Megastructure Energy Upkeep"
+
+ #endregion
+
+
+ #region crisis reward
+
+ AIO_menp_nanites_processor_metallurgists: "$menp_AIO_fleet_component_2$"
+ AIO_menp_nanites_processor_farmers: "$menp_AIO_fleet_component_2$"
+
+ #endregion
+
+
+ #region DAIT
+ AIO_Aforgomon_Wrath_modifier: "$AIO_Aforgomon_Wrath$"
+ AIO_create_civilization_modifier: "The Craving of Stellaris"
+
+ #endregion

@@ -1,0 +1,456 @@
+# Country / system scopes are explicit; no shared global casting target.
+AIO_DAIT_country_valid = {
+    OR = {
+        has_ascension_perk = ap_AIO_allinone
+        is_country_type = AIO_empire
+    }
+}
+
+AIO_DAIT_system_valid = {
+    exists = star
+    NOR = {
+        has_star_flag = AIO_final_reserved
+        has_star_flag = AIO_Aforgomon_existed
+        has_star_flag = AIO_mist_system
+        has_star_flag = AIO_gate_system
+        has_star_flag = synth_queen_capital
+        AIO_safe_remove_system_exclude_API = yes
+        AIO_is_crisis_mega_system = yes
+        any_system_planet = { AIO_safe_remove_planet_exclude_API = yes }
+    }
+}
+
+AIO_DAIT_ui_target_valid = {
+    OR = {
+        AND = {
+            is_scope_type = galactic_object
+            AIO_DAIT_system_valid = yes
+        }
+        AND = {
+            is_scope_type = planet
+            solar_system = { AIO_DAIT_system_valid = yes }
+        }
+    }
+}
+
+AIO_DAIT_enrich_unlocked = {
+    AIO_DAIT_country_valid = yes
+    OR = {
+        has_country_flag = AIO_built_AIO_mega_01
+        is_country_type = AIO_empire
+    }
+}
+
+AIO_DAIT_enrich_target_valid = {
+    AIO_DAIT_system_valid = yes
+    NOT = { has_star_flag = AIO_DAIT_harvest_system }
+    any_system_planet = {
+        NOR = {
+            is_planet_class = pc_shattered
+            is_planet_class = pc_AIO_empty_space
+            has_planet_flag = AIO_DAIT_harvested_body
+        }
+    }
+}
+
+AIO_DAIT_enrich_range_valid = {
+    OR = {
+        NOT = { is_variable_set = AIO_DAIT_range }
+        check_variable = { which = AIO_DAIT_range value <= 2 }
+    }
+}
+
+AIO_DAIT_enrich_ready = {
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_unlock
+        AIO_DAIT_enrich_unlocked = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_range
+        AIO_DAIT_enrich_range_valid = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_pending
+        NOT = { has_country_flag = AIO_DAIT_enrich_pending }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_cooldown
+        NOT = { has_country_flag = AIO_DAIT_enrich_cooldown }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_logic
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = {
+                resource = AIO_advanced_logic
+                value >= value:AIO_DAIT_enrich_price
+            }
+        }
+    }
+}
+
+AIO_DAIT_spawn_unlocked = {
+    AIO_DAIT_country_valid = yes
+    OR = {
+        has_country_flag = AIO_built_AIO_mega_02
+        is_country_type = AIO_empire
+    }
+}
+
+AIO_DAIT_spawn_target_valid = {
+    AIO_DAIT_system_valid = yes
+}
+
+AIO_DAIT_spawn_range_valid = {
+    OR = {
+        NOT = { is_variable_set = AIO_DAIT_range }
+        check_variable = { which = AIO_DAIT_range value <= 2 }
+    }
+}
+
+AIO_DAIT_spawn_ready = {
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_unlock
+        AIO_DAIT_spawn_unlocked = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_range
+        AIO_DAIT_spawn_range_valid = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_pending
+        NOT = { has_country_flag = AIO_DAIT_spawn_pending }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_cooldown
+        NOT = { has_country_flag = AIO_DAIT_spawn_cooldown }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_logic
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = {
+                resource = AIO_advanced_logic
+                value >= value:AIO_DAIT_spawn_price
+            }
+        }
+    }
+}
+
+AIO_DAIT_seed_unlocked = {
+    AIO_DAIT_country_valid = yes
+    OR = {
+        has_country_flag = AIO_built_AIO_mega_03
+        is_country_type = AIO_empire
+    }
+}
+
+AIO_DAIT_seed_target_valid = {
+    AIO_DAIT_system_valid = yes
+    any_system_planet = {
+        OR = {
+            habitable_planet = yes
+            is_planet_class = pc_habitat
+            is_planet_class = pc_ringworld_habitable
+        }
+        pop_amount = 0
+    }
+}
+
+AIO_DAIT_seed_range_valid = {
+    OR = {
+        NOT = { is_variable_set = AIO_DAIT_range }
+        check_variable = { which = AIO_DAIT_range value <= 2 }
+    }
+}
+
+AIO_DAIT_seed_ready = {
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_unlock
+        AIO_DAIT_seed_unlocked = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_range
+        AIO_DAIT_seed_range_valid = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_pending
+        NOT = { has_country_flag = AIO_DAIT_seed_pending }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_cooldown
+        NOT = { has_country_flag = AIO_DAIT_seed_cooldown }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_logic
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = {
+                resource = AIO_advanced_logic
+                value >= value:AIO_DAIT_seed_price
+            }
+        }
+    }
+}
+
+AIO_DAIT_ethic_unlocked = {
+    AIO_DAIT_country_valid = yes
+    is_country_type = AIO_empire
+}
+
+AIO_DAIT_ethic_target_valid = {
+    AIO_DAIT_system_valid = yes
+    owner? = {
+        OR = {
+            is_country_type = default
+            is_country_type = fallen_empire
+            is_country_type = awakened_fallen_empire
+        }
+        NOT = { has_ethic = ethic_gestalt_consciousness }
+    }
+}
+
+AIO_DAIT_ethic_range_valid = {
+    OR = {
+        NOT = { is_variable_set = AIO_DAIT_range }
+        check_variable = { which = AIO_DAIT_range value <= 2 }
+    }
+}
+
+AIO_DAIT_ethic_ready = {
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_unlock
+        AIO_DAIT_ethic_unlocked = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_range
+        AIO_DAIT_ethic_range_valid = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_pending
+        NOT = { has_country_flag = AIO_DAIT_ethic_pending }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_cooldown
+        NOT = { has_country_flag = AIO_DAIT_ethic_cooldown }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_logic
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = {
+                resource = AIO_advanced_logic
+                value >= value:AIO_DAIT_ethic_price
+            }
+        }
+    }
+}
+
+AIO_DAIT_storm_unlocked = {
+    AIO_DAIT_country_valid = yes
+    OR = {
+        has_country_flag = AIO_built_AIO_mega_01
+        is_country_type = AIO_empire
+    }
+}
+
+AIO_DAIT_storm_target_valid = {
+    AIO_DAIT_system_valid = yes
+    is_inside_storm = no
+}
+
+AIO_DAIT_storm_range_valid = {
+    OR = {
+        NOT = { is_variable_set = AIO_DAIT_range }
+        check_variable = { which = AIO_DAIT_range value <= 2 }
+    }
+}
+
+AIO_DAIT_storm_ready = {
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_unlock
+        AIO_DAIT_storm_unlocked = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_range
+        AIO_DAIT_storm_range_valid = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_pending
+        NOT = { has_country_flag = AIO_DAIT_storm_pending }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_cooldown
+        NOT = { has_country_flag = AIO_DAIT_storm_cooldown }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_logic
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = {
+                resource = AIO_advanced_logic
+                value >= value:AIO_DAIT_storm_price
+            }
+        }
+    }
+}
+
+AIO_DAIT_harvest_unlocked = {
+    AIO_DAIT_country_valid = yes
+    OR = {
+        has_country_flag = AIO_built_AIO_mega_02
+        is_country_type = AIO_empire
+    }
+}
+
+AIO_DAIT_harvest_target_valid = {
+    AIO_DAIT_system_valid = yes
+    NOT = { has_star_flag = AIO_DAIT_harvest_system }
+    any_system_planet = {
+        NOR = {
+            is_planet_class = pc_shattered
+            is_planet_class = pc_black_hole
+            is_planet_class = pc_AIO_empty_space
+            has_planet_flag = AIO_DAIT_harvested_body
+        }
+    }
+}
+
+AIO_DAIT_harvest_range_valid = {
+    OR = {
+        NOT = { is_variable_set = AIO_DAIT_range }
+        check_variable = { which = AIO_DAIT_range value <= 2 }
+    }
+}
+
+AIO_DAIT_harvest_ready = {
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_unlock
+        AIO_DAIT_harvest_unlocked = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_range
+        AIO_DAIT_harvest_range_valid = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_pending
+        NOT = { has_country_flag = AIO_DAIT_harvest_pending }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_cooldown
+        NOT = { has_country_flag = AIO_DAIT_harvest_cooldown }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_logic
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = {
+                resource = AIO_advanced_logic
+                value >= value:AIO_DAIT_harvest_price
+            }
+        }
+    }
+}
+
+AIO_DAIT_strike_unlocked = {
+    AIO_DAIT_country_valid = yes
+    OR = {
+        has_country_flag = AIO_built_AIO_mega_03
+        is_country_type = AIO_empire
+    }
+}
+
+AIO_DAIT_strike_target_valid = {
+    AIO_DAIT_system_valid = yes
+    NOT = { has_star_flag = AIO_Aforgomon_existed }
+}
+
+AIO_DAIT_strike_range_valid = {
+    OR = {
+        NOT = { is_variable_set = AIO_DAIT_range }
+        check_variable = { which = AIO_DAIT_range value <= 2 }
+        AND = {
+            is_country_type = AIO_empire
+            check_variable = { which = AIO_DAIT_range value = 4 }
+        }
+    }
+}
+
+AIO_DAIT_strike_ready = {
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_unlock
+        AIO_DAIT_strike_unlocked = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_range
+        AIO_DAIT_strike_range_valid = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_pending
+        NOT = { has_country_flag = AIO_DAIT_strike_pending }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_cooldown
+        NOT = { has_country_flag = AIO_DAIT_strike_cooldown }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_logic
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = {
+                resource = AIO_advanced_logic
+                value >= value:AIO_DAIT_strike_price
+            }
+        }
+    }
+}
+
+AIO_DAIT_erase_unlocked = {
+    AIO_DAIT_country_valid = yes
+    is_country_type = AIO_empire
+}
+
+AIO_DAIT_erase_target_valid = {
+    AIO_DAIT_system_valid = yes
+    any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
+}
+
+AIO_DAIT_erase_range_valid = {
+    OR = {
+        NOT = { is_variable_set = AIO_DAIT_range }
+        check_variable = { which = AIO_DAIT_range value <= 2 }
+        AND = {
+            is_country_type = AIO_empire
+            check_variable = { which = AIO_DAIT_range value = 3 }
+        }
+    }
+}
+
+AIO_DAIT_erase_ready = {
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_unlock
+        AIO_DAIT_erase_unlocked = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_range
+        AIO_DAIT_erase_range_valid = yes
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_pending
+        NOT = { has_country_flag = AIO_DAIT_erase_pending }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_wait_cooldown
+        NOT = { has_country_flag = AIO_DAIT_erase_cooldown }
+    }
+    custom_tooltip = {
+        fail_text = AIO_DAIT_need_logic
+        OR = {
+            is_country_type = AIO_empire
+            resource_stockpile_compare = {
+                resource = AIO_advanced_logic
+                value >= value:AIO_DAIT_erase_price
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+slot_AIO_lathe = {
+	included_zone_sets = {
+		AIO_lathe
+	}
+
+	potential = {
+		always = yes
+	}
+
+	unlock = {
+		always = yes
+	}
+}

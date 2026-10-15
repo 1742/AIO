@@ -13,6 +13,7 @@ tech_AIO_exponential_learning_theory = {
 
 	modifier = {
         all_technology_research_speed = 0.1
+		district_AIO_lathe_max_add = 1
     }
 
     prereqfor_desc = {
@@ -25,7 +26,7 @@ tech_AIO_exponential_learning_theory = {
 
 tech_AIO_ascending_dimensionality_theory = {
 	icon = tech_cosmogenesis_crisis_2
-	area = engineering
+	area = physics
     cost = 10000
     tier = 5
     category = { particles }

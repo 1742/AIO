@@ -1,0 +1,26 @@
+# Shared inline primitive; keep scope unchanged.
+inline_script = AIO/AIO_prepare_remove_planet
+solar_system = {
+    every_system_megastructure = {
+        limit = {
+            OR = {
+                is_megastructure_type = habitat_major_orbital
+                is_megastructure_type = habitat_minor_orbital
+            }
+        }
+        remove_megastructure = this
+    }
+    every_system_planet = {
+        limit = { has_planet_flag = has_orbital }
+        remove_planet_flag = has_orbital
+    }
+    if = {
+        limit = { has_star_flag = has_habitat }
+        remove_star_flag = has_habitat
+    }
+}
+if = {
+    limit = { is_colony = yes }
+    destroy_colony = yes
+}
+remove_planet = yes

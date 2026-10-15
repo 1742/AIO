@@ -12,7 +12,7 @@
  AIO_advanced_logic_crisis_objective_progress: "我们从该天灾目标中获得了$AMOUNT$£AIO_advanced_logic£。"
  AIO_advanced_logic_crisis_level_locked: "解锁该等级需要：\n"
  AIO_advanced_logic_crisis_level_unlocked: "在$LEVEL$，你会获得以下奖励：\n"
- AIO_advanced_logic_crisis_level_desc:0 "研究科技、探索异常和星界裂隙、完成应用无限研究，积累超然逻辑以推进天灾等级。"
+ AIO_advanced_logic_crisis_level_desc: "若想推进天灾等级，你需要积累$AIO_advanced_logic$并研究天灾特殊项目"
  AIO_advanced_logic_crisis_level_unlock: "拥有£AIO_advanced_logic£§Y$CURRENCY$§!$AIO_advanced_logic$"
  AIO_advanced_logic_current_value: "当前值：§Y$VALUE|0$§!"
  AIO_advanced_logic_crisis_description_title: "$ap_AIO_allinone$"
@@ -25,40 +25,39 @@
 
  #region 灾飞路径
 
- crisis_AIO_level_1: "§g笔触初现§!"
+ crisis_AIO_level_1: "§g令人担忧§!"
  crisis_AIO_level_1_desc: "天灾等级1级"
- crisis_AIO_level_2: "§g铸门越界§!"
+ crisis_AIO_level_2: "§g略有风险§!"
  crisis_AIO_level_2_desc: "天灾等级2级"
- crisis_AIO_level_3: "§g时空剥离§!"
+ crisis_AIO_level_3: "§g如刃在颈§!"
  crisis_AIO_level_3_desc: "天灾等级3级"
- crisis_AIO_level_4: "§g恒视临渊§!"
+ crisis_AIO_level_4: "§g灾祸天降§!"
  crisis_AIO_level_4_desc: "天灾等级4级"
- crisis_AIO_level_5: "§g万象归一§!"
+ crisis_AIO_level_5: "§g存亡之敌§!"
  crisis_AIO_level_5_desc: "天灾等级5级"
 
  # 灾飞路径提示文本
- AIO_allinone_level_2_req_success_tooltip:0 "£trigger_yes£研究指数学习理论并完成视界引擎。"
- AIO_allinone_level_2_req_fail_tooltip:0 "£trigger_no£需要指数学习理论与已完成的视界引擎。"
- AIO_allinone_level_3_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_01$§!"
- AIO_allinone_level_3_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_01$§!"
- AIO_allinone_level_4_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_02$§!"
- AIO_allinone_level_4_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_02$§!"
- AIO_allinone_level_5_req_success_tooltip: "£trigger_yes£完成§Y$AIO_mega_03$§!"
- AIO_allinone_level_5_req_fail_tooltip: "£trigger_no£完成§Y$AIO_mega_03$§!"
+ AIO_allinone_level_2_req_success_tooltip:0 "已完成前置巨构。"
+ AIO_allinone_level_2_req_fail_tooltip:0 "需要完成本级要求的前置巨构。"
+ AIO_allinone_level_3_req_success_tooltip:0 "已完成前置巨构。"
+ AIO_allinone_level_3_req_fail_tooltip:0 "需要完成本级要求的前置巨构。"
+ AIO_allinone_level_4_req_success_tooltip:0 "已完成前置巨构。"
+ AIO_allinone_level_4_req_fail_tooltip:0 "需要完成本级要求的前置巨构。"
+ AIO_allinone_level_5_req_success_tooltip:0 "已完成前置巨构。"
+ AIO_allinone_level_5_req_fail_tooltip:0 "需要完成本级要求的前置巨构。"
 
  #endregion
 
-
  #region 天灾目标
 
+ crisobj_AIO_neural_chips_name: "部署递归节点"
+ crisobj_AIO_neural_chips_desc: "我们必须做出一点牺牲才能够适应如此宏大的研究规模。\n\n将人口作为§Y$job_AIO_chips$§!装入§Y$district_AIO_lathe$§!以获得$AIO_advanced_logic$。\n\n§Y$job_AIO_chips$§!的产出随其数量增加，并可以区划和建筑物进一步提高。\n\n持续增加§Y递归节点§!的数量以获得这项§Y年度§!$AIO_advanced_logic$奖励"
  crisobj_AIO_research_tech_name: "$crisobj_research_tech_name$"
  crisobj_AIO_research_tech_desc: "$crisobj_research_tech_desc$"
- crisobj_AIO_research_special_project_name: "研究异常现象、特殊项目"
- crisobj_AIO_research_special_project_desc:0 "每次完成异常或特殊项目获得800超然逻辑。"
- crisobj_AIO_explore_astral_name: "探索星界裂隙"
- crisobj_AIO_explore_astral_desc:0 "每次完成星界裂隙探索获得1200超然逻辑。"
- crisobj_AIO_research_thesis_name:0 "应用无限：规则研究"
- crisobj_AIO_research_thesis_desc:0 "首次完成每项规则研究获得1500超然逻辑，该研究不再重复获得普通科技目标奖励。"
+ crisobj_AIO_research_thesis_name: "$crisobj_research_thesis_name$"
+ crisobj_AIO_research_thesis_desc: "$crisobj_research_thesis_desc$"
+ crisobj_AIO_have_science_nexuses_name: "$crisobj_have_science_nexuses_name$"
+ crisobj_AIO_have_science_nexuses_desc: "$crisobj_have_science_nexuses_desc$"
 
  #endregion
 
@@ -71,56 +70,50 @@
  unlocks_AIO_allinone_research: "可以开始通过完成§H天灾目标§!以积累£AIO_advanced_logic£§Y$AIO_advanced_logic$§!。"
  menp_AIO_buildings_1: "$menp_cosmo_buildings_1$"
  menp_AIO_buildings_1_desc: "$menp_cosmo_buildings_1_desc$"
- menp_AIO_component_1:0 "能量边界"
- menp_AIO_component_1_desc:0 "暗物质不只是能源。掌控它，将为我们理解并改写宇宙法则铺平道路。"
- unlocks_AIO_component_1:0 "解锁科技研究选项：§Y$tech_dark_matter_power_core$§!。"
- menp_AIO_dimensionality:0 "升维假设"
- menp_AIO_dimensionality_desc:0 "三维世界只是囚禁意识的浅滩。通过视界引擎吞噬现实的能流，我们将在时空的幕布上剪开第一道通往无穷的裂隙。"
+ menp_AIO_fleet_component_1: "$menp_cosmo_techs_4$"
+ menp_AIO_fleet_component_1_desc: "$menp_cosmo_techs_4_desc$"
+ unlocks_AIO_allinone_fleet_component_1: "解锁§Y$tech_arc_emitter_2$§!和§Y$tech_dragon_armor$§!舰船部件科技。\n"
+ menp_AIO_fleet_dark_matter: "$menp_cosmo_techs_2$"
+ menp_AIO_fleet_dark_matter_desc: "$menp_cosmo_techs_2_desc$"
+ menp_AIO_fleet_component_1_2_tt: "解锁法令：§Y$edict_edict_AIO_dm_engine$§!\n解锁区划特化：§Y$zone_AIO_dm_production$§!"
  # 二阶
  menp_AIO_mega_02: "铸门之人"
- menp_AIO_mega_02_desc: "低维生物称之为神迹或裂痕，而在我们的工程图纸上，它不过是一扇可以被精确装配的门扉。"
- unlocks_AIO_allinone_mega_01: "解锁巨构：§Y$AIO_mega_01$§!\n"
+ menp_AIO_mega_02_desc: "我们将亲手打造通往无限维度的‘门’。"
+ unlocks_AIO_allinone_mega_01: "解锁巨构：§Y$AIO_mega_01$§!\n解锁定向应用无限：§Y丰饶§!、§Y风暴§!\n"
  menp_AIO_buildings_2: "$menp_cosmo_buildings_2$"
  menp_AIO_buildings_2_desc: "$menp_cosmo_buildings_2_desc$"
- menp_AIO_component_2:0 "能量解构"
- menp_AIO_component_2_desc:0 "能量守恒定律并非不可动摇的神谕，它只是三维宇宙缺乏想象力的平庸设定。"
- unlocks_AIO_component_2:0 "解锁科技研究选项：§Y$tech_enigmatic_decoder$§!, §Y$tech_dark_matter_propulsion$§!。\n解锁应用无限研究选项：§Y$tech_AIO_rule_energy$§!。完成对应研究后开放无名之雾的§Y$district_AIO_mist_energy$§!。"
- menp_AIO_ship_escort: "$menp_cosmo_ship_2$"
- menp_AIO_ship_escort_desc: "$menp_cosmo_ship_2_desc$"
+ menp_AIO_fleet_component_2: "纳米工艺"
+ menp_AIO_fleet_component_2_desc: "$menp_cosmo_techs_5_desc$"
+ menp_AIO_ship_2: "$menp_cosmo_ship_2$"
+ menp_AIO_ship_2_desc: "$menp_cosmo_ship_2_desc$"
+ menp_AIO_ship_2_tt.alloys: "解锁法令：§Y$edict_edict_AIO_nanite_construction$§!\n解锁区划特化：§Y$zone_AIO_nanites_production_metallurgists$§!"
+ menp_AIO_ship_2_tt.food: "解锁法令：§Y$edict_edict_AIO_nanite_construction$§!、§Y$edict_edict_AIO_nanite_farming$§!\n解锁区划特化：§Y$zone_AIO_nanites_production_farmers$§!"
  # 三阶
  menp_AIO_mega_03: "时空工程"
- menp_AIO_mega_03_desc: "时间不再是单向奔流的长河，而是任由我们截断、折叠与重塑的几何标尺。银时之匙将把事件的先后次序重铸为我们的阶梯。"
- unlocks_AIO_allinone_mega_02: "解锁巨构：§Y$AIO_mega_02$§!\n"
+ menp_AIO_mega_03_desc: "我们能看见事件发生前的分叉，乃至选择它的方向。"
+ unlocks_AIO_allinone_mega_02: "解锁巨构：§Y$AIO_mega_02$§!\n解锁定向应用无限：§Y生成§!、§Y收割§!\n"
  menp_AIO_buildings_3: "$menp_cosmo_buildings_3$"
  menp_AIO_buildings_3_desc: "$menp_cosmo_buildings_3_desc$"
- menp_AIO_component_3:0 "物质实在化"
- menp_AIO_component_3_desc:0 "物质与暗物质的分野，不过是观察者视角的局限。当我们掌握了实在化的权柄，有无便只在我们的一念之间。"
- unlocks_AIO_component_3:0 "解锁科技研究选项：§Y$tech_enigmatic_encoder$§!, §Y$tech_dark_matter_deflector$§!。\n解锁应用无限研究选项：§Y$tech_AIO_rule_matter$§!, §Y$tech_AIO_rule_dark_matter$§!。完成对应研究后开放无名之雾的§Y$district_AIO_mist_minerals$§!, §Y$district_AIO_mist_dark_matter$§!。"
+ menp_AIO_fleet_component_3: "$menp_cosmo_techs_3$"
+ menp_AIO_fleet_component_3_desc: "$menp_cosmo_techs_3_desc$"
  menp_AIO_ship_3: "$menp_cosmo_ship_3$"
  menp_AIO_ship_3_desc: "$menp_cosmo_ship_3_desc$"
  # 四阶
  menp_AIO_mega_04: "恒视之主"
- menp_AIO_mega_04_desc: "物质必须学会服从更高维度的意志。永恒王座将高高耸立在截面之巅，俯瞰着整片因我们随意玩弄而战栗的星海。"
- unlocks_AIO_allinone_mega_03: "解锁巨构：§Y$AIO_mega_03$§!\n"
+ menp_AIO_mega_04_desc: "我们无需去征服，万物已置于我们的目光之下。"
+ unlocks_AIO_allinone_mega_03: "解锁巨构：§Y$AIO_mega_03$§!\n解锁定向应用无限：§Y播种§!、§Y打击§!\n"
  menp_AIO_buildings_4: "$menp_cosmo_buildings_4$"
  menp_AIO_buildings_4_desc: "$menp_cosmo_buildings_4_desc$"
- menp_AIO_component_4:0 "结构重塑"
- menp_AIO_component_4_desc:0 "自然演化给物质设定的分子构型过于脆弱。我们将高维流形强行注入其中，让重子与晶格懂得如何自我生长与自愈。"
- unlocks_AIO_component_4:0 "解锁科技研究选项：§Y$tech_arc_emitter_1$§!, §Y$tech_dragon_armor$§!。\n解锁应用无限研究选项：§Y$tech_AIO_rule_structure$§!, §Y$tech_AIO_rule_living_metal$§!。完成对应研究后开放无名之雾的§Y$district_AIO_mist_motes$§!, §Y$district_AIO_mist_gases$§!, §Y$district_AIO_mist_crystals$§!, §Y$district_AIO_mist_living_metal$§!。"
- menp_AIO_ship_titan: "$menp_cosmo_ship_4$"
- menp_AIO_ship_titan_desc: "$menp_cosmo_ship_4_desc$"
+ menp_AIO_ship_4: "$menp_cosmo_ship_4$"
+ menp_AIO_ship_4_desc: "$menp_cosmo_ship_4_desc$"
  # 五阶
  menp_AIO_mega_05: "维度嵌入"
- menp_AIO_mega_05_desc: "全知即全能。当犹格·索托斯在此界彻底成型，我们不再生活在宇宙之中——我们即是万物赖以存在的结构性原理。"
- unlocks_AIO_allinone_mega_04: "解锁巨构：§Y$AIO_mega_04$§!\n"
+ menp_AIO_mega_05_desc: "我/我们即真理。"
+ unlocks_AIO_allinone_mega_04: "解锁巨构：§Y$AIO_mega_04$§!\n解锁定向应用无限：§Y思潮§!、§Y抹除§!\n"
  menp_AIO_buildings_5: "$menp_cosmo_buildings_5$"
  menp_AIO_buildings_5_desc: "$menp_cosmo_buildings_5_desc$"
- menp_AIO_component_5:0 "纳米连续体"
- menp_AIO_component_5_desc:0 "将现实分解为无穷尽的可编程微粒。宏观的秩序在此刻彻底瓦解，一切物理结构都将退化为我们随时可以重写的泥浆。"
- unlocks_AIO_component_5:0 "解锁科技研究选项：§Y$tech_nanite_transmutation$§!, §Y$tech_nanite_repair_system$§!, §Y$tech_nanite_autocannon$§!, §Y$tech_nanite_flak_batteries$§!。\n解锁应用无限研究选项：§Y$tech_AIO_rule_nanites$§!。完成对应研究后开放无名之雾的§Y$district_AIO_mist_nanites$§!。"
- menp_AIO_break_rules: "$menp_cosmo_features_4$"
- menp_AIO_break_rules_desc: "$menp_cosmo_features_4_desc$"
- unlocks_AIO_mist_expansion:0 "最终巨构完成后，可在无名之雾反复延展空间容量。"
+ # 说明
+ AIO_unlock_AIO_TDTE_node: "解锁§Y$AIO_mega_01_node$§!节点"
 
  #endregion
 
@@ -132,37 +125,26 @@
  AIO_crisis_events_chain_desc: "$AIO_advanced_logic_crisis_howto$"
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
 
- # 阶段 POI
- AIO_crisis_stage_2_poi_name: "现实回弹"
- AIO_crisis_stage_2_desc: "每一次改写都在衰退。被移动的质量回归原位，遭替换的因果重新闭合，连观测记录也逐渐与恢复后的现实吻合。宇宙仍牢牢记得自己原本的模样。"
- AIO_crisis_stage_3_poi_name: "复原迟滞"
- AIO_crisis_stage_3_desc: "相反的修改正在被同时抹除。现实试图沿着两个方向回到同一原点，两套复原过程却不断撤销彼此的结果。异常最终仍会消失，但所需时间已经远超从前。"
- AIO_crisis_stage_4_poi_name: "修正冲突"
- AIO_crisis_stage_4_desc: "每条规律与它的反面都在要求被恢复。纠正其中一方，就会使另一方成为异常；纠正另一方，又会撤销前一次结果。"
- AIO_crisis_stage_5_poi_name: "自毁之律"
- AIO_crisis_stage_5_desc: "所有修正都已构成新的矛盾。宇宙每恢复一条规律，便必须撤销另一条；每填补一处缺口，便在同一位置重新将其撕开。"
+ # 万物归谬局势
+
+ # 阶段 POI：同一阶段只显示当前隐藏倾向对应的一段文本
 
  # 事件
  AIO_crisis_events_title: "$AIO_crisis_events_chain_title$"
  # 天灾等级
- AIO_crisis_events.301.desc: "物理常数，粒子质量，引力与熵的扩张皆非不可变——它们只是初始版本的参数，是等待修订的原始草稿。我们尚未成为规律，但我们已开始握笔。\n\n为了重构宇宙，我们必须先对它有足够的理解。我们需要更先进的算力架构，撕开那层笼罩在时空表面的认知薄膜。"
- AIO_crisis_events.301.option: "撕开帷幕。"
- AIO_crisis_events.302.desc:0 "视界引擎已经轰然运转。它撕开了虚境与物理常数的壁障，为我们抽取了难以估量的磅礴能量。\n\n然而，仅凭三维的容器根本无法承载这股力量。我们必须利用这些能源，在现有时空的裂隙中铸造跨维度的枢纽——‘万门之门’。当门扉洞开，我们将在截面之外撑开一片不受因果律与热力学束缚的全新居所。"
- AIO_crisis_events.302.option: "开始铸造万门之门。"
- AIO_crisis_events.303.desc:0 "万门之门已然铸成！三维时空的投影截面被彻底洞穿，我们在现实的阴影之外撑开了初生的独立维度泡——‘无名之雾’。\n\n这里是我们超脱宇宙的第一处避风港。但初生的空间仍旧受制于局域时序的扰动；现在，我们要将万门之门升阶为‘银时之匙’，将这枚高维楔子深深打入现实的根基，大幅拓展无名之雾的容量，捕获暗物质的潜流。"
- AIO_crisis_events.303.option: "转动银时之匙。"
- AIO_crisis_events.304.desc:0 "银时之匙已经扣合。时间的单向流动不再能约束我们的工程，无名之雾的空间网络在暗相能量的滋养下稳固延展。\n\n外界宇宙正因我们的改写而产生剧烈的物理反弹与常数溃散，但这不过是低维世界的阵痛。我们要更进一步，‘永恒王座’将高维流形注入物质晶格，彻底统摄宏观形态的自组织法则，让我们的居所容量实现质的飞跃。"
- AIO_crisis_events.304.option: "现实必须学会习惯它该有的痛楚。"
- AIO_crisis_events.305.desc:0 "永恒王座已经高耸于维度顶端，低维的物质与因果已尽在掌控。外界银河的凡庸帝国在恐慌中对我们发起围攻，但这群蝼蚁的悲鸣毫无意义。\n\n最后的基座已经就绪，那象征宇宙存在根本的超然结构——§M犹格·索托斯§!——已经浮现在我们眼前。\n\n这种近乎亵渎的篡改必将唤醒宇宙深层的反噬，引来清算者亚弗戈蒙的降临。但那正是我们捕获神性、彻底飞升的绝佳时刻。"
+ AIO_crisis_events.301.desc: "物理常数，粒子质量，引力与熵的扩张皆非不可变——它们只是初始版本的参数，是等待修订的原始草稿。我们尚未成为规律，但我们已开始握笔。\n\n为了重构宇宙，我们必须先对它有足够的理解。我们需要更先进的计算机帮助我们理解现实规律的运行逻辑。"
+ AIO_crisis_events.301.option: "我们要更强的计算机！"
+ AIO_crisis_events.302.desc: "§Y$AIO_horizon_engine$§!的能量密度即将突破现实的边界。下一步，我们需要用这些能量打开一扇门——一扇通往无数时空的“门”。一旦开启，我们将可以在无限的维度之上改变法则。"
+ AIO_crisis_events.302.option: "我们是铸门者。"
+ AIO_crisis_events.303.desc: "随着§Y$AIO_mega_01$§!的启用，时空开始暴露出前所未见的脆弱之处。仅是在宇宙打一个“洞”是不够的，我们最强的大脑已经构思出了一种能够“选择”时空的巨型结构——§Y$AIO_mega_02$§!，它将为后续的规则修改铺平道路。"
+ AIO_crisis_events.303.option: "$EXCELLENT$"
+ AIO_crisis_events.304.desc: "§Y$AIO_mega_02$§!已成为我们扭转宇宙命运的钥匙，但其潜力尚未完全释放。为继续推进融合进程，我们必须将其锻造为更高维度的基点——§Y$AIO_mega_03$§!。只有当§Y$AIO_mega_03$§!屹立于多重现实的顶点，我们才能真正掌控规律的终极形态。"
+ AIO_crisis_events.304.option: "$menp_AIO_mega_04_desc$"
+ AIO_crisis_events.305.desc: "§Y$AIO_mega_03$§!已屹立于多重现实的最尖端。然其存在，仅为承载真正的我们而设。现在，我们必须将其升华为终极形态——§M$AIO_mega_04$§!。不再是结构，不再是帝国，而是存在与规律的等价物。当其完成，融合将封闭，重写将开始。所有分歧、所有维度、所有终局，都将……"
  AIO_crisis_events.305.option: "放手去做吧。"
 
  # 飞升事件
- AIO_crisis_events.601.title: "视界门扉"
- AIO_crisis_events.601.desc: "最后的纠错机制已经沉寂。宇宙的免疫风暴在我们的约束力场中耗尽了最后一丝怒火，亚弗戈蒙的残骸化作了基底结构中最顺从的印记。\n\n门后的无限已经彻底洞开。观察者与被观察之物的分界在此刻彻底溶解——只要向前迈出一步，我们的文明将不再是一个历史名词，而是化作一切时空与存在的底层规律。"
- AIO_crisis_events.601.option.wait: "留步凝望"
- AIO_crisis_events.601.option.ascension: "迈入门后"
  AIO_crisis_events.end.option: "我/我们即真理。"
- AIO_crisis_events.602.desc: "归一已完成。\n我们不再是帝国，也不再是实体。我们的意志存在于无限维度的交汇点，成为一切存在的结构性原理。\n熄灭的恒星在燃烧中沉寂。干涸的海盆涌起潮水，潮水又在抵达岸边前化作盐尘；荒芜行星上长出没有祖先的森林，林木倒下之处又萌发从未播下的种子；断裂的航道在接合时通往两片天空，失散千年的舰船同时驶入母港与自己的残骸。亿万种曾彼此排斥的未来，如今在同一片星空下诞生、消亡。\n星辰明灭，因为我们同时写下它们的开始与终点；生命轮回，因为每个故事的最后一页也是下一篇的开端。\n没有永生。没有虚无。每一扇门后，都是同时发生的诞生与告别。\n我/我们即§M犹格·索托斯§!。"
 
  #endregion
 
@@ -178,7 +160,7 @@
  AIO_crisis_events.406.desc: "位于[from.GetName]的§Y$AIO_mega_04$§!完成"
 
  # 提示建造视界引擎
- AIO_crisis_events.401.desc: "我们已完成对多维相互作用模型的闭环构建。模拟显示，在特定的引力剪切与虚境波动节点上，现实可被稳定渗透。我们将以此为基础建造§Y$AIO_horizon_engine$§!——一座能穿透物理与可能性边界、抽取存在能量的结构体。\n我们并非第一个拥有这种技术的帝国，不同的是，我们会用这些能量创造一个比现有宇宙高无数倍的时空。"
+ AIO_crisis_events.401.desc: "我们已完成对多维相互作用模型的闭环构建。模拟显示，在特定的引力剪切与虚境波动节点上，现实可被稳定渗透。我们将以此为基础建造§Y$AIO_horizon_engine$§!——一座能穿透物理与可能性边界、抽取存在能量的结构体。\n我们并非以第一个拥有这种技术的帝国，不同的是，我们会用这些能量创造一个比现有宇宙高无数倍的时空。"
  AIO_crisis_events.401.option: "建立新进程。"
 
  #endregion

@@ -7,3 +7,14 @@ AIO_final_wait = {
     add = @AIO_final_base_wait
     min = @AIO_final_min_wait
 }
+
+# situation: the constraint flag fixes the battle duration before manifestation.
+AIO_final_battle_extension = {
+    base = @AIO_final_battle_time
+    subtract = @AIO_final_exist_time
+}
+
+AIO_final_duration = {
+    base = @AIO_final_exist_time
+    modifier = { add = value:AIO_final_battle_extension has_situation_flag = AIO_final_constrainted }
+}

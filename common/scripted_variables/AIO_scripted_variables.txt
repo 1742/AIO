@@ -1,15 +1,11 @@
-# 终局相关变量
-@AIO_final_base_wait = 2000
-@AIO_final_min_wait = 200
-@AIO_final_sub = 200
-@AIO_final_exist_time = 360
-@AIO_final_research_cost = 360
+@AIO_DAIT_cost = 100000
+@AIO_DAIT_cost_negative = -100000
+@AIO_final_base_wait = 300
+@AIO_final_min_wait = 180
+@AIO_final_sub = 60
+@AIO_final_exist_time = 180
+@AIO_final_battle_time = 360
+@AIO_final_research_cost = 60
+@AIO_final_field_cost = 60
 @AIO_final_induction_cost = 10000
 @AIO_final_induction_payment = -10000
-
-
-# 投射参数；调整时同步两份 AIO_projection 本地化中的费用和时间。
-@AIO_projection_cooldown_days = 3600
-@AIO_projection_logic_cost = 100000
-@AIO_projection_logic_payment = -100000
-@AIO_projection_delay_days = 720

@@ -1,0 +1,92 @@
+# AIO触发器
+
+# 能应用无限的国家
+AIO_can_AIT = {
+    OR = {
+        has_ascension_perk = ap_cosmogenesis
+        has_ascension_perk = ap_AIO_allinone
+    }
+}
+
+# 星系内有自然殖民地
+
+
+# 判断行星是否有星环基地，scope: planet
+
+
+# 星系内是否有无星环基地的天然殖民地, scope: system
+
+
+#region 判断巨构类型，scope: megastructure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endregion
+
+
+# 判断是否是单中心天体星系，scope: system
+
+
+# 是否被选定为肃正球，scope: planet
+
+
+# scope: system
+
+
+# scope: planet
+
+
+#region exclude API
+
+# 禁止AIO模组移除特定星球的API，scope: planet
+
+
+# 禁止AIO模组移除特定星系的API，scope: system
+
+
+# 禁止AIO模组移除特定巨构的API，scope: megastructure
+
+
+# 禁止AIO模组移除特定舰队的API，scope: fleet
+
+
+# 禁止AIO模组移除特定领袖的API，scope: leader
+
+
+#endregion

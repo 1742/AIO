@@ -35,7 +35,7 @@ special_project = {
 # on_cancel / abort_trigger: THIS = country，FROM = ship，FROMFROM = 项目星球。
 special_project = {
     key = "AIO_FINAL_INDUCTION"
-    days_to_research = @AIO_final_research_cost
+    days_to_research = @AIO_final_field_cost
     timelimit = 1000
     tech_department = physics_technology
     picture = GFX_evt_vortex
@@ -62,7 +62,7 @@ special_project = {
 # on_cancel / abort_trigger: THIS = country，FROM = ship，FROMFROM = 项目星球。
 special_project = {
     key = "AIO_FINAL_CONSTRAINT"
-    days_to_research = @AIO_final_research_cost
+    days_to_research = @AIO_final_field_cost
     timelimit = 1000
     tech_department = physics_technology
     picture = GFX_evt_vortex

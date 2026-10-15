@@ -7,7 +7,6 @@
 
 tech_AIO_fe_forge_1 = {
 	icon = tech_fe_forge_1
-
 	area = engineering
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -68,7 +67,6 @@ tech_AIO_fe_forge_1 = {
 
 tech_AIO_fe_forge_2 = {
 	icon = tech_fe_forge_2
-
 	area = engineering
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -101,7 +99,6 @@ tech_AIO_fe_forge_2 = {
 
 tech_AIO_fe_fabricator_1 = {
 	icon = tech_fe_fabricator_1
-
 	area = engineering
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -162,7 +159,6 @@ tech_AIO_fe_fabricator_1 = {
 
 tech_AIO_fe_fabricator_2 = {
 	icon = tech_fe_fabricator_2
-
 	area = engineering
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -200,7 +196,6 @@ tech_AIO_fe_fabricator_2 = {
 
 tech_AIO_fe_singularity_1 = {
 	icon = tech_fe_singularity_1
-
 	area = physics
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -261,7 +256,6 @@ tech_AIO_fe_singularity_1 = {
 
 tech_AIO_fe_singularity_2 = {
 	icon = tech_fe_singularity_2
-
 	area = physics
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -294,7 +288,6 @@ tech_AIO_fe_singularity_2 = {
 
 tech_AIO_fe_mine_1 = {
 	icon = tech_fe_mine_1
-
 	area = engineering
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -355,7 +348,6 @@ tech_AIO_fe_mine_1 = {
 
 tech_AIO_fe_mine_2 = {
 	icon = tech_fe_mine_2
-
 	area = engineering
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -388,7 +380,6 @@ tech_AIO_fe_mine_2 = {
 
 tech_AIO_nourishment_complex = {
 	icon = tech_fe_nourishment_1
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -453,7 +444,6 @@ tech_AIO_nourishment_complex = {
 
 tech_AIO_nourishment_center = {
 	icon = tech_fe_nourishment_2
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -499,7 +489,6 @@ tech_AIO_nourishment_center = {
 
 tech_AIO_fe_affluence_1 = {
 	icon = tech_fe_affluence_1
-
 	area = engineering
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -560,7 +549,6 @@ tech_AIO_fe_affluence_1 = {
 
 tech_AIO_fe_affluence_2 = {
 	icon = tech_fe_affluence_2
-
 	area = engineering
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -597,7 +585,6 @@ tech_AIO_fe_affluence_2 = {
 
 tech_AIO_fe_silo_1 = {
 	icon = tech_fe_silo_1
-
 	area = physics
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -658,7 +645,6 @@ tech_AIO_fe_silo_1 = {
 
 tech_AIO_fe_silo_2 = {
 	icon = tech_fe_silo_2
-
 	area = physics
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -691,7 +677,6 @@ tech_AIO_fe_silo_2 = {
 
 tech_AIO_fe_market_1 = {
 	icon = tech_fe_market_1
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -756,7 +741,6 @@ tech_AIO_fe_market_1 = {
 
 tech_AIO_fe_market_2 = {
 	icon = tech_fe_market_2
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -794,7 +778,6 @@ tech_AIO_fe_market_2 = {
 
 tech_AIO_fe_administration_1 = {
 	icon = tech_fe_administration_1
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -855,7 +838,6 @@ tech_AIO_fe_administration_1 = {
 
 tech_AIO_fe_administration_2 = {
 	icon = tech_fe_administration_2
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -888,7 +870,6 @@ tech_AIO_fe_administration_2 = {
 
 tech_AIO_fe_security_1 = {
 	icon = tech_fe_security_1
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -949,7 +930,6 @@ tech_AIO_fe_security_1 = {
 
 tech_AIO_fe_security_2 = {
 	icon = tech_fe_security_2
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -982,7 +962,6 @@ tech_AIO_fe_security_2 = {
 
 tech_AIO_fe_lab_1 = {
 	icon = tech_fe_lab_1
-
 	area = physics
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -1043,7 +1022,6 @@ tech_AIO_fe_lab_1 = {
 
 tech_AIO_fe_lab_2 = {
 	icon = tech_fe_lab_2
-
 	area = physics
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -1076,7 +1054,6 @@ tech_AIO_fe_lab_2 = {
 
 tech_AIO_fe_fortress_1 = {
 	icon = tech_fe_fortress_1
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -1137,7 +1114,6 @@ tech_AIO_fe_fortress_1 = {
 
 tech_AIO_fe_fortress_2 = {
 	icon = tech_fe_fortress_2
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -1175,7 +1151,6 @@ tech_AIO_fe_fortress_2 = {
 
 tech_AIO_fe_dome_1 = {
 	icon = tech_fe_dome_1
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -1236,7 +1211,6 @@ tech_AIO_fe_dome_1 = {
 
 tech_AIO_fe_dome_2 = {
 	icon = tech_fe_dome_2
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -1269,7 +1243,6 @@ tech_AIO_fe_dome_2 = {
 
 tech_AIO_fe_entertainment_1 = {
 	icon = tech_fe_entertainment_1
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -1334,7 +1307,6 @@ tech_AIO_fe_entertainment_1 = {
 
 tech_AIO_fe_entertainment_2 = {
 	icon = tech_fe_entertainment_2
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -1367,7 +1339,6 @@ tech_AIO_fe_entertainment_2 = {
 
 tech_AIO_fe_assembly_1 = {
 	icon = tech_fe_assembly_1
-
 	area = engineering
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -1447,7 +1418,6 @@ tech_AIO_fe_assembly_1 = {
 
 tech_AIO_fe_assembly_2 = {
 	icon = tech_fe_assembly_2
-
 	area = engineering
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -1484,7 +1454,6 @@ tech_AIO_fe_assembly_2 = {
 
 tech_AIO_fe_clinic_1 = {
 	icon = tech_fe_clinic_1
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier
@@ -1549,7 +1518,6 @@ tech_AIO_fe_clinic_1 = {
 
 tech_AIO_fe_clinic_2 = {
 	icon = tech_fe_clinic_2
-
 	area = society
 	cost = @fallentechcost
 	tier = @fallentechtier

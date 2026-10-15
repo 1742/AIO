@@ -1,7 +1,7 @@
 AIO_create_hexagonal_orbital_array = {
     random_system_planet = {
         limit = { is_star = yes }
-        inline_script = AIO/random_star_pc
+        AIO_change_random_pc = { STAR = 1 }
     }
     AIO_change_star_class = yes
     spawn_planet = {
@@ -65,7 +65,7 @@ AIO_create_hexagonal_orbital_array = {
 AIO_create_ringworld_array = {
     random_system_planet = {
         limit = { is_star = yes }
-        inline_script = AIO/random_star_pc
+        AIO_change_random_pc = { STAR = 1 }
     }
     AIO_change_star_class = yes
 
@@ -168,7 +168,7 @@ AIO_create_ringworld_array = {
 AIO_create_triangular_planet_array = {
     random_system_planet = {
         limit = { is_star = yes }
-        inline_script = AIO/random_star_pc
+        AIO_change_random_pc = { STAR = 1 }
     }
     AIO_change_star_class = yes
 
@@ -264,7 +264,7 @@ AIO_create_triangular_planet_array = {
 AIO_create_black_hole_cluster = {
     random_system_planet = {
         limit = { is_star = yes }
-        AIO_safe_change_pc = { NEW_PC = pc_black_hole }
+        inline_script = { script = AIO/AIO_safe_change_pc NEW_PC = pc_black_hole }
     }
     set_star_class = sc_black_hole
 
@@ -329,7 +329,7 @@ AIO_create_black_hole_cluster = {
 AIO_create_concentric_orbital_array = {
     random_system_planet = {
         limit = { is_star = yes }
-        inline_script = AIO/random_star_pc
+        AIO_change_random_pc = { STAR = 1 }
     }
     AIO_change_star_class = yes
 
@@ -554,7 +554,7 @@ AIO_create_recursive_satellite_branch = {
 AIO_create_recursive_satellite_tree = {
     random_system_planet = {
         limit = { is_star = yes }
-        inline_script = AIO/random_star_pc
+        AIO_change_random_pc = { STAR = 1 }
     }
     AIO_change_star_class = yes
 
@@ -689,7 +689,7 @@ AIO_create_black_hole_flower_outer_body = {
 AIO_create_black_hole_flower = {
     random_system_planet = {
         limit = { is_star = yes }
-        AIO_safe_change_pc = { NEW_PC = pc_pulsar }
+        inline_script = { script = AIO/AIO_safe_change_pc NEW_PC = pc_pulsar }
     }
     set_star_class = sc_pulsar
 

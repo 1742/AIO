@@ -1,0 +1,2 @@
+# Shared inline primitive; keep scope unchanged.
+every_system_megastructure = { AIO_safe_remove_megastructure = yes }

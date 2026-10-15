@@ -6,6 +6,11 @@ AIO_final_valid_external_target = {
         is_same_value = event_target:AIO_mist_system
         is_same_value = event_target:AIO_gate_system
         has_star_flag = AIO_Aforgomon_existed
+        has_star_flag = AIO_DAIT_center_busy
+        AIO_safe_remove_system_exclude_API = yes
+        AIO_is_crisis_mega_system = yes
+        has_star_flag = synth_queen_capital
+        any_system_planet = { AIO_safe_remove_planet_exclude_API = yes }
     }
 }
 

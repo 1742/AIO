@@ -1,27 +1,22 @@
-l_english:
- zone_AIO_mist_motes:0 "Metastable Mote Excitation"
- zone_AIO_mist_motes_desc:0 "Through hyperdimensional resonant cavities, volatile particles are sustained in a critical excited state, maintaining high-density output alongside dedicated facilities and districts."
- zone_AIO_mist_gases:0 "Manifold Gas Condensation"
- zone_AIO_mist_gases_desc:0 "Extracting and separating higher-dimensional gases possessing anomalous physical properties beyond the cross-section, supported by specialized condensation arrays."
- zone_AIO_mist_crystals:0 "Hyperdimensional Lattice Weaving"
- zone_AIO_mist_crystals_desc:0 "Deploying atomic-scale lenses and geometric refactoring arrays to solidify the topological tension of space itself into flawlessly ordered rare crystal lattices."
- zone_AIO_mist_farm:0 "Biochemical Mass-Energy Synthesis"
- zone_AIO_mist_farm_desc:0 "Bypassing primitive photosynthesis and organic recycling, directly utilizing mass-energy reconfiguration to synthesize nutritive fluid at scale for the survival of immense populations."
- zone_AIO_mist_alloys:0 "Dense Lattice Reconfiguration"
- zone_AIO_mist_alloys_desc:0 "Pressing multi-dimensional geometric topologies directly into metallic lattices, eliminating all macroscopic fatigue thresholds to manufacture hyper-alloys at mass scale."
- zone_AIO_mist_goods:0 "Negentropy Fabrication"
- zone_AIO_mist_goods_desc:0 "Reversing local entropy gain at the microscopic scale, assembling raw feedstocks with atomic precision into precision research instruments and advanced consumer goods."
- zone_AIO_mist_energy:0 "Energy Stream Interception"
- zone_AIO_mist_energy_desc:0 "Channelling higher-dimensional energy flows that seep through fissures in reality directly into the main grid, achieving boundless energy output without thermodynamic dissipation."
- zone_AIO_mist_minerals:0 "Substantive Matter Precipitation"
- zone_AIO_mist_minerals_desc:0 "Utilizing gravitational shear lenses to capture the massive halves of virtual particle pairs, precipitating them into dense, crystalline ores for heavy industry."
- zone_AIO_mist_dark_matter:0 "Dark Phase Condensation"
- zone_AIO_mist_dark_matter_desc:0 "Deploying microscopic gravitational lensing arrays to guide weak-interaction sub-currents, solidified by Dark Phase Weavers into machinable dark matter blocks."
- zone_AIO_mist_living_metal:0 "Manifold Molding"
- zone_AIO_mist_living_metal_desc:0 "Sustaining the metastable vitality of self-organizing metal, providing high-energy magnetofluid channels for Manifold Shapers to guide its self-repairing and expansive traits."
- zone_AIO_mist_nanites:0 "Micro-phase Continuum"
- zone_AIO_mist_nanites_desc:0 "Establishing logical hubs for microscopic clusters with anti-deadlock damping fields, ensuring the efficient, unified operation of trillions of nanite swarms."
- zone_AIO_mist_government:0 "Topological Administration Hub"
- zone_AIO_mist_government_desc:0 "The command center situated beyond the cross-section. Directives issued here collapse instantaneously across all localized space, immune to macroscopic speed-of-light delays."
- zone_AIO_lathe:0 "Recursive Computation Specialization"
- zone_AIO_lathe_desc:0 "Configures dedicated high-throughput buses and error-tolerant architectures for the Matryoshka Brain network, pushing counts of consciousness to their limits to deduce cosmic constants."
+﻿l_english:
+ # matryoshka brain specialization
+ zone_AIO_lathe: "Matryoshka Brain Specialization"
+ zone_AIO_lathe_desc: "$district_AIO_lathe_desc$"
+ # dark matter production
+ zone_AIO_dm_production: "Dark Matter Synthesis Complex"
+ zone_AIO_dm_production_desc: "The flow of conventional energy is only a cosmic appearance. By tuning the labor patterns of drones, deeper matter - dark matter is produced."
+ # gestalt machine empire living metal production
+ zone_AIO_lm_production_machine_empire: "Living Metal Synthetic Nexus"
+ zone_AIO_lm_production_machine_empire_desc: "By reassembling the assembly line and introducing living metal chimerism, the generation rate of drones is greatly increased."
+ # hive empire living metal production
+ zone_AIO_lm_production_hive_empire: "Living Metal Incubation"
+ zone_AIO_lm_production_hive_empire_desc: "Living metals are incorporated into the organic matrix, and the incubation chamber gives birth to more rapid new organisms between pulsation and peristalsis."
+ # miners nanites production
+ zone_AIO_nanites_production_minerals: "Nano Mining"
+ zone_AIO_nanites_production_minerals_desc: "The planet's mineral deposits are redefined as a raw matrix at the nanoscale. Mining drones no longer just mine ore, but guide material to disintegrate and reorganize in the star shell, and directly give birth to nanocommunities."
+ # metallurgists nanites production
+ zone_AIO_nanites_production_metallurgists: "Nano Assembly"
+ zone_AIO_nanites_production_metallurgists_desc: "We are no longer satisfied with forging cold alloys, we have given birth to trillion-level self-disciplined structural units - nanorobots. They are a resource and a shell of the future, just as iron replaces bronze, they will replace everything."
+ # farmers nanites production
+ zone_AIO_nanites_production_farmers: "Nano Plant"
+ zone_AIO_nanites_production_farmers_desc: "These nest cavities do not feed the mouth and stomach, but nurture the entire nanocommunity. The hunger of drones is a feast of nano tides."

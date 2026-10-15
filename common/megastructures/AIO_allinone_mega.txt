@@ -1,13 +1,8 @@
 # AIO巨构
 @mega_01_energy_cost = 5000
 @mega_02_energy_cost = 10000
-@mega_03_energy_cost = 15000
-@mega_04_energy_cost = 25000
-@mega_01_alloys_cost = 15000
-@mega_02_alloys_cost = 20000
-@mega_03_alloys_cost = 25000
-@mega_04_alloys_cost = 50000
-
+@mega_03_energy_cost = 20000
+@mega_04_energy_cost = 50000
 
 # 现实中的万门之门
 AIO_mega_01_fact = {
@@ -46,24 +41,28 @@ AIO_mega_01_fact = {
 
 	upgrade_from = { AIO_horizon_engine }
 
-	build_time = 500
+	build_time = 1800
 
 	resources = {
 		category = megastructures
-
-		cost = { energy = @mega_01_energy_cost }
+		cost = {
+			energy = @mega_01_energy_cost
+			sr_dark_matter = 2000
+			nanites = 2000
+			sr_living_metal = 2000
+		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = @mega_01_alloys_cost
+			alloys = 15000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = @mega_01_alloys_cost
+			alloys = 15000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = @mega_01_alloys_cost
+			food = 15000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 	}
@@ -97,8 +96,7 @@ AIO_mega_01 = {
 
 	resources = {
 		category = megastructures
-
-		produces = { AIO_advanced_logic = 5 }
+		produces = { AIO_advanced_logic = 1000 }
 
 		upkeep = {
 			energy = 200
@@ -112,6 +110,7 @@ AIO_mega_01 = {
 	bypass_type = bypass_AIO_ultimate_gate
 
 	on_build_complete = {
+		fromfrom = { save_global_event_target_as = AIO_DAIT_source_megastructure }
 		# 加特效
 		create_ambient_object = {
 			type = "AIO_crisis_sphere_effect"
@@ -143,6 +142,16 @@ AIO_mega_01 = {
 				}
 			}
 		}
+	}
+    scripted_action = {
+		AIO_DAIT_enrich_action
+		AIO_DAIT_spawn_action
+		AIO_DAIT_seed_action
+		AIO_DAIT_ethic_action
+		AIO_DAIT_storm_action
+		AIO_DAIT_harvest_action
+		AIO_DAIT_strike_action
+		AIO_DAIT_erase_action
 	}
 }
 
@@ -180,7 +189,7 @@ AIO_mega_02 = {
 
 	upgrade_from = { AIO_mega_01 }
 
-	build_time = 1800
+	build_time = 3600
 
 	resources = {
 		category = megastructures
@@ -188,23 +197,25 @@ AIO_mega_02 = {
 		cost = {
 			energy = @mega_02_energy_cost
 			sr_dark_matter = 3000
+			nanites = 3000
+			sr_living_metal = 3000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = @mega_02_alloys_cost
+			alloys = 20000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = @mega_02_alloys_cost
+			alloys = 20000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = @mega_02_alloys_cost
+			food = 20000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 30 }
+		produces = { AIO_advanced_logic = 3000 }
 
 		upkeep = {
 			energy = 500
@@ -220,9 +231,18 @@ AIO_mega_02 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_02
-			event_target:AIO_mist_colony? = { change_planet_size = 12 }
-            country_event = { id = AIO_crisis_events.404 }
+			country_event = { id = AIO_crisis_events.404 }
 		}
+	}
+    scripted_action = {
+		AIO_DAIT_enrich_action
+		AIO_DAIT_spawn_action
+		AIO_DAIT_seed_action
+		AIO_DAIT_ethic_action
+		AIO_DAIT_storm_action
+		AIO_DAIT_harvest_action
+		AIO_DAIT_strike_action
+		AIO_DAIT_erase_action
 	}
 }
 
@@ -260,7 +280,7 @@ AIO_mega_03 = {
 
 	upgrade_from = { AIO_mega_02 }
 
-	build_time = 1800
+	build_time = 3600
 
 	resources = {
 		category = megastructures
@@ -268,24 +288,25 @@ AIO_mega_03 = {
 		cost = {
 			energy = @mega_03_energy_cost
 			sr_dark_matter = 5000
+			nanites = 5000
 			sr_living_metal = 5000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = @mega_03_alloys_cost
+			alloys = 25000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = @mega_03_alloys_cost
+			alloys = 25000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = @mega_03_alloys_cost
+			food = 25000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 50 }
+		produces = { AIO_advanced_logic = 5000 }
 
 		upkeep = {
 			energy = 1000
@@ -301,9 +322,18 @@ AIO_mega_03 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_03
-			event_target:AIO_mist_colony? = { change_planet_size = 16 }
-            country_event = { id = AIO_crisis_events.405 }
+			country_event = { id = AIO_crisis_events.405 }
 		}
+	}
+    scripted_action = {
+		AIO_DAIT_enrich_action
+		AIO_DAIT_spawn_action
+		AIO_DAIT_seed_action
+		AIO_DAIT_ethic_action
+		AIO_DAIT_storm_action
+		AIO_DAIT_harvest_action
+		AIO_DAIT_strike_action
+		AIO_DAIT_erase_action
 	}
 }
 
@@ -354,20 +384,20 @@ AIO_mega_04 = {
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = @mega_04_alloys_cost
+			alloys = 50000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = @mega_04_alloys_cost
+			alloys = 50000
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = @mega_04_alloys_cost
+			food = 50000
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
-		produces = { AIO_advanced_logic = 100 }
+		produces = { AIO_advanced_logic = 10000 }
 
         upkeep = {
             trigger = { owner = { NOT = { is_country_type = AIO_empire } } }
@@ -384,14 +414,19 @@ AIO_mega_04 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_04
-			event_target:AIO_mist_colony? = { change_planet_size = 24 }
-            country_event = { id = AIO_crisis_events.406 }
+			country_event = { id = AIO_crisis_events.406 }
 		}
 	}
-
-	scripted_action = {
+    scripted_action = {
+		AIO_DAIT_enrich_action
+		AIO_DAIT_spawn_action
+		AIO_DAIT_seed_action
+		AIO_DAIT_ethic_action
+		AIO_DAIT_storm_action
+		AIO_DAIT_harvest_action
+		AIO_DAIT_strike_action
+		AIO_DAIT_erase_action
 		AIO_final_induction_action
 		AIO_final_constraint_action
-		AIO_projection_action
 	}
 }

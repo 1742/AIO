@@ -189,7 +189,7 @@ system_event = {
         AIO_final_action_source_valid = yes
         from.owner = {
             check_variable = { which = AIO_final_research value >= 2 }
-            check_variable = { which = AIO_final_research value < 6 }
+            check_variable = { which = AIO_final_research value < 3 }
         }
     }
     immediate = { AIO_final_start_project = { PROJECT = AIO_FINAL_INDUCTION CONSTRAINT = no } }
@@ -202,7 +202,7 @@ system_event = {
     trigger = {
         AIO_final_action_source_valid = yes
         from.owner = {
-            check_variable = { which = AIO_final_research value >= 6 }
+            check_variable = { which = AIO_final_research value >= 3 }
             resource_stockpile_compare = { resource = sr_dark_matter value >= 2000 }
         }
     }

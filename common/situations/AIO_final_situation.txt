@@ -1,10 +1,10 @@
 AIO_final_main_situation = {
     desc = {
-        trigger = { owner = { check_variable = { which = AIO_final_research value >= 6 } } }
+        trigger = { owner = { check_variable = { which = AIO_final_research value >= 3 } } }
         text = AIO_final_main_situation_ready_desc
     }
     desc = {
-        trigger = { owner = { check_variable = { which = AIO_final_research value < 6 } } }
+        trigger = { owner = { check_variable = { which = AIO_final_research value < 3 } } }
         text = AIO_final_main_situation_desc
     }
     picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
@@ -27,7 +27,7 @@ AIO_final_main_situation = {
             icon_background = GFX_situation_stage_frame_red
         }
         AIO_final_research_stage_3 = {
-            end = 6
+            end = 3
             icon = GFX_situation_stage_3
             icon_background = GFX_situation_stage_frame_red
         }
@@ -68,7 +68,7 @@ AIO_final_location_situation = {
     total_progress = {
         base = 0
         add = owner.AIO_final_wait
-        add = @AIO_final_exist_time
+        add = value:AIO_final_duration
     }
     stages = {
         AIO_final_omen_stage = {
@@ -80,7 +80,7 @@ AIO_final_location_situation = {
             icon_background = GFX_situation_stage_frame_red
         }
         AIO_final_manifestation_stage = {
-            section_weight = @AIO_final_exist_time
+            section_weight = { base = 0 add = value:AIO_final_duration }
             icon = GFX_situation_stage_2
             icon_background = GFX_situation_stage_frame_red
             on_first_enter = { AIO_final_create_fleet = yes }
