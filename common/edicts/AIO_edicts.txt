@@ -17,7 +17,7 @@ edict_AIO_dm_engine = {
     length = -1
     icon = "GFX_edict_type_policy"
 
-    potential = { has_menace_perk = menp_AIO_fleet_dark_matter }
+    potential = { has_menace_perk = menp_AIO_dark_matter }
 
     resources = {
 		category = edicts
@@ -41,7 +41,10 @@ edict_AIO_nanite_construction = {
     length = -1
     icon = "GFX_edict_type_policy"
 
-    potential = { has_menace_perk = menp_AIO_fleet_component_2 }
+    potential = {
+        has_menace_perk = menp_AIO_nanites
+        country_uses_bio_ships = no
+    }
     allow = { has_country_resource = { type = nanites amount > 100 } }
 
     resources = {
@@ -60,8 +63,40 @@ edict_AIO_nanite_construction = {
 
     modifier = {
         planet_building_build_speed_mult = 0.25
-        megastructure_build_speed_mult = 0.5
-        planet_buildings_cost_mult = 0.2
+        planet_buildings_cost_mult = -0.2
+        planet_metallurgists_alloys_produces_add = 1
+    }
+}
+
+# 生物舰船帝国使用同一工业法令的食物版本。
+edict_AIO_nanite_farming = {
+    length = -1
+    icon = "GFX_edict_type_policy"
+
+    potential = {
+        has_menace_perk = menp_AIO_nanites
+        country_uses_bio_ships = yes
+    }
+    allow = { has_country_resource = { type = nanites amount > 100 } }
+
+    resources = {
+		category = edicts
+
+        cost = {
+            nanites = 5
+            mult = value:edict_size_effect
+        }
+
+		upkeep = {
+            nanites = 5
+            mult = value:edict_size_effect
+        }
+	}
+
+    modifier = {
+        planet_building_build_speed_mult = 0.25
+        planet_buildings_cost_mult = -0.2
+        planet_farmers_food_produces_add = 2
     }
 }
 
@@ -70,7 +105,7 @@ edict_AIO_living_metal_construction = {
     length = -1
     icon = "GFX_edict_type_policy"
 
-    potential = { has_ascension_perk = ap_AIO_allinone }
+    potential = { has_menace_perk = menp_AIO_living_metal }
     allow = { has_country_resource = { type = sr_living_metal amount > 2 } }
 
     resources = {
@@ -88,42 +123,10 @@ edict_AIO_living_metal_construction = {
 	}
 
     modifier = {
-        planet_metallurgists_alloys_produces_add = 1
-        planet_metallurgists_sr_living_metal_upkeep_add = 0.01
         megastructure_build_speed_mult = 1
     }
 }
 
-# 纳米农耕
-edict_AIO_nanite_farming = {
-    length = -1
-    icon = "GFX_edict_type_policy"
-
-    potential = {
-        has_menace_perk = menp_AIO_fleet_component_2
-        country_uses_bio_ships = yes
-    }
-    allow = { has_country_resource = { type = nanites amount > 2 } }
-
-    resources = {
-		category = edicts
-
-        cost = {
-            nanites = 2
-            mult = value:edict_size_effect
-        }
-
-		upkeep = {
-            nanites = 2
-            mult = value:edict_size_effect
-        }
-	}
-
-    modifier = {
-        planet_farmers_food_produces_add = 2
-        planet_farmers_nanites_upkeep_add = 0.01
-    }
-}
 
 AIO_DAIT_range = {
     length = 0

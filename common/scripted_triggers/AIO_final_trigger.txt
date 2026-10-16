@@ -1,3 +1,17 @@
+# Country scope. Keep all entry points subject to the same preparation requirements.
+AIO_final_can_start = {
+    has_menace_perk = menp_AIO_break_rules
+    exists = event_target:AIO_mist_system
+    exists = event_target:AIO_gate_system
+    any_owned_megastructure = { is_megastructure_type = AIO_mega_04 }
+    NOR = {
+        has_country_flag = AIO_final_start
+        has_country_flag = AIO_final_won
+        has_country_flag = AIO_final_lost
+        has_country_flag = AIO_empire_country
+    }
+}
+
 # scope: system
 AIO_final_valid_external_target = {
     exists = star

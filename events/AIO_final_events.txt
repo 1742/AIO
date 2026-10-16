@@ -14,15 +14,7 @@ country_event = {
 
     is_triggered_only = yes
 
-    trigger = {
-        exists = event_target:AIO_mist_system
-        exists = event_target:AIO_gate_system
-        NOR = {
-            has_country_flag = AIO_final_start
-            has_country_flag = AIO_final_won
-            has_country_flag = AIO_final_lost
-        }
-    }
+    trigger = { AIO_final_can_start = yes }
 
     immediate = {
         set_country_flag = AIO_final_start

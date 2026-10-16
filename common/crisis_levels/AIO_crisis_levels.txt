@@ -6,8 +6,8 @@ crisis_AIO_level_1 = {
 	perks = {
 		menp_AIO_al_research
 		menp_AIO_buildings_1
-        menp_AIO_fleet_component_1
-		menp_AIO_fleet_dark_matter
+		menp_AIO_dark_matter
+		menp_AIO_dimensionality
 	}
 
 	on_unlock = { country_event = { id = AIO_crisis_events.301 } }
@@ -31,7 +31,7 @@ crisis_AIO_level_2 = {
 	perks = {
 		menp_AIO_mega_02
 		menp_AIO_buildings_2
-		menp_AIO_fleet_component_2
+		menp_AIO_living_metal
 		menp_AIO_ship_2
 	}
 
@@ -58,7 +58,7 @@ crisis_AIO_level_3 = {
 	perks = {
 		menp_AIO_mega_03
 		menp_AIO_buildings_3
-		menp_AIO_fleet_component_3
+		menp_AIO_nanites
 		menp_AIO_ship_3
 	}
 
@@ -85,6 +85,7 @@ crisis_AIO_level_4 = {
 	perks = {
 		menp_AIO_mega_04
 		menp_AIO_buildings_4
+		menp_AIO_weapon
 		menp_AIO_ship_4
 	}
 
@@ -111,6 +112,8 @@ crisis_AIO_level_5 = {
 	perks = {
 		menp_AIO_mega_05
 		menp_AIO_buildings_5
+		menp_AIO_transcend_causality
+		menp_AIO_break_rules
 	}
 
 	on_unlock = { country_event = { id = AIO_crisis_events.305 } }

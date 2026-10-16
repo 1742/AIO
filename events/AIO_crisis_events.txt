@@ -354,33 +354,9 @@ country_event = {
 
 #region AIO天灾目标
 
-# 部署递归节点
-event = {
-    id = AIO_crisis_events.801
-    hide_window = yes
-
-    is_triggered_only = yes
-    trigger = {
-        any_country = {
-            has_ascension_perk = ap_AIO_allinone
-            any_owned_colony = { has_district = district_AIO_lathe }
-        }
-    }
-
-    immediate = {
-        random_country = {
-            limit = {
-                has_ascension_perk = ap_AIO_allinone
-                any_owned_colony = { has_district = district_AIO_lathe }
-            }
-            complete_crisis_objective = crisobj_AIO_neural_chips
-        }
-    }
-}
-
 # 研究科技
 country_event = {
-    id = AIO_crisis_events.802
+    id = AIO_crisis_events.801
     hide_window = yes
 
     is_triggered_only = yes
@@ -392,25 +368,24 @@ country_event = {
     immediate = { complete_crisis_objective = crisobj_AIO_research_tech }
 }
 
-# 控有科学枢纽
-event = {
-	id = AIO_crisis_events.803
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = {
-		any_country = {
-			has_ascension_perk = ap_AIO_allinone
-			any_owned_megastructure = { AIO_is_think_tank = yes }
-		}
-	}
-
-	immediate = {
-        random_country = {
-            limit = { has_ascension_perk = ap_AIO_allinone }
-            complete_crisis_objective = crisobj_AIO_have_science_nexuses
-        }
+# Ship-researched projects only: excludes repeatable country-research DAIT/final projects.
+country_event = {
+    id = AIO_crisis_events.802
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        has_ascension_perk = ap_AIO_allinone
+        exists = fromfromfrom
     }
+    immediate = { complete_crisis_objective = crisobj_AIO_research_special_project }
+}
+
+country_event = {
+    id = AIO_crisis_events.803
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_ascension_perk = ap_AIO_allinone }
+    immediate = { complete_crisis_objective = crisobj_AIO_explore_astral }
 }
 
 #endregion
@@ -522,3 +497,5 @@ country_event = {
 }
 
 #endregion
+
+

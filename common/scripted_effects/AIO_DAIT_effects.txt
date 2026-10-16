@@ -20,6 +20,15 @@ AIO_DAIT_enrich_effect = {
             research_station = { destroy_fleet = this }
             clear_deposits = yes
         }
+        random_list = {
+            88 = { }
+            2 = { add_deposit = d_AIO_enrich_dark_matter }
+            2 = { add_deposit = d_AIO_enrich_living_metal }
+            2 = { add_deposit = d_AIO_enrich_nanites }
+            2 = { add_deposit = d_AIO_enrich_zro }
+            2 = { add_deposit = d_AIO_enrich_minor_artifacts }
+            2 = { add_deposit = d_AIO_enrich_astral_threads }
+        }
         while = {
             count = $TIMES|1$
             random_list = {

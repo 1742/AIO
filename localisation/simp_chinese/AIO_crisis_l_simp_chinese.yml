@@ -50,14 +50,8 @@
 
  #region 天灾目标
 
- crisobj_AIO_neural_chips_name: "部署递归节点"
- crisobj_AIO_neural_chips_desc: "我们必须做出一点牺牲才能够适应如此宏大的研究规模。\n\n将人口作为§Y$job_AIO_chips$§!装入§Y$district_AIO_lathe$§!以获得$AIO_advanced_logic$。\n\n§Y$job_AIO_chips$§!的产出随其数量增加，并可以区划和建筑物进一步提高。\n\n持续增加§Y递归节点§!的数量以获得这项§Y年度§!$AIO_advanced_logic$奖励"
  crisobj_AIO_research_tech_name: "$crisobj_research_tech_name$"
- crisobj_AIO_research_tech_desc: "$crisobj_research_tech_desc$"
- crisobj_AIO_research_thesis_name: "$crisobj_research_thesis_name$"
- crisobj_AIO_research_thesis_desc: "$crisobj_research_thesis_desc$"
- crisobj_AIO_have_science_nexuses_name: "$crisobj_have_science_nexuses_name$"
- crisobj_AIO_have_science_nexuses_desc: "$crisobj_have_science_nexuses_desc$"
+ crisobj_AIO_research_tech_desc:0 "研究一项科技，获得500超然逻辑。自动同步授予的失落帝国建筑科技不重复计奖。"
 
  #endregion
 
@@ -70,11 +64,9 @@
  unlocks_AIO_allinone_research: "可以开始通过完成§H天灾目标§!以积累£AIO_advanced_logic£§Y$AIO_advanced_logic$§!。"
  menp_AIO_buildings_1: "$menp_cosmo_buildings_1$"
  menp_AIO_buildings_1_desc: "$menp_cosmo_buildings_1_desc$"
- menp_AIO_fleet_component_1: "$menp_cosmo_techs_4$"
- menp_AIO_fleet_component_1_desc: "$menp_cosmo_techs_4_desc$"
+ menp_AIO_weapon: "$menp_cosmo_techs_4$"
+ menp_AIO_weapon_desc: "$menp_cosmo_techs_4_desc$"
  unlocks_AIO_allinone_fleet_component_1: "解锁§Y$tech_arc_emitter_2$§!和§Y$tech_dragon_armor$§!舰船部件科技。\n"
- menp_AIO_fleet_dark_matter: "$menp_cosmo_techs_2$"
- menp_AIO_fleet_dark_matter_desc: "$menp_cosmo_techs_2_desc$"
  menp_AIO_fleet_component_1_2_tt: "解锁法令：§Y$edict_edict_AIO_dm_engine$§!\n解锁区划特化：§Y$zone_AIO_dm_production$§!"
  # 二阶
  menp_AIO_mega_02: "铸门之人"
@@ -82,20 +74,18 @@
  unlocks_AIO_allinone_mega_01: "解锁巨构：§Y$AIO_mega_01$§!\n解锁定向应用无限：§Y丰饶§!、§Y风暴§!\n"
  menp_AIO_buildings_2: "$menp_cosmo_buildings_2$"
  menp_AIO_buildings_2_desc: "$menp_cosmo_buildings_2_desc$"
- menp_AIO_fleet_component_2: "纳米工艺"
- menp_AIO_fleet_component_2_desc: "$menp_cosmo_techs_5_desc$"
+ menp_AIO_nanites: "纳米工艺"
+ menp_AIO_nanites_desc: "$menp_cosmo_techs_5_desc$"
  menp_AIO_ship_2: "$menp_cosmo_ship_2$"
  menp_AIO_ship_2_desc: "$menp_cosmo_ship_2_desc$"
  menp_AIO_ship_2_tt.alloys: "解锁法令：§Y$edict_edict_AIO_nanite_construction$§!\n解锁区划特化：§Y$zone_AIO_nanites_production_metallurgists$§!"
- menp_AIO_ship_2_tt.food: "解锁法令：§Y$edict_edict_AIO_nanite_construction$§!、§Y$edict_edict_AIO_nanite_farming$§!\n解锁区划特化：§Y$zone_AIO_nanites_production_farmers$§!"
+ menp_AIO_ship_2_tt.food: "解锁法令：§Y$edict_edict_AIO_nanite_farming$§!\n解锁区划特化：§Y$zone_AIO_nanites_production_farmers$§!"
  # 三阶
  menp_AIO_mega_03: "时空工程"
  menp_AIO_mega_03_desc: "我们能看见事件发生前的分叉，乃至选择它的方向。"
  unlocks_AIO_allinone_mega_02: "解锁巨构：§Y$AIO_mega_02$§!\n解锁定向应用无限：§Y生成§!、§Y收割§!\n"
  menp_AIO_buildings_3: "$menp_cosmo_buildings_3$"
  menp_AIO_buildings_3_desc: "$menp_cosmo_buildings_3_desc$"
- menp_AIO_fleet_component_3: "$menp_cosmo_techs_3$"
- menp_AIO_fleet_component_3_desc: "$menp_cosmo_techs_3_desc$"
  menp_AIO_ship_3: "$menp_cosmo_ship_3$"
  menp_AIO_ship_3_desc: "$menp_cosmo_ship_3_desc$"
  # 四阶
@@ -157,7 +147,7 @@
  AIO_crisis_events.403.desc: "位于[from.GetName]的§Y$AIO_mega_01$§!完成"
  AIO_crisis_events.404.desc: "位于[from.GetName]的§Y$AIO_mega_02$§!完成"
  AIO_crisis_events.405.desc: "位于[from.GetName]的§Y$AIO_mega_03$§!完成"
- AIO_crisis_events.406.desc: "位于[from.GetName]的§Y$AIO_mega_04$§!完成"
+ AIO_crisis_events.406.desc: "位于[from.GetName]的§Y$AIO_mega_04$§!完成。亚弗戈蒙终局已开启。"
 
  # 提示建造视界引擎
  AIO_crisis_events.401.desc: "我们已完成对多维相互作用模型的闭环构建。模拟显示，在特定的引力剪切与虚境波动节点上，现实可被稳定渗透。我们将以此为基础建造§Y$AIO_horizon_engine$§!——一座能穿透物理与可能性边界、抽取存在能量的结构体。\n我们并非以第一个拥有这种技术的帝国，不同的是，我们会用这些能量创造一个比现有宇宙高无数倍的时空。"

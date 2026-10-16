@@ -431,11 +431,22 @@ AIO_DAIT_finish_seed = {
     }
     else = {
         hidden_effect = {
-            set_timed_country_flag = { flag = AIO_DAIT_seed_cooldown days = 360 }
-            set_saved_date = {
-                key = AIO_DAIT_seed_ready_date
-                days_from_present = 360
-                expires = 360
+            if = {
+                limit = { has_menace_perk = menp_AIO_transcend_causality }
+                set_timed_country_flag = { flag = AIO_DAIT_seed_cooldown days = 270 }
+                set_saved_date = {
+                    key = AIO_DAIT_seed_ready_date
+                    days_from_present = 270
+                    expires = 270
+                }
+            }
+            else = {
+                set_timed_country_flag = { flag = AIO_DAIT_seed_cooldown days = 360 }
+                set_saved_date = {
+                    key = AIO_DAIT_seed_ready_date
+                    days_from_present = 360
+                    expires = 360
+                }
             }
         }
     }
@@ -870,11 +881,22 @@ AIO_DAIT_finish_harvest = {
     }
     else = {
         hidden_effect = {
-            set_timed_country_flag = { flag = AIO_DAIT_harvest_cooldown days = 360 }
-            set_saved_date = {
-                key = AIO_DAIT_harvest_ready_date
-                days_from_present = 360
-                expires = 360
+            if = {
+                limit = { has_menace_perk = menp_AIO_transcend_causality }
+                set_timed_country_flag = { flag = AIO_DAIT_harvest_cooldown days = 270 }
+                set_saved_date = {
+                    key = AIO_DAIT_harvest_ready_date
+                    days_from_present = 270
+                    expires = 270
+                }
+            }
+            else = {
+                set_timed_country_flag = { flag = AIO_DAIT_harvest_cooldown days = 360 }
+                set_saved_date = {
+                    key = AIO_DAIT_harvest_ready_date
+                    days_from_present = 360
+                    expires = 360
+                }
             }
         }
     }
@@ -1053,11 +1075,22 @@ AIO_DAIT_finish_strike = {
     }
     else = {
         hidden_effect = {
-            set_timed_country_flag = { flag = AIO_DAIT_strike_cooldown days = 360 }
-            set_saved_date = {
-                key = AIO_DAIT_strike_ready_date
-                days_from_present = 360
-                expires = 360
+            if = {
+                limit = { has_menace_perk = menp_AIO_transcend_causality }
+                set_timed_country_flag = { flag = AIO_DAIT_strike_cooldown days = 270 }
+                set_saved_date = {
+                    key = AIO_DAIT_strike_ready_date
+                    days_from_present = 270
+                    expires = 270
+                }
+            }
+            else = {
+                set_timed_country_flag = { flag = AIO_DAIT_strike_cooldown days = 360 }
+                set_saved_date = {
+                    key = AIO_DAIT_strike_ready_date
+                    days_from_present = 360
+                    expires = 360
+                }
             }
         }
     }
@@ -1218,11 +1251,22 @@ AIO_DAIT_finish_erase = {
     }
     else = {
         hidden_effect = {
-            set_timed_country_flag = { flag = AIO_DAIT_erase_cooldown days = 360 }
-            set_saved_date = {
-                key = AIO_DAIT_erase_ready_date
-                days_from_present = 360
-                expires = 360
+            if = {
+                limit = { has_menace_perk = menp_AIO_transcend_causality }
+                set_timed_country_flag = { flag = AIO_DAIT_erase_cooldown days = 270 }
+                set_saved_date = {
+                    key = AIO_DAIT_erase_ready_date
+                    days_from_present = 270
+                    expires = 270
+                }
+            }
+            else = {
+                set_timed_country_flag = { flag = AIO_DAIT_erase_cooldown days = 360 }
+                set_saved_date = {
+                    key = AIO_DAIT_erase_ready_date
+                    days_from_present = 360
+                    expires = 360
+                }
             }
         }
     }

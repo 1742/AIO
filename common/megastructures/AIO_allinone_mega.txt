@@ -3,6 +3,11 @@
 @mega_02_energy_cost = 10000
 @mega_03_energy_cost = 20000
 @mega_04_energy_cost = 50000
+@mega_01_alloys_cost = 10000
+@mega_02_alloys_cost = 15000
+@mega_03_alloys_cost = 20000
+@mega_04_alloys_cost = 30000
+
 
 # 现实中的万门之门
 AIO_mega_01_fact = {
@@ -47,22 +52,19 @@ AIO_mega_01_fact = {
 		category = megastructures
 		cost = {
 			energy = @mega_01_energy_cost
-			sr_dark_matter = 2000
-			nanites = 2000
-			sr_living_metal = 2000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 15000
+			alloys = @mega_01_alloys_cost
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 15000
+			alloys = @mega_01_alloys_cost
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 15000
+			food = @mega_01_alloys_cost
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 	}
@@ -187,21 +189,19 @@ AIO_mega_02 = {
 		cost = {
 			energy = @mega_02_energy_cost
 			sr_dark_matter = 3000
-			nanites = 3000
-			sr_living_metal = 3000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 20000
+			alloys = @mega_02_alloys_cost
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 20000
+			alloys = @mega_02_alloys_cost
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 20000
+			food = @mega_02_alloys_cost
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
@@ -268,21 +268,20 @@ AIO_mega_03 = {
 		cost = {
 			energy = @mega_03_energy_cost
 			sr_dark_matter = 5000
-			nanites = 5000
 			sr_living_metal = 5000
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 25000
+			alloys = @mega_03_alloys_cost
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 25000
+			alloys = @mega_03_alloys_cost
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 25000
+			food = @mega_03_alloys_cost
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 
@@ -354,16 +353,16 @@ AIO_mega_04 = {
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = no }
-			alloys = 50000
+			alloys = @mega_04_alloys_cost
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			alloys = 50000
+			alloys = @mega_04_alloys_cost
 			mult = 0.5
 		}
 		cost = {
 			trigger = { country_uses_bio_ships = yes }
-			food = 50000
+			food = @mega_04_alloys_cost
 			mult = @halved_alloy_to_food_cost_ratio
 		}
 

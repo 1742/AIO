@@ -1,0 +1,66 @@
+# All six resources use mining stations and yield 3 per month.
+d_AIO_enrich_dark_matter = {
+    icon = "d_liquid_dark_matter"
+    resources = {
+        category = orbital_mining_deposits
+        produces = { sr_dark_matter = 3 }
+    }
+    station = shipclass_mining_station
+    is_for_colonizable = no
+    drop_weight = { weight = 0 }
+}
+
+d_AIO_enrich_living_metal = {
+    icon = "d_prosperous_mesa"
+    resources = {
+        category = orbital_mining_deposits
+        produces = { sr_living_metal = 3 }
+    }
+    station = shipclass_mining_station
+    is_for_colonizable = no
+    drop_weight = { weight = 0 }
+}
+
+d_AIO_enrich_nanites = {
+    icon = "d_rich_mountain"
+    resources = {
+        category = orbital_mining_deposits
+        produces = { nanites = 3 }
+    }
+    station = shipclass_mining_station
+    is_for_colonizable = no
+    drop_weight = { weight = 0 }
+}
+
+d_AIO_enrich_zro = {
+    icon = "d_psionic_region"
+    resources = {
+        category = orbital_mining_deposits
+        produces = { sr_zro = 3 }
+    }
+    station = shipclass_mining_station
+    is_for_colonizable = no
+    drop_weight = { weight = 0 }
+}
+
+d_AIO_enrich_minor_artifacts = {
+    icon = "d_archaeological_dig"
+    resources = {
+        category = orbital_mining_deposits
+        produces = { minor_artifacts = 3 }
+    }
+    station = shipclass_mining_station
+    is_for_colonizable = no
+    drop_weight = { weight = 0 }
+}
+
+d_AIO_enrich_astral_threads = {
+    icon = "d_atmospheric_entry"
+    resources = {
+        category = orbital_mining_deposits
+        produces = { astral_threads = 3 }
+    }
+    station = shipclass_mining_station
+    is_for_colonizable = no
+    drop_weight = { weight = 0 }
+}
