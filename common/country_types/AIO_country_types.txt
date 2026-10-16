@@ -19,8 +19,8 @@ AIO_empire = {
 	default_ships = no
     # 是否需要政府
 	government = yes
-    # 是否需要起源
-	uses_origins = no
+    # 可玩国家保留有效起源，供政府约束求解器使用。
+	uses_origins = yes
 	# 是否可以不用行星
 	can_own_empty_planets = yes
 	# 行星是否可以被攻击
@@ -59,6 +59,7 @@ AIO_empire = {
 		auto_delete = no
 	}
 
+    # 仅保留通讯列表，不开放常规外交行动。
 	custom_diplomacy = yes
 
 	modules = {

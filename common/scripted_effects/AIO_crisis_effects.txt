@@ -334,6 +334,7 @@ AIO_ascension_effect = {
 
         # 转变国家类型
         set_country_type = AIO_empire
+        set_ai_personality = AIO_transcendent
         if = {
             limit = { owner_main_species = { is_robotic = yes } }
             change_government = {
@@ -358,18 +359,18 @@ AIO_ascension_effect = {
             }
             kill_leader = { show_notification = no fire = yes }
         }
-        # 摧毁殖民地
-        every_owned_colony = {
-            destroy_colony = yes
-        }
-        # 转移首都
+        # 4.5 的首都是殖民地对象：先建立新的空首都，再销毁旧殖民地。
+        # 不可在 set_capital 后立即 destroy_colony，否则界面和延迟事件仍引用它。
         event_target:AIO_mist_system = {
             random_system_planet = {
                 limit = { is_star = yes }
                 set_owner = root
                 set_capital = yes
-                destroy_colony = yes
             }
+        }
+        every_owned_colony = {
+            limit = { is_capital = no }
+            destroy_colony = yes
         }
         # 移除所有原版巨构
         every_system_within_border = { inline_script = AIO/AIO_safe_remove_system_megastructures }
