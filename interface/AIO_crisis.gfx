@@ -72,25 +72,25 @@ spriteTypes = {
     # 超然逻辑
     spriteType = {
         name = "GFX_menp_AIO_al_research_icon"
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_al_research.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_al_research.dds
         noOfFrames = 2
     }
     # 一阶老登建筑
     spriteType = {
         name = "GFX_menp_AIO_buildings_1_icon"
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_1.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_buildings_1.dds
         noOfFrames = 2
     }
     # 非重子能量
     spriteType = {
         name = GFX_menp_AIO_dark_matter
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_dark_matter.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_dark_matter.dds
         noOfFrames = 2
     }
     # 升维假设
     spriteType = {
         name = GFX_menp_AIO_dimensionality_icon
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_interference.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_dimensionality.dds
         noOfFrames = 2
     }
 
@@ -98,69 +98,69 @@ spriteTypes = {
     # 铸门之人
     spriteType = {
         name = "GFX_menp_AIO_mega_02_icon"
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_mega_02.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_mega_02.dds
         noOfFrames = 2
     }
     # 二阶老登建筑
     spriteType = {
         name = "GFX_menp_AIO_buildings_2_icon"
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_2.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_buildings_2.dds
         noOfFrames = 2
     }
     # 反重子进展
     spriteType = {
         name = GFX_menp_AIO_living_metal
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_living_metal.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_living_metal.dds
         noOfFrames = 2
     }
     # 密语护航
     spriteType = {
         name = GFX_menp_AIO_ship_escort_icon
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_ship_2.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_ship_2.dds
         noOfFrames = 2
     }
 
     # 时空工程
     spriteType = {
         name = "GFX_menp_AIO_mega_03_icon"
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_mega_03.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_mega_03.dds
         noOfFrames = 2
     }
     # 三阶老登建筑
     spriteType = {
         name = "GFX_menp_AIO_buildings_3_icon"
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_3.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_buildings_3.dds
         noOfFrames = 2
     }
     # 纳米工艺
     spriteType = {
         name = GFX_menp_AIO_nanites
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_nanites.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_nanites.dds
         noOfFrames = 2
     }
     # 神秘战巡
     spriteType = {
         name = "GFX_menp_AIO_ship_3_icon"
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_ship_3.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_ship_3.dds
         noOfFrames = 2
     }
 
     # 恒视之主
     spriteType = {
         name = "GFX_menp_AIO_mega_04_icon"
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_mega_04.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_mega_04.dds
         noOfFrames = 2
     }
     # 四阶老登建筑
     spriteType = {
         name = "GFX_menp_AIO_buildings_4_icon"
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_4.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_buildings_4.dds
         noOfFrames = 2
     }
     # 矛与盾
     spriteType = {
         name = GFX_menp_AIO_weapon_icon
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_weapon.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_weapon.dds
         noOfFrames = 2
     }
     # 悖论泰坦
@@ -173,25 +173,25 @@ spriteTypes = {
     # 维度嵌入
     spriteType = {
         name = "GFX_menp_AIO_mega_05_icon"
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_mega_05.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_mega_05.dds
         noOfFrames = 2
     }
     # 五阶老登建筑
     spriteType = {
         name = "GFX_menp_AIO_buildings_5_icon"
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_buildings_5.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_buildings_5.dds
         noOfFrames = 2
     }
     # 超越因果
     spriteType = {
         name = GFX_menp_AIO_transcend_causality
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_transcend_causality.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_transcend_causality.dds
         noOfFrames = 2
     }
     # 打破法则
     spriteType = {
         name = GFX_menp_AIO_break_rules_icon
-        texturefile = gfx/interface/icons/crisis/AIO_menp_AIO_break_rules.dds
+        texturefile = gfx/interface/icons/crisis/AIO_menp_break_rules.dds
         noOfFrames = 2
     }
 
