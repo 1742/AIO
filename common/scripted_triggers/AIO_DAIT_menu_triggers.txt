@@ -3,6 +3,7 @@ AIO_DAIT_menu_visible = {
     AIO_DAIT_country_valid = yes
     has_country_flag = AIO_DAIT_toolbar
     NOT = { has_country_flag = AIO_DAIT_collapsed }
+    NOT = { has_country_flag = AIO_DAIT_dismissed }
 }
 
 AIO_DAIT_menu_operation_selected = {
@@ -27,10 +28,20 @@ AIO_DAIT_menu_system_selection_valid = {
             NOT = { has_star_flag = AIO_DAIT_center_busy }
         }
         AND = {
-            is_scope_type = planet
+            AIO_DAIT_ui_system_object = yes
             solar_system = {
                 $VALID$ = yes
                 NOT = { has_star_flag = AIO_DAIT_center_busy }
+            }
+        }
+        AND = {
+            is_scope_type = ship
+            exists = fleet
+            fleet = {
+                solar_system = {
+                    $VALID$ = yes
+                    NOT = { has_star_flag = AIO_DAIT_center_busy }
+                }
             }
         }
     }

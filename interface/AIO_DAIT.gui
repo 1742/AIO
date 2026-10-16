@@ -42,11 +42,11 @@ guiTypes = {
             effect = AIO_DAIT_info_label
         }
         effectbuttonType = {
-            name = "AIO_DAIT_collapse_menu"
+            name = "AIO_DAIT_exit_menu"
             position = { x = 730 y = 16 }
             size = { x = 32 y = 32 }
             quadTextureSprite = "GFX_close"
-            effect = AIO_DAIT_collapse_menu
+            effect = AIO_DAIT_exit_menu
             clicksound = "back_click"
         }
         effectbuttonType = {
@@ -306,8 +306,10 @@ guiTypes = {
             effect = AIO_DAIT_toggle_menu
             clicksound = "click"
         }
+
+
         # Native diplomatic-event bindings; all are outside the visible menu.
-        buttonType = { name = "close" quadTextureSprite = "GFX_close" position = { x = -10000 y = -10000 } shortcut = "ESCAPE" clicksound = "back_click" }
+        buttonType = { name = "close" quadTextureSprite = "GFX_close" position = { x = -10000 y = -10000 } clicksound = "back_click" }
         buttonType = { name = "tts_button" quadTextureSprite = "GFX_standard_button_142_34_button" position = { x = -10000 y = -10000 } }
 
         buttonType = { name = "focus_button" position = { x = -10000 y = -10000 } spriteType = "GFX_fleetview_focus" } # hidden

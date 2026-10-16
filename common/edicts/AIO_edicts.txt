@@ -128,7 +128,6 @@ edict_AIO_living_metal_construction = {
 }
 
 
-
 # Native edict entry avoids replacing vanilla GUI files or changing megastructure state.
 AIO_DAIT_menu = {
     length = 0

@@ -1,0 +1,14 @@
+# The persistent DAIT UI must open without the normal event auto-pause.
+message_type = {
+    key = "AIO_DAIT_MENU"
+    name = "AIO_DAIT_toolbar"
+    icon = "GFX_message_other_alert"
+    icon_frame = 1
+    category = other
+    hidden_in_message_settings = yes
+    default_notification = no
+    default_toast = no
+    default_popup = yes
+    default_autopause = no
+    can_disable = no
+}

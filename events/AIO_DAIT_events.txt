@@ -16,12 +16,12 @@ carrier_event = {
     immediate = { owner = { country_event = { id = AIO_crisis_events.902 } } }
 }
 
-# The fixed bottom launcher starts collapsed; ESC dismisses the entire widget.
-# Load/completion hooks restore it when needed; an active menu is left intact.
+# Initialize the fixed launcher once; UI state outlives its event host.
 country_event = {
     id = AIO_DAIT_events.203
     title = AIO_DAIT_events.202.title
     desc = AIO_DAIT_menu_desc
+    event_message_type = AIO_DAIT_MENU
     diplomatic = yes
     custom_gui = AIO_DAIT
     is_triggered_only = yes
@@ -32,17 +32,27 @@ country_event = {
     }
     immediate = {
         set_country_flag = AIO_DAIT_toolbar
-        set_country_flag = AIO_DAIT_collapsed
-        set_variable = { which = AIO_DAIT_operation value = 0 }
+        remove_country_flag = AIO_DAIT_dismissed
+        if = {
+            limit = { NOT = { is_variable_set = AIO_DAIT_operation } }
+            set_country_flag = AIO_DAIT_collapsed
+            set_variable = { which = AIO_DAIT_operation value = 0 }
+        }
     }
     option = {
         name = EXIT
         default_hide_option = yes
     }
+    # The scripted X button requests an explicit exit. No keyboard shortcut.
+    abort_trigger = { has_country_flag = AIO_DAIT_dismissed }
+    abort_effect = { remove_country_flag = AIO_DAIT_toolbar }
     after = {
         remove_country_flag = AIO_DAIT_toolbar
-        remove_country_flag = AIO_DAIT_collapsed
-        clear_variable = AIO_DAIT_operation
+        # Let the old window finish closing before replacing its host.
+        if = {
+            limit = { NOT = { has_country_flag = AIO_DAIT_dismissed } }
+            country_event = { id = AIO_DAIT_events.205 days = 1 }
+        }
     }
 }
 
@@ -52,6 +62,32 @@ event = {
     hide_window = yes
     is_triggered_only = yes
     immediate = {
-        every_playable_country = { AIO_DAIT_ensure_menu = yes }
+        # Recreate missing coordinates once on load, including earlier erasures.
+        every_system = { AIO_DAIT_ensure_void_anchor = yes }
+        every_playable_country = {
+            limit = {
+                is_ai = no
+                AIO_DAIT_country_valid = yes
+            }
+            # Release leftover system locks from completed/interrupted erasures.
+            # Pending casts retain their targets and locks.
+            if = {
+                limit = { NOT = { has_country_flag = AIO_DAIT_erase_pending } }
+                AIO_DAIT_cleanup_erase = yes
+            }
+            AIO_DAIT_ensure_menu = yes
+        }
+    }
+}
+
+# One callback when the host ends automatically, not polling.
+# The shared guard skips restoration if already open or no longer eligible.
+country_event = {
+    id = AIO_DAIT_events.205
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { NOT = { has_country_flag = AIO_DAIT_dismissed } }
+    immediate = {
+        AIO_DAIT_ensure_menu = yes
     }
 }

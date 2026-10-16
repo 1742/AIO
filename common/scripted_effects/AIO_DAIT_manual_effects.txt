@@ -1,3 +1,31 @@
+# Country: only unascended empires receive a post-cast cooldown.
+AIO_DAIT_apply_cooldown = {
+    if = {
+        limit = { is_country_type = AIO_empire }
+        remove_country_flag = AIO_DAIT_$OPERATION$_cooldown
+        remove_country_flag = AIO_DAIT_$OPERATION$_ready_date
+    }
+    else = {
+        if = {
+            limit = { has_menace_perk = menp_AIO_transcend_causality }
+            set_timed_country_flag = { flag = AIO_DAIT_$OPERATION$_cooldown days = 270 }
+            set_saved_date = {
+                key = AIO_DAIT_$OPERATION$_ready_date
+                days_from_present = 270
+                expires = 270
+            }
+        }
+        else = {
+            set_timed_country_flag = { flag = AIO_DAIT_$OPERATION$_cooldown days = 360 }
+            set_saved_date = {
+                key = AIO_DAIT_$OPERATION$_ready_date
+                days_from_present = 360
+                expires = 360
+            }
+        }
+    }
+}
+
 # Button THIS = selected object, FROM = player. Snapshot only local event targets.
 AIO_DAIT_capture_target = {
     from = { save_event_target_as = AIO_DAIT_maker }
@@ -6,8 +34,15 @@ AIO_DAIT_capture_target = {
         save_event_target_as = AIO_DAIT_target_system
     }
     else_if = {
-        limit = { is_scope_type = planet }
+        limit = { AIO_DAIT_ui_system_object = yes }
         solar_system = { save_event_target_as = AIO_DAIT_target_system }
+    }
+    else_if = {
+        limit = {
+            is_scope_type = ship
+            exists = fleet
+        }
+        fleet = { solar_system = { save_event_target_as = AIO_DAIT_target_system } }
     }
 }
 
@@ -36,8 +71,10 @@ AIO_DAIT_notify_system = {
 AIO_DAIT_notify_country = {
     if = {
         limit = {
-            NOT = { has_country_flag = AIO_DAIT_notified }
-            NOT = { is_same_value = event_target:AIO_DAIT_maker }
+            NOT = {
+                has_country_flag = AIO_DAIT_notified
+                is_same_value = event_target:AIO_DAIT_maker
+            }
         }
         set_country_flag = AIO_DAIT_notified
         create_message = {
@@ -363,25 +400,7 @@ AIO_DAIT_finish_seed = {
         }
     }
     else = {
-        hidden_effect = {
-            if = {
-                limit = { has_menace_perk = menp_AIO_transcend_causality }
-                set_timed_country_flag = { flag = AIO_DAIT_seed_cooldown days = 270 }
-                set_saved_date = {
-                    key = AIO_DAIT_seed_ready_date
-                    days_from_present = 270
-                    expires = 270
-                }
-            }
-            else = {
-                set_timed_country_flag = { flag = AIO_DAIT_seed_cooldown days = 360 }
-                set_saved_date = {
-                    key = AIO_DAIT_seed_ready_date
-                    days_from_present = 360
-                    expires = 360
-                }
-            }
-        }
+        hidden_effect = { AIO_DAIT_apply_cooldown = { OPERATION = seed } }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_seed_affected value > 0 } }
@@ -699,25 +718,7 @@ AIO_DAIT_finish_harvest = {
         }
     }
     else = {
-        hidden_effect = {
-            if = {
-                limit = { has_menace_perk = menp_AIO_transcend_causality }
-                set_timed_country_flag = { flag = AIO_DAIT_harvest_cooldown days = 270 }
-                set_saved_date = {
-                    key = AIO_DAIT_harvest_ready_date
-                    days_from_present = 270
-                    expires = 270
-                }
-            }
-            else = {
-                set_timed_country_flag = { flag = AIO_DAIT_harvest_cooldown days = 360 }
-                set_saved_date = {
-                    key = AIO_DAIT_harvest_ready_date
-                    days_from_present = 360
-                    expires = 360
-                }
-            }
-        }
+        hidden_effect = { AIO_DAIT_apply_cooldown = { OPERATION = harvest } }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_harvest_affected value > 0 } }
@@ -880,25 +881,7 @@ AIO_DAIT_finish_strike = {
         }
     }
     else = {
-        hidden_effect = {
-            if = {
-                limit = { has_menace_perk = menp_AIO_transcend_causality }
-                set_timed_country_flag = { flag = AIO_DAIT_strike_cooldown days = 270 }
-                set_saved_date = {
-                    key = AIO_DAIT_strike_ready_date
-                    days_from_present = 270
-                    expires = 270
-                }
-            }
-            else = {
-                set_timed_country_flag = { flag = AIO_DAIT_strike_cooldown days = 360 }
-                set_saved_date = {
-                    key = AIO_DAIT_strike_ready_date
-                    days_from_present = 360
-                    expires = 360
-                }
-            }
-        }
+        hidden_effect = { AIO_DAIT_apply_cooldown = { OPERATION = strike } }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_strike_affected value > 0 } }
@@ -1043,25 +1026,7 @@ AIO_DAIT_finish_erase = {
         }
     }
     else = {
-        hidden_effect = {
-            if = {
-                limit = { has_menace_perk = menp_AIO_transcend_causality }
-                set_timed_country_flag = { flag = AIO_DAIT_erase_cooldown days = 270 }
-                set_saved_date = {
-                    key = AIO_DAIT_erase_ready_date
-                    days_from_present = 270
-                    expires = 270
-                }
-            }
-            else = {
-                set_timed_country_flag = { flag = AIO_DAIT_erase_cooldown days = 360 }
-                set_saved_date = {
-                    key = AIO_DAIT_erase_ready_date
-                    days_from_present = 360
-                    expires = 360
-                }
-            }
-        }
+        hidden_effect = { AIO_DAIT_apply_cooldown = { OPERATION = erase } }
     }
     if = {
         limit = { check_variable = { which = AIO_DAIT_erase_affected value > 0 } }
@@ -1081,16 +1046,17 @@ AIO_DAIT_finish_erase = {
 }
 
 AIO_DAIT_cleanup_erase = {
-    save_event_target_as = AIO_DAIT_maker
+    # Country caller -> system -> ambient object. Use the scope stack directly:
+    # nested destruction callbacks may invalidate the temporary maker target.
     every_system = {
-        limit = { has_star_flag = AIO_DAIT_erase_candidate_@event_target:AIO_DAIT_maker }
-        remove_star_flag = AIO_DAIT_erase_candidate_@event_target:AIO_DAIT_maker
+        limit = { has_star_flag = AIO_DAIT_erase_candidate_@prev }
+        remove_star_flag = AIO_DAIT_erase_candidate_@prev
     }
     every_system = {
-        limit = { has_star_flag = AIO_DAIT_erase_center_@event_target:AIO_DAIT_maker }
-        remove_star_flag = AIO_DAIT_erase_center_@event_target:AIO_DAIT_maker
+        limit = { has_star_flag = AIO_DAIT_erase_center_@prev }
+        remove_star_flag = AIO_DAIT_erase_center_@prev
         every_system_ambient_object = {
-            limit = { has_ambient_object_flag = AIO_DAIT_erase_warning_@event_target:AIO_DAIT_maker }
+            limit = { has_ambient_object_flag = AIO_DAIT_erase_warning_@prevprev }
             destroy_ambient_object = this
         }
         remove_star_flag = AIO_DAIT_center_busy

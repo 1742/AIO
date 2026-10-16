@@ -6,7 +6,7 @@ defined_text = {
         localization_key = AIO_DAIT_enrich_pending_text
     }
     text = {
-        trigger = { has_country_flag = AIO_DAIT_enrich_cooldown }
+        trigger = { AIO_DAIT_cooldown_active = { OPERATION = enrich } }
         localization_key = AIO_DAIT_enrich_cooldown_text
     }
     default = AIO_DAIT_ready_text
@@ -20,7 +20,7 @@ defined_text = {
         localization_key = AIO_DAIT_spawn_pending_text
     }
     text = {
-        trigger = { has_country_flag = AIO_DAIT_spawn_cooldown }
+        trigger = { AIO_DAIT_cooldown_active = { OPERATION = spawn } }
         localization_key = AIO_DAIT_spawn_cooldown_text
     }
     default = AIO_DAIT_ready_text
@@ -34,7 +34,7 @@ defined_text = {
         localization_key = AIO_DAIT_seed_pending_text
     }
     text = {
-        trigger = { has_country_flag = AIO_DAIT_seed_cooldown }
+        trigger = { AIO_DAIT_cooldown_active = { OPERATION = seed } }
         localization_key = AIO_DAIT_seed_cooldown_text
     }
     default = AIO_DAIT_ready_text
@@ -48,7 +48,7 @@ defined_text = {
         localization_key = AIO_DAIT_ethic_pending_text
     }
     text = {
-        trigger = { has_country_flag = AIO_DAIT_ethic_cooldown }
+        trigger = { AIO_DAIT_cooldown_active = { OPERATION = ethic } }
         localization_key = AIO_DAIT_ethic_cooldown_text
     }
     default = AIO_DAIT_ready_text
@@ -62,7 +62,7 @@ defined_text = {
         localization_key = AIO_DAIT_storm_pending_text
     }
     text = {
-        trigger = { has_country_flag = AIO_DAIT_storm_cooldown }
+        trigger = { AIO_DAIT_cooldown_active = { OPERATION = storm } }
         localization_key = AIO_DAIT_storm_cooldown_text
     }
     default = AIO_DAIT_ready_text
@@ -76,7 +76,7 @@ defined_text = {
         localization_key = AIO_DAIT_harvest_pending_text
     }
     text = {
-        trigger = { has_country_flag = AIO_DAIT_harvest_cooldown }
+        trigger = { AIO_DAIT_cooldown_active = { OPERATION = harvest } }
         localization_key = AIO_DAIT_harvest_cooldown_text
     }
     default = AIO_DAIT_ready_text
@@ -90,7 +90,7 @@ defined_text = {
         localization_key = AIO_DAIT_strike_pending_text
     }
     text = {
-        trigger = { has_country_flag = AIO_DAIT_strike_cooldown }
+        trigger = { AIO_DAIT_cooldown_active = { OPERATION = strike } }
         localization_key = AIO_DAIT_strike_cooldown_text
     }
     default = AIO_DAIT_ready_text
@@ -104,7 +104,7 @@ defined_text = {
         localization_key = AIO_DAIT_erase_pending_text
     }
     text = {
-        trigger = { has_country_flag = AIO_DAIT_erase_cooldown }
+        trigger = { AIO_DAIT_cooldown_active = { OPERATION = erase } }
         localization_key = AIO_DAIT_erase_cooldown_text
     }
     default = AIO_DAIT_ready_text
@@ -228,7 +228,14 @@ defined_text = {
     }
     text = {
         trigger = {
-            OR = { is_scope_type = planet is_scope_type = colony is_scope_type = fleet }
+            is_scope_type = ambient_object
+            AIO_DAIT_ui_system_object = yes
+        }
+        localization_key = AIO_DAIT_target_ambient_system_name
+    }
+    text = {
+        trigger = {
+            AIO_DAIT_ui_system_object = yes
         }
         localization_key = AIO_DAIT_target_planet_system_name
     }

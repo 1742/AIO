@@ -6,7 +6,10 @@ AIO_DAIT_enrich = {
     }
     allow = {
         from = {
-            custom_tooltip = { fail_text = AIO_DAIT_need_unlock AIO_DAIT_enrich_unlocked = yes }
+            custom_tooltip = {
+                fail_text = AIO_DAIT_need_unlock
+                AIO_DAIT_enrich_unlocked = yes
+            }
         }
     }
     effect = {
@@ -28,7 +31,10 @@ AIO_DAIT_spawn = {
     }
     allow = {
         from = {
-            custom_tooltip = { fail_text = AIO_DAIT_need_unlock AIO_DAIT_spawn_unlocked = yes }
+            custom_tooltip = {
+                fail_text = AIO_DAIT_need_unlock
+                AIO_DAIT_spawn_unlocked = yes
+            }
         }
     }
     effect = {
@@ -50,7 +56,10 @@ AIO_DAIT_seed = {
     }
     allow = {
         from = {
-            custom_tooltip = { fail_text = AIO_DAIT_need_unlock AIO_DAIT_seed_unlocked = yes }
+            custom_tooltip = {
+                fail_text = AIO_DAIT_need_unlock
+                AIO_DAIT_seed_unlocked = yes
+            }
         }
     }
     effect = {
@@ -72,7 +81,10 @@ AIO_DAIT_ethic = {
     }
     allow = {
         from = {
-            custom_tooltip = { fail_text = AIO_DAIT_need_unlock AIO_DAIT_ethic_unlocked = yes }
+            custom_tooltip = {
+                fail_text = AIO_DAIT_need_unlock
+                AIO_DAIT_ethic_unlocked = yes
+            }
         }
     }
     effect = {
@@ -94,7 +106,10 @@ AIO_DAIT_storm = {
     }
     allow = {
         from = {
-            custom_tooltip = { fail_text = AIO_DAIT_need_unlock AIO_DAIT_storm_unlocked = yes }
+            custom_tooltip = {
+                fail_text = AIO_DAIT_need_unlock
+                AIO_DAIT_storm_unlocked = yes
+            }
         }
     }
     effect = {
@@ -116,7 +131,10 @@ AIO_DAIT_harvest = {
     }
     allow = {
         from = {
-            custom_tooltip = { fail_text = AIO_DAIT_need_unlock AIO_DAIT_harvest_unlocked = yes }
+            custom_tooltip = {
+                fail_text = AIO_DAIT_need_unlock
+                AIO_DAIT_harvest_unlocked = yes
+            }
         }
     }
     effect = {
@@ -138,7 +156,10 @@ AIO_DAIT_strike = {
     }
     allow = {
         from = {
-            custom_tooltip = { fail_text = AIO_DAIT_need_unlock AIO_DAIT_strike_unlocked = yes }
+            custom_tooltip = {
+                fail_text = AIO_DAIT_need_unlock
+                AIO_DAIT_strike_unlocked = yes
+            }
         }
     }
     effect = {
@@ -160,7 +181,10 @@ AIO_DAIT_erase = {
     }
     allow = {
         from = {
-            custom_tooltip = { fail_text = AIO_DAIT_need_unlock AIO_DAIT_erase_unlocked = yes }
+            custom_tooltip = {
+                fail_text = AIO_DAIT_need_unlock
+                AIO_DAIT_erase_unlocked = yes
+            }
         }
     }
     effect = {
@@ -189,7 +213,6 @@ AIO_DAIT_range_0 = {
         hidden_effect = {
             from = {
                 set_variable = { which = AIO_DAIT_range value = 0 }
-
             }
         }
     }
@@ -207,7 +230,6 @@ AIO_DAIT_range_1 = {
         hidden_effect = {
             from = {
                 set_variable = { which = AIO_DAIT_range value = 1 }
-
             }
         }
     }
@@ -225,7 +247,6 @@ AIO_DAIT_range_2 = {
         hidden_effect = {
             from = {
                 set_variable = { which = AIO_DAIT_range value = 2 }
-
             }
         }
     }
@@ -243,7 +264,6 @@ AIO_DAIT_range_3 = {
         hidden_effect = {
             from = {
                 set_variable = { which = AIO_DAIT_range value = 3 }
-
             }
         }
     }
@@ -261,7 +281,6 @@ AIO_DAIT_range_4 = {
         hidden_effect = {
             from = {
                 set_variable = { which = AIO_DAIT_range value = 4 }
-
             }
         }
     }
@@ -279,7 +298,6 @@ AIO_DAIT_range_5 = {
         hidden_effect = {
             from = {
                 set_variable = { which = AIO_DAIT_range value = 5 }
-
             }
         }
     }
@@ -298,7 +316,6 @@ AIO_DAIT_range_6 = {
         hidden_effect = {
             from = {
                 set_variable = { which = AIO_DAIT_range value = 6 }
-
             }
         }
     }
@@ -468,10 +485,14 @@ AIO_DAIT_logic_label = {
     effect = { custom_tooltip = AIO_DAIT_menu_logic_tooltip }
 }
 
-# Both the orb and the visible collapse button toggle the same window state.
+# The orb toggles the panel; the upper-right button exits the event host.
 AIO_DAIT_toggle_menu = {
     potential = {
-        from = { AIO_DAIT_country_valid = yes has_country_flag = AIO_DAIT_toolbar }
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+            NOT = { has_country_flag = AIO_DAIT_dismissed }
+        }
     }
     allow = { always = yes }
     effect = {
@@ -488,11 +509,11 @@ AIO_DAIT_toggle_menu = {
     }
 }
 
-AIO_DAIT_collapse_menu = {
+AIO_DAIT_exit_menu = {
     potential = { from = { AIO_DAIT_menu_visible = yes } }
     allow = { always = yes }
     effect = {
-        custom_tooltip = AIO_DAIT_collapse_tooltip
-        hidden_effect = { from = { set_country_flag = AIO_DAIT_collapsed } }
+        custom_tooltip = AIO_DAIT_exit_tooltip
+        hidden_effect = { from = { set_country_flag = AIO_DAIT_dismissed } }
     }
 }

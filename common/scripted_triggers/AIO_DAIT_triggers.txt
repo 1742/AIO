@@ -1,7 +1,16 @@
 # Country / system scopes are explicit; no shared global casting target.
+# Country: ascended empires ignore even cooldowns inherited before ascension.
+AIO_DAIT_cooldown_active = {
+    NOT = { is_country_type = AIO_empire }
+    has_country_flag = AIO_DAIT_$OPERATION$_cooldown
+}
+
 AIO_DAIT_country_valid = {
     OR = {
-        has_ascension_perk = ap_AIO_allinone
+        has_country_flag = AIO_built_AIO_mega_01
+        has_country_flag = AIO_built_AIO_mega_02
+        has_country_flag = AIO_built_AIO_mega_03
+        has_country_flag = AIO_built_AIO_mega_04
         is_country_type = AIO_empire
     }
 }
@@ -59,6 +68,19 @@ AIO_DAIT_system_valid = {
     }
 }
 
+# Selected objects which expose a direct solar_system scope.
+AIO_DAIT_ui_system_object = {
+    exists = this
+    OR = {
+        is_scope_type = planet
+        is_scope_type = colony
+        is_scope_type = fleet
+        is_scope_type = megastructure
+        is_scope_type = ambient_object
+    }
+    exists = solar_system
+}
+
 AIO_DAIT_ui_target_valid = {
     OR = {
         AND = {
@@ -66,8 +88,13 @@ AIO_DAIT_ui_target_valid = {
             AIO_DAIT_system_valid = yes
         }
         AND = {
-            is_scope_type = planet
+            AIO_DAIT_ui_system_object = yes
             solar_system = { AIO_DAIT_system_valid = yes }
+        }
+        AND = {
+            is_scope_type = ship
+            exists = fleet
+            fleet = { solar_system = { AIO_DAIT_system_valid = yes } }
         }
     }
 }
@@ -107,7 +134,7 @@ AIO_DAIT_enrich_ready = {
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_cooldown
-        NOT = { has_country_flag = AIO_DAIT_enrich_cooldown }
+        NOT = { AIO_DAIT_cooldown_active = { OPERATION = enrich } }
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_need_logic
@@ -144,7 +171,7 @@ AIO_DAIT_spawn_ready = {
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_cooldown
-        NOT = { has_country_flag = AIO_DAIT_spawn_cooldown }
+        NOT = { AIO_DAIT_cooldown_active = { OPERATION = spawn } }
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_need_logic
@@ -189,7 +216,7 @@ AIO_DAIT_seed_ready = {
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_cooldown
-        NOT = { has_country_flag = AIO_DAIT_seed_cooldown }
+        NOT = { AIO_DAIT_cooldown_active = { OPERATION = seed } }
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_need_logic
@@ -256,7 +283,7 @@ AIO_DAIT_ethic_ready = {
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_cooldown
-        NOT = { has_country_flag = AIO_DAIT_ethic_cooldown }
+        NOT = { AIO_DAIT_cooldown_active = { OPERATION = ethic } }
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_need_logic
@@ -294,7 +321,7 @@ AIO_DAIT_storm_ready = {
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_cooldown
-        NOT = { has_country_flag = AIO_DAIT_storm_cooldown }
+        NOT = { AIO_DAIT_cooldown_active = { OPERATION = storm } }
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_need_logic
@@ -344,7 +371,7 @@ AIO_DAIT_harvest_ready = {
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_cooldown
-        NOT = { has_country_flag = AIO_DAIT_harvest_cooldown }
+        NOT = { AIO_DAIT_cooldown_active = { OPERATION = harvest } }
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_need_logic
@@ -396,7 +423,7 @@ AIO_DAIT_strike_ready = {
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_cooldown
-        NOT = { has_country_flag = AIO_DAIT_strike_cooldown }
+        NOT = { AIO_DAIT_cooldown_active = { OPERATION = strike } }
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_need_logic
@@ -435,7 +462,7 @@ AIO_DAIT_erase_ready = {
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_cooldown
-        NOT = { has_country_flag = AIO_DAIT_erase_cooldown }
+        NOT = { AIO_DAIT_cooldown_active = { OPERATION = erase } }
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_need_logic

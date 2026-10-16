@@ -1,5 +1,5 @@
 # Country: restore the launcher once, without disturbing an already open menu.
-# Used on load, megastructure completion and direct ascension; no polling event.
+# Used after host closure, on load, megastructure completion and ascension.
 AIO_DAIT_ensure_menu = {
     if = {
         limit = {

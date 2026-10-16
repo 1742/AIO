@@ -692,6 +692,43 @@ AIO_DAIT_erase_system_effect = {
         destroy_fleet = this
     }
     set_star_class = sc_AIO_void
+    AIO_DAIT_create_void_anchor = yes
 }
 
 #endregion
+
+# System: caller has already established that this is an erased system.
+# Use the system's position, independent of the just-replaced star entity.
+AIO_DAIT_create_void_anchor = {
+    if = {
+        limit = {
+            NOT = { any_system_ambient_object = { has_ambient_object_flag = AIO_DAIT_void_anchor } }
+        }
+        create_ambient_object = {
+            type = AIO_DAIT_void_anchor
+            location = this
+            scale = 2
+            effect = {
+                set_ambient_object_flag = AIO_DAIT_void_anchor
+                # Creation uses a default placement offset; pin the final position.
+                set_location = { target = solar_system distance = 0 angle = 0 }
+            }
+        }
+    }
+}
+
+# System: discover old empty systems on load; not used by the live erase path.
+AIO_DAIT_ensure_void_anchor = {
+    if = {
+        limit = {
+            is_star_class = sc_AIO_void
+            AIO_DAIT_system_valid = yes
+            NOT = { any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } } }
+        }
+        AIO_DAIT_create_void_anchor = yes
+        every_system_ambient_object = {
+            limit = { has_ambient_object_flag = AIO_DAIT_void_anchor }
+            set_location = { target = solar_system distance = 0 angle = 0 }
+        }
+    }
+}
