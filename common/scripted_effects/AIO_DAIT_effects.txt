@@ -707,7 +707,6 @@ AIO_DAIT_create_void_anchor = {
         create_ambient_object = {
             type = AIO_DAIT_void_anchor
             location = this
-            scale = 2
             effect = {
                 set_ambient_object_flag = AIO_DAIT_void_anchor
                 # Creation uses a default placement offset; pin the final position.

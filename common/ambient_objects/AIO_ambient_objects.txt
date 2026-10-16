@@ -10,7 +10,7 @@ ambient_object = {
 # A selectable coordinate in otherwise empty systems, without creating a planet.
 ambient_object = {
     name = "AIO_DAIT_void_anchor"
-    entity = "black_hole_entity"
+    entity = "AIO_empty_space_entity"
     selectable = yes
     show_name = yes
     tooltip = "AIO_DAIT_void_anchor_desc"
