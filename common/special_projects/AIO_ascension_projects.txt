@@ -1,0 +1,22 @@
+# Optional return to the ascension choice after the Aforgomon finale.
+special_project = {
+    key = "AIO_CRISIS_CONTEMPLATE_GATE"
+    cost = 0
+    days_to_research = 30
+    timelimit = -1
+    picture = GFX_evt_vortex
+    icon = "gfx/interface/icons/situation_log/situation_log_ai.dds"
+    event_chain = AIO_crisis_events_chain
+    location = no
+    event_scope = country_event
+    requirements = { }
+    abort_trigger = {
+        OR = {
+            NOT = { has_country_flag = AIO_final_won }
+            is_country_type = AIO_empire
+        }
+    }
+    on_success = {
+        country_event = { id = AIO_crisis_events.601 }
+    }
+}

@@ -135,6 +135,11 @@
  AIO_crisis_events.305.option: "Just go for it."
 
  # ascension event
+ AIO_crisis_events.601.title: "The Threshold of the Gate"
+ AIO_crisis_events.601.desc: "The final corrective mechanisms have fallen silent. The universe's immune storm has exhausted its last ounce of fury within our constraint fields; the remnants of Aforgomon have been reduced to the most submissive glyphs in the foundation of reality.\n\nThe infinity beyond the gate stands wide open. The boundary between observer and the observed dissolves in this instant — take one step forward, and our civilization will no longer be an empire of history, but the structural law governing all spacetime and existence."
+ AIO_crisis_events.601.option.wait: "Pause and Contemplate"
+ AIO_crisis_events.601.option.ascension: "Step Beyond the Gate"
+ AIO_crisis_events.601.option.wait.tooltip:0 "Continue playing as your current empire. Adds the Ascension special project with no time limit; research it for 30 days whenever ready to revisit this choice."
  AIO_crisis_events.end.option: "I/We are the truth."
 
  #endregion

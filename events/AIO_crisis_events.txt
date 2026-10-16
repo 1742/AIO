@@ -321,6 +321,39 @@ country_event = {
 #region 飞升事件
 
 country_event = {
+    id = AIO_crisis_events.601
+    title = AIO_crisis_events.601.title
+    desc = AIO_crisis_events.601.desc
+    picture = GFX_evt_formless_system
+    location = event_target:AIO_mist_system
+    is_triggered_only = yes
+    trigger = {
+        has_country_flag = AIO_final_won
+        NOT = { is_country_type = AIO_empire }
+    }
+
+    option = {
+        name = AIO_crisis_events.601.option.wait
+        default_hide_option = yes
+        custom_tooltip = AIO_crisis_events.601.option.wait.tooltip
+        hidden_effect = {
+            if = {
+                limit = { NOT = { has_special_project = AIO_CRISIS_CONTEMPLATE_GATE } }
+                enable_special_project = {
+                    name = AIO_CRISIS_CONTEMPLATE_GATE
+                    location = event_target:AIO_mist_system
+                    owner = root
+                }
+            }
+        }
+    }
+    option = {
+        name = AIO_crisis_events.601.option.ascension
+        country_event = { id = AIO_crisis_events.602 }
+    }
+}
+
+country_event = {
     id = AIO_crisis_events.602
     title = AIO_crisis_events_title
     desc = AIO_crisis_events.602.desc
@@ -330,10 +363,15 @@ country_event = {
 
     event_chain = AIO_crisis_events_chain
     is_triggered_only = yes
+    trigger = {
+        has_country_flag = AIO_final_won
+        NOT = { is_country_type = AIO_empire }
+    }
 
     option = {
         name = AIO_crisis_events.end.option
         hidden_effect = {
+            abort_special_project = { type = AIO_CRISIS_CONTEMPLATE_GATE }
             save_event_target_as = AIO_DAIT_maker
             end_event_chain = AIO_crisis_events_chain
             every_war = { end_war_effect = yes }

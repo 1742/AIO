@@ -174,11 +174,11 @@ AIO_final_research = {
     }
 }
 
-# scope: country；保留旧版飞升结局，并解锁完整 DAIT。
+# scope: country；结束终局，先让玩家选择飞升或继续保留当前帝国。
 AIO_final_win = {
     set_country_flag = AIO_final_won
     AIO_final_finish = yes
-    country_event = { id = AIO_crisis_events.602 }
+    country_event = { id = AIO_crisis_events.601 }
 }
 
 # scope: country；每次先覆盖本地目标，避免继承上一轮残留的事件目标。

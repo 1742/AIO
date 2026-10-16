@@ -134,6 +134,11 @@
  AIO_crisis_events.305.option: "放手去做吧。"
 
  # 飞升事件
+ AIO_crisis_events.601.title: "视界门扉"
+ AIO_crisis_events.601.desc: "最后的纠错机制已经沉寂。宇宙的免疫风暴在我们的约束力场中耗尽了最后一丝怒火，亚弗戈蒙的残骸化作了基底结构中最顺从的印记。\n\n门后的无限已经彻底洞开。观察者与被观察之物的分界在此刻彻底溶解——只要向前迈出一步，我们的文明将不再是一个历史名词，而是化作一切时空与存在的底层规律。"
+ AIO_crisis_events.601.option.wait: "留步凝望"
+ AIO_crisis_events.601.option.ascension: "迈入门后"
+ AIO_crisis_events.601.option.wait.tooltip:0 "保留当前帝国继续游玩，并添加不限期的“晋升”特殊项目。准备好后可研究30天，再次选择是否飞升。"
  AIO_crisis_events.end.option: "我/我们即真理。"
 
  #endregion

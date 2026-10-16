@@ -10,7 +10,7 @@
 ---
 
 <h2>Overview</h2>
-This mod adds a new Become the Crisis path: <i><b>All-in-One</b></i>. Regular empires, Hive Minds and Machine Intelligences can all take this path; it is no longer restricted to Gestalts. Build the Nameless Mist and rewrite reality through Directional Apply Infinity Thesis operations. Completing <i><b>Yog-Sothoth</b></i> begins Aforgomon's pursuit; winning the final battle completes your ascension.
+This mod adds a new Become the Crisis path: <i><b>All-in-One</b></i>. Regular empires, Hive Minds and Machine Intelligences can all take this path; it is no longer restricted to Gestalts. Build the Nameless Mist and rewrite reality through Directional Apply Infinity Thesis operations. Completing <i><b>Yog-Sothoth</b></i> begins Aforgomon's pursuit; winning the final battle unlocks the choice to ascend or continue playing as your current empire.
 <br>
 
 <h2>Features</h2>
@@ -46,7 +46,7 @@ Use the Apply Infinity: Open Menu edict to open the movable toolbar. Select a sy
 <li>Induction redirects this round's manifestation to a chosen external system. Constraint also redirects it and makes the manifestation beatable. Both field projects take 60 days and must finish before the warning period ends. Redirecting the target does not reset the countdown.</li>
 <li>Defeat the <b>constrained manifestation</b> within its 360-day stay to win. Completing the research alone is not victory. If it reaches the Nameless Mist, the endgame fails and the Mist and the Ultimate Gate are removed.</li>
 </ul>
-The ascension ending removes your colonies and transforms your empire. Continued play unlocks Ethics Inversion and Erase, and upgrades Strike to its full manifestation. Its realm-wide range records empires with fleets at the target when casting and spreads across their territory when resolving. Strike remains indiscriminate.
+After defeating Aforgomon, choose to ascend immediately or continue playing as your current empire. Deferring leaves an Ascension special project with no time limit; research it for 30 days to revisit the choice. Only confirming the ascension ending removes your colonies and transforms your empire. Continued play unlocks Ethics Inversion and Erase, and upgrades Strike to its full manifestation. Its realm-wide range records empires with fleets at the target when casting and spreads across their territory when resolving. Strike remains indiscriminate.
 
 <h2>Compatibility</h2>
 
