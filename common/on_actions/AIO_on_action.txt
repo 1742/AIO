@@ -13,6 +13,13 @@ on_game_start_country = {
     }
 }
 
+# No scope. Add our load handler alongside other mods' handlers.
+on_single_player_save_game_load = {
+    events = {
+        AIO_DAIT_events.204
+    }
+}
+
 on_yearly_pulse_country = {
     events = {
         AIO_crisis_events.902 # 给予递归载体物种模板

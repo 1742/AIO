@@ -17,6 +17,7 @@ carrier_event = {
 }
 
 # The fixed bottom launcher starts collapsed; ESC dismisses the entire widget.
+# Load/completion hooks restore it when needed; an active menu is left intact.
 country_event = {
     id = AIO_DAIT_events.203
     title = AIO_DAIT_events.202.title
@@ -25,6 +26,7 @@ country_event = {
     custom_gui = AIO_DAIT
     is_triggered_only = yes
     trigger = {
+        is_ai = no
         AIO_DAIT_country_valid = yes
         NOT = { has_country_flag = AIO_DAIT_toolbar }
     }
@@ -41,5 +43,15 @@ country_event = {
         remove_country_flag = AIO_DAIT_toolbar
         remove_country_flag = AIO_DAIT_collapsed
         clear_variable = AIO_DAIT_operation
+    }
+}
+
+# Single-player load hook has no country scope. Never restart an active menu.
+event = {
+    id = AIO_DAIT_events.204
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        every_playable_country = { AIO_DAIT_ensure_menu = yes }
     }
 }

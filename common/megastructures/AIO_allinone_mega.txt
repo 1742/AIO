@@ -77,6 +77,7 @@ AIO_mega_01_fact = {
 
 		from = {
 			set_country_flag = AIO_built_AIO_mega_01
+			AIO_DAIT_ensure_menu = yes
 			country_event = { id = AIO_crisis_events.403 }
 		}
 	}
@@ -221,6 +222,7 @@ AIO_mega_02 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_02
+			AIO_DAIT_ensure_menu = yes
 			country_event = { id = AIO_crisis_events.404 }
 		}
 	}
@@ -301,6 +303,7 @@ AIO_mega_03 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_03
+			AIO_DAIT_ensure_menu = yes
 			country_event = { id = AIO_crisis_events.405 }
 		}
 	}
@@ -383,6 +386,7 @@ AIO_mega_04 = {
 	on_build_complete = {
 		from = {
 			set_country_flag = AIO_built_AIO_mega_04
+			AIO_DAIT_ensure_menu = yes
 			country_event = { id = AIO_crisis_events.406 }
 		}
 	}

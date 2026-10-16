@@ -1,3 +1,16 @@
+# Country: restore the launcher once, without disturbing an already open menu.
+# Used on load, megastructure completion and direct ascension; no polling event.
+AIO_DAIT_ensure_menu = {
+    if = {
+        limit = {
+            is_ai = no
+            AIO_DAIT_enrich_unlocked = yes
+            NOT = { has_country_flag = AIO_DAIT_toolbar }
+        }
+        country_event = { id = AIO_DAIT_events.203 }
+    }
+}
+
 # Country: choose an operation and reset its range.
 AIO_DAIT_select_operation = {
     set_variable = { which = AIO_DAIT_operation value = $OPERATION$ }

@@ -75,7 +75,7 @@
  AIO_DAIT_target_none:0 "System: none selected"
  AIO_DAIT_menu_desc:0 "Select a system or empire, choose one of eight operations, select an applicable range, then click Cast. Click the fixed bottom orb to expand the menu above it or collapse it."
  edict_AIO_DAIT_menu:0 "Apply Infinity: Open Menu"
- edict_AIO_DAIT_menu_desc:0 "Show the fixed bottom Apply Infinity orb; click it to expand the menu above it. Choose an operation, an applicable range, then Cast. Shows the selected system, empire and Hyperlogic in K (thousands). Click the orb or upper-right button to collapse; press Esc to dismiss."
+ edict_AIO_DAIT_menu_desc:0 "Show the fixed bottom Apply Infinity orb; click it to expand the menu above it. Choose an operation, an applicable range, then Cast. Shows the selected system, empire and Hyperlogic in K (thousands). Click the orb or upper-right button to collapse; press Esc to dismiss. If closed, the orb returns automatically upon completing the Ultimate Gate or a later megastructure, direct ascension, or loading a single-player save."
  AIO_DAIT_spawn_situation:0 "Apply Infinity: Generate"
  AIO_DAIT_spawn_situation_desc:0 "Range: $AIO_DAIT_range_0$.\n\nCompletion rechecks affected targets and resolves Generate. Losing the central target or permission cancels the cast, refunds half the paid cost, and imposes no cooldown. Other empires are notified only when effects resolve."
  AIO_DAIT_seed_situation:0 "Apply Infinity: Seed"
