@@ -1,6 +1,6 @@
 # One pending cast per operation and country; target is persisted by the situation.
 AIO_DAIT_spawn_situation = {
-    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    picture = GFX_evt_astral_rift_vortex_nomask
     desc = AIO_DAIT_spawn_situation_desc
     category = neutral
     situation_log_category = urgent_matters
@@ -67,7 +67,7 @@ AIO_DAIT_spawn_situation = {
 
 # One pending cast per operation and country; target is persisted by the situation.
 AIO_DAIT_seed_situation = {
-    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    picture = GFX_evt_wilderness_colonizer_nomask
     desc = AIO_DAIT_seed_situation_desc
     category = neutral
     situation_log_category = urgent_matters
@@ -134,7 +134,7 @@ AIO_DAIT_seed_situation = {
 
 # One pending cast per operation and country; target is persisted by the situation.
 AIO_DAIT_ethic_situation = {
-    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    picture = GFX_evt_civil_action_nomask
     desc = AIO_DAIT_ethic_situation_desc
     category = neutral
     situation_log_category = others
@@ -201,7 +201,7 @@ AIO_DAIT_ethic_situation = {
 
 # One pending cast per operation and country; target is persisted by the situation.
 AIO_DAIT_storm_situation = {
-    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    picture = GFX_evt_cosmic_storms_electric_storm_nomask
     desc = AIO_DAIT_storm_situation_desc
     category = negative
     situation_log_category = urgent_matters
@@ -268,7 +268,7 @@ AIO_DAIT_storm_situation = {
 
 # One pending cast per operation and country; target is persisted by the situation.
 AIO_DAIT_harvest_situation = {
-    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    picture = GFX_evt_shattered_planet_nomask
     desc = AIO_DAIT_harvest_situation_desc
     category = negative
     situation_log_category = urgent_matters
@@ -402,7 +402,7 @@ AIO_DAIT_strike_situation = {
 
 # One pending cast per operation and country; target is persisted by the situation.
 AIO_DAIT_erase_situation = {
-    picture = GFX_evt_AIO_projection_Aforgomon_omen_nomask
+    picture = GFX_evt_AIO_projection_Aforgomon_arrival
     desc = AIO_DAIT_erase_situation_desc
     category = negative
     situation_log_category = crises

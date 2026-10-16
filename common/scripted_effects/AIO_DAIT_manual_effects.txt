@@ -143,7 +143,7 @@ AIO_DAIT_finish_enrich = {
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_enrich_paid }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = UPLIFTING_FAILED
                 localization = AIO_DAIT_cancelled
                 days = 30
             }
@@ -153,7 +153,7 @@ AIO_DAIT_finish_enrich = {
         limit = { check_variable = { which = AIO_DAIT_enrich_affected value > 0 } }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = PLANET_DEPOSIT_DISCOVERED
                 localization = AIO_DAIT_enrich_completed
                 days = 30
                 target = event_target:AIO_DAIT_target_system
@@ -292,7 +292,7 @@ AIO_DAIT_finish_spawn = {
         limit = { check_variable = { which = AIO_DAIT_spawn_affected value > 0 } }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = MESSAGE_TERRAFORM_CANDIDATE_FOUND
                 localization = AIO_DAIT_spawn_completed
                 days = 30
                 target = event_target:AIO_DAIT_target_system
@@ -423,7 +423,7 @@ AIO_DAIT_finish_seed = {
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_seed_paid }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = UPLIFTING_FAILED
                 localization = AIO_DAIT_cancelled
                 days = 30
             }
@@ -443,7 +443,7 @@ AIO_DAIT_finish_seed = {
         limit = { check_variable = { which = AIO_DAIT_seed_affected value > 0 } }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = MESSAGE_POPS_IDYLLIC_BLOOMED
                 localization = AIO_DAIT_seed_completed
                 days = 30
                 target = event_target:AIO_DAIT_target_system
@@ -576,7 +576,7 @@ AIO_DAIT_finish_ethic = {
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_ethic_paid }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = UPLIFTING_FAILED
                 localization = AIO_DAIT_cancelled
                 days = 30
             }
@@ -586,7 +586,7 @@ AIO_DAIT_finish_ethic = {
         limit = { check_variable = { which = AIO_DAIT_ethic_affected value > 0 } }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = MESSAGE_FACTION_EMBRACED_TRADITIONALIST
                 localization = AIO_DAIT_ethic_completed
                 days = 30
                 target = event_target:AIO_DAIT_target_system
@@ -721,7 +721,7 @@ AIO_DAIT_finish_storm = {
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_storm_paid }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = UPLIFTING_FAILED
                 localization = AIO_DAIT_cancelled
                 days = 30
             }
@@ -731,7 +731,7 @@ AIO_DAIT_finish_storm = {
         limit = { check_variable = { which = AIO_DAIT_storm_affected value > 0 } }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = MESSAGE_INSTITUTE_SPAWNED_STORM
                 localization = AIO_DAIT_storm_completed
                 days = 30
                 target = event_target:AIO_DAIT_target_system
@@ -862,7 +862,7 @@ AIO_DAIT_finish_harvest = {
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_harvest_paid }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = UPLIFTING_FAILED
                 localization = AIO_DAIT_cancelled
                 days = 30
             }
@@ -882,7 +882,7 @@ AIO_DAIT_finish_harvest = {
         limit = { check_variable = { which = AIO_DAIT_harvest_affected value > 0 } }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = TOAST_EXODUS_JUMP_AFTERMATH
                 localization = AIO_DAIT_harvest_completed
                 days = 30
                 target = event_target:AIO_DAIT_target_system
@@ -1045,7 +1045,7 @@ AIO_DAIT_finish_strike = {
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_strike_paid }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = UPLIFTING_FAILED
                 localization = AIO_DAIT_cancelled
                 days = 30
             }
@@ -1210,7 +1210,7 @@ AIO_DAIT_finish_erase = {
         add_resource = { AIO_advanced_logic = 0.5 mult = this.AIO_DAIT_erase_paid }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = UPLIFTING_FAILED
                 localization = AIO_DAIT_cancelled
                 days = 30
             }
@@ -1230,7 +1230,7 @@ AIO_DAIT_finish_erase = {
         limit = { check_variable = { which = AIO_DAIT_erase_affected value > 0 } }
         hidden_effect = {
             create_message = {
-                type = MESSAGE_DYSON_SHOT
+                type = STAR_DESTROYED
                 localization = AIO_DAIT_erase_completed
                 days = 30
                 target = event_target:AIO_DAIT_target_system
