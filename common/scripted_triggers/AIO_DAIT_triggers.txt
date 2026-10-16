@@ -6,6 +6,45 @@ AIO_DAIT_country_valid = {
     }
 }
 
+# Country: the shared selector is used only by operations supporting an area.
+AIO_DAIT_range_valid = {
+    OR = {
+        NOT = { is_variable_set = AIO_DAIT_range }
+        AND = {
+            check_variable = { which = AIO_DAIT_range value >= 0 }
+            check_variable = { which = AIO_DAIT_range value <= 5 }
+        }
+    }
+}
+
+# System: snapshot range on the caster, measured from the selected center.
+# The center is included for both 0 jumps and the special Strike realms mode.
+AIO_DAIT_system_in_range = {
+    OR = {
+        is_same_value = event_target:AIO_DAIT_target_system
+        AND = {
+            event_target:AIO_DAIT_maker = { check_variable = { which = $RANGE$ value = 1 } }
+            distance = { source = event_target:AIO_DAIT_target_system max_jumps = 1 use_bypasses = no }
+        }
+        AND = {
+            event_target:AIO_DAIT_maker = { check_variable = { which = $RANGE$ value = 2 } }
+            distance = { source = event_target:AIO_DAIT_target_system max_jumps = 2 use_bypasses = no }
+        }
+        AND = {
+            event_target:AIO_DAIT_maker = { check_variable = { which = $RANGE$ value = 3 } }
+            distance = { source = event_target:AIO_DAIT_target_system max_jumps = 3 use_bypasses = no }
+        }
+        AND = {
+            event_target:AIO_DAIT_maker = { check_variable = { which = $RANGE$ value = 4 } }
+            distance = { source = event_target:AIO_DAIT_target_system max_jumps = 4 use_bypasses = no }
+        }
+        AND = {
+            event_target:AIO_DAIT_maker = { check_variable = { which = $RANGE$ value = 5 } }
+            distance = { source = event_target:AIO_DAIT_target_system max_jumps = 5 use_bypasses = no }
+        }
+    }
+}
+
 AIO_DAIT_system_valid = {
     exists = star
     NOR = {
@@ -53,13 +92,6 @@ AIO_DAIT_enrich_target_valid = {
     }
 }
 
-AIO_DAIT_enrich_range_valid = {
-    OR = {
-        NOT = { is_variable_set = AIO_DAIT_range }
-        check_variable = { which = AIO_DAIT_range value <= 2 }
-    }
-}
-
 AIO_DAIT_enrich_ready = {
     custom_tooltip = {
         fail_text = AIO_DAIT_need_unlock
@@ -67,7 +99,7 @@ AIO_DAIT_enrich_ready = {
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_need_range
-        AIO_DAIT_enrich_range_valid = yes
+        AIO_DAIT_range_valid = yes
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_pending
@@ -101,21 +133,10 @@ AIO_DAIT_spawn_target_valid = {
     AIO_DAIT_system_valid = yes
 }
 
-AIO_DAIT_spawn_range_valid = {
-    OR = {
-        NOT = { is_variable_set = AIO_DAIT_range }
-        check_variable = { which = AIO_DAIT_range value <= 2 }
-    }
-}
-
 AIO_DAIT_spawn_ready = {
     custom_tooltip = {
         fail_text = AIO_DAIT_need_unlock
         AIO_DAIT_spawn_unlocked = yes
-    }
-    custom_tooltip = {
-        fail_text = AIO_DAIT_need_range
-        AIO_DAIT_spawn_range_valid = yes
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_pending
@@ -157,21 +178,10 @@ AIO_DAIT_seed_target_valid = {
     }
 }
 
-AIO_DAIT_seed_range_valid = {
-    OR = {
-        NOT = { is_variable_set = AIO_DAIT_range }
-        check_variable = { which = AIO_DAIT_range value <= 2 }
-    }
-}
-
 AIO_DAIT_seed_ready = {
     custom_tooltip = {
         fail_text = AIO_DAIT_need_unlock
         AIO_DAIT_seed_unlocked = yes
-    }
-    custom_tooltip = {
-        fail_text = AIO_DAIT_need_range
-        AIO_DAIT_seed_range_valid = yes
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_pending
@@ -198,22 +208,40 @@ AIO_DAIT_ethic_unlocked = {
     is_country_type = AIO_empire
 }
 
+# Country: Ethics targets a polity, independently of any selected system.
 AIO_DAIT_ethic_target_valid = {
-    AIO_DAIT_system_valid = yes
-    owner? = {
-        OR = {
-            is_country_type = default
-            is_country_type = fallen_empire
-            is_country_type = awakened_fallen_empire
-        }
-        NOT = { has_ethic = ethic_gestalt_consciousness }
+    is_scope_type = country
+    OR = {
+        is_country_type = default
+        is_country_type = fallen_empire
+        is_country_type = awakened_fallen_empire
     }
+    NOT = { has_ethic = ethic_gestalt_consciousness }
 }
 
-AIO_DAIT_ethic_range_valid = {
+# Button THIS: only these map objects can supply an owner as a country target.
+AIO_DAIT_ui_owned_target = {
     OR = {
-        NOT = { is_variable_set = AIO_DAIT_range }
-        check_variable = { which = AIO_DAIT_range value <= 2 }
+        is_scope_type = galactic_object
+        is_scope_type = planet
+        is_scope_type = colony
+        is_scope_type = fleet
+        is_scope_type = ship
+    }
+    exists = owner
+}
+
+AIO_DAIT_ethic_ui_target_valid = {
+    OR = {
+        AND = {
+            is_scope_type = country
+            NOT = { is_same_value = from }
+            AIO_DAIT_ethic_target_valid = yes
+        }
+        AND = {
+            AIO_DAIT_ui_owned_target = yes
+            owner = { AIO_DAIT_ethic_target_valid = yes }
+        }
     }
 }
 
@@ -221,10 +249,6 @@ AIO_DAIT_ethic_ready = {
     custom_tooltip = {
         fail_text = AIO_DAIT_need_unlock
         AIO_DAIT_ethic_unlocked = yes
-    }
-    custom_tooltip = {
-        fail_text = AIO_DAIT_need_range
-        AIO_DAIT_ethic_range_valid = yes
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_pending
@@ -259,21 +283,10 @@ AIO_DAIT_storm_target_valid = {
     is_inside_storm = no
 }
 
-AIO_DAIT_storm_range_valid = {
-    OR = {
-        NOT = { is_variable_set = AIO_DAIT_range }
-        check_variable = { which = AIO_DAIT_range value <= 2 }
-    }
-}
-
 AIO_DAIT_storm_ready = {
     custom_tooltip = {
         fail_text = AIO_DAIT_need_unlock
         AIO_DAIT_storm_unlocked = yes
-    }
-    custom_tooltip = {
-        fail_text = AIO_DAIT_need_range
-        AIO_DAIT_storm_range_valid = yes
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_pending
@@ -316,13 +329,6 @@ AIO_DAIT_harvest_target_valid = {
     }
 }
 
-AIO_DAIT_harvest_range_valid = {
-    OR = {
-        NOT = { is_variable_set = AIO_DAIT_range }
-        check_variable = { which = AIO_DAIT_range value <= 2 }
-    }
-}
-
 AIO_DAIT_harvest_ready = {
     custom_tooltip = {
         fail_text = AIO_DAIT_need_unlock
@@ -330,7 +336,7 @@ AIO_DAIT_harvest_ready = {
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_need_range
-        AIO_DAIT_harvest_range_valid = yes
+        AIO_DAIT_range_valid = yes
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_pending
@@ -367,11 +373,10 @@ AIO_DAIT_strike_target_valid = {
 
 AIO_DAIT_strike_range_valid = {
     OR = {
-        NOT = { is_variable_set = AIO_DAIT_range }
-        check_variable = { which = AIO_DAIT_range value <= 2 }
+        AIO_DAIT_range_valid = yes
         AND = {
             is_country_type = AIO_empire
-            check_variable = { which = AIO_DAIT_range value = 4 }
+            check_variable = { which = AIO_DAIT_range value = 6 }
         }
     }
 }
@@ -415,17 +420,6 @@ AIO_DAIT_erase_target_valid = {
     any_system_planet = { NOT = { is_planet_class = pc_AIO_empty_space } }
 }
 
-AIO_DAIT_erase_range_valid = {
-    OR = {
-        NOT = { is_variable_set = AIO_DAIT_range }
-        check_variable = { which = AIO_DAIT_range value <= 2 }
-        AND = {
-            is_country_type = AIO_empire
-            check_variable = { which = AIO_DAIT_range value = 3 }
-        }
-    }
-}
-
 AIO_DAIT_erase_ready = {
     custom_tooltip = {
         fail_text = AIO_DAIT_need_unlock
@@ -433,7 +427,7 @@ AIO_DAIT_erase_ready = {
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_need_range
-        AIO_DAIT_erase_range_valid = yes
+        AIO_DAIT_range_valid = yes
     }
     custom_tooltip = {
         fail_text = AIO_DAIT_wait_pending

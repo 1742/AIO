@@ -62,7 +62,10 @@ AIO_final_location_situation = {
             }
         }
     }
-    on_progress_complete = { AIO_final_complete_location = yes }
+    on_progress_complete = {
+        hidden_effect = { AIO_final_complete_location = yes }
+        custom_tooltip = AIO_final_location_complete_tooltip
+    }
     on_monthly = { events = { AIO_final_events.302 } }
 
     total_progress = {
@@ -89,6 +92,7 @@ AIO_final_location_situation = {
     monthly_progress = { base = 30 }
     approach = {
         name = AIO_final_location_approach
+        on_select = { custom_tooltip = AIO_final_location_approach_desc }
         icon = GFX_situation_approach_research
         icon_background = GFX_situation_approach_bg_green
         default = yes

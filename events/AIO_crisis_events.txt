@@ -318,7 +318,18 @@ country_event = {
 
     option = {
         name = AIO_crisis_events.end.option
-        hidden_effect = { AIO_crisis_finish_ascension_effect = yes }
+        hidden_effect = {
+            save_event_target_as = AIO_DAIT_maker
+            end_event_chain = AIO_crisis_events_chain
+            every_war = { end_war_effect = yes }
+            if = {
+                limit = { is_subject = yes }
+                set_subject_of = { who = none }
+            }
+            every_subject = { set_subject_of = { who = none } }
+            AIO_ascension_effect = yes
+            AIO_ascension_galaxy_effect = yes
+        }
         win = yes
         default_hide_option = yes
     }

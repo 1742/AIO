@@ -129,6 +129,14 @@ defined_text = {
         trigger = { check_variable = { which = AIO_DAIT_range value = 4 } }
         localization_key = AIO_DAIT_range_4
     }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 5 } }
+        localization_key = AIO_DAIT_range_5
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 6 } }
+        localization_key = AIO_DAIT_range_6
+    }
     default = AIO_DAIT_range_0
 }
 
@@ -151,93 +159,9 @@ defined_text = {
         trigger = { check_variable = { which = AIO_DAIT_enrich_range value = 4 } }
         localization_key = AIO_DAIT_range_4
     }
-    default = AIO_DAIT_range_0
-}
-
-defined_text = {
-    random = no
-    name = GetAIO_DAIT_spawn_range_name
     text = {
-        trigger = { check_variable = { which = AIO_DAIT_spawn_range value = 1 } }
-        localization_key = AIO_DAIT_range_1
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_spawn_range value = 2 } }
-        localization_key = AIO_DAIT_range_2
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_spawn_range value = 3 } }
-        localization_key = AIO_DAIT_range_3
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_spawn_range value = 4 } }
-        localization_key = AIO_DAIT_range_4
-    }
-    default = AIO_DAIT_range_0
-}
-
-defined_text = {
-    random = no
-    name = GetAIO_DAIT_seed_range_name
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_seed_range value = 1 } }
-        localization_key = AIO_DAIT_range_1
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_seed_range value = 2 } }
-        localization_key = AIO_DAIT_range_2
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_seed_range value = 3 } }
-        localization_key = AIO_DAIT_range_3
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_seed_range value = 4 } }
-        localization_key = AIO_DAIT_range_4
-    }
-    default = AIO_DAIT_range_0
-}
-
-defined_text = {
-    random = no
-    name = GetAIO_DAIT_ethic_range_name
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_ethic_range value = 1 } }
-        localization_key = AIO_DAIT_range_1
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_ethic_range value = 2 } }
-        localization_key = AIO_DAIT_range_2
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_ethic_range value = 3 } }
-        localization_key = AIO_DAIT_range_3
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_ethic_range value = 4 } }
-        localization_key = AIO_DAIT_range_4
-    }
-    default = AIO_DAIT_range_0
-}
-
-defined_text = {
-    random = no
-    name = GetAIO_DAIT_storm_range_name
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_storm_range value = 1 } }
-        localization_key = AIO_DAIT_range_1
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_storm_range value = 2 } }
-        localization_key = AIO_DAIT_range_2
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_storm_range value = 3 } }
-        localization_key = AIO_DAIT_range_3
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_storm_range value = 4 } }
-        localization_key = AIO_DAIT_range_4
+        trigger = { check_variable = { which = AIO_DAIT_enrich_range value = 5 } }
+        localization_key = AIO_DAIT_range_5
     }
     default = AIO_DAIT_range_0
 }
@@ -261,6 +185,10 @@ defined_text = {
         trigger = { check_variable = { which = AIO_DAIT_harvest_range value = 4 } }
         localization_key = AIO_DAIT_range_4
     }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_harvest_range value = 5 } }
+        localization_key = AIO_DAIT_range_5
+    }
     default = AIO_DAIT_range_0
 }
 
@@ -282,6 +210,14 @@ defined_text = {
     text = {
         trigger = { check_variable = { which = AIO_DAIT_strike_range value = 4 } }
         localization_key = AIO_DAIT_range_4
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_strike_range value = 5 } }
+        localization_key = AIO_DAIT_range_5
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_strike_range value = 6 } }
+        localization_key = AIO_DAIT_range_6
     }
     default = AIO_DAIT_range_0
 }
@@ -305,6 +241,10 @@ defined_text = {
         trigger = { check_variable = { which = AIO_DAIT_erase_range value = 4 } }
         localization_key = AIO_DAIT_range_4
     }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_erase_range value = 5 } }
+        localization_key = AIO_DAIT_range_5
+    }
     default = AIO_DAIT_range_0
 }
 
@@ -321,4 +261,22 @@ defined_text = {
         localization_key = AIO_DAIT_target_planet_system_name
     }
     default = AIO_DAIT_target_none
+}
+
+# Mirrors the owner resolution used by the Ethics button.
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_selected_country
+    text = {
+        trigger = {
+            is_scope_type = country
+            NOT = { is_same_value = from }
+        }
+        localization_key = AIO_DAIT_target_country_name
+    }
+    text = {
+        trigger = { AIO_DAIT_ui_owned_target = yes }
+        localization_key = AIO_DAIT_target_owner_name
+    }
+    default = AIO_DAIT_target_country_none
 }

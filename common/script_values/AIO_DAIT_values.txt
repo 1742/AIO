@@ -1,100 +1,83 @@
-AIO_DAIT_enrich_price = {
-    base = 50000
-    modifier = { add = 50000 check_variable = { which = AIO_DAIT_range value = 1 } }
-    modifier = { add = 100000 check_variable = { which = AIO_DAIT_range value = 2 } }
-    modifier = { add = 250000 check_variable = { which = AIO_DAIT_range value >= 3 } }
+# Area costs scale linearly: base cost times (1 + jumps). Fixed-range operations use base cost.
+AIO_DAIT_range_cost_multiplier = {
+    base = 1
+    modifier = { add = 1 check_variable = { which = AIO_DAIT_range value = 1 } }
+    modifier = { add = 2 check_variable = { which = AIO_DAIT_range value = 2 } }
+    modifier = { add = 3 check_variable = { which = AIO_DAIT_range value = 3 } }
+    modifier = { add = 4 check_variable = { which = AIO_DAIT_range value = 4 } }
+    modifier = { add = 5 check_variable = { which = AIO_DAIT_range value = 5 } }
 }
 
+AIO_DAIT_enrich_price = {
+    base = 50000
+    mult = value:AIO_DAIT_range_cost_multiplier
+}
 
 AIO_DAIT_spawn_price = {
     base = 50000
-    modifier = { add = 50000 check_variable = { which = AIO_DAIT_range value = 1 } }
-    modifier = { add = 100000 check_variable = { which = AIO_DAIT_range value = 2 } }
-    modifier = { add = 250000 check_variable = { which = AIO_DAIT_range value >= 3 } }
 }
 AIO_DAIT_spawn_windup = {
     base = 90
-    modifier = { add = 90 check_variable = { which = AIO_DAIT_spawn_range value = 1 } }
-    modifier = { add = 180 check_variable = { which = AIO_DAIT_spawn_range value = 2 } }
-    modifier = { add = 450 check_variable = { which = AIO_DAIT_spawn_range value = 3 } }
 }
 
 AIO_DAIT_seed_price = {
     base = 100000
-    modifier = { add = 100000 check_variable = { which = AIO_DAIT_range value = 1 } }
-    modifier = { add = 200000 check_variable = { which = AIO_DAIT_range value = 2 } }
-    modifier = { add = 500000 check_variable = { which = AIO_DAIT_range value >= 3 } }
 }
 AIO_DAIT_seed_windup = {
     base = 90
-    modifier = { add = 90 check_variable = { which = AIO_DAIT_seed_range value = 1 } }
-    modifier = { add = 180 check_variable = { which = AIO_DAIT_seed_range value = 2 } }
-    modifier = { add = 450 check_variable = { which = AIO_DAIT_seed_range value = 3 } }
 }
 
 AIO_DAIT_ethic_price = {
     base = 100000
-    modifier = { add = 100000 check_variable = { which = AIO_DAIT_range value = 1 } }
-    modifier = { add = 200000 check_variable = { which = AIO_DAIT_range value = 2 } }
-    modifier = { add = 500000 check_variable = { which = AIO_DAIT_range value >= 3 } }
 }
 AIO_DAIT_ethic_windup = {
     base = 90
-    modifier = { add = 90 check_variable = { which = AIO_DAIT_ethic_range value = 1 } }
-    modifier = { add = 180 check_variable = { which = AIO_DAIT_ethic_range value = 2 } }
-    modifier = { add = 450 check_variable = { which = AIO_DAIT_ethic_range value = 3 } }
 }
 
 AIO_DAIT_storm_price = {
     base = 50000
-    modifier = { add = 50000 check_variable = { which = AIO_DAIT_range value = 1 } }
-    modifier = { add = 100000 check_variable = { which = AIO_DAIT_range value = 2 } }
-    modifier = { add = 250000 check_variable = { which = AIO_DAIT_range value >= 3 } }
 }
 AIO_DAIT_storm_windup = {
     base = 90
-    modifier = { add = 90 check_variable = { which = AIO_DAIT_storm_range value = 1 } }
-    modifier = { add = 180 check_variable = { which = AIO_DAIT_storm_range value = 2 } }
-    modifier = { add = 450 check_variable = { which = AIO_DAIT_storm_range value = 3 } }
 }
 
 AIO_DAIT_harvest_price = {
     base = 100000
-    modifier = { add = 100000 check_variable = { which = AIO_DAIT_range value = 1 } }
-    modifier = { add = 200000 check_variable = { which = AIO_DAIT_range value = 2 } }
-    modifier = { add = 500000 check_variable = { which = AIO_DAIT_range value >= 3 } }
+    mult = value:AIO_DAIT_range_cost_multiplier
 }
 AIO_DAIT_harvest_windup = {
     base = 90
     modifier = { add = 90 check_variable = { which = AIO_DAIT_harvest_range value = 1 } }
     modifier = { add = 180 check_variable = { which = AIO_DAIT_harvest_range value = 2 } }
-    modifier = { add = 450 check_variable = { which = AIO_DAIT_harvest_range value = 3 } }
+    modifier = { add = 270 check_variable = { which = AIO_DAIT_harvest_range value = 3 } }
+    modifier = { add = 360 check_variable = { which = AIO_DAIT_harvest_range value = 4 } }
+    modifier = { add = 450 check_variable = { which = AIO_DAIT_harvest_range value = 5 } }
 }
 
 AIO_DAIT_strike_price = {
     base = 100000
-    modifier = { add = 100000 check_variable = { which = AIO_DAIT_range value = 1 } }
-    modifier = { add = 200000 check_variable = { which = AIO_DAIT_range value = 2 } }
-    modifier = { add = 500000 check_variable = { which = AIO_DAIT_range value >= 3 } }
+    mult = value:AIO_DAIT_range_cost_multiplier
 }
 AIO_DAIT_strike_windup = {
     base = 180
     modifier = { add = 90 check_variable = { which = AIO_DAIT_strike_range value = 1 } }
     modifier = { add = 180 check_variable = { which = AIO_DAIT_strike_range value = 2 } }
-    modifier = { add = 450 check_variable = { which = AIO_DAIT_strike_range value = 3 } }
+    modifier = { add = 270 check_variable = { which = AIO_DAIT_strike_range value = 3 } }
+    modifier = { add = 360 check_variable = { which = AIO_DAIT_strike_range value = 4 } }
+    modifier = { add = 450 check_variable = { which = AIO_DAIT_strike_range value = 5 } }
     modifier = { add = -90 has_country_flag = AIO_DAIT_strike_full }
-    modifier = { add = 270 check_variable = { which = AIO_DAIT_strike_range value = 4 } }
+    modifier = { add = 270 check_variable = { which = AIO_DAIT_strike_range value = 6 } }
 }
 
 AIO_DAIT_erase_price = {
     base = 100000
-    modifier = { add = 100000 check_variable = { which = AIO_DAIT_range value = 1 } }
-    modifier = { add = 200000 check_variable = { which = AIO_DAIT_range value = 2 } }
-    modifier = { add = 500000 check_variable = { which = AIO_DAIT_range value >= 3 } }
+    mult = value:AIO_DAIT_range_cost_multiplier
 }
 AIO_DAIT_erase_windup = {
     base = 180
     modifier = { add = 90 check_variable = { which = AIO_DAIT_erase_range value = 1 } }
     modifier = { add = 180 check_variable = { which = AIO_DAIT_erase_range value = 2 } }
-    modifier = { add = 450 check_variable = { which = AIO_DAIT_erase_range value = 3 } }
+    modifier = { add = 270 check_variable = { which = AIO_DAIT_erase_range value = 3 } }
+    modifier = { add = 360 check_variable = { which = AIO_DAIT_erase_range value = 4 } }
+    modifier = { add = 450 check_variable = { which = AIO_DAIT_erase_range value = 5 } }
 }

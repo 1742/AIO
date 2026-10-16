@@ -237,227 +237,226 @@ AIO_DAIT_seed_effect = {
     }
 }
 
+# Country scope. The caller resolves and validates the selected owner.
 AIO_DAIT_ethic_effect = {
-    owner? = {
-        if = {
-            limit = { has_ethic = ethic_authoritarian }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_authoritarian }
-        }
-        if = {
-            limit = { has_ethic = ethic_egalitarian }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_egalitarian }
-        }
-        if = {
-            limit = { has_ethic = ethic_fanatic_authoritarian }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_authoritarian }
-        }
-        if = {
-            limit = { has_ethic = ethic_fanatic_egalitarian }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_egalitarian }
-        }
-        if = {
-            limit = { has_ethic = ethic_materialist }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_materialist }
-        }
-        if = {
-            limit = { has_ethic = ethic_spiritualist }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_spiritualist }
-        }
-        if = {
-            limit = { has_ethic = ethic_fanatic_materialist }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_materialist }
-        }
-        if = {
-            limit = { has_ethic = ethic_fanatic_spiritualist }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_spiritualist }
-        }
-        if = {
-            limit = { has_ethic = ethic_militarist }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_militarist }
-        }
-        if = {
-            limit = { has_ethic = ethic_pacifist }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_pacifist }
-        }
-        if = {
-            limit = { has_ethic = ethic_fanatic_militarist }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_militarist }
-        }
-        if = {
-            limit = { has_ethic = ethic_fanatic_pacifist }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_pacifist }
-        }
-        if = {
-            limit = { has_ethic = ethic_xenophile }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_xenophile }
-        }
-        if = {
-            limit = { has_ethic = ethic_xenophobe }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_xenophobe }
-        }
-        if = {
-            limit = { has_ethic = ethic_fanatic_xenophile }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_xenophile }
-        }
-        if = {
-            limit = { has_ethic = ethic_fanatic_xenophobe }
-            hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_xenophobe }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_authoritarian }
-            country_remove_ethic = ethic_authoritarian
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_egalitarian }
-            country_remove_ethic = ethic_egalitarian
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_authoritarian }
-            country_remove_ethic = ethic_fanatic_authoritarian
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_egalitarian }
-            country_remove_ethic = ethic_fanatic_egalitarian
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_materialist }
-            country_remove_ethic = ethic_materialist
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_spiritualist }
-            country_remove_ethic = ethic_spiritualist
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_materialist }
-            country_remove_ethic = ethic_fanatic_materialist
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_spiritualist }
-            country_remove_ethic = ethic_fanatic_spiritualist
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_militarist }
-            country_remove_ethic = ethic_militarist
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_pacifist }
-            country_remove_ethic = ethic_pacifist
-        }
+    if = {
+        limit = { has_ethic = ethic_authoritarian }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_authoritarian }
+    }
+    if = {
+        limit = { has_ethic = ethic_egalitarian }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_egalitarian }
+    }
+    if = {
+        limit = { has_ethic = ethic_fanatic_authoritarian }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_authoritarian }
+    }
+    if = {
+        limit = { has_ethic = ethic_fanatic_egalitarian }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_egalitarian }
+    }
+    if = {
+        limit = { has_ethic = ethic_materialist }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_materialist }
+    }
+    if = {
+        limit = { has_ethic = ethic_spiritualist }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_spiritualist }
+    }
+    if = {
+        limit = { has_ethic = ethic_fanatic_materialist }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_materialist }
+    }
+    if = {
+        limit = { has_ethic = ethic_fanatic_spiritualist }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_spiritualist }
+    }
+    if = {
+        limit = { has_ethic = ethic_militarist }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_militarist }
+    }
+    if = {
+        limit = { has_ethic = ethic_pacifist }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_pacifist }
+    }
+    if = {
+        limit = { has_ethic = ethic_fanatic_militarist }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_militarist }
+    }
+    if = {
+        limit = { has_ethic = ethic_fanatic_pacifist }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_pacifist }
+    }
+    if = {
+        limit = { has_ethic = ethic_xenophile }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_xenophile }
+    }
+    if = {
+        limit = { has_ethic = ethic_xenophobe }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_xenophobe }
+    }
+    if = {
+        limit = { has_ethic = ethic_fanatic_xenophile }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_xenophile }
+    }
+    if = {
+        limit = { has_ethic = ethic_fanatic_xenophobe }
+        hidden_effect = { set_country_flag = AIO_DAIT_old_fanatic_xenophobe }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_authoritarian }
+        country_remove_ethic = ethic_authoritarian
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_egalitarian }
+        country_remove_ethic = ethic_egalitarian
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_authoritarian }
+        country_remove_ethic = ethic_fanatic_authoritarian
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_egalitarian }
+        country_remove_ethic = ethic_fanatic_egalitarian
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_materialist }
+        country_remove_ethic = ethic_materialist
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_spiritualist }
+        country_remove_ethic = ethic_spiritualist
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_materialist }
+        country_remove_ethic = ethic_fanatic_materialist
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_spiritualist }
+        country_remove_ethic = ethic_fanatic_spiritualist
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_militarist }
+        country_remove_ethic = ethic_militarist
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_pacifist }
+        country_remove_ethic = ethic_pacifist
+    }
 
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_militarist }
-            country_remove_ethic = ethic_fanatic_militarist
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_pacifist }
-            country_remove_ethic = ethic_fanatic_pacifist
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_xenophile }
-            country_remove_ethic = ethic_xenophile
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_xenophobe }
-            country_remove_ethic = ethic_xenophobe
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_xenophile }
-            country_remove_ethic = ethic_fanatic_xenophile
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_xenophobe }
-            country_remove_ethic = ethic_fanatic_xenophobe
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_authoritarian }
-            country_add_ethic = ethic_egalitarian
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_authoritarian }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_egalitarian }
-            country_add_ethic = ethic_authoritarian
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_egalitarian }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_authoritarian }
-            country_add_ethic = ethic_fanatic_egalitarian
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_authoritarian }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_egalitarian }
-            country_add_ethic = ethic_fanatic_authoritarian
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_egalitarian }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_materialist }
-            country_add_ethic = ethic_spiritualist
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_materialist }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_spiritualist }
-            country_add_ethic = ethic_materialist
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_spiritualist }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_materialist }
-            country_add_ethic = ethic_fanatic_spiritualist
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_materialist }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_spiritualist }
-            country_add_ethic = ethic_fanatic_materialist
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_spiritualist }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_militarist }
-            country_add_ethic = ethic_pacifist
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_militarist }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_pacifist }
-            country_add_ethic = ethic_militarist
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_pacifist }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_militarist }
-            country_add_ethic = ethic_fanatic_pacifist
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_militarist }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_pacifist }
-            country_add_ethic = ethic_fanatic_militarist
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_pacifist }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_xenophile }
-            country_add_ethic = ethic_xenophobe
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_xenophile }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_xenophobe }
-            country_add_ethic = ethic_xenophile
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_xenophobe }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_xenophile }
-            country_add_ethic = ethic_fanatic_xenophobe
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_xenophile }
-        }
-        if = {
-            limit = { has_country_flag = AIO_DAIT_old_fanatic_xenophobe }
-            country_add_ethic = ethic_fanatic_xenophile
-            hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_xenophobe }
-        }
-        change_government = {
-            authority = random
-            civics = random
-            remove_invalid_civics = yes
-        }
-        set_government_cooldown = default
-        remove_opinion_modifier = {
-            modifier = opinion_cosmogenesis_thesis
-            who = event_target:AIO_DAIT_maker
-        }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_militarist }
+        country_remove_ethic = ethic_fanatic_militarist
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_pacifist }
+        country_remove_ethic = ethic_fanatic_pacifist
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_xenophile }
+        country_remove_ethic = ethic_xenophile
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_xenophobe }
+        country_remove_ethic = ethic_xenophobe
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_xenophile }
+        country_remove_ethic = ethic_fanatic_xenophile
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_xenophobe }
+        country_remove_ethic = ethic_fanatic_xenophobe
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_authoritarian }
+        country_add_ethic = ethic_egalitarian
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_authoritarian }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_egalitarian }
+        country_add_ethic = ethic_authoritarian
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_egalitarian }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_authoritarian }
+        country_add_ethic = ethic_fanatic_egalitarian
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_authoritarian }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_egalitarian }
+        country_add_ethic = ethic_fanatic_authoritarian
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_egalitarian }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_materialist }
+        country_add_ethic = ethic_spiritualist
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_materialist }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_spiritualist }
+        country_add_ethic = ethic_materialist
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_spiritualist }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_materialist }
+        country_add_ethic = ethic_fanatic_spiritualist
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_materialist }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_spiritualist }
+        country_add_ethic = ethic_fanatic_materialist
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_spiritualist }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_militarist }
+        country_add_ethic = ethic_pacifist
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_militarist }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_pacifist }
+        country_add_ethic = ethic_militarist
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_pacifist }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_militarist }
+        country_add_ethic = ethic_fanatic_pacifist
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_militarist }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_pacifist }
+        country_add_ethic = ethic_fanatic_militarist
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_pacifist }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_xenophile }
+        country_add_ethic = ethic_xenophobe
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_xenophile }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_xenophobe }
+        country_add_ethic = ethic_xenophile
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_xenophobe }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_xenophile }
+        country_add_ethic = ethic_fanatic_xenophobe
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_xenophile }
+    }
+    if = {
+        limit = { has_country_flag = AIO_DAIT_old_fanatic_xenophobe }
+        country_add_ethic = ethic_fanatic_xenophile
+        hidden_effect = { remove_country_flag = AIO_DAIT_old_fanatic_xenophobe }
+    }
+    change_government = {
+        authority = random
+        civics = random
+        remove_invalid_civics = yes
+    }
+    set_government_cooldown = default
+    remove_opinion_modifier = {
+        modifier = opinion_cosmogenesis_thesis
+        who = event_target:AIO_DAIT_maker
     }
 }
 

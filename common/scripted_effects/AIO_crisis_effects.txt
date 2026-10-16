@@ -461,16 +461,3 @@ AIO_destroy_gate_effect = {
     }
     clear_global_event_target = AIO_gate_system
 }
-
-AIO_crisis_finish_ascension_effect = {
-    save_event_target_as = AIO_DAIT_maker
-    end_event_chain = AIO_crisis_events_chain
-    every_war = { end_war_effect = yes }
-    if = {
-        limit = { is_subject = yes }
-        set_subject_of = { who = none }
-    }
-    every_subject = { set_subject_of = { who = none } }
-    AIO_ascension_effect = yes
-    AIO_ascension_galaxy_effect = yes
-}

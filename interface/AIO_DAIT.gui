@@ -36,6 +36,16 @@ guiTypes = {
             effect = AIO_DAIT_target_label
         }
         effectbuttonType = {
+            name = "AIO_DAIT_ethic_target_label"
+            position = { x = 370 y = 8 }
+            size = { x = 370 y = 26 }
+            quadTextureSprite = GFX_tiling_button_standard
+            font = "cg_16b"
+            buttonText = "AIO_DAIT_current_country"
+            tooltipText = "AIO_DAIT_current_country_tooltip"
+            effect = AIO_DAIT_ethic_target_label
+        }
+        effectbuttonType = {
             name = "AIO_DAIT_enrich"
             position = { x = 10 y = 48 }
             size = { x = 72 y = 26 }
@@ -176,6 +186,28 @@ guiTypes = {
             buttonText = "AIO_DAIT_range_4"
             tooltipText = "AIO_DAIT_range_4_tooltip"
             effect = AIO_DAIT_range_4
+            clicksound = "click"
+        }
+        effectbuttonType = {
+            name = "AIO_DAIT_range_5"
+            position = { x = 614 y = 48 }
+            size = { x = 115 y = 26 }
+            quadTextureSprite = GFX_tiling_button_standard
+            font = "cg_16b"
+            buttonText = "AIO_DAIT_range_5"
+            tooltipText = "AIO_DAIT_range_5_tooltip"
+            effect = AIO_DAIT_range_5
+            clicksound = "click"
+        }
+        effectbuttonType = {
+            name = "AIO_DAIT_range_6"
+            position = { x = 614 y = 48 }
+            size = { x = 115 y = 26 }
+            quadTextureSprite = GFX_tiling_button_standard
+            font = "cg_16b"
+            buttonText = "AIO_DAIT_range_6"
+            tooltipText = "AIO_DAIT_range_6_tooltip"
+            effect = AIO_DAIT_range_6
             clicksound = "click"
         }
         effectbuttonType = {

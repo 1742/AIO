@@ -180,7 +180,7 @@ AIO_DAIT_ethic_situation = {
     }
     on_progress_complete = {
         hidden_effect = {
-            target = { save_event_target_as = AIO_DAIT_target_system }
+            target = { save_event_target_as = AIO_DAIT_target_country }
         }
         owner = {
             if = {

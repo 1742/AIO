@@ -1,5 +1,5 @@
 AIO_Aforgomon_Wrath = {
-	entity = "star_explosion_entity"
+	entity = "AIO_Aforgomon_entity"
 	max_speed = 0
 	acceleration = 0
 	graphical_culture = no

@@ -139,35 +139,18 @@ AIO_DAIT_ethic = {
     }
     allow = {
         custom_tooltip = {
-            fail_text = AIO_DAIT_need_target
-            AIO_DAIT_ui_target_valid = yes
+            fail_text = AIO_DAIT_need_country_target
+            AIO_DAIT_ethic_ui_target_valid = yes
         }
         from = { AIO_DAIT_ethic_ready = yes }
-        custom_tooltip = {
-            fail_text = AIO_DAIT_invalid_target
-            OR = {
-                AND = {
-                    is_scope_type = galactic_object
-                    AIO_DAIT_ethic_target_valid = yes
-                    NOT = { has_star_flag = AIO_DAIT_center_busy }
-                }
-                AND = {
-                    is_scope_type = planet
-                    solar_system = {
-                        AIO_DAIT_ethic_target_valid = yes
-                        NOT = { has_star_flag = AIO_DAIT_center_busy }
-                    }
-                }
-            }
-        }
     }
     effect = {
         if = {
             limit = {
-                AIO_DAIT_ui_target_valid = yes
+                AIO_DAIT_ethic_ui_target_valid = yes
                 from = { AIO_DAIT_ethic_ready = yes }
             }
-            AIO_DAIT_capture_target = yes
+            AIO_DAIT_capture_country_target = yes
             event_target:AIO_DAIT_maker = { AIO_DAIT_start_ethic = yes }
         }
     }
@@ -408,6 +391,31 @@ AIO_DAIT_range_4 = {
     effect = { from = { AIO_DAIT_cycle_range = yes } }
 }
 
+AIO_DAIT_range_5 = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+            check_variable = { which = AIO_DAIT_range value = 5 }
+        }
+    }
+    allow = { always = yes }
+    effect = { from = { AIO_DAIT_cycle_range = yes } }
+}
+
+AIO_DAIT_range_6 = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+            is_country_type = AIO_empire
+            check_variable = { which = AIO_DAIT_range value = 6 }
+        }
+    }
+    allow = { always = yes }
+    effect = { from = { AIO_DAIT_cycle_range = yes } }
+}
+
 AIO_DAIT_target_label = {
     potential = {
         from = {
@@ -490,4 +498,15 @@ AIO_DAIT_final_constraint = {
             }
         }
     }
+}
+
+AIO_DAIT_ethic_target_label = {
+    potential = {
+        from = {
+            AIO_DAIT_country_valid = yes
+            has_country_flag = AIO_DAIT_toolbar
+        }
+    }
+    allow = { always = yes }
+    effect = { }
 }

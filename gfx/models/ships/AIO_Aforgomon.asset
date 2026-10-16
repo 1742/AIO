@@ -1,0 +1,7 @@
+# Preserve the original explosion root and portal section; add the missing ship slot.
+entity = {
+    name = "AIO_Aforgomon_entity"
+    clone = "star_explosion_entity"
+    cull_radius = 10000
+    locator = { name = "part1" position = { 0 0 0 } }
+}

@@ -51,3 +51,6 @@
  mod_AIO_final_location_situation_max_progress_add:0 "亚弗戈蒙追索总长度"
  mod_AIO_final_location_situation_max_progress_mult:0 "$mod_AIO_final_location_situation_max_progress_add$"
  AIO_final_main_situation_ready_desc:0 "约束研究已完成。通过犹格索托斯选择外部星系，完成同时执行诱导的约束项目，再于本轮驻留期限内摧毁降临实体。研究完成本身不会结束追索。"
+
+ AIO_final_location_complete_tooltip:0 "外部降临驻留结束时，亚弗戈蒙消失并抹除目标星系，留下可供科研船调查的残迹，随后开始下一轮降临。若目标为无名之雾，则终局失败。"
+ AIO_final_location_approach_desc:0 "等待当前降临；在显现前可完成诱导或约束项目。受约束的实体必须在驻留期限内被舰队击败。"
