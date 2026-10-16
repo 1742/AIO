@@ -1,34 +1,53 @@
 guiTypes = {
     containerWindowType = {
         name = "AIO_DAIT"
-        orientation = upper_left
-        origo = upper_left
-        position = { x = 390 y = 100 }
-        size = { width = 780 height = 388 }
-        moveable = yes
-        background = { name = "background" spriteType = "GFX_tile_outliner_bg_solid" }
-        instantTextBoxType = {
-            name = "AIO_DAIT_title"
-            position = { x = 18 y = 16 }
-            maxWidth = 368
-            maxHeight = 30
-            font = "malgun_goth_24"
-            text = "AIO_DAIT_toolbar"
+        orientation = lower_right
+        origo = lower_right
+        position = { x = -563 y = -3 }
+        size = { width = 780 height = 452 }
+        moveable = no
+        clipping = no
+        # Fixed bottom-right anchor: orb center is (screen width - 590, height - 30).
+        # No root background: the collapsed panel must not intercept map clicks.
+        iconType = {
+            name = "AIO_DAIT_orb_image"
+            position = { x = 726 y = 398 }
+            spriteType = "GFX_astral_rift_sphere_icon"
             alwaysTransparent = yes
         }
-        buttonType = {
-            name = "close"
-            quadTextureSprite = "GFX_close"
+        effectbuttonType = {
+            name = "AIO_DAIT_panel_background"
+            position = { x = 0 y = 0 }
+            size = { x = 780 y = 388 }
+            quadTextureSprite = "GFX_tile_outliner_bg_solid"
+            alwaysTransparent = yes
+            effect = AIO_DAIT_info_label
+        }
+        effectbuttonType = {
+            name = "AIO_DAIT_operation_background"
+            position = { x = 12 y = 120 }
+            size = { x = 756 y = 96 }
+            quadTextureSprite = "GFX_tiles_dark_area_cut_8"
+            alwaysTransparent = yes
+            effect = AIO_DAIT_info_label
+        }
+        effectbuttonType = {
+            name = "AIO_DAIT_title"
+            position = { x = 18 y = 16 }
+            size = { x = 368 y = 30 }
+            quadTextureSprite = "GFX_invisible"
+            font = "malgun_goth_24"
+            buttonText = "AIO_DAIT_toolbar"
+            alwaysTransparent = yes
+            effect = AIO_DAIT_info_label
+        }
+        effectbuttonType = {
+            name = "AIO_DAIT_collapse_menu"
             position = { x = 730 y = 16 }
             size = { x = 32 y = 32 }
-            shortcut = "ESCAPE"
+            quadTextureSprite = "GFX_close"
+            effect = AIO_DAIT_collapse_menu
             clicksound = "back_click"
-        }
-        containerWindowType = {
-            name = "operation_background"
-            position = { x = 12 y = 120 }
-            size = { width = 756 height = 96 }
-            background = { name = "bg" spriteType = "GFX_tiles_dark_area_cut_8" }
         }
         effectbuttonType = {
             name = "AIO_DAIT_logic_label"
@@ -170,7 +189,6 @@ guiTypes = {
             quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
             buttonText = "AIO_DAIT_menu_range_0"
-            tooltipText = "AIO_DAIT_range_0_tooltip"
             effect = AIO_DAIT_range_0
             clicksound = "click"
         }
@@ -181,7 +199,6 @@ guiTypes = {
             quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
             buttonText = "AIO_DAIT_menu_range_1"
-            tooltipText = "AIO_DAIT_range_1_tooltip"
             effect = AIO_DAIT_range_1
             clicksound = "click"
         }
@@ -192,7 +209,6 @@ guiTypes = {
             quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
             buttonText = "AIO_DAIT_menu_range_2"
-            tooltipText = "AIO_DAIT_range_2_tooltip"
             effect = AIO_DAIT_range_2
             clicksound = "click"
         }
@@ -203,7 +219,6 @@ guiTypes = {
             quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
             buttonText = "AIO_DAIT_menu_range_3"
-            tooltipText = "AIO_DAIT_range_3_tooltip"
             effect = AIO_DAIT_range_3
             clicksound = "click"
         }
@@ -214,7 +229,6 @@ guiTypes = {
             quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
             buttonText = "AIO_DAIT_menu_range_4"
-            tooltipText = "AIO_DAIT_range_4_tooltip"
             effect = AIO_DAIT_range_4
             clicksound = "click"
         }
@@ -225,7 +239,6 @@ guiTypes = {
             quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
             buttonText = "AIO_DAIT_menu_range_5"
-            tooltipText = "AIO_DAIT_range_5_tooltip"
             effect = AIO_DAIT_range_5
             clicksound = "click"
         }
@@ -236,7 +249,6 @@ guiTypes = {
             quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
             buttonText = "AIO_DAIT_menu_range_6"
-            tooltipText = "AIO_DAIT_range_6_tooltip"
             effect = AIO_DAIT_range_6
             clicksound = "click"
         }
@@ -284,38 +296,49 @@ guiTypes = {
             effect = AIO_DAIT_final_constraint
             clicksound = "click"
         }
+        effectbuttonType = {
+            name = "AIO_DAIT_toggle_menu"
+            position = { x = 726 y = 398 }
+            size = { x = 54 y = 54 }
+            quadTextureSprite = "GFX_invisible"
+            font = "malgun_goth_24"
+            buttonText = "AIO_DAIT_launcher_label"
+            effect = AIO_DAIT_toggle_menu
+            clicksound = "click"
+        }
         # Native diplomatic-event bindings; all are outside the visible menu.
+        buttonType = { name = "close" quadTextureSprite = "GFX_close" position = { x = -10000 y = -10000 } shortcut = "ESCAPE" clicksound = "back_click" }
         buttonType = { name = "tts_button" quadTextureSprite = "GFX_standard_button_142_34_button" position = { x = -10000 y = -10000 } }
 
-        buttonType = { name = "focus_button" position = { x = -1180 y = -1112 } spriteType = "GFX_fleetview_focus" } # hidden
-        instantTextBoxType = { name = "heading" font = "malgun_goth_24" position = { x = -1120 y = -115 } } # hidden
-        buttonType = { name = "alien_message_background" size = { x = 0 y = 0 } position = { x = -1110 y = -11430 } spriteType = "GFX_tiles_dark_area_cut_8" } # hidden
+        buttonType = { name = "focus_button" position = { x = -10000 y = -10000 } spriteType = "GFX_fleetview_focus" } # hidden
+        instantTextBoxType = { name = "heading" font = "malgun_goth_24" position = { x = -10000 y = -10000 } maxWidth = 0 maxHeight = 0 alwaysTransparent = yes } # hidden
+        buttonType = { name = "alien_message_background" size = { x = 0 y = 0 } position = { x = -10000 y = -10000 } spriteType = "GFX_tiles_dark_area_cut_8" } # hidden
         buttonType = { name = "confirm_button" position = { x = -10000 y = -10000 } quadTextureSprite = "GFX_standard_button_142_34_button" } # hidden
         containerWindowType = {
             name = "portrait_background"
-            position = { x = -1117 y = -1145 }
+            position = { x = -10000 y = -10000 }
             size = { width = 0 height = 0 } 	# hide portrait window
             iconType = { name = "event_picture" spriteType = "GFX_diplomacy_portrait_frame" } # hidden
             iconType = { name = "portrait" spriteType = "GFX_portrait_character" } # hidden
         }
         containerWindowType = {
             name = "portrait"
-            position = { x = -1117 y = -1145 }
+            position = { x = -10000 y = -10000 }
             size = { width = 0 height = 0 } # hide portrait window
             iconType = { name = "portrait" spriteType = "GFX_portrait_gamesetup_mask" } # hidden
             iconType = { name = "black_frame" spriteType = "GFX_diplomacy_portrait_shadow_frame" } # hidden
             iconType = { name = "stripes_1" spriteType = "GFX_diplomacy_stripes_2" } # hidden
             iconType = { name = "city_frame" spriteType = "GFX_diplomacy_portrait_frame" } # hidden
         }
-        iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" } # hidden
+        iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" position = { x = -10000 y = -10000 } } # hidden
         instantTextBoxType = { name = "empire_name" font = "malgun_goth_24" position = { x = -10000 y = -10000 } } # hidden
         instantTextBoxType = { name = "empire_government_type" font = "cg_16b" position = { x = -10000 y = -10000 } } # hidden
         instantTextBoxType = { name = "empire_personality_type" font = "cg_16b" position = { x = -10000 y = -10000 } } # hidden
-        overlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -1145 y = -11138 } } # hidden
+        overlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -10000 y = -10000 } } # hidden
         buttonType = { name = "empire_flag" quadTextureSprite = "GFX_standard_button_142_34_button" position = { x = -10000 y = -10000 } } # hidden
         containerWindowType = {
             name = "leader_details"
-            position = { x = -1125 y = -1175 }
+            position = { x = -10000 y = -10000 }
             containerWindowType = { name = "empire_traits_box" } # hidden
             instantTextBoxType = { name = "empire_traits_label" font = "cg_16b" } # hidden
             overlappingElementsBoxType = { name = "leader_traits" } # hidden
@@ -324,7 +347,7 @@ guiTypes = {
         }
         containerWindowType = {
             name = "opinion_window"
-            position = { x = -1127 y = -11110 }
+            position = { x = -10000 y = -10000 }
             size = { width = 94 height = 30 }
             iconType = { name = "their_opinion_icon" spriteType = "GFX_diplomacy_opinion" } # hidden
             instantTextBoxType = { name = "their_opinion" font = "cg_16b" }
@@ -356,7 +379,7 @@ guiTypes = {
                 alwaysTransparent = yes
                 text_color_code = "H"
             }
-            listboxType = { name = "option_list" position = { x = -11500 y = -1130 } } # hidden option list
+            listboxType = { name = "option_list" position = { x = -10000 y = -10000 } } # hidden option list
         }
         # Description Section
         instantTextBoxType = {

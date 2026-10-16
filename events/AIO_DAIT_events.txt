@@ -16,7 +16,7 @@ carrier_event = {
     immediate = { owner = { country_event = { id = AIO_crisis_events.902 } } }
 }
 
-# Effect buttons do not dismiss this window; close/ESC resolves its hidden option.
+# The fixed bottom launcher starts collapsed; ESC dismisses the entire widget.
 country_event = {
     id = AIO_DAIT_events.203
     title = AIO_DAIT_events.202.title
@@ -30,6 +30,7 @@ country_event = {
     }
     immediate = {
         set_country_flag = AIO_DAIT_toolbar
+        set_country_flag = AIO_DAIT_collapsed
         set_variable = { which = AIO_DAIT_operation value = 0 }
     }
     option = {
@@ -38,6 +39,7 @@ country_event = {
     }
     after = {
         remove_country_flag = AIO_DAIT_toolbar
+        remove_country_flag = AIO_DAIT_collapsed
         clear_variable = AIO_DAIT_operation
     }
 }

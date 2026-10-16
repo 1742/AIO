@@ -47,3 +47,7 @@
 
 
  #endregion
+
+ AIO_DAIT_launcher_label:0 "§Y∞§!"
+ AIO_DAIT_launcher_tooltip:0 "§H应用无限§!\n点击底部悬浮球向上展开或收起菜单。收起保留当前选择。按Esc彻底关闭，可通过应用无限法令重新打开。"
+ AIO_DAIT_collapse_tooltip:0 "收起菜单，仅保留悬浮球。"

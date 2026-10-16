@@ -2,7 +2,7 @@
 
 AIO_DAIT_enrich = {
     potential = {
-        from = { AIO_DAIT_country_valid = yes has_country_flag = AIO_DAIT_toolbar }
+        from = { AIO_DAIT_menu_visible = yes }
     }
     allow = {
         from = {
@@ -24,7 +24,7 @@ AIO_DAIT_enrich = {
 
 AIO_DAIT_spawn = {
     potential = {
-        from = { AIO_DAIT_country_valid = yes has_country_flag = AIO_DAIT_toolbar }
+        from = { AIO_DAIT_menu_visible = yes }
     }
     allow = {
         from = {
@@ -46,7 +46,7 @@ AIO_DAIT_spawn = {
 
 AIO_DAIT_seed = {
     potential = {
-        from = { AIO_DAIT_country_valid = yes has_country_flag = AIO_DAIT_toolbar }
+        from = { AIO_DAIT_menu_visible = yes }
     }
     allow = {
         from = {
@@ -68,7 +68,7 @@ AIO_DAIT_seed = {
 
 AIO_DAIT_ethic = {
     potential = {
-        from = { AIO_DAIT_country_valid = yes has_country_flag = AIO_DAIT_toolbar }
+        from = { AIO_DAIT_menu_visible = yes }
     }
     allow = {
         from = {
@@ -90,7 +90,7 @@ AIO_DAIT_ethic = {
 
 AIO_DAIT_storm = {
     potential = {
-        from = { AIO_DAIT_country_valid = yes has_country_flag = AIO_DAIT_toolbar }
+        from = { AIO_DAIT_menu_visible = yes }
     }
     allow = {
         from = {
@@ -112,7 +112,7 @@ AIO_DAIT_storm = {
 
 AIO_DAIT_harvest = {
     potential = {
-        from = { AIO_DAIT_country_valid = yes has_country_flag = AIO_DAIT_toolbar }
+        from = { AIO_DAIT_menu_visible = yes }
     }
     allow = {
         from = {
@@ -134,7 +134,7 @@ AIO_DAIT_harvest = {
 
 AIO_DAIT_strike = {
     potential = {
-        from = { AIO_DAIT_country_valid = yes has_country_flag = AIO_DAIT_toolbar }
+        from = { AIO_DAIT_menu_visible = yes }
     }
     allow = {
         from = {
@@ -156,7 +156,7 @@ AIO_DAIT_strike = {
 
 AIO_DAIT_erase = {
     potential = {
-        from = { AIO_DAIT_country_valid = yes has_country_flag = AIO_DAIT_toolbar }
+        from = { AIO_DAIT_menu_visible = yes }
     }
     allow = {
         from = {
@@ -179,8 +179,7 @@ AIO_DAIT_erase = {
 AIO_DAIT_range_0 = {
     potential = {
         from = {
-            AIO_DAIT_country_valid = yes
-            has_country_flag = AIO_DAIT_toolbar
+            AIO_DAIT_menu_visible = yes
             AIO_DAIT_menu_operation_selected = yes
             NOT = { check_variable = { which = AIO_DAIT_operation value = 4 } }
         }
@@ -199,8 +198,7 @@ AIO_DAIT_range_0 = {
 AIO_DAIT_range_1 = {
     potential = {
         from = {
-            AIO_DAIT_country_valid = yes
-            has_country_flag = AIO_DAIT_toolbar
+            AIO_DAIT_menu_visible = yes
             AIO_DAIT_menu_area_operation = yes
         }
     }
@@ -218,8 +216,7 @@ AIO_DAIT_range_1 = {
 AIO_DAIT_range_2 = {
     potential = {
         from = {
-            AIO_DAIT_country_valid = yes
-            has_country_flag = AIO_DAIT_toolbar
+            AIO_DAIT_menu_visible = yes
             AIO_DAIT_menu_area_operation = yes
         }
     }
@@ -237,8 +234,7 @@ AIO_DAIT_range_2 = {
 AIO_DAIT_range_3 = {
     potential = {
         from = {
-            AIO_DAIT_country_valid = yes
-            has_country_flag = AIO_DAIT_toolbar
+            AIO_DAIT_menu_visible = yes
             AIO_DAIT_menu_area_operation = yes
         }
     }
@@ -256,8 +252,7 @@ AIO_DAIT_range_3 = {
 AIO_DAIT_range_4 = {
     potential = {
         from = {
-            AIO_DAIT_country_valid = yes
-            has_country_flag = AIO_DAIT_toolbar
+            AIO_DAIT_menu_visible = yes
             AIO_DAIT_menu_area_operation = yes
         }
     }
@@ -275,8 +270,7 @@ AIO_DAIT_range_4 = {
 AIO_DAIT_range_5 = {
     potential = {
         from = {
-            AIO_DAIT_country_valid = yes
-            has_country_flag = AIO_DAIT_toolbar
+            AIO_DAIT_menu_visible = yes
             AIO_DAIT_menu_area_operation = yes
         }
     }
@@ -294,8 +288,7 @@ AIO_DAIT_range_5 = {
 AIO_DAIT_range_6 = {
     potential = {
         from = {
-            AIO_DAIT_country_valid = yes
-            has_country_flag = AIO_DAIT_toolbar
+            AIO_DAIT_menu_visible = yes
             check_variable = { which = AIO_DAIT_operation value = 7 }
             is_country_type = AIO_empire
         }
@@ -314,8 +307,7 @@ AIO_DAIT_range_6 = {
 AIO_DAIT_confirm = {
     potential = {
         from = {
-            AIO_DAIT_country_valid = yes
-            has_country_flag = AIO_DAIT_toolbar
+            AIO_DAIT_menu_visible = yes
             AIO_DAIT_menu_operation_selected = yes
         }
     }
@@ -384,7 +376,7 @@ AIO_DAIT_confirm = {
 AIO_DAIT_final_induction = {
     potential = {
         from = {
-            has_country_flag = AIO_DAIT_toolbar
+            AIO_DAIT_menu_visible = yes
             has_country_flag = AIO_final_start
             check_variable = { which = AIO_final_research value >= 2 }
             check_variable = { which = AIO_final_research value < 3 }
@@ -423,7 +415,7 @@ AIO_DAIT_final_induction = {
 AIO_DAIT_final_constraint = {
     potential = {
         from = {
-            has_country_flag = AIO_DAIT_toolbar
+            AIO_DAIT_menu_visible = yes
             has_country_flag = AIO_final_start
             check_variable = { which = AIO_final_research value >= 3 }
         }
@@ -461,7 +453,7 @@ AIO_DAIT_final_constraint = {
 # Readouts evaluate scripted localization without mutating game state.
 AIO_DAIT_info_label = {
     potential = {
-        from = { AIO_DAIT_country_valid = yes has_country_flag = AIO_DAIT_toolbar }
+        from = { AIO_DAIT_menu_visible = yes }
     }
     allow = { always = yes }
     effect = { }
@@ -470,8 +462,37 @@ AIO_DAIT_info_label = {
 # GUI tooltipText is static; effect tooltips receive the selection/player scopes.
 AIO_DAIT_logic_label = {
     potential = {
-        from = { AIO_DAIT_country_valid = yes has_country_flag = AIO_DAIT_toolbar }
+        from = { AIO_DAIT_menu_visible = yes }
     }
     allow = { always = yes }
     effect = { custom_tooltip = AIO_DAIT_menu_logic_tooltip }
+}
+
+# Both the orb and the visible collapse button toggle the same window state.
+AIO_DAIT_toggle_menu = {
+    potential = {
+        from = { AIO_DAIT_country_valid = yes has_country_flag = AIO_DAIT_toolbar }
+    }
+    allow = { always = yes }
+    effect = {
+        custom_tooltip = AIO_DAIT_launcher_tooltip
+        hidden_effect = {
+            from = {
+                if = {
+                    limit = { has_country_flag = AIO_DAIT_collapsed }
+                    remove_country_flag = AIO_DAIT_collapsed
+                }
+                else = { set_country_flag = AIO_DAIT_collapsed }
+            }
+        }
+    }
+}
+
+AIO_DAIT_collapse_menu = {
+    potential = { from = { AIO_DAIT_menu_visible = yes } }
+    allow = { always = yes }
+    effect = {
+        custom_tooltip = AIO_DAIT_collapse_tooltip
+        hidden_effect = { from = { set_country_flag = AIO_DAIT_collapsed } }
+    }
 }

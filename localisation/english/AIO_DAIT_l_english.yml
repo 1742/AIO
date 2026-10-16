@@ -48,3 +48,7 @@
 
 
  #endregion
+
+ AIO_DAIT_launcher_label:0 "§Y∞§!"
+ AIO_DAIT_launcher_tooltip:0 "§HApply Infinity§!\nClick the fixed bottom orb to expand the menu above it or collapse it. Collapsing preserves the current selection. Esc dismisses it; reopen via the Apply Infinity edict."
+ AIO_DAIT_collapse_tooltip:0 "Collapse the menu to its floating orb."

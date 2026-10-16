@@ -1,4 +1,10 @@
 # Country UI state: valid selection, with no default operation on opening.
+AIO_DAIT_menu_visible = {
+    AIO_DAIT_country_valid = yes
+    has_country_flag = AIO_DAIT_toolbar
+    NOT = { has_country_flag = AIO_DAIT_collapsed }
+}
+
 AIO_DAIT_menu_operation_selected = {
     check_variable = { which = AIO_DAIT_operation value >= 1 }
     check_variable = { which = AIO_DAIT_operation value <= 8 }
