@@ -1,0 +1,106 @@
+# Country UI state: valid selection, with no default operation on opening.
+AIO_DAIT_menu_operation_selected = {
+    check_variable = { which = AIO_DAIT_operation value >= 1 }
+    check_variable = { which = AIO_DAIT_operation value <= 8 }
+}
+
+AIO_DAIT_menu_area_operation = {
+    OR = {
+        check_variable = { which = AIO_DAIT_operation value = 1 }
+        check_variable = { which = AIO_DAIT_operation value = 6 }
+        check_variable = { which = AIO_DAIT_operation value = 7 }
+        check_variable = { which = AIO_DAIT_operation value = 8 }
+    }
+}
+
+AIO_DAIT_menu_system_selection_valid = {
+    OR = {
+        AND = {
+            is_scope_type = galactic_object
+            $VALID$ = yes
+            NOT = { has_star_flag = AIO_DAIT_center_busy }
+        }
+        AND = {
+            is_scope_type = planet
+            solar_system = {
+                $VALID$ = yes
+                NOT = { has_star_flag = AIO_DAIT_center_busy }
+            }
+        }
+    }
+}
+
+AIO_DAIT_menu_selected_ready = {
+    OR = {
+        AND = {
+            check_variable = { which = AIO_DAIT_operation value = 1 }
+            AIO_DAIT_enrich_ready = yes
+        }
+        AND = {
+            check_variable = { which = AIO_DAIT_operation value = 2 }
+            AIO_DAIT_spawn_ready = yes
+        }
+        AND = {
+            check_variable = { which = AIO_DAIT_operation value = 3 }
+            AIO_DAIT_seed_ready = yes
+        }
+        AND = {
+            check_variable = { which = AIO_DAIT_operation value = 4 }
+            AIO_DAIT_ethic_ready = yes
+        }
+        AND = {
+            check_variable = { which = AIO_DAIT_operation value = 5 }
+            AIO_DAIT_storm_ready = yes
+        }
+        AND = {
+            check_variable = { which = AIO_DAIT_operation value = 6 }
+            AIO_DAIT_harvest_ready = yes
+        }
+        AND = {
+            check_variable = { which = AIO_DAIT_operation value = 7 }
+            AIO_DAIT_strike_ready = yes
+        }
+        AND = {
+            check_variable = { which = AIO_DAIT_operation value = 8 }
+            AIO_DAIT_erase_ready = yes
+        }
+    }
+}
+
+# Button THIS: current selection. The country is captured only on confirmation.
+AIO_DAIT_menu_selected_target_valid = {
+    OR = {
+        AND = {
+            from = { check_variable = { which = AIO_DAIT_operation value = 1 } }
+            AIO_DAIT_menu_system_selection_valid = { VALID = AIO_DAIT_enrich_target_valid }
+        }
+        AND = {
+            from = { check_variable = { which = AIO_DAIT_operation value = 2 } }
+            AIO_DAIT_menu_system_selection_valid = { VALID = AIO_DAIT_spawn_target_valid }
+        }
+        AND = {
+            from = { check_variable = { which = AIO_DAIT_operation value = 3 } }
+            AIO_DAIT_menu_system_selection_valid = { VALID = AIO_DAIT_seed_target_valid }
+        }
+        AND = {
+            from = { check_variable = { which = AIO_DAIT_operation value = 4 } }
+            AIO_DAIT_ethic_ui_target_valid = yes
+        }
+        AND = {
+            from = { check_variable = { which = AIO_DAIT_operation value = 5 } }
+            AIO_DAIT_menu_system_selection_valid = { VALID = AIO_DAIT_storm_target_valid }
+        }
+        AND = {
+            from = { check_variable = { which = AIO_DAIT_operation value = 6 } }
+            AIO_DAIT_menu_system_selection_valid = { VALID = AIO_DAIT_harvest_target_valid }
+        }
+        AND = {
+            from = { check_variable = { which = AIO_DAIT_operation value = 7 } }
+            AIO_DAIT_menu_system_selection_valid = { VALID = AIO_DAIT_strike_target_valid }
+        }
+        AND = {
+            from = { check_variable = { which = AIO_DAIT_operation value = 8 } }
+            AIO_DAIT_menu_system_selection_valid = { VALID = AIO_DAIT_erase_target_valid }
+        }
+    }
+}

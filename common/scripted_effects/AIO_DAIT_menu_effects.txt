@@ -1,0 +1,5 @@
+# Country: choose an operation and reset its range.
+AIO_DAIT_select_operation = {
+    set_variable = { which = AIO_DAIT_operation value = $OPERATION$ }
+    set_variable = { which = AIO_DAIT_range value = 0 }
+}

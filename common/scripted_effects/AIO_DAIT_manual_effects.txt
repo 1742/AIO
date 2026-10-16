@@ -25,27 +25,6 @@ AIO_DAIT_capture_country_target = {
     }
 }
 
-# Country: 0..5 = hyperlane jumps; 6 = AIO_empire Strike across witnessed realms.
-AIO_DAIT_cycle_range = {
-    if = {
-        limit = { NOT = { is_variable_set = AIO_DAIT_range } }
-        set_variable = { which = AIO_DAIT_range value = 0 }
-    }
-    change_variable = { which = AIO_DAIT_range value = 1 }
-    if = {
-        limit = {
-            OR = {
-                check_variable = { which = AIO_DAIT_range value > 6 }
-                AND = {
-                    NOT = { is_country_type = AIO_empire }
-                    check_variable = { which = AIO_DAIT_range value > 5 }
-                }
-            }
-        }
-        set_variable = { which = AIO_DAIT_range value = 0 }
-    }
-}
-
 # system; notify current occupants, at most once per cast phase.
 AIO_DAIT_notify_system = {
     owner? = { AIO_DAIT_notify_country = { TEXT = $TEXT$ } }

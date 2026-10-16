@@ -112,36 +112,6 @@ defined_text = {
 
 defined_text = {
     random = no
-    name = GetAIO_DAIT_range_name
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_range value = 1 } }
-        localization_key = AIO_DAIT_range_1
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_range value = 2 } }
-        localization_key = AIO_DAIT_range_2
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_range value = 3 } }
-        localization_key = AIO_DAIT_range_3
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_range value = 4 } }
-        localization_key = AIO_DAIT_range_4
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_range value = 5 } }
-        localization_key = AIO_DAIT_range_5
-    }
-    text = {
-        trigger = { check_variable = { which = AIO_DAIT_range value = 6 } }
-        localization_key = AIO_DAIT_range_6
-    }
-    default = AIO_DAIT_range_0
-}
-
-defined_text = {
-    random = no
     name = GetAIO_DAIT_enrich_range_name
     text = {
         trigger = { check_variable = { which = AIO_DAIT_enrich_range value = 1 } }
@@ -257,8 +227,14 @@ defined_text = {
         localization_key = AIO_DAIT_target_system_name
     }
     text = {
-        trigger = { is_scope_type = planet }
+        trigger = {
+            OR = { is_scope_type = planet is_scope_type = colony is_scope_type = fleet }
+        }
         localization_key = AIO_DAIT_target_planet_system_name
+    }
+    text = {
+        trigger = { is_scope_type = ship exists = fleet }
+        localization_key = AIO_DAIT_target_ship_system_name
     }
     default = AIO_DAIT_target_none
 }
@@ -279,4 +255,247 @@ defined_text = {
         localization_key = AIO_DAIT_target_owner_name
     }
     default = AIO_DAIT_target_country_none
+}
+
+# Country scope (FROM on menu effect buttons).
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_button_enrich
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 1 } }
+        localization_key = AIO_DAIT_menu_selected_enrich
+    }
+    default = AIO_DAIT_button_enrich
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_button_spawn
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 2 } }
+        localization_key = AIO_DAIT_menu_selected_spawn
+    }
+    default = AIO_DAIT_button_spawn
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_button_seed
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 3 } }
+        localization_key = AIO_DAIT_menu_selected_seed
+    }
+    default = AIO_DAIT_button_seed
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_button_ethic
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 4 } }
+        localization_key = AIO_DAIT_menu_selected_ethic
+    }
+    default = AIO_DAIT_button_ethic
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_button_storm
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 5 } }
+        localization_key = AIO_DAIT_menu_selected_storm
+    }
+    default = AIO_DAIT_button_storm
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_button_harvest
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 6 } }
+        localization_key = AIO_DAIT_menu_selected_harvest
+    }
+    default = AIO_DAIT_button_harvest
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_button_strike
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 7 } }
+        localization_key = AIO_DAIT_menu_selected_strike
+    }
+    default = AIO_DAIT_button_strike
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_button_erase
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 8 } }
+        localization_key = AIO_DAIT_menu_selected_erase
+    }
+    default = AIO_DAIT_button_erase
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_range_0
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 0 } }
+        localization_key = AIO_DAIT_menu_selected_range_0
+    }
+    default = AIO_DAIT_range_0
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_range_1
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 1 } }
+        localization_key = AIO_DAIT_menu_selected_range_1
+    }
+    default = AIO_DAIT_range_1
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_range_2
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 2 } }
+        localization_key = AIO_DAIT_menu_selected_range_2
+    }
+    default = AIO_DAIT_range_2
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_range_3
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 3 } }
+        localization_key = AIO_DAIT_menu_selected_range_3
+    }
+    default = AIO_DAIT_range_3
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_range_4
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 4 } }
+        localization_key = AIO_DAIT_menu_selected_range_4
+    }
+    default = AIO_DAIT_range_4
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_range_5
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 5 } }
+        localization_key = AIO_DAIT_menu_selected_range_5
+    }
+    default = AIO_DAIT_range_5
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_range_6
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_range value = 6 } }
+        localization_key = AIO_DAIT_menu_selected_range_6
+    }
+    default = AIO_DAIT_range_6
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_operation
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 1 } }
+        localization_key = AIO_DAIT_button_enrich
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 2 } }
+        localization_key = AIO_DAIT_button_spawn
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 3 } }
+        localization_key = AIO_DAIT_button_seed
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 4 } }
+        localization_key = AIO_DAIT_button_ethic
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 5 } }
+        localization_key = AIO_DAIT_button_storm
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 6 } }
+        localization_key = AIO_DAIT_button_harvest
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 7 } }
+        localization_key = AIO_DAIT_button_strike
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 8 } }
+        localization_key = AIO_DAIT_button_erase
+    }
+    default = AIO_DAIT_menu_no_operation
+}
+
+defined_text = {
+    random = no
+    name = GetAIO_DAIT_menu_status
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 1 } }
+        localization_key = AIO_DAIT_menu_status_enrich
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 2 } }
+        localization_key = AIO_DAIT_menu_status_spawn
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 3 } }
+        localization_key = AIO_DAIT_menu_status_seed
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 4 } }
+        localization_key = AIO_DAIT_menu_status_ethic
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 5 } }
+        localization_key = AIO_DAIT_menu_status_storm
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 6 } }
+        localization_key = AIO_DAIT_menu_status_harvest
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 7 } }
+        localization_key = AIO_DAIT_menu_status_strike
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_operation value = 8 } }
+        localization_key = AIO_DAIT_menu_status_erase
+    }
+    default = AIO_DAIT_menu_choose_operation
+}
+
+# Numeric readouts use native script-value localization, without cached variables.
+defined_text = {
+    name = GetAIO_DAIT_logic_amount
+    value = value:AIO_DAIT_logic_amount
+}
+
+defined_text = {
+    name = GetAIO_DAIT_logic_k
+    value = value:AIO_DAIT_logic_k
+}
+
+defined_text = {
+    name = GetAIO_DAIT_menu_price_k
+    value = value:AIO_DAIT_menu_price_k
 }

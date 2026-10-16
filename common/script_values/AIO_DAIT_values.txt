@@ -81,3 +81,61 @@ AIO_DAIT_erase_windup = {
     modifier = { add = 360 check_variable = { which = AIO_DAIT_erase_range value = 4 } }
     modifier = { add = 450 check_variable = { which = AIO_DAIT_erase_range value = 5 } }
 }
+
+# Read-only menu values. Localization evaluates these against the player's country.
+AIO_DAIT_logic_amount = {
+    base = 0
+    complex_trigger_modifier = {
+        trigger = resource_stockpile_compare
+        parameters = { resource = AIO_advanced_logic }
+        mode = add
+    }
+}
+AIO_DAIT_logic_k = {
+    base = 0
+    add = value:AIO_DAIT_logic_amount
+    divide = 1000
+    round_to = 0.1
+}
+
+AIO_DAIT_menu_price_k = {
+    base = 0
+    modifier = {
+        add = value:AIO_DAIT_enrich_price
+        check_variable = { which = AIO_DAIT_operation value = 1 }
+    }
+    modifier = {
+        add = value:AIO_DAIT_spawn_price
+        check_variable = { which = AIO_DAIT_operation value = 2 }
+    }
+    modifier = {
+        add = value:AIO_DAIT_seed_price
+        check_variable = { which = AIO_DAIT_operation value = 3 }
+    }
+    modifier = {
+        add = value:AIO_DAIT_ethic_price
+        check_variable = { which = AIO_DAIT_operation value = 4 }
+    }
+    modifier = {
+        add = value:AIO_DAIT_storm_price
+        check_variable = { which = AIO_DAIT_operation value = 5 }
+    }
+    modifier = {
+        add = value:AIO_DAIT_harvest_price
+        check_variable = { which = AIO_DAIT_operation value = 6 }
+    }
+    modifier = {
+        add = value:AIO_DAIT_strike_price
+        check_variable = { which = AIO_DAIT_operation value = 7 }
+    }
+    modifier = {
+        add = value:AIO_DAIT_erase_price
+        check_variable = { which = AIO_DAIT_operation value = 8 }
+    }
+    modifier = {
+        set = 0
+        is_country_type = AIO_empire
+    }
+    divide = 1000
+    round_to = 0.1
+}

@@ -4,217 +4,269 @@ guiTypes = {
         orientation = upper_left
         origo = upper_left
         position = { x = 390 y = 100 }
-        size = { width = 850 height = 135 }
+        size = { width = 780 height = 388 }
         moveable = yes
-        containerWindowType = {
-            name = "background"
-            position = { x = 0 y = 0 }
-            size = { width = 850 height = 135 }
-            background = {
-                name = "bg"
-                spriteType = "GFX_tile_outliner_bg"
-            }
+        background = { name = "background" spriteType = "GFX_tile_outliner_bg_solid" }
+        instantTextBoxType = {
+            name = "AIO_DAIT_title"
+            position = { x = 18 y = 16 }
+            maxWidth = 368
+            maxHeight = 30
+            font = "malgun_goth_24"
+            text = "AIO_DAIT_toolbar"
+            alwaysTransparent = yes
         }
         buttonType = {
             name = "close"
-            quadTextureSprite = "GFX_standard_button_142_34_button"
-            buttonText = "EXIT"
-            font = "cg_16b"
-            position = { x = 750 y = 8 }
-            size = { x = 90 y = 28 }
+            quadTextureSprite = "GFX_close"
+            position = { x = 730 y = 16 }
+            size = { x = 32 y = 32 }
             shortcut = "ESCAPE"
             clicksound = "back_click"
         }
+        containerWindowType = {
+            name = "operation_background"
+            position = { x = 12 y = 120 }
+            size = { width = 756 height = 96 }
+            background = { name = "bg" spriteType = "GFX_tiles_dark_area_cut_8" }
+        }
+        effectbuttonType = {
+            name = "AIO_DAIT_logic_label"
+            position = { x = 394 y = 16 }
+            size = { x = 328 y = 28 }
+            quadTextureSprite = "GFX_tiling_button_standard"
+            font = "cg_16b"
+            buttonText = "AIO_DAIT_menu_logic"
+            effect = AIO_DAIT_logic_label
+            clicksound = "click"
+        }
         effectbuttonType = {
             name = "AIO_DAIT_target_label"
-            position = { x = 12 y = 8 }
-            size = { x = 350 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 18 y = 55 }
+            size = { x = 744 y = 27 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
             buttonText = "AIO_DAIT_current_target"
             tooltipText = "AIO_DAIT_current_target_tooltip"
-            effect = AIO_DAIT_target_label
+            effect = AIO_DAIT_info_label
+            clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_ethic_target_label"
-            position = { x = 370 y = 8 }
-            size = { x = 370 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 18 y = 86 }
+            size = { x = 744 y = 27 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
             buttonText = "AIO_DAIT_current_country"
             tooltipText = "AIO_DAIT_current_country_tooltip"
-            effect = AIO_DAIT_ethic_target_label
+            effect = AIO_DAIT_info_label
+            clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_enrich"
-            position = { x = 10 y = 48 }
-            size = { x = 72 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 18 y = 128 }
+            size = { x = 180 y = 36 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_button_enrich"
-            tooltipText = "AIO_DAIT_button_enrich_tooltip"
+            buttonText = "AIO_DAIT_menu_button_enrich"
             effect = AIO_DAIT_enrich
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_spawn"
-            position = { x = 85 y = 48 }
-            size = { x = 72 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 206 y = 128 }
+            size = { x = 180 y = 36 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_button_spawn"
-            tooltipText = "AIO_DAIT_button_spawn_tooltip"
+            buttonText = "AIO_DAIT_menu_button_spawn"
             effect = AIO_DAIT_spawn
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_seed"
-            position = { x = 160 y = 48 }
-            size = { x = 72 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 394 y = 128 }
+            size = { x = 180 y = 36 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_button_seed"
-            tooltipText = "AIO_DAIT_button_seed_tooltip"
+            buttonText = "AIO_DAIT_menu_button_seed"
             effect = AIO_DAIT_seed
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_ethic"
-            position = { x = 235 y = 48 }
-            size = { x = 72 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 582 y = 128 }
+            size = { x = 180 y = 36 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_button_ethic"
-            tooltipText = "AIO_DAIT_button_ethic_tooltip"
+            buttonText = "AIO_DAIT_menu_button_ethic"
             effect = AIO_DAIT_ethic
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_storm"
-            position = { x = 310 y = 48 }
-            size = { x = 72 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 18 y = 172 }
+            size = { x = 180 y = 36 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_button_storm"
-            tooltipText = "AIO_DAIT_button_storm_tooltip"
+            buttonText = "AIO_DAIT_menu_button_storm"
             effect = AIO_DAIT_storm
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_harvest"
-            position = { x = 385 y = 48 }
-            size = { x = 72 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 206 y = 172 }
+            size = { x = 180 y = 36 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_button_harvest"
-            tooltipText = "AIO_DAIT_button_harvest_tooltip"
+            buttonText = "AIO_DAIT_menu_button_harvest"
             effect = AIO_DAIT_harvest
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_strike"
-            position = { x = 460 y = 48 }
-            size = { x = 72 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 394 y = 172 }
+            size = { x = 180 y = 36 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_button_strike"
-            tooltipText = "AIO_DAIT_button_strike_tooltip"
+            buttonText = "AIO_DAIT_menu_button_strike"
             effect = AIO_DAIT_strike
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_erase"
-            position = { x = 535 y = 48 }
-            size = { x = 72 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 582 y = 172 }
+            size = { x = 180 y = 36 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_button_erase"
-            tooltipText = "AIO_DAIT_button_erase_tooltip"
+            buttonText = "AIO_DAIT_menu_button_erase"
             effect = AIO_DAIT_erase
             clicksound = "click"
         }
         effectbuttonType = {
-            name = "AIO_DAIT_range_0"
-            position = { x = 614 y = 48 }
-            size = { x = 115 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            name = "AIO_DAIT_selection_label"
+            position = { x = 18 y = 220 }
+            size = { x = 368 y = 25 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_range_0"
+            buttonText = "AIO_DAIT_menu_selection"
+            effect = AIO_DAIT_info_label
+            clicksound = "click"
+        }
+        effectbuttonType = {
+            name = "AIO_DAIT_price_label"
+            position = { x = 394 y = 220 }
+            size = { x = 368 y = 25 }
+            quadTextureSprite = "GFX_tiling_button_standard"
+            font = "cg_16b"
+            buttonText = "AIO_DAIT_menu_price"
+            tooltipText = "AIO_DAIT_menu_price_tooltip"
+            effect = AIO_DAIT_info_label
+            clicksound = "click"
+        }
+        effectbuttonType = {
+            name = "AIO_DAIT_range_0"
+            position = { x = 18 y = 255 }
+            size = { x = 86 y = 30 }
+            quadTextureSprite = "GFX_tiling_button_standard"
+            font = "cg_16b"
+            buttonText = "AIO_DAIT_menu_range_0"
             tooltipText = "AIO_DAIT_range_0_tooltip"
             effect = AIO_DAIT_range_0
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_range_1"
-            position = { x = 614 y = 48 }
-            size = { x = 115 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 112 y = 255 }
+            size = { x = 86 y = 30 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_range_1"
+            buttonText = "AIO_DAIT_menu_range_1"
             tooltipText = "AIO_DAIT_range_1_tooltip"
             effect = AIO_DAIT_range_1
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_range_2"
-            position = { x = 614 y = 48 }
-            size = { x = 115 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 206 y = 255 }
+            size = { x = 86 y = 30 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_range_2"
+            buttonText = "AIO_DAIT_menu_range_2"
             tooltipText = "AIO_DAIT_range_2_tooltip"
             effect = AIO_DAIT_range_2
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_range_3"
-            position = { x = 614 y = 48 }
-            size = { x = 115 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 300 y = 255 }
+            size = { x = 86 y = 30 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_range_3"
+            buttonText = "AIO_DAIT_menu_range_3"
             tooltipText = "AIO_DAIT_range_3_tooltip"
             effect = AIO_DAIT_range_3
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_range_4"
-            position = { x = 614 y = 48 }
-            size = { x = 115 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 394 y = 255 }
+            size = { x = 86 y = 30 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_range_4"
+            buttonText = "AIO_DAIT_menu_range_4"
             tooltipText = "AIO_DAIT_range_4_tooltip"
             effect = AIO_DAIT_range_4
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_range_5"
-            position = { x = 614 y = 48 }
-            size = { x = 115 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 488 y = 255 }
+            size = { x = 86 y = 30 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_range_5"
+            buttonText = "AIO_DAIT_menu_range_5"
             tooltipText = "AIO_DAIT_range_5_tooltip"
             effect = AIO_DAIT_range_5
             clicksound = "click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_range_6"
-            position = { x = 614 y = 48 }
-            size = { x = 115 y = 26 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 582 y = 255 }
+            size = { x = 180 y = 30 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
-            buttonText = "AIO_DAIT_range_6"
+            buttonText = "AIO_DAIT_menu_range_6"
             tooltipText = "AIO_DAIT_range_6_tooltip"
             effect = AIO_DAIT_range_6
             clicksound = "click"
         }
         effectbuttonType = {
+            name = "AIO_DAIT_status_label"
+            position = { x = 18 y = 302 }
+            size = { x = 556 y = 34 }
+            quadTextureSprite = "GFX_tiling_button_standard"
+            font = "cg_16b"
+            buttonText = "AIO_DAIT_menu_status"
+            tooltipText = "AIO_DAIT_menu_status_tooltip"
+            effect = AIO_DAIT_info_label
+            clicksound = "click"
+        }
+        effectbuttonType = {
+            name = "AIO_DAIT_confirm"
+            position = { x = 582 y = 302 }
+            size = { x = 180 y = 34 }
+            quadTextureSprite = "GFX_tiling_button_standard"
+            font = "cg_16b"
+            buttonText = "AIO_DAIT_menu_confirm"
+            tooltipText = "AIO_DAIT_menu_confirm_tooltip"
+            effect = AIO_DAIT_confirm
+            clicksound = "click"
+        }
+        effectbuttonType = {
             name = "AIO_DAIT_final_induction"
-            position = { x = 10 y = 88 }
-            size = { x = 180 y = 28 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 18 y = 346 }
+            size = { x = 260 y = 28 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
             buttonText = "AIO_final_induction_action"
             tooltipText = "AIO_final_induction_action_tooltip"
@@ -223,16 +275,17 @@ guiTypes = {
         }
         effectbuttonType = {
             name = "AIO_DAIT_final_constraint"
-            position = { x = 10 y = 88 }
-            size = { x = 180 y = 28 }
-            quadTextureSprite = GFX_tiling_button_standard
+            position = { x = 18 y = 346 }
+            size = { x = 260 y = 28 }
+            quadTextureSprite = "GFX_tiling_button_standard"
             font = "cg_16b"
             buttonText = "AIO_final_constraint_action"
             tooltipText = "AIO_final_constraint_action_tooltip"
             effect = AIO_DAIT_final_constraint
             clicksound = "click"
         }
-        #region ALL OF THIS IS HIDDEN OR DISPLACED !
+        # Native diplomatic-event bindings; all are outside the visible menu.
+        buttonType = { name = "tts_button" quadTextureSprite = "GFX_standard_button_142_34_button" position = { x = -10000 y = -10000 } }
 
         buttonType = { name = "focus_button" position = { x = -1180 y = -1112 } spriteType = "GFX_fleetview_focus" } # hidden
         instantTextBoxType = { name = "heading" font = "malgun_goth_24" position = { x = -1120 y = -115 } } # hidden
@@ -255,11 +308,11 @@ guiTypes = {
             iconType = { name = "city_frame" spriteType = "GFX_diplomacy_portrait_frame" } # hidden
         }
         iconType = { name = "empire_info_bg" spriteType = "GFX_diplomacy_dark_fade_bg" } # hidden
-        instantTextBoxType = { name = "empire_name" font = "malgun_goth_24" } # hidden
-        instantTextBoxType = { name = "empire_government_type" font = "cg_16b" } # hidden
-        instantTextBoxType = { name = "empire_personality_type" font = "cg_16b" } # hidden
+        instantTextBoxType = { name = "empire_name" font = "malgun_goth_24" position = { x = -10000 y = -10000 } } # hidden
+        instantTextBoxType = { name = "empire_government_type" font = "cg_16b" position = { x = -10000 y = -10000 } } # hidden
+        instantTextBoxType = { name = "empire_personality_type" font = "cg_16b" position = { x = -10000 y = -10000 } } # hidden
         overlappingElementsBoxType = { name = "empire_ethics_icons" position = { x = -1145 y = -11138 } } # hidden
-        iconType = { name = "empire_flag" spriteType = "GFX_empire_flag_128" position = { x = -1125 y = -11235 } } # hidden
+        buttonType = { name = "empire_flag" quadTextureSprite = "GFX_standard_button_142_34_button" position = { x = -10000 y = -10000 } } # hidden
         containerWindowType = {
             name = "leader_details"
             position = { x = -1125 y = -1175 }
@@ -316,6 +369,5 @@ guiTypes = {
             scrollbartype = "standardtext_slider"
         }
 
-        #endregion
     }
 }

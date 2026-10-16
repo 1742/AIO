@@ -28,10 +28,16 @@ country_event = {
         AIO_DAIT_country_valid = yes
         NOT = { has_country_flag = AIO_DAIT_toolbar }
     }
-    immediate = { set_country_flag = AIO_DAIT_toolbar }
+    immediate = {
+        set_country_flag = AIO_DAIT_toolbar
+        set_variable = { which = AIO_DAIT_operation value = 0 }
+    }
     option = {
         name = EXIT
         default_hide_option = yes
     }
-    after = { remove_country_flag = AIO_DAIT_toolbar }
+    after = {
+        remove_country_flag = AIO_DAIT_toolbar
+        clear_variable = AIO_DAIT_operation
+    }
 }
