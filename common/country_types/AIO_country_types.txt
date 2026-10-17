@@ -71,6 +71,10 @@ AIO_empire = {
 
 
 AIO_Aforgomon = {
+	# 与原版终局天灾一致，由引擎按难度与天灾倍率缩放所有化身。
+	scaled_difficulty_bonuses = 3.0
+	end_game_crisis = yes
+
 	government = no
 	observable = no
 	uses_origins = no

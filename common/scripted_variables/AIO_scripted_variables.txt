@@ -4,7 +4,7 @@
 @AIO_final_min_wait = 180
 @AIO_final_sub = 60
 @AIO_final_exist_time = 180
-@AIO_final_battle_time = 360
+@AIO_final_battle_time = 720
 @AIO_final_research_cost = 60
 @AIO_final_field_cost = 60
 @AIO_final_induction_cost = 10000

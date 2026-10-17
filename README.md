@@ -55,7 +55,7 @@ Complete the <i><b>Gate of Gates</b></i> and meet the next level's requirements 
 After completing the <i><b>Silver Key</b></i>, continue toward the <i><b>Eternal Throne</b></i>.
 <ul>
 <li>Completing the Eternal Throne unlocks <b>Seed</b> and <b>Strike</b>.</li>
-<li>Strike summons a weakened avatar of Aforgomon, <b>hostile to friend and foe alike</b>. Don't leave your own fleets around to watch the show. Defeating an avatar you summoned this way does not complete the endgame.</li>
+<li>Strike summons a weakened avatar of Aforgomon that scales with game difficulty and the Crisis Strength setting, <b>hostile to friend and foe alike</b>. Don't leave your own fleets around to watch the show. Defeating an avatar you summoned this way does not complete the endgame.</li>
 </ul>
 
 <h3>Crisis Level 5</h3>
@@ -78,7 +78,7 @@ The endgame displays both your research progress and the current advent Situatio
 <li><b>Investigate one remnant:</b> Learn the advent cycle. <b>Investigate two:</b> Unlock Induction. <b>Investigate three:</b> Unlock Induction and Constraint together. The main research Situation will not complete itself while you idle.</li>
 <li><b>Bring it to a battlefield you've prepared.</b> Select an external system, then click Induction or Constraint at the bottom of the DAIT menu. Induction costs 10,000 Hyperlogic. Constraint costs an additional 2,000 Dark Matter and also performs Induction. Both require 60 days of science-ship field research and must finish before manifestation. Redirecting the target does not reset the countdown.</li>
 <li><b>Don't let it come home.</b> For the first five rounds, it looks for external systems; afterward, it targets the Nameless Mist. If no eligible external target can be found, it may turn back even earlier. Redirect it in time: <b>arrival at the Nameless Mist causes immediate defeat</b>, erasing both the Mist and the Ultimate Gate.</li>
-<li><b>Now your fleets get their turn.</b> A constrained avatar gives you a 360-day combat window. To win, you must defeat <b>the constrained avatar belonging to your endgame</b> before its stay ends. Completing research, defeating an unconstrained avatar, or destroying an avatar summoned by Strike does not count. Run out of time, and the system is still erased.</li>
+<li><b>Now your fleets get their turn.</b> A constrained avatar gives you a 720-day combat window and scales with game difficulty and the Crisis Strength setting. To win, you must defeat <b>the constrained avatar belonging to your endgame</b> before its stay ends. Completing research, defeating an unconstrained avatar, or destroying an avatar summoned by Strike does not count. Run out of time, and the system is still erased.</li>
 </ul>
 
 <h3>After Victory</h3>
