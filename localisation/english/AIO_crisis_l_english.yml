@@ -26,15 +26,15 @@
  #region crisis path
 
  crisis_AIO_level_1: "§gFirst Stroke§!"
- crisis_AIO_level_1_desc: "All in One · Stage I: Observation and Intervention"
+ crisis_AIO_level_1_desc: "Stage I: Observation and Intervention"
  crisis_AIO_level_2: "§gTransgression of the Gate§!"
- crisis_AIO_level_2_desc: "All in One · Stage II: Casting and Transcendence"
+ crisis_AIO_level_2_desc: "Stage II: Casting and Transcendence"
  crisis_AIO_level_3: "§gSpacetime Cleavage§!"
- crisis_AIO_level_3_desc: "All in One · Stage III: Reconfiguration and Extension"
+ crisis_AIO_level_3_desc: "Stage III: Reconfiguration and Extension"
  crisis_AIO_level_4: "§gPanoptic Precipice§!"
- crisis_AIO_level_4_desc: "All in One · Stage IV: Constant Vision and Revision"
+ crisis_AIO_level_4_desc: "Stage IV: Constant Vision and Revision"
  crisis_AIO_level_5: "§gUniversal Unification§!"
- crisis_AIO_level_5_desc: "All in One · Stage V: Singularity and Truth"
+ crisis_AIO_level_5_desc: "Stage V: Singularity and Truth"
 
  # crisis path tooltips
  AIO_allinone_level_2_req_success_tooltip:0 "Prerequisite megastructure completed."
@@ -129,7 +129,7 @@
  #region crisis event chain
 
  # event chain
- AIO_crisis_events_chain_title: "All in One"
+ AIO_crisis_events_chain_title: "All Is One"
  AIO_crisis_events_chain_desc: "$AIO_advanced_logic_crisis_howto$"
  AIO_crisis_events_chain: "$AIO_crisis_events_chain_title$"
 

@@ -1,6 +1,6 @@
 <div>
 
-# All-in-One
+# All Is One
 
 [🇨🇳 中文](README-zh.md) | [🇺🇸 English](README.md)
 
@@ -9,20 +9,20 @@
 ---
 
 <h2>Overview</h2>
-This mod adds a new Become the Crisis path: <i><b>All-in-One</b></i>. Advance through Crisis levels, use Directional Apply Infinity, and complete the dedicated megastructure <i><b>Yog-Sothoth</b></i> on your way to ascension and mastery over the laws of reality.
+This mod adds a new Become the Crisis path: <i><b>All Is One</b></i>. Advance through Crisis levels, use Directional Apply Infinity, and complete the dedicated megastructure <i><b>Yog-Sothoth</b></i> on your way to ascension and mastery over the laws of reality.
 <br>
 The ambition may sound a little like *Cosmogenesis*, but after the author's repeated tinkering, the mod now has its own <b>Directional Apply Infinity Thesis</b> system (DAIT), letting you give the universe a thorough overhaul.
 
 <h2>Features</h2>
 <ul>
-<li>A new Ascension Perk, <b>All-in-One</b>, and its Become the Crisis path</li>
+<li>A new Ascension Perk, <b>All Is One</b>, and its Become the Crisis path</li>
 <li>A new series of <b>Directional Apply Infinity</b> effects</li>
-<li>A new All-in-One origin</li>
+<li>A new All Is One origin</li>
 <li>New Crisis megastructures</li>
 </ul>
 
 <h2>Core Gameplay</h2>
-As with the three vanilla Crisis paths, you need to adopt three Ascension Perks before choosing <b>All-in-One</b>. Spend <b>Hyperlogic</b> to edit the universe and advance your Crisis progress. As a Cosmogenesis offshoot, it comes with all the old-timer buildings and ships, though at their current power and cost efficiency, is anyone really using them...? (What patch are we on, and we're still spamming repeatables and ships?)
+As with the three vanilla Crisis paths, you need to adopt three Ascension Perks before choosing <b>All Is One</b>. Spend <b>Hyperlogic</b> to edit the universe and advance your Crisis progress. As a Cosmogenesis offshoot, it comes with all the old-timer buildings and ships, though at their current power and cost efficiency, is anyone really using them...? (What patch are we on, and we're still spamming repeatables and ships?)
 
 <h2>Walkthrough</h2>
 Advancing Crisis levels requires both Hyperlogic and the preceding megastructure milestones; check the Crisis panel for the exact requirements. The route is: <b>Horizon Engine → Gate of Gates → Silver Key → Eternal Throne → Yog-Sothoth → Aforgomon Endgame → Choose Whether to Ascend</b>. The special origin starts fully ascended and skips this progression.
