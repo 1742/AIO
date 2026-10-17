@@ -54,15 +54,15 @@
  #endregion
 
 
- #region 天灾奖励
+ #region final event
 
- AIO_menp_nanites_processor_metallurgists: "$menp_AIO_nanites$"
- AIO_menp_nanites_processor_farmers: "$menp_AIO_nanites$"
+ AIO_constraint_Aforgomon: "约束"
 
  #endregion
 
 
  #region DAIT
+
  AIO_Aforgomon_Wrath_modifier: "$AIO_Aforgomon_Wrath$"
  AIO_create_civilization_modifier: "星辰大海的渴望"
 

@@ -151,7 +151,7 @@ ship_section_template = {
 	aux_utility_slots = 0
 }
 
-# 受约束亚弗戈蒙：4T + 4X + 12L + 8M，全原版能量武器。
+# 受约束亚弗戈蒙：4T + 4X + 8L + 4M，全原版能量武器。
 ship_section_template = {
     key = AIO_Aforgomon_constraint_template
     ship_size = AIO_Aforgomon_Wrath
@@ -239,26 +239,6 @@ ship_section_template = {
         locatorname = "loc125"
     }
     component_slot = {
-        name = "LARGE_09"
-        template = "invisible_large_turret"
-        locatorname = "loc125"
-    }
-    component_slot = {
-        name = "LARGE_10"
-        template = "invisible_large_turret"
-        locatorname = "loc125"
-    }
-    component_slot = {
-        name = "LARGE_11"
-        template = "invisible_large_turret"
-        locatorname = "loc125"
-    }
-    component_slot = {
-        name = "LARGE_12"
-        template = "invisible_large_turret"
-        locatorname = "loc125"
-    }
-    component_slot = {
         name = "MEDIUM_01"
         template = "invisible_medium_turret"
         locatorname = "loc125"
@@ -275,26 +255,6 @@ ship_section_template = {
     }
     component_slot = {
         name = "MEDIUM_04"
-        template = "invisible_medium_turret"
-        locatorname = "loc125"
-    }
-    component_slot = {
-        name = "MEDIUM_05"
-        template = "invisible_medium_turret"
-        locatorname = "loc125"
-    }
-    component_slot = {
-        name = "MEDIUM_06"
-        template = "invisible_medium_turret"
-        locatorname = "loc125"
-    }
-    component_slot = {
-        name = "MEDIUM_07"
-        template = "invisible_medium_turret"
-        locatorname = "loc125"
-    }
-    component_slot = {
-        name = "MEDIUM_08"
         template = "invisible_medium_turret"
         locatorname = "loc125"
     }

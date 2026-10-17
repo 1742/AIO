@@ -55,10 +55,9 @@
  #endregion
 
 
- #region crisis reward
+ #region final event
 
- AIO_menp_nanites_processor_metallurgists: "$menp_AIO_nanites$"
- AIO_menp_nanites_processor_farmers: "$menp_AIO_nanites$"
+ AIO_constraint_Aforgomon: "Constraint"
 
  #endregion
 

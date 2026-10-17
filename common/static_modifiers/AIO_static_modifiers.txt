@@ -1,6 +1,19 @@
 # AIO静态修正
 
 
+#region final event
+
+AIO_constraint_Aforgomon = {
+    ship_evasion_mult = -1
+    ship_weapon_damage = -1
+    ship_damage_reduction_mult = -3
+    ship_armor_hardening_add = -0.5
+    ship_shield_hardening_add = -0.5
+}
+
+#endregion
+
+
 #region DAIT
 
 # 亚弗戈蒙之怒
