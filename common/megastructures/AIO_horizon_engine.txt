@@ -65,7 +65,7 @@ AIO_horizon_engine = {
 		}
 	}
 
-	build_time = 1000
+	build_time = 500
 
 	resources = {
 		category = megastructures

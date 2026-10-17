@@ -46,7 +46,7 @@ AIO_mega_01_fact = {
 
 	upgrade_from = { AIO_horizon_engine }
 
-	build_time = 1800
+	build_time = 1000
 
 	resources = {
 		category = megastructures
@@ -107,6 +107,11 @@ AIO_mega_01 = {
 			society_research = 50
 			engineering_research = 50
 		}
+	}
+
+	country_modifier = {
+		fleet_mia_time_mult = -0.5
+		ship_windup_mult = -0.2
 	}
 
 	# bypass类型
@@ -182,7 +187,7 @@ AIO_mega_02 = {
 
 	upgrade_from = { AIO_mega_01 }
 
-	build_time = 3600
+	build_time = 1800
 
 	resources = {
 		category = megastructures
@@ -214,6 +219,14 @@ AIO_mega_02 = {
 			society_research = 300
 			engineering_research = 300
 		}
+	}
+
+	country_modifier = {
+		fleet_mia_time_mult = -0.5
+		ship_windup_mult = -0.2
+
+		planet_building_capacity_add = 1
+		megastructure_build_speed_mult = 1
 	}
 
 	# bypass类型
@@ -262,7 +275,7 @@ AIO_mega_03 = {
 
 	upgrade_from = { AIO_mega_02 }
 
-	build_time = 3600
+	build_time = 1800
 
 	resources = {
 		category = megastructures
@@ -295,6 +308,17 @@ AIO_mega_03 = {
 			society_research = 500
 			engineering_research = 500
 		}
+	}
+
+	country_modifier = {
+		fleet_mia_time_mult = -0.5
+		ship_windup_mult = -0.2
+
+		planet_building_capacity_add = 1
+		megastructure_build_speed_mult = 1
+
+		add_base_country_intel = 40
+		ship_weapon_range_mult = 0.2
 	}
 
 	# bypass类型
@@ -378,6 +402,19 @@ AIO_mega_04 = {
 			society_research = 1000
 			engineering_research = 1000
         }
+	}
+
+	country_modifier = {
+		fleet_mia_time_mult = -0.5
+		ship_windup_mult = -0.2
+
+		planet_building_capacity_add = 1
+		megastructure_build_speed_mult = 1
+
+		add_base_country_intel = 40
+		ship_weapon_range_mult = 0.2
+
+		empire_size_mult = -0.5
 	}
 
 	# bypass类型
