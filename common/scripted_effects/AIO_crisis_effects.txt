@@ -58,7 +58,7 @@ AIO_create_gate_system_effect = {
         # 改变星系类型
         set_star_class = sc_black_hole
         # 改名
-        set_name = AIO_The_Ultimate_Gate
+        set_name = AIO_gate
         # 标志位
         set_star_flag = AIO_gate_system
         save_global_event_target_as = AIO_gate_system

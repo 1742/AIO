@@ -2,16 +2,16 @@
  # job category
  pop_cat_AIO_chips: "Recursive Thinking Calculations"
  pop_cat_AIO_chips_plural: "$pop_cat_AIO_chips$"
- pop_cat_AIO_chips_desc: "This is a parallel model construction logic based on self-feedback neural network nesting with consciousness-like nesting. Each layer structure recursively calls the states of other layers, resulting in high-dimensional deduction ability."
+ pop_cat_AIO_chips_desc: "Populations connected to the logical network as computational nodes in a Matryoshka Brain."
  # job
  job_AIO_chips: "Recursive Node"
  job_AIO_chips_plural: "$job_AIO_chips$"
- job_AIO_chips_desc: "These structures of consciousness are designed to nest and self-invoke each other, simulating, observing, and feeding at the same time, approaching the truth in infinite echoes."
- job_AIO_chips_effect_desc: "[AIO_chips.GetIcon]§Y[AIO_chips.GetNamePlural]§! make $r_energy$ into $r_research$ and £AIO_advanced_logic£ §Y$AIO_advanced_logic$§!"
+ job_AIO_chips_desc: "Utilizes thought impulses as conductive conduits for higher-dimensional logic streams. Both organic neural synapses and physical computing cores serve here as self-consuming fuses to prevent Advanced Logic circuits from overloading."
+ job_AIO_chips_effect_desc: "[AIO_chips.GetIcon]§Y[AIO_chips.GetNamePlural]§! convert $r_energy$ into $r_research$ and £AIO_advanced_logic£ §Y$AIO_advanced_logic$§!. Employed pops suffer ongoing attrition."
  mod_job_AIO_chips_add_desc: "£job_AIO_chips£ $job_AIO_chips$ jobs"
  job_AIO_dormant_chassis: "Dormant Chassis"
  job_AIO_dormant_chassis_plural: "$job_AIO_dormant_chassis$"
- job_AIO_dormant_chassis_desc: "These recursive chassis have been disconnected from the computational network and placed in low-power standby, ready to return to recursive computation."
+ job_AIO_dormant_chassis_desc: "Feedback loops disconnect, and cooling arrays fall silent one layer at a time. At minimum power, these chassis preserve the structures still fit for computation, awaiting the network’s next need."
  mod_job_AIO_dormant_chassis_add: "£job_AIO_chips£ $job_AIO_dormant_chassis$ Jobs"
  d_AIO_dormant_chassis_array: "Chassis Standby Array"
  d_AIO_dormant_chassis_array_desc: "A bank of standby interfaces that preserves recursive chassis at minimum operating power."
@@ -24,5 +24,5 @@
  decision_AIO_remove_dormant_chassis_jobs_effect: "Removes §Y333§! £job_ark_deep_sleep£ $job_AIO_dormant_chassis$ Jobs."
  # purge type
  purge_AIO_chips: "Embers of Thought"
- purge_AIO_chips_tooltip: "Serve as a recursive node."
- purge_AIO_chips_tooltip_delayed: "§LOnly my thoughts turn into firewood, which will burn forever in the cosmos.§!"
+ purge_AIO_chips_tooltip: "Populations are gradually burned out and depleted through ceaseless recursive computation and higher-dimensional logical resonance."
+ purge_AIO_chips_tooltip_delayed: "§LThought alone remains as fuel, burning without end in the workings of the cosmos.§!"

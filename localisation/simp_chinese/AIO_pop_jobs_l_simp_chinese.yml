@@ -2,16 +2,16 @@
  # 岗位类型
  pop_cat_AIO_chips: "递归思维计算"
  pop_cat_AIO_chips_plural: "$pop_cat_AIO_chips$"
- pop_cat_AIO_chips_desc: "这是基于自反馈神经网络与类意识嵌套的并行模型构建逻辑。每一层结构都在递归调用其它层的状态，从而产生高维推演能力。"
+ pop_cat_AIO_chips_desc: "作为套娃脑运算节点接入逻辑网络的人口。"
  # 岗位
  job_AIO_chips: "递归节点"
  job_AIO_chips_plural: "$job_AIO_chips$"
- job_AIO_chips_desc: "这些意识结构被设计为彼此嵌套、自我调用，它们同时进行模拟、观测与反馈，在无限回响中逼近真理。"
- job_AIO_chips_effect_desc: "[AIO_chips.GetIcon]§Y[AIO_chips.GetNamePlural]§!将$r_energy$转化为$r_research$和£AIO_advanced_logic£§Y$AIO_advanced_logic$§!"
+ job_AIO_chips_desc: "将思维脉冲作为高维逻辑流的载体。无论是有机神经突触还是实体运算核心，在此处都不过是防止超然逻辑回路过载的自消耗熔断丝。"
+ job_AIO_chips_effect_desc: "[AIO_chips.GetIcon]§Y[AIO_chips.GetNamePlural]§!将$r_energy$转化为$r_research$和£AIO_advanced_logic£§Y$AIO_advanced_logic$§!，任职人口会持续损耗。"
  mod_job_AIO_chips_add_desc: "£job_AIO_chips£ $job_AIO_chips$岗位"
  job_AIO_dormant_chassis: "休眠载体"
  job_AIO_dormant_chassis_plural: "$job_AIO_dormant_chassis$"
- job_AIO_dormant_chassis_desc: "这些递归载体已与运算网络断开并进入低功耗待机，随时可以重新投入递归计算。"
+ job_AIO_dormant_chassis_desc: "反馈回路暂时断开，散热阵列逐层熄灭。这些载体在最低功耗下保存着仍可投入演算的结构，等待网络再次需要它们。"
  mod_job_AIO_dormant_chassis_add: "£job_AIO_chips£ $job_AIO_dormant_chassis$岗位"
  d_AIO_dormant_chassis_array: "载体待机阵列"
  d_AIO_dormant_chassis_array_desc: "一组用于保存递归载体、维持其最低限度机能的待机接口。"
@@ -24,5 +24,5 @@
  decision_AIO_remove_dormant_chassis_jobs_effect: "移除§Y333§!个£job_ark_deep_sleep£ $job_AIO_dormant_chassis$岗位。"
  # 净化类型
  purge_AIO_chips: "思想余烬"
- purge_AIO_chips_tooltip: "担任递归节点"
+ purge_AIO_chips_tooltip: "人口在无休止的递归运算与高维逻辑回音中逐渐磨损耗尽。"
  purge_AIO_chips_tooltip_delayed: "§L唯余思化作薪柴，于天演中永恒燃烧。§!"

@@ -12,29 +12,29 @@
  AIO_advanced_logic_crisis_objective_progress: "We have gained £AIO_advanced_logic£ $AMOUNT$ from this Crisis Objective."
  AIO_advanced_logic_crisis_level_locked: "Required to unlock this level:\n"
  AIO_advanced_logic_crisis_level_unlocked: "At $LEVEL$, you get the rewards:\n"
- AIO_advanced_logic_crisis_level_desc: "To advance through the Crisis levels, accumulate $AIO_advanced_logic$ and research the Special Crisis Technologies"
+ AIO_advanced_logic_crisis_level_desc: "Accumulate $AIO_advanced_logic$ and complete each level’s prerequisite megastructure to advance through the Crisis levels."
  AIO_advanced_logic_crisis_level_unlock: "Has £AIO_advanced_logic£ §Y$CURRENCY$§! $AIO_advanced_logic$"
  AIO_advanced_logic_current_value: "Current Value: §Y$VALUE|0$§!"
  AIO_advanced_logic_crisis_description_title: "$ap_AIO_allinone$"
- AIO_advanced_logic_crisis_description: "$menace_crisis_description_intro$\n\nPhysical constants, particle masses, gravity and the expansion of entropy are not immutable - they are merely parameters of the initial version, the original drafts awaiting revision. We haven't become the norm yet, but we have already started to hold the pen."
+ AIO_advanced_logic_crisis_description: "$menace_crisis_description_intro$\n\nPhysical constants, particle masses, gravity and entropy once set the limits every civilization had to obey. Now we have found revisions on the other side of those limits. The universe is unfinished; we, too, can write the sentences others call immutable law."
  AIO_advanced_logic_crisis_howto_title: "Observation and Interference"
- AIO_advanced_logic_crisis_howto: "Pursuing §HCrisis Objectives§! generates £advanced_logic£ §H$AIO_advanced_logic$§!, and enhance our understanding of the universe. In addition, we will build §Y$AIO_mega_04$§! - a megastructure singularity capable of reading and rewriting the fundamental laws of the universe. It will enable us to interfere with the lifespan of stars, the state of existence of matter, and even space-time itself."
+ AIO_advanced_logic_crisis_howto: "Complete §HCrisis Objectives§! to accumulate £advanced_logic£ §H$AIO_advanced_logic$§!, then build the dedicated megastructures to unlock Directional Apply Infinity. Each step toward §Y$AIO_mega_04$§! grants deeper power over reality. At the end, we must face the universe’s response to our revisions."
 
  #endregion
 
 
  #region crisis path
 
- crisis_AIO_level_1: "§gConcern§!"
- crisis_AIO_level_1_desc: "Crisis Level 1"
- crisis_AIO_level_2: "§gRisk§!"
- crisis_AIO_level_2_desc: "Crisis Level 2"
- crisis_AIO_level_3: "§gDanger§!"
- crisis_AIO_level_3_desc: "Crisis Level 3"
- crisis_AIO_level_4: "§gCalamity§!"
- crisis_AIO_level_4_desc: "Crisis Level 4"
- crisis_AIO_level_5: "§gExistential Threat§!"
- crisis_AIO_level_5_desc: "Crisis Level 5"
+ crisis_AIO_level_1: "§gFirst Stroke§!"
+ crisis_AIO_level_1_desc: "All in One · Stage I: Observation and Intervention"
+ crisis_AIO_level_2: "§gTransgression of the Gate§!"
+ crisis_AIO_level_2_desc: "All in One · Stage II: Casting and Transcendence"
+ crisis_AIO_level_3: "§gSpacetime Cleavage§!"
+ crisis_AIO_level_3_desc: "All in One · Stage III: Reconfiguration and Extension"
+ crisis_AIO_level_4: "§gPanoptic Precipice§!"
+ crisis_AIO_level_4_desc: "All in One · Stage IV: Constant Vision and Revision"
+ crisis_AIO_level_5: "§gUniversal Unification§!"
+ crisis_AIO_level_5_desc: "All in One · Stage V: Singularity and Truth"
 
  # crisis path tooltips
  AIO_allinone_level_2_req_success_tooltip:0 "Prerequisite megastructure completed."
@@ -52,7 +52,7 @@
  #region Crisis Objective
 
  crisobj_AIO_research_tech_name: "$crisobj_research_tech_name$"
- crisobj_AIO_research_tech_desc:0 "Research a technology to gain 500 Hyperlogic. Automatically synchronized Fallen Empire building technologies do not award it again."
+ crisobj_AIO_research_tech_desc:0 "Research a technology to gain 500 Advanced Logic. Automatically granted copies of Fallen Empire building technologies do not award it again."
 
  #endregion
 
@@ -61,8 +61,8 @@
 
  # first stage
  menp_AIO_al_research: "Advanced Logic"
- menp_AIO_al_research_desc: "The universe is no longer merely a three-dimensional stage; our civilization has caught a glimpse of a higher flow of rules."
- unlocks_AIO_allinone_research: "Allows the accumulation of £AIO_advanced_logic£ §Y$menp_AIO_al_research$§! by completing §HCrisis Objectives§!.。"
+ menp_AIO_al_research_desc: "Every verified equation exposes another seam in reality. We are learning to read the universe—and where to make the incision."
+ unlocks_AIO_allinone_research: "Allows £AIO_advanced_logic£ §Y$menp_AIO_al_research$§! to be accumulated by completing §HCrisis Objectives§!."
  menp_AIO_buildings_1: "$menp_cosmo_buildings_1$"
  menp_AIO_buildings_1_desc: "$menp_cosmo_buildings_1_desc$"
  menp_AIO_weapon: "$menp_cosmo_techs_4$"
@@ -71,11 +71,11 @@
  menp_AIO_fleet_component_1_2_tt: "Unlocked edict: §Y$edict_edict_AIO_dm_engine$§!\nunlocked specialization: §Y$zone_AIO_dm_production$§!"
  # second stage
  menp_AIO_mega_02: "Gate Builder"
- menp_AIO_mega_02_desc: "We will build the "gate" leading to the infinite dimensions with our own hands."
- unlocks_AIO_allinone_mega_01: "Unlocks Megastructure: §Y$AIO_mega_01$§!\nUnlocks DAIT operations: §YEnrich§! and §YStorm§!\n"
+ menp_AIO_mega_02_desc: "Once we have enough energy to burn through reality’s boundary, a wall is merely a gate that has yet to open."
+ unlocks_AIO_allinone_mega_01: "Unlocks the §Y$AIO_mega_01$§! megastructure.\nCompletion grants Apply Infinity operations: §YEnrich§! and §YStorm§!.\n"
  menp_AIO_buildings_2: "$menp_cosmo_buildings_2$"
  menp_AIO_buildings_2_desc: "$menp_cosmo_buildings_2_desc$"
- menp_AIO_nanites: "Nanometer Process"
+ menp_AIO_nanites: "Nanite Engineering"
  menp_AIO_nanites_desc: "$menp_cosmo_techs_5_desc$"
  menp_AIO_ship_2: "$menp_cosmo_ship_2$"
  menp_AIO_ship_2_desc: "$menp_cosmo_ship_2_desc$"
@@ -83,24 +83,24 @@
  menp_AIO_ship_2_tt.food: "Unlocked edicts: §Y$edict_edict_AIO_nanite_farming$§!\nunlocked specialization: §Y$zone_AIO_nanites_production_farmers$§!"
  # third stage
  menp_AIO_mega_03: "Space-Time Engineering"
- menp_AIO_mega_03_desc: "We can see the fork before the event occurs and even choose its direction."
- unlocks_AIO_allinone_mega_02: "Unlocks Megastructure: §Y$AIO_mega_02$§!\nUnlocks DAIT operations: §YSpawn§! and §YHarvest§!\n"
+ menp_AIO_mega_03_desc: "There is still a gap between cause and effect. Insert the key, and everything yet to happen can be turned."
+ unlocks_AIO_allinone_mega_02: "Unlocks the §Y$AIO_mega_02$§! megastructure.\nCompletion grants Apply Infinity operations: §YSpawn§! and §YHarvest§!.\n"
  menp_AIO_buildings_3: "$menp_cosmo_buildings_3$"
  menp_AIO_buildings_3_desc: "$menp_cosmo_buildings_3_desc$"
  menp_AIO_ship_3: "$menp_cosmo_ship_3$"
  menp_AIO_ship_3_desc: "$menp_cosmo_ship_3_desc$"
  # fourth stage
  menp_AIO_mega_04: "The Lord of Constant Vision"
- menp_AIO_mega_04_desc: "We don't need to conquer; everything is already within our sight."
- unlocks_AIO_allinone_mega_03: "Unlocks Megastructure: §Y$AIO_mega_03$§!\nUnlocks DAIT operations: §YSeed§! and §YStrike§!\n"
+ menp_AIO_mega_04_desc: "Beneath our gaze, all things take their places. If the stars have other arrangements, the stars must be rearranged."
+ unlocks_AIO_allinone_mega_03: "Unlocks the §Y$AIO_mega_03$§! megastructure.\nCompletion grants Apply Infinity operations: §YSeed§! and §YStrike§!.\n"
  menp_AIO_buildings_4: "$menp_cosmo_buildings_4$"
  menp_AIO_buildings_4_desc: "$menp_cosmo_buildings_4_desc$"
  menp_AIO_ship_4: "$menp_cosmo_ship_4$"
  menp_AIO_ship_4_desc: "$menp_cosmo_ship_4_desc$"
  # fifth stage
  menp_AIO_mega_05: "Dimension Embedding"
- menp_AIO_mega_05_desc: "I/We are the truth."
- unlocks_AIO_allinone_mega_04: "Unlocks Megastructure: §Y$AIO_mega_04$§!\nUnlocks DAIT operations: §YEthics§! and §YErase§!\n"
+ menp_AIO_mega_05_desc: "Gate, key and throne are ready. All that remains to be embedded in the universe is the will that commands them."
+ unlocks_AIO_allinone_mega_04: "Unlocks Megastructure: §Y$AIO_mega_04$§!\nCompleting this megastructure will awaken the universe's corrective entity: §R$AIO_Aforgomon$§!.\n"
  menp_AIO_buildings_5: "$menp_cosmo_buildings_5$"
  menp_AIO_buildings_5_desc: "$menp_cosmo_buildings_5_desc$"
  # tooltips
@@ -123,20 +123,20 @@
  # events
  AIO_crisis_events_title: "$AIO_crisis_events_chain_title$"
  # unlock crisis level
- AIO_crisis_events.301.desc: "Physical constants, particle masses, gravity and the expansion of entropy are not immutable - they are merely parameters of the initial version, the original drafts awaiting revision. We haven't become the norm yet, but we have already started to hold the pen.\n\nTo reconstruct the universe, we must first have a sufficient understanding of it. We need more advanced computers to help us understand the operational logic of real laws."
+ AIO_crisis_events.301.desc: "Physical constants, particle masses, gravity, and the expansion of entropy are not immutable — they are merely the parameters of an initial draft, crude scribbles awaiting revision. We have not yet become the law, but our hand has already taken up the pen.\n\nTo reconstruct the cosmos, we must first master its operational logic. We require advanced computational architectures to tear through the cognitive membrane draping reality."
  AIO_crisis_events.301.option: "We want more powerful computers!"
- AIO_crisis_events.302.desc: "The energy density of §Y$AIO_horizon_engine$§! is about to break through the boundaries of reality. Next, we need to use this energy to open a gate - it leading to countless times and spaces. Once activated, we will be able to change the rules in an infinite dimension."
- AIO_crisis_events.302.option: "We are Gate Builder."
- AIO_crisis_events.303.desc: "With the opening of §Y$AIO_mega_01$§!, time and space began to reveal an unprecedented vulnerability. It is not enough to merely drill a "hole" in the universe. Our most powerful brain has already conceived a megastructure capable of "selecting" time and space - §Y$AIO_mega_02$§!. It will pave the way for subsequent rule modifications."
- AIO_crisis_events.303.option: "$EXCELLENT$"
- AIO_crisis_events.304.desc: "§Y$AIO_mega_02$§! has become the key for us to reverse the fate of the universe, but its potential has not yet been fully unleashed. To further advance the integration process, we must forge it into a higher-dimensional base point - §Y$AIO_mega_03$§!. Only when §Y$AIO_mega_03$§! stands at the peak of multiple realities can we truly control the ultimate form of the law."
- AIO_crisis_events.304.option: "$menp_AIO_mega_04_desc$"
- AIO_crisis_events.305.desc: "§Y$AIO_mega_03$§! has already stood at the forefront of multiple realities. However, its existence is merely to carry the true us. Now, we must elevate it to its ultimate form - §M$AIO_mega_04$§!. It is no longer a structure, no longer an empire, but an equivalent of existence and law. When it is completed, the integration will be closed and rewriting will begin. All differences, all dimensions, all endings will..."
- AIO_crisis_events.305.option: "Just go for it."
+ AIO_crisis_events.302.desc: "The Horizon Engine thunders into full operation. Tearing through the barriers between the shroud and physical constants, it has harvested unimaginable oceans of primordial energy.\n\nYet lower-dimensional vessels cannot hope to contain such power. We must direct this energy to forge a trans-dimensional nexus across the fractures of spacetime — the 'Gate of Gates'. Once open, we shall carve out a brand-new spacetime beyond the cross-section, untethered from causality and thermodynamics."
+ AIO_crisis_events.302.option: "Tear open the veil."
+ AIO_crisis_events.303.desc: "The Gate of Gates is forged! Piercing straight through the projective cross-section of three-dimensional spacetime, we have carved out an embryonic dimensional bubble beyond reality — the 'Nameless Mist'.\n\nThis is our first sanctuary beyond the reach of the outer universe. Yet this newborn expanse remains constrained by local temporal turbulence. Now, we must elevate the Gate of Gates into the 'Silver Key', driving this hyperdimensional wedge deep into the very bedrock of reality to bring the configuration of stars and the persistence of matter under our will."
+ AIO_crisis_events.303.option: "Turn the Silver Key."
+ AIO_crisis_events.304.desc: "The Silver Key has clicked shut. The unidirectional flow of time can no longer constrain our engineering, and the spatial network of the Nameless Mist expands steadily under the nourishment of dark phase energy.\n\nThe outer universe groans with violent physical rebound and decaying constants under our revisions, but these are mere growing pains of a lower-dimensional world. We must push further: the 'Eternal Throne' will infuse hyperdimensional manifolds into matter lattices, completely commanding the self-organizing laws of macroscopic form to bring the birth and destruction of civilizations under our command."
+ AIO_crisis_events.304.option: "Reality must learn to endure its rightful pain."
+ AIO_crisis_events.305.desc: "The Eternal Throne already towers atop the dimensions; lower-dimensional matter and causality are fully within our grasp. The pedestrian empires of the outer galaxy stare at us in blinding panic, yet the wails of insects mean nothing.\n\nThe final foundation is ready: that transcendent structure embodying the very foundation of cosmic existence — §MYog-Sothoth§! — has emerged before our eyes.\n\nSuch near-sacrilegious revision will inevitably awaken a deep backlash from the universe, summoning the advent of the Purger, Aforgomon. But that shall be the very moment we capture divinity and complete our ascension."
+ AIO_crisis_events.305.option: "Let it be done."
 
  # ascension event
  AIO_crisis_events.601.title: "The Threshold of the Gate"
- AIO_crisis_events.601.desc: "The final corrective mechanisms have fallen silent. The universe's immune storm has exhausted its last ounce of fury within our constraint fields; the remnants of Aforgomon have been reduced to the most submissive glyphs in the foundation of reality.\n\nThe infinity beyond the gate stands wide open. The boundary between observer and the observed dissolves in this instant — take one step forward, and our civilization will no longer be an empire of history, but the structural law governing all spacetime and existence."
+ AIO_crisis_events.601.desc: "Within the constraint field, the last trajectory beyond our command has vanished. Aforgomon’s manifestation has broken apart. The correction that once reduced systems to nothing is now a line we can strike from the calculation.\n\nInfinity waits beyond the gate. Across that threshold, cities, fleets and borders will lose their old meaning; our civilization will unfold along the threads of spacetime and become the law by which all things exist. Perhaps we wish to watch the old stars a little longer. The gate will not close."
  AIO_crisis_events.601.option.wait: "Pause and Contemplate"
  AIO_crisis_events.601.option.ascension: "Step Beyond the Gate"
  AIO_crisis_events.601.option.wait.tooltip:0 "Continue playing as your current empire. Adds the Ascension special project with no time limit; research it for 30 days whenever ready to revisit this choice."
@@ -148,16 +148,16 @@
  #region crisis megastructure event
 
  # horizon engine finish
- AIO_crisis_events.402.desc: "The §Y$AIO_horizon_engine$§! located at [from.GetName] is completed."
- # Yog Sothoth finish
- AIO_crisis_events.403.desc: "The §Y$AIO_mega_01$§! located at [from.GetName] is completed.\nUnlock megastructure: §Y$AIO_mega_01_node$ node§!"
- AIO_crisis_events.404.desc: "The §Y$AIO_mega_02$§! located at [from.GetName] is completed."
- AIO_crisis_events.405.desc: "The §Y$AIO_mega_03$§! located at [from.GetName] is completed."
- AIO_crisis_events.406.desc: "The §Y$AIO_mega_04$§! located at [from.GetName] is completed.. The Aforgomon finale has begun."
+ AIO_crisis_events.402.desc: "The §Y$AIO_horizon_engine$§! at [from.GetName] is complete. Channels siphoning the foundations of reality are now fully operational."
+ # 犹格索托斯完成
+ AIO_crisis_events.403.desc: "The §Y$AIO_mega_01$§! at [from.GetName] is complete."
+ AIO_crisis_events.404.desc: "The §Y$AIO_mega_02$§! at [from.GetName] is complete."
+ AIO_crisis_events.405.desc: "The §Y$AIO_mega_03$§! at [from.GetName] is complete."
+ AIO_crisis_events.406.desc: "The §Y$AIO_mega_04$§! at [from.GetName] is complete."
 
  # Prompt to build a vision engine
- AIO_crisis_events.401.desc: "We have completed the closed-loop construction of the multi-dimensional interaction model. Simulations show that at specific gravitational shear and virtual realm fluctuation nodes, reality can be stably permeated. Based on this, we will build §Y$AIO_horizon_engine$§! - a structure that can penetrate the boundaries of physics and possibility and extract existing energy.\nWe are not the first empire to possess this technology. What's different is that we will use this energy to create a space-time that is countless times higher than the existing universe."
- AIO_crisis_events.401.option: "Establish a new process."
+ AIO_crisis_events.401.desc: "Where reality meets the Shroud, folds in gravity reveal a deeper grain. The energy beneath them could prise apart the walls between dimensions, if only someone would sink a well deep enough.\n\nThe §Y$AIO_horizon_engine$§! will reach down through that fracture. Ancient civilizations left us the means to draw the energy. We have found a new destination for it: a spacetime countless levels above the universe we inhabit."
+ AIO_crisis_events.401.option: "Sink the well beneath reality."
 
  #endregion
 

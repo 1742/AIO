@@ -3,7 +3,7 @@
  district_AIO_lathe_plural: "$district_AIO_lathe$"
  mod_district_AIO_lathe_max_add: "£mod_planet_max_districts_add£$district_AIO_lathe$上限"
  # 转换区划
- district_AIO_lathe_desc:0 "一个区划解锁不限数量的递归节点岗位；实体人口提供科研与超然逻辑，并承担能源维护与损耗。虚拟人口不能任职。迁都不会使其失效。"
+ district_AIO_lathe_desc:0 "一层头脑推演宇宙，另一层头脑推演前者的推演。行星深处，嵌套的思维结构让每一个答案成为下一轮演算的起点。\n\n单个区划即可开放不限数量的递归节点岗位。实体人口产出科研与超然逻辑，承担能源维护与持续损耗；虚拟人口不能任职。"
  district_AIO_lathe_chips_factor: "当前拥有§Y[AIO_chips_num_per_1000]K§!个£job_AIO_chips£ §Y$job_AIO_chips$§!提供的修正：\n - 产出：§G+[AIO_chips_produce_facor]%§!\n - 维护费：§R+[AIO_chips_upkeep_facor]%§!"
  district_AIO_dm_production: "$zone_AIO_dm_production$"
  district_AIO_dm_production_desc: "$zone_AIO_dm_production_desc$"

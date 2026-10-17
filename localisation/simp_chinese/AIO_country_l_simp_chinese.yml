@@ -1,7 +1,7 @@
 ﻿l_simp_chinese:
  #region 国家类型
 
- AIO_empire: "§M犹格索托斯§!"
+ AIO_empire: "§M犹格·索托斯§!"
  AIO_empire_desc: "真理"
 
  #endregion
@@ -20,7 +20,7 @@
 
  civic_AIO_dream: "§R空想§!"
  civic_AIO_dream_desc: "无需真理之印证，亦不需确知之实相。凡汝所妄构者，皆已为现实。"
- civic_tooltip_AIO_dream_effect: "可以任意地§R应用无限§!。"
+ civic_tooltip_AIO_dream_effect: "§R应用无限§!不消耗超然逻辑，且无冷却时间；仍须等待各操作的生效时间。"
 
  #endregion
 
@@ -28,7 +28,7 @@
  #region 起源
 
  origin_AIO_YogSothoth: "$ap_AIO_allinone$"
- origin_AIO_YogSothoth_desc: "我们已是宇宙的真理。\n\n§R警告：非平衡起源，类似于观测者模式§!"
- origin_AIO_YogSothoth_tt_effects: " - 以$AIO_empire$类型帝国开始游戏\n - 移除所拥有的['concept_colonies']、['concept_system']与['concept_fleet']\n - 生成['concept_AIO_mist_system']、['concept_AIO_gate_system']\n - 游戏开始时拥有§Y$AIO_mega_04$§!与§Y$AIO_mega_01_fact$§!"
+ origin_AIO_YogSothoth_desc: "在最初一颗恒星燃起以前，门便已开启。我们无须回忆自己如何越过门槛：此后每一次星辰的诞生，都在替我们回答。\n\n§R以飞升形态开始游戏，跳过常规发展与终局挑战，适合自由干涉星海。此起源不以平衡为目标。§!"
+ origin_AIO_YogSothoth_tt_effects: " - 以$AIO_empire$形态开始游戏，无须完成终局挑战\n - 移除开局拥有的['concept_colonies']、['concept_system']与['concept_fleet']\n - 生成['concept_AIO_mist_system']与['concept_AIO_gate_system']\n - 开局即拥有§Y$AIO_mega_04$§!与§Y$AIO_mega_01_fact$§!\n - 应用无限免费且免冷却，仍有生效时间"
 
  #endregion

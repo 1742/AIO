@@ -4,8 +4,8 @@
  mod_district_AIO_lathe_max_add: "£mod_planet_max_districts_add£$district_AIO_lathe$ Limit"
 
  # swap district
- district_AIO_lathe_desc:0 "One district enables uncapped Recursive Node jobs. Physical populations produce research and Hyperlogic at an energy and attrition cost. Virtual pops cannot work here. Moving the capital does not disable it."
- district_AIO_lathe_chips_factor: "Currently exists §Y[AIO_chips_num_per_1000]K§! £job_AIO_chips£ §Y$job_AIO_chips$§!, offer modifier:\n - produce: §G+[AIO_chips_produce_facor]%§!\n - upkeep: §R+[AIO_chips_upkeep_facor]%§!"
+ district_AIO_lathe_desc:0 "One layer of minds models the universe; another models the first layer’s calculations. Deep beneath the planet, nested structures of thought make every answer the starting point of another computation.\n\nA single district opens uncapped Recursive Node jobs. Physical pops produce research and Advanced Logic, with energy upkeep and ongoing attrition. Virtual pops cannot fill these jobs."
+ district_AIO_lathe_chips_factor: "Current §Y[AIO_chips_num_per_1000]K§! £job_AIO_chips£ §Y$job_AIO_chips$§! provide:\n - Output: §G+[AIO_chips_produce_facor]%§!\n - Upkeep: §R+[AIO_chips_upkeep_facor]%§!"
  district_AIO_dm_production: "$zone_AIO_dm_production$"
  district_AIO_dm_production_desc: "$zone_AIO_dm_production_desc$"
  district_AIO_dm_production_plural: "$zone_AIO_dm_production$"

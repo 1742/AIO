@@ -8,8 +8,8 @@
  AIO_exponential_learning_theory_tech_desc:0 "每个殖民地可建造一个套娃脑区划，解锁无限递归节点岗位。"
  # 升维假设
  tech_AIO_ascending_dimensionality_theory: "升维假设"
- tech_AIO_ascending_dimensionality_theory_desc: "我们最强的大脑提出了升维的假设，揭示了宇宙本质的更高维度。为突破维度间的障壁，我们需要特殊的结构聚集能量。"
- AIO_ascending_dimensionality_theory_tech_desc: "§H$tech_AIO_ascending_dimensionality_theory$§!\n借助前文明技术设计的§Y$AIO_horizon_engine$§!将会完成这一任务。"
+ tech_AIO_ascending_dimensionality_theory_desc: "当所有三维模型都在同一处失效，缺失的答案也许并不位于模型之内。我们提出了一套可验证的升维假设，并开始寻找足以将它付诸工程的能量。"
+ AIO_ascending_dimensionality_theory_tech_desc: "§H$tech_AIO_ascending_dimensionality_theory$§!\n解锁§Y$AIO_horizon_engine$§!，为后续升维巨构汇聚能量。"
 
  #endregion
 

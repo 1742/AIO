@@ -2,8 +2,8 @@
  #region Horizon Engine
 
  AIO_horizon_engine: "Horizon Engine"
- AIO_horizon_engine_DESC: "We are not the only civilization with this technology, there are already other empires that have chosen this path. We have improved it, slowly and silently stripping and eroding reality from the shroud, turning the deepest structural meaning of our dimension into energy."
- AIO_horizon_engine_MEGASTRUCTURE_DETAILS: "Used to extract energy from reality and shroud."
+ AIO_horizon_engine_DESC: "We are not the only civilization to possess this technology. Other empires have already chosen this path. We have refined it: slowly and silently, it strips away and erodes reality and the Shroud, turning the deepest structural meaning of our dimension into power."
+ AIO_horizon_engine_MEGASTRUCTURE_DETAILS: "Extracts energy from reality and the Shroud."
 
  #endregion
 
@@ -12,18 +12,18 @@
 
  AIO_mega_01_fact: "$AIO_mega_01$"
  AIO_mega_01_fact_DESC: "$AIO_mega_01_DESC$"
- AIO_mega_01: "Ultimate Gate"
- AIO_mega_01_DESC: "Go to the "gate" of the endless dimension."
- AIO_mega_01_MEGASTRUCTURE_DETAILS: "$AIO_mega_01_DESC$"
+ AIO_mega_01: "Gate of Gates"
+ AIO_mega_01_DESC: "Erected within a geometric bubble beyond conventional hyperlanes. This grand portal tears open the closed hypersurface of three-dimensional spacetime, ushering untouchable higher-dimensional possibilities into the cosmos."
+ AIO_mega_01_MEGASTRUCTURE_DETAILS: "A nexus threshold linking multidimensional realities, unlocking Apply Infinity operations 'Enrich' and 'Storm'."
  AIO_mega_02: "Silver Key"
- AIO_mega_02_DESC: "The "key" to the endless dimension."
- AIO_mega_02_MEGASTRUCTURE_DETAILS: "$AIO_mega_02_DESC$"
+ AIO_mega_02_DESC: "A causal key forged upon the intersecting loops of infinite dimensions. Branching paths of past and future manifest here as strings waiting to be plucked, unlocking deeper reality editing."
+ AIO_mega_02_MEGASTRUCTURE_DETAILS: "A causal megastructure that locks and restructures timelines, unlocking Apply Infinity operations 'Spawn' and 'Harvest'."
  AIO_mega_03: "Eternal Throne"
- AIO_mega_03_DESC: "Observe all dimensions and "points" of existence."
- AIO_mega_03_MEGASTRUCTURE_DETAILS: "$AIO_mega_03_DESC$"
- AIO_mega_04: "Yog Sothoth"
- AIO_mega_04_DESC: "A transcendent structure beyond the endless dimension."
- AIO_mega_04_MEGASTRUCTURE_DETAILS: "$AIO_mega_04_DESC$."
+ AIO_mega_03_DESC: "An observation and collapse pivot standing at the pinnacle of multiple realities. Seated upon this throne, the collapse of every possibility lies in full view, while mortal civilizations dissolve into dust beneath our fingers."
+ AIO_mega_03_MEGASTRUCTURE_DETAILS: "A throne overseeing and collapsing infinite dimensions, unlocking Apply Infinity operations 'Seed' and 'Strike'."
+ AIO_mega_04: "Yog-Sothoth"
+ AIO_mega_04_DESC: "The ultimate entity beyond dimensional boundaries. It is no longer an edifice fashioned from mere matter or energy, but an ontological equivalent of existence, spacetime, and fundamental law. Once its circuit closes, the cosmos's absolute corrective mechanism shall follow in its wake."
+ AIO_mega_04_MEGASTRUCTURE_DETAILS: "The ultimate hyperdimensional structure. Completion awakens the cosmos's absolute corrective mechanism, initiating the Aforgomon endgame."
  AIO_mega_04_activate: "$AIO_mega_04$"
  AIO_mega_04_activate_DESC: "$AIO_mega_04_DESC$"
 
@@ -32,9 +32,9 @@
 
  #region tooltips
 
- AIO_mega_01.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 5000!"
- AIO_mega_02.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 10000!"
- AIO_mega_03.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 20000!"
- AIO_mega_04.fail.nomadic: "£trigger_no£ Required §Y$situation_nomad_economy$§! progression >= 50000!"
+ AIO_mega_01.fail.nomadic: "£trigger_no£Requires §Y$situation_nomad_economy$§! progress of at least 5,000."
+ AIO_mega_02.fail.nomadic: "£trigger_no£Requires §Y$situation_nomad_economy$§! progress of at least 10,000."
+ AIO_mega_03.fail.nomadic: "£trigger_no£Requires §Y$situation_nomad_economy$§! progress of at least 20,000."
+ AIO_mega_04.fail.nomadic: "£trigger_no£Requires §Y$situation_nomad_economy$§! progress of at least 50,000."
 
  #endregion

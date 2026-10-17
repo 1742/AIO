@@ -4,7 +4,7 @@
  mod_planet_jobs_sr_zro_produces_mult: "£job£ jobs produce  £sr_zro£ $sr_zro$"
  mod_planet_jobs_sr_dark_matter_produces_mult: "£job£ jobs produce  £sr_dark_matter£ $sr_dark_matter$"
  mod_planet_jobs_nanites_produces_mult: "£job£ jobs produce  £nanites£ $nanites$"
- mod_planet_pops_produces_mult: "Population Produce"
+ mod_planet_pops_produces_mult: "Pop Resource Output"
 
  #endregion
 
@@ -29,7 +29,7 @@
  mod_planet_metallurgists_sr_living_metal_produces_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] produce £sr_living_metal£ $sr_living_metal$"
  mod_planet_metallurgists_sr_zro_produces_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] produce £sr_zro£ $sr_zro$"
  mod_planet_metallurgists_nanites_produces_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] produce £nanites£ $nanites$"
- mod_planet_metallurgists_nanites_produces_mult: "[foundry.GetIcon] [GetAlloyProducerPlural] produce £nanites£ $nanites$"
+ mod_planet_metallurgists_nanites_produces_mult: "[foundry.GetIcon] [GetAlloyProducerPlural] £nanites£ $nanites$ Output"
  mod_planet_metallurgists_alloys_upkeep_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] £alloys£ $alloys$ upkeep"
  mod_planet_metallurgists_sr_living_metal_upkeep_add: "Per 100 [foundry.GetIcon] [GetAlloyProducerPlural] £sr_living_metal£ $sr_living_metal$ upkeep"
  # recursive node
@@ -37,7 +37,7 @@
  mod_planet_AIO_chips_society_research_produces_add: "Per 100 [AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce £society£ $society_research$"
  mod_planet_AIO_chips_engineering_research_produces_add: "Per 100 [AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce £engineering£ $engineering_research$"
  mod_planet_AIO_chips_AIO_advanced_logic_produces_add: "Per 100 [AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce £AIO_advanced_logic£ $AIO_advanced_logic$"
- mod_planet_AIO_chips_produces_mult: "[AIO_chips.GetIcon] [AIO_chips.GetNamePlural] produce"
+ mod_planet_AIO_chips_produces_mult: "[AIO_chips.GetIcon] [AIO_chips.GetNamePlural] Output"
  mod_planet_AIO_chips_upkeep_mult: "[AIO_chips.GetIcon] [AIO_chips.GetNamePlural] £energy£ $energy$ upkeep"
 
  #endregion
@@ -45,11 +45,11 @@
 
  #region country
 
- mod_terraform_speed_mult: "£planet£ Planet Terraform Speed"
- mod_building_time_mult: "£mod_planet_building_build_speed_mult£ Building Time Cost"
- mod_ships_nanites_upkeep_mult: "Ships £nanites£ nanites upkeep"
+ mod_terraform_speed_mult: "£planet£ Terraforming Speed"
+ mod_building_time_mult: "£mod_planet_building_build_speed_mult£ Building Construction Time"
+ mod_ships_nanites_upkeep_mult: "Ship £nanites£ Nanite Upkeep"
 
- MOD_ALL_TECHNOLOGY_RESEARCH_SPEED: "All Research Speed"
+ MOD_ALL_TECHNOLOGY_RESEARCH_SPEED: "Research Speed"
  mod_megastructures_energy_upkeep_mult: "Megastructure Energy Upkeep"
 
  #endregion
@@ -65,6 +65,6 @@
 
  #region DAIT
  AIO_Aforgomon_Wrath_modifier: "$AIO_Aforgomon_Wrath$"
- AIO_create_civilization_modifier: "The Craving of Stellaris"
+ AIO_create_civilization_modifier: "Longing for the Stars"
 
  #endregion

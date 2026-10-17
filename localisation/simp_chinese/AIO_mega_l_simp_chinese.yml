@@ -13,17 +13,17 @@
  AIO_mega_01_fact: "$AIO_mega_01$"
  AIO_mega_01_fact_DESC: "$AIO_mega_01_DESC$"
  AIO_mega_01: "万门之门"
- AIO_mega_01_DESC: "前往无尽维度的“门关”"
- AIO_mega_01_MEGASTRUCTURE_DETAILS: "前往无尽维度的“门关”"
+ AIO_mega_01_DESC: "建立在超脱常规航道的几何泡中。这座宏伟的门扉撕开了三维时空的闭合曲面，将不可触及的高维可能性引渡至星海之中。"
+ AIO_mega_01_MEGASTRUCTURE_DETAILS: "沟通多维现实的枢纽门关，解锁定向应用无限‘丰饶’与‘风暴’。"
  AIO_mega_02: "银时之匙"
- AIO_mega_02_DESC: "通往无尽维度的“钥匙”"
- AIO_mega_02_MEGASTRUCTURE_DETAILS: "通往无尽维度的“钥匙”"
+ AIO_mega_02_DESC: "以无限维度的交错回环为轴铸就的因果之钥。过去与未来的分歧点在此具象为可被拨动的琴弦，开启更深层的现实干涉。"
+ AIO_mega_02_MEGASTRUCTURE_DETAILS: "锁定与重构时间线的因果巨构，解锁定向应用无限‘生成’与‘收割’。"
  AIO_mega_03: "永恒王座"
- AIO_mega_03_DESC: "观测所有维度和存在的“点”"
- AIO_mega_03_MEGASTRUCTURE_DETAILS: "观测所有维度和存在的“点”"
- AIO_mega_04: "犹格索托斯"
- AIO_mega_04_DESC: "无尽维度之外的超然结构"
- AIO_mega_04_MEGASTRUCTURE_DETAILS: "无尽维度之外的超然结构。"
+ AIO_mega_03_DESC: "屹立于多重现实顶点的观测与坍缩基点。端坐于王座之上，所有可能性的坍缩尽收眼底，凡世文明的意志与存在化为指尖的尘埃。"
+ AIO_mega_03_MEGASTRUCTURE_DETAILS: "俯瞰并坍缩无限维度的王座，解锁定向应用无限‘播种’与‘打击’。"
+ AIO_mega_04: "犹格·索托斯"
+ AIO_mega_04_DESC: "超越维度的终极存在之体。它已不再是一座由物质或能量构筑的奇观，而是存在、时空与规律的等价物。当其回路彻底闭合，宇宙的绝对纠错机制亦将循迹而至。"
+ AIO_mega_04_MEGASTRUCTURE_DETAILS: "超越维度的终极结构体。完成时将唤醒宇宙的终极纠错机制，开启亚弗戈蒙终局。"
  AIO_mega_04_activate: "$AIO_mega_04$"
  AIO_mega_04_activate_DESC: "$AIO_mega_04_DESC$"
 
@@ -32,9 +32,9 @@
 
  #region 提示
 
- AIO_mega_01.fail.nomadic: "£trigger_no£需要§Y$situation_nomad_economy$§!进度 >= 5000！"
- AIO_mega_02.fail.nomadic: "£trigger_no£需要§Y$situation_nomad_economy$§!进度 >= 10000！"
- AIO_mega_03.fail.nomadic: "£trigger_no£需要§Y$situation_nomad_economy$§!进度 >= 20000！"
- AIO_mega_04.fail.nomadic: "£trigger_no£需要§Y$situation_nomad_economy$§!进度 >= 50000！"
+ AIO_mega_01.fail.nomadic: "£trigger_no£需要§Y$situation_nomad_economy$§!进度达到5,000。"
+ AIO_mega_02.fail.nomadic: "£trigger_no£需要§Y$situation_nomad_economy$§!进度达到10,000。"
+ AIO_mega_03.fail.nomadic: "£trigger_no£需要§Y$situation_nomad_economy$§!进度达到20,000。"
+ AIO_mega_04.fail.nomadic: "£trigger_no£需要§Y$situation_nomad_economy$§!进度达到50,000。"
 
  #endregion

@@ -1,10 +1,10 @@
 ﻿l_english:
  edict_edict_AIO_menu: "AIO Announcement"
  edict_edict_AIO_dm_engine: "Dark Matter Drive Protocol"
- edict_edict_AIO_dm_engine_desc: "By stably injecting dark matter into the production link, all positions operate beyond conventional limits."
+ edict_edict_AIO_dm_engine_desc: "Dark matter flows steadily into our production systems, bringing efficiency once confined to extreme environments to every assembly line. The labor of the entire empire now draws upon a deeper source."
  edict_edict_AIO_nanite_construction:0 "Nanite Industrial Expansion"
- edict_edict_AIO_nanite_construction_desc:0 "Accelerates ordinary construction, reduces building costs and boosts alloy production, or food production for biological ship empires."
+ edict_edict_AIO_nanite_construction_desc:0 "Deploys nanite swarms to construction sites and production lines, speeding building construction, reducing building costs and boosting alloy production. Empires using biological ships instead receive increased food production."
  edict_edict_AIO_living_metal_construction: "Living Metal Construction"
- edict_edict_AIO_living_metal_construction_desc:0 "Invest living metal in megastructure construction to increase build speed by 100%."
+ edict_edict_AIO_living_metal_construction_desc:0 "Feeds living metal into megastructure construction. Components fit themselves to the unfinished framework, increasing megastructure build speed by 100%."
  edict_edict_AIO_nanite_farming:0 "$edict_edict_AIO_nanite_construction$"
  edict_edict_AIO_nanite_farming_desc:0 "$edict_edict_AIO_nanite_construction_desc$"

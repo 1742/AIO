@@ -19,7 +19,7 @@ carrier_event = {
 # Initialize the fixed launcher once; UI state outlives its event host.
 country_event = {
     id = AIO_DAIT_events.203
-    title = AIO_DAIT_events.202.title
+    title = AIO_DAIT_events.203.title
     desc = AIO_DAIT_menu_desc
     event_message_type = AIO_DAIT_MENU
     diplomatic = yes

@@ -1,10 +1,10 @@
 ﻿l_simp_chinese:
  edict_edict_AIO_menu: "AIO 公告"
  edict_edict_AIO_dm_engine: "暗物质驱动协议"
- edict_edict_AIO_dm_engine_desc: "通过将暗物质稳定地注入生产链路，一切岗位的运转超越常规极限。"
+ edict_edict_AIO_dm_engine_desc: "暗物质被稳定送入生产体系，将原本只能在极端环境中维持的效率推广至每一条流水线。如今，整个帝国的劳作都有了更深的动力来源。"
  edict_edict_AIO_nanite_construction:0 "纳米工业扩张"
- edict_edict_AIO_nanite_construction_desc:0 "纳米机器人加速常规建设、降低建筑成本，并强化合金生产；使用生物舰船的帝国改为强化食物生产。"
+ edict_edict_AIO_nanite_construction_desc:0 "将纳米群落部署至工地与生产线，加快建筑施工、降低建筑成本，并强化合金生产；使用生物舰船的帝国则强化食物生产。"
  edict_edict_AIO_living_metal_construction: "活金速构"
- edict_edict_AIO_living_metal_construction_desc:0 "将活体金属投入巨构施工，提高100%巨构建造速度。"
+ edict_edict_AIO_living_metal_construction_desc:0 "将活体金属投入巨构施工。构件会自行贴合尚未完成的骨架，使巨构建造速度提高100%。"
  edict_edict_AIO_nanite_farming:0 "$edict_edict_AIO_nanite_construction$"
  edict_edict_AIO_nanite_farming_desc:0 "$edict_edict_AIO_nanite_construction_desc$"

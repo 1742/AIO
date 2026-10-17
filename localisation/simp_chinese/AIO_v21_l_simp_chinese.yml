@@ -5,10 +5,10 @@
  AIO_DAIT_toolbar:0 "应用无限"
  AIO_DAIT_current_target:0 "[This.GetAIO_DAIT_selected_target]"
  AIO_DAIT_current_target_tooltip:0 "选择星系、天体、殖民地、舰队、舰船、巨构或环境对象，以其所在星系为目标。空星系可点击“虚空”。仅进入星系视图不算选中目标。"
- AIO_DAIT_need_target:0 "请选中一个可干涉的星系或星球。"
- AIO_DAIT_unavailable:0 "需要解锁操作、足够超然逻辑、适用档位，且本操作未在前摇或冷却。"
- AIO_DAIT_invalid_target:0 "目标不满足本操作条件，或已有施放正在前摇。"
- AIO_DAIT_cancelled:0 "应用无限已取消：无有效目标，退还实际支付费用的一半，不产生额外冷却。"
+ AIO_DAIT_need_target:0 "请选中一个可干涉的星系或天体。"
+ AIO_DAIT_unavailable:0 "需要解锁对应操作、拥有足够超然逻辑并选择适用档位，且该操作未处于前摇或冷却中。"
+ AIO_DAIT_invalid_target:0 "目标不满足本操作条件，或已有干涉正在前摇。"
+ AIO_DAIT_cancelled:0 "应用无限已取消：目标失效、权限不足或无有效作用对象。退还实际支付费用的一半，不进入冷却。"
  AIO_DAIT_ready_text:0 "已就绪"
  AIO_DAIT_need_unlock:0 "尚未解锁此操作。"
  AIO_DAIT_need_range:0 "此操作需要选择0～5跳；全境档仅限飞升后的打击。"
@@ -19,10 +19,10 @@
  AIO_DAIT_target_planet_system_name:0 "星系：[This.System.GetName]"
  AIO_DAIT_target_ambient_system_name:0 "星系：[This.GetStarName]"
  AIO_DAIT_target_none:0 "星系：未选择"
- AIO_DAIT_menu_desc:0 "选择星系或帝国，在八种操作中选择一项，再选择适用范围并点击施放。点击底部固定悬浮球向上展开或收起菜单。"
+ AIO_DAIT_menu_desc:0 "选择星系或帝国目标，在八项操作中选择一项并指定干涉范围，确认后开始施放。点击底部固定悬浮球可向上展开或收起菜单。"
  AIO_DAIT_current_country:0 "[This.GetAIO_DAIT_selected_country]"
- AIO_DAIT_current_country_tooltip:0 "思潮以选中对象的所属国家（owner）为目标，非占领者或所在星系的控制者。可在外交窗口选择国家，或选择舰队、舰船、殖民地及有主星系。也可在外交窗口直接选中目标国家。"
- AIO_DAIT_need_country_target:0 "请在外交窗口选择非格式塔的普通、失落或觉醒帝国，或选择其所属的舰队、舰船、殖民地或星系。"
+ AIO_DAIT_current_country_tooltip:0 "思潮以选中对象的所属国家为目标，而非占领者或星系控制者。可在外交界面选择国家，或选中其舰队、舰船、殖民地或有主星系。"
+ AIO_DAIT_need_country_target:0 "请在外交界面选择非格式塔的普通、失落或觉醒帝国，或在地图上选择其所属的舰队、舰船、殖民地或星系。"
  AIO_DAIT_target_country_name:0 "帝国：[This.GetName]"
  AIO_DAIT_target_owner_name:0 "帝国：[This.Owner.GetName]"
  AIO_DAIT_target_country_none:0 "帝国：未选择"
@@ -33,16 +33,16 @@
  #region DAIT menu - readouts and confirmation
 
  AIO_DAIT_menu_logic:0 "£advanced_logic£ 超然逻辑：[From.GetAIO_DAIT_logic_k] K"
- AIO_DAIT_menu_logic_tooltip:0 "余额：[From.GetAIO_DAIT_logic_amount] 超然逻辑。K＝1000。直接读取当前库存。"
+ AIO_DAIT_menu_logic_tooltip:0 "当前储备：[From.GetAIO_DAIT_logic_amount] 超然逻辑。1K＝1,000。"
  AIO_DAIT_menu_price:0 "本次费用：[From.GetAIO_DAIT_menu_price_k] K"
- AIO_DAIT_menu_price_tooltip:0 "按当前操作和范围计算，K＝1000超然逻辑；飞升后免费。"
+ AIO_DAIT_menu_price_tooltip:0 "按当前操作与范围计算消耗（1K = 1,000 超然逻辑）；飞升后豁免全部费用。"
  AIO_DAIT_menu_selection:0 "当前操作：§Y[From.GetAIO_DAIT_menu_operation]§!"
  AIO_DAIT_menu_no_operation:0 "尚未选择"
  AIO_DAIT_menu_status:0 "[From.GetAIO_DAIT_menu_status]"
- AIO_DAIT_menu_status_tooltip:0 "查看当前操作的前摇、冷却状态。详细条件会在施放按钮的提示中显示。"
- AIO_DAIT_menu_choose_operation:0 "目标，操作，与范围"
+ AIO_DAIT_menu_status_tooltip:0 "显示当前操作的前摇与冷却状态；将鼠标悬停在确认按钮上可查看施放条件。"
+ AIO_DAIT_menu_choose_operation:0 "选择操作与范围"
  AIO_DAIT_menu_confirm:0 "确认"
- AIO_DAIT_menu_confirm_tooltip:0 "对当前选中目标执行所选操作。此时才扣除费用并开始施放。"
+ AIO_DAIT_menu_confirm_tooltip:0 "对当前选中的目标执行所选操作。点击后扣除超然逻辑并开始施放。"
  AIO_DAIT_menu_invalid_target:0 "当前选中对象不适用于此操作：星系操作需要有效星系或天体；思潮需要有效国家或其所属对象。"
 
  #endregion
@@ -76,7 +76,7 @@
  #region DAIT menu - enrich
 
  AIO_DAIT_button_enrich:0 "丰饶"
- AIO_DAIT_button_enrich_tooltip:0 "向星系内的天体添加随机矿藏。"
+ AIO_DAIT_button_enrich_tooltip:0 "为范围内天体添加随机矿藏，包括基础资源与稀有资源。\n生效时间：§Y立即生效§!。\n无冷却时间。"
  AIO_DAIT_enrich_pending_text:0 "正在生效中"
  AIO_DAIT_enrich_cooldown_text:0 "冷却结束：§Y[This.AIO_DAIT_enrich_ready_date]§!"
  AIO_DAIT_enrich_completed:0 "[event_target:AIO_DAIT_maker.GetName]以[event_target:AIO_DAIT_target_system.GetName]为中心施放的“丰饶”已生效。"
@@ -89,7 +89,7 @@
  #region DAIT menu - spawn
 
  AIO_DAIT_button_spawn:0 "生成"
- AIO_DAIT_button_spawn_tooltip:0 "重组星系。\n生效时间：§Y90天§!。"
+ AIO_DAIT_button_spawn_tooltip:0 "重塑目标星系：将虚空或被收割的星系重建为特殊星系；在普通星系中调整恒星，并将符合条件的未殖民天体改造为宜居世界。\n生效时间：§Y90天§!。\n无冷却时间。"
  AIO_DAIT_spawn_pending_text:0 "正在生效中（预计§Y[This.AIO_DAIT_spawn_due]§!完成）"
  AIO_DAIT_spawn_cooldown_text:0 "冷却结束：§Y[This.AIO_DAIT_spawn_ready_date]§!"
  AIO_DAIT_spawn_completed:0 "[event_target:AIO_DAIT_maker.GetName]以[event_target:AIO_DAIT_target_system.GetName]为中心施放的“生成”已生效。"
@@ -102,7 +102,7 @@
  #region DAIT menu - seed
 
  AIO_DAIT_button_seed:0 "播种"
- AIO_DAIT_button_seed_tooltip:0 "在星系内创建文明。\n生效时间：§Y90天§!。\n冷却：§I360天§!（超越因果：§Y270天§!）。\n$AIO_DAIT_ascended_no_cooldown$"
+ AIO_DAIT_button_seed_tooltip:0 "在目标星系的一颗无人口宜居天体上创造新物种与太空文明，并赋予其恒星基地和起步舰船。\n生效时间：§Y90天§!。\n冷却：§Y360天§!（超越因果：§Y270天§!）。\n$AIO_DAIT_ascended_no_cooldown$"
  AIO_DAIT_seed_pending_text:0 "正在生效中（预计§Y[This.AIO_DAIT_seed_due]§!完成）"
  AIO_DAIT_seed_cooldown_text:0 "冷却结束：§Y[This.AIO_DAIT_seed_ready_date]§!"
  AIO_DAIT_seed_completed:0 "[event_target:AIO_DAIT_maker.GetName]以[event_target:AIO_DAIT_target_system.GetName]为中心施放的“播种”已生效。"
@@ -115,7 +115,7 @@
  #region DAIT menu - ethic
 
  AIO_DAIT_button_ethic:0 "思潮"
- AIO_DAIT_button_ethic_tooltip:0 "目标：单个非格式塔国家。在外交窗口直接选择国家，或选择其舰队、舰船、殖民地或星系以取得owner。施放时锁定国家，之后原对象移动、易主或消失均不改变目标。\n生效时间：§Y90天§!。"
+ AIO_DAIT_button_ethic_tooltip:0 "反转单个非格式塔国家的思潮并重组政府。可在外交界面选择国家，或选中其舰队、舰船、殖民地或有主星系。施放时锁定国家，原选中对象此后的移动、易主或消失不改变目标。\n生效时间：§Y90天§!。\n无冷却时间。"
  AIO_DAIT_ethic_pending_text:0 "正在生效中（预计§Y[This.AIO_DAIT_ethic_due]§!完成）"
  AIO_DAIT_ethic_cooldown_text:0 "冷却结束：§Y[This.AIO_DAIT_ethic_ready_date]§!"
  AIO_DAIT_ethic_completed:0 "[event_target:AIO_DAIT_maker.GetName]对[event_target:AIO_DAIT_target_country.GetName]施放的“思潮”已生效。"
@@ -128,7 +128,7 @@
  #region DAIT menu - storm
 
  AIO_DAIT_button_storm:0 "风暴"
- AIO_DAIT_button_storm_tooltip:0 "在目标星系唤起随机宇宙风暴。\n生效时间：§Y90天§!。"
+ AIO_DAIT_button_storm_tooltip:0 "在目标星系内唤起一场随机宇宙风暴。\n生效时间：§Y90天§!。\n无冷却时间。"
  AIO_DAIT_storm_pending_text:0 "正在生效中（预计§Y[This.AIO_DAIT_storm_due]§!完成）"
  AIO_DAIT_storm_cooldown_text:0 "冷却结束：§Y[This.AIO_DAIT_storm_ready_date]§!"
  AIO_DAIT_storm_completed:0 "[event_target:AIO_DAIT_maker.GetName]以[event_target:AIO_DAIT_target_system.GetName]为中心施放的“风暴”已生效。"
@@ -141,7 +141,7 @@
  #region DAIT menu - harvest
 
  AIO_DAIT_button_harvest:0 "收割"
- AIO_DAIT_button_harvest_tooltip:0 "摧毁目标星系以获取资源。\n生效时间：§Y90天§!；每增加1跳，增加90天。\n冷却：§Y360天§!（超越因果：§Y270天§!）。\n$AIO_DAIT_ascended_no_cooldown$"
+ AIO_DAIT_button_harvest_tooltip:0 "拆解范围内可被收割的天体与殖民地，按天体类型和大小获取资源。\n生效时间：§Y90天§!；每增加1跳，增加90天。\n冷却：§Y360天§!（超越因果：§Y270天§!）。\n$AIO_DAIT_ascended_no_cooldown$"
  AIO_DAIT_harvest_pending_text:0 "正在生效中（预计§Y[This.AIO_DAIT_harvest_due]§!完成）"
  AIO_DAIT_harvest_cooldown_text:0 "冷却结束：§Y[This.AIO_DAIT_harvest_ready_date]§!"
  AIO_DAIT_harvest_completed:0 "[event_target:AIO_DAIT_maker.GetName]以[event_target:AIO_DAIT_target_system.GetName]为中心施放的“收割”已生效。"
@@ -154,7 +154,7 @@
  #region DAIT menu - strike
 
  AIO_DAIT_button_strike:0 "打击"
- AIO_DAIT_button_strike_tooltip:0 "召唤§R$AIO_Aforgomon$§!。\n生效时间：§Y180天§!；每增加1跳，生效时间增加90天。\n冷却：§Y360天§!（超越因果：§Y270天§!）。\n完全体基础生效时间90天；全境生效时间360天。仅按目标现场舰队判定目击帝国，传播至其全境。不分敌我。\n$AIO_DAIT_ascended_no_cooldown$"
+ AIO_DAIT_button_strike_tooltip:0 "召唤§R$AIO_Aforgomon$§!。\n生效时间：弱化体基础§Y180天§!，完全体基础§Y90天§!；每增加1跳，增加90天；全境档为§Y360天§!。\n冷却：§Y360天§!（超越因果：§Y270天§!）。\n全境档仅限飞升后使用：施放开始时，以中心星系内的舰队记录非游牧目击帝国（不含化身所属国）；生效时向这些帝国当时拥有的全部有效星系传播打击。\n$AIO_DAIT_ascended_no_cooldown$"
  AIO_DAIT_strike_pending_text:0 "正在生效中（预计§Y[This.AIO_DAIT_strike_due]§!完成）"
  AIO_DAIT_strike_cooldown_text:0 "冷却结束：§Y[This.AIO_DAIT_strike_ready_date]§!"
  AIO_DAIT_strike_completed:0 "[event_target:AIO_DAIT_maker.GetName]以[event_target:AIO_DAIT_target_system.GetName]为中心施放的“打击”已生效。"
@@ -166,11 +166,11 @@
 
  #region DAIT menu - erase
 
- AIO_DAIT_button_erase:0 "抹除"
- AIO_DAIT_button_erase_tooltip:0 "彻底抹除星系中的所有实体。\n生效时间：§Y180天§!；每增加1跳，前摇增加90天。\n冷却：§Y360天§!（超越因果：§Y270天§!）。\n$AIO_DAIT_ascended_no_cooldown$"
+ AIO_DAIT_button_erase:0 "擦除"
+ AIO_DAIT_button_erase_tooltip:0 "擦除范围内星系中可被干涉的天体、巨构与舰队，留下可供“生成”重建的虚空坐标。\n生效时间：§Y180天§!；每增加1跳，增加90天。\n冷却：§Y360天§!（超越因果：§Y270天§!）。\n$AIO_DAIT_ascended_no_cooldown$"
  AIO_DAIT_erase_pending_text:0 "正在生效中（预计§Y[This.AIO_DAIT_erase_due]§!完成）"
  AIO_DAIT_erase_cooldown_text:0 "冷却结束：§Y[This.AIO_DAIT_erase_ready_date]§!"
- AIO_DAIT_erase_completed:0 "[event_target:AIO_DAIT_maker.GetName]以[event_target:AIO_DAIT_target_system.GetName]为中心施放的“抹除”已生效。"
+ AIO_DAIT_erase_completed:0 "[event_target:AIO_DAIT_maker.GetName]以[event_target:AIO_DAIT_target_system.GetName]为中心施放的“擦除”已生效。"
  AIO_DAIT_menu_button_erase:0 "[From.GetAIO_DAIT_menu_button_erase]"
  AIO_DAIT_menu_selected_erase:0 "§Y$AIO_DAIT_button_erase$§!"
  AIO_DAIT_menu_status_erase:0 "[This.GetAIO_DAIT_erase_state]"
@@ -180,7 +180,7 @@
  #region DAIT menu - void anchor
 
  AIO_DAIT_void_anchor:0 "虚空"
- AIO_DAIT_void_anchor_desc:0 "被抹除星系的坐标标记。选中此对象后，可在应用无限菜单中使用“生成”重建该星系。"
+ AIO_DAIT_void_anchor_desc:0 "被擦除星系留下的坐标锚点。选中此对象后，可在应用无限菜单中使用“生成”重建该星系。"
 
  #endregion
 
@@ -199,89 +199,89 @@
  #region district
 
  zone_AIO_lm_production_regular:0 "活金凝结"
- zone_AIO_lm_production_regular_desc:0 "冶金师将部分合金产能转为活体金属，为专属巨构提供材料。"
+ zone_AIO_lm_production_regular_desc:0 "熔炉中的金属开始自行寻找模具。只须从合金生产线上分出一部分产能，便能让这些尚未铸成的构件学会生长。"
 
  #endregion
 
  #region edict
 
  edict_AIO_DAIT_menu:0 "应用无限菜单"
- edict_AIO_DAIT_menu_desc:0 "打开应用无限菜单。点击悬浮球收起或展开；点击右上角 × 退出，不自动续开，可通过本法令重新打开。保留操作和范围，Esc 用于打开游戏菜单。"
+ edict_AIO_DAIT_menu_desc:0 "打开应用无限菜单。点击屏幕底部的固定悬浮球可展开或收起；点击右上角“×”可退出并隐藏悬浮球，菜单不会自动重开。使用本法令可重新打开，已选操作与范围会保留。Esc 仍用于打开游戏菜单。"
 
  #endregion
 
  #region DAIT situation
 
  AIO_DAIT_spawn_situation:0 "应用无限：生成"
- AIO_DAIT_spawn_situation_desc:0 "范围：$AIO_DAIT_range_0$。\n\n局势完成时再次核验范围内目标并执行“生成”。中心目标失效或失去操作权限将取消施放，退还一半实付费用且不进入冷却。其他国家只在效果触发时收到通知。"
+ AIO_DAIT_spawn_situation_desc:0 "范围：$AIO_DAIT_range_0$。\n\n现实的结构正在重排。完成时重建虚空或被收割的星系，或调整普通星系的恒星与可改造天体。中心目标失效或失去操作权限时取消，退还一半实付费用，不进入冷却。其他国家仅在效果触发时收到通知。"
  AIO_DAIT_seed_situation:0 "应用无限：播种"
- AIO_DAIT_seed_situation_desc:0 "范围：$AIO_DAIT_range_0$。\n\n局势完成时再次核验范围内目标并执行“播种”。中心目标失效或失去操作权限将取消施放，退还一半实付费用且不进入冷却。其他国家只在效果触发时收到通知。"
+ AIO_DAIT_seed_situation_desc:0 "范围：$AIO_DAIT_range_0$。\n\n一个新物种及其文明正在获得存在的条件。完成时在符合条件的无人口宜居天体上创造太空文明。中心目标失效、失去操作权限或已无适用天体时取消，退还一半实付费用，不进入冷却。其他国家仅在效果触发时收到通知。"
  AIO_DAIT_ethic_situation:0 "应用无限：思潮反转"
  AIO_DAIT_ethic_situation_desc:0 "施放开始时锁定国家。局势完成时反转该国思潮并重组政府，不受原选中对象的位置、存续或所有权变化影响。目标灭亡、成为格式塔或不再满足国家类型条件，或施放者失去权限时，取消施放、退还一半实付费用且不进入冷却。"
  AIO_DAIT_storm_situation:0 "应用无限：风暴"
- AIO_DAIT_storm_situation_desc:0 "范围：$AIO_DAIT_range_0$。\n\n局势完成时再次核验范围内目标并执行“风暴”。中心目标失效或失去操作权限将取消施放，退还一半实付费用且不进入冷却。其他国家只在效果触发时收到通知。"
+ AIO_DAIT_storm_situation_desc:0 "范围：$AIO_DAIT_range_0$。\n\n稳定的空间正在积蓄一场不应存在的风暴。完成时在星系中唤起随机宇宙风暴。中心目标失效或失去操作权限时取消，退还一半实付费用，不进入冷却。其他国家仅在效果触发时收到通知。"
  AIO_DAIT_harvest_situation:0 "应用无限：收割"
- AIO_DAIT_harvest_situation_desc:0 "范围：[Owner.GetAIO_DAIT_harvest_range_name]。\n\n局势完成时再次核验范围内目标并执行“收割”。中心目标失效或失去操作权限将取消施放，退还一半实付费用且不进入冷却。其他国家只在效果触发时收到通知。"
+ AIO_DAIT_harvest_situation_desc:0 "范围：[Owner.GetAIO_DAIT_harvest_range_name]。\n\n恒星与岩层正在被换算为可以提取的物质。完成时重新核验范围内目标，拆解可收割的天体并获取资源。中心目标失效、失去操作权限或无有效作用对象时取消，退还一半实付费用，不进入冷却。其他国家仅在效果触发时收到通知。"
  AIO_DAIT_strike_situation:0 "应用无限：打击"
- AIO_DAIT_strike_situation_desc:0 "范围：[Owner.GetAIO_DAIT_strike_range_name]。\n\n局势完成时再次核验范围内目标并执行“打击”。中心目标失效或失去操作权限将取消施放，退还一半实付费用且不进入冷却。其他国家只在效果触发时收到通知。"
+ AIO_DAIT_strike_situation_desc:0 "范围：[Owner.GetAIO_DAIT_strike_range_name]。\n\n降临的轮廓正在现实之外成形。完成时核验目标并召唤化身；全境档按施放开始时记录的目击帝国，向其生效时拥有的有效星系传播。化身不分敌我。中心目标失效、失去权限或无有效作用对象时取消，退还一半实付费用，不进入冷却。其他国家仅在效果触发时收到通知。"
  AIO_DAIT_erase_situation:0 "应用无限：擦除"
- AIO_DAIT_erase_situation_desc:0 "范围：[Owner.GetAIO_DAIT_erase_range_name]。\n\n局势完成时再次核验范围内目标并执行“擦除”。中心目标失效或失去操作权限将取消施放，退还一半实付费用且不进入冷却。其他国家只在效果触发时收到通知。"
- AIO_DAIT_windup_stage:0 "前摇倒计时"
- AIO_DAIT_wait_approach:0 "等待生效"
+ AIO_DAIT_erase_situation_desc:0 "范围：[Owner.GetAIO_DAIT_erase_range_name]。\n\n时空正沿着指定的边界收拢。完成时核验范围内目标，擦除可被干涉的天体、巨构与舰队。中心目标失效、失去操作权限或无有效作用对象时取消，退还一半实付费用，不进入冷却。其他国家仅在效果触发时收到通知。"
+ AIO_DAIT_windup_stage:0 "因果编织"
+ AIO_DAIT_wait_approach:0 "等待干涉降临"
  AIO_DAIT_wait_approach_desc:0 "每月推进30天，按施放时确定的前摇时长结算；切换菜单目标或范围不影响此局势。"
- AIO_DAIT_situation_complete:0 "核验目标并执行本次应用无限；成功后按操作规则进入独立冷却。"
+ AIO_DAIT_situation_complete:0 "因果收束完成：核验目标并执行本次应用无限；成功后按操作规则进入独立冷却。"
 
  #endregion
 
  #region menp
 
  menp_AIO_dimensionality:0 "升维假设"
- menp_AIO_dimensionality_desc:0 "将对高维空间的猜想化为可以验证的理论，开启升维巨构的研究。"
+ menp_AIO_dimensionality_desc:0 "从三维枷锁中抽离的第一道方程已经求解。现实的基底并非不可撼动，它只是等待被重塑的泥板。"
  AIO_unlock_dark_matter_protocol:0 "解锁法令：§Y$edict_edict_AIO_dm_engine$§!。"
  AIO_unlock_dark_matter_zone:0 "解锁区划特化：§Y$zone_AIO_dm_production$§!。"
  AIO_unlock_living_metal_zones:0 "解锁适用于本帝国的活体金属生产特化，以及法令§Y$edict_edict_AIO_living_metal_construction$§!。"
- menp_AIO_dark_matter:0 "暗物质技术"
- menp_AIO_dark_matter_desc:0 "从暗物质生产到舰船能源、推进与护盾，将同一种力量贯穿我们的工业和舰队。"
+ menp_AIO_dark_matter:0 "暗物质工程"
+ menp_AIO_dark_matter_desc:0 "从发电设施到舰船的反应堆、推进器与护盾，暗物质沿着同一套工程语言流转。曾经只能远观的引力阴影，如今已装入我们的工业底座。"
  menp_AIO_living_metal:0 "自适应构型"
- menp_AIO_living_metal_desc:0 "活体金属构成可重塑的物质基础，神秘编码与解码技术赋予它精密的控制。"
+ menp_AIO_living_metal_desc:0 "活体金属不再只是稀有的流体物质，神秘编码赋予了它们自我演化与承载多维应力的完美构型。"
  menp_AIO_transcend_causality:0 "超越因果"
  menp_AIO_transcend_causality_desc:0 "现实不必等待上一道命令的余波消散。"
  menp_AIO_break_rules:0 "打破法则"
- menp_AIO_break_rules_desc:0 "时间的法则不再不可触碰。完成犹格索托斯，我们便能挑战亚弗戈蒙。"
+ menp_AIO_break_rules_desc:0 "因果与时间的边界不再是无法逾越的铁律。当犹格·索托斯落成之日，宇宙的终极纠错机制必将为我们显现。"
  menp_AIO_break_rules_tt:0 "完成§Y$AIO_mega_04$§!即可挑战亚弗戈蒙，自动开启终局局势。"
- menp_AIO_transcend_causality_tt:0 "播种、收割、打击、抹除的冷却缩短§G25%§!：从360天降至270天。"
+ menp_AIO_transcend_causality_tt:0 "播种、收割、打击、擦除的冷却缩短§G25%§!：从360天降至270天。"
 
  #endregion
 
  #region crisis objective
 
  crisobj_AIO_research_special_project_name:0 "完成特殊项目"
- crisobj_AIO_research_special_project_desc:0 "由舰船完成特殊项目，获得800超然逻辑。国家研究项目及终局的诱导、约束不计入。"
+ crisobj_AIO_research_special_project_desc:0 "由科研船完成特殊项目，获得800£AIO_advanced_logic£$AIO_advanced_logic$。国家研究项目及终局的诱导、约束不计入。"
  crisobj_AIO_explore_astral_name:0 "探索星界裂隙"
- crisobj_AIO_explore_astral_desc:0 "完成一次星界裂隙探索，获得1200超然逻辑。"
+ crisobj_AIO_explore_astral_desc:0 "完成一次星界裂隙探索，获得1200£AIO_advanced_logic£$AIO_advanced_logic$。"
 
  #endregion
 
  #region deposits
 
- d_AIO_enrich_dark_matter:0 "暗物质矿藏"
- d_AIO_enrich_dark_matter_desc:0 "丰饶显现的稀有矿藏，可由采矿站持续采集。"
- d_AIO_enrich_living_metal:0 "活体金属矿藏"
- d_AIO_enrich_living_metal_desc:0 "丰饶显现的稀有矿藏，可由采矿站持续采集。"
- d_AIO_enrich_nanites:0 "纳米机器人矿藏"
- d_AIO_enrich_nanites_desc:0 "丰饶显现的稀有矿藏，可由采矿站持续采集。"
- d_AIO_enrich_zro:0 "泽洛矿藏"
- d_AIO_enrich_zro_desc:0 "丰饶显现的稀有矿藏，可由采矿站持续采集。"
- d_AIO_enrich_minor_artifacts:0 "稀有文物矿藏"
- d_AIO_enrich_minor_artifacts_desc:0 "丰饶显现的稀有矿藏，可由采矿站持续采集。"
- d_AIO_enrich_astral_threads:0 "星界织缕矿藏"
- d_AIO_enrich_astral_threads_desc:0 "丰饶显现的稀有矿藏，可由采矿站持续采集。"
+ d_AIO_enrich_dark_matter:0 "暗物质沉淀"
+ d_AIO_enrich_dark_matter_desc:0 "高维干涉留下的致密引力沉淀。此处的亚原子结构被永久扭曲，源源不断地析出高纯度暗物质。"
+ d_AIO_enrich_living_metal:0 "活体金属脉络"
+ d_AIO_enrich_living_metal_desc:0 "物理法则松动后析出的自组织流体金属，在天体表面自发聚集成液态矿脉。"
+ d_AIO_enrich_nanites:0 "纳米自律集群"
+ d_AIO_enrich_nanites_desc:0 "微观因果律重构后的副产物，大量具有自我复制与重构能力的纳米机械聚合于地表之下。"
+ d_AIO_enrich_zro:0 "灵能尘埃"
+ d_AIO_enrich_zro_desc:0 "现实帷幕撕裂时渗入三维星空的灵能沉淀物，散发着跨越维度的微弱共鸣。"
+ d_AIO_enrich_minor_artifacts:0 "时空因果残片"
+ d_AIO_enrich_minor_artifacts_desc:0 "平行时空残片跌落于此形成的因果化石，凝固着无数可能被抹去或从未诞生的文明遗物。"
+ d_AIO_enrich_astral_threads:0 "多维晶化丝缕"
+ d_AIO_enrich_astral_threads_desc:0 "多维空间缝隙渗出的晶化丝缕，静静附着在天体深处，记录着跨维度的时空张力。"
 
  #endregion
 
  #region personality
 
  personality_AIO_transcendent:0 "超然意志"
- personality_AIO_transcendent_desc:0 "这个存在已将自身融入宇宙的结构，以超然于常规帝国的方式施加意志。"
+ personality_AIO_transcendent_desc:0 "这个实体已将自身编织进宇宙的底层时空与物理法则之中。对于它而言，凡世星海的疆域纷争犹如纸面上的褶皱；它冷漠地俯瞰着一切三维文明，以超然姿态裁定万物的存续与湮灭。"
 
  #endregion

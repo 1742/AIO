@@ -1,7 +1,7 @@
 ﻿l_english:
  #region country type
 
- AIO_empire: "§MYog Sothoth§!"
+ AIO_empire: "§MYog-Sothoth§!"
  AIO_empire_desc: "Truth"
 
  #endregion
@@ -20,7 +20,7 @@
 
  civic_AIO_dream: "§RDream§!"
  civic_AIO_dream_desc: "There is no need for the verification of truth, nor for the certainty of reality. All that you have fabricated in vain has already become reality."
- civic_tooltip_AIO_dream_effect: "It can apply infinity thesis at will."
+ civic_tooltip_AIO_dream_effect: "§RApply Infinity§! costs no Advanced Logic and has no cooldown. Each operation’s windup still applies."
 
  #endregion
 
@@ -28,7 +28,7 @@
  #region origin
 
  origin_AIO_YogSothoth: "$ap_AIO_allinone$"
- origin_AIO_YogSothoth_desc: "We are already the truth of the universe.\n\n§RWarning: Unbalanced origin, similar to the observer pattern.§!"
- origin_AIO_YogSothoth_tt_effects: " - Start the game as $AIO_empire$\n - remove all ['concept_colonies'], ['concept_system'] and ['concept_fleet']\n - generate ['concept_AIO_mist_system'] and ['concept_AIO_gate_system']\n - §Y$AIO_mega_04$§! and §Y$AIO_mega_01_fact$§! is available at the beginning of game"
+ origin_AIO_YogSothoth_desc: "The gate stood open before the first star burned. We need not remember how we crossed its threshold: every star born since has answered for us.\n\n§RBegin already ascended, bypassing ordinary development and the endgame challenge to intervene freely across the galaxy. This origin is not designed for balanced play.§!"
+ origin_AIO_YogSothoth_tt_effects: " - Begin as $AIO_empire$ without completing the endgame challenge\n - Remove starting ['concept_colonies'], ['concept_system'] and ['concept_fleet']\n - Generate ['concept_AIO_mist_system'] and ['concept_AIO_gate_system']\n - Begin with §Y$AIO_mega_04$§! and §Y$AIO_mega_01_fact$§!\n - Apply Infinity is free and has no cooldown; windups still apply"
 
  #endregion

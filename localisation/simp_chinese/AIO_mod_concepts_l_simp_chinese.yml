@@ -1,7 +1,7 @@
 ﻿l_simp_chinese:
  concept_AIO_mist_system: "$AIO_mist$"
- concept_AIO_mist_system_desc: "存在于无尽维度外的空间，在这里可以建造§Y$AIO_mega_04$§!以操控物理法则。一般生成在星图的左上角。\n§R警告：使用mod地图类型将会导致该星系无法生成！§!"
- concept_AIO_gate_system: "$AIO_The_Ultimate_Gate$"
- concept_AIO_gate_system_desc: "现实与['concept_AIO_mist_system']的连接点，亦联通当前宇宙的任意一点，从外无法观测其内，唯持有银匙者方可通过。"
+ concept_AIO_mist_system_desc: "常规维度之外的空间，为逐级升格至§Y$AIO_mega_04$§!的专属巨构提供锚点。通常出现在星图左上方，可经穷极之门抵达。\n§R其他模组提供的地图类型可能使无名之雾无法生成，并阻断后续进度。§!"
+ concept_AIO_gate_system: "$AIO_gate$"
+ concept_AIO_gate_system_desc: "现实与['concept_AIO_mist_system']之间的门关。所有抵达此处的航路，都朝着一个不属于星图的方向延伸；唯持有银匙者，能够从门内看见彼端。"
  concept_AIO_DAIT: "定向应用无限"
- concept_AIO_DAIT_desc: "现实不在随机变动，宇宙会在我们设计好的规律中演化为理想模型。\n使用§Y$AIO_mega_01$§!、§Y$AIO_mega_02$§!、§Y$AIO_mega_03$§!、§Y$AIO_mega_04$§!消耗£AIO_advanced_logic£ §Y$AIO_advanced_logic$§!修改宇宙以满足我们的需求。\n§Y菜单按 esc 退出。§!"
+ concept_AIO_DAIT_desc: "通过专属巨构，将对宇宙的理解转化为可以指定目标的干涉。飞升前消耗£AIO_advanced_logic£§Y$AIO_advanced_logic$§!，逐步解锁对星系的改造；飞升后开放全部操作，包括针对国家的思潮反转，且免费、免冷却，仍有前摇。\n§Y点击屏幕底部的固定悬浮球展开或收起菜单；右上角“×”可退出，再通过法令重新打开。§!"

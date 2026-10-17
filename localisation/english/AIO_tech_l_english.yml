@@ -6,9 +6,9 @@
  AIO_level_1_tech_title: "Unlock §H$ap_AIO_allinone$§! §HLevel 2§!"
  AIO_exponential_learning_theory_tech_desc:0 "Enables one Matryoshka Brain district per colony with uncapped Recursive Node jobs."
 
- tech_AIO_ascending_dimensionality_theory: "Dimensionality Escalation Hypothesis"
- tech_AIO_ascending_dimensionality_theory_desc: "To break through the barriers between dimensions, we need special structures to gather energy."
- AIO_ascending_dimensionality_theory_tech_desc: "§H$tech_AIO_ascending_dimensionality_theory$§!\nThe §Y$AIO_horizon_engine$§!, designed with pre-civilization technology, will accomplish this task."
+ tech_AIO_ascending_dimensionality_theory: "Dimensionality Hypothesis"
+ tech_AIO_ascending_dimensionality_theory_desc: "When every three-dimensional model fails at the same point, the missing answer may lie outside the model. We have formulated a testable hypothesis of dimensional ascent and begun seeking the energy to make it an engineering discipline."
+ AIO_ascending_dimensionality_theory_tech_desc: "§H$tech_AIO_ascending_dimensionality_theory$§!\nUnlocks the §Y$AIO_horizon_engine$§! to gather energy for subsequent dimensional megastructures."
 
  #endregion
 
