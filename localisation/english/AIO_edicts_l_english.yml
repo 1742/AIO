@@ -8,3 +8,6 @@
  edict_edict_AIO_living_metal_construction_desc:0 "Feeds living metal into megastructure construction. Components fit themselves to the unfinished framework, increasing megastructure build speed by 100%."
  edict_edict_AIO_nanite_farming:0 "$edict_edict_AIO_nanite_construction$"
  edict_edict_AIO_nanite_farming_desc:0 "$edict_edict_AIO_nanite_construction_desc$"
+
+ edict_AIO_DAIT_menu:0 "Apply Infinity Menu"
+ edict_AIO_DAIT_menu_desc:0 "Opens the Apply Infinity menu. Click the fixed orb at the bottom to expand or collapse it. The upper-right × exits and hides the orb; the menu will not reopen automatically. Use this edict to open it again with the selected operation and range preserved."

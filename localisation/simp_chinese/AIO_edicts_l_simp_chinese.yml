@@ -8,3 +8,6 @@
  edict_edict_AIO_living_metal_construction_desc:0 "将活体金属投入巨构施工。构件会自行贴合尚未完成的骨架，使巨构建造速度提高100%。"
  edict_edict_AIO_nanite_farming:0 "$edict_edict_AIO_nanite_construction$"
  edict_edict_AIO_nanite_farming_desc:0 "$edict_edict_AIO_nanite_construction_desc$"
+
+ edict_AIO_DAIT_menu:0 "应用无限菜单"
+ edict_AIO_DAIT_menu_desc:0 "打开应用无限菜单。点击屏幕底部的固定悬浮球可展开或收起；点击右上角“×”可退出并隐藏悬浮球，菜单不会自动重开。使用本法令可重新打开，已选操作与范围会保留。"

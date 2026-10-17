@@ -8,3 +8,216 @@
  AIO_DAIT_exit_tooltip:0 "Exit the menu and hide its orb. Reopen via the Apply Infinity edict."
 
  #endregion
+
+ #region DAIT menu - target and requirements
+
+ AIO_DAIT_toolbar:0 "Apply Infinity"
+ AIO_DAIT_current_target:0 "[This.GetAIO_DAIT_selected_target]"
+ AIO_DAIT_current_target_tooltip:0 "Select a system, celestial body, colony, fleet, ship, megastructure or ambient object to target its system. In an empty system, select the Void Coordinate. Merely entering the system view does not select a target."
+ AIO_DAIT_need_target:0 "Select a valid system or celestial body."
+ AIO_DAIT_unavailable:0 "Requires the operation to be unlocked, sufficient Advanced Logic and an applicable range. The selected operation must have no pending cast or cooldown."
+ AIO_DAIT_invalid_target:0 "The target does not meet operation conditions, or already has a pending cast."
+ AIO_DAIT_cancelled:0 "Apply Infinity cancelled: the target, permission or eligible recipients are no longer valid. Half the paid cost is refunded; no cooldown is imposed."
+ AIO_DAIT_ready_text:0 "Ready"
+ AIO_DAIT_need_unlock:0 "This operation is not unlocked."
+ AIO_DAIT_need_range:0 "Select a range from 0 to 5 jumps. Empire-wide range is available only for Strike after ascension."
+ AIO_DAIT_wait_pending:0 "This operation already has a pending cast."
+ AIO_DAIT_wait_cooldown:0 "This operation is still on cooldown."
+ AIO_DAIT_need_logic:0 "Insufficient Advanced Logic: Enrich, Harvest, Strike and Erase cost base cost times (1 + jumps) at 0 to 5 jumps; other operations use the 0-jump cost."
+ AIO_DAIT_target_system_name:0 "System: [This.GetName]"
+ AIO_DAIT_target_planet_system_name:0 "System: [This.System.GetName]"
+ AIO_DAIT_target_ambient_system_name:0 "System: [This.GetStarName]"
+ AIO_DAIT_target_none:0 "System: none selected"
+ AIO_DAIT_menu_desc:0 "Select a system or empire target, choose one of eight operations and configure the range, then confirm to cast. Click the fixed bottom orb to expand or collapse the menu."
+ AIO_DAIT_current_country:0 "[This.GetAIO_DAIT_selected_country]"
+ AIO_DAIT_current_country_tooltip:0 "Invert Ethics targets the owner of the selected object, rather than its occupier or the controller of its system. Select a country in diplomacy, or select one of its fleets, ships, colonies or owned systems."
+ AIO_DAIT_need_country_target:0 "Select a non-gestalt regular, Fallen or Awakened Empire in diplomacy, or select one of its fleets, ships, colonies or systems on the map."
+ AIO_DAIT_target_country_name:0 "Empire: [This.GetName]"
+ AIO_DAIT_target_owner_name:0 "Empire: [This.Owner.GetName]"
+ AIO_DAIT_target_country_none:0 "Empire: none selected"
+ AIO_DAIT_target_ship_system_name:0 "System: [This.Fleet.System.GetName]"
+
+ #endregion
+
+ #region DAIT menu - readouts and confirmation
+
+ AIO_DAIT_menu_logic:0 "£advanced_logic£ Advanced Logic: [From.GetAIO_DAIT_logic_k] K"
+ AIO_DAIT_menu_logic_tooltip:0 "Current stockpile: [From.GetAIO_DAIT_logic_amount] Advanced Logic. 1K = 1,000."
+ AIO_DAIT_menu_price:0 "Cost: [From.GetAIO_DAIT_menu_price_k] K"
+ AIO_DAIT_menu_price_tooltip:0 "Calculated for selected operation and range (1K = 1,000 Advanced Logic); free after ascension."
+ AIO_DAIT_menu_selection:0 "Operation: §Y[From.GetAIO_DAIT_menu_operation]§!"
+ AIO_DAIT_menu_no_operation:0 "None selected"
+ AIO_DAIT_menu_status:0 "[From.GetAIO_DAIT_menu_status]"
+ AIO_DAIT_menu_status_tooltip:0 "Shows the selected operation’s windup and cooldown. Hover over Confirm to inspect casting requirements."
+ AIO_DAIT_menu_choose_operation:0 "Select operation and range"
+ AIO_DAIT_menu_confirm:0 "Confirm"
+ AIO_DAIT_menu_confirm_tooltip:0 "Execute the selected operation on the current target. Cost is deducted and casting begins upon confirmation."
+ AIO_DAIT_menu_invalid_target:0 "The current selection is ineligible: system operations require a valid system or celestial body; Ethics requires an eligible country or one of its owned objects."
+
+ #endregion
+
+ #region DAIT menu - range
+
+ AIO_DAIT_range_0:0 "0 jumps"
+ AIO_DAIT_menu_range_0:0 "[From.GetAIO_DAIT_menu_range_0]"
+ AIO_DAIT_menu_selected_range_0:0 "§Y$AIO_DAIT_range_0$§!"
+ AIO_DAIT_range_1:0 "1 jump"
+ AIO_DAIT_menu_range_1:0 "[From.GetAIO_DAIT_menu_range_1]"
+ AIO_DAIT_menu_selected_range_1:0 "§Y$AIO_DAIT_range_1$§!"
+ AIO_DAIT_range_2:0 "2 jumps"
+ AIO_DAIT_menu_range_2:0 "[From.GetAIO_DAIT_menu_range_2]"
+ AIO_DAIT_menu_selected_range_2:0 "§Y$AIO_DAIT_range_2$§!"
+ AIO_DAIT_range_3:0 "3 jumps"
+ AIO_DAIT_menu_range_3:0 "[From.GetAIO_DAIT_menu_range_3]"
+ AIO_DAIT_menu_selected_range_3:0 "§Y$AIO_DAIT_range_3$§!"
+ AIO_DAIT_range_4:0 "4 jumps"
+ AIO_DAIT_menu_range_4:0 "[From.GetAIO_DAIT_menu_range_4]"
+ AIO_DAIT_menu_selected_range_4:0 "§Y$AIO_DAIT_range_4$§!"
+ AIO_DAIT_range_5:0 "5 jumps"
+ AIO_DAIT_menu_range_5:0 "[From.GetAIO_DAIT_menu_range_5]"
+ AIO_DAIT_menu_selected_range_5:0 "§Y$AIO_DAIT_range_5$§!"
+ AIO_DAIT_range_6:0 "Strike: Empires"
+ AIO_DAIT_menu_range_6:0 "[From.GetAIO_DAIT_menu_range_6]"
+ AIO_DAIT_menu_selected_range_6:0 "§Y$AIO_DAIT_range_6$§!"
+
+ #endregion
+
+ #region DAIT menu - enrich
+
+ AIO_DAIT_button_enrich:0 "Enrich"
+ AIO_DAIT_button_enrich_tooltip:0 "Adds random deposits to celestial bodies within range, including basic and rare resources.\nCast time: §YInstant§!.\nNo cooldown."
+ AIO_DAIT_enrich_pending_text:0 "Resolving instantly"
+ AIO_DAIT_enrich_cooldown_text:0 "Cooldown ends [This.AIO_DAIT_enrich_ready_date]"
+ AIO_DAIT_enrich_completed:0 "Enrich cast by [event_target:AIO_DAIT_maker.GetName] around [event_target:AIO_DAIT_target_system.GetName] has resolved."
+ AIO_DAIT_menu_button_enrich:0 "[From.GetAIO_DAIT_menu_button_enrich]"
+ AIO_DAIT_menu_selected_enrich:0 "§Y$AIO_DAIT_button_enrich$§!"
+ AIO_DAIT_menu_status_enrich:0 "[This.GetAIO_DAIT_enrich_state]"
+
+ #endregion
+
+ #region DAIT menu - spawn
+
+ AIO_DAIT_button_spawn:0 "Spawn"
+ AIO_DAIT_button_spawn_tooltip:0 "Reshapes the target system: rebuilds void or harvested systems into special systems; otherwise adjusts a star and converts eligible uncolonized bodies into habitable worlds.\nCast time: §Y90 days§!.\nNo cooldown."
+ AIO_DAIT_spawn_pending_text:0 "Pending until [This.AIO_DAIT_spawn_due]"
+ AIO_DAIT_spawn_cooldown_text:0 "Cooldown ends [This.AIO_DAIT_spawn_ready_date]"
+ AIO_DAIT_spawn_completed:0 "Spawn cast by [event_target:AIO_DAIT_maker.GetName] around [event_target:AIO_DAIT_target_system.GetName] has resolved."
+ AIO_DAIT_menu_button_spawn:0 "[From.GetAIO_DAIT_menu_button_spawn]"
+ AIO_DAIT_menu_selected_spawn:0 "§Y$AIO_DAIT_button_spawn$§!"
+ AIO_DAIT_menu_status_spawn:0 "[This.GetAIO_DAIT_spawn_state]"
+
+ #endregion
+
+ #region DAIT menu - seed
+
+ AIO_DAIT_button_seed:0 "Seed"
+ AIO_DAIT_button_seed_tooltip:0 "Creates a new species and spacefaring civilization on an unpopulated habitable body in the target system, with a starbase and starting ships.\nCast time: §Y90 days§!.\nCooldown: §Y360 days§! (§Y270 days§! with Transcend Causality).\n$AIO_DAIT_ascended_no_cooldown$"
+ AIO_DAIT_seed_pending_text:0 "Pending until [This.AIO_DAIT_seed_due]"
+ AIO_DAIT_seed_cooldown_text:0 "Cooldown ends [This.AIO_DAIT_seed_ready_date]"
+ AIO_DAIT_seed_completed:0 "Seed cast by [event_target:AIO_DAIT_maker.GetName] around [event_target:AIO_DAIT_target_system.GetName] has resolved."
+ AIO_DAIT_menu_button_seed:0 "[From.GetAIO_DAIT_menu_button_seed]"
+ AIO_DAIT_menu_selected_seed:0 "§Y$AIO_DAIT_button_seed$§!"
+ AIO_DAIT_menu_status_seed:0 "[This.GetAIO_DAIT_seed_state]"
+
+ #endregion
+
+ #region DAIT menu - ethic
+
+ AIO_DAIT_button_ethic:0 "Invert Ethics"
+ AIO_DAIT_button_ethic_tooltip:0 "Inverts a non-gestalt country’s ethics and restructures its government. Select a country in diplomacy or one of its fleets, ships, colonies or owned systems. The country is locked when casting begins; later movement, ownership changes or loss of the selected object do not change it.\nCast time: §Y90 days§!.\nNo cooldown."
+ AIO_DAIT_ethic_pending_text:0 "Pending until [This.AIO_DAIT_ethic_due]"
+ AIO_DAIT_ethic_cooldown_text:0 "Cooldown ends [This.AIO_DAIT_ethic_ready_date]"
+ AIO_DAIT_ethic_completed:0 "Ethics Inversion cast by [event_target:AIO_DAIT_maker.GetName] on [event_target:AIO_DAIT_target_country.GetName] has resolved."
+ AIO_DAIT_menu_button_ethic:0 "[From.GetAIO_DAIT_menu_button_ethic]"
+ AIO_DAIT_menu_selected_ethic:0 "§Y$AIO_DAIT_button_ethic$§!"
+ AIO_DAIT_menu_status_ethic:0 "[This.GetAIO_DAIT_ethic_state]"
+
+ #endregion
+
+ #region DAIT menu - storm
+
+ AIO_DAIT_button_storm:0 "Storm"
+ AIO_DAIT_button_storm_tooltip:0 "Tears open the target system’s spatial barriers to unleash a random cosmic storm.\nCast time: §Y90 days§!.\nNo cooldown."
+ AIO_DAIT_storm_pending_text:0 "Pending until [This.AIO_DAIT_storm_due]"
+ AIO_DAIT_storm_cooldown_text:0 "Cooldown ends [This.AIO_DAIT_storm_ready_date]"
+ AIO_DAIT_storm_completed:0 "Storm cast by [event_target:AIO_DAIT_maker.GetName] around [event_target:AIO_DAIT_target_system.GetName] has resolved."
+ AIO_DAIT_menu_button_storm:0 "[From.GetAIO_DAIT_menu_button_storm]"
+ AIO_DAIT_menu_selected_storm:0 "§Y$AIO_DAIT_button_storm$§!"
+ AIO_DAIT_menu_status_storm:0 "[This.GetAIO_DAIT_storm_state]"
+
+ #endregion
+
+ #region DAIT menu - harvest
+
+ AIO_DAIT_button_harvest:0 "Harvest"
+ AIO_DAIT_button_harvest_tooltip:0 "Breaks down eligible celestial bodies and colonies within range, yielding resources according to each body’s type and size.\nCast time: §Y90 days§!; +90 days per jump.\nCooldown: §Y360 days§! (§Y270 days§! with Transcend Causality).\n$AIO_DAIT_ascended_no_cooldown$"
+ AIO_DAIT_harvest_pending_text:0 "Pending until [This.AIO_DAIT_harvest_due]"
+ AIO_DAIT_harvest_cooldown_text:0 "Cooldown ends [This.AIO_DAIT_harvest_ready_date]"
+ AIO_DAIT_harvest_completed:0 "Harvest cast by [event_target:AIO_DAIT_maker.GetName] around [event_target:AIO_DAIT_target_system.GetName] has resolved."
+ AIO_DAIT_menu_button_harvest:0 "[From.GetAIO_DAIT_menu_button_harvest]"
+ AIO_DAIT_menu_selected_harvest:0 "§Y$AIO_DAIT_button_harvest$§!"
+ AIO_DAIT_menu_status_harvest:0 "[This.GetAIO_DAIT_harvest_state]"
+
+ #endregion
+
+ #region DAIT menu - strike
+
+ AIO_DAIT_button_strike:0 "Strike"
+ AIO_DAIT_button_strike_tooltip:0 "Summons §R$AIO_Aforgomon$§! at the intervention site. The avatar is hostile to all.\nCast time: §Y180 days§! for a weakened avatar, §Y90 days§! for a full avatar; +90 days per jump. Empire-wide range takes §Y360 days§!.\nCooldown: §Y360 days§! (§Y270 days§! with Transcend Causality).\nEmpire-wide range requires ascension. At cast start, fleets in the central system identify non-nomadic witnessing empires, excluding the avatar’s owner. On resolution, Strike spreads to every eligible system those empires then own.\n$AIO_DAIT_ascended_no_cooldown$"
+ AIO_DAIT_strike_pending_text:0 "Pending until [This.AIO_DAIT_strike_due]"
+ AIO_DAIT_strike_cooldown_text:0 "Cooldown ends [This.AIO_DAIT_strike_ready_date]"
+ AIO_DAIT_strike_completed:0 "Strike cast by [event_target:AIO_DAIT_maker.GetName] around [event_target:AIO_DAIT_target_system.GetName] has resolved."
+ AIO_DAIT_menu_button_strike:0 "[From.GetAIO_DAIT_menu_button_strike]"
+ AIO_DAIT_menu_selected_strike:0 "§Y$AIO_DAIT_button_strike$§!"
+ AIO_DAIT_menu_status_strike:0 "[This.GetAIO_DAIT_strike_state]"
+
+ #endregion
+
+ #region DAIT menu - erase
+
+ AIO_DAIT_button_erase:0 "Erase"
+ AIO_DAIT_button_erase_tooltip:0 "Erases eligible celestial bodies, megastructures and fleets from systems within range, leaving void coordinates that Spawn can rebuild.\nCast time: §Y180 days§!; +90 days per jump.\nCooldown: §Y360 days§! (§Y270 days§! with Transcend Causality).\n$AIO_DAIT_ascended_no_cooldown$"
+ AIO_DAIT_erase_pending_text:0 "Pending until [This.AIO_DAIT_erase_due]"
+ AIO_DAIT_erase_cooldown_text:0 "Cooldown ends [This.AIO_DAIT_erase_ready_date]"
+ AIO_DAIT_erase_completed:0 "Erase cast by [event_target:AIO_DAIT_maker.GetName] around [event_target:AIO_DAIT_target_system.GetName] has resolved."
+ AIO_DAIT_menu_button_erase:0 "[From.GetAIO_DAIT_menu_button_erase]"
+ AIO_DAIT_menu_selected_erase:0 "§Y$AIO_DAIT_button_erase$§!"
+ AIO_DAIT_menu_status_erase:0 "[This.GetAIO_DAIT_erase_state]"
+
+ #endregion
+
+ #region DAIT menu - void anchor
+
+ AIO_DAIT_void_anchor:0 "Void Coordinate"
+ AIO_DAIT_void_anchor_desc:0 "A coordinate anchor left by an erased system. Select this object, then use Spawn in the Apply Infinity menu to rebuild the system."
+
+ #endregion
+
+ #region DAIT menu - ascension rules
+
+ AIO_DAIT_ascended_no_cooldown:0 "No cooldown after ascension."
+
+ #endregion
+
+ #region DAIT situation
+
+ AIO_DAIT_spawn_situation:0 "Apply Infinity: Spawn"
+ AIO_DAIT_spawn_situation_desc:0 "Range: $AIO_DAIT_range_0$.\n\nReality is being rearranged. Completion rebuilds a void or harvested system, or alters an ordinary system’s star and eligible bodies. An invalid central target or lost permission cancels the cast, refunds half the paid cost and imposes no cooldown. Other empires are notified only when the effect resolves."
+ AIO_DAIT_seed_situation:0 "Apply Infinity: Seed"
+ AIO_DAIT_seed_situation_desc:0 "Range: $AIO_DAIT_range_0$.\n\nA new species and civilization are acquiring the conditions for existence. Completion creates a spacefaring civilization on an eligible, unpopulated habitable body. Loss of the central target, permission or an eligible body cancels the cast, refunds half the paid cost and imposes no cooldown. Other empires are notified only when the effect resolves."
+ AIO_DAIT_ethic_situation:0 "Apply Infinity: Ethics Inversion"
+ AIO_DAIT_ethic_situation_desc:0 "The country is captured when casting begins. Completion inverts its ethics and restructures its government, regardless of the selected object's later location, existence or ownership. Losing the country, its eligible type or non-gestalt status, or the caster's permission cancels the cast, refunds half the paid cost and imposes no cooldown."
+ AIO_DAIT_storm_situation:0 "Apply Infinity: Storm"
+ AIO_DAIT_storm_situation_desc:0 "Range: $AIO_DAIT_range_0$.\n\nStable space is gathering a storm that should not exist. Completion unleashes a random cosmic storm in the system. An invalid central target or lost permission cancels the cast, refunds half the paid cost and imposes no cooldown. Other empires are notified only when the effect resolves."
+ AIO_DAIT_harvest_situation:0 "Apply Infinity: Harvest"
+ AIO_DAIT_harvest_situation_desc:0 "Range: [Owner.GetAIO_DAIT_harvest_range_name].\n\nStars and strata are being translated into recoverable matter. Completion rechecks targets within range and harvests eligible bodies for resources. An invalid central target, lost permission or no eligible recipients cancels the cast, refunds half the paid cost and imposes no cooldown. Other empires are notified only when the effect resolves."
+ AIO_DAIT_strike_situation:0 "Apply Infinity: Strike"
+ AIO_DAIT_strike_situation_desc:0 "Range: [Owner.GetAIO_DAIT_strike_range_name].\n\nThe outline of an advent is forming beyond reality. Completion validates targets and summons avatars. Empire-wide range uses witnesses recorded at cast start and spreads through eligible systems they own when the effect resolves. Avatars are hostile to all. An invalid central target, lost permission or no eligible recipients cancels the cast, refunds half the paid cost and imposes no cooldown. Other empires are notified only when the effect resolves."
+ AIO_DAIT_erase_situation:0 "Apply Infinity: Erase"
+ AIO_DAIT_erase_situation_desc:0 "Range: [Owner.GetAIO_DAIT_erase_range_name].\n\nSpacetime is drawing inward along the chosen boundaries. Completion rechecks targets within range and erases eligible bodies, megastructures and fleets. An invalid central target, lost permission or no eligible recipients cancels the cast, refunds half the paid cost and imposes no cooldown. Other empires are notified only when the effect resolves."
+ AIO_DAIT_windup_stage:0 "Causal Weaving"
+ AIO_DAIT_wait_approach:0 "Awaiting Intervention"
+ AIO_DAIT_wait_approach_desc:0 "Advances 30 days per month based on initial cast duration; changing menu target or range does not affect this situation."
+ AIO_DAIT_situation_complete:0 "Causal convergence complete: verifies target and executes intervention; enters independent cooldown upon success."
+
+ #endregion

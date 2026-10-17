@@ -53,6 +53,10 @@
 
  crisobj_AIO_research_tech_name: "$crisobj_research_tech_name$"
  crisobj_AIO_research_tech_desc:0 "Research a technology to gain 500 Advanced Logic. Automatically granted copies of Fallen Empire building technologies do not award it again."
+ crisobj_AIO_research_special_project_name:0 "Complete Special Projects"
+ crisobj_AIO_research_special_project_desc:0 "Complete special projects with science ships to gain 800£AIO_advanced_logic£$AIO_advanced_logic$. Country-level research and endgame induction/constraint projects do not count."
+ crisobj_AIO_explore_astral_name:0 "Explore Astral Rifts"
+ crisobj_AIO_explore_astral_desc:0 "Complete an Astral Rift exploration to gain 1,200£AIO_advanced_logic£$AIO_advanced_logic$."
 
  #endregion
 
@@ -65,28 +69,32 @@
  unlocks_AIO_allinone_research: "Allows £AIO_advanced_logic£ §Y$menp_AIO_al_research$§! to be accumulated by completing §HCrisis Objectives§!."
  menp_AIO_buildings_1: "$menp_cosmo_buildings_1$"
  menp_AIO_buildings_1_desc: "$menp_cosmo_buildings_1_desc$"
- menp_AIO_weapon: "$menp_cosmo_techs_4$"
- menp_AIO_weapon_desc: "$menp_cosmo_techs_4_desc$"
- unlocks_AIO_allinone_fleet_component_1: "Unlocked §Y$tech_arc_emitter_2$§! and §Y$tech_dragon_armor$§! ship components.\n"
- menp_AIO_fleet_component_1_2_tt: "Unlocked edict: §Y$edict_edict_AIO_dm_engine$§!\nunlocked specialization: §Y$zone_AIO_dm_production$§!"
+ menp_AIO_dark_matter:0 "Dark Matter Engineering"
+ menp_AIO_dark_matter_desc:0 "From power plants to ship reactors, thrusters and shields, dark matter now answers to a common engineering language. The gravitational shadows we once observed from afar have become the foundations of our industry."
+ AIO_unlock_dark_matter:0 "Unlocks the §Y$edict_edict_AIO_dm_engine$§! edict.\nUnlocks the §Y$zone_AIO_dm_production$§! specialization."
+ menp_AIO_dimensionality:0 "Dimensionality Hypothesis"
+ menp_AIO_dimensionality_desc:0 "The first equation unwinding the three-dimensional cage has been solved. The bedrock of reality is no longer inviolable; it is merely raw clay awaiting our chisel."
  # second stage
  menp_AIO_mega_02: "Gate Builder"
  menp_AIO_mega_02_desc: "Once we have enough energy to burn through reality’s boundary, a wall is merely a gate that has yet to open."
  unlocks_AIO_allinone_mega_01: "Unlocks the §Y$AIO_mega_01$§! megastructure.\nCompletion grants Apply Infinity operations: §YEnrich§! and §YStorm§!.\n"
  menp_AIO_buildings_2: "$menp_cosmo_buildings_2$"
  menp_AIO_buildings_2_desc: "$menp_cosmo_buildings_2_desc$"
- menp_AIO_nanites: "Nanite Engineering"
- menp_AIO_nanites_desc: "$menp_cosmo_techs_5_desc$"
+ menp_AIO_living_metal:0 "Adaptive Morphology"
+ menp_AIO_living_metal_desc:0 "Living metal is no longer merely fluid matter; enigmatic encodings grant it autonomous morphogenesis capable of bearing multidimensional stress."
+ AIO_unlock_crisis_living_metal:0 "Unlocks living metal production specializations appropriate to your empire and the §Y$edict_edict_AIO_living_metal_construction$§! edict."
  menp_AIO_ship_2: "$menp_cosmo_ship_2$"
  menp_AIO_ship_2_desc: "$menp_cosmo_ship_2_desc$"
- menp_AIO_ship_2_tt.alloys: "Unlocked edict: §Y$edict_edict_AIO_nanite_construction$§!\nunlocked specialization: §Y$zone_AIO_nanites_production_metallurgists$§!"
- menp_AIO_ship_2_tt.food: "Unlocked edicts: §Y$edict_edict_AIO_nanite_farming$§!\nunlocked specialization: §Y$zone_AIO_nanites_production_farmers$§!"
  # third stage
  menp_AIO_mega_03: "Space-Time Engineering"
  menp_AIO_mega_03_desc: "There is still a gap between cause and effect. Insert the key, and everything yet to happen can be turned."
  unlocks_AIO_allinone_mega_02: "Unlocks the §Y$AIO_mega_02$§! megastructure.\nCompletion grants Apply Infinity operations: §YSpawn§! and §YHarvest§!.\n"
  menp_AIO_buildings_3: "$menp_cosmo_buildings_3$"
  menp_AIO_buildings_3_desc: "$menp_cosmo_buildings_3_desc$"
+ menp_AIO_nanites: "Nanite Engineering"
+ menp_AIO_nanites_desc: "$menp_cosmo_techs_5_desc$"
+ AIO_unlock_crisis_nanites.alloys: "Unlocked edict: §Y$edict_edict_AIO_nanite_construction$§!\nunlocked specialization: §Y$zone_AIO_nanites_production_metallurgists$§!"
+ AIO_unlock_crisis_nanites.food: "Unlocked edicts: §Y$edict_edict_AIO_nanite_farming$§!\nunlocked specialization: §Y$zone_AIO_nanites_production_farmers$§!"
  menp_AIO_ship_3: "$menp_cosmo_ship_3$"
  menp_AIO_ship_3_desc: "$menp_cosmo_ship_3_desc$"
  # fourth stage
@@ -95,6 +103,9 @@
  unlocks_AIO_allinone_mega_03: "Unlocks the §Y$AIO_mega_03$§! megastructure.\nCompletion grants Apply Infinity operations: §YSeed§! and §YStrike§!.\n"
  menp_AIO_buildings_4: "$menp_cosmo_buildings_4$"
  menp_AIO_buildings_4_desc: "$menp_cosmo_buildings_4_desc$"
+ menp_AIO_weapon: "$menp_cosmo_techs_4$"
+ menp_AIO_weapon_desc: "$menp_cosmo_techs_4_desc$"
+ AIO_unlocks_crisis_weapon: "Unlocked §Y$tech_arc_emitter_2$§! and §Y$tech_dragon_armor$§! ship components.\n"
  menp_AIO_ship_4: "$menp_cosmo_ship_4$"
  menp_AIO_ship_4_desc: "$menp_cosmo_ship_4_desc$"
  # fifth stage
@@ -103,6 +114,12 @@
  unlocks_AIO_allinone_mega_04: "Unlocks Megastructure: §Y$AIO_mega_04$§!\nCompleting this megastructure will awaken the universe's corrective entity: §R$AIO_Aforgomon$§!.\n"
  menp_AIO_buildings_5: "$menp_cosmo_buildings_5$"
  menp_AIO_buildings_5_desc: "$menp_cosmo_buildings_5_desc$"
+ menp_AIO_transcend_causality:0 "Transcend Causality"
+ menp_AIO_transcend_causality_desc:0 "Reality need not wait for the echoes of our previous command."
+ menp_AIO_transcend_causality_tt:0 "Reduces the cooldown of Seed, Harvest, Strike and Erase by §G25%§!: from 360 to 270 days."
+ menp_AIO_break_rules:0 "Shatter the Laws"
+ menp_AIO_break_rules_desc:0 "The barriers of causality and time are no longer unbreakable dogmas. Upon the completion of Yog-Sothoth, the universe's ultimate corrective entity shall be forced to reveal itself."
+ menp_AIO_break_rules_tt:0 "Completing §Y$AIO_mega_04$§! allows you to challenge Aforgomon and automatically begins the final situation."
  # tooltips
  AIO_unlock_AIO_TDTE_node: "Unlocked §Y$AIO_mega_01_node$§! Node."
 
@@ -140,6 +157,7 @@
  AIO_crisis_events.601.option.wait: "Pause and Contemplate"
  AIO_crisis_events.601.option.ascension: "Step Beyond the Gate"
  AIO_crisis_events.601.option.wait.tooltip:0 "Continue playing as your current empire. Adds the Ascension special project with no time limit; research it for 30 days whenever ready to revisit this choice."
+ AIO_crisis_events.602.desc:0 "The unification is complete.\nWe are no longer an empire, nor are we entities. Our will stands at the intersection of infinite dimensions, the structural principle of all that exists.\nExtinguished stars fall silent even as they burn. Tides rise in dry ocean basins, only to become salt-dust before reaching shore; forests with no ancestors rise upon barren worlds, while unsown seeds sprout wherever their trees fall; broken hyperlanes rejoin and open onto two different skies, while ships lost for a thousand years enter both their home ports and their own wreckage. Billions of futures once hostile to one another are now born and perish beneath the same stars.\nThe stars flare and fade, because we write both their beginnings and their ends; life turns in its cycle, because the last page of every story is the first page of another.\nThere is no immortality. There is no oblivion. Beyond every gate, birth and farewell unfold as one.\nI/We are §MYog-Sothoth§!."
  AIO_crisis_events.end.option: "I/We are the truth."
 
  #endregion

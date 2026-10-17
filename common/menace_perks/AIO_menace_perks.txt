@@ -23,8 +23,7 @@ menp_AIO_buildings_1 = {
 menp_AIO_dark_matter = {
     portrait = GFX_menp_AIO_dark_matter
     on_unlock = {
-        custom_tooltip = AIO_unlock_dark_matter_zone
-        custom_tooltip = AIO_unlock_dark_matter_protocol
+        custom_tooltip = AIO_unlock_dark_matter
         add_research_option = tech_dark_matter_power_core
         add_research_option = tech_dark_matter_propulsion
         add_research_option = tech_dark_matter_deflector
@@ -59,7 +58,7 @@ menp_AIO_buildings_2 = {
 menp_AIO_living_metal = {
     portrait = GFX_menp_AIO_living_metal
     on_unlock = {
-        custom_tooltip = AIO_unlock_living_metal_zones
+        custom_tooltip = AIO_unlock_crisis_living_metal
         add_research_option = tech_enigmatic_encoder
         add_research_option = tech_enigmatic_decoder
     }
@@ -108,10 +107,10 @@ menp_AIO_nanites = {
 	on_unlock = {
         if = {
             limit = { country_uses_bio_ships = no }
-            custom_tooltip = menp_AIO_ship_2_tt.alloys
+            custom_tooltip = AIO_unlock_crisis_nanites.alloys
         }
         else = {
-            custom_tooltip = menp_AIO_ship_2_tt.food
+            custom_tooltip = AIO_unlock_crisis_nanites.food
         }
 
 		add_research_option = tech_nanite_transmutation
@@ -161,7 +160,7 @@ menp_AIO_weapon = {
 	portrait = GFX_menp_AIO_weapon_icon
 
 	on_unlock = {
-		custom_tooltip = unlocks_AIO_allinone_fleet_component_1
+		custom_tooltip = AIO_unlocks_crisis_weapon
 		add_research_option = tech_arc_emitter_2
 		add_research_option = tech_dragon_armor
 	}

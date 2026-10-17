@@ -5,6 +5,9 @@
  # dark matter production
  zone_AIO_dm_production: "Dark Matter Synthesis Complex"
  zone_AIO_dm_production_desc: "Power plants now feed the shadowed side of gravity. Energy settles here into matter no ordinary light can reveal. The production ledger shows a little less electricity, and a new stockpile once classified as a mystery of the universe."
+ # regular empire living metal production
+ zone_AIO_lm_production_regular:0 "Living Metal Condensation"
+ zone_AIO_lm_production_regular_desc:0 "Metal in the furnaces has begun seeking its own molds. Divert a share of the alloy production line, and components can learn to grow before they are even cast."
  # gestalt machine empire living metal production
  zone_AIO_lm_production_machine_empire: "Living Metal Synthetic Nexus"
  zone_AIO_lm_production_machine_empire_desc: "In the heat of the assembly line, silver fluid gathers along the seams of newborn machines. We taught metal to find its own shape. Each batch of drones now leaves behind a harvest of forms it has yet to use."

@@ -5,6 +5,9 @@
  # 暗物质生产特化
  zone_AIO_dm_production: "暗物质合成复合体"
  zone_AIO_dm_production_desc: "发电设施开始向引力的阴面输送功率。能量在此沉降，凝成无法被寻常光线照亮的物质；生产报表因此少了一些电力，多了一项曾被列为宇宙之谜的库存。"
+ # 常规帝国活体金属生产
+ zone_AIO_lm_production_regular:0 "活金凝结"
+ zone_AIO_lm_production_regular_desc:0 "熔炉中的金属开始自行寻找模具。只须从合金生产线上分出一部分产能，便能让这些尚未铸成的构件学会生长。"
  # 塔械组装及活体金属生产
  zone_AIO_lm_production_machine_empire: "活金合成"
  zone_AIO_lm_production_machine_empire_desc: "装配线的余热中，银色流体沿着新生机体的接缝汇聚。我们教会金属自行寻找形状，如今每一批子个体下线时，都能一并收取它们尚未使用的可能。"

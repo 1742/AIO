@@ -52,6 +52,10 @@
 
  crisobj_AIO_research_tech_name: "$crisobj_research_tech_name$"
  crisobj_AIO_research_tech_desc:0 "研究一项科技，获得500超然逻辑。自动同步授予的失落帝国建筑科技不重复计奖。"
+ crisobj_AIO_research_special_project_name:0 "完成特殊项目"
+ crisobj_AIO_research_special_project_desc:0 "由科研船完成特殊项目，获得800£AIO_advanced_logic£$AIO_advanced_logic$。国家研究项目及终局的诱导、约束不计入。"
+ crisobj_AIO_explore_astral_name:0 "探索星界裂隙"
+ crisobj_AIO_explore_astral_desc:0 "完成一次星界裂隙探索，获得1200£AIO_advanced_logic£$AIO_advanced_logic$。"
 
  #endregion
 
@@ -64,28 +68,32 @@
  unlocks_AIO_allinone_research: "可以开始通过完成§H天灾目标§!以积累£AIO_advanced_logic£§Y$AIO_advanced_logic$§!。"
  menp_AIO_buildings_1: "$menp_cosmo_buildings_1$"
  menp_AIO_buildings_1_desc: "$menp_cosmo_buildings_1_desc$"
- menp_AIO_weapon: "$menp_cosmo_techs_4$"
- menp_AIO_weapon_desc: "$menp_cosmo_techs_4_desc$"
- unlocks_AIO_allinone_fleet_component_1: "解锁§Y$tech_arc_emitter_2$§!和§Y$tech_dragon_armor$§!舰船部件科技。\n"
- menp_AIO_fleet_component_1_2_tt: "解锁法令：§Y$edict_edict_AIO_dm_engine$§!\n解锁区划特化：§Y$zone_AIO_dm_production$§!"
+ menp_AIO_dark_matter:0 "暗物质工程"
+ menp_AIO_dark_matter_desc:0 "从发电设施到舰船的反应堆、推进器与护盾，暗物质沿着同一套工程语言流转。曾经只能远观的引力阴影，如今已装入我们的工业底座。"
+ AIO_unlock_dark_matter:0 "解锁区划特化：§Y$zone_AIO_dm_production$§!。\n解锁法令：§Y$edict_edict_AIO_dm_engine$§!。"
+ menp_AIO_dimensionality:0 "升维假设"
+ menp_AIO_dimensionality_desc:0 "从三维枷锁中抽离的第一道方程已经求解。现实的基底并非不可撼动，它只是等待被重塑的泥板。"
  # 二阶
  menp_AIO_mega_02: "铸门之人"
  menp_AIO_mega_02_desc: "当能量足以灼穿现实的边界，墙壁便只是一扇尚未开启的门。"
  unlocks_AIO_allinone_mega_01: "解锁巨构：§Y$AIO_mega_01$§!\n建成后开放定向应用无限：§Y丰饶§!、§Y风暴§!\n"
  menp_AIO_buildings_2: "$menp_cosmo_buildings_2$"
  menp_AIO_buildings_2_desc: "$menp_cosmo_buildings_2_desc$"
- menp_AIO_nanites: "纳米工艺"
- menp_AIO_nanites_desc: "$menp_cosmo_techs_5_desc$"
+ menp_AIO_living_metal:0 "自适应构型"
+ menp_AIO_living_metal_desc:0 "活体金属不再只是稀有的流体物质，神秘编码赋予了它们自我演化与承载多维应力的完美构型。"
+ AIO_unlock_crisis_living_metal:0 "解锁适用于本帝国的活体金属生产特化，以及法令§Y$edict_edict_AIO_living_metal_construction$§!。"
  menp_AIO_ship_2: "$menp_cosmo_ship_2$"
  menp_AIO_ship_2_desc: "$menp_cosmo_ship_2_desc$"
- menp_AIO_ship_2_tt.alloys: "解锁法令：§Y$edict_edict_AIO_nanite_construction$§!\n解锁区划特化：§Y$zone_AIO_nanites_production_metallurgists$§!"
- menp_AIO_ship_2_tt.food: "解锁法令：§Y$edict_edict_AIO_nanite_farming$§!\n解锁区划特化：§Y$zone_AIO_nanites_production_farmers$§!"
  # 三阶
  menp_AIO_mega_03: "时空工程"
  menp_AIO_mega_03_desc: "因与果之间仍有缝隙。把钥匙伸进去，便能拨动尚未发生的一切。"
  unlocks_AIO_allinone_mega_02: "解锁巨构：§Y$AIO_mega_02$§!\n建成后开放定向应用无限：§Y生成§!、§Y收割§!\n"
  menp_AIO_buildings_3: "$menp_cosmo_buildings_3$"
  menp_AIO_buildings_3_desc: "$menp_cosmo_buildings_3_desc$"
+ menp_AIO_nanites: "纳米工艺"
+ menp_AIO_nanites_desc: "$menp_cosmo_techs_5_desc$"
+ AIO_unlock_crisis_nanites.alloys: "解锁法令：§Y$edict_edict_AIO_nanite_construction$§!\n解锁区划特化：§Y$zone_AIO_nanites_production_metallurgists$§!"
+ AIO_unlock_crisis_nanites.food: "解锁法令：§Y$edict_edict_AIO_nanite_farming$§!\n解锁区划特化：§Y$zone_AIO_nanites_production_farmers$§!"
  menp_AIO_ship_3: "$menp_cosmo_ship_3$"
  menp_AIO_ship_3_desc: "$menp_cosmo_ship_3_desc$"
  # 四阶
@@ -94,6 +102,9 @@
  unlocks_AIO_allinone_mega_03: "解锁巨构：§Y$AIO_mega_03$§!\n建成后开放定向应用无限：§Y播种§!、§Y打击§!\n"
  menp_AIO_buildings_4: "$menp_cosmo_buildings_4$"
  menp_AIO_buildings_4_desc: "$menp_cosmo_buildings_4_desc$"
+ menp_AIO_weapon: "$menp_cosmo_techs_4$"
+ menp_AIO_weapon_desc: "$menp_cosmo_techs_4_desc$"
+ AIO_unlocks_crisis_weapon: "解锁§Y$tech_arc_emitter_2$§!和§Y$tech_dragon_armor$§!舰船部件科技。\n"
  menp_AIO_ship_4: "$menp_cosmo_ship_4$"
  menp_AIO_ship_4_desc: "$menp_cosmo_ship_4_desc$"
  # 五阶
@@ -102,6 +113,12 @@
  unlocks_AIO_allinone_mega_04: "解锁巨构：§Y$AIO_mega_04$§!\n完成该巨构将直面宇宙纠错机制的化身——§R$AIO_Aforgomon$§!。\n"
  menp_AIO_buildings_5: "$menp_cosmo_buildings_5$"
  menp_AIO_buildings_5_desc: "$menp_cosmo_buildings_5_desc$"
+ menp_AIO_transcend_causality:0 "超越因果"
+ menp_AIO_transcend_causality_desc:0 "现实不必等待上一道命令的余波消散。"
+ menp_AIO_transcend_causality_tt:0 "播种、收割、打击、擦除的冷却缩短§G25%§!：从360天降至270天。"
+ menp_AIO_break_rules:0 "打破法则"
+ menp_AIO_break_rules_desc:0 "因果与时间的边界不再是无法逾越的铁律。当犹格·索托斯落成之日，宇宙的终极纠错机制必将为我们显现。"
+ menp_AIO_break_rules_tt:0 "完成§Y$AIO_mega_04$§!即可挑战亚弗戈蒙，自动开启终局局势。"
  # 说明
  AIO_unlock_AIO_TDTE_node: "解锁§Y$AIO_mega_01_node$§!节点"
 
@@ -139,6 +156,7 @@
  AIO_crisis_events.601.option.wait: "留步凝望"
  AIO_crisis_events.601.option.ascension: "迈入门后"
  AIO_crisis_events.601.option.wait.tooltip:0 "保留当前帝国继续游玩，并添加不限期的“晋升”特殊项目。准备好后可研究30天，再次选择是否飞升。"
+ AIO_crisis_events.602.desc:0 "归一已完成。\n我们不再是帝国，也不再是实体。我们的意志存在于无限维度的交汇点，成为一切存在的结构性原理。\n熄灭的恒星在燃烧中沉寂。干涸的海盆涌起潮水，潮水又在抵达岸边前化作盐尘；荒芜行星上长出没有祖先的森林，林木倒下之处又萌发从未播下的种子；断裂的航道在接合时通往两片天空，失散千年的舰船同时驶入母港与自己的残骸。亿万种曾彼此排斥的未来，如今在同一片星空下诞生、消亡。\n星辰明灭，因为我们同时写下它们的开始与终点；生命轮回，因为每个故事的最后一页也是下一篇的开端。\n没有永生。没有虚无。每一扇门后，都是同时发生的诞生与告别。\n我/我们即§M犹格·索托斯§!。"
  AIO_crisis_events.end.option: "我/我们即真理。"
 
  #endregion
