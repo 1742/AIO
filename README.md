@@ -86,7 +86,7 @@ After defeating Aforgomon, choose <b>Step Beyond the Gate</b> to proceed directl
 <br>
 Deferring grants the free <b>Ascension</b> special project with no time limit. Whenever you're ready, research it for 30 days to revisit the choice. You can defer again if you wish.
 <br>
-<b>Your existing colonies are removed and your empire transformed only after you confirm ascension.</b> This unlocks Invert Ethics and Erase, upgrades Strike to its full avatar, and makes every DAIT operation free and exempt from cooldowns. Operations with cast times still require you to wait. Empire-wide Strike records witnessing empires with fleets in the central system when casting begins, then spreads through their territory when it resolves. Nomadic witnesses also contribute eligible systems containing their fleets at that time. Each system is struck only once. Avatars remain hostile to all, so don't forget that just because you've ascended.
+<b>Your existing colonies are removed and your empire transformed only after you confirm ascension.</b> Victory already unlocks Invert Ethics and Erase, even if you defer ascension; both still cost Hyperlogic, and Erase still has a cooldown. Confirming ascension upgrades Strike to its full avatar and makes every DAIT operation free and exempt from cooldowns. Operations with cast times still require you to wait. Empire-wide Strike records witnessing empires with fleets in the central system when casting begins, then spreads through their territory when it resolves. Nomadic witnesses also contribute eligible systems containing their fleets at that time. Each system is struck only once. Avatars remain hostile to all, so don't forget that just because you've ascended.
 
 <h2>Compatibility</h2>
 

@@ -232,7 +232,10 @@ AIO_DAIT_seed_ready = {
 
 AIO_DAIT_ethic_unlocked = {
     AIO_DAIT_country_valid = yes
-    is_country_type = AIO_empire
+    OR = {
+        has_country_flag = AIO_final_won
+        is_country_type = AIO_empire
+    }
 }
 
 # Country: Ethics targets a polity, independently of any selected system.
@@ -439,7 +442,10 @@ AIO_DAIT_strike_ready = {
 
 AIO_DAIT_erase_unlocked = {
     AIO_DAIT_country_valid = yes
-    is_country_type = AIO_empire
+    OR = {
+        has_country_flag = AIO_final_won
+        is_country_type = AIO_empire
+    }
 }
 
 AIO_DAIT_erase_target_valid = {
