@@ -768,9 +768,11 @@ AIO_DAIT_harvest_effect = {
 # system, local maker is captured by the originating DAIT chain.
 AIO_DAIT_strike_effect = {
     AIO_ensure_Aforgomon_country = yes
-    hidden_effect = { set_star_flag = AIO_Aforgomon_existed }
-    hidden_effect = { set_star_flag = AIO_DAIT_strike_active }
-    hidden_effect = { clear_variable = AIO_Aforgomon_Wrath }
+    hidden_effect = {
+        set_star_flag = AIO_Aforgomon_existed
+        set_star_flag = AIO_DAIT_strike_active
+        clear_variable = AIO_Aforgomon_Wrath
+    }
     if = {
         limit = { event_target:AIO_DAIT_maker = { has_country_flag = AIO_DAIT_strike_full } }
         hidden_effect = { set_star_flag = AIO_DAIT_strike_complete }
