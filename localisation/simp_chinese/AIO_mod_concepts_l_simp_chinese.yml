@@ -4,4 +4,4 @@
  concept_AIO_gate_system: "$AIO_gate$"
  concept_AIO_gate_system_desc: "现实与['concept_AIO_mist_system']之间的门关。所有抵达此处的航路，都朝着一个不属于星图的方向延伸；唯持有银匙者，能够从门内看见彼端。"
  concept_AIO_DAIT: "定向应用无限"
- concept_AIO_DAIT_desc: "通过专属巨构，将对宇宙的理解转化为可以指定目标的干涉。飞升前消耗£AIO_advanced_logic£§Y$AIO_advanced_logic$§!，逐步解锁对星系的改造；飞升后开放全部操作，包括针对国家的思潮反转，且免费、免冷却，仍有前摇。\n§Y点击屏幕底部的固定悬浮球展开或收起菜单；右上角“×”可退出，再通过法令重新打开。§!"
+ concept_AIO_DAIT_desc: "通过专属巨构，将对宇宙的理解转化为可以指定目标的干涉。飞升前消耗£AIO_advanced_logic£§Y$AIO_advanced_logic$§!，逐步解锁对星系的改造；飞升后开放全部操作，包括针对国家的思潮反转，且免费、免冷却，仍有生效时间。\n§Y点击屏幕底部的固定悬浮球展开或收起菜单；右上角“×”可退出，再通过法令重新打开。§!"
