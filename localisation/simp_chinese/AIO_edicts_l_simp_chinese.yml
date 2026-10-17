@@ -10,4 +10,4 @@
  edict_edict_AIO_nanite_farming_desc:0 "$edict_edict_AIO_nanite_construction_desc$"
 
  edict_AIO_DAIT_menu:0 "应用无限菜单"
- edict_AIO_DAIT_menu_desc:0 "打开应用无限菜单。点击屏幕底部的固定悬浮球可展开或收起；点击右上角“×”可退出并隐藏悬浮球，菜单不会自动重开。使用本法令可重新打开，已选操作与范围会保留。"
+ edict_AIO_DAIT_menu_desc:0 "打开并展开应用无限菜单。点击屏幕底部的固定悬浮球可展开或收起，右上角“×”也可收起菜单。底部“退出菜单”按钮可退出并隐藏悬浮球，菜单不会自动重开。使用本法令可重新打开，已选操作与范围会保留。"

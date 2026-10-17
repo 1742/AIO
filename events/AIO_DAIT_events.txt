@@ -38,12 +38,18 @@ country_event = {
             set_country_flag = AIO_DAIT_collapsed
             set_variable = { which = AIO_DAIT_operation value = 0 }
         }
+        # Manual opening via edict must reveal the panel, including first use.
+        if = {
+            limit = { has_country_flag = AIO_DAIT_expand_on_open }
+            remove_country_flag = AIO_DAIT_collapsed
+            remove_country_flag = AIO_DAIT_expand_on_open
+        }
     }
     option = {
         name = EXIT
         default_hide_option = yes
     }
-    # The scripted X button requests an explicit exit. No keyboard shortcut.
+    # The bottom exit button requests an explicit exit. No keyboard shortcut.
     abort_trigger = { has_country_flag = AIO_DAIT_dismissed }
     abort_effect = { remove_country_flag = AIO_DAIT_toolbar }
     after = {

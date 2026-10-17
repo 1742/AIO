@@ -134,5 +134,8 @@ AIO_DAIT_menu = {
     icon = "GFX_edict_type_policy"
     potential = { AIO_DAIT_country_valid = yes }
     allow = { NOT = { has_country_flag = AIO_DAIT_toolbar } }
-    effect = { country_event = { id = AIO_DAIT_events.203 } }
+    effect = {
+        set_country_flag = AIO_DAIT_expand_on_open
+        country_event = { id = AIO_DAIT_events.203 }
+    }
 }

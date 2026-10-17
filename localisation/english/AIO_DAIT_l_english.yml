@@ -4,7 +4,9 @@
 
  AIO_DAIT_events.203.title: "Directional Apply Infinity"
  AIO_DAIT_launcher_label:0 "§Y∞§!"
- AIO_DAIT_launcher_tooltip:0 "§HApply Infinity§!\nClick the fixed bottom orb to expand or collapse the menu, preserving the current selection. Use the upper-right × to exit; reopen via the Apply Infinity edict."
+ AIO_DAIT_launcher_tooltip:0 "§HApply Infinity§!\nClick the fixed bottom orb to expand or collapse the menu, preserving the current selection. The upper-right × collapses the menu; use Exit Menu at the bottom to exit completely."
+ AIO_DAIT_collapse_tooltip:0 "Collapse the menu, keeping the bottom orb and current selection."
+ AIO_DAIT_exit_menu_label:0 "Exit Menu"
  AIO_DAIT_exit_tooltip:0 "Exit the menu and hide its orb. Reopen via the Apply Infinity edict."
 
  #endregion

@@ -4,7 +4,9 @@
 
  AIO_DAIT_events.203.title: "定向应用无限"
  AIO_DAIT_launcher_label:0 "§Y∞§!"
- AIO_DAIT_launcher_tooltip:0 "§H应用无限§!\n点击底部悬浮球向上展开或收起菜单，保留当前选择。点击右上角 × 退出，可通过应用无限法令重新打开。"
+ AIO_DAIT_launcher_tooltip:0 "§H应用无限§!\n点击底部悬浮球向上展开或收起菜单，保留当前选择。右上角 × 收起菜单，底部“退出菜单”按钮可彻底退出。"
+ AIO_DAIT_collapse_tooltip:0 "收起菜单，保留底部悬浮球与当前选择。"
+ AIO_DAIT_exit_menu_label:0 "退出菜单"
  AIO_DAIT_exit_tooltip:0 "退出菜单并隐藏悬浮球，可通过应用无限法令重新打开。"
 
  #endregion

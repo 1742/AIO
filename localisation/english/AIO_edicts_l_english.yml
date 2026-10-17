@@ -10,4 +10,4 @@
  edict_edict_AIO_nanite_farming_desc:0 "$edict_edict_AIO_nanite_construction_desc$"
 
  edict_AIO_DAIT_menu:0 "Apply Infinity Menu"
- edict_AIO_DAIT_menu_desc:0 "Opens the Apply Infinity menu. Click the fixed orb at the bottom to expand or collapse it. The upper-right × exits and hides the orb; the menu will not reopen automatically. Use this edict to open it again with the selected operation and range preserved."
+ edict_AIO_DAIT_menu_desc:0 "Opens and expands the Apply Infinity menu. Click the fixed orb at the bottom to expand or collapse it; the upper-right × also collapses the menu. Exit Menu at the bottom exits and hides the orb without automatic reopening. Use this edict to open it again with the selected operation and range preserved."

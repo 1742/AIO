@@ -42,11 +42,11 @@ guiTypes = {
             effect = AIO_DAIT_info_label
         }
         effectbuttonType = {
-            name = "AIO_DAIT_exit_menu"
+            name = "AIO_DAIT_collapse_menu"
             position = { x = 730 y = 16 }
             size = { x = 32 y = 32 }
             quadTextureSprite = "GFX_close"
-            effect = AIO_DAIT_exit_menu
+            effect = AIO_DAIT_collapse_menu
             clicksound = "back_click"
         }
         effectbuttonType = {
@@ -295,6 +295,16 @@ guiTypes = {
             tooltipText = "AIO_final_constraint_action_tooltip"
             effect = AIO_DAIT_final_constraint
             clicksound = "click"
+        }
+        effectbuttonType = {
+            name = "AIO_DAIT_exit_menu"
+            position = { x = 582 y = 346 }
+            size = { x = 180 y = 28 }
+            quadTextureSprite = "GFX_tiling_button_standard"
+            font = "cg_16b"
+            buttonText = "AIO_DAIT_exit_menu_label"
+            effect = AIO_DAIT_exit_menu
+            clicksound = "back_click"
         }
         effectbuttonType = {
             name = "AIO_DAIT_toggle_menu"

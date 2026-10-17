@@ -485,7 +485,7 @@ AIO_DAIT_logic_label = {
     effect = { custom_tooltip = AIO_DAIT_menu_logic_tooltip }
 }
 
-# The orb toggles the panel; the upper-right button exits the event host.
+# The orb toggles the panel; the upper-right X collapses it without exiting.
 AIO_DAIT_toggle_menu = {
     potential = {
         from = {
@@ -509,6 +509,16 @@ AIO_DAIT_toggle_menu = {
     }
 }
 
+AIO_DAIT_collapse_menu = {
+    potential = { from = { AIO_DAIT_menu_visible = yes } }
+    allow = { always = yes }
+    effect = {
+        custom_tooltip = AIO_DAIT_collapse_tooltip
+        hidden_effect = { from = { set_country_flag = AIO_DAIT_collapsed } }
+    }
+}
+
+# Explicit exit is separate from collapse and suppresses automatic renewal.
 AIO_DAIT_exit_menu = {
     potential = { from = { AIO_DAIT_menu_visible = yes } }
     allow = { always = yes }
