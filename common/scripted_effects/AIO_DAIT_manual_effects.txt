@@ -821,7 +821,6 @@ AIO_DAIT_start_strike = {
                     limit = {
                         exists = owner
                         owner = {
-                            is_nomadic = no
                             NOT = { is_country_type = AIO_Aforgomon }
                         }
                     }
@@ -856,6 +855,20 @@ AIO_DAIT_finish_strike = {
                 every_system_within_border = {
                     limit = { AIO_DAIT_system_valid = yes }
                     hidden_effect = { set_star_flag = AIO_DAIT_strike_candidate_@event_target:AIO_DAIT_maker }
+                }
+                # Nomads have no territorial realm: use fleet locations at resolution.
+                # System flags merge overlapping fleets and territory into one hit.
+                if = {
+                    limit = { is_nomadic = yes }
+                    every_owned_fleet = {
+                        limit = { exists = solar_system }
+                        solar_system = {
+                            if = {
+                                limit = { AIO_DAIT_system_valid = yes }
+                                hidden_effect = { set_star_flag = AIO_DAIT_strike_candidate_@event_target:AIO_DAIT_maker }
+                            }
+                        }
+                    }
                 }
             }
         }

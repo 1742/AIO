@@ -165,7 +165,7 @@
  #region DAIT menu - strike
 
  AIO_DAIT_button_strike:0 "打击"
- AIO_DAIT_button_strike_tooltip:0 "召唤§R$AIO_Aforgomon$§!。\n生效时间：弱化体基础§Y180天§!，完全体基础§Y90天§!；每增加1跳，增加90天；全境档为§Y360天§!。\n冷却：§Y360天§!（超越因果：§Y270天§!）。\n全境档仅限飞升后使用：施放开始时，以中心星系内的舰队记录非游牧目击帝国（不含化身所属国）；生效时向这些帝国当时拥有的全部有效星系传播打击。\n$AIO_DAIT_ascended_no_cooldown$"
+ AIO_DAIT_button_strike_tooltip:0 "召唤§R$AIO_Aforgomon$§!。\n生效时间：弱化体基础§Y180天§!，完全体基础§Y90天§!；每增加1跳，增加90天；全境档为§Y360天§!。\n冷却：§Y360天§!（超越因果：§Y270天§!）。\n全境档仅限飞升后使用：施放开始时，以中心星系内的舰队记录目击帝国（不含化身所属国）；生效时向其当时拥有的全部有效星系传播，游牧帝国另按其舰队当时所在的有效星系传播，同一星系只打击一次。\n$AIO_DAIT_ascended_no_cooldown$"
  AIO_DAIT_strike_pending_text:0 "正在生效中（预计§Y[This.AIO_DAIT_strike_due]§!完成）"
  AIO_DAIT_strike_cooldown_text:0 "冷却结束：§Y[This.AIO_DAIT_strike_ready_date]§!"
  AIO_DAIT_strike_completed:0 "[event_target:AIO_DAIT_maker.GetName]以[event_target:AIO_DAIT_target_system.GetName]为中心施放的“打击”已生效。"
@@ -214,7 +214,7 @@
  AIO_DAIT_harvest_situation:0 "应用无限：收割"
  AIO_DAIT_harvest_situation_desc:0 "范围：[Owner.GetAIO_DAIT_harvest_range_name]。\n\n恒星与岩层正在被换算为可以提取的物质。完成时重新核验范围内目标，拆解可收割的天体并获取资源。中心目标失效、失去操作权限或无有效作用对象时取消，退还一半实付费用，不进入冷却。其他国家仅在效果触发时收到通知。"
  AIO_DAIT_strike_situation:0 "应用无限：打击"
- AIO_DAIT_strike_situation_desc:0 "范围：[Owner.GetAIO_DAIT_strike_range_name]。\n\n降临的轮廓正在现实之外成形。完成时核验目标并召唤化身；全境档按施放开始时记录的目击帝国，向其生效时拥有的有效星系传播。化身不分敌我。中心目标失效、失去权限或无有效作用对象时取消，退还一半实付费用，不进入冷却。其他国家仅在效果触发时收到通知。"
+ AIO_DAIT_strike_situation_desc:0 "范围：[Owner.GetAIO_DAIT_strike_range_name]。\n\n降临的轮廓正在现实之外成形。完成时核验目标并召唤化身；全境档按施放开始时记录的目击帝国，向其生效时拥有的有效星系传播；游牧帝国另按其舰队当时所在的有效星系传播，同一星系只打击一次。化身不分敌我。中心目标失效、失去权限或无有效作用对象时取消，退还一半实付费用，不进入冷却。其他国家仅在效果触发时收到通知。"
  AIO_DAIT_erase_situation:0 "应用无限：擦除"
  AIO_DAIT_erase_situation_desc:0 "范围：[Owner.GetAIO_DAIT_erase_range_name]。\n\n时空正沿着指定的边界收拢。完成时核验范围内目标，擦除可被干涉的天体、巨构与舰队。中心目标失效、失去操作权限或无有效作用对象时取消，退还一半实付费用，不进入冷却。其他国家仅在效果触发时收到通知。"
  AIO_DAIT_windup_stage:0 "因果编织"
