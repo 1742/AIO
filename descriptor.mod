@@ -3,5 +3,5 @@ tags={
 	"Gameplay"
 }
 name="All Is One"
-supported_version="4.5.*"
+supported_version="v4.5.*"
 remote_file_id="3535863410"
