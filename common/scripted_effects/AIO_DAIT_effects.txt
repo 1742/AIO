@@ -22,23 +22,125 @@ AIO_DAIT_enrich_effect = {
         }
         random_list = {
             88 = { }
-            2 = { add_deposit = d_AIO_enrich_dark_matter }
+            2 = {
+                modifier = {
+                    factor = 10
+                    is_planet_class = pc_black_hole
+                }
+                add_deposit = d_AIO_enrich_dark_matter
+            }
             2 = { add_deposit = d_AIO_enrich_living_metal }
-            2 = { add_deposit = d_AIO_enrich_nanites }
-            2 = { add_deposit = d_AIO_enrich_zro }
-            2 = { add_deposit = d_AIO_enrich_minor_artifacts }
-            2 = { add_deposit = d_AIO_enrich_astral_threads }
+            2 = {
+                modifier = {
+                    factor = 10
+                    is_planet_class = pc_nanotech
+                }
+                add_deposit = d_AIO_enrich_nanites
+            }
+            2 = {
+                modifier = {
+                    factor = 10
+                    is_planet_class = pc_shrouded
+                }
+                add_deposit = d_AIO_enrich_zro
+            }
+            2 = {
+                modifier = {
+                    factor = 10
+                    OR = {
+                        exists = archaeological_site
+                        is_planet_class = pc_relic
+                    }
+                }
+                add_deposit = d_AIO_enrich_minor_artifacts
+            }
+            2 = {
+                modifier = {
+                    factor = 10
+                    OR = {
+                        is_planet_class = pc_astral_scar
+                        is_planet_class = pc_rift_star
+                    }
+                }
+                add_deposit = d_AIO_enrich_astral_threads
+            }
+        }
+        random_list = {
+            1 = {
+                modifier = {
+                    factor = 10
+                    is_planet_class = pc_molten
+                }
+                add_deposit = d_volatile_motes_5
+            }
+            1 = {
+                modifier = {
+                    factor = 10
+                    is_planet_class = pc_gas_giant
+                }
+                add_deposit = d_exotic_gases_5
+            }
+            1 = {
+                modifier = {
+                    factor = 5
+                    OR = {
+                        is_planet_class = pc_frozen
+                        is_planet_class = pc_ice_asteroid
+                        is_planet_class = pc_rare_crystal_asteroid
+                    }
+                }
+                add_deposit = d_rare_crystals_5
+            }
         }
         while = {
             count = $TIMES|1$
             random_list = {
-                3 = { add_deposit = d_energy_10 }
-                3 = { add_deposit = d_minerals_10 }
-                3 = { add_deposit = d_food_10 }
-                2 = { add_deposit = d_alloys_25 }
-                1 = { add_deposit = d_volatile_motes_5 }
-                1 = { add_deposit = d_exotic_gases_5 }
-                1 = { add_deposit = d_rare_crystals_5 }
+                2 = {
+                    modifier = {
+                        factor = 10
+                        OR = {
+                            is_planet_class = pc_a_star
+                            is_planet_class = pc_b_star
+                            is_planet_class = pc_f_star
+                            is_planet_class = pc_g_star
+                            is_planet_class = pc_k_star
+                            is_planet_class = pc_m_star
+                            is_planet_class = pc_m_giant_star
+                            is_planet_class = pc_gas_giant
+                        }
+                    }
+                    modifier = {
+                        factor = 5
+                        is_planet_class = pc_molten
+                    }
+                    add_deposit = d_energy_10
+                }
+                2 = {
+                    modifier = {
+                        factor = 5
+                        solar_system = { any_system_megastructure = { AIO_is_orbital_arc_furnace = yes } }
+                    }
+                    add_deposit = d_minerals_10
+                }
+                1 = {
+                    modifier = {
+                        factor = 10
+                        habitable_planet = no
+                    }
+                    add_deposit = d_food_10
+                }
+                1 = {
+                    modifier = {
+                        factor = 10
+                        solar_system = { any_system_megastructure = { AIO_is_orbital_arc_furnace = yes } }
+                    }
+                    modifier = {
+                        factor = 2
+                        is_planet_class = pc_molten
+                        solar_system = { any_system_megastructure = { AIO_is_orbital_arc_furnace = yes } }
+                    }
+                    add_deposit = d_alloys_25
+                }
             }
         }
     }
