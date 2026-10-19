@@ -479,7 +479,8 @@ fleet_event = {
 }
 
 # Creates a purpose-built, non-virtual machine species for the Matryoshka Brain.
-# It is a separate species identity so cybernetics.5049 cannot digitize it again.
+# Explicitly separate its lineage and identity from the copied main species so
+# cybernetics.5049 and later main-species conversions cannot digitize it again.
 country_event = {
     id = AIO_crisis_events.902
     title = AIO_crisis_events.902.title
@@ -508,55 +509,7 @@ country_event = {
     option = {
         name = AIO_crisis_events.902.option
         default_hide_option = yes
-        owner_main_species = {
-            create_species = {
-                name = "AIO_RECURSIVE_CHASSIS"
-                plural = "AIO_RECURSIVE_CHASSIS_PLURAL"
-                class = this
-                portrait = this
-                traits = this
-                can_be_modified = yes
-                homeworld = this
-                namelist = this
-                gender = this
-
-                effect = {
-                    change_species_characteristics = {
-                        remove_trait = trait_robot_digital_1
-                        remove_trait = trait_robot_digital_2
-                        add_trait = trait_AIO_recursive_chassis
-                    }
-                    if = {
-                        limit = { root = { is_machine_empire = yes } }
-                        set_citizenship_type = {
-                            country = root
-                            type = citizenship_full_machine
-                            cooldown = no
-                        }
-                    }
-                    else = {
-                        set_citizenship_type = {
-                            country = root
-                            type = citizenship_full
-                            cooldown = no
-                        }
-                    }
-                    set_population_controls = {
-                        country = root
-                        type = population_control_no
-                        cooldown = no
-                    }
-                    set_species_flag = AIO_recursive_chassis_species
-                    save_event_target_as = AIO_recursive_chassis_species
-                }
-            }
-        }
-        event_target:AIO_recursive_chassis_colony = {
-            create_pop_group = {
-                species = event_target:AIO_recursive_chassis_species
-                size = 1000
-            }
-        }
+        AIO_create_recursive_chassis_effect = yes
     }
 }
 

@@ -1,0 +1,63 @@
+# Country scope; called by AIO_crisis_events.902 with the destination colony saved.
+AIO_create_recursive_chassis_effect = {
+    owner_main_species = {
+        create_species = {
+            name = "AIO_RECURSIVE_CHASSIS"
+            plural = "AIO_RECURSIVE_CHASSIS_PLURAL"
+            class = this
+            portrait = this
+            traits = this
+            is_mod = no
+            clear_parent_species_link = yes
+            can_be_modified = yes
+            homeworld = this
+            namelist = this
+            gender = this
+        }
+    }
+
+    # Resolve traits and the saved target after create_species has completed,
+    # rather than modifying the species inside its creation callback.
+    last_created_species = {
+        set_species_identity = this
+        # In 4.5.2, repeated remove_trait keys here only remove the last trait.
+        # Keep the two removals separate before adding the incompatible chassis.
+        change_species_characteristics = {
+            remove_trait = trait_robot_digital_1
+        }
+        change_species_characteristics = {
+            remove_trait = trait_robot_digital_2
+        }
+        change_species_characteristics = {
+            add_trait = trait_AIO_recursive_chassis
+        }
+        if = {
+            limit = { root = { is_machine_empire = yes } }
+            set_citizenship_type = {
+                country = root
+                type = citizenship_full_machine
+                cooldown = no
+            }
+        }
+        else = {
+            set_citizenship_type = {
+                country = root
+                type = citizenship_full
+                cooldown = no
+            }
+        }
+        set_population_controls = {
+            country = root
+            type = population_control_no
+            cooldown = no
+        }
+        set_species_flag = AIO_recursive_chassis_species
+        save_event_target_as = AIO_recursive_chassis_species
+    }
+    event_target:AIO_recursive_chassis_colony = {
+        create_pop_group = {
+            species = event_target:AIO_recursive_chassis_species
+            size = 1000
+        }
+    }
+}
