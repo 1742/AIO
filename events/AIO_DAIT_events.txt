@@ -50,13 +50,21 @@ country_event = {
         default_hide_option = yes
     }
     # The bottom exit button requests an explicit exit. No keyboard shortcut.
-    abort_trigger = { has_country_flag = AIO_DAIT_dismissed }
+    abort_trigger = {
+        OR = {
+            has_country_flag = AIO_DAIT_dismissed
+            NOT = { AIO_DAIT_country_valid = yes }
+        }
+    }
     abort_effect = { remove_country_flag = AIO_DAIT_toolbar }
     after = {
         remove_country_flag = AIO_DAIT_toolbar
         # Let the old window finish closing before replacing its host.
         if = {
-            limit = { NOT = { has_country_flag = AIO_DAIT_dismissed } }
+            limit = {
+                AIO_DAIT_country_valid = yes
+                NOT = { has_country_flag = AIO_DAIT_dismissed }
+            }
             country_event = { id = AIO_DAIT_events.205 days = 1 }
         }
     }

@@ -6,6 +6,7 @@ AIO_DAIT_cooldown_active = {
 }
 
 AIO_DAIT_country_valid = {
+    NOT = { has_country_flag = AIO_final_lost }
     OR = {
         has_country_flag = AIO_built_AIO_mega_01
         has_country_flag = AIO_built_AIO_mega_02
