@@ -494,11 +494,10 @@ country_event = {
         is_country_type = default
         is_virtual_empire = yes
         has_technology = tech_AIO_exponential_learning_theory
-        NOT = { has_country_flag = AIO_recursive_chassis_created }
+        NOT = { any_owned_species = { has_trait = trait_AIO_recursive_chassis } }
     }
 
     immediate = {
-        set_country_flag = AIO_recursive_chassis_created
         capital_scope = { save_event_target_as = AIO_recursive_chassis_colony }
         random_owned_colony = {
             limit = { has_district = district_AIO_lathe }
