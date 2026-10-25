@@ -97,21 +97,8 @@ AIO_DAIT_enrich_effect = {
             random_list = {
                 2 = {
                     modifier = {
-                        factor = 10
-                        OR = {
-                            is_planet_class = pc_a_star
-                            is_planet_class = pc_b_star
-                            is_planet_class = pc_f_star
-                            is_planet_class = pc_g_star
-                            is_planet_class = pc_k_star
-                            is_planet_class = pc_m_star
-                            is_planet_class = pc_m_giant_star
-                            is_planet_class = pc_gas_giant
-                        }
-                    }
-                    modifier = {
-                        factor = 5
-                        is_planet_class = pc_molten
+                        factor = 20
+                        is_star = yes
                     }
                     add_deposit = d_energy_10
                 }
@@ -125,17 +112,17 @@ AIO_DAIT_enrich_effect = {
                 1 = {
                     modifier = {
                         factor = 10
-                        habitable_planet = no
+                        habitable_planet = yes
                     }
                     add_deposit = d_food_10
                 }
                 1 = {
                     modifier = {
-                        factor = 10
+                        factor = 2
                         solar_system = { any_system_megastructure = { AIO_is_orbital_arc_furnace = yes } }
                     }
                     modifier = {
-                        factor = 2
+                        factor = 10
                         is_planet_class = pc_molten
                         solar_system = { any_system_megastructure = { AIO_is_orbital_arc_furnace = yes } }
                     }

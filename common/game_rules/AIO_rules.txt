@@ -1,0 +1,9 @@
+# Country: retain vanilla Sentry Array vision and extend it to the Eternal Throne.
+has_full_sensor_range = {
+    OR = {
+        has_megastructure = spy_orb_4
+        has_megastructure = spy_orb_restored
+        has_megastructure = AIO_mega_03
+        has_megastructure = AIO_mega_04
+    }
+}
