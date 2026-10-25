@@ -410,10 +410,9 @@ AIO_mega_04 = {
 		planet_building_capacity_add = 1
 		megastructure_build_speed_mult = 1
 
-		add_base_country_intel = 40
 		ship_weapon_range_mult = 0.2
 
-		empire_size_mult = -0.5
+		empire_size_mult = -0.25
 	}
 
 	# bypass类型
