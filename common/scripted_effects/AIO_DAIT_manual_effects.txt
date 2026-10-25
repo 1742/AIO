@@ -151,7 +151,10 @@ AIO_DAIT_finish_enrich = {
             }
             hidden_effect = { AIO_DAIT_notify_system = { TEXT = AIO_DAIT_enrich_completed } }
             event_target:AIO_DAIT_maker = { hidden_effect = { change_variable = { which = AIO_DAIT_enrich_affected value = 1 } } }
-            AIO_DAIT_enrich_effect = { TIMES = 10 }
+            while = {
+                count = event_target:AIO_DAIT_maker.value:AIO_DAIT_enrich_repeat_count
+                AIO_DAIT_enrich_effect = { TIMES = 2 }
+            }
         }
     }
     if = {

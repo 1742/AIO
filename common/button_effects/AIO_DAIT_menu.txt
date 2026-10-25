@@ -303,6 +303,21 @@ AIO_DAIT_range_5 = {
     }
 }
 
+AIO_DAIT_enrich_multiplier = {
+    potential = {
+        from = {
+            AIO_DAIT_menu_visible = yes
+            check_variable = { which = AIO_DAIT_operation value = 1 }
+        }
+    }
+    allow = { always = yes }
+    effect = {
+        hidden_effect = {
+            from = { AIO_DAIT_cycle_enrich_multiplier = yes }
+        }
+    }
+}
+
 AIO_DAIT_range_6 = {
     potential = {
         from = {

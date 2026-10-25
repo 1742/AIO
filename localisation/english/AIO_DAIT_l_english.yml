@@ -25,7 +25,7 @@
  AIO_DAIT_need_range:0 "Select a range from 0 to 5 jumps. Empire-wide range is available only for Strike after ascension."
  AIO_DAIT_wait_pending:0 "This operation already has a pending cast."
  AIO_DAIT_wait_cooldown:0 "This operation is still on cooldown."
- AIO_DAIT_need_logic:0 "Insufficient Advanced Logic: Enrich, Harvest, Strike and Erase cost base cost times (1 + jumps) at 0 to 5 jumps; other operations use the 0-jump cost."
+ AIO_DAIT_need_logic:0 "Insufficient Advanced Logic: Enrich, Harvest, Strike and Erase cost base cost times (1 + jumps) at 0 to 5 jumps, with Enrich additionally multiplied by repetitions; other operations use the 0-jump cost."
  AIO_DAIT_target_system_name:0 "System: [This.GetName]"
  AIO_DAIT_target_planet_system_name:0 "System: [This.System.GetName]"
  AIO_DAIT_target_ambient_system_name:0 "System: [This.GetStarName]"
@@ -46,7 +46,7 @@
  AIO_DAIT_menu_logic:0 "£advanced_logic£ Advanced Logic: [From.GetAIO_DAIT_logic_k] K"
  AIO_DAIT_menu_logic_tooltip:0 "Current stockpile: [From.GetAIO_DAIT_logic_amount] Advanced Logic. 1K = 1,000."
  AIO_DAIT_menu_price:0 "Cost: [From.GetAIO_DAIT_menu_price_k] K"
- AIO_DAIT_menu_price_tooltip:0 "Calculated for selected operation and range (1K = 1,000 Advanced Logic); free after ascension."
+ AIO_DAIT_menu_price_tooltip:0 "Calculated for selected operation, range and repetitions (1K = 1,000 Advanced Logic); free after ascension."
  AIO_DAIT_menu_selection:0 "Operation: §Y[From.GetAIO_DAIT_menu_operation]§!"
  AIO_DAIT_menu_no_operation:0 "None selected"
  AIO_DAIT_menu_status:0 "[From.GetAIO_DAIT_menu_status]"
@@ -85,6 +85,12 @@
  #endregion
 
  #region DAIT menu - enrich
+
+ AIO_DAIT_menu_enrich_multiplier:0 "[From.GetAIO_DAIT_enrich_multiplier]"
+ AIO_DAIT_enrich_multiplier_1:0 "Enrich: x1"
+ AIO_DAIT_enrich_multiplier_5:0 "Enrich: x5"
+ AIO_DAIT_enrich_multiplier_10:0 "Enrich: x10"
+ AIO_DAIT_enrich_multiplier_tooltip:0 "Click to cycle repetitions: §Y1 → 5 → 10 → 1§!. Each repetition generates a full set of basic and rare resource deposits. Cost scales with repetitions; ascended empires remain exempt."
 
  AIO_DAIT_button_enrich:0 "Enrich"
  AIO_DAIT_button_enrich_tooltip:0 "Adds random deposits to celestial bodies within range, including basic and rare resources.\nCast time: §YInstant§!.\nNo cooldown."

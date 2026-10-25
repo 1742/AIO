@@ -1,5 +1,19 @@
 defined_text = {
     random = no
+    name = GetAIO_DAIT_enrich_multiplier
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_enrich_multiplier value = 5 } }
+        localization_key = AIO_DAIT_enrich_multiplier_5
+    }
+    text = {
+        trigger = { check_variable = { which = AIO_DAIT_enrich_multiplier value = 10 } }
+        localization_key = AIO_DAIT_enrich_multiplier_10
+    }
+    default = AIO_DAIT_enrich_multiplier_1
+}
+
+defined_text = {
+    random = no
     name = GetAIO_DAIT_enrich_state
     text = {
         trigger = { has_country_flag = AIO_DAIT_enrich_pending }

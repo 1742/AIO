@@ -25,7 +25,7 @@
  AIO_DAIT_need_range:0 "此操作需要选择0～5跳；全境档仅限飞升后的打击。"
  AIO_DAIT_wait_pending:0 "此操作仍在生效中。"
  AIO_DAIT_wait_cooldown:0 "此操作仍在冷却中。"
- AIO_DAIT_need_logic:0 "超然逻辑不足：丰饶、收割、打击、擦除的0～5跳费用为基础费×（1＋跳数）；其余操作按0跳计费。"
+ AIO_DAIT_need_logic:0 "超然逻辑不足：丰饶、收割、打击、擦除的0～5跳费用为基础费×（1＋跳数），丰饶另乘执行次数；其余操作按0跳计费。"
  AIO_DAIT_target_system_name:0 "星系：[This.GetName]"
  AIO_DAIT_target_planet_system_name:0 "星系：[This.System.GetName]"
  AIO_DAIT_target_ambient_system_name:0 "星系：[This.GetStarName]"
@@ -46,7 +46,7 @@
  AIO_DAIT_menu_logic:0 "£advanced_logic£ 超然逻辑：[From.GetAIO_DAIT_logic_k] K"
  AIO_DAIT_menu_logic_tooltip:0 "当前储备：[From.GetAIO_DAIT_logic_amount] 超然逻辑。1K＝1,000。"
  AIO_DAIT_menu_price:0 "本次费用：[From.GetAIO_DAIT_menu_price_k] K"
- AIO_DAIT_menu_price_tooltip:0 "按当前操作与范围计算消耗（1K = 1,000 超然逻辑）；飞升后豁免全部费用。"
+ AIO_DAIT_menu_price_tooltip:0 "按当前操作、范围与执行次数计算消耗（1K = 1,000 超然逻辑）；飞升后豁免全部费用。"
  AIO_DAIT_menu_selection:0 "当前操作：§Y[From.GetAIO_DAIT_menu_operation]§!"
  AIO_DAIT_menu_no_operation:0 "尚未选择"
  AIO_DAIT_menu_status:0 "[From.GetAIO_DAIT_menu_status]"
@@ -85,6 +85,12 @@
  #endregion
 
  #region DAIT menu - enrich
+
+ AIO_DAIT_menu_enrich_multiplier:0 "[From.GetAIO_DAIT_enrich_multiplier]"
+ AIO_DAIT_enrich_multiplier_1:0 "丰饶：1次"
+ AIO_DAIT_enrich_multiplier_5:0 "丰饶：5次"
+ AIO_DAIT_enrich_multiplier_10:0 "丰饶：10次"
+ AIO_DAIT_enrich_multiplier_tooltip:0 "点击循环切换执行次数：§Y1 → 5 → 10 → 1§!。每次完整生成基础与稀有资源矿藏，费用按次数增加；飞升后仍免费。"
 
  AIO_DAIT_button_enrich:0 "丰饶"
  AIO_DAIT_button_enrich_tooltip:0 "为范围内天体添加随机矿藏，包括基础资源与稀有资源。\n生效时间：§Y立即生效§!。\n无冷却时间。"

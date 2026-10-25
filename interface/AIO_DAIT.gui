@@ -243,6 +243,17 @@ guiTypes = {
             clicksound = "click"
         }
         effectbuttonType = {
+            name = "AIO_DAIT_enrich_multiplier"
+            position = { x = 582 y = 255 }
+            size = { x = 180 y = 30 }
+            quadTextureSprite = "GFX_tiling_button_standard"
+            font = "cg_16b"
+            buttonText = "AIO_DAIT_menu_enrich_multiplier"
+            tooltipText = "AIO_DAIT_enrich_multiplier_tooltip"
+            effect = AIO_DAIT_enrich_multiplier
+            clicksound = "click"
+        }
+        effectbuttonType = {
             name = "AIO_DAIT_range_6"
             position = { x = 582 y = 255 }
             size = { x = 180 y = 30 }

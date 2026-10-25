@@ -8,9 +8,16 @@ AIO_DAIT_range_cost_multiplier = {
     modifier = { add = 5 check_variable = { which = AIO_DAIT_range value = 5 } }
 }
 
+AIO_DAIT_enrich_repeat_count = {
+    base = 1
+    modifier = { add = 4 check_variable = { which = AIO_DAIT_enrich_multiplier value = 5 } }
+    modifier = { add = 9 check_variable = { which = AIO_DAIT_enrich_multiplier value = 10 } }
+}
+
 AIO_DAIT_enrich_price = {
     base = 50000
     mult = value:AIO_DAIT_range_cost_multiplier
+    mult = value:AIO_DAIT_enrich_repeat_count
 }
 
 AIO_DAIT_spawn_price = {

@@ -11,6 +11,21 @@ AIO_DAIT_ensure_menu = {
     }
 }
 
+# Country: retain the selected multiplier across operation/menu changes. Unset means 1.
+AIO_DAIT_cycle_enrich_multiplier = {
+    if = {
+        limit = { check_variable = { which = AIO_DAIT_enrich_multiplier value = 5 } }
+        set_variable = { which = AIO_DAIT_enrich_multiplier value = 10 }
+    }
+    else_if = {
+        limit = { check_variable = { which = AIO_DAIT_enrich_multiplier value = 10 } }
+        clear_variable = AIO_DAIT_enrich_multiplier
+    }
+    else = {
+        set_variable = { which = AIO_DAIT_enrich_multiplier value = 5 }
+    }
+}
+
 # Country: choose an operation and reset its range.
 AIO_DAIT_select_operation = {
     set_variable = { which = AIO_DAIT_operation value = $OPERATION$ }
