@@ -15,7 +15,7 @@ AIO_DAIT_enrich_repeat_count = {
 }
 
 AIO_DAIT_enrich_price = {
-    base = 50000
+    base = 10000
     mult = value:AIO_DAIT_range_cost_multiplier
     mult = value:AIO_DAIT_enrich_repeat_count
 }
